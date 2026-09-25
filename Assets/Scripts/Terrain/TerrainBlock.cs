@@ -67,7 +67,8 @@ public sealed class TerrainBlock : MonoBehaviour
         // Keep the fill back from painted faces so their irregular outline isn't boxed in.
         float fillLeft = rock && leftFace ? FaceFillInset : 0f, fillRight = rock && rightFace ? FaceFillInset : 0f;
         float fillBottom = rock && bottom ? CeilingFillInset : 0f;
-        // Exposed sides with no painted face (climbable / slippery walls) get a chipped silhouette.
+        // Exposed sides with no painted face (climbable / slippery walls) get a chipped silhouette
+    // that sticks out past the straight collider.
         roughLeft = leftFace && !rock; roughRight = rightFace && !rock;
         Quad("Fill", fill, new Rect(fillLeft, -height + fillBottom, width - fillLeft - fillRight, height - fillBottom),
             true, true, false, FillOrder, new Vector4(blendLeft, blendRight, 0f, 0f));
@@ -197,8 +198,9 @@ public sealed class TerrainBlock : MonoBehaviour
             if (fade.z > 0f) alpha = Mathf.Min(alpha, Mathf.Clamp01((y - rect.yMin) / Mathf.Min(fade.z, rect.height * .5f)));
             if (fade.w > 0f) alpha = Mathf.Min(alpha, Mathf.Clamp01((rect.yMax - y) / Mathf.Min(fade.w, rect.height * .5f)));
             float worldY = origin.y + y;
-            float left = rect.xMin + (chipLeft ? Chip(worldY, origin.x + rect.xMin) : 0f);
-            float right = rect.xMax - (chipRight ? Chip(worldY, origin.x + rect.xMax + 17.3f) : 0f);
+            // Chips stick OUT past the collider, so a wall slide or grab always touches painted rock.
+            float left = rect.xMin - (chipLeft ? Chip(worldY, origin.x + rect.xMin) : 0f);
+            float right = rect.xMax + (chipRight ? Chip(worldY, origin.x + rect.xMax + 17.3f) : 0f);
             // Darken a narrow rim along chipped edges so the cut reads as a rock edge with depth.
             float rimLeft = chipLeft ? Mathf.Min(RimWidth, (right - left) * .3f) : 0f, rimRight = chipRight ? Mathf.Min(RimWidth, (right - left) * .3f) : 0f;
             float[] xs = { left, left + rimLeft, right - rimRight, right };

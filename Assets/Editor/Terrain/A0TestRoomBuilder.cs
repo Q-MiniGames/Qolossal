@@ -178,7 +178,13 @@ public static class A0TestRoomBuilder
         kit.floatingSmall = Load("A0_Platform_Floating_S");
         kit.floatingMedium = Load("A0_Platform_Floating_M");
         kit.floatingLarge = Load("A0_Platform_Floating_L");
-        kit.slopeSurface = ScriptableObject.CreateInstance<TerrainKit>().slopeSurface;   // take the code's measured outline
+        // Take the code's measured landmarks (the asset keeps older serialized values otherwise).
+        var measured = ScriptableObject.CreateInstance<TerrainKit>();
+        kit.slopeSurface = measured.slopeSurface;
+        kit.wallSideFace = measured.wallSideFace;
+        kit.cornerOuterTopRightLedge = measured.cornerOuterTopRightLedge;
+        kit.cornerOuterBottomRightEdge = measured.cornerOuterBottomRightEdge;
+        UnityEngine.Object.DestroyImmediate(measured);
         EditorUtility.SetDirty(kit);
         return kit;
     }

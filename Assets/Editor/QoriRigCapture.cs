@@ -191,4 +191,48 @@ public static class QoriRigCapture
         File.WriteAllBytes(Path.Combine(folder, "slope_feet.png"), sheet.EncodeToPNG());
         Debug.Log("[QoriRigCapture] Slope capture written");
     }
+
+    // Wall slide against each kind of wall in the A0 room (chipped column sides, painted rock face),
+    // to check Qori's hands and feet touch painted rock. Usage: -executeMethod QoriRigCapture.CaptureWalls
+    public static void CaptureWalls()
+    {
+        string[] args = Environment.GetCommandLineArgs();
+        int index = Array.IndexOf(args, "-captureDir");
+        string folder = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Temp/QoriCaptures";
+        Directory.CreateDirectory(folder);
+        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        foreach (TerrainBlock block in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
+        GameObject player = GameObject.Find("Player");
+        var collider = player.GetComponent<BoxCollider2D>();
+        Vector2 extents = Vector2.Scale(collider.size, (Vector2)player.transform.lossyScale) * .5f;
+        var animator = player.GetComponentInChildren<QoriAnimator>(true);
+        Vector3 s = player.transform.lossyScale;
+        animator.transform.localScale = new Vector3(1f / s.x, 1f / s.y, 1f);
+        animator.head.sprite = animator.headUp;
+        foreach (SpriteRenderer r in animator.reachArms) r.enabled = false;
+        if (animator.weapon != null) animator.weapon.enabled = false;
+        var clip = AssetDatabase.LoadAssetAtPath<AnimationClip>("Assets/Art/Characters/QoriRig/Clips/Qori_WallSlide.anim");
+        Camera camera = Camera.main; camera.aspect = 1f; camera.orthographicSize = 1.2f;
+        // wall x, facing (toward the wall), y
+        (float wall, float face, float y)[] shots = { (54f, 1f, 1f), (57f, -1f, 1f), (66f, 1f, 5f), (44f, -1f, 6.5f) };
+        const int size = 500;
+        var sheet = new Texture2D(size * shots.Length, size, TextureFormat.RGB24, false);
+        var target = new RenderTexture(size, size, 24);
+        var read = new Texture2D(size, size, TextureFormat.RGB24, false);
+        for (int i = 0; i < shots.Length; i++)
+        {
+            var shot = shots[i];
+            player.transform.position = new Vector3(shot.wall - shot.face * extents.x, shot.y, 0f);
+            animator.facingPivot.localScale = new Vector3(shot.face, 1f, 1f);
+            clip.SampleAnimation(animator.animator.gameObject, .2f);
+            camera.transform.position = new Vector3(shot.wall, shot.y, -10f);
+            foreach (ParallaxLayer layer in UnityEngine.Object.FindObjectsByType<ParallaxLayer>(FindObjectsSortMode.None)) layer.Refresh(camera);
+            camera.targetTexture = target; camera.Render(); RenderTexture.active = target;
+            read.ReadPixels(new Rect(0, 0, size, size), 0, 0); read.Apply();
+            sheet.SetPixels(i * size, 0, size, size, read.GetPixels());
+        }
+        sheet.Apply(); camera.targetTexture = null; RenderTexture.active = null;
+        File.WriteAllBytes(Path.Combine(folder, "walls.png"), sheet.EncodeToPNG());
+        Debug.Log("[QoriRigCapture] Wall capture written");
+    }
 }

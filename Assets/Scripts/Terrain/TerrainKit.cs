@@ -12,7 +12,7 @@ public sealed class TerrainKit : ScriptableObject
     [Tooltip("Walk line of Ground_Top, px from the top edge.")] public float groundTopWalkLine = 96;
     public Sprite groundFill;
     public Sprite wallSide;
-    [Tooltip("Right-hand rock face of Wall_Side, px from the left edge.")] public float wallSideFace = 383;
+    [Tooltip("Right-hand rock face of Wall_Side, px from the left edge. Set near the innermost point of the painted outline (5th percentile) so the art never sits inside the collider and Qori never touches air.")] public float wallSideFace = 367;
     public Sprite ceilingUnder;
     [Tooltip("Solid underside of Ceiling_Under, px from the top edge.")] public float ceilingUnderside = 105;
     public Sprite wallClimbable;
@@ -20,9 +20,9 @@ public sealed class TerrainKit : ScriptableObject
 
     [Header("Corners (right-hand versions; left ones are mirrored)")]
     public Sprite cornerOuterTopRight;
-    public Vector2 cornerOuterTopRightLedge = new Vector2(488, 72);
+    public Vector2 cornerOuterTopRightLedge = new Vector2(460, 72);   // face x: 5th percentile of the painted outline
     public Sprite cornerOuterBottomRight;
-    public Vector2 cornerOuterBottomRightEdge = new Vector2(411, 316);
+    public Vector2 cornerOuterBottomRightEdge = new Vector2(362, 316);
 
     [Header("Slope: surface outline in px, lower-left end first")]
     [Tooltip("Painted moss top (median over 80 px, +6 px into the moss), smoothed (sigma 70 px) so the foot and crest are rounded; at most 12 px above the art.")]
