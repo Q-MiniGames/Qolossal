@@ -90,7 +90,15 @@ public static class A0TestRoomBuilder
         Block("Slippery Column", 60f, 5f, 3f, 10f, 20, left: true, right: true, surface: TerrainBlock.Surface.Slippery);
 
         // End: a tall rock plateau with ledges on both sides, reached by climbing its left face.
-        Block("End Plateau", 66f, 9f, 20f, 23f, 10, left: true, right: true);
+        Block("End Plateau", 66f, 9f, 20f, 23f, 10, left: true);
+
+        // Mechanics gallery on the end plateau, then pits spanned by a weak floor and platforms.
+        Block("Gallery Ground 1", 86f, 9f, 22f, 23f, 10, right: true);
+        Block("Weak Floor Pit", 108f, 5f, 3f, 19f, 0);
+        Block("Gallery Ground 2", 111f, 9f, 19f, 23f, 10, left: true, right: true);
+        Block("Thorn Pit Floor", 130f, 3f, 15f, 17f, 0);
+        Block("Gallery Ground 3", 145f, 9f, 13f, 23f, 10, left: true, right: true);
+        BuildMechanics(kit);
 
         // A Bramble Crawler patrolling the start ground, and one on the plateau.
         var crawlerPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/GroundCreature01.prefab");
@@ -137,6 +145,130 @@ public static class A0TestRoomBuilder
     }
 
     const float StartCameraX = -18f, StartCameraY = 2.5f;
+    const int PropOrder = -15;
+
+    static Sprite Art(string category, string name) =>
+        AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/Codex/" + category + "/" + name + ".png") ?? throw new FileNotFoundException(name);
+    static Sprite[] Pieces(string category, string name) =>
+        AssetDatabase.LoadAllAssetsAtPath("Assets/Art/Codex/" + category + "/" + name + ".png").OfType<Sprite>().OrderBy(p => p.name).ToArray();
+
+    static SpriteRenderer Image(Transform parent, string name, Sprite sprite, Vector2 at, int order = PropOrder)
+    {
+        var r = new GameObject(name).AddComponent<SpriteRenderer>();
+        r.transform.SetParent(parent, false); r.transform.position = at;
+        r.sprite = sprite; r.sortingOrder = order;
+        return r;
+    }
+
+    static GameObject Solid(Transform parent, string name, Vector2 centre, Vector2 size)
+    {
+        var obj = new GameObject(name) { layer = LayerMask.NameToLayer("Ground") };
+        obj.transform.SetParent(parent, false); obj.transform.position = centre;
+        obj.AddComponent<BoxCollider2D>().size = size;
+        return obj;
+    }
+
+    // One of each A0 mechanic, left to right along the gallery (ground top y = 9).
+    static void BuildMechanics(TerrainKit kit)
+    {
+        var root = new GameObject("Mechanics").transform;
+        const float G = 9f;
+
+        // Floor thorns to jump over, and a pit lined with them under the platforms.
+        void Thorns(string name, float x0, float x1, float y)
+        {
+            var r = Image(root, name, Art("Hazards", "Hazard_Thorns_Floor"), new Vector2((x0 + x1) * .5f, y), PropOrder + 1);
+            r.drawMode = SpriteDrawMode.Tiled;
+            r.size = new Vector2(x1 - x0, r.sprite.bounds.size.y);
+            var box = r.gameObject.AddComponent<BoxCollider2D>();
+            box.isTrigger = true; box.size = new Vector2(x1 - x0 - .2f, .3f); box.offset = new Vector2(0f, .18f);
+            r.gameObject.AddComponent<ThornHazard>();
+        }
+        Thorns("Floor Thorns", 89f, 92f, G);
+        Thorns("Pit Thorns", 130f, 145f, 3f);
+
+        // Rubble wall: only the mace breaks it.
+        var rubble = Solid(root, "Rubble Barrier (mace)", new Vector2(96f, G + 1.5f), new Vector2(1.3f, 3f));
+        var b1 = rubble.AddComponent<Breakable>();
+        b1.breaksWith = Breakable.Rule.Mace; b1.solid = rubble.GetComponent<Collider2D>();
+        b1.intact = Image(rubble.transform, "Art", Art("Props", "Barrier_Rubble_Intact"), new Vector2(96f, G));
+        b1.pieces = Pieces("Props", "Barrier_Rubble_Pieces");
+
+        // Thorn curtain: only the sword cuts it; the cut, wilted curtain stays behind.
+        var curtain = Solid(root, "Thorn Curtain (sword)", new Vector2(101f, G + 1.25f), new Vector2(.9f, 2.5f));
+        var b2 = curtain.AddComponent<Breakable>();
+        b2.breaksWith = Breakable.Rule.Sword; b2.solid = curtain.GetComponent<Collider2D>();
+        b2.intact = Image(curtain.transform, "Art", Art("Props", "Barrier_Thorns_Intact"), new Vector2(101f, G));
+        b2.brokenSprite = Art("Props", "Barrier_Thorns_Cut");
+
+        // Weak floor over the first pit: a downward attack breaks it.
+        var floor = Solid(root, "Weak Floor (down attack)", new Vector2(109.5f, G - .15f), new Vector2(3f, .3f));
+        var b3 = floor.AddComponent<Breakable>();
+        b3.breaksWith = Breakable.Rule.DownwardAttack; b3.solid = floor.GetComponent<Collider2D>();
+        b3.intact = Image(floor.transform, "Art", Art("Props", "Floor_Weak"), new Vector2(109.5f, G - .589f));
+        b3.pieces = Pieces("Props", "Floor_Weak_Pieces");
+
+        RootGate Gate(string name, float x)
+        {
+            var gate = Solid(root, name, new Vector2(x, G + 1.5f), new Vector2(.8f, 3f));
+            var g = gate.AddComponent<RootGate>();
+            g.topClosed = Art("Props", "Gate_Root_Closed_Top"); g.bottomClosed = Art("Props", "Gate_Root_Closed_Bottom");
+            g.topOpen = Art("Props", "Gate_Root_Open_Top"); g.bottomOpen = Art("Props", "Gate_Root_Open_Bottom");
+            // The halves are tapered root masses: the top hangs from a stone slab, the bottom rises
+            // from a base. Scaled so the slab meets the ceiling at G+3 and the tips interlock.
+            const float S = 1.35f;
+            g.top = Image(gate.transform, "Top", g.topClosed, new Vector2(x, G + 3f - (.768f - .093f) * S));
+            g.bottom = Image(gate.transform, "Bottom", g.bottomClosed, new Vector2(x, G + (1.41f - .768f) * S));
+            g.top.transform.localScale = g.bottom.transform.localScale = new Vector3(S, S, 1f);
+            // A rock ceiling over the passage, too high to jump over.
+            var ceiling = new GameObject("Gate Ceiling " + x) { layer = LayerMask.NameToLayer("Ground") };
+            ceiling.transform.position = new Vector3(x - 1.6f, G + 6.5f, 0f);
+            var block = ceiling.AddComponent<TerrainBlock>();
+            block.kit = kit; block.width = 3.2f; block.height = 3.5f; block.top = true; block.bottom = true;
+            block.leftFace = block.rightFace = true; block.sortingOffset = 25;
+            block.Rebuild();
+            g.solid = gate.GetComponent<Collider2D>();
+            return g;
+        }
+
+        // Pressure plate holding a root gate open.
+        var plate = new GameObject("Pressure Plate").AddComponent<PressurePlate>();
+        plate.transform.SetParent(root, false); plate.transform.position = new Vector3(114f, G, 0f);
+        plate.up = Art("Props", "Switch_Plate_Up"); plate.down = Art("Props", "Switch_Plate_Down");
+        plate.image = Image(plate.transform, "Art", plate.up, new Vector2(114f, G - .37f));
+        plate.sensor = plate.gameObject.AddComponent<BoxCollider2D>();
+        plate.sensor.isTrigger = true; plate.sensor.size = new Vector2(1.2f, .3f); plate.sensor.offset = new Vector2(0f, .15f);
+        plate.targets.Add(Gate("Root Gate (plate)", 118f));
+
+        // Seed switch: a sling shot opens its gate for good.
+        var seed = new GameObject("Seed Switch (sling)").AddComponent<SeedSwitch>();
+        seed.transform.SetParent(root, false); seed.transform.position = new Vector3(122f, G, 0f);
+        seed.off = Art("Props", "Switch_Seed_Off"); seed.on = Art("Props", "Switch_Seed_On");
+        seed.image = Image(seed.transform, "Art", seed.off, new Vector2(122f, G));
+        var seedBox = seed.gameObject.AddComponent<BoxCollider2D>();
+        seedBox.isTrigger = true; seedBox.size = new Vector2(.6f, .9f); seedBox.offset = new Vector2(0f, .5f);
+        seed.targets.Add(Gate("Root Gate (sling)", 126f));
+
+        // Crumbling platform, then a moving raft across the thorn pit.
+        var crumble = Solid(root, "Crumble Platform", new Vector2(132f, G - .15f), new Vector2(2.9f, .3f));
+        var cp = crumble.AddComponent<CrumblePlatform>();
+        cp.image = Image(crumble.transform, "Art", Art("Hazards", "Platform_Crumble"), new Vector2(132f, G - .457f));
+        cp.pieces = Pieces("Hazards", "Platform_Crumble_Pieces"); cp.solid = crumble.GetComponent<Collider2D>();
+
+        var raft = Solid(root, "Moving Raft", new Vector2(136.5f, G - .15f), new Vector2(2.9f, .3f));
+        Image(raft.transform, "Art", Art("Hazards", "Platform_Moving_A0"), new Vector2(136.5f, G - 1.003f));
+        var raftBody = raft.AddComponent<Rigidbody2D>(); raftBody.bodyType = RigidbodyType2D.Kinematic;
+        var mp = raft.AddComponent<MovingPlatform>();
+        mp.offset = new Vector2(6f, 0f); mp.solid = raft.GetComponent<Collider2D>();
+
+        // The A0 area portal at the far end.
+        var portal = new GameObject("Portal A0").AddComponent<Portal>();
+        portal.transform.SetParent(root, false); portal.transform.position = new Vector3(152f, G, 0f);
+        Image(portal.transform, "Arch", Art("Props", "Portal_Gate_A0"), new Vector2(152f, G), PropOrder + 2);
+        portal.membrane = Image(portal.transform, "Membrane", Art("Props", "Portal_Membrane_A0"), new Vector2(152f, G), PropOrder + 1);
+        var portalBox = portal.gameObject.AddComponent<BoxCollider2D>();
+        portalBox.isTrigger = true; portalBox.size = new Vector2(1.2f, 2.4f); portalBox.offset = new Vector2(0f, 1.2f);
+    }
 
     // A0 decor from the sliced sheet, standing on (or hanging from) the room's surfaces.
     static void BuildDecor(Transform terrain, float plateau)
@@ -215,6 +347,9 @@ public static class A0TestRoomBuilder
             ("slope", new Vector2(18f, 5f), 6f), ("plateau_ledge", new Vector2(40f, 8f), 5f),
             ("overhang", new Vector2(37f, 14f), 5f), ("pit", new Vector2(50f, 1f), 6f),
             ("columns", new Vector2(60f, 3f), 6f), ("end_plateau", new Vector2(70f, 6f), 6f),
+            ("gallery_1", new Vector2(96f, 11f), 5.5f), ("gallery_2", new Vector2(113f, 11f), 5.5f),
+            ("gallery_3", new Vector2(122f, 12f), 5.5f), ("gallery_4", new Vector2(138f, 8f), 6.5f),
+            ("gallery_5", new Vector2(151f, 11f), 4f),
         };
         var texture = new RenderTexture(1920, 1080, 24);
         var read = new Texture2D(1920, 1080, TextureFormat.RGB24, false);

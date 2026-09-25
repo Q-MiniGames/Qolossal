@@ -193,12 +193,37 @@ def decor_sprites(name):
     return out
 
 
+PIECE_SHEETS = {"Barrier_Rubble_Pieces", "Floor_Weak_Pieces", "Platform_Crumble_Pieces"}
+
+
+def piece_sprites(category, name):
+    """One sub-sprite per separate chunk in a pieces sheet (connected opaque regions)."""
+    import numpy as np
+    from scipy import ndimage
+    with Image.open(source_path(category, name)) as im:
+        alpha = np.array(im.convert("RGBA"))[:, :, 3] > 30
+    h = alpha.shape[0]
+    labels, count = ndimage.label(ndimage.binary_dilation(alpha, iterations=3))
+    boxes = ndimage.find_objects(labels)
+    areas = ndimage.sum(alpha, labels, range(1, count + 1))
+    keep = [i for i in range(count) if areas[i] >= .02 * max(areas)]
+    out = []
+    for n, i in enumerate(sorted(keep, key=lambda k: (boxes[k][1].start, boxes[k][0].start))):
+        ys, xs = boxes[i]
+        x0, x1 = max(0, xs.start - 2), min(alpha.shape[1], xs.stop + 2)
+        y0, y1 = max(0, ys.start - 2), min(h, ys.stop + 2)
+        out.append({"name": f"{name}_{n:02d}", "rect": [x0, h - y1, x1 - x0, y1 - y0], "pivot": [0.5, 0.5]})
+    return out
+
+
 def build_entry(category, name, reviewed_sha):
     entry = {"name": name, "category": category, "sha256": reviewed_sha,
              "dest": f"{DEST_ROOT}/{category}/{name}.png"}
     entry.update(settings_for(category, name))
     if category == "Decor":
         entry["sprites"] = decor_sprites(name)
+    if name in PIECE_SHEETS:
+        entry["sprites"] = piece_sprites(category, name)
     if category == "UI":
         notes_path = os.path.join(SOURCE, "UI", "QA", "NINE_SLICE_NOTES.json")
         with open(notes_path) as f:

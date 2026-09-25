@@ -1468,7 +1468,99 @@
     0.08594
    ],
    "border": null,
-   "sprites": null,
+   "sprites": [
+    {
+     "name": "Platform_Crumble_Pieces_00",
+     "rect": [
+      13,
+      72,
+      489,
+      321
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Platform_Crumble_Pieces_01",
+     "rect": [
+      429,
+      97,
+      121,
+      142
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Platform_Crumble_Pieces_02",
+     "rect": [
+      490,
+      128,
+      249,
+      258
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Platform_Crumble_Pieces_03",
+     "rect": [
+      654,
+      63,
+      105,
+      103
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Platform_Crumble_Pieces_04",
+     "rect": [
+      703,
+      267,
+      106,
+      132
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Platform_Crumble_Pieces_05",
+     "rect": [
+      742,
+      71,
+      142,
+      167
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Platform_Crumble_Pieces_06",
+     "rect": [
+      812,
+      129,
+      197,
+      265
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
    "mipmaps": false,
    "ppu": 330.333,
    "basis": "shares scale and registration with Platform_Crumble"
@@ -1702,7 +1794,112 @@
     0.0434
    ],
    "border": null,
-   "sprites": null,
+   "sprites": [
+    {
+     "name": "Barrier_Rubble_Pieces_00",
+     "rect": [
+      40,
+      231,
+      546,
+      365
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_01",
+     "rect": [
+      41,
+      593,
+      565,
+      417
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_02",
+     "rect": [
+      302,
+      13,
+      777,
+      252
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_03",
+     "rect": [
+      585,
+      263,
+      410,
+      332
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_04",
+     "rect": [
+      642,
+      623,
+      427,
+      339
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_05",
+     "rect": [
+      1036,
+      282,
+      431,
+      334
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_06",
+     "rect": [
+      1144,
+      540,
+      344,
+      461
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_07",
+     "rect": [
+      1200,
+      17,
+      282,
+      284
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
    "mipmaps": false,
    "ppu": 543.333,
    "basis": "shares scale and registration with Barrier_Rubble_Intact"
@@ -1774,7 +1971,112 @@
     0.10723
    ],
    "border": null,
-   "sprites": null,
+   "sprites": [
+    {
+     "name": "Floor_Weak_Pieces_00",
+     "rect": [
+      32,
+      432,
+      479,
+      371
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Floor_Weak_Pieces_01",
+     "rect": [
+      79,
+      71,
+      415,
+      290
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Floor_Weak_Pieces_02",
+     "rect": [
+      522,
+      69,
+      520,
+      296
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Floor_Weak_Pieces_03",
+     "rect": [
+      529,
+      416,
+      413,
+      321
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Floor_Weak_Pieces_04",
+     "rect": [
+      955,
+      398,
+      516,
+      347
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Floor_Weak_Pieces_05",
+     "rect": [
+      1065,
+      69,
+      370,
+      222
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Floor_Weak_Pieces_06",
+     "rect": [
+      1456,
+      416,
+      282,
+      330
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Floor_Weak_Pieces_07",
+     "rect": [
+      1469,
+      41,
+      265,
+      265
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
    "mipmaps": false,
    "ppu": 604.667,
    "basis": "shares scale and registration with Floor_Weak"

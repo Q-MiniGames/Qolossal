@@ -82,7 +82,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 9
@@ -136,287 +136,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Platform_Crumble_Pieces_0
+      name: Platform_Crumble_Pieces_00
       rect:
         serializedVersion: 2
-        x: 15
-        y: 76
-        width: 483
-        height: 314
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 13
+        y: 72
+        width: 489
+        height: 321
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4fe6bb241647bb300800000000000000
-      internalID: 268936563838906100
+      spriteID: b1e404348413a0c46839fe5df057edb0
+      internalID: -2107230650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Platform_Crumble_Pieces_1
+      name: Platform_Crumble_Pieces_01
       rect:
         serializedVersion: 2
-        x: 494
-        y: 131
-        width: 241
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 429
+        y: 97
+        width: 121
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 859298bc5d33c3f90800000000000000
-      internalID: -6972641129740555944
+      spriteID: 6d66bf48e1e6db34aa8e0539330cd667
+      internalID: -1947111343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Platform_Crumble_Pieces_2
+      name: Platform_Crumble_Pieces_02
       rect:
         serializedVersion: 2
-        x: 707
-        y: 270
-        width: 99
-        height: 127
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a1c7a3d56c33ac00800000000000000
-      internalID: 910637957699322279
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platform_Crumble_Pieces_3
-      rect:
-        serializedVersion: 2
-        x: 735
-        y: 258
-        width: 26
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ca65e712e555260c0800000000000000
-      internalID: -4584007607932528980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platform_Crumble_Pieces_4
-      rect:
-        serializedVersion: 2
-        x: 814
-        y: 133
-        width: 192
+        x: 490
+        y: 128
+        width: 249
         height: 258
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 50339c599c65bb590800000000000000
-      internalID: -7657431317611990267
+      spriteID: 317b494819c397b42b9d8b8b1c7eca33
+      internalID: 1696141229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Platform_Crumble_Pieces_5
+      name: Platform_Crumble_Pieces_03
       rect:
         serializedVersion: 2
-        x: 747
-        y: 238
-        width: 16
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 654
+        y: 63
+        width: 105
+        height: 103
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 61bb7406c63fbc030800000000000000
-      internalID: 3516171580890135318
+      spriteID: 7bc5bb94353c7e14cb229210f16e0cb9
+      internalID: 1385134379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Platform_Crumble_Pieces_6
+      name: Platform_Crumble_Pieces_04
       rect:
         serializedVersion: 2
-        x: 780
-        y: 244
-        width: 16
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 703
+        y: 267
+        width: 106
+        height: 132
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0d147d9dd0ff6fe30800000000000000
-      internalID: 4537094109576774096
+      spriteID: c7f73ff1c859498488f2933ec70f0052
+      internalID: -539969580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Platform_Crumble_Pieces_7
+      name: Platform_Crumble_Pieces_05
       rect:
         serializedVersion: 2
-        x: 432
-        y: 101
-        width: 116
-        height: 135
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 742
+        y: 71
+        width: 142
+        height: 167
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 03e637e594ec531a0800000000000000
-      internalID: -6830326445324931536
+      spriteID: 7852ec2fd3853204bb977fdb3b049ec4
+      internalID: 910347426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Platform_Crumble_Pieces_8
+      name: Platform_Crumble_Pieces_06
       rect:
         serializedVersion: 2
-        x: 658
-        y: 67
-        width: 97
-        height: 95
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 812
+        y: 129
+        width: 197
+        height: 265
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e3112a6b1ae7c1160800000000000000
-      internalID: 6997607154045817150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platform_Crumble_Pieces_9
-      rect:
-        serializedVersion: 2
-        x: 746
-        y: 75
-        width: 136
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d0c6301013c0ac870800000000000000
-      internalID: 8703782634456837133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platform_Crumble_Pieces_10
-      rect:
-        serializedVersion: 2
-        x: 875
-        y: 70
-        width: 50
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b0c538b25dc4a7ae0800000000000000
-      internalID: -1550842643233940469
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platform_Crumble_Pieces_11
-      rect:
-        serializedVersion: 2
-        x: 892
-        y: 110
-        width: 35
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5796c23f687592970800000000000000
-      internalID: 8730605589751425397
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platform_Crumble_Pieces_12
-      rect:
-        serializedVersion: 2
-        x: 934
-        y: 84
-        width: 50
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 700e3f625de273540800000000000000
-      internalID: 4987506605352542215
+      spriteID: df718cb4fe2ed834bbff90fedbbab68e
+      internalID: 431578620
       vertices: []
       indices: 
       edges: []
@@ -434,7 +302,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Platform_Crumble_Pieces_00: -2107230650
+      Platform_Crumble_Pieces_01: -1947111343
+      Platform_Crumble_Pieces_02: 1696141229
+      Platform_Crumble_Pieces_03: 1385134379
+      Platform_Crumble_Pieces_04: -539969580
+      Platform_Crumble_Pieces_05: 910347426
+      Platform_Crumble_Pieces_06: 431578620
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

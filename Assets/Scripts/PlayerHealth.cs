@@ -30,9 +30,16 @@ public sealed class PlayerHealth : MonoBehaviour
 
     private void CheckContact(Collision2D collision)
     {
-        if (!isActiveAndEnabled || !movement.isActiveAndEnabled || Time.time < protectedUntil) return;
         GroundCreature enemy = collision.gameObject.GetComponentInParent<GroundCreature>();
         if (enemy == null || !enemy.isActiveAndEnabled || !enemy.IsAlive) return;
+        TakeDamage(enemy.transform.position, knockback);
+    }
+
+    // Costs one heart and knocks Qori away from `source` (x) with `push` (x magnitude, y up).
+    // Ignored while invulnerable after a previous hit.
+    public void TakeDamage(Vector2 source, Vector2 push)
+    {
+        if (!isActiveAndEnabled || !movement.isActiveAndEnabled || Time.time < protectedUntil) return;
         health--;
         protectedUntil = Time.time + invulnerabilityTime;
         if (health <= 0)
@@ -40,10 +47,10 @@ public sealed class PlayerHealth : MonoBehaviour
             movement.Respawn();
             return;
         }
-        float difference = transform.position.x - enemy.transform.position.x;
+        float difference = transform.position.x - source.x;
         float direction = Mathf.Abs(difference) > 0.01f ? Mathf.Sign(difference) : -movement.FacingDirection;
         LastHitTime=Time.time;LastHitDirection=direction;
-        movement.ApplyKnockback(new Vector2(direction * knockback.x, knockback.y));
+        movement.ApplyKnockback(new Vector2(direction * Mathf.Max(push.x, knockback.x * .5f), push.y));
     }
 
     public void RestoreAfterRespawn()

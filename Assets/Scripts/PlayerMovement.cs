@@ -41,6 +41,8 @@ public sealed class PlayerMovement : MonoBehaviour
     public float RunSpeed => Mathf.Max(moveSpeed,runSpeed);
     public Vector2 ObservedDisplacement { get; private set; }
     public Vector2 ObservedVelocity { get; private set; }
+    /// <summary>The collider Qori is standing on (null when airborne).</summary>
+    public Collider2D GroundCollider { get; private set; }
     public Vector2 GroundNormal { get; private set; } = Vector2.up;
     public Vector2 GroundPoint { get; private set; }
     public float GroundDistance { get; private set; } = float.PositiveInfinity;
@@ -354,6 +356,7 @@ public sealed class PlayerMovement : MonoBehaviour
         bool grounded = false;
         Vector2 groundNormal = Vector2.up;
         Vector2 groundPoint = Vector2.zero;
+        Collider2D groundCollider = null;
         float nearestGround = float.PositiveInfinity;
         float snapDistance = 0f;
         // Walking up a slope moves Qori upward, so keep checking for ground while he was grounded,
@@ -377,6 +380,7 @@ public sealed class PlayerMovement : MonoBehaviour
                         nearestGround = groundHits[i].distance;
                         groundNormal = groundHits[i].normal;
                         groundPoint = groundHits[i].point;
+                        groundCollider = groundHits[i].collider;
                     }
                 }
         }
@@ -499,6 +503,7 @@ public sealed class PlayerMovement : MonoBehaviour
         HasGroundContact = grounded && launch == LaunchKind.None && (velocity.y <= 0.1f || surfaceWalking);
         GroundNormal = HasGroundContact ? groundNormal : Vector2.up;
         GroundPoint = HasGroundContact ? groundPoint : Vector2.zero;
+        GroundCollider = HasGroundContact ? groundCollider : null;
         bool approachingGround = !attached && launch == LaunchKind.None && velocity.y < -0.1f &&
             !float.IsPositiveInfinity(nearestGround);
         GroundDistance = IsGrounded || approachingGround ? nearestGround : float.PositiveInfinity;
