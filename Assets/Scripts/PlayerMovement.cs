@@ -76,6 +76,9 @@ public sealed class PlayerMovement : MonoBehaviour
     [Tooltip("Falling below this height returns the player to their latest checkpoint, or the starting position.")]
     [SerializeField] private float resetBelowY = -15f;
     private const float GroundSnapDistance = .3f;
+    private const float MaxSlopeRise = 1.2f;   // tan of ~50 degrees, the steepest walkable surface
+    private const int LaunchGraceSteps = 8;   // physics steps after a jump/boost before ground can catch Qori
+    private int stepsSinceLaunch = LaunchGraceSteps + 1;
 
     private Rigidbody2D body;
     private BoxCollider2D playerCollider;
@@ -353,8 +356,13 @@ public sealed class PlayerMovement : MonoBehaviour
         Vector2 groundPoint = Vector2.zero;
         float nearestGround = float.PositiveInfinity;
         float snapDistance = 0f;
-        // Walking up a slope moves Qori upward, so keep checking for ground while he was grounded.
-        if (velocity.y <= 0.1f || wasGrounded)
+        // Walking up a slope moves Qori upward, so keep checking for ground while he was grounded,
+        // and also when he rises no faster than a walkable slope allows (e.g. landing on a slope
+        // while pressing uphill) - but never in the first steps after a launch, so jumps stay jumps.
+        stepsSinceLaunch++;
+        bool slopeRise = velocity.y <= Mathf.Abs(velocity.x) * MaxSlopeRise + .1f && stepsSinceLaunch > LaunchGraceSteps
+                         && !hasPendingKnockback && Time.time >= hitRecoveryUntil;
+        if (velocity.y <= 0.1f || wasGrounded || slopeRise)
         {
             float castDistance = velocity.y < -0.1f
                 ? Mathf.Max(groundCheckDistance, landingLookAheadDistance) : groundCheckDistance;
@@ -506,6 +514,7 @@ public sealed class PlayerMovement : MonoBehaviour
         }
         if (launch != LaunchKind.None)
         {
+            stepsSinceLaunch = 0;
             LastLaunchKind = launch;
             LastLaunchSpeed = velocity.y;
             LastLaunchTime = Time.fixedTime;

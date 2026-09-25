@@ -55,6 +55,17 @@ public static class SlopeMovementCheck
         Step(-1f, 70, "run down the whole slope", true);
         Step(1f, 70, "walk up the whole slope");
         Step(-1f, 80, "walk down the whole slope");
+        // Jump at the foot of the slope while holding uphill: Qori must land and walk, not stay airborne.
+        body.position = new Vector2(7f, .7f); body.linearVelocity = Vector2.zero; Physics2D.SyncTransforms();
+        Step(0f, 30, "settle flat");
+        Step(1f, 12, "run toward the slope", true);
+        FieldInfo jumpPressed = typeof(PlayerMovement).GetField("lastJumpPressedTime", Any);
+        FieldInfo jumpHeld = typeof(PlayerMovement).GetField("jumpHeld", Any);
+        jumpPressed.SetValue(movement, Time.time); jumpHeld.SetValue(movement, true);
+        Step(1f, 12, "jump (0.24 s)", true);
+        jumpHeld.SetValue(movement, false);
+        Step(1f, 30, "airborne, holding uphill", true);
+        Step(1f, 40, "after landing, holding uphill", true);
         Physics2D.simulationMode = previousMode;
     }
 

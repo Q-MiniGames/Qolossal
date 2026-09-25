@@ -25,15 +25,19 @@ public sealed class TerrainKit : ScriptableObject
     public Vector2 cornerOuterBottomRightEdge = new Vector2(411, 316);
 
     [Header("Slope: surface outline in px, lower-left end first")]
-    [Tooltip("Follows the painted moss top (median over 80 px windows, +6 px into the moss), at most 42 degrees per segment.")]
+    [Tooltip("Painted moss top (median over 80 px, +6 px into the moss), smoothed (sigma 70 px) so the foot and crest are rounded; at most 12 px above the art.")]
     public Sprite slope30;
     public Vector2[] slopeSurface =
     {
-        new Vector2(40, 1280), new Vector2(104, 1233), new Vector2(200, 1172), new Vector2(296, 1115), new Vector2(392, 1063),
-        new Vector2(488, 977), new Vector2(584, 941), new Vector2(680, 882), new Vector2(776, 810), new Vector2(872, 760),
-        new Vector2(968, 715), new Vector2(1064, 649), new Vector2(1160, 571), new Vector2(1256, 537), new Vector2(1352, 492),
-        new Vector2(1448, 447), new Vector2(1544, 389), new Vector2(1640, 344), new Vector2(1736, 262), new Vector2(1832, 244),
-        new Vector2(1928, 243), new Vector2(2004, 243), new Vector2(2004, 1280)
+        new Vector2(40, 1280), new Vector2(104, 1240), new Vector2(168, 1200), new Vector2(232, 1157),
+        new Vector2(296, 1117), new Vector2(360, 1076), new Vector2(424, 1032), new Vector2(488, 987),
+        new Vector2(552, 950), new Vector2(616, 917), new Vector2(680, 879), new Vector2(744, 837),
+        new Vector2(808, 797), new Vector2(872, 760), new Vector2(936, 726), new Vector2(1000, 690),
+        new Vector2(1064, 649), new Vector2(1128, 605), new Vector2(1192, 567), new Vector2(1256, 535),
+        new Vector2(1320, 505), new Vector2(1384, 473), new Vector2(1448, 439), new Vector2(1512, 405),
+        new Vector2(1576, 373), new Vector2(1640, 337), new Vector2(1704, 298), new Vector2(1768, 267),
+        new Vector2(1832, 250), new Vector2(1896, 245), new Vector2(1960, 243), new Vector2(2004, 243),
+        new Vector2(2004, 1280)
     };
 
     [Header("Platforms: walk line px from the top, usable span px from the left")]
