@@ -82,7 +82,7 @@ run = make_gait(T=RUN_T, D=.36, A=150, lift=95, xo=22, lean=9, bob=11, base_y=-2
                 arm_swing=26, weapon=142, far_carry=True)
 WALK_T = 0.62
 walk = make_gait(T=WALK_T, D=.58, A=95, lift=46, xo=18, lean=4, bob=6, base_y=-14, kick=0,
-                 arm_swing=14, weapon=-17, twist=2, skirt=3, head=4, cape=-16)
+                 arm_swing=14, weapon=-17, twist=2, skirt=3, head=4, cape=-16, far_carry=True)
 
 CLIPS = {}
 def build():

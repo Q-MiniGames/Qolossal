@@ -265,21 +265,20 @@ public static class QoriRigCapture
         animator.weapon.enabled = true;
         animator.weapon.transform.SetParent(animator.weaponMountFar, false);
         animator.weapon.sortingOrder = animator.weaponOrderFar;
-        var clip = AssetDatabase.LoadAssetAtPath<AnimationClip>("Assets/Art/Characters/QoriRig/Clips/Qori_Run.anim");
         Camera camera = Camera.main; camera.aspect = 1f; camera.orthographicSize = 1.3f;
         camera.transform.position = new Vector3(-16f, .9f, -10f);
         foreach (ParallaxLayer layer in UnityEngine.Object.FindObjectsByType<ParallaxLayer>(FindObjectsSortMode.None)) layer.Refresh(camera);
-        float[] times = { 0f, .1f, .2f, .3f };
+        (string clip, float t)[] times = { ("Walk", 0f), ("Walk", .16f), ("Walk", .31f), ("Walk", .46f), ("Run", 0f), ("Run", .1f), ("Run", .2f), ("Run", .3f) };
         const int size = 500;
-        var sheet = new Texture2D(size * times.Length, size, TextureFormat.RGB24, false);
+        var sheet = new Texture2D(size * 4, size * 2, TextureFormat.RGB24, false);
         var target = new RenderTexture(size, size, 24);
         var read = new Texture2D(size, size, TextureFormat.RGB24, false);
         for (int i = 0; i < times.Length; i++)
         {
-            clip.SampleAnimation(animator.animator.gameObject, times[i]);
+            AssetDatabase.LoadAssetAtPath<AnimationClip>($"Assets/Art/Characters/QoriRig/Clips/Qori_{times[i].clip}.anim").SampleAnimation(animator.animator.gameObject, times[i].t);
             camera.targetTexture = target; camera.Render(); RenderTexture.active = target;
             read.ReadPixels(new Rect(0, 0, size, size), 0, 0); read.Apply();
-            sheet.SetPixels(i * size, 0, size, size, read.GetPixels());
+            sheet.SetPixels(i % 4 * size, (1 - i / 4) * size, size, size, read.GetPixels());
         }
         sheet.Apply(); camera.targetTexture = null; RenderTexture.active = null;
         File.WriteAllBytes(Path.Combine(folder, "run.png"), sheet.EncodeToPNG());
