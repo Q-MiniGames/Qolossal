@@ -123,18 +123,23 @@ def pivot_for(name, size, bbox):
 def settings_for(category, name):
     path = source_path(category, name)
     size, bbox = opaque_bbox(path)
-    s = {"wrap": "Clamp", "mesh": "Tight", "pivot": pivot_for(name, size, bbox), "border": None,
+    s = {"wrapU": "Clamp", "wrapV": "Clamp", "mesh": "Tight", "pivot": pivot_for(name, size, bbox), "border": None,
          "sprites": None, "mipmaps": False}
 
+    # Repeat only along the tiling axis: a strip's transparent edge must not sample the
+    # opaque pixels from its opposite edge, or a hairline appears along it.
+    if name in TILE_H or name in TILE_FILL:
+        s["wrapU"] = "Repeat"
+    if name in TILE_V or name in TILE_FILL:
+        s["wrapV"] = "Repeat"
     if name in TILE_H or name in TILE_V or name in TILE_FILL:
-        s["wrap"] = "Repeat"
         s["mesh"] = "FullRect"  # required for SpriteRenderer tiled draw mode
 
     if category in ("Terrain", "Decor"):
         s["ppu"], s["basis"] = TERRAIN_PPU, "request: terrain density 120 px/u"
     elif category == "Backgrounds":
         s["ppu"], s["basis"] = TERRAIN_PPU, "request: terrain density 120 px/u"
-        s["wrap"], s["mesh"] = "Repeat", "FullRect"
+        s["wrapU"], s["mesh"] = "Repeat", "FullRect"
         s["pivot"] = [0.5, 0.0]
     elif category == "Hazards" and name.startswith("Hazard_Thorns"):
         s["ppu"], s["basis"] = TERRAIN_PPU, "request: hazard strips at terrain density"

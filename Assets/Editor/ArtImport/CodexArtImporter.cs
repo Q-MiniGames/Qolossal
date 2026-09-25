@@ -19,7 +19,7 @@ public static class CodexArtImporter
 
     [Serializable] public class Entry
     {
-        public string name, category, sha256, dest, wrap, mesh, basis;
+        public string name, category, sha256, dest, wrapU, wrapV, mesh, basis;
         public float ppu;
         public float[] pivot, border;
         public bool mipmaps;
@@ -154,7 +154,8 @@ public sealed class CodexArtPostprocessor : AssetPostprocessor
         importer.mipmapEnabled = entry.mipmaps;
         importer.alphaIsTransparency = true;
         importer.filterMode = FilterMode.Bilinear;
-        importer.wrapMode = entry.wrap == "Repeat" ? TextureWrapMode.Repeat : TextureWrapMode.Clamp;
+        importer.wrapModeU = entry.wrapU == "Repeat" ? TextureWrapMode.Repeat : TextureWrapMode.Clamp;
+        importer.wrapModeV = entry.wrapV == "Repeat" ? TextureWrapMode.Repeat : TextureWrapMode.Clamp;
         importer.maxTextureSize = 2048;
         importer.textureCompression = TextureImporterCompression.CompressedHQ;
 

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce6b61b751111824e82052ec778d848e, type: 3}
+  m_Name: A0_TerrainKit
+  m_EditorClassIdentifier: Assembly-CSharp::TerrainKit
+  groundTop: {fileID: 21300000, guid: dfbd331ad18c22f45b2f28dfd1929a2e, type: 3}
+  groundTopWalkLine: 96
+  groundFill: {fileID: 21300000, guid: 9a4f0c8761dee6646acc4bb5b790e34e, type: 3}
+  wallSide: {fileID: 21300000, guid: 74628d7b0e802d048bdcd4ea4c83284c, type: 3}
+  wallSideFace: 383
+  ceilingUnder: {fileID: 21300000, guid: e05d8ca742a20c84899c5f2af9d35dd4, type: 3}
+  ceilingUnderside: 105
+  wallClimbable: {fileID: 21300000, guid: e5d7ff319fbdb8a4d86befe008fc9efc, type: 3}
+  wallSlippery: {fileID: 21300000, guid: d87cc3c5b7a56464c818461c176392a9, type: 3}
+  cornerOuterTopRight: {fileID: 21300000, guid: 508a04bcd66bc9640a164933cac1e789, type: 3}
+  cornerOuterTopRightLedge: {x: 488, y: 72}
+  cornerOuterBottomRight: {fileID: 21300000, guid: 66426ca80872a004798f2f606123003d, type: 3}
+  cornerOuterBottomRightEdge: {x: 411, y: 316}
+  slope30: {fileID: 21300000, guid: 435d6af214367b74380bd2a2e9e796e8, type: 3}
+  slopeSurface:
+  - {x: 40, y: 1280}
+  - {x: 100, y: 1238}
+  - {x: 700, y: 869}
+  - {x: 1300, y: 519}
+  - {x: 1650, y: 255}
+  - {x: 2004, y: 248}
+  - {x: 2004, y: 1280}
+  platformOneWay: {fileID: 21300000, guid: 677471ac57ddcf546973ec6535aaeb06, type: 3}
+  oneWayWalkLine: 108
+  oneWaySpan: {x: 48, y: 985}
+  floatingSmall: {fileID: 21300000, guid: cef289bc630ada644b4d9ecbfaec2cee, type: 3}
+  floatingMedium: {fileID: 21300000, guid: 0365dd067f221c945a19b1f389214d26, type: 3}
+  floatingLarge: {fileID: 21300000, guid: a39c7c02d482c3846aa94a00bef4ccb9, type: 3}
+  floatingSmallLine: {x: 20, y: 252, z: 36}
+  floatingMediumLine: {x: 24, y: 428, z: 46}
+  floatingLargeLine: {x: 24, y: 608, z: 47}

@@ -382,7 +382,8 @@ public sealed class PlayerMovement : MonoBehaviour
                 float direction=side==0?FacingDirection:-FacingDirection;
                 int wallCount=body.Cast(Vector2.right*direction,groundFilter,wallHits,.045f);
                 for(int i=0;i<wallCount;i++)
-                    if(wallHits[i].normal.x*direction<-.85f && Mathf.Abs(wallHits[i].normal.y)<.25f && wallHits[i].distance<nearestWall)
+                    if(wallHits[i].normal.x*direction<-.85f && Mathf.Abs(wallHits[i].normal.y)<.25f && wallHits[i].distance<nearestWall &&
+                        WallSurface.AllowsCling(wallHits[i].collider))
                     {WallDirection=direction;nearestWall=wallHits[i].distance;}
             }
         }
