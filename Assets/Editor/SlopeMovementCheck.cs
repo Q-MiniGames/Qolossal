@@ -19,6 +19,7 @@ public static class SlopeMovementCheck
         foreach (var item in Object.FindObjectsByType<TerrainPiece>(FindObjectsSortMode.None)) item.Rebuild();
         foreach (var item in Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) item.Rebuild();
 
+        SimulationMode2D previousMode = Physics2D.simulationMode;   // a project setting: restored below
         Physics2D.simulationMode = SimulationMode2D.Script;
         Invoke(movement, "Awake");
         FieldInfo input = typeof(PlayerMovement).GetField("moveInput", Any);
@@ -46,6 +47,7 @@ public static class SlopeMovementCheck
         Step(0f, 50, "stop 1 s");
         Step(-1f, 60, "walk downhill 1.2 s");
         Step(0f, 100, "idle 2 s");
+        Physics2D.simulationMode = previousMode;
     }
 
     static void Invoke(object target, string method) =>
