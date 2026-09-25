@@ -96,6 +96,29 @@ def make_blink():
 _bi, _bp = make_blink()
 add('Head_Blink', _bi, _bp, NECK)
 
+# Expressions (Codex v2): face-feature overlays painted on the neutral head's exact canvas,
+# so they get the neutral head's transform and are composited onto it. The outline stays
+# identical to Head_Neutral, so swapping never pops.
+# Accepted, hash-pinned copies imported into the project (Tools/ArtImport).
+FACES_DIR = _os.path.join(_PROJECT, 'Assets', 'Art', 'Codex', 'Player')
+_neutral_src = newart.load_new('Qori_Head_Neutral.png')
+_nfb = newart.face_box(_neutral_src)
+def make_face(expr):
+    overlay = Image.open(_os.path.join(FACES_DIR, f'Qori_Face_{expr}.png')).convert('RGBA')
+    assert overlay.size == _neutral_src.size, f'Qori_Face_{expr} must share the neutral head canvas'
+    fitted, piv = fit_head(overlay, ((_nfb[0]+_nfb[2])/2, (_nfb[1]+_nfb[3])/2), HEAD_SCALE,
+                           OLD_FACE_C['Head_Neutral'], cells['Head_Neutral'][1])
+    nimg, npiv = HEADS['Head_Neutral']
+    assert fitted.size == nimg.size and max(abs(piv[0]-npiv[0]), abs(piv[1]-npiv[1])) < .01
+    # keep the overlay inside the neutral silhouette
+    a = np.array(fitted); a[:, :, 3] = (a[:, :, 3].astype(float) * np.array(nimg)[:, :, 3] / 255).astype(np.uint8)
+    head = nimg.copy(); head.alpha_composite(Image.fromarray(a))
+    return head, npiv
+for _expr in ('Hurt', 'Effort'):
+    if _os.path.exists(_os.path.join(FACES_DIR, f'Qori_Face_{_expr}.png')):
+        _fi, _fp = make_face(_expr)
+        add(f'Head_{_expr}', _fi, _fp, NECK)
+
 # Ears: separate leaves on their own bones, hinged at the base (hidden under the leaf
 # hair) and posed like the old atlas ears. Base = rounded nub (right), tip = left point.
 _npiv = cells['Head_Neutral'][1]
@@ -223,6 +246,34 @@ for side, sh in (('Near', (712, 632)), ('Far', (590, 648))):
         add('ForearmOpen', open_img, op_piv, (ELBOW[0]+off[0], ELBOW[1]+off[1]))
 ARM_INFO = dict(fist_from_elbow=(float(FIST[0]-ELBOW[0]), float(FIST[1]-ELBOW[1])),
                 elbow_from_shoulder=(float(ELBOW[0]-SHOULDER[0]), float(ELBOW[1]-SHOULDER[1])))
+
+# Reach arms for ledge hanging: the same v1 paintings with only the middle of the shaft
+# lengthened, so thickness, joint caps and fist match the normal arms exactly. (Codex's
+# v2 reach arms were painted far thinner and longer, so they aren't used.)
+REACH_UPPER, REACH_FORE = 1.6, 1.8        # joint-to-joint length vs the normal arm
+def stretch_shaft(img, y0, y1, points, factor):
+    """Lengthen rows y0..y1 so the first->last landmark distance grows by `factor`."""
+    (ax, ay), (bx, by) = points[0], points[-1]
+    dy_new = math.sqrt((factor*math.dist(points[0], points[-1]))**2 - (bx-ax)**2)
+    k = 1 + (dy_new - (by-ay)) / (y1-y0)
+    mh = round((y1-y0)*k)
+    mid = img.crop((0, y0, img.width, y1)).convert('RGBa').resize((img.width, mh), Image.LANCZOS).convert('RGBA')
+    out = Image.new('RGBA', (img.width, img.height + mh - (y1-y0)), (0, 0, 0, 0))
+    out.paste(img.crop((0, 0, img.width, y0)), (0, 0)); out.paste(mid, (0, y0))
+    out.paste(img.crop((0, y1, img.width, img.height)), (0, y0+mh))
+    def moved(p): return (p[0], p[1] if p[1] <= y0 else y0+(p[1]-y0)*mh/(y1-y0) if p[1] <= y1 else p[1]+mh-(y1-y0))
+    return out, [moved(p) for p in points]
+UAR_SRC, (UAR_SH, UAR_EL) = stretch_shaft(UA_SRC, 440, 1060, [UA_SH, UA_EL], REACH_UPPER)
+FFR_SRC, (FFR_EL, FFR_WR, FFR_GRIP) = stretch_shaft(FF_SRC, 380, 930, [FF_EL, FF_WR, FF_GRIP], REACH_FORE)
+ELBOW_R = SHOULDER + ARM_SCALE*math.dist(UAR_SH, UAR_EL)*_u1
+FIST_R = ELBOW_R + ARM_SCALE*math.dist(FFR_EL, FFR_GRIP)*_u2
+reach_upper_img, rup_piv, _ = fit(UAR_SRC, UAR_SH, UAR_EL, SHOULDER, ELBOW_R)
+reach_fore_img, rfo_piv, _ = fit(FFR_SRC, FFR_EL, FFR_GRIP, ELBOW_R, FIST_R)
+for side, sh in (('Near', (712, 632)), ('Far', (590, 648))):
+    off = (sh[0]-SHOULDER[0], sh[1]-SHOULDER[1])
+    add(f'UpperArmReach{side}', reach_upper_img, rup_piv, sh)
+    add(f'ForearmReach{side}', reach_fore_img, rfo_piv, (ELBOW_R[0]+off[0], ELBOW_R[1]+off[1]))
+ARM_INFO['reach_fist_from_elbow'] = (float(FIST_R[0]-ELBOW_R[0]), float(FIST_R[1]-ELBOW_R[1]))
 
 # ---------------------------------------------------------------- cape (the three leaf cloak panels)
 # Top-attachment points and scales measured from the old QoriLayeredCloak so the

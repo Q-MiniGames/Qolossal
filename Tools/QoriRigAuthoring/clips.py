@@ -537,23 +537,25 @@ wall_jump_off = keyed([
     (0.45, _OFF_AIR),
 ])
 
-# ---- ledge hang: Qori's arms (reach ~225 px) are shorter than his head is tall (~370 px), so a
-# classic arms-over-head hang can't happen with this art: the grip always lands at chin height and
-# the fists vanish under the face. Instead he hangs "peeking over": chest against the wall, both
-# forearms reaching across the lip with the fists on the ledge top, head up and looking over,
-# legs dangling below with one foot scrabbling on the wall.
+# ---- ledge hang: hanging from the long reach arms (rig bones *Reach*, swapped in by
+# QoriAnimator). Both fists grip the ledge top just behind the lip, the body hangs below with
+# the chest against the wall and the head tipped back looking up, legs dangling with one foot
+# scrabbling on the wall. HANG_DROP lowers the body (and feet) relative to the collider.
 LEDGE_HANG_T = 1.8
+HANG_DROP = -20.0
 def _ledge_hands(cx, cy):
-    return dict(handN=(cx+77, cy+22), elbowN=-1, handF=(cx+37, cy+24), elbowF=-1)
-_hang_base = dict(body_x=102, body_y=200, body_rot=-12, torso_rot=-8, head_rot=24, skirt_rot=8, skirt_sy=1.06, weapon=90,
-                  cape_u=8, cape_l=6, **_ledge_hands(*LEDGE))
+    return dict(handN=(cx+50, cy+20), elbowN=+1, handF=(cx+10, cy+20), elbowF=+1)
+_hang_base = dict(body_x=120, body_y=HANG_DROP, body_rot=-3, torso_rot=-2, head_rot=20, skirt_rot=4, skirt_sy=1.08, weapon=90,
+                  cape_u=14, cape_l=10, **_ledge_hands(*LEDGE))
+_FOOT_N = (foot_x(WALL_X-34), -1010 + HANG_DROP, 70)
+_FOOT_F = (foot_xf(840), -1190 + HANG_DROP, -30)
 def ledge_hang(t):
     p = TAU*t/LEDGE_HANG_T
-    return R(**{**_hang_base, 'body_y': 200 + 6*math.sin(p), 'body_rot': -12 + 1.5*math.sin(p-.6),
-                'torso_rot': -8 + 1.2*math.sin(p-.9), 'head_rot': 24 + 2.5*math.sin(p-1.2),
-                'skirt_rot': 8 + 3*math.sin(p-1.4), 'cape_w': .35*math.sin(p-1.6), 'cape_u': 8 + 4*math.sin(p-1.3),
-                'footN': (foot_x(WALL_X-34), -1010 + 14*math.sin(p-.4), 70 + 6*math.sin(p-.4)),
-                'footF': (foot_xf(830) + 18*math.sin(p-1.0), -1180 + 8*math.sin(p-1.3), -35 + 8*math.sin(p-1.0))})
+    return R(**{**_hang_base, 'body_y': HANG_DROP + 5*math.sin(p), 'body_rot': -3 + 1.5*math.sin(p-.6),
+                'torso_rot': -2 + 1.2*math.sin(p-.9), 'head_rot': 20 + 2.5*math.sin(p-1.2),
+                'skirt_rot': 4 + 3*math.sin(p-1.4), 'cape_w': .35*math.sin(p-1.6), 'cape_u': 14 + 4*math.sin(p-1.3),
+                'footN': (_FOOT_N[0], _FOOT_N[1] + 14*math.sin(p-.4), _FOOT_N[2] + 6*math.sin(p-.4)),
+                'footF': (_FOOT_F[0] + 18*math.sin(p-1.0), _FOOT_F[1] + 8*math.sin(p-1.3), _FOOT_F[2] + 8*math.sin(p-1.0))})
 
 # ---- ledge climb (scrubbed by PlayerMovement.LedgeClimbProgress: 0-.65 up, .65-1 across)
 def ledge_corner(p):
@@ -563,8 +565,8 @@ _TOP = LEDGE[1] - LEDGE_RISE          # ledge top in the body frame once risen (
 _ANK_TOP = _TOP + anim.SOLE
 _climb_body = keyed([
     (0.00, R(**{k: v for k, v in _hang_base.items() if not k.startswith(('hand', 'elbow'))},
-             footN=(foot_x(WALL_X-34), -1010, 70), footF=(foot_xf(830), -1180, -35))),
-    (0.10, R(body_x=108, body_y=150, body_rot=-14, torso_rot=-8, torso_sy=.96, head_rot=26, skirt_sy=1.06, weapon=90,
+             footN=_FOOT_N, footF=_FOOT_F)),
+    (0.10, R(body_x=116, body_y=70, body_rot=-8, torso_rot=-6, torso_sy=.96, head_rot=24, skirt_sy=1.06, weapon=90,
              footN=(foot_x(WALL_X-40), -1030, 80), footF=(foot_xf(860), -1130, 30), cape_u=4, cape_l=4)),
     (0.28, R(body_x=150, body_y=80, body_rot=-18, torso_rot=-18, torso_sy=1.03, head_rot=14, skirt_sy=.96, weapon=90,
              footN=(foot_x(WALL_X-40), -1110, 70), footF=(foot_xf(880), -1180, 40), cape_u=-24, cape_l=-12, cape_w=.5)),

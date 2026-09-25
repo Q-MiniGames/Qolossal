@@ -15,9 +15,15 @@ public sealed class QoriAnimator : MonoBehaviour
     public SpriteRenderer head, weapon;
     public Sprite headNeutral, headUp, headDown, headFocus;
     [Tooltip("Neutral head with closed eyes (same outline), flashed briefly for a blink.")] public Sprite headBlink;
+    [Tooltip("Neutral head with expression overlays (same outline): squeezed shut after a hit, gritted for effort.")] public Sprite headHurt, headEffort;
+    [Tooltip("How long the hurt face shows after taking damage.")] public float hurtFaceSeconds = .45f;
     [Tooltip("The free (camera-side) forearm: open hand normally, fist while hanging.")] public SpriteRenderer freeForearm;
     public Sprite freeFist, freeOpen;
     public SpriteRenderer[] renderers;
+    [Tooltip("Normal arm segments, and the long reach arms shown instead while hanging from a ledge.")]
+    public SpriteRenderer[] normalArms, reachArms;
+    [Tooltip("LedgeClimb progress where the reach arms hand back to the normal arms (hands have let go).")]
+    public float reachArmsUntil = .65f;
 
     [Header("Locomotion")]
     [Tooltip("Below this horizontal speed Qori idles.")] public float idleBelow = .25f;
@@ -236,8 +242,12 @@ public sealed class QoriAnimator : MonoBehaviour
         // Look up / grip with the fists while hanging, pulling up (early part) or jumping up a wall.
         bool gripping = attached || movement.IsLedgeHanging || (movement.IsLedgeClimbing && movement.LedgeClimbProgress < .45f)
                         || (wallJumping && !wallJumpAway);
-        UpdateHead(attacking, gripping, grounded, velocity);
+        // Strain: a heavy smash winding up or striking, pulling up a ledge, or jumping up a wall.
+        bool effort = (attacking && WeaponFamily(combat.CurrentAttack) == "Mace" && combat.Phase != AttackPhase.Recovery)
+                      || (movement.IsLedgeClimbing && movement.LedgeClimbProgress < .65f) || (wallJumping && !wallJumpAway);
+        UpdateHead(attacking, gripping, grounded, velocity, effort);
         UpdateWeapon(hanging || ledge || movement.IsWallSliding || (wallJumping && !wallJumpAway));
+        UpdateArms(movement.IsLedgeHanging || (movement.IsLedgeClimbing && movement.LedgeClimbProgress < reachArmsUntil));
         UpdateTint();
     }
 
@@ -410,11 +420,14 @@ public sealed class QoriAnimator : MonoBehaviour
         if (facingPivot != null) facingPivot.localRotation = Quaternion.Euler(0f, 0f, ropeTilt);
     }
 
-    void UpdateHead(bool attacking, bool hanging, bool grounded, Vector2 velocity)
+    void UpdateHead(bool attacking, bool hanging, bool grounded, Vector2 velocity, bool effort)
     {
         if (head == null) return;
         Sprite s = headNeutral;
-        if (attacking)
+        // Expressions are drawn on the neutral head, so they take priority over the look-direction heads.
+        if (headHurt != null && health != null && Time.time - health.LastHitTime < hurtFaceSeconds) s = headHurt;
+        else if (headEffort != null && effort) s = headEffort;
+        else if (attacking)
         {
             AttackAim aim = combat.CurrentAttack.direction;
             s = aim == AttackAim.Up ? headUp : aim == AttackAim.Down ? headDown : headFocus;
@@ -438,6 +451,14 @@ public sealed class QoriAnimator : MonoBehaviour
             Sprite hand = hanging ? freeFist : freeOpen;   // grips the rope / ledge, relaxed otherwise
             if (freeForearm.sprite != hand) freeForearm.sprite = hand;
         }
+    }
+
+    // The ledge clips solve both arm sets to the same hands; only one set is drawn.
+    void UpdateArms(bool reach)
+    {
+        if (reachArms == null || reachArms.Length == 0) return;
+        foreach (SpriteRenderer arm in normalArms) if (arm != null && arm.enabled == reach) arm.enabled = !reach;
+        foreach (SpriteRenderer arm in reachArms) if (arm != null && arm.enabled != reach) arm.enabled = reach;
     }
 
     void UpdateWeapon(bool hanging)

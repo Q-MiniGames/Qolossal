@@ -49,6 +49,15 @@ for side, tint, base in (('Near', .72, 0), ('Far', 1.0, 15)):
     bone(f'UpperArm{side}', 'Torso', J(f'UpperArm{side}'), f'UpperArm{side}', base, tint)
     bone(f'Forearm{side}', f'UpperArm{side}', J(f'Forearm{side}'), f'Forearm{side}', base+2 if side == 'Near' else base+1, tint)
     bone(f'Hand{side}', f'Forearm{side}', J(f'Forearm{side}')+FIST_OFF)
+# Reach arms: longer chains on the same shoulders, shown instead of the normal arms while
+# hanging from a ledge (QoriAnimator swaps them). They solve to the same hand targets.
+# Both reach arms go up BEHIND the big head (the far one still in front of the torso), so
+# the arms never cross the face while he hangs.
+for side, tint, base in (('Near', .72, 0), ('Far', 1.0, 11)):
+    if f'UpperArmReach{side}' not in PARTS: continue
+    bone(f'UpperArmReach{side}', 'Torso', J(f'UpperArmReach{side}'), f'UpperArmReach{side}', base, tint)
+    bone(f'ForearmReach{side}', f'UpperArmReach{side}', J(f'ForearmReach{side}'), f'ForearmReach{side}', base+2 if side == 'Near' else base+1, tint)
+REACH_ARM_BONES = [b for b in BONES if 'Reach' in b]
 bone('WeaponMount', 'HandNear', J('ForearmNear')+FIST_OFF, 'Weapon', 1)   # between the weapon arm's upper arm (0) and fist (2)
 for side, tint, base in (('Near', .76, 2), ('Far', 1.0, 6)):   # camera-side leg (hip on the back edge) in front
     bone(f'Thigh{side}', 'Body', J(f'Thigh{side}'), f'Thigh{side}', base, tint)

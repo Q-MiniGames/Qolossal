@@ -176,9 +176,23 @@ public static class QoriRigBuilder
             sprites.TryGetValue("Head_Down", out q.headDown);
             sprites.TryGetValue("Head_Focus", out q.headFocus);
             sprites.TryGetValue("Head_Blink", out q.headBlink);
+            sprites.TryGetValue("Head_Hurt", out q.headHurt);
+            sprites.TryGetValue("Head_Effort", out q.headEffort);
             q.freeForearm = bones.TryGetValue("ForearmFar", out Transform freeFore) ? freeFore.GetComponent<SpriteRenderer>() : null;
             sprites.TryGetValue("ForearmFar", out q.freeFist);
             sprites.TryGetValue("ForearmOpen", out q.freeOpen);
+            SpriteRenderer[] ArmRenderers(bool reach)
+            {
+                var list = new List<SpriteRenderer>();
+                foreach (string side in new[] { "Near", "Far" })
+                    foreach (string segment in new[] { "UpperArm", "Forearm" })
+                        if (bones.TryGetValue(segment + (reach ? "Reach" : "") + side, out Transform arm) && arm.TryGetComponent(out SpriteRenderer r))
+                            list.Add(r);
+                return list.ToArray();
+            }
+            q.normalArms = ArmRenderers(false);
+            q.reachArms = ArmRenderers(true);
+            foreach (SpriteRenderer arm in q.reachArms) arm.enabled = false;   // shown only while hanging from a ledge
             var ears = new List<Transform>();
             foreach (string ear in new[] { "EarUpper", "EarLower" }) if (bones.TryGetValue(ear, out Transform e)) ears.Add(e);
             q.ears = ears.ToArray();

@@ -33,6 +33,13 @@ for s in ('Near', 'Far'):
     S_, E, F = B[f'UpperArm{s}']['pos'], B[f'Forearm{s}']['pos'], B[f'Hand{s}']['pos']
     ARM[s] = dict(l1=np.linalg.norm(E-S_), l2=np.linalg.norm(F-E), a1=rest_dir(E, S_), a2=rest_dir(F, E))
 
+REACH = {}
+for s in ('Near', 'Far'):
+    if f'UpperArmReach{s}' not in B: continue
+    S_, E = B[f'UpperArmReach{s}']['pos'], B[f'ForearmReach{s}']['pos']
+    F = E + np.array([rig.META['arm']['reach_fist_from_elbow'][0], -rig.META['arm']['reach_fist_from_elbow'][1]])
+    REACH[s] = dict(l1=np.linalg.norm(E-S_), l2=np.linalg.norm(F-E), a1=rest_dir(E, S_), a2=rest_dir(F, E))
+
 def two_bone(root, target, l1, l2, bend):
     """Return (angle1, angle2) world directions. bend=+1 rotates the first bone CCW
     from the root->target line (knee forward for a downward leg)."""
@@ -88,6 +95,12 @@ def pose_from_controls(c):
         else:
             r1 = c['arm'+s[0]+'_rot'] or 0.0; r2 = c['fore'+s[0]+'_rot'] or 0.0
         pose[f'UpperArm{s}'] = dict(rot=r1); pose[f'Forearm{s}'] = dict(rot=r2)
+        if s in REACH:   # the long ledge arms reach for the same hand target
+            A = REACH[s]
+            if c[key] is not None:
+                a1, a2 = two_bone(W[f'UpperArmReach{s}'][:, 2], np.array(c[key]), A['l1'], A['l2'], c['elbow'+s[0]])
+                r1 = a1 - A['a1'] - torso_w; r2 = a2 - A['a2'] - (a1 - A['a1'])
+            pose[f'UpperArmReach{s}'] = dict(rot=r1); pose[f'ForearmReach{s}'] = dict(rot=r2)
     for i, cp in enumerate(rig.CAPES):
         pose[cp] = dict(rot=c['cape_u'] + CAPE_SPREAD[i] + CAPE_WAVE_U[i]*c['cape_w'])
         pose[cp + 'Lower'] = dict(rot=c['cape_l'] + CAPE_WAVE_L[i]*c['cape_w'])

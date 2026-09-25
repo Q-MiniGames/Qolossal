@@ -43,3 +43,7 @@ crashlytics-build.properties
 # Codex staging area: Codex writes here continuously. Accepted art is
 # imported into Assets/ by the import tool, so only that copy is tracked.
 /Tools/IncomingArt/
+
+# Rig authoring scratch output
+/Tools/QoriRigAuthoring/work/
+__pycache__/

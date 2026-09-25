@@ -17,7 +17,7 @@ data = dict(version=1, pixelsPerUnit=100, weaponRestAngle=rig.WEAPON_REST_ANGLE,
 
 used = sorted({b['part'] for b in rig.BONES.values() if b['part'] and b['part'] != 'Weapon'} |
               {'Head_Neutral', 'Head_Up', 'Head_Down', 'Head_Focus'} |
-              ({'Head_Blink', 'ForearmOpen'} & set(rig.PARTS)))
+              ({'Head_Blink', 'Head_Hurt', 'Head_Effort', 'ForearmOpen'} & set(rig.PARTS)))
 for p in used:
     meta = rig.PARTS[p]
     w, h = meta['size']; px, py = meta['pivot']
