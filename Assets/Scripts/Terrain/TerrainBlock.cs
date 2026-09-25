@@ -29,6 +29,9 @@ public sealed class TerrainBlock : MonoBehaviour
     private readonly List<Object> owned = new List<Object>();
     private Transform art;
     private bool dirty;
+    private bool roughLeft, roughRight;
+    const float ChipStep = .3f, ChipMin = .02f, ChipMax = .26f;   // chipped-edge rhythm and depth (world units)
+    const float RimWidth = .16f, RimShade = .62f;                  // darker rim along chipped edges
 
     private void OnEnable() => Rebuild();
     private void OnDisable() => Clear();
@@ -64,6 +67,8 @@ public sealed class TerrainBlock : MonoBehaviour
         // Keep the fill back from painted faces so their irregular outline isn't boxed in.
         float fillLeft = rock && leftFace ? FaceFillInset : 0f, fillRight = rock && rightFace ? FaceFillInset : 0f;
         float fillBottom = rock && bottom ? CeilingFillInset : 0f;
+        // Exposed sides with no painted face (climbable / slippery walls) get a chipped silhouette.
+        roughLeft = leftFace && !rock; roughRight = rightFace && !rock;
         Quad("Fill", fill, new Rect(fillLeft, -height + fillBottom, width - fillLeft - fillRight, height - fillBottom),
             true, true, false, FillOrder, new Vector4(blendLeft, blendRight, 0f, 0f));
 
@@ -129,6 +134,12 @@ public sealed class TerrainBlock : MonoBehaviour
         float ppu = Ppu(sprite);
         Vector2 tile = new Vector2(sprite.rect.width / ppu, sprite.rect.height / ppu);
         Vector3 origin = transform.position;
+        bool chipLeft = roughLeft && Mathf.Abs(rect.xMin) < .001f, chipRight = roughRight && Mathf.Abs(rect.xMax - width) < .001f;
+        if ((chipLeft || chipRight) && !mirrorU)
+        {
+            ChippedQuad(obj, sprite, rect, worldU, worldV, order, fade, chipLeft, chipRight, tile, origin);
+            return;
+        }
         float[] xs = { rect.xMin, rect.xMin + Mathf.Min(fade.x, rect.width * .5f), rect.xMax - Mathf.Min(fade.y, rect.width * .5f), rect.xMax };
         float[] ys = { rect.yMin, rect.yMin + Mathf.Min(fade.z, rect.height * .5f), rect.yMax - Mathf.Min(fade.w, rect.height * .5f), rect.yMax };
         var vertices = new Vector3[16];
@@ -166,6 +177,75 @@ public sealed class TerrainBlock : MonoBehaviour
         var block = new MaterialPropertyBlock();
         block.SetTexture(MainTex, sprite.texture);
         renderer.SetPropertyBlock(block);
+    }
+
+    // A quad whose left/right edges follow a chipped-rock profile. Rows follow the chip rhythm
+    // plus the vertical fade boundaries; alpha fades along y exactly like Quad.
+    private void ChippedQuad(GameObject obj, Sprite sprite, Rect rect, bool worldU, bool worldV, int order, Vector4 fade,
+        bool chipLeft, bool chipRight, Vector2 tile, Vector3 origin)
+    {
+        var rows = new List<float> { rect.yMin, rect.yMax };
+        if (fade.z > 0f) rows.Add(rect.yMin + Mathf.Min(fade.z, rect.height * .5f));
+        if (fade.w > 0f) rows.Add(rect.yMax - Mathf.Min(fade.w, rect.height * .5f));
+        for (float y = Mathf.Ceil((origin.y + rect.yMin) / (ChipStep * .25f)) * ChipStep * .25f - origin.y; y < rect.yMax; y += ChipStep * .25f)
+            if (y > rect.yMin) rows.Add(y);
+        rows.Sort();
+        var vertices = new List<Vector3>(); var uv = new List<Vector2>(); var colors = new List<Color>(); var triangles = new List<int>();
+        foreach (float y in rows)
+        {
+            float alpha = 1f;
+            if (fade.z > 0f) alpha = Mathf.Min(alpha, Mathf.Clamp01((y - rect.yMin) / Mathf.Min(fade.z, rect.height * .5f)));
+            if (fade.w > 0f) alpha = Mathf.Min(alpha, Mathf.Clamp01((rect.yMax - y) / Mathf.Min(fade.w, rect.height * .5f)));
+            float worldY = origin.y + y;
+            float left = rect.xMin + (chipLeft ? Chip(worldY, origin.x + rect.xMin) : 0f);
+            float right = rect.xMax - (chipRight ? Chip(worldY, origin.x + rect.xMax + 17.3f) : 0f);
+            // Darken a narrow rim along chipped edges so the cut reads as a rock edge with depth.
+            float rimLeft = chipLeft ? Mathf.Min(RimWidth, (right - left) * .3f) : 0f, rimRight = chipRight ? Mathf.Min(RimWidth, (right - left) * .3f) : 0f;
+            float[] xs = { left, left + rimLeft, right - rimRight, right };
+            float[] shade = { chipLeft ? RimShade : 1f, 1f, 1f, chipRight ? RimShade : 1f };
+            for (int c = 0; c < 4; c++)
+            {
+                float x = xs[c];
+                vertices.Add(new Vector3(x, y));
+                float u = worldU ? (origin.x + x) / tile.x : (x - rect.xMin) / rect.width;
+                float v = worldV ? worldY / tile.y : (y - rect.yMin) / rect.height;
+                uv.Add(new Vector2(u, v));
+                colors.Add(new Color(shade[c], shade[c], shade[c], alpha));
+            }
+        }
+        for (int i = 0; i + 1 < rows.Count; i++)
+            for (int c = 0; c < 3; c++)
+            {
+                int a = i * 4 + c;
+                triangles.AddRange(new[] { a, a + 4, a + 1, a + 1, a + 4, a + 5 });
+            }
+        var mesh = new Mesh { name = obj.name, hideFlags = HideFlags.DontSave };
+        mesh.SetVertices(vertices); mesh.SetUVs(0, uv); mesh.SetColors(colors); mesh.SetTriangles(triangles, 0);
+        mesh.RecalculateBounds();
+        owned.Add(mesh);
+        obj.AddComponent<MeshFilter>().sharedMesh = mesh;
+        var renderer = obj.AddComponent<MeshRenderer>();
+        renderer.sharedMaterial = TerrainMaterial.Shared;
+        renderer.sortingOrder = order + sortingOffset;
+        var block = new MaterialPropertyBlock();
+        block.SetTexture(MainTex, sprite.texture);
+        renderer.SetPropertyBlock(block);
+    }
+
+    // Inward chip depth at a world height: two octaves of piecewise-linear value noise (large
+    // slabs and small chips, so it reads as broken rock rather than a regular zigzag) plus a slow lean.
+    private static float Chip(float worldY, float seed)
+    {
+        float Value(float t, float salt)
+        {
+            int i = Mathf.FloorToInt(t);
+            float Hash(int k) => Mathf.Abs(Mathf.Sin(k * 12.9898f + seed * 78.233f + salt) * 43758.5453f) % 1f;
+            return Mathf.Lerp(Hash(i), Hash(i + 1), t - i);
+        }
+        float slabs = Value(worldY / (ChipStep * 3.1f), 3.7f), chips = Value(worldY / (ChipStep * .83f), 9.1f);
+        float lean = .5f + .5f * Mathf.Sin(worldY * .37f + seed);
+        float n = Mathf.Clamp01(.5f * slabs + .32f * chips * chips + .18f * lean);
+        return Mathf.Lerp(ChipMin, ChipMax, n);
     }
 
     private void Clear()

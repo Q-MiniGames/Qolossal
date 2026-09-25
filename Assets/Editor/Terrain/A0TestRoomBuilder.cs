@@ -86,8 +86,8 @@ public static class A0TestRoomBuilder
         Piece("Floating S", TerrainPiece.Kind.FloatingSmall, 47f, 0f);
 
         // Wall columns: wall jumps work on the climbable one and not on the slippery one.
-        Block("Climbable Column", 54f, 5f, 3f, 10f, 20, surface: TerrainBlock.Surface.Climbable);
-        Block("Slippery Column", 60f, 5f, 3f, 10f, 20, surface: TerrainBlock.Surface.Slippery);
+        Block("Climbable Column", 54f, 5f, 3f, 10f, 20, left: true, right: true, surface: TerrainBlock.Surface.Climbable);
+        Block("Slippery Column", 60f, 5f, 3f, 10f, 20, left: true, right: true, surface: TerrainBlock.Surface.Slippery);
 
         // End: a tall rock plateau with ledges on both sides, reached by climbing its left face.
         Block("End Plateau", 66f, 9f, 20f, 23f, 10, left: true, right: true);
