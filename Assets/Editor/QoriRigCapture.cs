@@ -139,4 +139,56 @@ public static class QoriRigCapture
         File.WriteAllBytes(Path.Combine(folder, "standing.png"), read.EncodeToPNG());
         camera.targetTexture = null; RenderTexture.active = null;
     }
+
+    // Walk/run frames on the A0 slope, without and with foot grounding (top and bottom rows).
+    // Usage: -executeMethod QoriRigCapture.CaptureSlope -captureDir <folder>
+    public static void CaptureSlope()
+    {
+        string[] args = Environment.GetCommandLineArgs();
+        int index = Array.IndexOf(args, "-captureDir");
+        string folder = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Temp/QoriCaptures";
+        Directory.CreateDirectory(folder);
+        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        foreach (TerrainBlock block in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
+        foreach (TerrainPiece piece in UnityEngine.Object.FindObjectsByType<TerrainPiece>(FindObjectsSortMode.None)) piece.Rebuild();
+        GameObject player = GameObject.Find("Player");
+        var movement = player.GetComponent<PlayerMovement>();
+        var collider = player.GetComponent<BoxCollider2D>();
+        Vector2 extents = Vector2.Scale(collider.size, (Vector2)player.transform.lossyScale) * .5f;
+        var animator = player.GetComponentInChildren<QoriAnimator>(true);
+        Vector3 s = player.transform.lossyScale;
+        animator.transform.localScale = new Vector3(1f / s.x, 1f / s.y, 1f);
+        animator.head.sprite = animator.headNeutral;
+        foreach (SpriteRenderer r in animator.reachArms) r.enabled = false;
+        var clips = AssetDatabase.FindAssets("t:AnimationClip", new[] { "Assets/Art/Characters/QoriRig/Clips" })
+            .Select(g => AssetDatabase.LoadAssetAtPath<AnimationClip>(AssetDatabase.GUIDToAssetPath(g))).ToDictionary(c => c.name);
+        int mask = LayerMask.GetMask("Ground");
+        Camera camera = Camera.main; camera.aspect = 1f; camera.orthographicSize = 1.3f;
+        (string clip, float t, float x)[] shots = { ("Idle", 0f, 17f), ("Walk", .1f, 17f), ("Walk", .35f, 17f), ("Run", .15f, 17f), ("Run", .4f, 17f) };
+        const int size = 500;
+        var sheet = new Texture2D(size * shots.Length, size * 2, TextureFormat.RGB24, false);
+        var target = new RenderTexture(size, size, 24);
+        var read = new Texture2D(size, size, TextureFormat.RGB24, false);
+        for (int row = 0; row < 2; row++)
+            for (int i = 0; i < shots.Length; i++)
+            {
+                float x = shots[i].x;
+                float bottom = Mathf.Max(Physics2D.Raycast(new Vector2(x - extents.x, 30f), Vector2.down, 60f, mask).point.y,
+                                         Physics2D.Raycast(new Vector2(x + extents.x, 30f), Vector2.down, 60f, mask).point.y);
+                player.transform.position = new Vector3(x, bottom + extents.y, 0f);
+                Physics2D.SyncTransforms();
+                clips["Qori_" + shots[i].clip].SampleAnimation(animator.animator.gameObject, shots[i].t);
+                if (animator.weapon != null) animator.weapon.enabled = false;
+                if (row == 1) new QoriFootGrounding(animator.animator.transform, movement).Apply(true, 1f);
+                camera.transform.position = new Vector3(x, bottom + .7f, -10f);
+                foreach (ParallaxLayer layer in UnityEngine.Object.FindObjectsByType<ParallaxLayer>(FindObjectsSortMode.None)) layer.Refresh(camera);
+                camera.targetTexture = target; camera.Render(); RenderTexture.active = target;
+                read.ReadPixels(new Rect(0, 0, size, size), 0, 0); read.Apply();
+                sheet.SetPixels(i * size, (1 - row) * size, size, size, read.GetPixels());
+            }
+        sheet.Apply();
+        camera.targetTexture = null; RenderTexture.active = null;
+        File.WriteAllBytes(Path.Combine(folder, "slope_feet.png"), sheet.EncodeToPNG());
+        Debug.Log("[QoriRigCapture] Slope capture written");
+    }
 }

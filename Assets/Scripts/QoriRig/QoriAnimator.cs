@@ -105,6 +105,7 @@ public sealed class QoriAnimator : MonoBehaviour
     WeaponDefinition shownWeapon; bool weaponShown;
     float[] earAngle, earVelocity; Quaternion[] earBase, earSet;
     float nextBlink, blinkUntil;
+    QoriFootGrounding feet;
     int launchVersion, playedLaunch = -1; float wallJumpUntil, lastWallDirection; bool wallJumpAway;
 
     public bool Ready => isActiveAndEnabled && animator != null && movement != null;
@@ -136,6 +137,7 @@ public sealed class QoriAnimator : MonoBehaviour
         baseColors = new Color[renderers.Length];
         for (int i = 0; i < renderers.Length; i++) baseColors[i] = renderers[i] != null ? renderers[i].color : Color.white;
         CancelParentScale();
+        if (animator != null) feet = new QoriFootGrounding(animator.transform, movement);
         landingVersion = movement.LandingVersion;
         resetVersion = movement.ResetVersion;
         launchVersion = movement.LaunchVersion;
@@ -274,6 +276,7 @@ public sealed class QoriAnimator : MonoBehaviour
         lastVelocity = velocity; hasLastVelocity = true;
         smoothedAcceleration = Vector2.Lerp(smoothedAcceleration, raw, 1f - Mathf.Exp(-dt / .06f));
         float forwardAcceleration = Mathf.Clamp(smoothedAcceleration.x * facing, -90f, 90f);
+        feet?.Apply(movement.IsGrounded && !movement.IsLedgeHanging && !movement.IsLedgeClimbing && !movement.IsWallSliding, dt);
         UpdateEars(dt, velocity, forwardAcceleration);
         UpdateCape(dt, forwardAcceleration);
     }

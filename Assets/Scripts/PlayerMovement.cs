@@ -364,9 +364,6 @@ public sealed class PlayerMovement : MonoBehaviour
                 if (groundHits[i].normal.y > 0.65f)
                 {
                     if (groundHits[i].distance <= groundCheckDistance) grounded = true;
-                    // Stay on the surface over slope kinks and downhill instead of hopping off it.
-                    else if (wasGrounded && groundHits[i].distance <= GroundSnapDistance)
-                    { grounded = true; snapDistance = Mathf.Max(snapDistance, groundHits[i].distance - groundCheckDistance * .5f); }
                     if (groundHits[i].distance < nearestGround)
                     {
                         nearestGround = groundHits[i].distance;
@@ -376,6 +373,13 @@ public sealed class PlayerMovement : MonoBehaviour
                 }
         }
 
+        // Stay on the surface over slope kinks and downhill instead of hopping off it: pull down
+        // to the nearest surface below, only when not already touching one.
+        if (!grounded && wasGrounded && nearestGround <= GroundSnapDistance)
+        {
+            grounded = true;
+            snapDistance = Mathf.Max(0f, nearestGround - groundCheckDistance * .5f);
+        }
         if (grounded)
             lastGroundedTime = Time.time;
 
