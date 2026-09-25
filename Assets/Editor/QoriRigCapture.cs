@@ -164,7 +164,7 @@ public static class QoriRigCapture
             .Select(g => AssetDatabase.LoadAssetAtPath<AnimationClip>(AssetDatabase.GUIDToAssetPath(g))).ToDictionary(c => c.name);
         int mask = LayerMask.GetMask("Ground");
         Camera camera = Camera.main; camera.aspect = 1f; camera.orthographicSize = 1.3f;
-        (string clip, float t, float x)[] shots = { ("Idle", 0f, 17f), ("Walk", .1f, 17f), ("Walk", .35f, 17f), ("Run", .15f, 17f), ("Run", .4f, 17f) };
+        (string clip, float t, float x)[] shots = { ("Idle", 0f, 17f), ("Walk", .1f, 17f), ("Run", .4f, 17f), ("Idle", 0f, 22.3f), ("Idle", 0f, 23.8f), ("Walk", .35f, 25.2f) };
         const int size = 500;
         var sheet = new Texture2D(size * shots.Length, size * 2, TextureFormat.RGB24, false);
         var target = new RenderTexture(size, size, 24);

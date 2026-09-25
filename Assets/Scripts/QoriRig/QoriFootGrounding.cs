@@ -14,6 +14,7 @@ public sealed class QoriFootGrounding
     readonly Leg[] legs;
     readonly PlayerMovement movement;
     readonly Collider2D playerCollider;
+    readonly Rigidbody2D body2D;
     readonly int groundMask;
     float weight;
     Vector3 lastBodyWrite, lastBodyShift;   // undo our hip drop if the Animator didn't rewrite Body
@@ -25,12 +26,13 @@ public sealed class QoriFootGrounding
         this.root = root;
         this.movement = movement;
         playerCollider = movement.GetComponent<Collider2D>();
+        body2D = movement.GetComponent<Rigidbody2D>();
         groundMask = LayerMask.GetMask("Ground");
         body = Find(root, "Body");
         legs = new[] { MakeLeg("Near"), MakeLeg("Far") };
     }
 
-    public bool Valid => body != null && legs[0] != null && legs[1] != null && playerCollider != null;
+    public bool Valid => body != null && legs[0] != null && legs[1] != null && playerCollider != null && body2D != null;
 
     Leg MakeLeg(string side)
     {
@@ -53,7 +55,9 @@ public sealed class QoriFootGrounding
         weight = Mathf.MoveTowards(weight, enabled ? 1f : 0f, dt / BlendSeconds);
         if (weight <= 0f) return;
 
-        float flatY = playerCollider.bounds.min.y;
+        // The collider follows the physics body, but Qori is drawn at the interpolated transform;
+        // measure from the drawn position or the hips jitter every rendered frame.
+        float flatY = playerCollider.bounds.min.y + (movement.transform.position.y - body2D.position.y);
         var offsets = new float[2];
         for (int i = 0; i < 2; i++)
         {

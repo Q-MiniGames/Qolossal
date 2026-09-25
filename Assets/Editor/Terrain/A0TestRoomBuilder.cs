@@ -176,6 +176,7 @@ public static class A0TestRoomBuilder
         kit.floatingSmall = Load("A0_Platform_Floating_S");
         kit.floatingMedium = Load("A0_Platform_Floating_M");
         kit.floatingLarge = Load("A0_Platform_Floating_L");
+        kit.slopeSurface = ScriptableObject.CreateInstance<TerrainKit>().slopeSurface;   // take the code's measured outline
         EditorUtility.SetDirty(kit);
         return kit;
     }
