@@ -542,17 +542,17 @@ wall_jump_off = keyed([
 # the chest against the wall and the head tipped back looking up, legs dangling with one foot
 # scrabbling on the wall. HANG_DROP lowers the body (and feet) relative to the collider.
 LEDGE_HANG_T = 1.8
-HANG_DROP = -20.0
+HANG_DROP = -10.0
 def _ledge_hands(cx, cy):
-    return dict(handN=(cx+50, cy+20), elbowN=+1, handF=(cx+10, cy+20), elbowF=+1)
-_hang_base = dict(body_x=120, body_y=HANG_DROP, body_rot=-3, torso_rot=-2, head_rot=20, skirt_rot=4, skirt_sy=1.08, weapon=90,
+    return dict(handN=(cx+40, cy+30), elbowN=+1, handF=(cx+5, cy+34), elbowF=-1)
+_hang_base = dict(body_x=110, body_y=HANG_DROP, body_rot=-3, torso_rot=-2, head_rot=45, skirt_rot=4, skirt_sy=1.08, weapon=90,
                   cape_u=14, cape_l=10, **_ledge_hands(*LEDGE))
 _FOOT_N = (foot_x(WALL_X-34), -1010 + HANG_DROP, 70)
 _FOOT_F = (foot_xf(840), -1190 + HANG_DROP, -30)
 def ledge_hang(t):
     p = TAU*t/LEDGE_HANG_T
     return R(**{**_hang_base, 'body_y': HANG_DROP + 5*math.sin(p), 'body_rot': -3 + 1.5*math.sin(p-.6),
-                'torso_rot': -2 + 1.2*math.sin(p-.9), 'head_rot': 20 + 2.5*math.sin(p-1.2),
+                'torso_rot': -2 + 1.2*math.sin(p-.9), 'head_rot': 45 + 2.5*math.sin(p-1.2),
                 'skirt_rot': 4 + 3*math.sin(p-1.4), 'cape_w': .35*math.sin(p-1.6), 'cape_u': 14 + 4*math.sin(p-1.3),
                 'footN': (_FOOT_N[0], _FOOT_N[1] + 14*math.sin(p-.4), _FOOT_N[2] + 6*math.sin(p-.4)),
                 'footF': (_FOOT_F[0] + 18*math.sin(p-1.0), _FOOT_F[1] + 8*math.sin(p-1.3), _FOOT_F[2] + 8*math.sin(p-1.0))})

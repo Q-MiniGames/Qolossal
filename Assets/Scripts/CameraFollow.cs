@@ -12,6 +12,11 @@ public sealed class CameraFollow : MonoBehaviour
     [SerializeField, Min(0f)] private float horizontalLookAhead = 1.9f;
     [SerializeField, Min(0f)] private float velocityLeadSeconds = .32f;
     [SerializeField, Min(.01f)] private float lookAheadSmoothTime = .22f;
+    [Tooltip("Extra downward lead while falling fast, so Qori can see where he lands.")]
+    [SerializeField, Min(0f)] private float fallLookAhead = 2.2f;
+    [Tooltip("The player never drifts further from the screen centre than this share of the half-height.")]
+    [SerializeField, Range(.2f, 1f)] private float verticalScreenLimit = .55f;
+    private Camera view;
     private Vector2 lookAhead,lookVelocity;
     private float retainedHorizontalLead;
     private Transform cachedTarget;
@@ -55,7 +60,9 @@ public sealed class CameraFollow : MonoBehaviour
             if(Mathf.Sign(requested)!=Mathf.Sign(retainedHorizontalLead))retainedHorizontalLead=requested;
             else if(Mathf.Abs(requested)>Mathf.Abs(retainedHorizontalLead))retainedHorizontalLead=requested;
         }
-        Vector2 lead=new Vector2(retainedHorizontalLead,Mathf.Clamp(velocity.y*.055f,-.6f,.8f));
+        // Falling: lead further down as speed builds (from ~6 u/s), up to fallLookAhead.
+        float fallLead=velocity.y<-6f?-Mathf.Min(fallLookAhead,(-velocity.y-6f)*.16f):0f;
+        Vector2 lead=new Vector2(retainedHorizontalLead,Mathf.Clamp(velocity.y*.055f,-.6f,.8f)+fallLead);
         if(thread!=null && thread.IsAttached)
         {
             Vector2 anchor=thread.AnchorPosition-(Vector2)target.position;
@@ -82,8 +89,15 @@ public sealed class CameraFollow : MonoBehaviour
         }
         if(Time.deltaTime<=0)return;
 
-        transform.position = Vector3.SmoothDamp(
+        Vector3 next = Vector3.SmoothDamp(
             transform.position, desiredPosition, ref smoothingVelocity,
             smoothTime, Mathf.Infinity, Time.deltaTime);
+        // Smoothing lags a fast fall; never let Qori leave the middle band of the screen.
+        if(view==null)view=GetComponent<Camera>();
+        float band=view.orthographicSize*verticalScreenLimit;
+        float playerY=target.position.y;
+        if(next.y-playerY>band){next.y=playerY+band;smoothingVelocity.y=Mathf.Min(smoothingVelocity.y,velocity.y);}
+        else if(playerY-next.y>band){next.y=playerY-band;smoothingVelocity.y=Mathf.Max(smoothingVelocity.y,velocity.y);}
+        transform.position = next;
     }
 }

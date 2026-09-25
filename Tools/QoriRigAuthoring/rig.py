@@ -51,9 +51,9 @@ for side, tint, base in (('Near', .72, 0), ('Far', 1.0, 15)):
     bone(f'Hand{side}', f'Forearm{side}', J(f'Forearm{side}')+FIST_OFF)
 # Reach arms: longer chains on the same shoulders, shown instead of the normal arms while
 # hanging from a ledge (QoriAnimator swaps them). They solve to the same hand targets.
-# Both reach arms go up BEHIND the big head (the far one still in front of the torso), so
-# the arms never cross the face while he hangs.
-for side, tint, base in (('Near', .72, 0), ('Far', 1.0, 11)):
+# The near reach arm goes up behind the torso and head; the far (camera-side) one is drawn in
+# front of the head, running up along the jaw so the grip reads clearly.
+for side, tint, base in (('Near', .72, 0), ('Far', 1.0, 15)):
     if f'UpperArmReach{side}' not in PARTS: continue
     bone(f'UpperArmReach{side}', 'Torso', J(f'UpperArmReach{side}'), f'UpperArmReach{side}', base, tint)
     bone(f'ForearmReach{side}', f'UpperArmReach{side}', J(f'ForearmReach{side}'), f'ForearmReach{side}', base+2 if side == 'Near' else base+1, tint)

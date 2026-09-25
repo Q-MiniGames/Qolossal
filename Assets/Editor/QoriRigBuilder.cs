@@ -281,17 +281,18 @@ public static class QoriRigBuilder
 
             var instance = (GameObject)PrefabUtility.InstantiatePrefab(rigPrefab, player.transform);
             instance.name = "QoriRig";
-            instance.transform.localPosition = new Vector3(0f, legacyPosition.y, 0f);
-            instance.transform.localRotation = Quaternion.identity;
-            instance.transform.localScale = new Vector3(1f / Mathf.Max(1e-4f, Mathf.Abs(playerScale.x)), 1f / Mathf.Max(1e-4f, Mathf.Abs(playerScale.y)), 1f);
+            // Revert first: reverting the Animator also drops the placement set below, which left
+            // Qori drawn 0.24 u too low (feet below the walk line, ledge hang misaligned).
             Transform root = instance.transform.Find("Facing/Root");
-            root.localPosition = new Vector3(legacyPosition.x * playerScale.x, 0f, 0f);
-            root.localScale = new Vector3(rigScale, rigScale, 1f);
-            // Never let the Player carry an Animator override: always use the rig's controller.
             var rigAnimator = root.GetComponent<Animator>();
             PrefabUtility.RevertObjectOverride(rigAnimator, InteractionMode.AutomatedAction);
             if (rigAnimator.runtimeAnimatorController == null)
                 rigAnimator.runtimeAnimatorController = AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(ControllerPath);
+            instance.transform.localPosition = new Vector3(0f, legacyPosition.y, 0f);
+            instance.transform.localRotation = Quaternion.identity;
+            instance.transform.localScale = new Vector3(1f / Mathf.Max(1e-4f, Mathf.Abs(playerScale.x)), 1f / Mathf.Max(1e-4f, Mathf.Abs(playerScale.y)), 1f);
+            root.localPosition = new Vector3(legacyPosition.x * playerScale.x, 0f, 0f);
+            root.localScale = new Vector3(rigScale, rigScale, 1f);
             var group = root.GetComponent<SortingGroup>();
             group.sortingLayerID = sortingLayer; group.sortingOrder = sortingOrder;
 
