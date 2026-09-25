@@ -75,6 +75,7 @@ public sealed class PlayerMovement : MonoBehaviour
     [Header("Test Room")]
     [Tooltip("Falling below this height returns the player to their latest checkpoint, or the starting position.")]
     [SerializeField] private float resetBelowY = -15f;
+    private const float GroundSnapDistance = .3f;
 
     private Rigidbody2D body;
     private BoxCollider2D playerCollider;
@@ -321,6 +322,8 @@ public sealed class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 velocity = body.linearVelocity;
+        // An impulse this step (hit, bounce, knockback, flower boost) must leave the ground freely.
+        bool impulse = combatImpulse.y > 0f || combatBounce > 0f || hasPendingKnockback || pendingLaunchSpeed > 0f;
         velocity+=combatImpulse;combatImpulse=Vector2.zero;
         if(combatBounce>0){velocity.y=Mathf.Max(velocity.y,combatBounce);combatBounce=0;canCutJump=false;}
         float groundControl=combatController!=null?combatController.GroundControl:1;
@@ -328,8 +331,9 @@ public sealed class PlayerMovement : MonoBehaviour
         if(combatController!=null)velocity+=Physics2D.gravity*body.gravityScale*(combatController.GravityMultiplier-1)*Time.fixedDeltaTime;
         ObserveMotion(velocity);
         if(UpdateLedge())return;
-        bool wasGrounded = IsGrounded;
+        bool wasGrounded = IsGrounded && !impulse;
         LaunchKind launch = LaunchKind.None;
+        bool surfaceWalking = false;
         bool recovering = Time.time < hitRecoveryUntil;
         if (hasPendingKnockback)
         {
@@ -348,15 +352,21 @@ public sealed class PlayerMovement : MonoBehaviour
         Vector2 groundNormal = Vector2.up;
         Vector2 groundPoint = Vector2.zero;
         float nearestGround = float.PositiveInfinity;
-        if (velocity.y <= 0.1f)
+        float snapDistance = 0f;
+        // Walking up a slope moves Qori upward, so keep checking for ground while he was grounded.
+        if (velocity.y <= 0.1f || wasGrounded)
         {
             float castDistance = velocity.y < -0.1f
                 ? Mathf.Max(groundCheckDistance, landingLookAheadDistance) : groundCheckDistance;
+            if (wasGrounded) castDistance = Mathf.Max(castDistance, GroundSnapDistance);
             int count = body.Cast(Vector2.down, groundFilter, groundHits, castDistance);
             for (int i = 0; i < count; i++)
                 if (groundHits[i].normal.y > 0.65f)
                 {
                     if (groundHits[i].distance <= groundCheckDistance) grounded = true;
+                    // Stay on the surface over slope kinks and downhill instead of hopping off it.
+                    else if (wasGrounded && groundHits[i].distance <= GroundSnapDistance)
+                    { grounded = true; snapDistance = Mathf.Max(snapDistance, groundHits[i].distance - groundCheckDistance * .5f); }
                     if (groundHits[i].distance < nearestGround)
                     {
                         nearestGround = groundHits[i].distance;
@@ -407,10 +417,19 @@ public sealed class PlayerMovement : MonoBehaviour
             canCutJump = false;
             lastGroundedTime = float.NegativeInfinity;
         }
+        else if (grounded && (impulse || launch != LaunchKind.None))
+        {
+            velocity.x = Mathf.MoveTowards(velocity.x, moveInput * (runHeld ? RunSpeed : moveSpeed)*groundControl,
+                groundAcceleration * Time.fixedDeltaTime);
+        }
         else if (grounded)
         {
             velocity.x = Mathf.MoveTowards(velocity.x, moveInput * (runHeld ? RunSpeed : moveSpeed)*groundControl,
                 groundAcceleration * Time.fixedDeltaTime);
+            // Move along the surface (the collider is frictionless, so on a slope gravity would
+            // otherwise slide him downhill and uphill walking would read as leaving the ground).
+            velocity.y = -velocity.x * groundNormal.x / Mathf.Max(.2f, groundNormal.y) - snapDistance / Time.fixedDeltaTime;
+            surfaceWalking = true;
         }
         else if (Mathf.Abs(moveInput) > 0.01f && Time.time>=wallSteeringUntil)
         {
@@ -460,10 +479,12 @@ public sealed class PlayerMovement : MonoBehaviour
             canCutJump = false;
 
         velocity.y = Mathf.Max(velocity.y, -maximumFallSpeed);
-        body.linearVelocity = velocity;
-        IsGrounded = grounded && !attached && launch == LaunchKind.None && velocity.y <= 0.1f;
+        surfaceWalking &= launch == LaunchKind.None && !attached;
+        // Cancel this step's gravity while walking on the ground, so he stands still on slopes.
+        body.linearVelocity = surfaceWalking ? velocity - Physics2D.gravity * body.gravityScale * Time.fixedDeltaTime : velocity;
+        IsGrounded = grounded && !attached && launch == LaunchKind.None && (velocity.y <= 0.1f || surfaceWalking);
         IsRunning = IsGrounded && !recovering && runHeld && Mathf.Abs(velocity.x)>moveSpeed+.1f;
-        HasGroundContact = grounded && launch == LaunchKind.None && velocity.y <= 0.1f;
+        HasGroundContact = grounded && launch == LaunchKind.None && (velocity.y <= 0.1f || surfaceWalking);
         GroundNormal = HasGroundContact ? groundNormal : Vector2.up;
         GroundPoint = HasGroundContact ? groundPoint : Vector2.zero;
         bool approachingGround = !attached && launch == LaunchKind.None && velocity.y < -0.1f &&
