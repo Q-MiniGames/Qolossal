@@ -73,6 +73,8 @@ public static class A0TestRoomBuilder
         float plateau = slope.SlopeRise;
         TerrainBlock plateauBlock = Block("Plateau", 24.8f, plateau, 19.2f, plateau + 5f, 10, right: true);
         plateauBlock.blendLeft = 1.2f;
+        // The slope's rounded crest carries Qori until it is at full height; the plateau collider starts there.
+        plateauBlock.colliderInsetLeft = Mathf.Max(0f, 10f + slope.SlopeTopStart + .05f - 24.8f);
         plateauBlock.Rebuild();
         Piece("One-way Log", TerrainPiece.Kind.OneWay, 30f, plateau + 2.2f);
         Block("Overhang", 32f, plateau + 7.4f, 10f, 4.5f, 30, left: true, right: true, bottom: true);

@@ -45,7 +45,7 @@ public static class SlopeMovementCheck
         }
         Step(0f, 50, "settle");
         Step(0f, 150, "idle 3 s");
-        Step(1f, 60, "walk uphill 1.2 s");
+        Step(1f, 110, "walk uphill onto the plateau (must pass x = 27)");
         Step(0f, 50, "stop 1 s");
         Step(-1f, 60, "walk downhill 1.2 s");
         Step(0f, 100, "idle 2 s");
@@ -66,6 +66,7 @@ public static class SlopeMovementCheck
         jumpHeld.SetValue(movement, false);
         Step(1f, 30, "airborne, holding uphill", true);
         Step(1f, 40, "after landing, holding uphill", true);
+        Step(1f, 60, "keep running onto the plateau (must pass x = 27)", true);
         Physics2D.simulationMode = previousMode;
     }
 

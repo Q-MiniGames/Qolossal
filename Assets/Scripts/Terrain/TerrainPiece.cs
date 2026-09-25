@@ -42,6 +42,21 @@ public sealed class TerrainPiece : MonoBehaviour
     public float SlopeRise => kind != Kind.Slope30 || Sprite == null ? 0f
         : (kit.slopeSurface[0].y - kit.slopeSurface[kit.slopeSurface.Length - 2].y) / Sprite.pixelsPerUnit;
 
+    // World-space distance from the slope's lower end to where it reaches its full height, so a
+    // block overlapping the crest can start its collider there instead of forming a lip.
+    public float SlopeTopStart
+    {
+        get
+        {
+            if (kind != Kind.Slope30 || Sprite == null) return 0f;
+            Vector2[] p = kit.slopeSurface;
+            float top = p[p.Length - 2].y;
+            for (int i = 1; i < p.Length - 1; i++)
+                if (p[i].y <= top + .5f) return (p[i].x - p[0].x) / Sprite.pixelsPerUnit;
+            return (p[p.Length - 2].x - p[0].x) / Sprite.pixelsPerUnit;
+        }
+    }
+
     private void OnEnable() => Rebuild();
     private void OnDisable() { if (art != null) Remove(art); art = null; }
     private void OnValidate() => dirty = true;

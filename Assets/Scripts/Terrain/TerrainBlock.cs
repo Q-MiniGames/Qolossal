@@ -18,6 +18,8 @@ public sealed class TerrainBlock : MonoBehaviour
     public bool top = true, leftFace, rightFace, bottom;
     [Tooltip("Fade the left/right edge over this distance, to blend into a neighbouring piece such as a slope.")]
     [Min(0f)] public float blendLeft, blendRight;
+    [Tooltip("Start the collider this far in from the left edge, where the art overlaps a neighbouring piece (e.g. a slope's crest) that should carry the walk surface.")]
+    [Min(0f)] public float colliderInsetLeft;
     [Tooltip("Added to every sorting order, to layer overlapping blocks.")] public int sortingOffset;
 
     public const int FillOrder = -40, FaceOrder = -38, CeilingOrder = -37, TopOrder = -36, CornerOrder = -34;
@@ -43,8 +45,9 @@ public sealed class TerrainBlock : MonoBehaviour
     {
         Clear();
         var box = GetComponent<BoxCollider2D>();
-        box.size = new Vector2(width, height);
-        box.offset = new Vector2(width * .5f, -height * .5f);
+        float inset = Mathf.Clamp(colliderInsetLeft, 0f, width - .1f);
+        box.size = new Vector2(width - inset, height);
+        box.offset = new Vector2(inset + (width - inset) * .5f, -height * .5f);
         if (surface == Surface.Slippery && !TryGetComponent(out WallSurface _))
             gameObject.AddComponent<WallSurface>().allowsWallCling = false;
         else if (surface != Surface.Slippery && TryGetComponent(out WallSurface cling) && !cling.allowsWallCling)
