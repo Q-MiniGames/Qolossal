@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71313fa893260d24ab378e0dbaf2d6b2, type: 3}
+  m_Name: ReedbladeFrontAnimation
+  m_EditorClassIdentifier: Assembly-CSharp::AttackAnimationProfile
+  anticipation:
+    leftGrip: {x: -0.4, y: -0.3}
+    shoulderReach: {x: -0.15, y: 0.05}
+    freeHand: {x: 0, y: 0}
+    weaponAngle: 115
+    torsoAngle: 14
+    compression: 0.16
+    kneeBend: 0
+  contact:
+    leftGrip: {x: 2.5, y: -0.05}
+    shoulderReach: {x: 0.5, y: 0}
+    freeHand: {x: 0, y: 0}
+    weaponAngle: 12
+    torsoAngle: -13
+    compression: 0
+    kneeBend: 0
+  followThrough:
+    leftGrip: {x: 2.2, y: -1.15}
+    shoulderReach: {x: 0.35, y: -0.1}
+    freeHand: {x: 0, y: 0}
+    weaponAngle: -38
+    torsoAngle: -10
+    compression: 0.04
+    kneeBend: 0
+  straightTrail: 0
+  oneHanded: 0
+  sweepThroughActive: 1
+  contactFraction: 0.48
+  recoveryHold: 0.22
+  secondaryImpulse: 0.48

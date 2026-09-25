@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690f6cd4fbcf71f489aeec1ee8854a41, type: 3}
+  m_Name: ReedbladeMoves
+  m_EditorClassIdentifier: Assembly-CSharp::CombatMoveSet
+  moves:
+  - slot: 0
+    attack: {fileID: 11400000, guid: 35a6a4e525c406d4ba10940b7c73a3a1, type: 2}
+  - slot: 1
+    attack: {fileID: 11400000, guid: 7cfcfabea91fbe54d8dddfa7d8586e06, type: 2}
+  - slot: 2
+    attack: {fileID: 11400000, guid: 51571c86cc3183b4a9bdf4ba39768e67, type: 2}
