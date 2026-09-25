@@ -49,7 +49,8 @@ def leg_target(phase, D, A, lift, xo, toe_off=-35, strike=14, kick=0.0):
         a = lerp(toe_off, strike, ss(.15, .9, u)) - 10*math.sin(math.pi*u)
     return (x, y, a)
 
-def make_gait(T, D, A, lift, xo, lean, bob, base_y, kick, arm_swing, weapon, twist=3.0, skirt=5.0, head=6.0, cape=-40.0):
+def make_gait(T, D, A, lift, xo, lean, bob, base_y, kick, arm_swing, weapon, twist=3.0, skirt=5.0, head=6.0, cape=-40.0,
+              far_carry=False):
     def f(t):
         ph = (t/T) % 1.0
         bobv = -bob*math.cos(TAU*2*(ph - D/2))
@@ -65,6 +66,11 @@ def make_gait(T, D, A, lift, xo, lean, bob, base_y, kick, arm_swing, weapon, twi
         c['weapon'] = weapon + 7*sw
         c['handF'] = around(HAND_F, 30 + 1.3*arm_swing*sw, 40 + 14*abs(math.sin(TAU*ph)), c)
         c['elbowF'] = -1
+        if far_carry:
+            # The camera-side hand carries the blade (low, trailing), the weapon arm swings free behind.
+            c['handF'] = around(HAND_F, -4 - arm_swing*sw, 22 + 10*math.sin(TAU*ph), c)
+            c['weapon_far'] = weapon + 7*sw
+            c['handN'] = around(HAND_N, 30 + 1.3*arm_swing*sw, 40 + 14*abs(math.sin(TAU*ph)), c)
         c['cape_u'] = cape + 4*math.sin(TAU*2*ph - 2.2)
         c['cape_l'] = cape*.5 + 7*math.sin(TAU*2*ph - 2.9)
         c['cape_w'] = math.sin(TAU*2*ph - 2.5)
@@ -73,7 +79,7 @@ def make_gait(T, D, A, lift, xo, lean, bob, base_y, kick, arm_swing, weapon, twi
 
 RUN_T = 0.40
 run = make_gait(T=RUN_T, D=.36, A=150, lift=95, xo=22, lean=9, bob=11, base_y=-26, kick=40,
-                arm_swing=26, weapon=142)
+                arm_swing=26, weapon=142, far_carry=True)
 WALK_T = 0.62
 walk = make_gait(T=WALK_T, D=.58, A=95, lift=46, xo=18, lean=4, bob=6, base_y=-14, kick=0,
                  arm_swing=14, weapon=-17, twist=2, skirt=3, head=4, cape=-16)

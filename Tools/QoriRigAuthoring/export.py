@@ -38,7 +38,7 @@ for n in rig.ORDER:
     lp = rig.local_pos(n) / 100.0
     rest_local[n] = lp
     data['bones'].append(dict(name=n, parent=b['parent'] or '', path=path_of(n), pos=[float(lp[0]), float(lp[1])],
-                              rot=float(rig.WEAPON_REST_ANGLE if n == 'WeaponMount' else 0.0),
+                              rot=float(rig.WEAPON_REST_ANGLE if n.startswith('WeaponMount') else 0.0),
                               part=(b['part'] if b['part'] not in (None, 'Weapon') else ''),
                               order=int(b['order']), tint=float(b['tint'])))
 
@@ -48,7 +48,7 @@ for name, clip in C.items():
         bone_name, prop = key.split('.')
         g = clip['tangents'][key]
         if prop == 'rot':
-            add = rig.WEAPON_REST_ANGLE if bone_name == 'WeaponMount' else 0.0
+            add = rig.WEAPON_REST_ANGLE if bone_name.startswith('WeaponMount') else 0.0
             vals, tans, attr = v + add, g, 'localEulerAnglesRaw.z'
         elif prop in ('x', 'y'):
             i = 0 if prop == 'x' else 1

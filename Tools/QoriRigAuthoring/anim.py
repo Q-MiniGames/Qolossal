@@ -55,7 +55,7 @@ def two_bone(root, target, l1, l2, bend):
 DEFAULT = dict(
     body_x=0.0, body_y=0.0, body_rot=0.0, body_sx=1.0, body_sy=1.0,
     torso_rot=0.0, torso_sy=1.0, head_rot=0.0, skirt_rot=0.0, skirt_sx=1.0, skirt_sy=1.0,
-    handN=None, handF=None, elbowN=-1, elbowF=-1, weapon=-20.0,
+    handN=None, handF=None, elbowN=-1, elbowF=-1, weapon=-20.0, weapon_far=None,
     armN_rot=None, foreN_rot=None, armF_rot=None, foreF_rot=None,
     footN=(40.0, ANKLE_Y, 0.0), footF=(-30.0, ANKLE_Y, 0.0),   # x relative to rest hip x
     cape_u=-8.0, cape_l=-4.0, cape_w=0.0,   # cloak: upper/lower drape angle (neg = trails back), flutter -1..1
@@ -107,6 +107,10 @@ def pose_from_controls(c):
     W = rig.solve(pose)
     fore_w = rig.world_angle(W['ForearmNear'])
     pose['WeaponMount'] = dict(rot=c['weapon'] - rig.WEAPON_REST_ANGLE - fore_w)
+    if 'WeaponMountFar' in rig.BONES:   # blade angle when carried in the camera-side hand
+        far_w = rig.world_angle(W['ForearmFar'])
+        angle = c['weapon_far'] if c['weapon_far'] is not None else c['weapon']
+        pose['WeaponMountFar'] = dict(rot=angle - rig.WEAPON_REST_ANGLE - far_w)
     return pose
 
 # ---------------------------------------------------------------- baking

@@ -12,6 +12,9 @@ public sealed class QoriAnimator : MonoBehaviour
     public Animator animator;
     public Transform facingPivot;
     public Transform handNear, handFar, weaponMount, weaponTip;
+    [Tooltip("Grip on the camera-side hand; the blade moves here while running.")] public Transform weaponMountFar;
+    [Tooltip("Sorting order of the blade while carried in the camera-side hand (between that arm's upper arm and fist).")]
+    public int weaponOrderFar = 15;
     public SpriteRenderer head, weapon;
     public Sprite headNeutral, headUp, headDown, headFocus;
     [Tooltip("Neutral head with closed eyes (same outline), flashed briefly for a blink.")] public Sprite headBlink;
@@ -249,6 +252,7 @@ public sealed class QoriAnimator : MonoBehaviour
                       || (movement.IsLedgeClimbing && movement.LedgeClimbProgress < .65f) || (wallJumping && !wallJumpAway);
         UpdateHead(attacking, gripping, grounded, velocity, effort);
         UpdateWeapon(hanging || ledge || movement.IsWallSliding || (wallJumping && !wallJumpAway));
+        UpdateWeaponHand(state == RunState);
         UpdateArms(movement.IsLedgeHanging || (movement.IsLedgeClimbing && movement.LedgeClimbProgress < reachArmsUntil));
         UpdateTint();
     }
@@ -454,6 +458,18 @@ public sealed class QoriAnimator : MonoBehaviour
             Sprite hand = hanging ? freeFist : freeOpen;   // grips the rope / ledge, relaxed otherwise
             if (freeForearm.sprite != hand) freeForearm.sprite = hand;
         }
+    }
+
+    // Running carries the blade in the camera-side hand; everything else uses the weapon hand.
+    int weaponOrderNear = int.MinValue;
+    void UpdateWeaponHand(bool far)
+    {
+        if (weapon == null || weaponMountFar == null) return;
+        if (weaponOrderNear == int.MinValue) weaponOrderNear = weapon.sortingOrder;
+        Transform mount = far ? weaponMountFar : weaponMount;
+        if (weapon.transform.parent == mount) return;
+        weapon.transform.SetParent(mount, false);
+        weapon.sortingOrder = far ? weaponOrderFar : weaponOrderNear;
     }
 
     // The ledge clips solve both arm sets to the same hands; only one set is drawn.

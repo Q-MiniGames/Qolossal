@@ -59,6 +59,9 @@ for side, tint, base in (('Near', .72, 0), ('Far', 1.0, 15)):
     bone(f'ForearmReach{side}', f'UpperArmReach{side}', J(f'ForearmReach{side}'), f'ForearmReach{side}', base+2 if side == 'Near' else base+1, tint)
 REACH_ARM_BONES = [b for b in BONES if 'Reach' in b]
 bone('WeaponMount', 'HandNear', J('ForearmNear')+FIST_OFF, 'Weapon', 1)   # between the weapon arm's upper arm (0) and fist (2)
+# Second grip on the camera-side hand, used while running (QoriAnimator moves the blade here);
+# drawn between that arm's upper arm (15) and its fist (16).
+bone('WeaponMountFar', 'HandFar', J('ForearmFar')+FIST_OFF, None, 15)
 for side, tint, base in (('Near', .76, 2), ('Far', 1.0, 6)):   # camera-side leg (hip on the back edge) in front
     bone(f'Thigh{side}', 'Body', J(f'Thigh{side}'), f'Thigh{side}', base, tint)
     bone(f'Shin{side}', f'Thigh{side}', J(f'Shin{side}'), f'Shin{side}', base+2, tint)
@@ -82,7 +85,7 @@ def solve(pose):
     for n in ORDER:
         b = BONES[n]; p = pose.get(n, {})
         lp = (local_pos(n) if b['parent'] else b['pos']) + np.array([p.get('x', 0.0), p.get('y', 0.0)])
-        extra = WEAPON_REST_ANGLE if n == 'WeaponMount' else 0.0
+        extra = WEAPON_REST_ANGLE if n.startswith('WeaponMount') else 0.0
         L = np.zeros((2, 3)); L[:, :2] = rot(p.get('rot', 0.0) + extra) @ np.diag([p.get('sx', 1.0), p.get('sy', 1.0)]); L[:, 2] = lp
         if b['parent']:
             P = W[b['parent']]

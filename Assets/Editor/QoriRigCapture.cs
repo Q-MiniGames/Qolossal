@@ -235,4 +235,54 @@ public static class QoriRigCapture
         File.WriteAllBytes(Path.Combine(folder, "walls.png"), sheet.EncodeToPNG());
         Debug.Log("[QoriRigCapture] Wall capture written");
     }
+
+    // Run frames on flat ground with the blade on the camera-side grip, as QoriAnimator does in play.
+    // Usage: -executeMethod QoriRigCapture.CaptureRun -captureDir <folder>
+    public static void CaptureRun()
+    {
+        string[] args = Environment.GetCommandLineArgs();
+        int index = Array.IndexOf(args, "-captureDir");
+        string folder = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Temp/QoriCaptures";
+        Directory.CreateDirectory(folder);
+        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        foreach (TerrainBlock block in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
+        GameObject player = GameObject.Find("Player");
+        var collider = player.GetComponent<BoxCollider2D>();
+        Vector2 extents = Vector2.Scale(collider.size, (Vector2)player.transform.lossyScale) * .5f;
+        player.transform.position = new Vector3(-16f, extents.y, 0f);
+        var animator = player.GetComponentInChildren<QoriAnimator>(true);
+        Vector3 s = player.transform.lossyScale;
+        animator.transform.localScale = new Vector3(1f / s.x, 1f / s.y, 1f);
+        foreach (SpriteRenderer r in animator.reachArms) r.enabled = false;
+        // Same sprite QoriArmoryFactory builds at runtime for the leaf sword.
+        var texture = Resources.Load<Texture2D>("Armory/Weapons/LeafSword");
+        string grip = Resources.Load<TextAsset>("Armory/Weapons/Grips").text.Split((char)10).First(l => l.StartsWith("LeafSword,"));
+        string[] f = grip.Trim().Split(',');
+        float gx = float.Parse(f[1], System.Globalization.CultureInfo.InvariantCulture), gy = float.Parse(f[2], System.Globalization.CultureInfo.InvariantCulture);
+        animator.weapon.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(gx, gy), 100, 0, SpriteMeshType.FullRect);
+        float scale = 7.4f / (texture.width * (1 - gx) / 100);
+        animator.weapon.transform.localScale = new Vector3(scale, scale, 1f);
+        animator.weapon.enabled = true;
+        animator.weapon.transform.SetParent(animator.weaponMountFar, false);
+        animator.weapon.sortingOrder = animator.weaponOrderFar;
+        var clip = AssetDatabase.LoadAssetAtPath<AnimationClip>("Assets/Art/Characters/QoriRig/Clips/Qori_Run.anim");
+        Camera camera = Camera.main; camera.aspect = 1f; camera.orthographicSize = 1.3f;
+        camera.transform.position = new Vector3(-16f, .9f, -10f);
+        foreach (ParallaxLayer layer in UnityEngine.Object.FindObjectsByType<ParallaxLayer>(FindObjectsSortMode.None)) layer.Refresh(camera);
+        float[] times = { 0f, .1f, .2f, .3f };
+        const int size = 500;
+        var sheet = new Texture2D(size * times.Length, size, TextureFormat.RGB24, false);
+        var target = new RenderTexture(size, size, 24);
+        var read = new Texture2D(size, size, TextureFormat.RGB24, false);
+        for (int i = 0; i < times.Length; i++)
+        {
+            clip.SampleAnimation(animator.animator.gameObject, times[i]);
+            camera.targetTexture = target; camera.Render(); RenderTexture.active = target;
+            read.ReadPixels(new Rect(0, 0, size, size), 0, 0); read.Apply();
+            sheet.SetPixels(i * size, 0, size, size, read.GetPixels());
+        }
+        sheet.Apply(); camera.targetTexture = null; RenderTexture.active = null;
+        File.WriteAllBytes(Path.Combine(folder, "run.png"), sheet.EncodeToPNG());
+        Debug.Log("[QoriRigCapture] Run capture written");
+    }
 }

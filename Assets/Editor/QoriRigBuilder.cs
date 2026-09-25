@@ -169,6 +169,7 @@ public static class QoriRigBuilder
             q.facingPivot = facing;
             q.handNear = bones["HandNear"]; q.handFar = bones["HandFar"];
             q.weaponMount = mount; q.weaponTip = tip;
+            q.weaponMountFar = bones.TryGetValue("WeaponMountFar", out Transform farMount) ? farMount : null;
             q.weapon = weapon;
             q.head = bones["Head"].GetComponent<SpriteRenderer>();
             sprites.TryGetValue("Head_Neutral", out q.headNeutral);
