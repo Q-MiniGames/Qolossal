@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -89,10 +90,67 @@ public static class A0TestRoomBuilder
         // End: a tall rock plateau with ledges on both sides, reached by climbing its left face.
         Block("End Plateau", 66f, 9f, 20f, 23f, 10, left: true, right: true);
 
+        BuildBackground(camera, plateau);
+        BuildDecor(terrain, plateau);
+
         Directory.CreateDirectory(Path.GetDirectoryName(ScenePath));
         EditorSceneManager.SaveScene(scene, ScenePath);
         AssetDatabase.SaveAssets();
         Debug.Log("[A0TestRoomBuilder] Built " + ScenePath);
+    }
+
+    // Far painting, then the A0 Mid and Near parallax layers. Heights are set for a camera
+    // that sits about 2.5 u above the start ground.
+    static void BuildBackground(Camera camera, float plateau)
+    {
+        var root = new GameObject("Background").transform;
+        void Layer(string name, string path, float height, bool repeat, Vector2 follow, float bottomAtStart, int order, Color below)
+        {
+            var layer = new GameObject(name).AddComponent<ParallaxLayer>();
+            layer.transform.SetParent(root, false);
+            layer.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path) ?? throw new FileNotFoundException(path);
+            layer.height = height;
+            layer.repeat = repeat;
+            layer.follow = follow;
+            layer.baseY = bottomAtStart - StartCameraY * follow.y;
+            layer.baseX = repeat ? 0f : StartCameraX * (1f - follow.x);
+            layer.extendBelow = repeat ? 14f : 0f;
+            layer.belowColor = below;
+            layer.sortingOrder = order;
+            layer.targetCamera = camera;
+        }
+        // The far painting doesn't repeat, so it drifts only 1.5% of the camera's travel and is
+        // sized to cover the whole room. Band colours are each layer's average bottom row.
+        Layer("Far - Misty Valley", "Assets/Art/Backgrounds/MistyValley_Background_v1.png", 16f, false, new Vector2(.985f, .96f), -4.8f, -100, Color.white);
+        Layer("Mid - BG_A0_Mid", "Assets/Art/Codex/Backgrounds/BG_A0_Mid.png", 0f, true, new Vector2(.82f, .85f), -.3f, -90, new Color(.668f, .717f, .749f));
+        Layer("Near - BG_A0_Near", "Assets/Art/Codex/Backgrounds/BG_A0_Near.png", 0f, true, new Vector2(.62f, .72f), -2.2f, -80, new Color(.741f, .815f, .867f));
+    }
+
+    const float StartCameraX = -18f, StartCameraY = 2.5f;
+
+    // A0 decor from the sliced sheet, standing on (or hanging from) the room's surfaces.
+    static void BuildDecor(Transform terrain, float plateau)
+    {
+        var sprites = AssetDatabase.LoadAllAssetsAtPath("Assets/Art/Codex/Decor/Decor_A0_Sheet.png").OfType<Sprite>()
+            .ToDictionary(sprite => sprite.name.Replace("Decor_A0_", ""));
+        var root = new GameObject("Decor").transform;
+        const float Sink = .12f;  // sprite rects keep a little transparent margin below the contact point
+        void Place(string name, float x, float y, int order = -20, bool hanging = false, bool flip = false)
+        {
+            var renderer = new GameObject("Decor " + name).AddComponent<SpriteRenderer>();
+            renderer.transform.SetParent(root, false);
+            renderer.transform.position = new Vector3(x, y + (hanging ? Sink : -Sink), 0f);
+            renderer.sprite = sprites[name];
+            renderer.sortingOrder = order;
+            renderer.flipX = flip;
+        }
+        float overhangUnderside = plateau + 7.4f - 4.5f;
+        Place("fern", -21f, 0f); Place("boulder", -13f, 0f); Place("white_flowers", -9.5f, 0f);
+        Place("broken_pillar", -4f, 0f); Place("grass", 1f, 0f, 5); Place("small_rock", 4.5f, 0f); Place("snail", 5.3f, 0f);
+        Place("carved_block", 29f, plateau); Place("mushrooms", 36.5f, plateau); Place("fern", 41f, plateau, flip: true);
+        Place("hanging_ivy", 33.5f, overhangUnderside, hanging: true); Place("hanging_root", 39.5f, overhangUnderside, hanging: true);
+        Place("small_rock", 48.5f, -5f); Place("grass", 52f, -5f, 5); Place("mushrooms", 64.8f, -5f);
+        Place("fallen_log", 71f, 9f); Place("white_flowers", 75f, 9f); Place("broken_pillar", 79f, 9f); Place("grass", 82f, 9f, 5);
     }
 
     static TerrainKit BuildKit()
@@ -147,6 +205,7 @@ public static class A0TestRoomBuilder
         {
             camera.transform.position = new Vector3(shot.at.x, shot.at.y, -10f);
             camera.orthographicSize = shot.size;
+            foreach (ParallaxLayer layer in UnityEngine.Object.FindObjectsByType<ParallaxLayer>(FindObjectsSortMode.None)) layer.Refresh(camera);
             camera.targetTexture = texture;
             camera.Render();
             RenderTexture.active = texture;

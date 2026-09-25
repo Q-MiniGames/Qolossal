@@ -24,7 +24,6 @@ public sealed class TerrainBlock : MonoBehaviour
     // Distances (world units) over which pieces fade into what's beneath them.
     const float TopFade = 1.4f, CeilingFade = .5f, FaceFade = .9f, CornerFade = .9f, FaceFillInset = .3f, CeilingFillInset = .3f;
     private static readonly int MainTex = Shader.PropertyToID("_MainTex");
-    private static Material sharedMaterial;
     private readonly List<Object> owned = new List<Object>();
     private Transform art;
     private bool dirty;
@@ -159,23 +158,11 @@ public sealed class TerrainBlock : MonoBehaviour
         owned.Add(mesh);
         obj.AddComponent<MeshFilter>().sharedMesh = mesh;
         var renderer = obj.AddComponent<MeshRenderer>();
-        renderer.sharedMaterial = Material;
+        renderer.sharedMaterial = TerrainMaterial.Shared;
         renderer.sortingOrder = order + sortingOffset;
         var block = new MaterialPropertyBlock();
         block.SetTexture(MainTex, sprite.texture);
         renderer.SetPropertyBlock(block);
-    }
-
-    private static Material Material
-    {
-        get
-        {
-            if (sharedMaterial != null) return sharedMaterial;
-            Shader shader = Shader.Find("Universal Render Pipeline/2D/Sprite-Lit-Default");
-            if (shader == null) shader = Shader.Find("Sprites/Default");
-            sharedMaterial = new Material(shader) { name = "Terrain Strip (Runtime)", hideFlags = HideFlags.DontSave };
-            return sharedMaterial;
-        }
     }
 
     private void Clear()
