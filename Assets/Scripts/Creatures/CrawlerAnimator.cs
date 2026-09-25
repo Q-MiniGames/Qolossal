@@ -14,7 +14,10 @@ public sealed class CrawlerAnimator : MonoBehaviour
     [SerializeField] SpriteRenderer[] renderers;
 
     [Header("Gait")]
-    [SerializeField] float stride = .22f, lift = .07f, strideSpeedScale = 1f;
+    [Tooltip("Foot travel per step (world units). Longer strides mean fewer, slower steps at the same speed.")]
+    [SerializeField] float stride = .38f, lift = .07f, strideSpeedScale = 1f;
+    [Tooltip("Stride multiplier while charging (bounding steps instead of faster ones).")]
+    [SerializeField] float chargeStride = 1.8f;
     [SerializeField] float bob = .015f;
     [Header("Charge telegraph")]
     [SerializeField] float headDip = -9f, jawOpen = -22f, thornBristle = 1.18f;
@@ -74,7 +77,7 @@ public sealed class CrawlerAnimator : MonoBehaviour
 
         bool walking = creature.IsAlive && Mathf.Abs(velocity.x) > .05f;
         blend = Mathf.MoveTowards(blend, walking ? 1f : 0f, dt * 8f);
-        float strideLength = stride * (creature.IsCharging ? 1.5f : 1f);
+        float strideLength = stride * (creature.IsCharging ? chargeStride : 1f);
         if (walking) phase = Mathf.Repeat(phase + dt * Mathf.Abs(velocity.x) * strideSpeedScale / (strideLength / .75f), 1f);
         Color tint = !creature.IsAlive ? new Color(.55f, .55f, .55f, 1f) : creature.IsFlashing ? new Color(1.6f, 1.6f, 1.6f, 1f) : Color.white;
         Pose(phase, blend, creature.Telegraph01, creature.IsCharging, tint);
@@ -84,7 +87,7 @@ public sealed class CrawlerAnimator : MonoBehaviour
     // Public so editor tools can render poses without play mode.
     public void Pose(float gaitPhase, float walkBlend, float tele, bool charging, Color tint)
     {
-        float strideLength = stride * (charging ? 1.5f : 1f);
+        float strideLength = stride * (charging ? chargeStride : 1f);
         body.localPosition = bodyRest + new Vector3(0f, bob * Mathf.Sin(gaitPhase * Mathf.PI * 4f) * walkBlend - .04f * tele, 0f);
         float bodyAngle = body.localEulerAngles.z;
         for (int i = 0; i < 4; i++)
