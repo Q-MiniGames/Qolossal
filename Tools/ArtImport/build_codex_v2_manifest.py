@@ -150,6 +150,8 @@ def settings_for(category, name):
         s["ppu"], s["basis"] = PLAYER_PPU, "Qori rig convention; rig build sets final scale"
     elif category in ("Enemies", "Effects", "Weapons"):
         s["ppu"], s["basis"] = CHARACTER_PPU, "request: character density 600 px/u (nominal)"
+        # Rig parts are drawn at a fraction of their painted size: mipmaps keep them from aliasing.
+        s["mipmaps"] = True
     elif name.startswith("Icon_"):
         s["ppu"], s["basis"] = UI_PPU, "UI canvas: 1 px = 1 reference px"
         s["mesh"] = "FullRect"

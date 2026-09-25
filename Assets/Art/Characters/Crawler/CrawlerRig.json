@@ -1,0 +1,245 @@
+{
+ "version": 1,
+ "bones": [
+  {
+   "name": "Body",
+   "parent": "",
+   "sprite": "Crawler_Body",
+   "pos": [
+    -0.56,
+    0.45
+   ],
+   "rot": 1.8676788394341708,
+   "length": 0.9204890004774636,
+   "thick": 1.0,
+   "artRot": -0.6066833356360921,
+   "artScale": 0.0007338879654365998,
+   "centreFromPivot": [
+    617.6515635658636,
+    90.47678885577852
+   ],
+   "order": 10,
+   "tint": 1.0
+  },
+  {
+   "name": "BackThorns",
+   "parent": "Body",
+   "sprite": "Crawler_BackThorns",
+   "pos": [
+    -0.09701365247567272,
+    0.09321132567091514
+   ],
+   "rot": -0.11427397936263595,
+   "length": 0.9804590761474953,
+   "thick": 1.0,
+   "artRot": 3.588265299069329,
+   "artScale": 0.0007288484211988165,
+   "centreFromPivot": [
+    672.1653753856702,
+    156.3032567706548
+   ],
+   "order": 12,
+   "tint": 1.0
+  },
+  {
+   "name": "Head",
+   "parent": "Body",
+   "sprite": "Crawler_Head",
+   "pos": [
+    0.8411833271210907,
+    0.022596685011130945
+   ],
+   "rot": -25.366244515386267,
+   "length": 0.5015974481593781,
+   "thick": 1.0,
+   "artRot": 16.26452237091935,
+   "artScale": 0.00043762027838479395,
+   "centreFromPivot": [
+    507.72498262682416,
+    -78.83785035904566
+   ],
+   "order": 16,
+   "tint": 1.0
+  },
+  {
+   "name": "Jaw",
+   "parent": "Head",
+   "sprite": "Crawler_Jaw",
+   "pos": [
+    0.14992101789183318,
+    -0.04385987225558948
+   ],
+   "rot": -7.765166018425333,
+   "length": 0.32756678708318404,
+   "thick": 1.0,
+   "artRot": 25.87005875000342,
+   "artScale": 0.0003569903261088906,
+   "centreFromPivot": [
+    406.2520835588267,
+    -167.49686113215716
+   ],
+   "order": 15,
+   "tint": 1.0
+  },
+  {
+   "name": "HindFarUpper",
+   "parent": "Body",
+   "sprite": "Crawler_LegHind_Upper",
+   "pos": [
+    0.41814731061462973,
+    -0.0636618145025131
+   ],
+   "rot": -133.5012181760044,
+   "length": 0.24083189157584597,
+   "thick": 1.45,
+   "artRot": 39.235682649730634,
+   "artScale": 0.00022565169652916906,
+   "centreFromPivot": [
+    412.5741469617609,
+    -263.7051227708983
+   ],
+   "order": 1,
+   "tint": 0.7
+  },
+  {
+   "name": "HindFarLower",
+   "parent": "HindFarUpper",
+   "sprite": "Crawler_LegHind_Lower",
+   "pos": [
+    0.24083189157584597,
+    1.597311850539245e-17
+   ],
+   "rot": 31.328692867804193,
+   "length": 0.22360679774997896,
+   "thick": 1.45,
+   "artRot": 55.939746538940334,
+   "artScale": 0.00019622278654747775,
+   "centreFromPivot": [
+    309.7911589416543,
+    -455.35717268344536
+   ],
+   "order": 0,
+   "tint": 0.7
+  },
+  {
+   "name": "FrontFarUpper",
+   "parent": "Body",
+   "sprite": "Crawler_LegFront_Upper",
+   "pos": [
+    0.8379241898598699,
+    -0.07735019099964048
+   ],
+   "rot": -46.867678839434184,
+   "length": 0.2545584412271571,
+   "thick": 1.45,
+   "artRot": 47.87128643055907,
+   "artScale": 0.00021404077485972887,
+   "centreFromPivot": [
+    391.99193381592556,
+    -436.49586349534644
+   ],
+   "order": 1,
+   "tint": 0.7
+  },
+  {
+   "name": "FrontFarLower",
+   "parent": "FrontFarUpper",
+   "sprite": "Crawler_LegFront_Lower",
+   "pos": [
+    0.2545584412271571,
+    -8.435452055140702e-18
+   ],
+   "rot": -12.528807709151494,
+   "length": 0.260768096208106,
+   "thick": 1.45,
+   "artRot": 54.15882691025713,
+   "artScale": 0.00023860339526656228,
+   "centreFromPivot": [
+    255.64442891009668,
+    -431.05677466415415
+   ],
+   "order": 0,
+   "tint": 0.7
+  },
+  {
+   "name": "HindNearUpper",
+   "parent": "Body",
+   "sprite": "Crawler_LegHind_Upper",
+   "pos": [
+    0.25823230899739547,
+    -0.05844719488455981
+   ],
+   "rot": -133.50121817600436,
+   "length": 0.24083189157584595,
+   "thick": 1.45,
+   "artRot": 39.235682649730634,
+   "artScale": 0.00022565169652916906,
+   "centreFromPivot": [
+    412.5741469617609,
+    -263.7051227708983
+   ],
+   "order": 21,
+   "tint": 1.0
+  },
+  {
+   "name": "HindNearLower",
+   "parent": "HindNearUpper",
+   "sprite": "Crawler_LegHind_Lower",
+   "pos": [
+    0.24083189157584592,
+    -5.432039365332039e-17
+   ],
+   "rot": 31.32869286780415,
+   "length": 0.22360679774997896,
+   "thick": 1.45,
+   "artRot": 55.93974653894033,
+   "artScale": 0.00019622278654747775,
+   "centreFromPivot": [
+    309.7911589416543,
+    -455.35717268344536
+   ],
+   "order": 20,
+   "tint": 1.0
+  },
+  {
+   "name": "FrontNearUpper",
+   "parent": "Body",
+   "sprite": "Crawler_LegFront_Upper",
+   "pos": [
+    0.6780091882426356,
+    -0.07213557138168719
+   ],
+   "rot": -46.86767883943418,
+   "length": 0.2545584412271571,
+   "thick": 1.45,
+   "artRot": 47.87128643055907,
+   "artScale": 0.00021404077485972893,
+   "centreFromPivot": [
+    391.99193381592556,
+    -436.49586349534644
+   ],
+   "order": 21,
+   "tint": 1.0
+  },
+  {
+   "name": "FrontNearLower",
+   "parent": "FrontNearUpper",
+   "sprite": "Crawler_LegFront_Lower",
+   "pos": [
+    0.2545584412271571,
+    1.0832844968700866e-17
+   ],
+   "rot": -12.5288077091515,
+   "length": 0.260768096208106,
+   "thick": 1.45,
+   "artRot": 54.15882691025713,
+   "artScale": 0.00023860339526656228,
+   "centreFromPivot": [
+    255.64442891009668,
+    -431.05677466415415
+   ],
+   "order": 20,
+   "tint": 1.0
+  }
+ ]
+}

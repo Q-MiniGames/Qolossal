@@ -92,6 +92,14 @@ public static class A0TestRoomBuilder
         // End: a tall rock plateau with ledges on both sides, reached by climbing its left face.
         Block("End Plateau", 66f, 9f, 20f, 23f, 10, left: true, right: true);
 
+        // A Bramble Crawler patrolling the start ground, and one on the plateau.
+        var crawlerPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/GroundCreature01.prefab");
+        foreach (Vector2 at in new[] { new Vector2(-6f, .4f), new Vector2(38f, plateau + .4f) })
+        {
+            var crawler = (GameObject)PrefabUtility.InstantiatePrefab(crawlerPrefab);
+            crawler.transform.position = at;
+        }
+
         BuildBackground(camera, plateau);
         BuildDecor(terrain, plateau);
 
