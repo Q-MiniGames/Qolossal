@@ -108,6 +108,15 @@ public static class A0TestRoomBuilder
             var crawler = (GameObject)PrefabUtility.InstantiatePrefab(crawlerPrefab);
             crawler.transform.position = at;
         }
+        void Enemy(string prefab, Vector2 at)
+        {
+            var obj = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/" + prefab + ".prefab"));
+            obj.transform.position = at;
+        }
+        Enemy("FlyingCreature01", new Vector2(20f, 9.5f));      // Seed Carrier over the slope (grapple anchor)
+        Enemy("PodSpitter01", new Vector2(42.5f, plateau));      // on the plateau, facing the overhang
+        Enemy("Thornwing01", new Vector2(50f, 8.5f));            // over the floating islands
+        Enemy("Shellback01", new Vector2(76f, 9.05f));           // on the end plateau (mace cracks its shell)
 
         BuildBackground(camera, plateau);
         BuildDecor(terrain, plateau);
@@ -351,6 +360,8 @@ public static class A0TestRoomBuilder
             ("gallery_1", new Vector2(96f, 11f), 5.5f), ("gallery_2", new Vector2(113f, 11f), 5.5f),
             ("gallery_3", new Vector2(122f, 12f), 5.5f), ("gallery_4", new Vector2(138f, 8f), 6.5f),
             ("gallery_5", new Vector2(151f, 11f), 4f),
+            ("enemy_carrier", new Vector2(20f, 9.3f), 2.2f), ("enemy_spitter", new Vector2(41.5f, 9.4f), 2.2f),
+            ("enemy_thornwing", new Vector2(50f, 8.4f), 2.2f), ("enemy_shellback", new Vector2(76f, 9.8f), 2.2f),
         };
         var texture = new RenderTexture(1920, 1080, 24);
         var read = new Texture2D(1920, 1080, TextureFormat.RGB24, false);

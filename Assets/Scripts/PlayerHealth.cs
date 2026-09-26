@@ -27,14 +27,17 @@ public sealed class PlayerHealth : MonoBehaviour
         health = maximumHealth;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) => CheckContact(collision);
-    private void OnCollisionStay2D(Collision2D collision) => CheckContact(collision);
+    private void OnCollisionEnter2D(Collision2D collision) => CheckContact(collision.collider);
+    private void OnCollisionStay2D(Collision2D collision) => CheckContact(collision.collider);
+    // Flying enemies use trigger colliders.
+    private void OnTriggerEnter2D(Collider2D other) => CheckContact(other);
+    private void OnTriggerStay2D(Collider2D other) => CheckContact(other);
 
-    private void CheckContact(Collision2D collision)
+    private void CheckContact(Collider2D other)
     {
-        GroundCreature enemy = collision.gameObject.GetComponentInParent<GroundCreature>();
-        if (enemy == null || !enemy.isActiveAndEnabled || !enemy.IsAlive) return;
-        TakeDamage(enemy.transform.position, knockback);
+        var hazard = other.GetComponentInParent<IContactHazard>();
+        if (hazard == null || hazard is Behaviour b && !b.isActiveAndEnabled || !hazard.HurtsOnContact) return;
+        TakeDamage(((Component)hazard).transform.position, knockback);
     }
 
     // Costs one heart and knocks Qori away from `source` (x) with `push` (x magnitude, y up).

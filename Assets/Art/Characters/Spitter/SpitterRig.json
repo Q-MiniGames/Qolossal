@@ -1,0 +1,76 @@
+{
+ "version": 1,
+ "bones": [
+  {
+   "name": "Base",
+   "parent": "",
+   "sprite": "Spitter_Base",
+   "pos": [
+    -0.46,
+    0.03
+   ],
+   "rot": 0.0,
+   "length": 0.92,
+   "thick": 1.0,
+   "artRot": 0.9977659839870466,
+   "artScale": 0.0007442090304731027,
+   "centreFromPivot": [
+    613.5200598056317,
+    309.17866932469474
+   ],
+   "order": 12,
+   "tint": 1.0,
+   "points": []
+  },
+  {
+   "name": "Stalk",
+   "parent": "Base",
+   "sprite": "Spitter_Stalk",
+   "pos": [
+    0.46,
+    0.13
+   ],
+   "rot": 93.27048792318357,
+   "length": 0.7011419257183241,
+   "thick": 1.0,
+   "artRot": -91.90997261986355,
+   "artScale": 0.0006311357165097646,
+   "centreFromPivot": [
+    -50.524615487944175,
+    541.4731009470079
+   ],
+   "order": 10,
+   "tint": 1.0,
+   "points": []
+  },
+  {
+   "name": "Head",
+   "parent": "Stalk",
+   "sprite": "Spitter_Head_Closed",
+   "pos": [
+    0.8158120047007351,
+    0.2538715678963826
+   ],
+   "rot": -93.27048792318357,
+   "length": 0.8200000000000001,
+   "thick": 1.0,
+   "artRot": 0.0,
+   "artScale": 0.0008251049739585173,
+   "centreFromPivot": [
+    484.92416274564073,
+    -8.75180348826592
+   ],
+   "order": 14,
+   "tint": 1.0,
+   "points": [
+    {
+     "name": "Mouth",
+     "pos": [
+      0.8199999999999998,
+      0.0
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -2,9 +2,10 @@ using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D), typeof(SpriteRenderer))]
-public sealed class GroundCreature : MonoBehaviour, IReedbladeTarget, ICombatDamageReceiver
+public sealed class GroundCreature : MonoBehaviour, IReedbladeTarget, ICombatDamageReceiver, IContactHazard
 {
     public bool IsAlive => health > 0;
+    public bool HurtsOnContact => IsAlive;
     public bool IsFlashing => Time.time < flashUntil;
     public bool IsTelegraphing => state == State.Telegraph;
     public bool IsCharging => state == State.Charge;

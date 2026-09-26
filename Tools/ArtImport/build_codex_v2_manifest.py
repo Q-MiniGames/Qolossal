@@ -196,7 +196,7 @@ def decor_sprites(name):
     return out
 
 
-PIECE_SHEETS = {"Barrier_Rubble_Pieces", "Floor_Weak_Pieces", "Platform_Crumble_Pieces"}
+PIECE_SHEETS = {"Barrier_Rubble_Pieces", "Floor_Weak_Pieces", "Platform_Crumble_Pieces", "Shellback_Shell_Shards"}
 
 
 def piece_sprites(category, name):

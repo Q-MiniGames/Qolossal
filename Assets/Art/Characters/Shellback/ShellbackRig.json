@@ -1,0 +1,194 @@
+{
+ "version": 1,
+ "bones": [
+  {
+   "name": "Body",
+   "parent": "",
+   "sprite": "Shellback_Body",
+   "pos": [
+    -0.62,
+    0.4
+   ],
+   "rot": 0.0,
+   "length": 1.2,
+   "thick": 1.0,
+   "artRot": 1.3760676892604868,
+   "artScale": 0.0009793245131672025,
+   "centreFromPivot": [
+    607.067531701563,
+    22.700751990563276
+   ],
+   "order": 10,
+   "tint": 1.0,
+   "points": []
+  },
+  {
+   "name": "Shell",
+   "parent": "Body",
+   "sprite": "Shellback_Shell_Intact",
+   "pos": [
+    -0.09999999999999998,
+    0.12
+   ],
+   "rot": 0.8550973962667241,
+   "length": 1.3401492454200763,
+   "thick": 1.0,
+   "artRot": -1.2667772567544873,
+   "artScale": 0.0010157821032031021,
+   "centreFromPivot": [
+    652.490174841405,
+    180.40424983237915
+   ],
+   "order": 16,
+   "tint": 1.0,
+   "points": []
+  },
+  {
+   "name": "Head",
+   "parent": "Body",
+   "sprite": "Shellback_Head",
+   "pos": [
+    1.08,
+    0.12
+   ],
+   "rot": -19.093492000485615,
+   "length": 0.5502726596879042,
+   "thick": 1.0,
+   "artRot": 9.976655449833151,
+   "artScale": 0.0004972305847376085,
+   "centreFromPivot": [
+    523.2962899640964,
+    -56.66096768678409
+   ],
+   "order": 18,
+   "tint": 1.0,
+   "points": []
+  },
+  {
+   "name": "LegFar0",
+   "parent": "Body",
+   "sprite": "Shellback_Leg",
+   "pos": [
+    0.28,
+    -0.06
+   ],
+   "rot": -73.61045966596522,
+   "length": 0.35440090293338705,
+   "thick": 1.4,
+   "artRot": 73.15965614409237,
+   "artScale": 0.0003109380178175919,
+   "centreFromPivot": [
+    133.29746554024013,
+    -518.8067289165555
+   ],
+   "order": 2,
+   "tint": 0.7,
+   "points": []
+  },
+  {
+   "name": "LegFar1",
+   "parent": "Body",
+   "sprite": "Shellback_Leg",
+   "pos": [
+    0.7,
+    -0.06
+   ],
+   "rot": -73.61045966596522,
+   "length": 0.35440090293338705,
+   "thick": 1.4,
+   "artRot": 73.15965614409237,
+   "artScale": 0.0003109380178175919,
+   "centreFromPivot": [
+    133.29746554024013,
+    -518.8067289165555
+   ],
+   "order": 2,
+   "tint": 0.7,
+   "points": []
+  },
+  {
+   "name": "LegFar2",
+   "parent": "Body",
+   "sprite": "Shellback_Leg",
+   "pos": [
+    1.08,
+    -0.06
+   ],
+   "rot": -73.61045966596521,
+   "length": 0.35440090293338705,
+   "thick": 1.4,
+   "artRot": 73.15965614409237,
+   "artScale": 0.0003109380178175919,
+   "centreFromPivot": [
+    133.29746554024013,
+    -518.8067289165555
+   ],
+   "order": 2,
+   "tint": 0.7,
+   "points": []
+  },
+  {
+   "name": "LegNear0",
+   "parent": "Body",
+   "sprite": "Shellback_Leg",
+   "pos": [
+    0.2,
+    -0.06
+   ],
+   "rot": -73.61045966596521,
+   "length": 0.35440090293338705,
+   "thick": 1.4,
+   "artRot": 73.15965614409237,
+   "artScale": 0.0003109380178175919,
+   "centreFromPivot": [
+    133.29746554024013,
+    -518.8067289165555
+   ],
+   "order": 20,
+   "tint": 1.0,
+   "points": []
+  },
+  {
+   "name": "LegNear1",
+   "parent": "Body",
+   "sprite": "Shellback_Leg",
+   "pos": [
+    0.62,
+    -0.06
+   ],
+   "rot": -73.61045966596522,
+   "length": 0.35440090293338705,
+   "thick": 1.4,
+   "artRot": 73.15965614409237,
+   "artScale": 0.0003109380178175919,
+   "centreFromPivot": [
+    133.29746554024013,
+    -518.8067289165555
+   ],
+   "order": 20,
+   "tint": 1.0,
+   "points": []
+  },
+  {
+   "name": "LegNear2",
+   "parent": "Body",
+   "sprite": "Shellback_Leg",
+   "pos": [
+    1.0,
+    -0.06
+   ],
+   "rot": -73.61045966596522,
+   "length": 0.35440090293338705,
+   "thick": 1.4,
+   "artRot": 73.15965614409237,
+   "artScale": 0.0003109380178175919,
+   "centreFromPivot": [
+    133.29746554024013,
+    -518.8067289165555
+   ],
+   "order": 20,
+   "tint": 1.0,
+   "points": []
+  }
+ ]
+}
