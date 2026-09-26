@@ -47,6 +47,8 @@ SHARE_WITH = {
     "Gate_Root_Open_Top": "Gate_Root_Closed_Top",
     "Gate_Root_Open_Bottom": "Gate_Root_Closed_Top",
     "Portal_Membrane_A0": "Portal_Gate_A0",
+    "Portal_Gate_Hidden_Awake": "Portal_Gate_Hidden",
+    "HUD_Resource_Bar_Fill": "HUD_Resource_Bar",
     "Platform_Crumble_Pieces": "Platform_Crumble",
     "Spitter_Head_Open": "Spitter_Head_Closed",
     "Shellback_Shell_Cracked": "Shellback_Shell_Intact",
@@ -80,9 +82,9 @@ WORLD_SIZE = {
 CHAIN_SCALE = 54.0 / 78.0
 
 TILE_H = {f"{a}_{k}" for a in ("A0", "A1", "A2", "A3", "A4") for k in ("Ground_Top", "Ceiling_Under", "Platform_OneWay_unused")} | { "Hazard_Thorns_Floor", "Hazard_Thorns_Ceiling",
-          "Whip_Lash_Segment", "HUD_Vine_Segment"}
-TILE_V = {f"{a}_Wall_Side" for a in ("A0", "A1", "A2", "A3", "A4")} | { "Hazard_Thorns_Wall", "Platform_Moving_A1_Chain"}
-TILE_FILL = {f"{a}_{k}" for a in ("A0", "A1", "A2", "A3", "A4") for k in ("Ground_Fill", "Wall_Climbable", "Wall_Slippery")}
+          "Whip_Lash_Segment", "HUD_Vine_Segment", "Water_Surface"} | {f"Hazard_Thorns_Floor_A{i}" for i in range(1, 5)}
+TILE_V = {f"{a}_Wall_Side" for a in ("A0", "A1", "A2", "A3", "A4")} | {"Waterfall_Column",  "Hazard_Thorns_Wall", "Platform_Moving_A1_Chain"}
+TILE_FILL = {f"{a}_{k}" for a in ("A0", "A1", "A2", "A3", "A4") for k in ("Ground_Fill", "Wall_Climbable", "Wall_Slippery")} | {"Water_Body"}
 
 BOTTOM_ANCHORED = {"Barrier_Rubble_Intact", "Barrier_Thorns_Intact", "Switch_Plate_Up", "Shrine_Ability",
                    "Portal_Gate_A0", "Spitter_Base",
@@ -167,6 +169,9 @@ def settings_for(category, name):
         axis, units, basis = WORLD_SIZE[name]
         extent = (bbox[2] - bbox[0]) if axis == "w" else (bbox[3] - bbox[1])
         s["ppu"], s["basis"] = round(extent / units, 3), basis
+    elif category in ("Props", "Hazards", "Backgrounds"):
+        # From Batch 3 on, Codex normalizes props, hazards and paintings to terrain density.
+        s["ppu"], s["basis"] = TERRAIN_PPU, "Codex-normalized to terrain density 120 px/u"
     else:
         raise SystemExit(f"No scale rule for {category}/{name}; add one to WORLD_SIZE.")
     return s
@@ -201,7 +206,7 @@ def decor_sprites(name):
     return out
 
 
-PIECE_SHEETS = {"Barrier_Rubble_Pieces", "Floor_Weak_Pieces", "Platform_Crumble_Pieces", "Shellback_Shell_Shards"}
+PIECE_SHEETS = {"Barrier_Rubble_Pieces", "Floor_Weak_Pieces", "Platform_Crumble_Pieces", "Shellback_Shell_Shards"} |     {f"Barrier_Rubble_Pieces_A{i}" for i in range(0, 5)} | {f"Shellback_Shell_Shards_A{i}" for i in range(1, 5)}
 
 
 def piece_sprites(category, name):
