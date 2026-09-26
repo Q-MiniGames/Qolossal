@@ -24,9 +24,9 @@ public static class Fx
     }
 
     // A single sprite that pops (scales up) and fades out over `life` seconds.
-    public static FxFlipbook Pop(Sprite sprite, Vector2 at, float size, float life = .22f, int order = 32, float rotation = 0f)
+    public static FxFlipbook Pop(Sprite sprite, Vector2 at, float size, float life = .22f, int order = 32, float rotation = 0f, bool flipX = false)
     {
-        var fb = Play(new[] { sprite }, at, 1f / life, size, order, false, rotation);
+        var fb = Play(new[] { sprite }, at, 1f / life, size, order, flipX, rotation);
         if (fb != null) { fb.popLife = life; }
         return fb;
     }

@@ -60,8 +60,13 @@ public sealed class QoriFx : MonoBehaviour
             nextScrape = Time.time + .12f;
             float side = movement.WallDirection;
             var bounds = body.bounds;
-            var fb = Fx.Pop(lib.wallScrape, new Vector2(side > 0 ? bounds.max.x : bounds.min.x, bounds.center.y - .2f), .45f, .3f, 30);
-            if (fb != null) { fb.velocity = new Vector2(-side * .4f, .6f); fb.gravity = 3f; }
+            // The art streaks from a dense lower-left end up to the right. Put the dense end at the
+            // contact point and point the streak away from the wall so it stays in open air.
+            const float size = .45f;
+            Vector2 contact = new Vector2(side > 0 ? bounds.max.x : bounds.min.x, bounds.center.y - .15f);
+            Vector2 at = contact + new Vector2(-side * size * .42f, size * .3f);
+            var fb = Fx.Pop(lib.wallScrape, at, size, .3f, 30, 0f, side > 0);
+            if (fb != null) { fb.velocity = new Vector2(-side * .9f, .2f); fb.gravity = 3f; }
         }
     }
 
