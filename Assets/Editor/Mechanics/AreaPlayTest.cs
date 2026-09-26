@@ -72,7 +72,13 @@ public static class AreaPlayTest
                 Expect(Qori.GetComponent<PlayerHealth>().Health == 3, "he keeps the hearts he left with");
                 var abilities = Qori.GetComponent<PlayerAbilityController>();
                 Expect(abilities.HasAbility(Relics.ClimbingMoss) && !abilities.HasAbility(Relics.LivingThread), "he keeps the relics he found, and only those");
-                Place(Object.FindFirstObjectByType<Checkpoint>().SpawnPosition);
+                // The A1 room itself: swing rings, chains, palettes.
+                Expect(ThreadAnchor.Active.Count >= 4, $"A1's three swing rings and the Seed Carrier are grapple anchors ({ThreadAnchor.Active.Count})");
+                var chain = Object.FindFirstObjectByType<HangingChains>().transform.Find("Chain L").GetComponent<SpriteRenderer>();
+                Expect(chain.enabled && chain.size.y > 5f, $"the hanging platform's chains reach the gallery ceiling ({chain.size.y:F1} u)");
+                int a1Parts = Object.FindObjectsByType<SpriteRenderer>(FindObjectsSortMode.None).Count(r => r.sprite != null && r.sprite.name.EndsWith("_A1") && r.GetComponentInParent<CreatureRig>() != null);
+                Expect(a1Parts > 20, $"A1's enemies wear their A1 palettes ({a1Parts} parts)");
+                Place(Object.FindObjectsByType<Checkpoint>(FindObjectsSortMode.None).First(c => c.CheckpointId == "a1-entry").SpawnPosition);
                 stage = 2; stageAt = t;
                 break;
             }

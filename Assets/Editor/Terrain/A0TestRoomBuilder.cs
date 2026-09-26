@@ -140,29 +140,43 @@ public static class A0TestRoomBuilder
         return block;
     }
 
-    // An area portal: arch, membrane and trigger, standing on the ground at `at`.
-    internal static Portal AddPortal(Transform parent, Vector2 at, string id, string destinationScene, string destinationPortal, string destinationName, float exitSide)
+    // Height to raise a centre-pivoted sprite so its painted base (`marginPx` of transparent
+    // canvas below it) sits on the ground, sunk `sink` units into the moss.
+    internal static float Grounded(Sprite sprite, float marginPx, float sink = .08f) =>
+        (sprite.pivot.y - marginPx) / sprite.pixelsPerUnit - sink;
+
+    // An area portal: arch, membrane and trigger, standing on the ground at `at`. A0's arch is
+    // pivoted at its base; later areas' are centred, with `marginPx` of canvas below the arch.
+    internal static Portal AddPortal(Transform parent, Vector2 at, string id, string destinationScene, string destinationPortal, string destinationName, float exitSide,
+        string area = "A0", float marginPx = 0f)
     {
         var portal = new GameObject("Portal " + id).AddComponent<Portal>();
         portal.transform.SetParent(parent, false); portal.transform.position = at;
         portal.portalId = id; portal.destinationScene = destinationScene; portal.destinationPortal = destinationPortal; portal.destinationName = destinationName; portal.exitSide = exitSide;
-        Image(portal.transform, "Arch", Art("Props", "Portal_Gate_A0"), at, PropOrder + 2);
-        portal.membrane = Image(portal.transform, "Membrane", Art("Props", "Portal_Membrane_A0"), at, PropOrder + 1);
+        Sprite arch = Art("Props", "Portal_Gate_" + area);
+        Vector2 artAt = at + new Vector2(0f, area == "A0" ? 0f : Grounded(arch, marginPx));
+        Image(portal.transform, "Arch", arch, artAt, PropOrder + 2);
+        portal.membrane = Image(portal.transform, "Membrane", Art("Props", "Portal_Membrane_" + area), artAt, PropOrder + 1);
         var box = portal.gameObject.AddComponent<BoxCollider2D>();
         box.isTrigger = true; box.size = new Vector2(1.2f, 2.4f); box.offset = new Vector2(0f, 1.2f);
         return portal;
     }
 
-    // A checkpoint lantern (Checkpoint_v1 art, seated on the ground at runtime) with a permanent id.
-    internal static Checkpoint AddCheckpoint(Transform parent, Vector2 at, string id)
+    // A checkpoint with a permanent id: the A0 lantern (Checkpoint_v1 art, seated on the ground at
+    // runtime), or an area's shrine art standing on the ground at `at`.
+    internal static Checkpoint AddCheckpoint(Transform parent, Vector2 at, string id, Sprite shrineArt = null, float marginPx = 0f)
     {
         var obj = new GameObject("Checkpoint " + id);
-        obj.transform.SetParent(parent, false); obj.transform.position = at + new Vector2(0f, .8f);
-        obj.AddComponent<SpriteRenderer>();
+        obj.transform.SetParent(parent, false);
+        obj.transform.position = at + new Vector2(0f, shrineArt != null ? Grounded(shrineArt, marginPx) : .8f);
+        var marker = obj.AddComponent<SpriteRenderer>();
+        marker.sortingOrder = PropOrder + 1;
+        marker.sprite = shrineArt;   // Checkpoint sets it too at runtime; this shows it in the editor
         var box = obj.AddComponent<BoxCollider2D>(); box.isTrigger = true; box.size = new Vector2(1f, 1.6f);
         var checkpoint = obj.AddComponent<Checkpoint>();
         var settings = new SerializedObject(checkpoint);
         settings.FindProperty("checkpointId").stringValue = id;
+        settings.FindProperty("shrineArt").objectReferenceValue = shrineArt;
         settings.ApplyModifiedPropertiesWithoutUndo();
         return checkpoint;
     }
@@ -205,14 +219,14 @@ public static class A0TestRoomBuilder
     }
 
     const float StartCameraX = -18f, StartCameraY = 2.5f;
-    const int PropOrder = -15;
+    internal const int PropOrder = -15;
 
-    static Sprite Art(string category, string name) =>
+    internal static Sprite Art(string category, string name) =>
         AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/Codex/" + category + "/" + name + ".png") ?? throw new FileNotFoundException(name);
-    static Sprite[] Pieces(string category, string name) =>
+    internal static Sprite[] Pieces(string category, string name) =>
         AssetDatabase.LoadAllAssetsAtPath("Assets/Art/Codex/" + category + "/" + name + ".png").OfType<Sprite>().OrderBy(p => p.name).ToArray();
 
-    static SpriteRenderer Image(Transform parent, string name, Sprite sprite, Vector2 at, int order = PropOrder)
+    internal static SpriteRenderer Image(Transform parent, string name, Sprite sprite, Vector2 at, int order = PropOrder)
     {
         var r = new GameObject(name).AddComponent<SpriteRenderer>();
         r.transform.SetParent(parent, false); r.transform.position = at;
@@ -414,15 +428,7 @@ public static class A0TestRoomBuilder
     // Usage: -executeMethod A0TestRoomBuilder.Capture -captureDir <folder>
     public static void Capture()
     {
-        string[] args = Environment.GetCommandLineArgs();
-        int index = Array.IndexOf(args, "-captureDir");
-        string folder = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Temp/A0Captures";
-        Directory.CreateDirectory(folder);
-        EditorSceneManager.OpenScene(ScenePath);
-        foreach (TerrainBlock block in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
-        foreach (TerrainPiece piece in UnityEngine.Object.FindObjectsByType<TerrainPiece>(FindObjectsSortMode.None)) piece.Rebuild();
-        Camera camera = Camera.main;
-        (string name, Vector2 at, float size)[] shots =
+        string folder = RenderShots(ScenePath, new (string, Vector2, float)[]
         {
             ("overview", new Vector2(31f, 2f), 22f), ("start", new Vector2(-18f, 2.5f), 5f),
             ("slope", new Vector2(18f, 5f), 6f), ("plateau_ledge", new Vector2(40f, 8f), 5f),
@@ -435,7 +441,33 @@ public static class A0TestRoomBuilder
             ("shrine_bloomfall", new Vector2(68.8f, 10.3f), 2.2f),
             ("enemy_carrier", new Vector2(20f, 9.3f), 2.2f), ("enemy_spitter", new Vector2(41.5f, 9.4f), 2.2f),
             ("enemy_thornwing", new Vector2(50f, 8.4f), 2.2f), ("enemy_shellback", new Vector2(76f, 9.8f), 2.2f),
-        };
+        });
+
+        // Walk-surface probes: where a ray straight down first meets ground at each x.
+        Physics2D.SyncTransforms();
+        int mask = LayerMask.GetMask("Ground");
+        var report = new System.Text.StringBuilder();
+        report.AppendLine("x, surface y, collider");
+        for (float x = -22f; x <= 84f; x += 2f)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(x, 30f), Vector2.down, 60f, mask);
+            report.AppendLine(hit ? $"{x}, {hit.point.y:0.00}, {hit.collider.name}" : $"{x}, none, -");
+        }
+        File.WriteAllText(Path.Combine(folder, "surface_probe.csv"), report.ToString());
+    }
+
+    // Opens `scenePath` and renders each shot (camera centre, orthographic size) to
+    // <-captureDir>/<name>.png at 1920x1080. Returns the folder.
+    internal static string RenderShots(string scenePath, (string name, Vector2 at, float size)[] shots)
+    {
+        string[] args = Environment.GetCommandLineArgs();
+        int index = Array.IndexOf(args, "-captureDir");
+        string folder = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Temp/Captures";
+        Directory.CreateDirectory(folder);
+        EditorSceneManager.OpenScene(scenePath);
+        foreach (TerrainBlock block in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
+        foreach (TerrainPiece piece in UnityEngine.Object.FindObjectsByType<TerrainPiece>(FindObjectsSortMode.None)) piece.Rebuild();
+        Camera camera = Camera.main;
         var texture = new RenderTexture(1920, 1080, 24);
         var read = new Texture2D(1920, 1080, TextureFormat.RGB24, false);
         foreach (var shot in shots)
@@ -452,18 +484,7 @@ public static class A0TestRoomBuilder
         }
         camera.targetTexture = null;
         RenderTexture.active = null;
-
-        // Walk-surface probes: where a ray straight down first meets ground at each x.
-        Physics2D.SyncTransforms();
-        int mask = LayerMask.GetMask("Ground");
-        var report = new System.Text.StringBuilder();
-        report.AppendLine("x, surface y, collider");
-        for (float x = -22f; x <= 84f; x += 2f)
-        {
-            RaycastHit2D hit = Physics2D.Raycast(new Vector2(x, 30f), Vector2.down, 60f, mask);
-            report.AppendLine(hit ? $"{x}, {hit.point.y:0.00}, {hit.collider.name}" : $"{x}, none, -");
-        }
-        File.WriteAllText(Path.Combine(folder, "surface_probe.csv"), report.ToString());
-        Debug.Log("[A0TestRoomBuilder] Captures written to " + Path.GetFullPath(folder));
+        Debug.Log("[Capture] Captures written to " + Path.GetFullPath(folder));
+        return folder;
     }
 }
