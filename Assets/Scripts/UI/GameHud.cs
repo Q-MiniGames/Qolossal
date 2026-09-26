@@ -9,7 +9,7 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public sealed class GameHud : MonoBehaviour
 {
-    const float FrameWidth = 460f, Margin = 36f;   // reference px at 1920x1080
+    const float RingHeight = 118f, LeafSize = 88f, LeafSpacing = 68f, Margin = 36f;   // reference px at 1920x1080
 
     PlayerHealth health;
     PlayerCombat combat;
@@ -77,24 +77,35 @@ public sealed class GameHud : MonoBehaviour
         var canvas = CreateCanvas("HUD Canvas", 10);
         canvas.transform.SetParent(transform, false);
 
-        float scale = FrameWidth / skin.hudFrame.rect.width;
-        Vector2 frameSize = skin.hudFrame.rect.size * scale;
-        // Leaves and weapon sit under the frame, showing through its openings.
-        var frame = AddImage(canvas.transform, "HUD", null, new Vector2(0f, 1f), new Vector2(Margin + frameSize.x * .5f, -Margin - frameSize.y * .5f), frameSize);
-        frame.enabled = false;
-        // Frame px (from top-left) -> position inside the frame's rect (centre origin).
-        Vector2 Local(Vector2 px) => new Vector2(px.x * scale - frameSize.x * .5f, frameSize.y * .5f - px.y * scale);
+        // Only the ornate ring end of the frame art (px x 0-318, y 20-236 from the top), holding
+        // the weapon; the leaves sit in a row beside it rather than in the long socket chain.
+        Texture2D texture = skin.hudFrame.texture;
+        Rect source = skin.hudFrame.rect;
+        var ringRect = new Rect(source.x, source.y + (source.height - 236f), 318f, 216f);
+        var ring = Sprite.Create(texture, ringRect, new Vector2(.5f, .5f), skin.hudFrame.pixelsPerUnit);
+        float scale = RingHeight / ringRect.height;
+        Vector2 ringSize = ringRect.size * scale;
+        var root = AddImage(canvas.transform, "HUD", null, new Vector2(0f, 1f), new Vector2(Margin + ringSize.x * .5f, -Margin - ringSize.y * .5f), ringSize);
+        root.enabled = false;
+        // Frame px (from the art's top-left) -> position inside the ring's rect (centre origin).
+        Vector2 Local(Vector2 px) => new Vector2(px.x * scale - ringSize.x * .5f, ringSize.y * .5f - (px.y - 20f) * scale);
 
-        weapon = AddImage(frame.transform, "Weapon", null, new Vector2(.5f, .5f), Local(skin.weaponRingCentre),
+        weapon = AddImage(root.transform, "Weapon", null, new Vector2(.5f, .5f), Local(skin.weaponRingCentre),
             Vector2.one * skin.weaponRingDiameter * scale * .8f);
         weapon.rectTransform.localEulerAngles = new Vector3(0f, 0f, 45f);
         weapon.enabled = false;
+        AddImage(root.transform, "Ring", ring, new Vector2(.5f, .5f), Vector2.zero, ringSize);
 
-        leaves = new Image[skin.leafSockets.Length];
-        leafPulse = new float[leaves.Length];
-        for (int i = 0; i < leaves.Length; i++)
-            leaves[i] = AddImage(frame.transform, "Leaf " + (i + 1), skin.leafFull, new Vector2(.5f, .5f), Local(skin.leafSockets[i]), Vector2.one * skin.leafSize * scale);
-        AddImage(frame.transform, "Frame", skin.hudFrame, new Vector2(.5f, .5f), Vector2.zero, frameSize);
+        int count = skin.leafSockets.Length;
+        leaves = new Image[count];
+        leafPulse = new float[count];
+        // The first leaf covers the point where the ring art is cut from the rest of the chain.
+        Vector2 first = new Vector2(ringSize.x * .5f - LeafSize * .12f, Local(skin.weaponRingCentre).y);
+        for (int i = 0; i < count; i++)
+        {
+            leaves[i] = AddImage(root.transform, "Leaf " + (i + 1), skin.leafFull, new Vector2(.5f, .5f), first + new Vector2(i * LeafSpacing, 0f), Vector2.one * LeafSize);
+            leaves[i].rectTransform.localEulerAngles = new Vector3(0f, 0f, -15f);
+        }
     }
 
     void Update()
