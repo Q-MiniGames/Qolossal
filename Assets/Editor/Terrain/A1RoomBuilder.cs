@@ -8,9 +8,11 @@ using UnityEngine;
 // east: the portal from A0 and a wading stream; a slope up to the ravine plateau; the ravine,
 // crossed by swinging from rings under a broken aqueduct span (Living Thread), or climbed out
 // of up a vine column (Climbing Moss); the east plateau with thorns and a rubble wall (mace);
-// a drop to the lower gallery; a thorn pit crossed on a chain-hung platform, with a Thornwing
-// to pogo off (Bloomfall); a checkpoint and the portal on to A2. The way back up uses the rock
-// walls, so every stretch works in both directions. Enemies wear their A1 palettes.
+// a drop to the lower gallery under loose falling rocks; a thorn pit crossed on a chain-hung
+// platform, with a Thornwing to pogo off (Bloomfall); a checkpoint, the portal on to A2, and a
+// false wall hiding an alcove with a heart seed. The way back up uses the rock walls, so every
+// stretch works in both directions. Ripple Newts lurk in both streams and a Burrow Grub under
+// the east plateau; the enemies from A0 wear their A1 palettes.
 // Menu: Qolossal > Scenes > Build A1 Aqueduct
 public static class A1RoomBuilder
 {
@@ -60,9 +62,12 @@ public static class A1RoomBuilder
 
         // East plateau, then the drop to the lower gallery under a rock ceiling.
         Block("East Plateau", 78f, P, 24f, P + 14f, 10, left: true, right: true);
-        Block("Lower Gallery Floor", 101f, -6f, 41f, 8f, 0);
+        Block("Lower Gallery Floor", 101f, -6f, 46f, 8f, 0);
         Block("Gallery Ceiling", 106f, 8f, 26f, 5f, 30, left: true, right: true, bottom: true);
-        Block("East Wall", 142f, 16f, 2f, 24f, 20, left: true);
+        // A hidden alcove at the gallery's east end: its low roof comes down to -1.5, and a false
+        // wall (SecretWall) hides the opening beneath it.
+        Block("Alcove Roof", 142f, 16f, 5f, 17.5f, 20, left: true, bottom: true);
+        Block("East Wall", 147f, 16f, 2f, 24f, 20, left: true);
 
         BuildBackground(camera);
         // Dark back walls of fill rock, so the ravine and the lower gallery read as deep and
@@ -70,7 +75,7 @@ public static class A1RoomBuilder
         var backs = new GameObject("Back Walls").transform;
         Color shade = new Color(.1f, .12f, .13f, 1f);   // dark and cool, so it never reads as ground Qori could stand on
         Strip(backs, "Ravine Back Wall", kit.groundFill, 57f, P - .5f, 22f, P + 4f, Vector2.zero, shade, -60, false, false, 2.5f, 0f, .8f);
-        Strip(backs, "Gallery Back Wall", kit.groundFill, 101f, 8f, 41f, 14.5f, Vector2.zero, shade, -60, false, false, 2.5f, 0f, .8f);
+        Strip(backs, "Gallery Back Wall", kit.groundFill, 101f, 8f, 46f, 14.5f, Vector2.zero, shade, -60, false, false, 2.5f);   // walled at both ends: no side fade
         BuildWater(P);
         BuildMechanics(P);
         BuildEnemies(P);
@@ -218,6 +223,33 @@ public static class A1RoomBuilder
         var raftBody = raft.AddComponent<Rigidbody2D>(); raftBody.bodyType = RigidbodyType2D.Kinematic;
         var mover = raft.AddComponent<MovingPlatform>();
         mover.offset = new Vector2(8f, 0f); mover.travelSeconds = 4f; mover.solid = raft.GetComponent<Collider2D>();
+        // Loose rocks in the gallery ceiling: one over the walk in, one over the thorn pit.
+        foreach (float x in new[] { 110.5f, 121.5f })
+        {
+            var rock = new GameObject("Falling Rock " + x);
+            rock.transform.SetParent(root, false); rock.transform.position = new Vector3(x, 3f - .5f, 0f);
+            var fr = rock.AddComponent<FallingRock>();
+            fr.image = Image(rock.transform, "Art", Art("Hazards", "Hazard_FallingRock"), rock.transform.position, PropOrder + 4);
+            fr.image.transform.localScale = new Vector3(.52f, .52f, 1f);
+            fr.dust = Art("Hazards", "FX_Dust_Warning");
+            var box = rock.AddComponent<BoxCollider2D>(); box.isTrigger = true; box.size = new Vector2(1.2f, .8f);
+        }
+
+        // The false wall over the alcove, and the heart seed hidden inside.
+        var secret = new GameObject("Secret Wall");
+        secret.transform.SetParent(root, false); secret.transform.position = new Vector3(144.5f, -3.75f, 0f);
+        var sw = secret.AddComponent<SecretWall>();
+        var zone = secret.GetComponent<BoxCollider2D>(); zone.size = new Vector2(5f, 4.5f);
+        sw.overlay = Image(secret.transform, "Overlay", Art("Props", "Wall_Secret_Overlay_A1"), new Vector2(144.5f, -3.75f), 40);
+        sw.overlay.transform.localScale = new Vector3(5.4f / 8.53f, 4.9f / 8.53f, 1f);   // 1024 px canvas at 120 px/u
+        var wallBase = A0TestRoomBuilder.Ground(sw.overlay.gameObject, kit, -6f, 4.6f, 40);   // moss over its foot; no shadow (it's drawn in front of Qori)
+        wallBase.enabled = false; wallBase.shadow = false; wallBase.enabled = true;
+        var seed = new GameObject("Heart Seed");
+        seed.transform.SetParent(root, false); seed.transform.position = new Vector3(145.6f, -5.2f, 0f);
+        var hs = seed.AddComponent<HeartSeed>(); hs.seedId = "a1-heartseed";
+        hs.image = Image(seed.transform, "Art", Art("Props", "Pickup_HeartSeed"), seed.transform.position, PropOrder + 3);
+        var seedBox = seed.AddComponent<CircleCollider2D>(); seedBox.isTrigger = true; seedBox.radius = .45f;
+
         var chains = raft.AddComponent<HangingChains>();
         chains.chain = Art("Hazards", "Platform_Moving_A1_Chain"); chains.ceilingY = 3f;
         chains.artTop = 1.62f - deckAboveArt + .15f;   // painted chain tops, relative to the platform
@@ -226,15 +258,18 @@ public static class A1RoomBuilder
     static void BuildEnemies(float P)
     {
         var root = new GameObject("Enemies").transform;
-        void Enemy(string prefab, Vector2 at)
+        // Enemies from A0 are recoloured for A1; A1's own creatures (the Newt, the Grub) aren't.
+        void Enemy(string prefab, Vector2 at, bool recolour = true)
         {
             var obj = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/" + prefab + ".prefab"), root);
             obj.transform.position = at;
-            if (AreaPalette.Apply(obj, "A1") == 0) Debug.LogWarning($"[A1RoomBuilder] {prefab} has no A1 palette parts");
+            if (recolour && AreaPalette.Apply(obj, "A1") == 0) Debug.LogWarning($"[A1RoomBuilder] {prefab} has no A1 palette parts");
         }
         Enemy("FlyingCreature01", new Vector2(20f, 6.5f));      // Seed Carrier over the entry (also a grapple anchor)
         Enemy("GroundCreature01", new Vector2(52f, P + .4f));    // Crawler on the ravine plateau
-        Enemy("GroundCreature01", new Vector2(93f, P + .4f));    // Crawler past the plateau thorns
+        Enemy("Grub01", new Vector2(93f, P), false);            // Burrow Grub under the east plateau
+        Enemy("Newt01", new Vector2(15.5f, 0f), false);          // Ripple Newt in the entry stream
+        Enemy("Newt01", new Vector2(70f, -4f), false);           // and one in the ravine stream
         Enemy("Shellback01", new Vector2(107f, -5.95f));         // at the foot of the drop (mace cracks its shell)
         Enemy("Thornwing01", new Vector2(119.5f, -1f));          // over the thorn pit: a pogo target
         Enemy("PodSpitter01", new Vector2(133f, -6f));           // guarding the east portal
@@ -258,7 +293,7 @@ public static class A1RoomBuilder
             if (!hanging && System.Array.IndexOf(solid, name) >= 0) A0TestRoomBuilder.Ground(r.gameObject, kit, y, r.sprite.bounds.size.x * .75f, order);
         }
         // Entry
-        Place("reeds", 11.3f, 0f, 5); Place("water_lilies", 15.5f, .05f, 21); Place("reeds", 19.6f, 0f, 5, flip: true);
+        Place("reeds", 11.3f, 0f, 5); Place("water_lilies", 17.8f, .05f, 21); Place("reeds", 19.6f, 0f, 5, flip: true);
         Place("stone_basin", 22.5f, 0f); Place("snail", 23.6f, 0f); Place("aqueduct_pillar", 25.5f, 0f); Place("grass", 28f, 0f, 5);
         // Ravine plateau, span and floor
         Place("carved_block", 49f, P); Place("grass", 51.5f, P, 5); Place("mushrooms", 55.5f, P);
@@ -267,7 +302,7 @@ public static class A1RoomBuilder
         // East plateau
         Place("algae_rock_large", 81f, P); Place("grass", 91f, P, 5); Place("aqueduct_pillar", 96f, P);
         // Lower gallery
-        Place("mushrooms", 104f, -6f); Place("hanging_roots", 110f, 3f, hanging: true); Place("hanging_ivy", 129.5f, 3f, hanging: true);
+        Place("mushrooms", 104f, -6f); Place("hanging_roots", 114.5f, 3f, hanging: true); Place("hanging_ivy", 129.5f, 3f, hanging: true);
         Place("algae_rock_small", 131f, -6f); Place("grass", 139.5f, -6f, 5);
     }
 

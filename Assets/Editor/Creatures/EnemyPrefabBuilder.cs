@@ -40,6 +40,30 @@ public static class EnemyPrefabBuilder
             so.ApplyModifiedPropertiesWithoutUndo();
             return e;
         }, Vector2.zero);
+        Build("Newt01", "Newt", root =>
+        {
+            root.AddComponent<Rigidbody2D>();
+            var box = root.AddComponent<BoxCollider2D>(); box.size = new Vector2(1.3f, .5f); box.offset = new Vector2(0f, .3f);
+            var e = root.AddComponent<NewtEnemy>();
+            Set(e, "splash", Sprite("FX_Splash")); Set(e, "ripple", AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/Codex/Effects/FX_Water_Ripple.png"));
+            return e;
+        }, Vector2.zero);
+        Build("Grub01", "Grub", root =>
+        {
+            root.AddComponent<Rigidbody2D>();
+            var box = root.AddComponent<BoxCollider2D>(); box.size = new Vector2(1.7f, .62f); box.offset = new Vector2(-.15f, .32f);
+            var e = root.AddComponent<GrubEnemy>();
+            Set(e, "soilBurst", Sprite("FX_Soil_Burst")); Set(e, "mouthOpen", Sprite("Grub_Mouth_Open"));
+            return e;
+        }, Vector2.zero);
+        Build("GustMoth01", "GustMoth", root =>
+        {
+            root.AddComponent<Rigidbody2D>();
+            root.AddComponent<CircleCollider2D>().radius = .45f;
+            var e = root.AddComponent<GustMothEnemy>();
+            Set(e, "gust", Sprite("FX_Gust"));
+            return e;
+        }, Vector2.zero);
         AssetDatabase.SaveAssets();
         Debug.Log("[EnemyPrefabBuilder] built enemy prefabs");
     }

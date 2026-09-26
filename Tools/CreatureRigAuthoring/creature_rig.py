@@ -174,7 +174,52 @@ def shellback():
     return r
 
 
-SPECIES = dict(carrier=carrier, thornwing=thornwing, spitter=spitter, shellback=shellback)
+# ------------------------------------------------------------------ Ripple Newt (E-07, A1): 1.2 QH long water lizard
+def newt():
+    r = Rig('Newt', 'Newt_Concept')
+    B, H, L, T1, T2 = 'Newt_Body', 'Newt_Head', 'Newt_Leg', 'Newt_Tail_1', 'Newt_Tail_2'
+    # Body: hip socket (lower left) to neck socket (right end).
+    r.part('Body', B, ((205, 285), (722, 255)), ((-.45, .30), (.42, .33)), None, 10)
+    r.part('Head', H, ((292, 262), (526, 258)), ((.38, .33), (.78, .30)), 'Body', 14, extra={'Mouth': (515, 268)})
+    # Tail pieces run leftward; mirrored across the bone (thick -1) so their leaves stay on top.
+    r.part('Tail1', T1, (cap(T1, (1, 0)), cap(T1, (-1, 0))), ((-.40, .30), (-.90, .36)), 'Body', 8, 1.0, -1.25)
+    r.part('Tail2', T2, (cap(T2, (-1, 0)), cap(T2, (1, 0))), ((-.86, .36), (-1.24, .62)), 'Tail1', 6, 1.0, -1.25)
+    hip, foot = cap(L, (0, -1)), cap(L, (0, 1))
+    for side, dx, order, tint in (('Far', .06, 2, .72), ('Near', 0., 20, 1.)):
+        for i, x in enumerate((.24, -.30)):
+            r.part(f'Leg{side}{i}', L, (hip, foot), ((x + dx, .27), (x + dx + .08, 0.)), 'Body', order, tint, 1.5)
+    return r
+
+
+# ------------------------------------------------------------------ Burrow Grub (E-06): 0.6 QH tall segmented grub
+def grub():
+    r = Rig('Grub', 'Grub_Concept')
+    S, H = 'Grub_Body_Segment', 'Grub_Head'
+    back, front = cap(S, (-1, 0)), cap(S, (1, 0))
+    # Segments from the head backwards, each a little smaller and lower; nearer ones drawn in front.
+    # Heavily overlapped, tall segments so they read as one plump, ringed body (as in the concept).
+    parent = None
+    for i in range(5):
+        k = 1.0 - .09 * i                      # size falls off toward the tail
+        x1 = .42 - .25 * i; x0 = x1 - .46 * k; y = .30 * k + .02
+        r.part(f'Seg{i}', S, (back, front), ((x0, y), (x1, y)), parent, 12 - i, 1.0 - .05 * i, 1.75)
+        parent = f'Seg{i}'
+    r.part('Head', H, (cap(H, (-1, 0)), cap(H, (1, 0))), ((.18, .36), (.88, .33)), 'Seg0', 16, extra={'Mouth': (565, 450)})
+    return r
+
+
+# ------------------------------------------------------------------ Gust Moth (E-09, A3): wingspan 0.9 QH, harmless hoverer
+def gustmoth():
+    r = Rig('GustMoth', 'GustMoth_Concept')
+    B = 'GustMoth_Body'
+    r.part('Body', B, (cap(B, (-1, 0)), cap(B, (1, -.2))), ((-.42, -.02), (.36, .05)), None, 10)
+    for name, order, tint, tip in (('WingBack', 4, .8, (-.30, .95)), ('WingFront', 16, 1.0, (-.62, .82))):
+        W = 'GustMoth_' + name
+        r.part(name, W, (cap(W, (1, 1)), cap(W, (-1, -1))), ((-.06, .12), tip), 'Body', order, tint)
+    return r
+
+
+SPECIES = dict(carrier=carrier, thornwing=thornwing, spitter=spitter, shellback=shellback, newt=newt, grub=grub, gustmoth=gustmoth)
 
 if __name__ == '__main__':
     rig = SPECIES[sys.argv[1]]()

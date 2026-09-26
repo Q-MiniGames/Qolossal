@@ -53,6 +53,11 @@ public sealed class CreatureRig : MonoBehaviour
     public void Tint(Color tint)
     {
         CaptureRest();
+        if (baseColors.Length < renderers.Length)   // renderers added after Awake (e.g. an overlay)
+        {
+            int old = baseColors.Length; System.Array.Resize(ref baseColors, renderers.Length);
+            for (int i = old; i < renderers.Length; i++) baseColors[i] = renderers[i] != null ? renderers[i].color : Color.white;
+        }
         for (int i = 0; i < renderers.Length; i++) if (renderers[i] != null) renderers[i].color = baseColors[i] * tint;
     }
 

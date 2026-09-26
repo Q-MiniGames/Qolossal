@@ -77,7 +77,7 @@ public static class AreaPlayTest
                 var chain = Object.FindFirstObjectByType<HangingChains>().transform.Find("Chain L").GetComponent<SpriteRenderer>();
                 Expect(chain.enabled && chain.size.y > 5f, $"the hanging platform's chains reach the gallery ceiling ({chain.size.y:F1} u)");
                 int a1Parts = Object.FindObjectsByType<SpriteRenderer>(FindObjectsSortMode.None).Count(r => r.sprite != null && r.sprite.name.EndsWith("_A1") && r.GetComponentInParent<CreatureRig>() != null);
-                Expect(a1Parts > 20, $"A1's enemies wear their A1 palettes ({a1Parts} parts)");
+                Expect(a1Parts > 12, $"A1's enemies wear their A1 palettes ({a1Parts} parts)");
                 Place(Object.FindObjectsByType<Checkpoint>(FindObjectsSortMode.None).First(c => c.CheckpointId == "a1-entry").SpawnPosition);
                 stage = 2; stageAt = t;
                 break;

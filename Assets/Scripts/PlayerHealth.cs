@@ -24,8 +24,13 @@ public sealed class PlayerHealth : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
         visual = GetComponent<SpriteRenderer>();
         restingColor = visual.color;
+        // In an area of the game, heart seeds found so far add to the base hearts.
+        if (GameArea.InScene != null) maximumHealth += GameSave.HeartSeeds;
         health = maximumHealth;
     }
+
+    // A heart seed: one more heart for good, and a full refill.
+    public void AddMaximum(int hearts) { maximumHealth += Mathf.Max(0, hearts); health = maximumHealth; }
 
     private void OnCollisionEnter2D(Collision2D collision) => CheckContact(collision.collider);
     private void OnCollisionStay2D(Collision2D collision) => CheckContact(collision.collider);
