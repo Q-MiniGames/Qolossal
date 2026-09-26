@@ -7,6 +7,21 @@ public sealed class UiSkin : ScriptableObject
 {
     public Sprite hudFrame, leafFull, leafHalf, leafEmpty;
     public Sprite panel, buttonNormal, buttonHover, buttonPressed;
+    [Header("HUD ring (HUD_01): round medallion, backing disc, tiling vine")]
+    public Sprite ring, ringBacking, vine;
+    [Tooltip("Ring canvas px: opening centre and diameter, and the tip of the vine stub on the right.")]
+    public Vector2 ringOpeningCentre = new Vector2(256, 256);
+    public float ringOpeningDiameter = 282;
+    public Vector2 ringStubTip = new Vector2(445, 256);
+    [Header("Weapon icons, by weaponId")]
+    public string[] weaponIds = { "forest-0", "reedblade", "forest-1", "forest-2", "forest-3", "resin-sling" };
+    public Sprite[] weaponIcons = new Sprite[6];
+
+    public Sprite IconFor(string weaponId)
+    {
+        int i = System.Array.IndexOf(weaponIds, weaponId);
+        return i >= 0 && i < weaponIcons.Length ? weaponIcons[i] : null;
+    }
 
     [Header("HUD frame landmarks (px in HUD_Frame, from its top-left)")]
     // Centres of the transparent openings, measured from the art: the weapon ring's oval

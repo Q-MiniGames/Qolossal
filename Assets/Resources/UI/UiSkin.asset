@@ -20,6 +20,26 @@ MonoBehaviour:
   buttonNormal: {fileID: 21300000, guid: 4c5fff7a2e10abd4c829b4544c8b3077, type: 3}
   buttonHover: {fileID: 21300000, guid: 338d4e44876b8b943b97c2123800b58a, type: 3}
   buttonPressed: {fileID: 21300000, guid: 5ef952fa61daed04dbda16de9516c09c, type: 3}
+  ring: {fileID: 21300000, guid: 921dd4819503d194481583d3c9a1d53f, type: 3}
+  ringBacking: {fileID: 21300000, guid: 8ab9c7acaea2393479dd0d184b160c87, type: 3}
+  vine: {fileID: 21300000, guid: 4b0176fda8ae92c4780805e762293547, type: 3}
+  ringOpeningCentre: {x: 256, y: 256}
+  ringOpeningDiameter: 282
+  ringStubTip: {x: 445, y: 256}
+  weaponIds:
+  - forest-0
+  - reedblade
+  - forest-1
+  - forest-2
+  - forest-3
+  - resin-sling
+  weaponIcons:
+  - {fileID: 21300000, guid: 74e27d3066654b749842106e06efe336, type: 3}
+  - {fileID: 21300000, guid: 74e27d3066654b749842106e06efe336, type: 3}
+  - {fileID: 21300000, guid: 0cfe74b83e679a54ab7b86e7f0c34b95, type: 3}
+  - {fileID: 21300000, guid: 7e24807d8cb22664ca89c99b88e771c7, type: 3}
+  - {fileID: 21300000, guid: 2f390ea61e15a0e4bb700678189513c5, type: 3}
+  - {fileID: 21300000, guid: 0e53d1470ca2f284f967b138f8e53074, type: 3}
   weaponRingCentre: {x: 210, y: 122}
   weaponRingDiameter: 150
   leafSockets:
@@ -29,3 +49,4 @@ MonoBehaviour:
   - {x: 684, y: 118}
   - {x: 786, y: 118}
   - {x: 888, y: 118}
+  leafSize: 84

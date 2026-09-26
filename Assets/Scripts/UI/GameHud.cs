@@ -9,13 +9,14 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public sealed class GameHud : MonoBehaviour
 {
-    const float RingHeight = 118f, LeafSize = 88f, LeafSpacing = 68f, Margin = 36f;   // reference px at 1920x1080
+    const float RingSize = 150f, LeafSize = 56f, LeafSpacing = 46f, LeafGap = 30f, VineHeight = 26f, Margin = 30f;   // reference px at 1920x1080
 
     PlayerHealth health;
     PlayerCombat combat;
     UiSkin skin;
     Image[] leaves;
-    Image weapon;
+    Image weapon, vine;
+    Vector2 vineStub;
     WeaponDefinition shownWeapon;
     int shownHealth = -1, shownMaximum = -1;
     float[] leafPulse;
@@ -77,35 +78,42 @@ public sealed class GameHud : MonoBehaviour
         var canvas = CreateCanvas("HUD Canvas", 10);
         canvas.transform.SetParent(transform, false);
 
-        // Only the ornate ring end of the frame art (px x 0-318, y 20-236 from the top), holding
-        // the weapon; the leaves sit in a row beside it rather than in the long socket chain.
-        Texture2D texture = skin.hudFrame.texture;
-        Rect source = skin.hudFrame.rect;
-        var ringRect = new Rect(source.x, source.y + (source.height - 236f), 318f, 216f);
-        var ring = Sprite.Create(texture, ringRect, new Vector2(.5f, .5f), skin.hudFrame.pixelsPerUnit);
-        float scale = RingHeight / ringRect.height;
-        Vector2 ringSize = ringRect.size * scale;
+        // Round medallion (HUD_Ring) holding the weapon icon on a dark backing, and a vine from
+        // its stub threading one leaf per heart.
+        float scale = RingSize / skin.ring.rect.width;
+        Vector2 ringSize = skin.ring.rect.size * scale;
         var root = AddImage(canvas.transform, "HUD", null, new Vector2(0f, 1f), new Vector2(Margin + ringSize.x * .5f, -Margin - ringSize.y * .5f), ringSize);
         root.enabled = false;
-        // Frame px (from the art's top-left) -> position inside the ring's rect (centre origin).
-        Vector2 Local(Vector2 px) => new Vector2(px.x * scale - ringSize.x * .5f, ringSize.y * .5f - (px.y - 20f) * scale);
-
-        weapon = AddImage(root.transform, "Weapon", null, new Vector2(.5f, .5f), Local(skin.weaponRingCentre),
-            Vector2.one * skin.weaponRingDiameter * scale * .8f);
-        weapon.rectTransform.localEulerAngles = new Vector3(0f, 0f, 45f);
-        weapon.enabled = false;
-        AddImage(root.transform, "Ring", ring, new Vector2(.5f, .5f), Vector2.zero, ringSize);
+        // Ring px (from its top-left) -> position inside the ring's rect (centre origin).
+        Vector2 Local(Vector2 px) => new Vector2(px.x * scale - ringSize.x * .5f, ringSize.y * .5f - px.y * scale);
 
         int count = skin.leafSockets.Length;
+        Vector2 stub = Local(skin.ringStubTip);
+        vineStub = stub;
+        vine = AddImage(root.transform, "Vine", skin.vine, new Vector2(.5f, .5f), stub, new Vector2(1f, VineHeight));
+        vine.type = Image.Type.Tiled; vine.preserveAspect = false;
+        vine.pixelsPerUnitMultiplier = skin.vine.rect.height / VineHeight;
+        SizeVine(count);
+
+        AddImage(root.transform, "Backing", skin.ringBacking, new Vector2(.5f, .5f), Vector2.zero, ringSize);
+        weapon = AddImage(root.transform, "Weapon", null, new Vector2(.5f, .5f), Local(skin.ringOpeningCentre),
+            Vector2.one * skin.ringOpeningDiameter * scale * .82f);
+        weapon.enabled = false;
+        AddImage(root.transform, "Ring", skin.ring, new Vector2(.5f, .5f), Vector2.zero, ringSize);
+
         leaves = new Image[count];
         leafPulse = new float[count];
-        // The first leaf covers the point where the ring art is cut from the rest of the chain.
-        Vector2 first = new Vector2(ringSize.x * .5f - LeafSize * .12f, Local(skin.weaponRingCentre).y);
         for (int i = 0; i < count; i++)
-        {
-            leaves[i] = AddImage(root.transform, "Leaf " + (i + 1), skin.leafFull, new Vector2(.5f, .5f), first + new Vector2(i * LeafSpacing, 0f), Vector2.one * LeafSize);
-            leaves[i].rectTransform.localEulerAngles = new Vector3(0f, 0f, -15f);
-        }
+            leaves[i] = AddImage(root.transform, "Leaf " + (i + 1), skin.leafFull, new Vector2(.5f, .5f),
+                stub + new Vector2(LeafGap + i * LeafSpacing, 0f), Vector2.one * LeafSize);
+    }
+
+    // The vine runs from the ring's stub to just past the last heart.
+    void SizeVine(int hearts)
+    {
+        float length = LeafGap + Mathf.Max(0, hearts - 1) * LeafSpacing + LeafSize * .45f;
+        vine.rectTransform.sizeDelta = new Vector2(length, VineHeight);
+        vine.rectTransform.anchoredPosition = vineStub + new Vector2(length * .5f - 4f, 0f);
     }
 
     void Update()
@@ -121,6 +129,7 @@ public sealed class GameHud : MonoBehaviour
                 leaves[i].sprite = i < hp ? skin.leafFull : skin.leafEmpty;
                 if (had != (i < hp) && shownHealth >= 0) leafPulse[i] = 1f;   // lost or regained: a small pop
             }
+            if (max != shownMaximum) SizeVine(Mathf.Min(max, leaves.Length));
             shownHealth = hp; shownMaximum = max;
         }
         for (int i = 0; i < leaves.Length; i++)
@@ -134,7 +143,7 @@ public sealed class GameHud : MonoBehaviour
         if (w != shownWeapon)
         {
             shownWeapon = w;
-            weapon.sprite = w != null ? w.weaponArtwork : null;
+            weapon.sprite = w == null ? null : skin.IconFor(w.weaponId) ?? w.weaponArtwork;
             weapon.enabled = weapon.sprite != null;
         }
     }

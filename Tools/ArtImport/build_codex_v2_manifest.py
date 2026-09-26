@@ -80,7 +80,7 @@ WORLD_SIZE = {
 CHAIN_SCALE = 54.0 / 78.0
 
 TILE_H = {"A0_Ground_Top", "A0_Ceiling_Under", "Hazard_Thorns_Floor", "Hazard_Thorns_Ceiling",
-          "Whip_Lash_Segment"}
+          "Whip_Lash_Segment", "HUD_Vine_Segment"}
 TILE_V = {"A0_Wall_Side", "Hazard_Thorns_Wall", "Platform_Moving_A1_Chain"}
 TILE_FILL = {"A0_Ground_Fill", "A0_Wall_Climbable", "A0_Wall_Slippery"}
 
@@ -148,6 +148,9 @@ def settings_for(category, name):
         s["mesh"] = "FullRect"
     elif category == "Player":
         s["ppu"], s["basis"] = PLAYER_PPU, "Qori rig convention; rig build sets final scale"
+    elif name.startswith("Icon_"):
+        s["ppu"], s["basis"] = UI_PPU, "UI canvas: 1 px = 1 reference px"
+        s["mesh"] = "FullRect"
     elif category in ("Enemies", "Effects", "Weapons"):
         s["ppu"], s["basis"] = CHARACTER_PPU, "request: character density 600 px/u (nominal)"
         # Rig parts are drawn at a fraction of their painted size: mipmaps keep them from aliasing.

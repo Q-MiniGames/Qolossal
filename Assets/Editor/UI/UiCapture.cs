@@ -26,12 +26,18 @@ public static class UiCapture
         var hud = new GameObject("Game HUD").AddComponent<GameHud>();
         typeof(GameHud).GetMethod("Build", Any).Invoke(hud, new object[] { player });
 
+        // The armory only runs in play mode; show the sword icon for the capture.
+        var weaponImage = (UnityEngine.UI.Image)typeof(GameHud).GetField("weapon", Any).GetValue(hud);
+        weaponImage.sprite = UiSkin.Load().weaponIcons[0]; weaponImage.enabled = true;
+        typeof(GameHud).GetField("shownWeapon", Any).SetValue(hud, null);
+
         var pause = UnityEngine.Object.FindFirstObjectByType<GamePauseMenu>() ?? new GameObject("Pause").AddComponent<GamePauseMenu>();
 
         void Shot(string name, int health, bool menu, bool confirm)
         {
             typeof(PlayerHealth).GetField("health", Any).SetValue(player, health);
             typeof(GameHud).GetMethod("Update", Any).Invoke(hud, null);
+            weaponImage.sprite = UiSkin.Load().weaponIcons[0]; weaponImage.enabled = true;
             typeof(GamePauseMenu).GetField("confirmingNewGame", Any).SetValue(pause, confirm);
             typeof(GamePauseMenu).GetMethod("ShowMenu", Any).Invoke(pause, new object[] { menu });
             foreach (var canvas in UnityEngine.Object.FindObjectsByType<Canvas>(FindObjectsInactive.Include, FindObjectsSortMode.None))

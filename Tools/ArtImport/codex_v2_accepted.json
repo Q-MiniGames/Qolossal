@@ -2730,6 +2730,60 @@
    "basis": "shares scale and registration with HUD_Health_Leaf_Full"
   },
   {
+   "name": "HUD_Ring",
+   "category": "UI",
+   "sha256": "1b72349114b0c06c202ecd0cfcb44d7b5eced66601ef3aa83fb9ad3ee59f9844",
+   "dest": "Assets/Art/Codex/UI/HUD_Ring.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "HUD_Ring_Backing",
+   "category": "UI",
+   "sha256": "5ab7f8a8a8107ceea33d210e47d439a3ed4a93641a06c52b5e4fe2bb00fad382",
+   "dest": "Assets/Art/Codex/UI/HUD_Ring_Backing.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "HUD_Vine_Segment",
+   "category": "UI",
+   "sha256": "6a0b3665b708a1fbe3c1b5d1f11363d5b02e1748efe58b0a68749837d74f6e92",
+   "dest": "Assets/Art/Codex/UI/HUD_Vine_Segment.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
    "name": "UI_Button_Hover",
    "category": "UI",
    "sha256": "d7a533ddd393b540d7fc97ab63503b2001a14b2e4fcdd9b43a4ad0fd1ea3a5e0",
@@ -2946,6 +3000,96 @@
    "mipmaps": true,
    "ppu": 600,
    "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Icon_Weapon_LeafSword",
+   "category": "Weapons",
+   "sha256": "b34f7ae84b642ac4a31806f9065d69d7923ef2875d72daeb54db788e3b499159",
+   "dest": "Assets/Art/Codex/Weapons/Icon_Weapon_LeafSword.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Icon_Weapon_SeedpodMace",
+   "category": "Weapons",
+   "sha256": "e236ffa656c9948e51b6d00bdb8f7ea0c51c7acf62cab66ae9482df152384567",
+   "dest": "Assets/Art/Codex/Weapons/Icon_Weapon_SeedpodMace.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Icon_Weapon_Sling",
+   "category": "Weapons",
+   "sha256": "f370942df126d7870a9dd581178979f462d966fcb6322a86ee02bcefede599d6",
+   "dest": "Assets/Art/Codex/Weapons/Icon_Weapon_Sling.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Icon_Weapon_ThornSpear",
+   "category": "Weapons",
+   "sha256": "d89274c79f696fa8111097672d1f5dd6d3111fb2753bd6df99f6a9feb09b2ac6",
+   "dest": "Assets/Art/Codex/Weapons/Icon_Weapon_ThornSpear.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Icon_Weapon_WhipHandle",
+   "category": "Weapons",
+   "sha256": "c1b9c1ca8528aa9f0ed41b617cbb0e72d6bcd5648ae96d90420d1b5982259365",
+   "dest": "Assets/Art/Codex/Weapons/Icon_Weapon_WhipHandle.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
   },
   {
    "name": "Whip_Lash_Segment",

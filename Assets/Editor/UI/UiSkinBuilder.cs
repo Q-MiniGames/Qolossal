@@ -24,6 +24,13 @@ public static class UiSkinBuilder
         skin.buttonNormal = Load("UI_Button_Normal");
         skin.buttonHover = Load("UI_Button_Hover");
         skin.buttonPressed = Load("UI_Button_Pressed");
+        skin.ring = Load("HUD_Ring");
+        skin.ringBacking = Load("HUD_Ring_Backing");
+        skin.vine = Load("HUD_Vine_Segment");
+        Sprite Icon(string name) => AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/Codex/Weapons/Icon_Weapon_" + name + ".png")
+            ?? throw new FileNotFoundException("Missing weapon icon; import accepted Codex art first.", name);
+        skin.weaponIds = new[] { "forest-0", "reedblade", "forest-1", "forest-2", "forest-3", "resin-sling" };
+        skin.weaponIcons = new[] { Icon("LeafSword"), Icon("LeafSword"), Icon("WhipHandle"), Icon("SeedpodMace"), Icon("ThornSpear"), Icon("Sling") };
         EditorUtility.SetDirty(skin);
         AssetDatabase.SaveAssets();
         Debug.Log("[UiSkinBuilder] Built " + SkinPath);
