@@ -43,7 +43,9 @@ public sealed class ParallaxLayer : MonoBehaviour
         Remove(paintingMesh); Remove(bandMesh); Remove(band);
     }
 
-    private void OnValidate() { if (paintingRenderer != null) Apply(); }
+    // OnValidate also runs while the editor loads or reloads, when the generated band object
+    // may already be gone; only re-apply when both renderers are alive.
+    private void OnValidate() { if (paintingRenderer != null && bandRenderer != null) Apply(); }
 
     private void LateUpdate() => Refresh(targetCamera != null ? targetCamera : Camera.main);
 

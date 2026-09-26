@@ -24,11 +24,13 @@ def idle(t):
              head_rot=3 + 1.8*math.sin(p-1.1), skirt_rot=.9*math.sin(p-1.5),
              footN=(58, ANKLE_Y, 0), footF=(-42, ANKLE_Y, 0),
              cape_u=-8 + 1.5*math.sin(p-1.8), cape_l=-4 + 2.2*math.sin(p-2.5), cape_w=.25*math.sin(2*p-1))
+    # The camera-side hand holds the blade low and forward (as in the walk); the weapon arm
+    # hangs relaxed. QoriAnimator moves the blade to the far grip in Idle, Walk and Run.
     w = -13 + 2.5*math.sin(p-.9)
     c['weapon'] = w
-    hn = around(HAND_N, 12, 6 + 2.5*math.sin(p-.4), c)
-    c['handN'] = hn
-    c['handF'] = tuple(np.array(hn) - wdir(w)*58 + np.array([0, -4]))
+    c['weapon_far'] = w
+    c['handF'] = around(HAND_F, 6, 10 + 2.5*math.sin(p-.4), c)
+    c['handN'] = around(HAND_N, -10, 26 + 2*math.sin(p-.7), c)
     return c
 
 # ----------------------------------------------------------------- gait

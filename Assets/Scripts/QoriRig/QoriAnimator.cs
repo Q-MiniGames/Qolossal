@@ -12,7 +12,7 @@ public sealed class QoriAnimator : MonoBehaviour
     public Animator animator;
     public Transform facingPivot;
     public Transform handNear, handFar, weaponMount, weaponTip;
-    [Tooltip("Grip on the camera-side hand; the blade moves here while walking and running.")] public Transform weaponMountFar;
+    [Tooltip("Grip on the camera-side hand; the blade moves here while standing, walking and running.")] public Transform weaponMountFar;
     [Tooltip("Sorting order of the blade while carried in the camera-side hand (between that arm's upper arm and fist).")]
     public int weaponOrderFar = 15;
     public SpriteRenderer head, weapon;
@@ -252,7 +252,7 @@ public sealed class QoriAnimator : MonoBehaviour
                       || (movement.IsLedgeClimbing && movement.LedgeClimbProgress < .65f) || (wallJumping && !wallJumpAway);
         UpdateHead(attacking, gripping, grounded, velocity, effort);
         UpdateWeapon(hanging || ledge || movement.IsWallSliding || (wallJumping && !wallJumpAway));
-        UpdateWeaponHand(state == RunState || state == WalkState);
+        UpdateWeaponHand(state == RunState || state == WalkState || state == IdleState);
         UpdateArms(movement.IsLedgeHanging || (movement.IsLedgeClimbing && movement.LedgeClimbProgress < reachArmsUntil));
         UpdateTint();
     }
@@ -460,7 +460,7 @@ public sealed class QoriAnimator : MonoBehaviour
         }
     }
 
-    // Walking and running carry the blade in the camera-side hand; everything else uses the weapon hand.
+    // Standing, walking and running carry the blade in the camera-side hand; attacks, air and wall moves use the weapon hand.
     int weaponOrderNear = int.MinValue;
     void UpdateWeaponHand(bool far)
     {

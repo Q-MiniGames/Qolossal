@@ -268,7 +268,7 @@ public static class QoriRigCapture
         Camera camera = Camera.main; camera.aspect = 1f; camera.orthographicSize = 1.3f;
         camera.transform.position = new Vector3(-16f, .9f, -10f);
         foreach (ParallaxLayer layer in UnityEngine.Object.FindObjectsByType<ParallaxLayer>(FindObjectsSortMode.None)) layer.Refresh(camera);
-        (string clip, float t)[] times = { ("Walk", 0f), ("Walk", .16f), ("Walk", .31f), ("Walk", .46f), ("Run", 0f), ("Run", .1f), ("Run", .2f), ("Run", .3f) };
+        (string clip, float t)[] times = { ("Idle", 0f), ("Idle", 1.3f), ("Walk", .16f), ("Walk", .46f), ("Run", 0f), ("Run", .1f), ("Run", .2f), ("Run", .3f) };
         const int size = 500;
         var sheet = new Texture2D(size * 4, size * 2, TextureFormat.RGB24, false);
         var target = new RenderTexture(size, size, 24);
