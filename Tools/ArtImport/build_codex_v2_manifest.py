@@ -52,6 +52,7 @@ SHARE_WITH = {
     "Platform_Crumble_Pieces": "Platform_Crumble",
     "Spitter_Head_Open": "Spitter_Head_Closed",
     "Shellback_Shell_Cracked": "Shellback_Shell_Intact",
+    "GlowPod_Light_On": "GlowPod_Light_Off",
     "HUD_Health_Leaf_Empty": "HUD_Health_Leaf_Full",
     "HUD_Health_Leaf_Half": "HUD_Health_Leaf_Full",
 }
@@ -76,6 +77,7 @@ WORLD_SIZE = {
     "Platform_Moving_A2": ("w", 3.0, "assumed: 3 u moving platform"),
     "Platform_Moving_A3": ("w", 3.0, "assumed: 3 u moving platform"),
     "Platform_Moving_A4": ("w", 3.0, "assumed: 3 u moving platform"),
+    "GlowPod_Light_Off": ("h", 1.45, "Codex proof at 240 PPU: slightly shorter than Qori"),
 }
 
 # Opaque chain width in Platform_Moving_A1 (78 px) vs the chain tile (54 px).
@@ -87,7 +89,7 @@ TILE_V = {f"{a}_Wall_Side" for a in ("A0", "A1", "A2", "A3", "A4")} | {"Waterfal
 TILE_FILL = {f"{a}_{k}" for a in ("A0", "A1", "A2", "A3", "A4") for k in ("Ground_Fill", "Wall_Climbable", "Wall_Slippery")} | {"Water_Body"}
 
 BOTTOM_ANCHORED = {"Barrier_Rubble_Intact", "Barrier_Thorns_Intact", "Switch_Plate_Up", "Shrine_Ability",
-                   "Portal_Gate_A0", "Spitter_Base",
+                   "Portal_Gate_A0", "Spitter_Base", "GlowPod_Light_Off",
                    "Hazard_Thorns_Floor"}
 TOP_ANCHORED = {"Hazard_Thorns_Ceiling"} | {f"{a}_Ceiling_Under" for a in ("A0", "A1", "A2", "A3", "A4")}
 
