@@ -40,6 +40,7 @@ public static class A0TestRoomBuilder
         followSettings.FindProperty("target").objectReferenceValue = player.transform;
         followSettings.ApplyModifiedPropertiesWithoutUndo();
 
+        new GameObject("GameManager").AddComponent<GamePauseMenu>();
         var terrain = new GameObject("Terrain").transform;
         int ground = LayerMask.NameToLayer("Ground");
 

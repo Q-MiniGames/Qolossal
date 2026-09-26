@@ -9,7 +9,7 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public sealed class GameHud : MonoBehaviour
 {
-    const float FrameWidth = 700f;   // reference px at 1920x1080
+    const float FrameWidth = 460f, Margin = 36f;   // reference px at 1920x1080
 
     PlayerHealth health;
     PlayerCombat combat;
@@ -33,6 +33,8 @@ public sealed class GameHud : MonoBehaviour
         if (FindFirstObjectByType<GameHud>() != null || UiSkin.Load() == null) return;
         var player = FindFirstObjectByType<PlayerHealth>();
         if (player == null) return;
+        // Every playable scene needs the pause menu, not only scenes that were set up with one.
+        if (FindFirstObjectByType<GamePauseMenu>() == null) new GameObject("Pause Menu").AddComponent<GamePauseMenu>();
         new GameObject("Game HUD").AddComponent<GameHud>().Build(player);
     }
 
@@ -78,7 +80,7 @@ public sealed class GameHud : MonoBehaviour
         float scale = FrameWidth / skin.hudFrame.rect.width;
         Vector2 frameSize = skin.hudFrame.rect.size * scale;
         // Leaves and weapon sit under the frame, showing through its openings.
-        var frame = AddImage(canvas.transform, "HUD", null, new Vector2(0f, 1f), new Vector2(24f + frameSize.x * .5f, -24f - frameSize.y * .5f), frameSize);
+        var frame = AddImage(canvas.transform, "HUD", null, new Vector2(0f, 1f), new Vector2(Margin + frameSize.x * .5f, -Margin - frameSize.y * .5f), frameSize);
         frame.enabled = false;
         // Frame px (from top-left) -> position inside the frame's rect (centre origin).
         Vector2 Local(Vector2 px) => new Vector2(px.x * scale - frameSize.x * .5f, frameSize.y * .5f - px.y * scale);

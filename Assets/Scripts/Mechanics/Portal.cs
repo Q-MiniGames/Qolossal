@@ -8,14 +8,14 @@ public sealed class Portal : MonoBehaviour
     public SpriteRenderer membrane;
     [Tooltip("Area this portal leads to (shown until area loading exists).")] public string destination = "A1 Aqueduct";
 
-    bool entered; float glow; Vector3 membraneScale;
+    bool entered; float glow, enteredAt; Vector3 membraneScale;
 
     void Awake() { membraneScale = membrane.transform.localScale; }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (entered || other.attachedRigidbody == null || other.attachedRigidbody.GetComponent<PlayerMovement>() == null) return;
-        entered = true;
+        entered = true; enteredAt = Time.time;
     }
 
     void Update()
@@ -28,7 +28,7 @@ public sealed class Portal : MonoBehaviour
 
     void OnGUI()
     {
-        if (!entered || GamePauseMenu.IsPaused) return;
+        if (!entered || GamePauseMenu.IsPaused || Time.time - enteredAt > 3f) return;
         float width = Mathf.Min(420f, Screen.width - 24f);
         GUI.Box(new Rect((Screen.width - width) * .5f, 60f, width, 40f), $"Portal to {destination} (area not built yet)");
     }

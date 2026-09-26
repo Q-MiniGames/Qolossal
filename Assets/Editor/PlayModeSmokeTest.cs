@@ -46,6 +46,9 @@ public static class PlayModeSmokeTest
         Debug.Log($"[Smoke] health {health?.Health}/{health?.MaximumHealth}");
         Debug.Log($"[Smoke] Qori weapon parent: {(qori != null && qori.weapon != null ? qori.weapon.transform.parent.name : "none")}, visible {qori?.weapon?.enabled}, sprite {qori?.weapon?.sprite?.name}");
         Debug.Log($"[Smoke] mechanics: {Has("Mechanics")}, portal {Has("Portal A0")}, crawlers {Object.FindObjectsByType<GroundCreature>(FindObjectsSortMode.None).Length}, parallax {Object.FindObjectsByType<ParallaxLayer>(FindObjectsSortMode.None).Length}");
+        var pause = Object.FindFirstObjectByType<GamePauseMenu>();
+        var frame = hud != null ? hud.GetComponentsInChildren<RectTransform>().First(r => r.name == "HUD") : null;
+        Debug.Log($"[Smoke] pause menu present: {pause != null}; HUD frame size {(frame != null ? frame.rect.size.ToString() : "-")}");
         Debug.Log($"[Smoke] runtime errors: {errors}");
         EditorApplication.Exit(0);
     }
