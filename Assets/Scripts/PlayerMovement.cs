@@ -98,6 +98,7 @@ public sealed class PlayerMovement : MonoBehaviour
     private Vector2 combatImpulse;
     private float combatBounce;
     private PlayerCombat combatController;
+    private PlayerAbilityController abilities;
     public void AddCombatImpulse(Vector2 impulse)=>combatImpulse+=impulse;
     public void QueueCombatBounce(float speed)=>combatBounce=Mathf.Max(combatBounce,speed);
     private float hitRecoveryUntil;
@@ -462,6 +463,9 @@ public sealed class PlayerMovement : MonoBehaviour
         }
 
         bool combatAllowsJump=combatController==null||combatController.CanCancel(CombatCancel.Jump);
+        // Wall slides and wall jumps are the Climbing Moss relic's ability; ledge grabs are not.
+        if(abilities==null)abilities=GetComponent<PlayerAbilityController>();
+        bool wallCling=Relics.Has(abilities,Relics.ClimbingMoss);
         if (combatAllowsJump && Time.time - lastJumpPressedTime <= jumpBufferTime &&
             Time.time - lastGroundedTime <= coyoteTime)
         {
@@ -470,7 +474,7 @@ public sealed class PlayerMovement : MonoBehaviour
             canCutJump = true;
             launch = LaunchKind.Jump;
         }
-        else if(combatAllowsJump && !recovering && !attached && launch==LaunchKind.None && WallDirection!=0 && Time.time-lastJumpPressedTime<=jumpBufferTime)
+        else if(combatAllowsJump && !recovering && !attached && launch==LaunchKind.None && WallDirection!=0 && wallCling && Time.time-lastJumpPressedTime<=jumpBufferTime)
         {
             bool jumpAway=moveInput*WallDirection<-.1f;
             velocity=new Vector2(jumpAway?-WallDirection*wallJumpHorizontalSpeed:0f,jumpSpeed);
@@ -482,7 +486,7 @@ public sealed class PlayerMovement : MonoBehaviour
             launch=LaunchKind.WallJump;
             WallDirection=0;
         }
-        if(WallDirection!=0 && launch==LaunchKind.None && velocity.y<0 && moveInput*WallDirection>=-.1f)
+        if(WallDirection!=0 && wallCling && launch==LaunchKind.None && velocity.y<0 && moveInput*WallDirection>=-.1f)
         {
             velocity.y=Mathf.Max(velocity.y,-wallSlideSpeed);
             IsWallSliding=true;

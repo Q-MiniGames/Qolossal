@@ -127,6 +127,10 @@ public sealed class PlayerThread : MonoBehaviour
 
     private void OnEnable() => hookAction.Enable();
 
+    // The thread is the Living Thread relic's ability.
+    private PlayerAbilityController abilities;
+    public bool Unlocked => Relics.Has(abilities != null ? abilities : abilities = GetComponent<PlayerAbilityController>(), Relics.LivingThread);
+
     private void Update()
     {
         if (GamePauseMenu.BlocksGameplayInput)
@@ -142,6 +146,7 @@ public sealed class PlayerThread : MonoBehaviour
             (pad != null && pad.dpad.down.isPressed);
 
         if (attachedAnchor != null && !attachedAnchor.isActiveAndEnabled) Detach();
+        if (!Unlocked) { SelectAnchor(null); return; }
         SelectAnchor(FindAnchor());
         if (hookAction.WasPressedThisFrame()) ToggleHook();
     }
@@ -149,7 +154,7 @@ public sealed class PlayerThread : MonoBehaviour
     // A future on-screen touch button can invoke the same action.
     public void ToggleHook()
     {
-        if (!isActiveAndEnabled || GamePauseMenu.BlocksGameplayInput) return;
+        if (!isActiveAndEnabled || GamePauseMenu.BlocksGameplayInput || !Unlocked) return;
         if (IsAttached)
         {
             Detach();

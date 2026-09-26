@@ -100,6 +100,7 @@ public static class A0TestRoomBuilder
         Block("Thorn Pit Floor", 130f, 3f, 15f, 17f, 0);
         Block("Gallery Ground 3", 145f, 9f, 13f, 23f, 10, left: true, right: true);
         BuildMechanics(kit);
+        BuildShrines();
 
         // A Bramble Crawler patrolling the start ground, and one on the plateau.
         var crawlerPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/GroundCreature01.prefab");
@@ -280,6 +281,30 @@ public static class A0TestRoomBuilder
         portalBox.isTrigger = true; portalBox.size = new Vector2(1.2f, 2.4f); portalBox.offset = new Vector2(0f, 1.2f);
     }
 
+    // Ability shrines, each before the stretch that needs its relic: the Living Thread at the start
+    // (the Seed Carrier over the slope is the first anchor), the Climbing Moss on the pit floor
+    // (the climbable column and the end plateau's face need wall jumps), and Bloomfall on top of
+    // the end plateau, just before the Shellback.
+    static void BuildShrines()
+    {
+        RelicBuilder.Build();
+        var root = new GameObject("Ability Shrines").transform;
+        void Shrine(string relic, float x, float y)
+        {
+            var ability = AssetDatabase.LoadAssetAtPath<AbilityDefinition>("Assets/Resources/Relics/" + relic + ".asset");
+            var shrine = new GameObject("Shrine " + ability.displayName).AddComponent<AbilityShrine>();
+            shrine.transform.SetParent(root, false); shrine.transform.position = new Vector3(x, y, 0f);
+            shrine.ability = ability;
+            Image(shrine.transform, "Pedestal", Art("Props", "Shrine_Ability"), new Vector2(x, y));
+            shrine.relic = Image(shrine.transform, "Relic", ability.relic, new Vector2(x, y + shrine.hoverHeight), PropOrder + 2);
+            var box = shrine.gameObject.AddComponent<BoxCollider2D>();
+            box.isTrigger = true; box.size = new Vector2(1.4f, 2.6f); box.offset = new Vector2(0f, 1.3f);
+        }
+        Shrine("LivingThread", -15.5f, 0f);
+        Shrine("ClimbingMoss", 50.3f, -5f);
+        Shrine("Bloomfall", 68.8f, 9f);
+    }
+
     // A0 decor from the sliced sheet, standing on (or hanging from) the room's surfaces.
     static void BuildDecor(Transform terrain, float plateau)
     {
@@ -360,6 +385,8 @@ public static class A0TestRoomBuilder
             ("gallery_1", new Vector2(96f, 11f), 5.5f), ("gallery_2", new Vector2(113f, 11f), 5.5f),
             ("gallery_3", new Vector2(122f, 12f), 5.5f), ("gallery_4", new Vector2(138f, 8f), 6.5f),
             ("gallery_5", new Vector2(151f, 11f), 4f),
+            ("shrine_thread", new Vector2(-15.5f, 1.3f), 2.2f), ("shrine_moss", new Vector2(50.3f, -3.7f), 2.2f),
+            ("shrine_bloomfall", new Vector2(68.8f, 10.3f), 2.2f),
             ("enemy_carrier", new Vector2(20f, 9.3f), 2.2f), ("enemy_spitter", new Vector2(41.5f, 9.4f), 2.2f),
             ("enemy_thornwing", new Vector2(50f, 8.4f), 2.2f), ("enemy_shellback", new Vector2(76f, 9.8f), 2.2f),
         };

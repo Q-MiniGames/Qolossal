@@ -5,7 +5,8 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 
 // Batch check of the A0 test room's mechanics without play mode: weapon rules for the
-// breakables, the sling switch, the pressure plate and the moving raft carrying Qori.
+// breakables, the sling switch, the pressure plate, the moving raft carrying Qori, and the
+// ability shrines and the relic locks.
 // Usage: -executeMethod MechanicsCheck.Run
 public static class MechanicsCheck
 {
@@ -92,6 +93,29 @@ public static class MechanicsCheck
             float raftMoved = raftBody.position.x - raftStart, playerMoved = body.position.x - playerStart;
             Expect(raftMoved > 1f && Mathf.Abs(playerMoved - raftMoved) < .15f && player.IsGrounded,
                    $"the raft carries Qori (raft moved {raftMoved:F2}, Qori {playerMoved:F2}, grounded {player.IsGrounded})");
+
+            // Relics: Qori starts without them here; the Climbing Moss shrine unlocks the wall cling.
+            var abilities = player.GetComponent<PlayerAbilityController>();
+            if (abilities == null) abilities = player.gameObject.AddComponent<PlayerAbilityController>();
+            var shrines = Object.FindObjectsByType<AbilityShrine>(FindObjectsSortMode.None);
+            Expect(shrines.Length == 3 && shrines.All(s => s.ability != null && s.ability.relic != null && s.ability.icon != null && s.relic.sprite == s.ability.relic),
+                   "three ability shrines, each with its relic art and HUD icon");
+            Expect(new[] { Relics.LivingThread, Relics.ClimbingMoss, Relics.Bloomfall }.All(id => !abilities.HasAbility(id)), "Qori starts the test room with no relics");
+            Expect(!player.GetComponent<PlayerThread>().Unlocked, "the thread is locked before the Living Thread relic");
+            float halfWidth = player.GetComponent<BoxCollider2D>().size.x * Mathf.Abs(player.transform.lossyScale.x) * .5f;
+            bool SlidesOnColumn()
+            {
+                body.position = new Vector2(54f - halfWidth - .01f, 1.5f); body.linearVelocity = new Vector2(0f, -1f); Physics2D.SyncTransforms();
+                bool slid = false;
+                for (int i = 0; i < 12; i++) { fixedUpdate.Invoke(player, null); Physics2D.Simulate(Time.fixedDeltaTime); slid |= player.IsWallSliding; }
+                return slid;
+            }
+            Expect(!SlidesOnColumn(), "without Climbing Moss Qori doesn't slide on the climbable column");
+            var moss = shrines.First(s => s.ability.abilityId == Relics.ClimbingMoss);
+            moss.Collect(abilities);
+            Expect(moss.IsTaken && abilities.HasAbility(Relics.ClimbingMoss) && !abilities.HasAbility(Relics.LivingThread), "the moss shrine unlocks Climbing Moss only");
+            Expect(SlidesOnColumn(), "with Climbing Moss Qori slides on the climbable column");
+            Expect(shrines.First(s => s.ability.abilityId == Relics.Bloomfall).ability is PogoAbilityDefinition, "Bloomfall is the pogo bounce");
         }
         finally { Physics2D.simulationMode = SimulationMode2D.FixedUpdate; }
 

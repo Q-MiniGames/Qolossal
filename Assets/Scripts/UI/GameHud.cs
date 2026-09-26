@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
@@ -5,15 +6,22 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // Top-left HUD: the root-and-leaf frame with one leaf per heart (fresh, half, or withered) and
-// the equipped weapon in the ring. Created automatically in any scene that has Qori.
+// the equipped weapon in the ring, with the icons of the relics found so far beneath it. Created automatically in any scene that has Qori.
 [DisallowMultipleComponent]
 public sealed class GameHud : MonoBehaviour
 {
     const float RingSize = 150f, LeafSize = 56f, LeafSpacing = 46f, LeafGap = 30f, VineHeight = 26f, Margin = 30f;   // reference px at 1920x1080
+    const float RelicSize = 48f, RelicSpacing = 54f;
 
     PlayerHealth health;
     PlayerCombat combat;
+    PlayerAbilityController abilities;
     UiSkin skin;
+    readonly List<AbilityDefinition> relics = new List<AbilityDefinition>();
+    readonly List<Image> relicIcons = new List<Image>();
+    readonly List<float> relicPulse = new List<float>();
+    Transform hudRoot; Vector2 relicOrigin;
+    int shownUnlocks = -1;
     Image[] leaves;
     Image weapon, vine;
     Vector2 vineStub;
@@ -74,7 +82,7 @@ public sealed class GameHud : MonoBehaviour
 
     void Build(PlayerHealth player)
     {
-        health = player; combat = player.GetComponent<PlayerCombat>(); skin = UiSkin.Load();
+        health = player; combat = player.GetComponent<PlayerCombat>(); abilities = player.GetComponent<PlayerAbilityController>(); skin = UiSkin.Load();
         var canvas = CreateCanvas("HUD Canvas", 10);
         canvas.transform.SetParent(transform, false);
 
@@ -84,6 +92,8 @@ public sealed class GameHud : MonoBehaviour
         Vector2 ringSize = skin.ring.rect.size * scale;
         var root = AddImage(canvas.transform, "HUD", null, new Vector2(0f, 1f), new Vector2(Margin + ringSize.x * .5f, -Margin - ringSize.y * .5f), ringSize);
         root.enabled = false;
+        hudRoot = root.transform;
+        relicOrigin = new Vector2(-ringSize.x * .5f + RelicSize * .5f + 6f, -ringSize.y * .5f - RelicSize * .5f - 8f);
         // Ring px (from its top-left) -> position inside the ring's rect (centre origin).
         Vector2 Local(Vector2 px) => new Vector2(px.x * scale - ringSize.x * .5f, ringSize.y * .5f - px.y * scale);
 
@@ -145,6 +155,33 @@ public sealed class GameHud : MonoBehaviour
             shownWeapon = w;
             weapon.sprite = w == null ? null : skin.IconFor(w.weaponId) ?? w.weaponArtwork;
             weapon.enabled = weapon.sprite != null;
+        }
+
+        UpdateRelics();
+    }
+
+    // One icon per relic with a HUD icon, in the order they were found; a new one pops in.
+    void UpdateRelics()
+    {
+        if (abilities == null) return;
+        if (abilities.UnlockVersion != shownUnlocks)
+        {
+            bool starting = shownUnlocks < 0 || Time.timeSinceLevelLoad < .5f;   // relics a scene starts with appear without a pop
+            shownUnlocks = abilities.UnlockVersion;
+            foreach (var ability in abilities.Unlocked)
+            {
+                if (ability.icon == null || relics.Contains(ability)) continue;
+                relics.Add(ability);
+                relicIcons.Add(AddImage(hudRoot, "Relic " + ability.abilityId, ability.icon, new Vector2(.5f, .5f),
+                    relicOrigin + new Vector2((relics.Count - 1) * RelicSpacing, 0f), Vector2.one * RelicSize));
+                relicPulse.Add(starting ? 0f : 1f);
+            }
+        }
+        for (int i = 0; i < relicIcons.Count; i++)
+        {
+            relicPulse[i] = Mathf.MoveTowards(relicPulse[i], 0f, Time.unscaledDeltaTime * 1.2f);
+            float p = relicPulse[i], s = 1f + .6f * p * p;
+            relicIcons[i].rectTransform.localScale = new Vector3(s, s, 1f);
         }
     }
 }

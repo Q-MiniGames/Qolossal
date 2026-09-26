@@ -13,11 +13,21 @@ public sealed class PlayerAbilityController : MonoBehaviour
     public PlayerCombat Combat {get;private set;}
     public PlayerMovement Movement {get;private set;}
     public float Resource=>resource;
+    public IEnumerable<AbilityDefinition> Unlocked=>unlocked.Values;
+    public int UnlockVersion {get;private set;}
     public event Action<AbilityDefinition> OnAbilityActivated;
+    public event Action<AbilityDefinition> OnAbilityUnlocked;
     void Awake(){Combat=GetComponent<PlayerCombat>();Movement=GetComponent<PlayerMovement>();foreach(var ability in unlockedAbilities)Unlock(ability);}
+    // Relics are only locked where they can be found: a scene without an ability shrine starts
+    // with all of them, so rooms built before shrines existed play as they did.
+    void Start(){if(FindAnyObjectByType<AbilityShrine>()==null)foreach(var relic in Relics.All)Unlock(relic);}
     void OnEnable(){if(Combat!=null)Combat.OnAttackHit+=Hit;}
     void OnDisable(){if(Combat!=null)Combat.OnAttackHit-=Hit;}
-    public void Unlock(AbilityDefinition ability){if(ability!=null&&!string.IsNullOrEmpty(ability.abilityId))unlocked[ability.abilityId]=ability;}
+    public void Unlock(AbilityDefinition ability)
+    {
+        if(ability==null||string.IsNullOrEmpty(ability.abilityId)||unlocked.ContainsKey(ability.abilityId))return;
+        unlocked[ability.abilityId]=ability;UnlockVersion++;OnAbilityUnlocked?.Invoke(ability);
+    }
     public bool HasAbility(string id)=>string.IsNullOrEmpty(id)||unlocked.ContainsKey(id);
     public void AddResource(float amount)=>resource=Mathf.Max(0,resource+amount);
     bool Requirements(AbilityDefinition ability)
