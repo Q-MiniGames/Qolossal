@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655299181bb604f4386a3c4ba2e99a05, type: 3}
+  m_Name: UiSkin
+  m_EditorClassIdentifier: Assembly-CSharp::UiSkin
+  hudFrame: {fileID: 21300000, guid: 9ee23d0cc72e5c448b338666124f0762, type: 3}
+  leafFull: {fileID: 21300000, guid: bfca165a317a04c469da53fc28e78311, type: 3}
+  leafHalf: {fileID: 21300000, guid: 0981ea875eabf3c4380439d7965af744, type: 3}
+  leafEmpty: {fileID: 21300000, guid: 9ae69b67eefeef241b1bea27ec666658, type: 3}
+  panel: {fileID: 21300000, guid: bfebe390e54f6b64ab82601544d04766, type: 3}
+  buttonNormal: {fileID: 21300000, guid: 4c5fff7a2e10abd4c829b4544c8b3077, type: 3}
+  buttonHover: {fileID: 21300000, guid: 338d4e44876b8b943b97c2123800b58a, type: 3}
+  buttonPressed: {fileID: 21300000, guid: 5ef952fa61daed04dbda16de9516c09c, type: 3}
+  weaponRingCentre: {x: 210, y: 122}
+  weaponRingDiameter: 150
+  leafSockets:
+  - {x: 382, y: 118}
+  - {x: 482, y: 118}
+  - {x: 583, y: 118}
+  - {x: 684, y: 118}
+  - {x: 786, y: 118}
+  - {x: 888, y: 118}

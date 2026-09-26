@@ -10,6 +10,8 @@ public sealed class PlayerHealth : MonoBehaviour
     private int health;
     private float protectedUntil;
     public float LastHitTime { get; private set; } = float.NegativeInfinity;
+    public int Health => health;
+    public int MaximumHealth => maximumHealth;
     public float LastHitDirection { get; private set; }
     public bool IsDamageFlashVisible => isActiveAndEnabled && Time.time < protectedUntil
         && Mathf.FloorToInt(Time.time * 12f) % 2 == 0;
@@ -70,10 +72,5 @@ public sealed class PlayerHealth : MonoBehaviour
     private void OnDisable()
     {
         if (visual != null) visual.color = restingColor;
-    }
-
-    private void OnGUI()
-    {
-        GUI.Box(new Rect(16f, 16f, 150f, 32f), $"Health: {health} / {maximumHealth}");
     }
 }
