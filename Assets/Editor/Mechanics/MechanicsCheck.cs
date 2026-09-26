@@ -82,7 +82,13 @@ public static class MechanicsCheck
             body.position = new Vector2(136.5f, 9f + extent + .05f); body.linearVelocity = Vector2.zero; Physics2D.SyncTransforms();
             for (int i = 0; i < 10; i++) { fixedUpdate.Invoke(player, null); Physics2D.Simulate(Time.fixedDeltaTime); }
             float playerStart = body.position.x, raftStart = raftBody.position.x;
-            for (int i = 0; i < 100; i++) { raftStep.Invoke(raft, null); fixedUpdate.Invoke(player, null); Physics2D.Simulate(Time.fixedDeltaTime); }
+            float maxOwnSpeed = 0f;
+            for (int i = 0; i < 100; i++)
+            {
+                raftStep.Invoke(raft, null); fixedUpdate.Invoke(player, null); Physics2D.Simulate(Time.fixedDeltaTime);
+                if (i > 5) maxOwnSpeed = Mathf.Max(maxOwnSpeed, Mathf.Abs(player.ObservedVelocity.x));
+            }
+            Expect(maxOwnSpeed < .3f, $"riding the raft doesn't count as walking (Qori's own speed at most {maxOwnSpeed:F2} u/s)");
             float raftMoved = raftBody.position.x - raftStart, playerMoved = body.position.x - playerStart;
             Expect(raftMoved > 1f && Mathf.Abs(playerMoved - raftMoved) < .15f && player.IsGrounded,
                    $"the raft carries Qori (raft moved {raftMoved:F2}, Qori {playerMoved:F2}, grounded {player.IsGrounded})");

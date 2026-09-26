@@ -326,7 +326,8 @@ public sealed class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 velocity = body.linearVelocity;
+        // Remove last step's ride so controls work on Qori's own velocity; re-added below.
+        Vector2 velocity = body.linearVelocity - platformVelocity;
         // An impulse this step (hit, bounce, knockback, flower boost) must leave the ground freely.
         bool impulse = combatImpulse.y > 0f || combatBounce > 0f || hasPendingKnockback || pendingLaunchSpeed > 0f;
         velocity+=combatImpulse;combatImpulse=Vector2.zero;
@@ -446,6 +447,9 @@ public sealed class PlayerMovement : MonoBehaviour
             // otherwise slide him downhill and uphill walking would read as leaving the ground).
             velocity.y = -velocity.x * groundNormal.x / Mathf.Max(.2f, groundNormal.y) - snapDistance / Time.fixedDeltaTime;
             surfaceWalking = true;
+            // Standing on a moving (kinematic) platform: move with it in the same physics step.
+            Rigidbody2D platform = groundCollider != null ? groundCollider.attachedRigidbody : null;
+            ridingVelocity = platform != null && platform.bodyType == RigidbodyType2D.Kinematic ? platform.linearVelocity : Vector2.zero;
         }
         else if (Mathf.Abs(moveInput) > 0.01f && Time.time>=wallSteeringUntil)
         {
@@ -497,7 +501,10 @@ public sealed class PlayerMovement : MonoBehaviour
         velocity.y = Mathf.Max(velocity.y, -maximumFallSpeed);
         surfaceWalking &= launch == LaunchKind.None && !attached;
         // Cancel this step's gravity while walking on the ground, so he stands still on slopes.
-        body.linearVelocity = surfaceWalking ? velocity - Physics2D.gravity * body.gravityScale * Time.fixedDeltaTime : velocity;
+        if (!surfaceWalking) ridingVelocity = Vector2.zero;
+        platformVelocity = ridingVelocity;
+        carriedThisStep = platformVelocity * Time.fixedDeltaTime;   // measured out of ObservedVelocity next step
+        body.linearVelocity = (surfaceWalking ? velocity - Physics2D.gravity * body.gravityScale * Time.fixedDeltaTime : velocity) + platformVelocity;
         IsGrounded = grounded && !attached && launch == LaunchKind.None && (velocity.y <= 0.1f || surfaceWalking);
         IsRunning = IsGrounded && !recovering && runHeld && Mathf.Abs(velocity.x)>moveSpeed+.1f;
         HasGroundContact = grounded && launch == LaunchKind.None && (velocity.y <= 0.1f || surfaceWalking);
@@ -632,10 +639,14 @@ public sealed class PlayerMovement : MonoBehaviour
         if (health != null) health.RestoreAfterRespawn();
     }
 
+    // A moving platform's velocity, added to Qori's while he stands on it. The distance it carries
+    // him isn't his own motion, so it is taken out of ObservedVelocity (no walk while riding).
+    private Vector2 carriedThisStep, platformVelocity, ridingVelocity;
+
     private void ObserveMotion(Vector2 velocity)
     {
         Vector2 position = body.position;
-        Vector2 displacement = position - observedPosition;
+        Vector2 displacement = position - observedPosition - carriedThisStep;
         // Respawn resets explicitly; this also rejects external scene/test teleports.
         float teleportDistance = Mathf.Max(2f, velocity.magnitude * Time.fixedDeltaTime * 3f);
         if (observationReady && displacement.sqrMagnitude > teleportDistance * teleportDistance)

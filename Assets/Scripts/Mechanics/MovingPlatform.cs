@@ -13,7 +13,6 @@ public sealed class MovingPlatform : MonoBehaviour
     Rigidbody2D body;
     Vector2 start;
     float clock;
-    PlayerMovement rider;
 
     void Awake()
     {
@@ -24,20 +23,14 @@ public sealed class MovingPlatform : MonoBehaviour
         start = body.position;
     }
 
+    // Moves by velocity so riders (PlayerMovement adds this body's velocity while standing on it)
+    // move in the same physics step, with no interpolation mismatch.
     void FixedUpdate()
     {
         clock += Time.fixedDeltaTime;
         float leg = travelSeconds + pauseSeconds, cycle = Mathf.Repeat(clock, 2f * leg);
         float t = cycle < leg ? Mathf.Clamp01(cycle / travelSeconds) : 1f - Mathf.Clamp01((cycle - leg) / travelSeconds);
         Vector2 next = start + offset * (t * t * (3f - 2f * t));
-        Vector2 delta = next - body.position;
-        body.MovePosition(next);
-        // Carry the rider: PlayerMovement runs after this, and its ground cast finds the platform.
-        if (rider == null) rider = FindFirstObjectByType<PlayerMovement>();
-        if (rider != null && rider.IsGrounded && rider.GroundCollider == solid)
-        {
-            Rigidbody2D rb = rider.GetComponent<Rigidbody2D>();
-            rb.position += delta;
-        }
+        body.linearVelocity = (next - body.position) / Time.fixedDeltaTime;
     }
 }
