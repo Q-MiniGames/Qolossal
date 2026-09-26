@@ -55,7 +55,7 @@ def two_bone(root, target, l1, l2, bend):
 DEFAULT = dict(
     body_x=0.0, body_y=0.0, body_rot=0.0, body_sx=1.0, body_sy=1.0,
     torso_rot=0.0, torso_sy=1.0, head_rot=0.0, skirt_rot=0.0, skirt_sx=1.0, skirt_sy=1.0,
-    handN=None, handF=None, elbowN=-1, elbowF=-1, weapon=-20.0, weapon_far=None,
+    handN=None, handF=None, elbowN=-1, elbowF=-1, weapon=-20.0, weapon_far=None, swap_hands=False,
     armN_rot=None, foreN_rot=None, armF_rot=None, foreF_rot=None,
     footN=(40.0, ANKLE_Y, 0.0), footF=(-30.0, ANKLE_Y, 0.0),   # x relative to rest hip x
     cape_u=-8.0, cape_l=-4.0, cape_w=0.0,   # cloak: upper/lower drape angle (neg = trails back), flutter -1..1
@@ -86,6 +86,18 @@ def pose_from_controls(c):
         pose[f'Thigh{s}'] = dict(rot=r1); pose[f'Shin{s}'] = dict(rot=r2); pose[f'Foot{s}'] = dict(rot=r3)
     W = rig.solve(pose)
     torso_w = rig.world_angle(W['Torso'])
+    if c['swap_hands']:
+        # Carry the weapon in the camera-side (Far) hand: each arm performs the other's motion
+        # from its own shoulder (targets moved by the shoulder offset), so arm shapes and swing
+        # arcs are unchanged and only the blade shifts with the shoulder.
+        off = W['UpperArmFar'][:, 2] - W['UpperArmNear'][:, 2]
+        hn, hf = c['handN'], c['handF']
+        c['handF'] = None if hn is None else tuple(np.array(hn) + off)
+        c['handN'] = None if hf is None else tuple(np.array(hf) - off)
+        c['elbowN'], c['elbowF'] = c['elbowF'], c['elbowN']
+        c['armN_rot'], c['armF_rot'] = c['armF_rot'], c['armN_rot']
+        c['foreN_rot'], c['foreF_rot'] = c['foreF_rot'], c['foreN_rot']
+        if c['weapon_far'] is None: c['weapon_far'] = c['weapon']
     for s in ('Near', 'Far'):
         A = ARM[s]; key = 'hand'+s[0]
         if c[key] is not None:

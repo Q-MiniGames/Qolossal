@@ -601,30 +601,43 @@ def ledge_climb(t):
 
 def build_all():
     build()
-    CLIPS['AttackFront'] = anim.bake(attack_front, 1.0, False)
-    CLIPS['AttackUp'] = anim.bake(attack_up, 1.0, False)
-    CLIPS['AttackDown'] = anim.bake(attack_down, 1.0, False)
-    CLIPS['AttackAirFront'] = anim.bake(attack_air_front, 1.0, False)
-    CLIPS['AttackAirUp'] = anim.bake(attack_air_up, 1.0, False)
+    CLIPS['AttackFront'] = _bake('AttackFront', attack_front, 1.0, False)
+    CLIPS['AttackUp'] = _bake('AttackUp', attack_up, 1.0, False)
+    CLIPS['AttackDown'] = _bake('AttackDown', attack_down, 1.0, False)
+    CLIPS['AttackAirFront'] = _bake('AttackAirFront', attack_air_front, 1.0, False)
+    CLIPS['AttackAirUp'] = _bake('AttackAirUp', attack_air_up, 1.0, False)
     for i, (g, a) in enumerate([(attack_front2, attack_air_front2), (attack_front3, attack_air_front3), (attack_front4, attack_air_front4)], start=2):
-        CLIPS[f'AttackFront{i}'] = anim.bake(g, 1.0, False)
-        CLIPS[f'AttackAirFront{i}'] = anim.bake(a, 1.0, False)
+        CLIPS[f'AttackFront{i}'] = _bake(f'AttackFront{i}', g, 1.0, False)
+        CLIPS[f'AttackAirFront{i}'] = _bake(f'AttackAirFront{i}', a, 1.0, False)
     for w, d in OTHER_WEAPONS.items():
         for i, keys in enumerate(d['front'], start=1):
-            CLIPS[f'{w}_Front{i}'] = anim.bake(keyed(keys), 1.0, False)
-            CLIPS[f'{w}_AirFront{i}'] = anim.bake(keyed(airborne(keys)), 1.0, False)
-        CLIPS[f'{w}_Up'] = anim.bake(keyed(d['up']), 1.0, False)
-        CLIPS[f'{w}_AirUp'] = anim.bake(keyed(airborne(d['up'])), 1.0, False)
-        CLIPS[f'{w}_Down'] = anim.bake(keyed(d['down']), 1.0, False)
-    CLIPS['Sling_Throw'] = anim.bake(keyed(SLING_THROW), 1.0, False)
-    CLIPS['Sling_AirThrow'] = anim.bake(keyed(airborne(SLING_THROW)), 1.0, False)
-    CLIPS['Rise'] = anim.bake(rise, RISE_T, True)
-    CLIPS['Fall'] = anim.bake(fall, FALL_T, True)
-    CLIPS['Land'] = anim.bake(land, LAND_T, False)
-    CLIPS['Hang'] = anim.bake(hang, HANG_T, True)
-    CLIPS['WallSlide'] = anim.bake(wall_slide, WALL_SLIDE_T, True)
-    CLIPS['WallJumpUp'] = anim.bake(wall_jump_up, WALL_JUMP_UP_T, False)
-    CLIPS['WallJumpOff'] = anim.bake(wall_jump_off, WALL_JUMP_OFF_T, False)
-    CLIPS['LedgeHang'] = anim.bake(ledge_hang, LEDGE_HANG_T, True)
-    CLIPS['LedgeClimb'] = anim.bake(ledge_climb, 1.0, False)
+            CLIPS[f'{w}_Front{i}'] = _bake(f'{w}_Front{i}', keyed(keys), 1.0, False)
+            CLIPS[f'{w}_AirFront{i}'] = _bake(f'{w}_AirFront{i}', keyed(airborne(keys)), 1.0, False)
+        CLIPS[f'{w}_Up'] = _bake(f'{w}_Up', keyed(d['up']), 1.0, False)
+        CLIPS[f'{w}_AirUp'] = _bake(f'{w}_AirUp', keyed(airborne(d['up'])), 1.0, False)
+        CLIPS[f'{w}_Down'] = _bake(f'{w}_Down', keyed(d['down']), 1.0, False)
+    CLIPS['Sling_Throw'] = _bake('Sling_Throw', keyed(SLING_THROW), 1.0, False)
+    CLIPS['Sling_AirThrow'] = _bake('Sling_AirThrow', keyed(airborne(SLING_THROW)), 1.0, False)
+    CLIPS['Rise'] = _bake('Rise', rise, RISE_T, True)
+    CLIPS['Fall'] = _bake('Fall', fall, FALL_T, True)
+    CLIPS['Land'] = _bake('Land', land, LAND_T, False)
+    CLIPS['Hang'] = _bake('Hang', hang, HANG_T, True)
+    CLIPS['WallSlide'] = _bake('WallSlide', wall_slide, WALL_SLIDE_T, True)
+    CLIPS['WallJumpUp'] = _bake('WallJumpUp', wall_jump_up, WALL_JUMP_UP_T, False)
+    CLIPS['WallJumpOff'] = _bake('WallJumpOff', wall_jump_off, WALL_JUMP_OFF_T, False)
+    CLIPS['LedgeHang'] = _bake('LedgeHang', ledge_hang, LEDGE_HANG_T, True)
+    CLIPS['LedgeClimb'] = _bake('LedgeClimb', ledge_climb, 1.0, False)
+    # Qori carries the weapon in the camera-side hand everywhere it is visible: idle/walk/run are
+    # authored that way; attacks and air/landing clips are re-targeted by swapping the hands.
+    # Hanging, ledge and wall-grip clips keep both hands as authored (the blade is stowed there).
     return CLIPS
+
+FAR_AUTHORED = {'Idle', 'Walk', 'Run'}
+BOTH_HANDS_GRIP = {'Hang', 'WallSlide', 'WallJumpUp', 'LedgeHang', 'LedgeClimb'}
+def _bake(name, fn, length, loop):
+    if name in FAR_AUTHORED | BOTH_HANDS_GRIP:
+        return anim.bake(fn, length, loop)
+    def swapped(t):
+        c = dict(fn(t)); c['swap_hands'] = True
+        return c
+    return anim.bake(swapped, length, loop)

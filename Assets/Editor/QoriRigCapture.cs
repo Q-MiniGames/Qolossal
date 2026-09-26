@@ -265,10 +265,10 @@ public static class QoriRigCapture
         animator.weapon.enabled = true;
         animator.weapon.transform.SetParent(animator.weaponMountFar, false);
         animator.weapon.sortingOrder = animator.weaponOrderFar;
-        Camera camera = Camera.main; camera.aspect = 1f; camera.orthographicSize = 1.3f;
-        camera.transform.position = new Vector3(-16f, .9f, -10f);
+        Camera camera = Camera.main; camera.aspect = 1f; camera.orthographicSize = 1.6f;
+        camera.transform.position = new Vector3(-16f, 1.1f, -10f);
         foreach (ParallaxLayer layer in UnityEngine.Object.FindObjectsByType<ParallaxLayer>(FindObjectsSortMode.None)) layer.Refresh(camera);
-        (string clip, float t)[] times = { ("Idle", 0f), ("Idle", 1.3f), ("Walk", .16f), ("Walk", .46f), ("Run", 0f), ("Run", .1f), ("Run", .2f), ("Run", .3f) };
+        (string clip, float t)[] times = { ("Rise", .05f), ("Fall", .05f), ("AttackFront", .2f), ("AttackFront", .45f), ("AttackUp", .45f), ("AttackAirFront", .45f), ("AttackFront2", .45f), ("Idle", 0f) };
         const int size = 500;
         var sheet = new Texture2D(size * 4, size * 2, TextureFormat.RGB24, false);
         var target = new RenderTexture(size, size, 24);

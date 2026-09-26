@@ -12,7 +12,7 @@ public sealed class QoriAnimator : MonoBehaviour
     public Animator animator;
     public Transform facingPivot;
     public Transform handNear, handFar, weaponMount, weaponTip;
-    [Tooltip("Grip on the camera-side hand; the blade moves here while standing, walking and running.")] public Transform weaponMountFar;
+    [Tooltip("Grip on the camera-side hand; the blade is carried here.")] public Transform weaponMountFar;
     [Tooltip("Sorting order of the blade while carried in the camera-side hand (between that arm's upper arm and fist).")]
     public int weaponOrderFar = 15;
     public SpriteRenderer head, weapon;
@@ -113,7 +113,8 @@ public sealed class QoriAnimator : MonoBehaviour
 
     public bool Ready => isActiveAndEnabled && animator != null && movement != null;
     public float VisualFacing => facing;
-    public Transform WeaponMount => weaponMount;
+    /// <summary>The grip the blade is currently attached to (hit detection samples from it).</summary>
+    public Transform WeaponMount => weapon != null && weapon.transform.parent != null ? weapon.transform.parent : weaponMount;
     public Transform WeaponTip => weaponTip;
     public Transform HandNear => handNear;
     public Transform HandFar => handFar;
@@ -252,7 +253,7 @@ public sealed class QoriAnimator : MonoBehaviour
                       || (movement.IsLedgeClimbing && movement.LedgeClimbProgress < .65f) || (wallJumping && !wallJumpAway);
         UpdateHead(attacking, gripping, grounded, velocity, effort);
         UpdateWeapon(hanging || ledge || movement.IsWallSliding || (wallJumping && !wallJumpAway));
-        UpdateWeaponHand(state == RunState || state == WalkState || state == IdleState);
+        UpdateWeaponHand(true);   // every weapon clip is authored for the camera-side hand
         UpdateArms(movement.IsLedgeHanging || (movement.IsLedgeClimbing && movement.LedgeClimbProgress < reachArmsUntil));
         UpdateTint();
     }
@@ -460,7 +461,7 @@ public sealed class QoriAnimator : MonoBehaviour
         }
     }
 
-    // Standing, walking and running carry the blade in the camera-side hand; attacks, air and wall moves use the weapon hand.
+    // All clips carry the blade in the camera-side hand (hanging and wall grips stow it).
     int weaponOrderNear = int.MinValue;
     void UpdateWeaponHand(bool far)
     {
