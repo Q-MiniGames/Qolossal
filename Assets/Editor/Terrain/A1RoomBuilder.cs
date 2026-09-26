@@ -145,6 +145,7 @@ public static class A1RoomBuilder
         Strip(root, "Waterfall", fall, fallX, spanUnderside + .4f, 2.4f, spanUnderside + .4f - streamY, new Vector2(0f, .9f), new Color(1f, 1f, 1f, .85f), -14, false, true);
         var splash = Image(root, "Waterfall Splash", Art("Hazards", "Waterfall_Splash_Base"), new Vector2(fallX + 1.2f, -3.6f), -13);
         splash.transform.localScale = new Vector3(.38f, .38f, 1f);
+        splash.gameObject.AddComponent<WaterfallSplash>().droplet = Art("Effects", "FX_Water_Drip");
     }
 
     static ScrollingStrip Strip(Transform parent, string name, Sprite sprite, float x, float top, float width, float height, Vector2 scroll, Color tint, int order, bool fitHeight, bool fitWidth,
