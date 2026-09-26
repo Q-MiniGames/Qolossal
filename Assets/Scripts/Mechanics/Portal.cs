@@ -10,7 +10,18 @@ public sealed class Portal : MonoBehaviour
 
     bool entered; float glow, enteredAt; Vector3 membraneScale;
 
+    FxFlipbook swirl;
+
     void Awake() { membraneScale = membrane.transform.localScale; }
+
+    // Leaves and motes spiralling into the doorway, looped.
+    void Start()
+    {
+        var lib = Fx.Library; if (lib == null) return;
+        Bounds b = membrane.bounds;
+        swirl = Fx.Play(lib.portalSwirl, b.center, 10f, b.size.y * 1.05f, membrane.sortingOrder + 3);
+        if (swirl != null) { swirl.loop = true; swirl.transform.SetParent(transform, true); }
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

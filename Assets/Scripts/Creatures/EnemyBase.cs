@@ -43,9 +43,15 @@ public abstract class EnemyBase : MonoBehaviour, ICombatDamageReceiver, IReedbla
 
     protected virtual void OnHurt(CombatDamage hit) { }
 
+    // Where the death puff and any sap orb appear.
+    protected virtual Vector2 DeathPoint => GetComponentInChildren<Collider2D>() is Collider2D c ? (Vector2)c.bounds.center : (Vector2)transform.position;
+
     protected virtual void Die()
     {
         diedAt = Time.time;
+        Vector2 centre = DeathPoint;
+        Fx.DeathPuff(centre);
+        SapOrb.MaybeDrop(centre);
         foreach (Collider2D c in GetComponentsInChildren<Collider2D>()) c.enabled = false;
         if (body != null) { body.linearVelocity = Vector2.zero; body.simulated = false; }
     }

@@ -32,7 +32,7 @@ public sealed class ThornwingEnemy : EnemyBase
             case State.Hover:
                 target = home + new Vector2(Mathf.Sin(Time.time * .9f) * .6f, Mathf.Sin(Time.time * 1.8f) * .25f);
                 if (Time.time >= nextDive && CanSee(pos, detectRange, detectHeight, out Vector2 to) && to.y < .5f)
-                { facing = Mathf.Sign(to.x); diveDirection = to.normalized; Enter(State.Telegraph); }
+                { facing = Mathf.Sign(to.x); diveDirection = to.normalized; Enter(State.Telegraph); Fx.Glint(pos + new Vector2(facing * .5f, .2f)); }
                 break;
             case State.Telegraph:
                 target = pos + new Vector2(-facing * .6f, .9f) * Time.fixedDeltaTime;   // rears up and back

@@ -74,7 +74,7 @@ public sealed class GroundCreature : MonoBehaviour, IReedbladeTarget, ICombatDam
             if (checks[i].normal.y > 0.65f) grounded = true;
 
         if (grounded && state == State.Patrol && Time.time >= nextChargeAt && SpotsPlayer(out float toward))
-        { direction = toward; Enter(State.Telegraph); }
+        { direction = toward; Enter(State.Telegraph); Fx.Glint(body.position + new Vector2(direction * .55f, .35f)); }
         if (state == State.Telegraph)
         {
             body.linearVelocity = new Vector2(0f, body.linearVelocity.y);
@@ -140,6 +140,8 @@ public sealed class GroundCreature : MonoBehaviour, IReedbladeTarget, ICombatDam
         if (state == State.Telegraph) Enter(State.Patrol);   // a hit interrupts the wind-up
         if (health == 0)
         {
+            Fx.DeathPuff(shape.bounds.center, 1.1f);
+            SapOrb.MaybeDrop(shape.bounds.center);
             body.linearVelocity = Vector2.zero;
             body.simulated = false;
             vanishAt = Time.time + 0.2f;

@@ -42,6 +42,8 @@ public sealed class FlyingCreature : MonoBehaviour, IReedbladeTarget, ICombatDam
         float dealt=Mathf.Min(health,hit.Damage);health-=dealt;
         if (health == 0)
         {
+            Fx.DeathPuff(body.position, 1.1f);
+            SapOrb.MaybeDrop(body.position);
             // Disabling unregisters the anchor. The player's rope releases
             // without resetting the velocity earned during the swing.
             gameObject.SetActive(false);

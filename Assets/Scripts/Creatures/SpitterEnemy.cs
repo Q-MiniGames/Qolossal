@@ -26,7 +26,11 @@ public sealed class SpitterEnemy : EnemyBase
         Vector2 at = (Vector2)transform.position + Vector2.up * .9f;
         bool sees = CanSee(at, range, height, out Vector2 to);
         if (sees) facing = Mathf.Sign(to.x);
-        if (swellStart < 0f && sees && Time.time >= nextShot) swellStart = Time.time;
+        if (swellStart < 0f && sees && Time.time >= nextShot)
+        {
+            swellStart = Time.time;
+            if (rig != null && rig.Point("Mouth") != null) Fx.Glint(rig.Point("Mouth").position);
+        }
         if (swellStart >= 0f && Time.time - swellStart >= swellTime)
         {
             Spit();

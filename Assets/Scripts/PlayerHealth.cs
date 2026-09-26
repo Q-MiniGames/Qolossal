@@ -58,6 +58,9 @@ public sealed class PlayerHealth : MonoBehaviour
         movement.ApplyKnockback(new Vector2(direction * Mathf.Max(push.x, knockback.x * .5f), push.y));
     }
 
+    // Restores hearts (sap orbs), up to the maximum.
+    public void Heal(int amount) => health = Mathf.Min(maximumHealth, health + Mathf.Max(0, amount));
+
     public void RestoreAfterRespawn()
     {
         health = maximumHealth;
