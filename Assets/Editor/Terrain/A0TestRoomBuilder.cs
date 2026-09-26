@@ -148,7 +148,7 @@ public static class A0TestRoomBuilder
     // An area portal: arch, membrane and trigger, standing on the ground at `at`. A0's arch is
     // pivoted at its base; later areas' are centred, with `marginPx` of canvas below the arch.
     internal static Portal AddPortal(Transform parent, Vector2 at, string id, string destinationScene, string destinationPortal, string destinationName, float exitSide,
-        string area = "A0", float marginPx = 0f)
+        string area = "A0", float marginPx = 0f, TerrainKit groundKit = null)
     {
         var portal = new GameObject("Portal " + id).AddComponent<Portal>();
         portal.transform.SetParent(parent, false); portal.transform.position = at;
@@ -159,12 +159,13 @@ public static class A0TestRoomBuilder
         portal.membrane = Image(portal.transform, "Membrane", Art("Props", "Portal_Membrane_" + area), artAt, PropOrder + 1);
         var box = portal.gameObject.AddComponent<BoxCollider2D>();
         box.isTrigger = true; box.size = new Vector2(1.2f, 2.4f); box.offset = new Vector2(0f, 1.2f);
+        if (groundKit != null) Ground(portal.gameObject, groundKit, at.y, 2.5f, PropOrder + 1);
         return portal;
     }
 
     // A checkpoint with a permanent id: the A0 lantern (Checkpoint_v1 art, seated on the ground at
     // runtime), or an area's shrine art standing on the ground at `at`.
-    internal static Checkpoint AddCheckpoint(Transform parent, Vector2 at, string id, Sprite shrineArt = null, float marginPx = 0f)
+    internal static Checkpoint AddCheckpoint(Transform parent, Vector2 at, string id, Sprite shrineArt = null, float marginPx = 0f, TerrainKit groundKit = null)
     {
         var obj = new GameObject("Checkpoint " + id);
         obj.transform.SetParent(parent, false);
@@ -177,8 +178,19 @@ public static class A0TestRoomBuilder
         var settings = new SerializedObject(checkpoint);
         settings.FindProperty("checkpointId").stringValue = id;
         settings.FindProperty("shrineArt").objectReferenceValue = shrineArt;
+        if (groundKit != null && shrineArt != null) Ground(obj, groundKit, at.y, 1.1f, PropOrder + 1);
         settings.ApplyModifiedPropertiesWithoutUndo();
         return checkpoint;
+    }
+
+    // Seats a prop on the terrain: contact shadow behind it, the ground's moss lip in front of its base.
+    internal static GroundedProp Ground(GameObject prop, TerrainKit kit, float groundY, float width, int propOrder)
+    {
+        var g = prop.AddComponent<GroundedProp>();
+        g.enabled = false;   // configure before it builds
+        g.groundTop = kit.groundTop; g.walkLinePx = kit.groundTopWalkLine; g.groundY = groundY; g.width = width; g.propOrder = propOrder;
+        g.enabled = true;
+        return g;
     }
 
     // Puts `path` in the build's scene list, enabled, as the `index`th enabled scene.
@@ -468,6 +480,7 @@ public static class A0TestRoomBuilder
         foreach (TerrainBlock block in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
         foreach (TerrainPiece piece in UnityEngine.Object.FindObjectsByType<TerrainPiece>(FindObjectsSortMode.None)) piece.Rebuild();
         Camera camera = Camera.main;
+        camera.aspect = 16f / 9f;   // batch mode reports another screen shape; layers size to the camera's aspect
         var texture = new RenderTexture(1920, 1080, 24);
         var read = new Texture2D(1920, 1080, TextureFormat.RGB24, false);
         foreach (var shot in shots)

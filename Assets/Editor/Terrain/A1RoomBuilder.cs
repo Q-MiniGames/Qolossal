@@ -19,6 +19,7 @@ public static class A1RoomBuilder
     const string FarPainting = "Assets/Resources/WorldBackground/Aqueduct.png";
     const float StartX = 3f, StartY = 1.5f;
     const int PropOrder = A0TestRoomBuilder.PropOrder;
+    static TerrainKit kit;
 
     static Sprite Art(string category, string name) => A0TestRoomBuilder.Art(category, name);
     static SpriteRenderer Image(Transform parent, string name, Sprite sprite, Vector2 at, int order = PropOrder) =>
@@ -27,7 +28,7 @@ public static class A1RoomBuilder
     [MenuItem("Qolossal/Scenes/Build A1 Aqueduct")]
     public static void Build()
     {
-        TerrainKit kit = TerrainKitBuilder.Build("A1");
+        kit = TerrainKitBuilder.Build("A1");
         var scene = A0TestRoomBuilder.NewRoom("A1 Aqueduct Ravine", new Vector2(StartX, StartY), out Camera camera);
         camera.backgroundColor = new Color(.665f, .744f, .77f);   // the far painting's top row
 
@@ -68,8 +69,8 @@ public static class A1RoomBuilder
         // enclosed rather than opening onto the valley painting.
         var backs = new GameObject("Back Walls").transform;
         Color shade = new Color(.1f, .12f, .13f, 1f);   // dark and cool, so it never reads as ground Qori could stand on
-        Strip(backs, "Ravine Back Wall", kit.groundFill, 57f, P - .5f, 22f, P + 4f, Vector2.zero, shade, -60, false, false, 2.5f);
-        Strip(backs, "Gallery Back Wall", kit.groundFill, 101f, 8f, 41f, 14.5f, Vector2.zero, shade, -60, false, false, 2.5f);
+        Strip(backs, "Ravine Back Wall", kit.groundFill, 57f, P - .5f, 22f, P + 4f, Vector2.zero, shade, -60, false, false, 2.5f, 0f, .8f);
+        Strip(backs, "Gallery Back Wall", kit.groundFill, 101f, 8f, 41f, 14.5f, Vector2.zero, shade, -60, false, false, 2.5f, 0f, .8f);
         BuildWater(P);
         BuildMechanics(P);
         BuildEnemies(P);
@@ -110,39 +111,46 @@ public static class A1RoomBuilder
         Layer("Near - BG_A1_Near", Art("Backgrounds", "BG_A1_Near"), 0f, true, new Vector2(.62f, .72f), -2.2f, -80, new Color(.174f, .202f, .181f));
     }
 
-    // Shallow streams Qori wades through, and the waterfall off the ravine's west lip.
+    // Shallow streams Qori wades through, and the waterfall off the ravine's west lip. The water
+    // sits just above the walk line and fades out at both banks and into the ground below, so it
+    // reads as a shallow channel rather than a box laid on the ground.
     static void BuildWater(float P)
     {
         var root = new GameObject("Water").transform;
         Sprite surface = Art("Hazards", "Water_Surface"), body = Art("Hazards", "Water_Body");
         void Stream(string name, float x0, float x1, float floor)
         {
-            float top = floor + .28f;
+            float top = floor + .07f;
             var pool = new GameObject(name).AddComponent<WaterPool>();
             pool.transform.SetParent(root, false); pool.transform.position = new Vector3(x0, top, 0f);
             pool.surfaceY = top; pool.ripple = Art("Effects", "FX_Water_Ripple");
             var box = pool.gameObject.AddComponent<BoxCollider2D>();
             box.isTrigger = true; box.size = new Vector2(x1 - x0, 1f); box.offset = new Vector2((x1 - x0) * .5f, -.3f);
-            Strip(pool.transform, "Body", body, x0, top, x1 - x0, .7f, new Vector2(.03f, .01f), new Color(1f, 1f, 1f, .5f), 18, false, false);
+            Strip(pool.transform, "Body", body, x0, top, x1 - x0, .5f, new Vector2(.03f, .01f), new Color(1f, 1f, 1f, .5f), 18, false, false, 0f, .3f, 1.1f);
             float h = surface.rect.height / surface.pixelsPerUnit;   // the painted line is at the canvas's middle
-            Strip(pool.transform, "Surface", surface, x0, top + h * .5f, x1 - x0, h, new Vector2(.08f, 0f), new Color(1f, 1f, 1f, .85f), 19, true, false);
+            Strip(pool.transform, "Surface", surface, x0, top + h * .5f, x1 - x0, h, new Vector2(.08f, 0f), new Color(1f, 1f, 1f, .85f), 19, true, false, 0f, 0f, 1.1f);
         }
         Stream("Entry Stream", 12f, 19f, 0f);
         Stream("Ravine Stream", 58.2f, 76.4f, -4f);
 
         Sprite fall = Art("Hazards", "Waterfall_Column");
-        Strip(root, "Waterfall", fall, 58.1f, P + .1f, 2.4f, P + 4.1f, new Vector2(0f, .9f), new Color(1f, 1f, 1f, .85f), -14, false, true);
-        var splash = Image(root, "Waterfall Splash", Art("Hazards", "Waterfall_Splash_Base"), new Vector2(59.3f, -3.6f), -13);
+        // Pours from the broken aqueduct span overhead: the column's top starts inside the span, which
+        // is drawn in front of it, so the water spills out of the stonework into the ravine stream.
+        const float fallX = 59.4f, spanUnderside = 14f, streamY = -3.93f;
+        Strip(root, "Waterfall", fall, fallX, spanUnderside + .4f, 2.4f, spanUnderside + .4f - streamY, new Vector2(0f, .9f), new Color(1f, 1f, 1f, .85f), -14, false, true);
+        var splash = Image(root, "Waterfall Splash", Art("Hazards", "Waterfall_Splash_Base"), new Vector2(fallX + 1.2f, -3.6f), -13);
         splash.transform.localScale = new Vector3(.38f, .38f, 1f);
     }
 
-    static ScrollingStrip Strip(Transform parent, string name, Sprite sprite, float x, float top, float width, float height, Vector2 scroll, Color tint, int order, bool fitHeight, bool fitWidth, float fadeTop = 0f)
+    static ScrollingStrip Strip(Transform parent, string name, Sprite sprite, float x, float top, float width, float height, Vector2 scroll, Color tint, int order, bool fitHeight, bool fitWidth,
+        float fadeTop = 0f, float fadeBottom = 0f, float fadeSides = 0f)
     {
         var strip = new GameObject(name).AddComponent<ScrollingStrip>();
         strip.enabled = false;   // configure before it builds its mesh
         strip.transform.SetParent(parent, false); strip.transform.position = new Vector3(x, top, 0f);
         strip.sprite = sprite; strip.width = width; strip.height = height; strip.scroll = scroll; strip.tint = tint;
-        strip.sortingOrder = order; strip.fitHeight = fitHeight; strip.fitWidth = fitWidth; strip.fadeTop = fadeTop;
+        strip.sortingOrder = order; strip.fitHeight = fitHeight; strip.fitWidth = fitWidth;
+        strip.fadeTop = fadeTop; strip.fadeBottom = fadeBottom; strip.fadeSides = fadeSides;
         strip.enabled = true;
         return strip;
     }
@@ -150,11 +158,11 @@ public static class A1RoomBuilder
     static void BuildMechanics(float P)
     {
         var root = new GameObject("Mechanics").transform;
-        A0TestRoomBuilder.AddPortal(root, new Vector2(0f, 0f), "a1-west", "A0_TestRoom", "a0-east", "A0 Mossy Hollow", 1f, "A1", 48f);
-        A0TestRoomBuilder.AddPortal(root, new Vector2(137f, -6f), "a1-east", "A2_Grove", "a2-west", "A2 Ancient Grove", -1f, "A1", 48f);
+        A0TestRoomBuilder.AddPortal(root, new Vector2(0f, 0f), "a1-west", "A0_TestRoom", "a0-east", "A0 Mossy Hollow", 1f, "A1", 48f, kit);
+        A0TestRoomBuilder.AddPortal(root, new Vector2(137f, -6f), "a1-east", "A2_Grove", "a2-west", "A2 Ancient Grove", -1f, "A1", 48f, kit);
         Sprite shrine = Art("Props", "Checkpoint_Shrine_A1");
-        A0TestRoomBuilder.AddCheckpoint(root, new Vector2(7f, 0f), "a1-entry", shrine, 27f);
-        A0TestRoomBuilder.AddCheckpoint(root, new Vector2(128f, -6f), "a1-gallery", shrine, 27f);
+        A0TestRoomBuilder.AddCheckpoint(root, new Vector2(7f, 0f), "a1-entry", shrine, 27f, kit);
+        A0TestRoomBuilder.AddCheckpoint(root, new Vector2(128f, -6f), "a1-gallery", shrine, 27f, kit);
 
         // Swing rings under the aqueduct span, 6 u apart (the thread catches within 4 u).
         var anchorPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/ThreadAnchor01.prefab");
@@ -170,16 +178,22 @@ public static class A1RoomBuilder
             var r = art.GetComponent<SpriteRenderer>(); r.sprite = ring; r.sortingOrder = PropOrder + 3;
         }
 
-        // Thorns to jump on the east plateau, and lining the lower gallery's pit.
+        // Thorns to jump on the east plateau, and lining the lower gallery's pit. The strip's flat
+        // stone base is sunk to its middle row (112 px) at the walk line, its ends fade out, and
+        // the ground's moss lip is drawn in front of it.
         Sprite thornArt = Art("Hazards", "Hazard_Thorns_Floor_A1");
         void Thorns(string name, float x0, float x1, float ground)
         {
-            float y = ground + A0TestRoomBuilder.Grounded(thornArt, 55f, .1f);
-            var r = Image(root, name, thornArt, new Vector2((x0 + x1) * .5f, y), PropOrder + 1);
-            r.drawMode = SpriteDrawMode.Tiled; r.size = new Vector2(x1 - x0, thornArt.bounds.size.y);
-            var box = r.gameObject.AddComponent<BoxCollider2D>();
-            box.isTrigger = true; box.size = new Vector2(x1 - x0 - .2f, .3f); box.offset = new Vector2(0f, ground + .18f - y);
-            r.gameObject.AddComponent<ThornHazard>();
+            float h = thornArt.rect.height / thornArt.pixelsPerUnit, w = x1 - x0;
+            var strip = Strip(root, name, thornArt, x0, ground + 112f / thornArt.pixelsPerUnit, w, h, Vector2.zero, Color.white, PropOrder + 1, true, false, 0f, 0f, .45f);
+            var seat = new GameObject("Grounding");   // the moss lip centres on its object
+            seat.transform.SetParent(strip.transform, false); seat.transform.position = new Vector3(x0 + w * .5f, ground, 0f);
+            var grounded = A0TestRoomBuilder.Ground(seat, kit, ground, w - .6f, PropOrder + 1);
+            grounded.enabled = false; grounded.shadow = false; grounded.enabled = true;
+            var hazard = new GameObject("Hazard");
+            hazard.transform.SetParent(strip.transform, false); hazard.transform.position = new Vector3(x0 + w * .5f, ground + .18f, 0f);
+            var box = hazard.AddComponent<BoxCollider2D>(); box.isTrigger = true; box.size = new Vector2(w - .2f, .3f);
+            hazard.AddComponent<ThornHazard>();
         }
         Thorns("Plateau Thorns", 86f, 89f, P);
         Thorns("Pit Thorns", 113f, 126f, -6f);
@@ -193,6 +207,7 @@ public static class A1RoomBuilder
         breakable.breaksWith = Breakable.Rule.Mace; breakable.solid = rubble.GetComponent<Collider2D>();
         breakable.intact = Image(rubble.transform, "Art", rubbleArt, new Vector2(99f, P + A0TestRoomBuilder.Grounded(rubbleArt, 45f)));
         breakable.pieces = A0TestRoomBuilder.Pieces("Props", "Barrier_Rubble_Pieces_A1");
+        A0TestRoomBuilder.Ground(breakable.intact.gameObject, kit, P, 1.7f, PropOrder);
 
         // A platform hung on chains from the gallery ceiling, carrying Qori across the thorn pit.
         const float deck = -4.4f, deckAboveArt = .84f;   // Platform_Moving_A1's walk line is .84 u above its pivot
@@ -232,19 +247,22 @@ public static class A1RoomBuilder
             .ToDictionary(sprite => sprite.name.Replace("Decor_A1_", ""));
         var root = new GameObject("Decor").transform;
         const float Sink = .12f;   // slice rects keep a little transparent margin below the contact point
+        // Solid pieces standing on the ground get a contact shadow and the ground's moss in front.
+        string[] solid = { "stone_basin", "aqueduct_pillar", "carved_block", "algae_rock_large", "algae_rock_small" };
         void Place(string name, float x, float y, int order = -20, bool hanging = false, bool flip = false)
         {
             var r = new GameObject("Decor " + name).AddComponent<SpriteRenderer>();
             r.transform.SetParent(root, false);
             r.transform.position = new Vector3(x, y + (hanging ? Sink : -Sink), 0f);
             r.sprite = sprites[name]; r.sortingOrder = order; r.flipX = flip;
+            if (!hanging && System.Array.IndexOf(solid, name) >= 0) A0TestRoomBuilder.Ground(r.gameObject, kit, y, r.sprite.bounds.size.x * .75f, order);
         }
         // Entry
-        Place("reeds", 11.3f, 0f, 5); Place("water_lilies", 15.5f, .2f, 21); Place("reeds", 19.6f, 0f, 5, flip: true);
+        Place("reeds", 11.3f, 0f, 5); Place("water_lilies", 15.5f, .05f, 21); Place("reeds", 19.6f, 0f, 5, flip: true);
         Place("stone_basin", 22.5f, 0f); Place("snail", 23.6f, 0f); Place("aqueduct_pillar", 25.5f, 0f); Place("grass", 28f, 0f, 5);
         // Ravine plateau, span and floor
         Place("carved_block", 49f, P); Place("grass", 51.5f, P, 5); Place("mushrooms", 55.5f, P);
-        Place("hanging_ivy", 60.8f, 14f, hanging: true); Place("hanging_roots", 71.5f, 14f, hanging: true);
+        Place("hanging_ivy", 65.6f, 14f, hanging: true); Place("hanging_roots", 71.5f, 14f, hanging: true);
         Place("algae_rock_small", 65.5f, -4f); Place("reeds", 72f, -4f, 5);
         // East plateau
         Place("algae_rock_large", 81f, P); Place("grass", 91f, P, 5); Place("aqueduct_pillar", 96f, P);
