@@ -79,15 +79,15 @@ WORLD_SIZE = {
 # Opaque chain width in Platform_Moving_A1 (78 px) vs the chain tile (54 px).
 CHAIN_SCALE = 54.0 / 78.0
 
-TILE_H = {"A0_Ground_Top", "A0_Ceiling_Under", "Hazard_Thorns_Floor", "Hazard_Thorns_Ceiling",
+TILE_H = {f"{a}_{k}" for a in ("A0", "A1", "A2", "A3", "A4") for k in ("Ground_Top", "Ceiling_Under", "Platform_OneWay_unused")} | { "Hazard_Thorns_Floor", "Hazard_Thorns_Ceiling",
           "Whip_Lash_Segment", "HUD_Vine_Segment"}
-TILE_V = {"A0_Wall_Side", "Hazard_Thorns_Wall", "Platform_Moving_A1_Chain"}
-TILE_FILL = {"A0_Ground_Fill", "A0_Wall_Climbable", "A0_Wall_Slippery"}
+TILE_V = {f"{a}_Wall_Side" for a in ("A0", "A1", "A2", "A3", "A4")} | { "Hazard_Thorns_Wall", "Platform_Moving_A1_Chain"}
+TILE_FILL = {f"{a}_{k}" for a in ("A0", "A1", "A2", "A3", "A4") for k in ("Ground_Fill", "Wall_Climbable", "Wall_Slippery")}
 
 BOTTOM_ANCHORED = {"Barrier_Rubble_Intact", "Barrier_Thorns_Intact", "Switch_Plate_Up", "Shrine_Ability",
                    "Portal_Gate_A0", "Spitter_Base",
                    "Hazard_Thorns_Floor"}
-TOP_ANCHORED = {"Hazard_Thorns_Ceiling", "A0_Ceiling_Under"}
+TOP_ANCHORED = {"Hazard_Thorns_Ceiling"} | {f"{a}_Ceiling_Under" for a in ("A0", "A1", "A2", "A3", "A4")}
 
 GROUND_TOP_WALK_LINE_PX = 96  # T-01: walk line measured from the top edge
 
@@ -110,10 +110,10 @@ def pivot_for(name, size, bbox):
     w, h = size
     x0, y0, x1, y1 = bbox
     cx = (x0 + x1) / 2 / w
-    if name == "A0_Ground_Top":
+    if name.endswith("_Ground_Top"):
         return [0.5, 1 - GROUND_TOP_WALK_LINE_PX / h]
     if name in BOTTOM_ANCHORED or name.startswith("Platform_") or name.startswith("Switch_") \
-            or name.startswith("Floor_Weak") or name.startswith("A0_Platform"):
+            or name.startswith("Floor_Weak") or "_Platform_" in name:
         return [round(cx, 5), round(1 - y1 / h, 5)]
     if name in TOP_ANCHORED:
         return [round(cx, 5), round(1 - y0 / h, 5)]
@@ -135,7 +135,10 @@ def settings_for(category, name):
     if name in TILE_H or name in TILE_V or name in TILE_FILL:
         s["mesh"] = "FullRect"  # required for SpriteRenderer tiled draw mode
 
-    if category in ("Terrain", "Decor"):
+    if name.startswith("Decor_Foreground_Frame"):
+        s["ppu"], s["basis"] = TERRAIN_PPU, "screen-edge overlay at terrain density"
+        s["pivot"] = [0.5, 0.5]
+    elif category in ("Terrain", "Decor"):
         s["ppu"], s["basis"] = TERRAIN_PPU, "request: terrain density 120 px/u"
     elif category == "Backgrounds":
         s["ppu"], s["basis"] = TERRAIN_PPU, "request: terrain density 120 px/u"
@@ -183,6 +186,8 @@ def load_manifest():
 
 def decor_sprites(name):
     slices = os.path.join(SOURCE, "Decor", "QA", name.replace("_Sheet", "_Slices") + ".json")
+    if not os.path.exists(slices):   # later batches name them A1_Slices.json
+        slices = os.path.join(SOURCE, "Decor", "QA", name.replace("Decor_", "").replace("_Sheet", "_Slices") + ".json")
     if not os.path.exists(slices):
         return None
     with open(slices) as f:
@@ -192,7 +197,7 @@ def decor_sprites(name):
     for sp in data["sprites"]:
         x, y, w, h = sp["unity_rect_bottom_left_xywh"]
         out.append({"name": f"{name.replace('_Sheet', '')}_{sp['name']}", "rect": [x, y, w, h],
-                    "pivot": [0.5, 1.0] if sp["name"] in hanging else [0.5, 0.0]})
+                    "pivot": sp["pivot"] if isinstance(sp.get("pivot"), list) else [0.5, 1.0] if sp["name"] in hanging else [0.5, 0.0]})
     return out
 
 
@@ -223,7 +228,7 @@ def build_entry(category, name, reviewed_sha):
     entry = {"name": name, "category": category, "sha256": reviewed_sha,
              "dest": f"{DEST_ROOT}/{category}/{name}.png"}
     entry.update(settings_for(category, name))
-    if category == "Decor":
+    if category == "Decor" and name.endswith("_Sheet"):
         entry["sprites"] = decor_sprites(name)
     if name in PIECE_SHEETS:
         entry["sprites"] = piece_sprites(category, name)
