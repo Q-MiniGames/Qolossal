@@ -61,6 +61,9 @@ public sealed class PlayerHealth : MonoBehaviour
     // Restores hearts (sap orbs), up to the maximum.
     public void Heal(int amount) => health = Mathf.Min(maximumHealth, health + Mathf.Max(0, amount));
 
+    // Hearts carried in from another area.
+    public void SetHealth(int hearts) => health = Mathf.Clamp(hearts, 1, maximumHealth);
+
     public void RestoreAfterRespawn()
     {
         health = maximumHealth;

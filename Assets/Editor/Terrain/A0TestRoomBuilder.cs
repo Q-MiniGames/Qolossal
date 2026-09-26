@@ -20,46 +20,16 @@ public static class A0TestRoomBuilder
     public static void Build()
     {
         TerrainKit kit = BuildKit();
-        Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
-
-        var light = new GameObject("Global Light 2D").AddComponent<Light2D>();
-        light.lightType = Light2D.LightType.Global;
-
-        var player = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Player.prefab"));
-        player.transform.position = new Vector3(-18f, 1.5f, 0f);
-
-        var camera = new GameObject("Main Camera") { tag = "MainCamera" }.AddComponent<Camera>();
-        camera.orthographic = true;
-        camera.orthographicSize = 5f;
-        camera.clearFlags = CameraClearFlags.SolidColor;
-        camera.backgroundColor = new Color(.72f, .79f, .77f);
-        camera.transform.position = new Vector3(-18f, 2.5f, -10f);
-        camera.gameObject.AddComponent<UniversalAdditionalCameraData>();
-        var follow = camera.gameObject.AddComponent<CameraFollow>();
-        var followSettings = new SerializedObject(follow);
-        followSettings.FindProperty("target").objectReferenceValue = player.transform;
-        followSettings.ApplyModifiedPropertiesWithoutUndo();
-
-        new GameObject("GameManager").AddComponent<GamePauseMenu>();
+        Scene scene = NewRoom("A0 Mossy Hollow", new Vector2(-18f, 1.5f), out Camera camera);
         var terrain = new GameObject("Terrain").transform;
-        int ground = LayerMask.NameToLayer("Ground");
 
         TerrainBlock Block(string name, float x, float top, float width, float height, int offset,
-            bool left = false, bool right = false, bool bottom = false, TerrainBlock.Surface surface = TerrainBlock.Surface.Rock)
-        {
-            var obj = new GameObject(name) { layer = ground };
-            obj.transform.SetParent(terrain, false);
-            obj.transform.position = new Vector3(x, top, 0f);
-            var block = obj.AddComponent<TerrainBlock>();
-            block.kit = kit; block.width = width; block.height = height; block.sortingOffset = offset;
-            block.leftFace = left; block.rightFace = right; block.bottom = bottom; block.surface = surface;
-            block.Rebuild();
-            return block;
-        }
+            bool left = false, bool right = false, bool bottom = false, TerrainBlock.Surface surface = TerrainBlock.Surface.Rock) =>
+            AddBlock(terrain, kit, name, x, top, width, height, offset, left, right, bottom, surface);
 
         TerrainPiece Piece(string name, TerrainPiece.Kind kind, float x, float y)
         {
-            var obj = new GameObject(name) { layer = ground };
+            var obj = new GameObject(name) { layer = LayerMask.NameToLayer("Ground") };
             obj.transform.SetParent(terrain, false);
             obj.transform.position = new Vector3(x, y, 0f);
             var piece = obj.AddComponent<TerrainPiece>();
@@ -124,8 +94,87 @@ public static class A0TestRoomBuilder
 
         Directory.CreateDirectory(Path.GetDirectoryName(ScenePath));
         EditorSceneManager.SaveScene(scene, ScenePath);
+        AddToBuild(ScenePath, 0);
         AssetDatabase.SaveAssets();
         Debug.Log("[A0TestRoomBuilder] Built " + ScenePath);
+    }
+
+    // A new area scene: global light, Qori, the following camera, the pause menu and the GameArea.
+    internal static Scene NewRoom(string areaName, Vector2 playerAt, out Camera camera)
+    {
+        Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+        var light = new GameObject("Global Light 2D").AddComponent<Light2D>();
+        light.lightType = Light2D.LightType.Global;
+
+        var player = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Player.prefab"));
+        player.transform.position = playerAt;
+
+        camera = new GameObject("Main Camera") { tag = "MainCamera" }.AddComponent<Camera>();
+        camera.orthographic = true;
+        camera.orthographicSize = 5f;
+        camera.clearFlags = CameraClearFlags.SolidColor;
+        camera.backgroundColor = new Color(.72f, .79f, .77f);
+        camera.transform.position = new Vector3(playerAt.x, playerAt.y + 1f, -10f);
+        camera.gameObject.AddComponent<UniversalAdditionalCameraData>();
+        var follow = camera.gameObject.AddComponent<CameraFollow>();
+        var followSettings = new SerializedObject(follow);
+        followSettings.FindProperty("target").objectReferenceValue = player.transform;
+        followSettings.ApplyModifiedPropertiesWithoutUndo();
+
+        var manager = new GameObject("GameManager");
+        manager.AddComponent<GamePauseMenu>();
+        manager.AddComponent<GameArea>().displayName = areaName;
+        return scene;
+    }
+
+    internal static TerrainBlock AddBlock(Transform parent, TerrainKit kit, string name, float x, float top, float width, float height, int offset,
+        bool left = false, bool right = false, bool bottom = false, TerrainBlock.Surface surface = TerrainBlock.Surface.Rock)
+    {
+        var obj = new GameObject(name) { layer = LayerMask.NameToLayer("Ground") };
+        obj.transform.SetParent(parent, false);
+        obj.transform.position = new Vector3(x, top, 0f);
+        var block = obj.AddComponent<TerrainBlock>();
+        block.kit = kit; block.width = width; block.height = height; block.sortingOffset = offset;
+        block.leftFace = left; block.rightFace = right; block.bottom = bottom; block.surface = surface;
+        block.Rebuild();
+        return block;
+    }
+
+    // An area portal: arch, membrane and trigger, standing on the ground at `at`.
+    internal static Portal AddPortal(Transform parent, Vector2 at, string id, string destinationScene, string destinationPortal, string destinationName, float exitSide)
+    {
+        var portal = new GameObject("Portal " + id).AddComponent<Portal>();
+        portal.transform.SetParent(parent, false); portal.transform.position = at;
+        portal.portalId = id; portal.destinationScene = destinationScene; portal.destinationPortal = destinationPortal; portal.destinationName = destinationName; portal.exitSide = exitSide;
+        Image(portal.transform, "Arch", Art("Props", "Portal_Gate_A0"), at, PropOrder + 2);
+        portal.membrane = Image(portal.transform, "Membrane", Art("Props", "Portal_Membrane_A0"), at, PropOrder + 1);
+        var box = portal.gameObject.AddComponent<BoxCollider2D>();
+        box.isTrigger = true; box.size = new Vector2(1.2f, 2.4f); box.offset = new Vector2(0f, 1.2f);
+        return portal;
+    }
+
+    // A checkpoint lantern (Checkpoint_v1 art, seated on the ground at runtime) with a permanent id.
+    internal static Checkpoint AddCheckpoint(Transform parent, Vector2 at, string id)
+    {
+        var obj = new GameObject("Checkpoint " + id);
+        obj.transform.SetParent(parent, false); obj.transform.position = at + new Vector2(0f, .8f);
+        obj.AddComponent<SpriteRenderer>();
+        var box = obj.AddComponent<BoxCollider2D>(); box.isTrigger = true; box.size = new Vector2(1f, 1.6f);
+        var checkpoint = obj.AddComponent<Checkpoint>();
+        var settings = new SerializedObject(checkpoint);
+        settings.FindProperty("checkpointId").stringValue = id;
+        settings.ApplyModifiedPropertiesWithoutUndo();
+        return checkpoint;
+    }
+
+    // Puts `path` in the build's scene list, enabled, as the `index`th enabled scene.
+    internal static void AddToBuild(string path, int index)
+    {
+        var scenes = EditorBuildSettings.scenes.Where(s => s.path != path).ToList();
+        int at = 0, enabled = 0;
+        while (at < scenes.Count && (enabled < index || !scenes[at].enabled)) { if (scenes[at].enabled) enabled++; at++; }
+        scenes.Insert(at, new EditorBuildSettingsScene(path, true));
+        EditorBuildSettings.scenes = scenes.ToArray();
     }
 
     // Far painting, then the A0 Mid and Near parallax layers. Heights are set for a camera
@@ -272,13 +321,10 @@ public static class A0TestRoomBuilder
         var mp = raft.AddComponent<MovingPlatform>();
         mp.offset = new Vector2(6f, 0f); mp.solid = raft.GetComponent<Collider2D>();
 
-        // The A0 area portal at the far end.
-        var portal = new GameObject("Portal A0").AddComponent<Portal>();
-        portal.transform.SetParent(root, false); portal.transform.position = new Vector3(152f, G, 0f);
-        Image(portal.transform, "Arch", Art("Props", "Portal_Gate_A0"), new Vector2(152f, G), PropOrder + 2);
-        portal.membrane = Image(portal.transform, "Membrane", Art("Props", "Portal_Membrane_A0"), new Vector2(152f, G), PropOrder + 1);
-        var portalBox = portal.gameObject.AddComponent<BoxCollider2D>();
-        portalBox.isTrigger = true; portalBox.size = new Vector2(1.2f, 2.4f); portalBox.offset = new Vector2(0f, 1.2f);
+        // The A0 area portal at the far end, to A1; coming back, Qori steps out on its left.
+        AddPortal(root, new Vector2(152f, G), "a0-east", A1RoomBuilder.SceneName, "a1-west", "A1 Aqueduct Ravine", -1f);
+        // A checkpoint on the end plateau, past the three shrines and before the gallery.
+        AddCheckpoint(root, new Vector2(84f, G), "a0-gallery");
     }
 
     // Ability shrines, each before the stretch that needs its relic: the Living Thread at the start

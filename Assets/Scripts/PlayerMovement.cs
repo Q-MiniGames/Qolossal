@@ -107,12 +107,7 @@ public sealed class PlayerMovement : MonoBehaviour
     private Vector2 startingPosition;
     private Vector2 respawnPosition;
     private Checkpoint activeCheckpoint;
-    private string CheckpointSaveKey => "Qolossal.Checkpoint.v1." + gameObject.scene.path;
-    public static void ClearSavedCheckpoint(string scenePath)
-    {
-        PlayerPrefs.DeleteKey("Qolossal.Checkpoint.v1." + scenePath);
-        PlayerPrefs.Save();
-    }
+    public bool HasCheckpoint => activeCheckpoint != null;
     private float moveInput;
     private float lastGroundedTime = float.NegativeInfinity;
     private float lastJumpPressedTime = float.NegativeInfinity;
@@ -183,7 +178,7 @@ public sealed class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        string savedId = PlayerPrefs.GetString(CheckpointSaveKey, "");
+        string savedId = GameSave.CheckpointIn(gameObject.scene.path);
         if (string.IsNullOrEmpty(savedId)) return;
         Checkpoint match = null;
         foreach (Checkpoint checkpoint in FindObjectsByType<Checkpoint>(FindObjectsSortMode.None))
@@ -302,13 +297,9 @@ public sealed class PlayerMovement : MonoBehaviour
         activeCheckpoint = checkpoint;
         respawnPosition = position;
         checkpoint.SetActiveMarker(true);
-        // Checkpoint activation is the only save event; enemies and health
-        // reset on a fresh session. The scene object name is never persisted.
+        // Saved by id (never by object name); enemies and health reset on a fresh session.
         if (!string.IsNullOrEmpty(checkpoint.CheckpointId))
-        {
-            PlayerPrefs.SetString(CheckpointSaveKey, checkpoint.CheckpointId);
-            PlayerPrefs.Save();
-        }
+            GameSave.SetCheckpoint(gameObject.scene.path, checkpoint.CheckpointId);
     }
 
     public void ApplyKnockback(Vector2 velocity)
@@ -623,14 +614,30 @@ public sealed class PlayerMovement : MonoBehaviour
     public void Respawn()
     {
         if (!isActiveAndEnabled) return;
+        Teleport(respawnPosition);
+        PlayerHealth health = GetComponent<PlayerHealth>();
+        if (health != null) health.RestoreAfterRespawn();
+    }
+
+    // Arrival in an area: puts Qori at `position` facing `facing`, keeping his hearts. With
+    // `asRespawn` it also becomes where he returns after a fall or defeat.
+    public void PlaceAt(Vector2 position, float facing, bool asRespawn)
+    {
+        if (asRespawn) respawnPosition = position;
+        if (facing != 0f) FacingDirection = Mathf.Sign(facing);
+        Teleport(position);
+    }
+
+    private void Teleport(Vector2 position)
+    {
         combatImpulse=Vector2.zero;combatBounce=0;
         ReleaseLedge();
         PlayerCombat combat = GetComponent<PlayerCombat>();
         if (combat != null) combat.CancelAttack();
         if (thread != null) thread.Detach();
-        body.position = respawnPosition;
+        body.position = position;
         // Teleports must also reset the rendered root before camera/rig LateUpdate.
-        transform.position = new Vector3(respawnPosition.x,respawnPosition.y,transform.position.z);
+        transform.position = new Vector3(position.x,position.y,transform.position.z);
         Physics2D.SyncTransforms();
         body.linearVelocity = Vector2.zero;
         ResetObservation();
@@ -639,8 +646,6 @@ public sealed class PlayerMovement : MonoBehaviour
         hitRecoveryUntil = 0f;
         lastGroundedTime = lastJumpPressedTime = float.NegativeInfinity;
         canCutJump = false;
-        PlayerHealth health = GetComponent<PlayerHealth>();
-        if (health != null) health.RestoreAfterRespawn();
     }
 
     // A moving platform's velocity, added to Qori's while he stands on it. The distance it carries

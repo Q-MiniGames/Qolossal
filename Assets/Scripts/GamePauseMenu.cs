@@ -10,7 +10,7 @@ public sealed class GamePauseMenu : MonoBehaviour
 {
     public static bool IsPaused { get; private set; }
     private static int resumeFrame = -1;
-    public static bool BlocksGameplayInput => IsPaused || Time.frameCount <= resumeFrame;
+    public static bool BlocksGameplayInput => IsPaused || Time.frameCount <= resumeFrame || AreaTransition.IsTransitioning;
     private float previousTimeScale = 1f;
     private bool previousAudioPause;
     private bool ownsPause;
@@ -33,7 +33,7 @@ public sealed class GamePauseMenu : MonoBehaviour
     {
         bool toggle = Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame;
         toggle |= Gamepad.current != null && Gamepad.current.startButton.wasPressedThisFrame;
-        if (toggle)
+        if (toggle && !AreaTransition.IsTransitioning)
         {
             if (ownsPause && confirmingNewGame)
             {
@@ -72,19 +72,22 @@ public sealed class GamePauseMenu : MonoBehaviour
 
     private void OnDisable() => Resume();
 
+    // Forgets the saved game. In an area, the game restarts in the first area (the first scene in
+    // the build list); a sandbox scene just restarts itself.
     private void StartNewGame()
     {
         Scene scene = SceneManager.GetActiveScene();
-        // Validate before deleting anything: the level must be reloadable.
-        if (scene.buildIndex < 0 || !Application.CanStreamedLevelBeLoaded(scene.buildIndex))
+        int target = GameArea.InScene != null ? 0 : scene.buildIndex;
+        // Validate before deleting anything: the level must be loadable.
+        if (target < 0 || !Application.CanStreamedLevelBeLoaded(target))
         {
             restartError = "Add this scene to the Build Profiles scene list first.";
             ShowMenu(true);
             return;
         }
-        PlayerMovement.ClearSavedCheckpoint(scene.path);
+        GameSave.Clear();
         Resume();
-        SceneManager.LoadScene(scene.buildIndex);
+        SceneManager.LoadScene(target);
     }
 
     private void Quit()
@@ -151,7 +154,7 @@ public sealed class GamePauseMenu : MonoBehaviour
 
         confirmPage = new GameObject("Confirm", typeof(RectTransform)); confirmPage.transform.SetParent(panel.transform, false);
         Label(confirmPage.transform, "Start a new game?", 190f, 40);
-        Label(confirmPage.transform, "Clear the saved checkpoint for this level\nand restart from the beginning?", 110f, 26, 80f);
+        Label(confirmPage.transform, "Forget the saved game (relics, checkpoints)\nand start again from the beginning?", 110f, 26, 80f);
         firstConfirm = MakeButton(confirmPage.transform, "Cancel", 0f, () => { confirmingNewGame = false; restartError = null; ShowMenu(true); });
         MakeButton(confirmPage.transform, "Confirm", -110f, StartNewGame);
         errorText = Label(confirmPage.transform, "", -200f, 22);
@@ -169,7 +172,7 @@ public sealed class GamePauseMenu : MonoBehaviour
         {
             GUI.Box(panel, "Start a new game?");
             GUI.Label(new Rect(panel.x + 20f, panel.y + 35f, width - 40f, 55f),
-                "Clear the saved checkpoint for this level\nand restart from the beginning?");
+                "Forget the saved game (relics, checkpoints)\nand start again from the beginning?");
             if (GUI.Button(new Rect(panel.x + 25f, panel.y + 100f, width - 50f, 40f), "Cancel"))
             {
                 confirmingNewGame = false;

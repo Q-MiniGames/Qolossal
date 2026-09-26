@@ -17,16 +17,23 @@ public sealed class PlayerAbilityController : MonoBehaviour
     public int UnlockVersion {get;private set;}
     public event Action<AbilityDefinition> OnAbilityActivated;
     public event Action<AbilityDefinition> OnAbilityUnlocked;
-    void Awake(){Combat=GetComponent<PlayerCombat>();Movement=GetComponent<PlayerMovement>();foreach(var ability in unlockedAbilities)Unlock(ability);}
-    // Relics are only locked where they can be found: a scene without an ability shrine starts
-    // with all of them, so rooms built before shrines existed play as they did.
-    void Start(){if(FindAnyObjectByType<AbilityShrine>()==null)foreach(var relic in Relics.All)Unlock(relic);}
+    bool saving;
+    // In an area of the game (GameArea) Qori has the relics from the saved game, and new ones
+    // are saved; a sandbox or lab scene gives him all of them so it plays as it always did.
+    void Awake()
+    {
+        Combat=GetComponent<PlayerCombat>();Movement=GetComponent<PlayerMovement>();foreach(var ability in unlockedAbilities)Unlock(ability);
+        bool area=GameArea.InScene!=null;
+        foreach(var relic in Relics.All)if(!area||GameSave.HasRelic(relic.abilityId))Unlock(relic);
+        saving=area;
+    }
     void OnEnable(){if(Combat!=null)Combat.OnAttackHit+=Hit;}
     void OnDisable(){if(Combat!=null)Combat.OnAttackHit-=Hit;}
     public void Unlock(AbilityDefinition ability)
     {
         if(ability==null||string.IsNullOrEmpty(ability.abilityId)||unlocked.ContainsKey(ability.abilityId))return;
         unlocked[ability.abilityId]=ability;UnlockVersion++;OnAbilityUnlocked?.Invoke(ability);
+        if(saving&&Array.IndexOf(Relics.All,ability)>=0)GameSave.AddRelic(ability.abilityId);
     }
     public bool HasAbility(string id)=>string.IsNullOrEmpty(id)||unlocked.ContainsKey(id);
     public void AddResource(float amount)=>resource=Mathf.Max(0,resource+amount);

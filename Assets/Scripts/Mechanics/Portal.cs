@@ -1,14 +1,25 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // The area portal: a rooted arch with a swirling membrane. The membrane slowly turns and
-// breathes, and brightens when Qori steps through.
+// breathes, and brightens while Qori stands in it. Pressing up (W, the up arrow, or up on a
+// gamepad) there takes him to the matching portal (destinationPortal) in the destination scene.
 [DisallowMultipleComponent]
 public sealed class Portal : MonoBehaviour
 {
     public SpriteRenderer membrane;
-    [Tooltip("Area this portal leads to (shown until area loading exists).")] public string destination = "A1 Aqueduct";
+    [Tooltip("This portal's id; a portal elsewhere names it as its destinationPortal.")] public string portalId = "a0-east";
+    [Tooltip("Scene name to load, e.g. A1_Aqueduct.")] public string destinationScene = "";
+    public string destinationPortal = "";
+    [Tooltip("Where it leads, shown in the prompt, e.g. \"A1 Aqueduct Ravine\".")] public string destinationName = "";
+    [Tooltip("Side Qori steps out on when he arrives here: -1 left, 1 right.")] public float exitSide = -1f;
 
-    bool entered; float glow, enteredAt; Vector3 membraneScale;
+    PlayerMovement inside;
+    bool used; float glow, usedAt; Vector3 membraneScale;
+
+    // Where an arriving Qori appears: beside the arch, clear of its trigger (so he doesn't go
+    // straight back), dropping to the ground.
+    public Vector2 ArrivalPoint => (Vector2)transform.position + new Vector2(exitSide * 1.8f, 1.2f);
 
     // Leaves and motes spiralling into the doorway: each follows a smooth inward spiral on a loop,
     // staggered so a steady stream is always drawn in.
@@ -82,24 +93,48 @@ public sealed class Portal : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    static PlayerMovement PlayerOf(Collider2D other) =>
+        other.attachedRigidbody != null ? other.attachedRigidbody.GetComponent<PlayerMovement>() : null;
+
+    void OnTriggerEnter2D(Collider2D other) { var p = PlayerOf(other); if (p != null) inside = p; }
+    void OnTriggerExit2D(Collider2D other) { if (PlayerOf(other) == inside) inside = null; }
+
+    static bool UpPressed()
     {
-        if (entered || other.attachedRigidbody == null || other.attachedRigidbody.GetComponent<PlayerMovement>() == null) return;
-        entered = true; enteredAt = Time.time;
+        var key = Keyboard.current; var pad = Gamepad.current;
+        return key != null && (key.wKey.wasPressedThisFrame || key.upArrowKey.wasPressedThisFrame)
+            || pad != null && (pad.dpad.up.wasPressedThisFrame || pad.leftStick.up.wasPressedThisFrame);
     }
+
+    // Travels if Qori is standing in the portal (the up key calls this; so can tests).
+    public bool Use()
+    {
+        if (inside == null || !inside.isActiveAndEnabled || AreaTransition.IsTransitioning) return false;
+        used = true; usedAt = Time.time;
+        AreaTransition.Travel(destinationScene, destinationPortal, inside);
+        return true;
+    }
+    public bool QoriInside => inside != null;
 
     void Update()
     {
-        glow = Mathf.MoveTowards(glow, entered ? 1f : 0f, Time.deltaTime * 2f);
+        if (inside != null && !GamePauseMenu.BlocksGameplayInput && UpPressed()) Use();
+        glow = Mathf.MoveTowards(glow, used ? 1f : inside != null ? .5f : 0f, Time.deltaTime * 2f);
         float breathe = 1f + .03f * Mathf.Sin(Time.time * 1.7f);
         membrane.transform.localScale = new Vector3(membraneScale.x * breathe, membraneScale.y * (2f - breathe), 1f);
         Color c = membrane.color; c.a = .78f + .12f * Mathf.Sin(Time.time * 2.3f) + .2f * glow; membrane.color = c;
     }
 
+    // While Qori stands in it: how to travel and where to; a portal with nowhere to go says so.
     void OnGUI()
     {
-        if (!entered || GamePauseMenu.IsPaused || Time.time - enteredAt > 3f) return;
-        float width = Mathf.Min(420f, Screen.width - 24f);
-        GUI.Box(new Rect((Screen.width - width) * .5f, 60f, width, 40f), $"Portal to {destination} (area not built yet)");
+        if (inside == null || AreaTransition.IsTransitioning || GamePauseMenu.IsPaused) return;
+        bool reachable = AreaTransition.CanTravelTo(destinationScene);
+        string where = !string.IsNullOrEmpty(destinationName) ? destinationName : destinationScene;
+        string text = reachable ? "Press W / Up to travel to " + where
+            : string.IsNullOrEmpty(destinationScene) ? "This portal leads nowhere yet"
+            : "Portal to " + destinationScene + " (not in the build's scene list)";
+        float width = Mathf.Min(460f, Screen.width - 24f);
+        GUI.Box(new Rect((Screen.width - width) * .5f, Screen.height - 110f, width, 40f), text);
     }
 }
