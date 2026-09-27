@@ -4,8 +4,9 @@ using UnityEngine;
 // Runtime copies keep the approved Reedblade assets immutable.
 public static class QoriArmoryFactory
 {
-    // The mace's world length, grip to the far side of its head (the sword is 7.4, the spear 7.5).
-    // Drawn longer than the others until its redesigned, heavier art arrives.
+    // The mace's world length, grip to the far side of its head (the sword is 7.4, the spear 7.5):
+    // the heavy weapon is drawn the longest. Its art is the heavy leaf-plated maul the user chose
+    // (Tools/ArtImport/install_weapon_art.py installs it and the spear).
     const float MaceLength=7.9f;
     static T Copy<T>(T value,List<Object> owned) where T:Object{var copy=Object.Instantiate(value);owned.Add(copy);return copy;}
     public static WeaponDefinition[] Build(WeaponDefinition original,List<Object> owned,out WeaponDefinition slingWeapon,out AttackDefinition sling)
