@@ -23,7 +23,7 @@ The big picture first: the Qolossal itself, then the world map cut from its body
 ### 1.1 The titan
 - **What it is:** a guardian of the valley, part ancient stone (bones, face, knuckles) and part living wood (bark skin, root sinews, heartwood). Its life glows **mint**, the same glow as Qori, the relics and the seed pods.
 - **Size:** about 2,000 Qori heights long. A whole level spans roughly the width of one of its fingers. Its full shape is never seen up close; only from high places, the map and the stir cinematics.
-- **Pose (asleep):** lying on its back in the valley, **head to the east**, knees drawn up in the west. Its **left arm rests across its belly with the palm open to the sky**, which is where Qori sprouts. The right arm lies buried under the western hills (reserved for a sequel or a post-game).
+- **Pose (asleep):** lying on its back in the valley, **head to the east**, knees drawn up in the west. Its **left arm rests across its belly with the palm open to the sky**, which is where Qori sprouts. His **right arm lies bent over his chest, its forearm arched high over the open palm** like a shelter, and its hand rests on the valley floor beyond; the crown-mask is turned a little toward the palm. (Review 07: the Cradle's protective gesture on the reclining body.) The arch and the shoulders are traversal between regions, not a region of their own.
 - **Condition:** the **Thornrot**, a parasitic bramble, has wound through its veins and knotted its nerves shut. Its creatures (Bramble Crawlers, Thornwings, Pod Spitters) are the rot's spawn. The titan's own defenders (Sentinels, the Wardens) no longer recognise friend from foe.
 
 ### 1.2 The body map (side view, as the world map shows it)
@@ -88,7 +88,7 @@ The Qolossal kept the valley alive: its breath was the wind, its tears were the 
 ### 2.3 Ending
 The titan sits up. The valley rises with it, and the landscape pours from its shoulders like a landslide of forests and ruins. Qori sits in its palm, as at the start. The Wilted, healed, blossoms beside it. The last shot is the titan standing for the first time in a thousand years, with Qori on its shoulder, looking at a world it has not seen since it fell asleep.
 
-*Sequel hook:* the "Risen" world, the same body with the titan standing (the map turned upright), and the right arm freed.
+*Sequel hook:* the "Risen" world, the same body with the titan standing (the map turned upright).
 
 ### 2.4 How the story is told
 - **Places first.** Aqueducts running along a forearm, shrines on a brow, fields on knees. The player works it out before being told.
@@ -339,4 +339,26 @@ The defenders calming after a knot is a stir change too: that region becomes saf
 2. **Wild Veins:** random every time they are used, until their region's knot wakes and settles them into a fixed shortcut.
 3. **The Wilted:** healed at the end; it blossoms beside Qori in the final scene.
 4. **Death:** no cost. Qori respawns at the last checkpoint with full hearts and keeps everything collected.
-5. **Post-game:** the game ends with the ending. The "Risen world" (the titan standing, every region revisited from new angles, the right arm freed) is saved for a **sequel**.
+5. **Post-game:** the game ends with the ending. The "Risen world" (the titan standing, every region revisited from new angles) is saved for a **sequel**.
+6. **The titan (Review 07):** C-01's reclining male stone-and-root guardian, with the Cradle concept's sheltering right arm arched over the palm (section 1.1). Identity: huge shoulders and stone hands, a small forked crown-mask (not a human face), overlapping stone plates, braided root muscles.
+7. **Codex's twelve art-direction proposals are adopted** (section 11).
+
+---
+
+## 11. Art direction adopted at Review 07
+
+From Codex's `ART_DIRECTION_PROPOSALS.md` (Batch 5, D-01), in its ranked order:
+1. **The titan shelters Qori:** the arched right arm over the palm. The ending answers it: sitting up, the titan keeps the palm raised and safe.
+2. **One protected silhouette:** a small three-pronged crown-mask, enormous shoulders, long heavy forearms, stone knuckles. Only three motifs repeat: the branching crown, overlapping stone plates, braided roots.
+3. **A shape verb per region**, readable in greyscale: Palm *encloses*, Arm *channels*, Grove *opens*, Knees *step*, Crown *splits*, Eye *reflects*, Heart *converges*.
+4. **The eye is a landscape-sized stone shutter:** a shallow lens lake against the seam of two stone lids in a round socket, with lash roots. The Sight stir opens the seam and the lake drains inward (as in 3.3).
+5. **Each stir changes a landmark the player remembers**, seen from one fixed camera per region (the stir vistas use the same view).
+6. **The rot steals rhythm:** it crosses living roots at sharp angles and cinches them, leaving a dull, still stretch downstream. It never glows, and there is no magic smoke.
+7. **The careful ending:** forests shed leaves and soil, but inhabited terraces are held by living roots, and a huge hand steadies a collapsing aqueduct.
+8. **The Chart is a record of recognition:** contours read as hills until charted, then as anatomy. After a stir, a faint old contour remains beside the new pose, like a cartographer's correction.
+9. **Sparse, specific landmarks:** one mill on one kneecap, one elbow cistern. Foreground path edges stay quiet.
+10. **Guardians are local organs:** Hollowhorn's wheel horns echo the terraces, the Glassmoth refracts a broken shutter-ring, and the Brow Sentinel carries a crown fragment as a shield. Calmed Sentinels settle into tending poses. Old Loam's shell shrine echoes the cupped palm, and Scribble's ink looks like sap.
+11. **Recurring distant views** (a crown fragment, a rib pair) keep Qori oriented, so a Wild Vein surprises without feeling placeless. A level's 350–500 u route is winding travel, not its straight-line footprint on the body.
+12. **Stillness before Breath:** grass hangs still until the Breath stir, then moves on the inhale and exhale. Before Sight, glows stay local; after it, light comes from one direction through the opened seams.
+
+Region moods (D-03): R1 sage morning with mint accents, finger skyline and thumb arch; R2 aqua and limestone, the elbow cistern; R3 amber shafts through paired rib arches; R4 ochre clay in late afternoon, one mill on nested retaining walls; R5 ivory and pale gold, a shrine among the crown tines; R6 blue-white over wet slate, the closed shutter and lens lake; R7 deep blue-green and concentrated mint, roots converging on the constricted heart knot.
