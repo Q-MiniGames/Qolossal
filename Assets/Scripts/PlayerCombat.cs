@@ -166,8 +166,6 @@ public sealed class PlayerCombat : MonoBehaviour
             if(!projectileFired && PhaseProgress>=CurrentAttack.animation.contactFraction){projectileFired=true;Vector2 origin=armory.Visual!=null?armory.Visual.SlingReleasePosition:(Vector2)weaponMount.position;QoriResinShot.Launch(this,origin,CurrentAttack,armory.SlingWeapon,armory.SlingDirection);}
             return;
         }
-        if(equippedWeapon!=null&&equippedWeapon.flexibleWhip&&armory!=null&&armory.Visual!=null)
-        {hitDetector.SamplePolyline(this,armory.Visual.WhipPoints);return;}
         hitDetector.Sample(this,weaponMount.position,weaponTip.position);
     }
     public void PublishHit(AttackHitResult result)

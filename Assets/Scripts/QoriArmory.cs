@@ -83,7 +83,7 @@ public sealed class QoriArmory:MonoBehaviour
         {CancelAim();menuOpen=!menuOpen;closeFrame=Time.frameCount;}
         if(key!=null)
         {
-            Key[] keys={Key.Digit1,Key.Digit2,Key.Digit3,Key.Digit4};
+            Key[] keys={Key.Digit1,Key.Digit2,Key.Digit3};
             for(int i=0;i<keys.Length;i++)if(key[keys[i]].wasPressedThisFrame){Select(i);menuOpen=false;closeFrame=Time.frameCount;}
         }
         if(menuOpen&&pad!=null&&Time.unscaledTime>nextNavigation&&Mathf.Abs(pad.rightStick.x.ReadValue())>.6f)
@@ -111,9 +111,9 @@ public sealed class QoriArmory:MonoBehaviour
         GUI.Box(new Rect(width-328,18,310,58),Weapons[Selected].displayName+(pending>=0?" → "+Weapons[pending].displayName:"")+"\nTab / View: armory     Hold Q / X: aim; release: fire");
         if(menuOpen)
         {
-            float x=(width-680)/2,y=96;
-            GUI.Box(new Rect(x-12,y-42,704,218),"FOREST ARMORY - 1-4 or click - right stick cycles - Tab / View closes");
-            string[] styles={"Balanced sweeping cuts","Long flexible lash","Heavy overhead impact","Long precise thrust"};
+            float x=(width-510)/2,y=96;
+            GUI.Box(new Rect(x-12,y-42,534,218),"FOREST ARMORY - 1-3 or click - right stick cycles - Tab / View closes");
+            string[] styles={"Balanced sweeping cuts","Heavy overhead impact","Long precise thrust"};
             for(int i=0;i<Weapons.Length;i++)
             {
                 var rect=new Rect(x+i*170,y,160,125);var old=GUI.backgroundColor;

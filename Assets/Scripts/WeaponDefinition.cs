@@ -11,5 +11,4 @@ public sealed class WeaponDefinition : ScriptableObject
     public Vector2 artworkTip=new Vector2(5.33f,-1.19f);
     [Min(.01f)] public float artworkScale=1;
     public Color trailColor=new Color(.9f,.96f,.66f,1);
-    public bool flexibleWhip;
 }

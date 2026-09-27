@@ -64,7 +64,7 @@ public sealed class QoriAnimator : MonoBehaviour
     [Header("Weapon animation sets")]
     [Tooltip("weaponId values that use the Mace_* clips (heavy smash).")] public string[] maceIds = { "forest-2" };
     [Tooltip("weaponId values that use the Spear_* clips (thrusts).")] public string[] spearIds = { "forest-3" };
-    // Whips (flexibleWhip) use Whip_*, sling shots use Sling_*, everything else uses the sword clips.
+    // Sling shots use Sling_*; everything else uses the sword clips.
 
     [Header("Rope")]
     public float ropeTiltLimit = 45f;
@@ -379,7 +379,6 @@ public sealed class QoriAnimator : MonoBehaviour
         if (attack.slingProjectile) return "Sling";
         WeaponDefinition weapon = combat.EquippedWeapon;
         if (weapon == null) return null;
-        if (weapon.flexibleWhip) return "Whip";
         if (System.Array.IndexOf(maceIds, weapon.weaponId) >= 0) return "Mace";
         if (System.Array.IndexOf(spearIds, weapon.weaponId) >= 0) return "Spear";
         return null;

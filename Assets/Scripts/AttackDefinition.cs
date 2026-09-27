@@ -40,7 +40,6 @@ public sealed class AttackDefinition : ScriptableObject
     public GameObject impactEffect;
     [Header("Ranged delivery")]
     public bool slingProjectile;
-    public float whipSweepSign=1;
     public float projectileSpeed=16,projectileLifetime=1.2f;
     public CombatCancel Cancels(AttackPhase phase)=>phase==AttackPhase.Startup?startupCancels:phase==AttackPhase.Active?activeCancels:recoveryCancels;
 }

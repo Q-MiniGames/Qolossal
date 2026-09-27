@@ -204,7 +204,7 @@ Change from what is built: the A0 test room currently hands out three relics at 
 - **Sap Vials** (art delivered): the weapon-upgrade material, found in secrets and dropped by guardians. They upgrade weapons to tier 2 (art delivered).
 
 ### 3.8 Combat notes
-Weapons stay keys as well as weapons (the sword cuts, the mace breaks, the spear pierces, the whip reaches, the sling triggers switches). Each guardian is a puzzle as much as a fight, and its weak point is always its own **knot**, a mint glow the rot is feeding on.
+Qori carries three weapons and the sling (the Vine Whip was cut on 28 Sep 2026). They stay keys as well as weapons: the sword cuts, the mace breaks, the spear pierces, and the sling triggers switches. The **Seedpod Mace** is the heavy weapon and must look it: a two-handed maul whose head is clearly bigger than Qori's own head. Each guardian is a puzzle as much as a fight, and its weak point is always its own **knot**, a mint glow the rot is feeding on.
 
 ---
 

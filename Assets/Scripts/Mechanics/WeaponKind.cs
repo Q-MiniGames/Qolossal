@@ -1,7 +1,7 @@
 using UnityEngine;
 
 // Which of Qori's weapons (and which attack) a hit came from, for mechanics that only yield to one.
-public enum WeaponKind { Sword, Whip, Mace, Spear, Sling, Unknown }
+public enum WeaponKind { Sword, Mace, Spear, Sling, Unknown }
 
 public static class WeaponKinds
 {
@@ -12,11 +12,10 @@ public static class WeaponKinds
         switch (hit.Weapon.weaponId)
         {
             case "forest-0": case "reedblade": return WeaponKind.Sword;
-            case "forest-1": return WeaponKind.Whip;
             case "forest-2": return WeaponKind.Mace;
             case "forest-3": return WeaponKind.Spear;
             case "resin-sling": return WeaponKind.Sling;
-            default: return hit.Weapon.flexibleWhip ? WeaponKind.Whip : WeaponKind.Unknown;
+            default: return WeaponKind.Unknown;
         }
     }
 

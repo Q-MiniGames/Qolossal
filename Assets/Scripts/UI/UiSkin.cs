@@ -14,7 +14,7 @@ public sealed class UiSkin : ScriptableObject
     public float ringOpeningDiameter = 282;
     public Vector2 ringStubTip = new Vector2(445, 256);
     [Header("Weapon icons, by weaponId")]
-    public string[] weaponIds = { "forest-0", "reedblade", "forest-1", "forest-2", "forest-3", "resin-sling" };
+    public string[] weaponIds = { "forest-0", "reedblade", "forest-2", "forest-3", "resin-sling" };
     public Sprite[] weaponIcons = new Sprite[6];
 
     public Sprite IconFor(string weaponId)

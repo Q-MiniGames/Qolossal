@@ -10832,24 +10832,6 @@
    "basis": "UI canvas: 1 px = 1 reference px"
   },
   {
-   "name": "Icon_Weapon_WhipHandle",
-   "category": "Weapons",
-   "sha256": "c1b9c1ca8528aa9f0ed41b617cbb0e72d6bcd5648ae96d90420d1b5982259365",
-   "dest": "Assets/Art/Codex/Weapons/Icon_Weapon_WhipHandle.png",
-   "wrapU": "Clamp",
-   "wrapV": "Clamp",
-   "mesh": "FullRect",
-   "pivot": [
-    0.5,
-    0.5
-   ],
-   "border": null,
-   "sprites": null,
-   "mipmaps": false,
-   "ppu": 100,
-   "basis": "UI canvas: 1 px = 1 reference px"
-  },
-  {
    "name": "Weapon_LeafSword_T2",
    "category": "Weapons",
    "sha256": "fbf6131425438eb62159fe88ce9f62ab9e5af51049ec2ee03cd147f32e8fd04d",
@@ -10890,60 +10872,6 @@
    "category": "Weapons",
    "sha256": "5866b2d7b079c6e07b29569cedd4d102d76a01d972ea80fba5c7b5f40bad6fae",
    "dest": "Assets/Art/Codex/Weapons/Weapon_ThornSpear_T2.png",
-   "wrapU": "Clamp",
-   "wrapV": "Clamp",
-   "mesh": "Tight",
-   "pivot": [
-    0.5,
-    0.5
-   ],
-   "border": null,
-   "sprites": null,
-   "mipmaps": true,
-   "ppu": 600,
-   "basis": "request: character density 600 px/u (nominal)"
-  },
-  {
-   "name": "Weapon_WhipHandle_T2",
-   "category": "Weapons",
-   "sha256": "74582d1da19f278391ce61bc785599300c0edf467ab06da77788771dd32e63c1",
-   "dest": "Assets/Art/Codex/Weapons/Weapon_WhipHandle_T2.png",
-   "wrapU": "Clamp",
-   "wrapV": "Clamp",
-   "mesh": "Tight",
-   "pivot": [
-    0.5,
-    0.5
-   ],
-   "border": null,
-   "sprites": null,
-   "mipmaps": true,
-   "ppu": 600,
-   "basis": "request: character density 600 px/u (nominal)"
-  },
-  {
-   "name": "Whip_Lash_Segment",
-   "category": "Weapons",
-   "sha256": "bd8473f873d93ba7946c384c773cb4ca4b3df5161b7689ea6998fda5efeb1582",
-   "dest": "Assets/Art/Codex/Weapons/Whip_Lash_Segment.png",
-   "wrapU": "Repeat",
-   "wrapV": "Clamp",
-   "mesh": "FullRect",
-   "pivot": [
-    0.5,
-    0.5
-   ],
-   "border": null,
-   "sprites": null,
-   "mipmaps": true,
-   "ppu": 600,
-   "basis": "request: character density 600 px/u (nominal)"
-  },
-  {
-   "name": "Whip_Lash_Tip",
-   "category": "Weapons",
-   "sha256": "ba325d0b31cfa75df88cb05264454639b1bfbe8b816c306aa62fc5a96a402c62",
-   "dest": "Assets/Art/Codex/Weapons/Whip_Lash_Tip.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",

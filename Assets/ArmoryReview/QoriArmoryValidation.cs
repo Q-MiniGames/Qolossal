@@ -17,7 +17,7 @@ public sealed class QoriArmoryValidation:MonoBehaviour
     static void Run()
     {
         if(EditorApplication.isPlaying||!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())return;
-        foreach(string name in new[]{"SlingPouch","ResinSeed","ThornLash"})
+        foreach(string name in new[]{"SlingPouch","ResinSeed"})
         {
             var art=(TextureImporter)AssetImporter.GetAtPath("Assets/Resources/Armory/"+name+".png");art.textureType=TextureImporterType.Default;art.alphaIsTransparency=true;art.mipmapEnabled=false;art.isReadable=true;art.npotScale=TextureImporterNPOTScale.None;art.textureCompression=TextureImporterCompression.Uncompressed;art.maxTextureSize=4096;art.SaveAndReimport();
         }
@@ -39,8 +39,8 @@ public sealed class QoriArmoryValidation:MonoBehaviour
         Directory.CreateDirectory(Dir);yield return new WaitForSeconds(1);
         var combat=FindFirstObjectByType<PlayerCombat>();var armory=combat.GetComponent<QoriArmory>();var rig=combat.GetComponentInChildren<QoriBodyRig>();
         combat.GetComponent<PlayerCombatInput>().enabled=false;armory.enabled=false;
-        Check(armory.Weapons.Length==4,"Four melee weapons initialized");
-        for(int i=0;i<4;i++)
+        Check(armory.Weapons.Length==3,"Three melee weapons initialized");
+        for(int i=0;i<3;i++)
         {
             combat.CancelAttack();armory.Select(i);yield return null;
             Check(combat.EquippedWeapon.weaponArtwork!=null,"Artwork loaded: "+combat.EquippedWeapon.displayName);
@@ -68,7 +68,7 @@ public sealed class QoriArmoryValidation:MonoBehaviour
             Check(combat.EquippedWeapon==equipped,"Sling preserves melee selection "+i);Capture("Sling-"+i);
             yield return new WaitForSeconds(1.3f);
         }
-        for(int i=0;i<4;i++)
+        for(int i=0;i<3;i++)
         {
             combat.CancelAttack();armory.Select(i);combat.RequestAttack(new AttackRequest(AttackAim.Up,1,CombatMoveSlot.Upper));
             yield return new WaitForSeconds(.15f);Check(combat.CurrentAttack!=null&&combat.CurrentAttack.direction==AttackAim.Up,"Upper attack selection "+i);
@@ -78,18 +78,18 @@ public sealed class QoriArmoryValidation:MonoBehaviour
             Check(combat.CurrentAttack!=null&&combat.CurrentAttack.direction==AttackAim.Down,"Airborne lower selection "+i);
             yield return new WaitForSeconds(1.3f);
         }
-        combat.CancelAttack();armory.Select(2);combat.RequestAttack(new AttackRequest(AttackAim.Front,1,CombatMoveSlot.Front));yield return new WaitForSeconds(.1f);
-        Check(!armory.Select(3)&&combat.EquippedWeapon==armory.Weapons[2],"Selection defers through current attack");
-        armory.enabled=true;yield return new WaitForSeconds(1.3f);Check(armory.Selected==3,"Deferred selection applies after recovery");
+        combat.CancelAttack();armory.Select(1);combat.RequestAttack(new AttackRequest(AttackAim.Front,1,CombatMoveSlot.Front));yield return new WaitForSeconds(.1f);
+        Check(!armory.Select(2)&&combat.EquippedWeapon==armory.Weapons[1],"Selection defers through current attack");
+        armory.enabled=true;yield return new WaitForSeconds(1.3f);Check(armory.Selected==2,"Deferred selection applies after recovery");
         var keyboard=InputSystem.AddDevice<Keyboard>();
         InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Tab));yield return null;yield return null;
         Check(armory.MenuOpen&&QoriArmory.BlocksAttackInput,"Tab opens menu and blocks attack input");
         InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;
-        InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Digit3));yield return null;yield return null;
-        Check(armory.Selected==2&&!armory.MenuOpen,"Number key selects mace and closes menu");
+        InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Digit2));yield return null;yield return null;
+        Check(armory.Selected==1&&!armory.MenuOpen,"Number key selects mace and closes menu");
         InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;yield return new WaitForSeconds(1.3f);
         combat.CancelAttack();
-        Check(QoriArmoryArt.Get("ResinSeed")!=null&&QoriArmoryArt.Get("SlingPouch")!=null&&QoriArmoryArt.Get("ThornLash")!=null,"All painted ranged / whip assets load");
+        Check(QoriArmoryArt.Get("ResinSeed")!=null&&QoriArmoryArt.Get("SlingPouch")!=null,"All painted ranged assets load");
         InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Q));yield return null;yield return new WaitForSeconds(1.1f);
         Check(armory.IsAiming&&combat.Phase==AttackPhase.Startup&&QoriArmory.BlocksAttackInput,"Q holds loaded pose beyond normal windup");
         Check(FindObjectsByType<QoriResinShot>(FindObjectsSortMode.None).Length==0,"Holding aim never fires a seed");Capture("Sling-Hold");
@@ -128,7 +128,7 @@ public sealed class QoriArmoryValidation:MonoBehaviour
 [DefaultExecutionOrder(17)]public sealed class ArmoryProbe:MonoBehaviour,ICombatDamageReceiver
 {
     public PlayerCombat combat;public QoriBodyRig rig;public QoriArmory armory;public int hits;public float damage;
-    void LateUpdate(){if(rig==null)return;var points=armory.Visual.WhipPoints;transform.position=combat.EquippedWeapon.flexibleWhip&&points!=null?points[points.Length-2]:rig.GetJoint("WeaponTip").position;Physics2D.SyncTransforms();}
+    void LateUpdate(){if(rig==null)return;transform.position=rig.GetJoint("WeaponTip").position;Physics2D.SyncTransforms();}
     public CombatDamageResponse ReceiveCombatHit(CombatDamage hit){hits++;damage+=hit.Damage;return CombatDamageResponse.Applied(hit.Damage);}
 }
 #endif

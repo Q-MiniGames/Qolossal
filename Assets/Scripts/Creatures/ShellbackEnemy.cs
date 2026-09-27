@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// Shellback (E-05): a slow beetle. Its stone shell blocks the sword, spear and whip; only the
+// Shellback (E-05): a slow beetle. Its stone shell blocks the sword and spear; only the
 // mace cracks it (shards fly, the mint glow shows through), and after that it can be hurt.
 [RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D))]
 public sealed class ShellbackEnemy : EnemyBase

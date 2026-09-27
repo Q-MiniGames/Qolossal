@@ -118,7 +118,7 @@ public static class QoriRigBuilder
             state.motion = clips[c.name];
             state.writeDefaultValues = true;
             if (Array.IndexOf(LocomotionStates, c.name) >= 0) { state.speedParameterActive = true; state.speedParameter = "MoveSpeed"; }
-            // Attacks (incl. per-weapon Mace_/Spear_/Whip_/Sling_ clips) and the ledge climb are scrubbed by code.
+            // Attacks (incl. per-weapon Mace_/Spear_/Sling_ clips) and the ledge climb are scrubbed by code.
             if (c.name.StartsWith("Attack") || c.name.Contains("_") || c.name == "LedgeClimb") { state.timeParameterActive = true; state.timeParameter = "AttackTime"; }
             if (c.name == "Idle") idle = state;
         }
