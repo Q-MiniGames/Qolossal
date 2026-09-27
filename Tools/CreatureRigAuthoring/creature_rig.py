@@ -219,9 +219,32 @@ def gustmoth():
     return r
 
 
-SPECIES = dict(carrier=carrier, thornwing=thornwing, spitter=spitter, shellback=shellback, newt=newt, grub=grub, gustmoth=gustmoth)
+# ------------------------------------------------------------------ Bark Sentinel (E-08, A2): 1.3 QH upright shield guard
+def sentinel():
+    r = Rig('Sentinel', 'Sentinel_Concept')
+    B, H, S = 'Sentinel_Body', 'Sentinel_Head', 'Sentinel_Shield'
+    AU, AL, LU, LL = 'Sentinel_Arm_Upper', 'Sentinel_Arm_Lower', 'Sentinel_Leg_Upper', 'Sentinel_Leg_Lower'
+    top = lambda n: cap(n, (0, -1)); bottom = lambda n: cap(n, (0, 1))
+    # Torso from the hips up to the neck, leaning a little forward (as in the concept).
+    r.part('Body', B, (bottom(B), top(B)), ((-.06, .90), (.12, 1.92)), None, 10)
+    # A wide, braced stance: far leg back, near leg forward.
+    for side, hip, knee, foot, order, tint in (('Far', (-.18, .98), (-.42, .50), (-.52, 0.), 2, .72),
+                                               ('Near', (.12, .98), (.32, .50), (.30, 0.), 18, 1.)):
+        r.part(f'Leg{side}Upper', LU, (top(LU), bottom(LU)), (hip, knee), 'Body', order, tint, 1.8)
+        r.part(f'Leg{side}Lower', LL, (top(LL), bottom(LL)), (knee, foot), f'Leg{side}Upper', order - 1, tint, 1.8)
+    # Far arm drawn back behind the body; the near arm holds the shield out in front.
+    r.part('ArmFarUpper', AU, (top(AU), bottom(AU)), ((-.10, 1.66), (-.36, 1.34)), 'Body', 4, .72, 1.6)
+    r.part('ArmFarLower', AL, (top(AL), bottom(AL)), ((-.36, 1.34), (-.20, 1.02)), 'ArmFarUpper', 3, .72, 1.6)
+    r.part('ArmNearUpper', AU, (top(AU), bottom(AU)), ((.24, 1.64), (.44, 1.32)), 'Body', 20, 1., 1.6)
+    r.part('ArmNearLower', AL, (top(AL), bottom(AL)), ((.44, 1.32), (.70, 1.28)), 'ArmNearUpper', 21, 1., 1.6)
+    r.part('Shield', S, (top(S), bottom(S)), ((.84, 1.96), (.78, .40)), 'ArmNearLower', 24)
+    r.part('Head', H, (cap(H, (-1, .3)), cap(H, (1, .4))), ((.02, 1.90), (.60, 1.76)), 'Body', 26)
+    r.view = dict(ppu=200, origin=(450, 560))   # tall: fit the whole body in the preview
+    return r
+
+SPECIES = dict(carrier=carrier, thornwing=thornwing, spitter=spitter, shellback=shellback, newt=newt, grub=grub, gustmoth=gustmoth, sentinel=sentinel)
 
 if __name__ == '__main__':
     rig = SPECIES[sys.argv[1]]()
     if sys.argv[2:] == ['export']: rig.export()
-    else: rig.preview()
+    else: rig.preview(**getattr(rig, 'view', {}))

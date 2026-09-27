@@ -10,7 +10,7 @@ using UnityEngine.Rendering;
 public static class CreatureRigBuilder
 {
     const string SpriteFolder = "Assets/Art/Codex/Enemies/";
-    public static readonly string[] Species = { "Carrier", "Thornwing", "Spitter", "Shellback", "Newt", "Grub", "GustMoth" };
+    public static readonly string[] Species = { "Carrier", "Thornwing", "Spitter", "Shellback", "Newt", "Grub", "GustMoth", "Sentinel" };
 
     [Serializable] class RigData { public int version; public BoneData[] bones; }
     [Serializable] class PointData { public string name; public float[] pos; }

@@ -64,6 +64,12 @@ public static class EnemyPrefabBuilder
             Set(e, "gust", Sprite("FX_Gust"));
             return e;
         }, Vector2.zero);
+        Build("Sentinel01", "Sentinel", root =>
+        {
+            root.AddComponent<Rigidbody2D>();
+            var box = root.AddComponent<BoxCollider2D>(); box.size = new Vector2(1.1f, 1.9f); box.offset = new Vector2(.15f, .95f);
+            return root.AddComponent<SentinelEnemy>();
+        }, Vector2.zero);
         AssetDatabase.SaveAssets();
         Debug.Log("[EnemyPrefabBuilder] built enemy prefabs");
     }

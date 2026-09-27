@@ -1,0 +1,236 @@
+{
+ "version": 1,
+ "bones": [
+  {
+   "name": "Body",
+   "parent": "",
+   "sprite": "Sentinel_Body",
+   "pos": [
+    -0.06,
+    0.9
+   ],
+   "rot": 79.99202019855866,
+   "length": 1.035760590097924,
+   "thick": 1.0,
+   "artRot": -91.40132563145076,
+   "artScale": 0.001847679909265411,
+   "centreFromPivot": [
+    -16.639896018607203,
+    279.5002736352442
+   ],
+   "order": 10,
+   "tint": 1.0,
+   "points": []
+  },
+  {
+   "name": "LegFarUpper",
+   "parent": "Body",
+   "sprite": "Sentinel_Leg_Upper",
+   "pos": [
+    0.05792844463634918,
+    0.13207685377087622
+   ],
+   "rot": -196.55707137563667,
+   "length": 0.5366563145999496,
+   "thick": 1.8,
+   "artRot": 88.72099698749605,
+   "artScale": 0.0014072662702551567,
+   "centreFromPivot": [
+    -1.5062955599734948,
+    -192.05831676607025
+   ],
+   "order": 2,
+   "tint": 0.72,
+   "points": []
+  },
+  {
+   "name": "LegFarLower",
+   "parent": "LegFarUpper",
+   "sprite": "Sentinel_Leg_Lower",
+   "pos": [
+    0.5366563145999494,
+    3.503217191890647e-18
+   ],
+   "rot": 15.255118703057775,
+   "length": 0.5099019513592785,
+   "thick": 1.8,
+   "artRot": 86.75696416367722,
+   "artScale": 0.0013414811667184707,
+   "centreFromPivot": [
+    9.600850077279759,
+    -191.6278979907264
+   ],
+   "order": 1,
+   "tint": 0.72,
+   "points": []
+  },
+  {
+   "name": "LegNearUpper",
+   "parent": "Body",
+   "sprite": "Sentinel_Leg_Upper",
+   "pos": [
+    0.11006404480906347,
+    -0.1633582138745048
+   ],
+   "rot": -147.37215525051823,
+   "length": 0.52,
+   "thick": 1.8,
+   "artRot": 88.72099698749605,
+   "artScale": 0.001363588651851019,
+   "centreFromPivot": [
+    -1.5062955599734948,
+    -192.05831676607025
+   ],
+   "order": 18,
+   "tint": 1.0,
+   "points": []
+  },
+  {
+   "name": "LegNearLower",
+   "parent": "LegNearUpper",
+   "sprite": "Sentinel_Leg_Lower",
+   "pos": [
+    0.52,
+    -3.97118235731306e-17
+   ],
+   "rot": -24.910474990678964,
+   "length": 0.5003998401278722,
+   "thick": 1.8,
+   "artRot": 86.75696416367722,
+   "artScale": 0.0013164824326932028,
+   "centreFromPivot": [
+    9.600850077279759,
+    -191.6278979907264
+   ],
+   "order": 17,
+   "tint": 1.0,
+   "points": []
+  },
+  {
+   "name": "ArmFarUpper",
+   "parent": "Body",
+   "sprite": "Sentinel_Arm_Upper",
+   "pos": [
+    0.7414840913452699,
+    0.17146819612359368
+   ],
+   "rot": -209.0858790847882,
+   "length": 0.41231056256176596,
+   "thick": 1.6,
+   "artRot": 85.44798387813003,
+   "artScale": 0.0013054057102145898,
+   "centreFromPivot": [
+    8.522542498152255,
+    -156.9660014781966
+   ],
+   "order": 4,
+   "tint": 0.72,
+   "points": []
+  },
+  {
+   "name": "ArmFarLower",
+   "parent": "ArmFarUpper",
+   "sprite": "Sentinel_Arm_Lower",
+   "pos": [
+    0.41231056256176596,
+    4.8617874169953754e-17
+   ],
+   "rot": 65.6589100633075,
+   "length": 0.3577708763999664,
+   "thick": 1.6,
+   "artRot": 88.8393629541849,
+   "artScale": 0.0009613632224492167,
+   "centreFromPivot": [
+    28.082023377670296,
+    -187.0939137444579
+   ],
+   "order": 3,
+   "tint": 0.72,
+   "points": []
+  },
+  {
+   "name": "ArmNearUpper",
+   "parent": "Body",
+   "sprite": "Sentinel_Arm_Upper",
+   "pos": [
+    0.7808754336979874,
+    -0.16683392055268578
+   ],
+   "rot": -137.98663699047515,
+   "length": 0.377359245282264,
+   "thick": 1.6,
+   "artRot": 85.44798387813003,
+   "artScale": 0.0011947472568567554,
+   "centreFromPivot": [
+    8.522542498152255,
+    -156.9660014781966
+   ],
+   "order": 20,
+   "tint": 1.0,
+   "points": []
+  },
+  {
+   "name": "ArmNearLower",
+   "parent": "ArmNearUpper",
+   "sprite": "Sentinel_Arm_Lower",
+   "pos": [
+    0.37735924528226406,
+    -2.9443133442385163e-17
+   ],
+   "rot": 49.248454529361275,
+   "length": 0.2630589287593181,
+   "thick": 1.6,
+   "artRot": 88.8393629541849,
+   "artScale": 0.0007068635155293504,
+   "centreFromPivot": [
+    28.082023377670296,
+    -187.0939137444579
+   ],
+   "order": 21,
+   "tint": 1.0,
+   "points": []
+  },
+  {
+   "name": "Shield",
+   "parent": "ArmNearLower",
+   "sprite": "Sentinel_Shield",
+   "pos": [
+    0.29803208113772445,
+    0.6933807601979713
+   ],
+   "rot": -83.45643589921059,
+   "length": 1.5611534197509225,
+   "thick": 1.0,
+   "artRot": 81.96339885199131,
+   "artScale": 0.0017423335852144923,
+   "centreFromPivot": [
+    74.90367847411443,
+    -444.5519073569482
+   ],
+   "order": 24,
+   "tint": 1.0,
+   "points": []
+  },
+  {
+   "name": "Head",
+   "parent": "Body",
+   "sprite": "Sentinel_Head",
+   "pos": [
+    0.9986863855306605,
+    0.09500264920361269
+   ],
+   "rot": -93.56245458372014,
+   "length": 0.5966573556070518,
+   "thick": 1.0,
+   "artRot": -4.357282744799097,
+   "artScale": 0.001913252313309276,
+   "centreFromPivot": [
+    156.20341786108048,
+    60.33241455347297
+   ],
+   "order": 26,
+   "tint": 1.0,
+   "points": []
+  }
+ ]
+}
