@@ -1,6 +1,11 @@
 using UnityEngine;
 
-// A fading ribbon sampled from the actual blade path, never a preset decorative arc.
+// A fading ribbon sampled from the actual blade path, never a preset decorative arc. It wears
+// Codex's painted slash art, unrolled into strips (Tools/ArtImport/unwrap_slash_arcs.py): the
+// leaf arc for the sword, the bark-and-earth arc for the mace, and the thrust streak for straight
+// strikes (the spear, and every weapon's up and down attacks). Along the ribbon u runs from the
+// oldest sample (the fading tail) to the newest (the leading edge); across it v runs from the
+// grip side to the blade tip.
 [DefaultExecutionOrder(30)]
 public sealed class QoriSlashTrail : MonoBehaviour
 {
@@ -13,6 +18,7 @@ public sealed class QoriSlashTrail : MonoBehaviour
     private Mesh mesh;
     private Material material;
     private MeshRenderer display;
+    Texture2D swordStrip,heavyStrip,thrustStrip;MaterialPropertyBlock block;
     private QoriBodyRig rig;
     private QoriAnimator qoriRig;
     private readonly Vector3[] vertices = new Vector3[(Segments + 1) * 2];
@@ -40,7 +46,11 @@ public sealed class QoriSlashTrail : MonoBehaviour
         }
         mesh.vertices = vertices;
         mesh.triangles = triangles;
-        mesh.uv = new Vector2[vertices.Length];
+        var uv=new Vector2[vertices.Length];
+        for(int i=0;i<=Segments;i++){uv[i*2]=new Vector2(i/(float)Segments,0);uv[i*2+1]=new Vector2(i/(float)Segments,1);}
+        mesh.uv = uv;
+        Texture2D Strip(string name){var t=Resources.Load<Texture2D>("FX/Slash/"+name);if(t!=null)t.wrapMode=TextureWrapMode.Clamp;return t;}
+        swordStrip=Strip("SlashStrip_Sword");heavyStrip=Strip("SlashStrip_Heavy");thrustStrip=Strip("SlashStrip_Thrust");block=new MaterialPropertyBlock();
         artwork.AddComponent<MeshFilter>().sharedMesh = mesh;
     }
 
@@ -59,7 +69,7 @@ public sealed class QoriSlashTrail : MonoBehaviour
         if (display == null) return;
         if(Time.deltaTime<=0)return;
         bool posed=QoriPoseLookup.TryGetWeapon(this,ref qoriRig,ref rig,out Transform hand,out Transform tip,out _);
-        if(combat==null||!combat.IsAttackPoseActive||combat.CurrentAttack.slingProjectile||combat.EquippedWeapon.flexibleWhip||!posed)
+        if(combat==null||!combat.IsAttackPoseActive||combat.CurrentAttack.slingProjectile||!posed)
         {count=0;display.enabled=false;return;}
         if(execution!=combat.ExecutionId){execution=combat.ExecutionId;count=0;trailClock=0;}
         if(!combat.IsHitStopped)trailClock+=Time.deltaTime;
@@ -77,6 +87,10 @@ public sealed class QoriSlashTrail : MonoBehaviour
         if(!display.enabled)return;
         bool straight=combat.CurrentAttack.animation.straightTrail;
         Color color=combat.EquippedWeapon!=null?combat.EquippedWeapon.trailColor:new Color(.9f,.96f,.66f,1);
+        bool heavy=combat.EquippedWeapon!=null&&combat.EquippedWeapon.weaponId=="forest-2";
+        Texture2D strip=straight?thrustStrip:heavy?heavyStrip:swordStrip;
+        bool painted=strip!=null;
+        block.SetTexture("_MainTex",painted?strip:Texture2D.whiteTexture);display.SetPropertyBlock(block);
         for(int i=0;i<=Segments;i++)
         {
             float u=i/(float)Segments,index=u*(count-1);int lo=Mathf.FloorToInt(index),hi=Mathf.Min(count-1,lo+1);float t=index-lo;
@@ -86,7 +100,9 @@ public sealed class QoriSlashTrail : MonoBehaviour
             Vector3 end=grip+new Vector3(Mathf.Cos(angle),Mathf.Sin(angle),0)*Mathf.Lerp(((Vector2)from).magnitude,((Vector2)to).magnitude,t);
             float age=trailClock-Mathf.Lerp(stamps[lo],stamps[hi],t);
             float fade=Mathf.Clamp01(1-age/Lifetime)*Mathf.SmoothStep(0,1,u)*.8f;
-            Vector3 inner=Vector3.Lerp(end,grip,.32f);
+            Vector3 inner=Vector3.Lerp(end,grip,painted?.42f:.32f);
+            // The painted band reaches a little past the tip, as the art's leading edge does.
+            if(painted)end+=(end-grip)*.06f;
             // A depth-facing sweep projects almost to a line. Give its fading
             // ribbon a shallow crescent so the horizontal cutting plane reads.
             if(combat.CurrentAttack.animation.depthSweep)
@@ -94,12 +110,23 @@ public sealed class QoriSlashTrail : MonoBehaviour
             if(straight)
             {
                 Vector3 axis=(end-grip).normalized,normal=new Vector3(-axis.y,axis.x,0);
-                inner=end-normal*(Mathf.Sin(u*Mathf.PI)*.05f);
+                // The painted streak is centred on the tip's path; the plain ribbon trails to one side.
+                if(painted){inner=end-normal*.14f;end+=normal*.14f;}
+                else inner=end-normal*(Mathf.Sin(u*Mathf.PI)*.05f);
             }
             vertices[i*2]=transform.InverseTransformPoint(inner);
             vertices[i*2+1]=transform.InverseTransformPoint(end);
-            colors[i*2]=new Color(color.r,color.g,color.b,0);
-            colors[i*2+1]=new Color(color.r,color.g,color.b,color.a*fade);
+            if(painted)
+            {
+                // The painting carries its own colour and its own fading tail: only age fades it.
+                float a=Mathf.Clamp01(1-age/Lifetime);
+                colors[i*2]=colors[i*2+1]=new Color(1,1,1,a);
+            }
+            else
+            {
+                colors[i*2]=new Color(color.r,color.g,color.b,0);
+                colors[i*2+1]=new Color(color.r,color.g,color.b,color.a*fade);
+            }
         }
         mesh.vertices = vertices;
         mesh.colors = colors;
