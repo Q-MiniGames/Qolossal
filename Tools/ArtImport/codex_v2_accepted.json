@@ -399,6 +399,425 @@
    "basis": "request: terrain density 120 px/u"
   },
   {
+   "name": "Chart_Base",
+   "category": "Chart",
+   "sha256": "58fb716a92a48b25723c4dcdf45409de55166b831f15d66233dc7a2255a4f3a6",
+   "dest": "Assets/Art/Codex/Chart/Chart_Base.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Fog",
+   "category": "Chart",
+   "sha256": "7a82ce245fd3e8e5e5376fce0181b50fa7d573b22088d166bf55994388338985",
+   "dest": "Assets/Art/Codex/Chart/Chart_Fog.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Frame_9Slice",
+   "category": "Chart",
+   "sha256": "a288ea2325a906bcd28e3e6e524b1538692efab34178f768975000bd6c284c08",
+   "dest": "Assets/Art/Codex/Chart/Chart_Frame_9Slice.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    220,
+    220,
+    220,
+    220
+   ],
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Region_R1",
+   "category": "Chart",
+   "sha256": "aa6c3f8c570f5f4782c93e3287bf9043a18b6337a6a82823a0078949113d420f",
+   "dest": "Assets/Art/Codex/Chart/Chart_Region_R1.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Region_R2",
+   "category": "Chart",
+   "sha256": "72c460331fa17d068c4fa735c61080a6013fd8c79ebb6f65d55fb446a90443cd",
+   "dest": "Assets/Art/Codex/Chart/Chart_Region_R2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Region_R3",
+   "category": "Chart",
+   "sha256": "ac4555a83a51f82793130b88d21e554a15b73fc7ca7ee0edfa539d9c57926722",
+   "dest": "Assets/Art/Codex/Chart/Chart_Region_R3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Region_R4",
+   "category": "Chart",
+   "sha256": "8b4f61ee7ac77ac453feaec28ce77e9da870bc879a1f9a25eeac9cf9f759f938",
+   "dest": "Assets/Art/Codex/Chart/Chart_Region_R4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Region_R5",
+   "category": "Chart",
+   "sha256": "fa8e80dbdfab8593cc65cdef3c79a239da5ba9246651721010267222ad32f56c",
+   "dest": "Assets/Art/Codex/Chart/Chart_Region_R5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Region_R6",
+   "category": "Chart",
+   "sha256": "a1af3a887b44fb4b007d6f9321c1a309f3141260e0f6e147c49d0d48ff356561",
+   "dest": "Assets/Art/Codex/Chart/Chart_Region_R6.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Region_R7",
+   "category": "Chart",
+   "sha256": "c39fd989c43fed54044db82dc22002283810208d5b06fc9ee24f8072dea29b64",
+   "dest": "Assets/Art/Codex/Chart/Chart_Region_R7.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Stir_Ghost_R1",
+   "category": "Chart",
+   "sha256": "e6b1a0b0170eb3a29db719550e3592501e43d4b597d2eccdf31d0c9b8b174bf0",
+   "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R1.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Stir_Ghost_R2",
+   "category": "Chart",
+   "sha256": "07f56a0ed87a6928d27bd8755d48df9845bb249f122046103029da286f5d80cd",
+   "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Stir_Ghost_R3",
+   "category": "Chart",
+   "sha256": "718694e600ce1f363c5f72df14302889811f83c7c7ebf6171c07aac1750c6352",
+   "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Stir_Ghost_R4",
+   "category": "Chart",
+   "sha256": "24ac2b32401ce459d7307d20464e41dd78f8e5666e2611ac4ad529db152e8c02",
+   "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Stir_Ghost_R5",
+   "category": "Chart",
+   "sha256": "7a0ae92b3be067a162c02f925ad58dd24220084b2225f4cbb2b8eb5f527a545a",
+   "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Stir_Ghost_R6",
+   "category": "Chart",
+   "sha256": "7a70225c1710de8bad4447d7090265375e6def3a523c403062e8e4eab9877daa",
+   "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R6.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Stir_Ghost_R7",
+   "category": "Chart",
+   "sha256": "2454bb1ec4ab415d32affcfc1b0cacc703d9e84a3a5bdf8423792d89c1886810",
+   "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R7.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Vein_Line",
+   "category": "Chart",
+   "sha256": "0d9a0a952ca6de7b395898830ad3ee15adc20092a9056f4517bce56f367c81fd",
+   "dest": "Assets/Art/Codex/Chart/Chart_Vein_Line.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Map_Icon_Knot_Awake",
+   "category": "Chart",
+   "sha256": "92cc7960f5a9295abfc4fa0ad64d587f10a5104bc76b841514e56e45cfeef8b5",
+   "dest": "Assets/Art/Codex/Chart/Map_Icon_Knot_Awake.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Map_Icon_Knot_Dormant",
+   "category": "Chart",
+   "sha256": "a67f5ee04d64ccc966cc1dbc2bd4a49749e668dee64a8b1636758d9b15050ff0",
+   "dest": "Assets/Art/Codex/Chart/Map_Icon_Knot_Dormant.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Map_Icon_NPC",
+   "category": "Chart",
+   "sha256": "14c486a971f0f68f99363476efef7dfb999d1eb95ec49be5f5091fbbb82e8570",
+   "dest": "Assets/Art/Codex/Chart/Map_Icon_NPC.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Map_Icon_Waymark",
+   "category": "Chart",
+   "sha256": "44bb49295503bdc9ac762d5edfcc16a052182e63d382295650def73cf8522c34",
+   "dest": "Assets/Art/Codex/Chart/Map_Icon_Waymark.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Map_Icon_WildVein",
+   "category": "Chart",
+   "sha256": "438f8eb93666594775d1b70624c61e537a59962aaf42c6d3fb355fdeaef253fc",
+   "dest": "Assets/Art/Codex/Chart/Map_Icon_WildVein.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
    "name": "Decor_A0_Sheet",
    "category": "Decor",
    "sha256": "c0b7bf8bb01e0c0198ea84011d452db18619e22d1892fd8a7a4968ae1341235a",
@@ -8377,6 +8796,132 @@
    "basis": "Codex-normalized to terrain density 120 px/u"
   },
   {
+   "name": "Stir_R1_Clench",
+   "category": "StirVistas",
+   "sha256": "ea8d913ec262ea28b27b095fda72a09efd38771fcb0e21bc7026ff260b6e46f9",
+   "dest": "Assets/Art/Codex/StirVistas/Stir_R1_Clench.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Stir_R2_Reach",
+   "category": "StirVistas",
+   "sha256": "0f8ca15655be3d7f15fa49207e8d6569b91300ad317518852d6b30029d65d746",
+   "dest": "Assets/Art/Codex/StirVistas/Stir_R2_Reach.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Stir_R3_Breath",
+   "category": "StirVistas",
+   "sha256": "5c369a3e7be592403e6f71a41df983e8d076aae97b44e4fbce76de4f1e8735c2",
+   "dest": "Assets/Art/Codex/StirVistas/Stir_R3_Breath.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Stir_R4_Spring",
+   "category": "StirVistas",
+   "sha256": "f01d2b9be0ec711eb5afb7b2cd99433ec2cd8c96bf355593a2f7d46b820545fd",
+   "dest": "Assets/Art/Codex/StirVistas/Stir_R4_Spring.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Stir_R5_Bloom",
+   "category": "StirVistas",
+   "sha256": "505e3e2790b4eb5303b75efb5e18fcae20585c4405227ddd5179e687ff09fe0c",
+   "dest": "Assets/Art/Codex/StirVistas/Stir_R5_Bloom.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Stir_R6_Eye",
+   "category": "StirVistas",
+   "sha256": "15a9b75db8771d9834c8f35c38f0eb227891d52b63de2511526e39c88a5ed1bd",
+   "dest": "Assets/Art/Codex/StirVistas/Stir_R6_Eye.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Stir_R7_Wake",
+   "category": "StirVistas",
+   "sha256": "db532e034d6faf4083a6e4a90a9d3d8d62bc0d9fea991f5ac7db14fb2f84b3eb",
+   "dest": "Assets/Art/Codex/StirVistas/Stir_R7_Wake.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
    "name": "A0_Ceiling_Under",
    "category": "Terrain",
    "sha256": "02a408f0cad61ff37e5f31d2e8cbeb8d6bd6f823e153fe26ac07f8e6ad4b0c30",
@@ -10411,6 +10956,361 @@
    "mipmaps": true,
    "ppu": 600,
    "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "KnotChamber_Decor_Sheet",
+   "category": "WorldSystems",
+   "sha256": "c13dda8caf6f936077db7f48f9b0b2d8fcc7974e7fa6e439ce45ed8584c48dc2",
+   "dest": "Assets/Art/Codex/WorldSystems/KnotChamber_Decor_Sheet.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": [
+    {
+     "name": "KnotChamber_Decor_01",
+     "rect": [
+      53,
+      707,
+      150,
+      293
+     ],
+     "pivot": [
+      0.5,
+      0.0
+     ]
+    },
+    {
+     "name": "KnotChamber_Decor_02",
+     "rect": [
+      285,
+      707,
+      197,
+      293
+     ],
+     "pivot": [
+      0.5,
+      0.0
+     ]
+    },
+    {
+     "name": "KnotChamber_Decor_03",
+     "rect": [
+      536,
+      802,
+      208,
+      103
+     ],
+     "pivot": [
+      0.5,
+      0.0
+     ]
+    },
+    {
+     "name": "KnotChamber_Decor_04",
+     "rect": [
+      792,
+      728,
+      208,
+      252
+     ],
+     "pivot": [
+      0.5,
+      0.0
+     ]
+    },
+    {
+     "name": "KnotChamber_Decor_05",
+     "rect": [
+      47,
+      387,
+      161,
+      252
+     ],
+     "pivot": [
+      0.5,
+      0.0
+     ]
+    },
+    {
+     "name": "KnotChamber_Decor_06",
+     "rect": [
+      280,
+      390,
+      208,
+      246
+     ],
+     "pivot": [
+      0.5,
+      0.0
+     ]
+    },
+    {
+     "name": "KnotChamber_Decor_07",
+     "rect": [
+      536,
+      401,
+      208,
+      223
+     ],
+     "pivot": [
+      0.5,
+      0.0
+     ]
+    },
+    {
+     "name": "KnotChamber_Decor_08",
+     "rect": [
+      813,
+      366,
+      166,
+      293
+     ],
+     "pivot": [
+      0.5,
+      0.0
+     ]
+    },
+    {
+     "name": "KnotChamber_Decor_09",
+     "rect": [
+      42,
+      25,
+      171,
+      293
+     ],
+     "pivot": [
+      0.5,
+      0.0
+     ]
+    },
+    {
+     "name": "KnotChamber_Decor_10",
+     "rect": [
+      280,
+      73,
+      208,
+      197
+     ],
+     "pivot": [
+      0.5,
+      0.0
+     ]
+    },
+    {
+     "name": "KnotChamber_Decor_11",
+     "rect": [
+      536,
+      108,
+      208,
+      128
+     ],
+     "pivot": [
+      0.5,
+      0.0
+     ]
+    },
+    {
+     "name": "KnotChamber_Decor_12",
+     "rect": [
+      792,
+      97,
+      208,
+      150
+     ],
+     "pivot": [
+      0.5,
+      0.0
+     ]
+    }
+   ],
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Codex-normalized to terrain density 120 px/u (1 QH = 198 px)"
+  },
+  {
+   "name": "Vein_Gate_Frame",
+   "category": "WorldSystems",
+   "sha256": "c7ea8c06c764a77b49d961661062e83995f219a95785788d933429b36a10cd34",
+   "dest": "Assets/Art/Codex/WorldSystems/Vein_Gate_Frame.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.11328
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Codex-normalized to terrain density 120 px/u (1 QH = 198 px)"
+  },
+  {
+   "name": "Vein_Gate_Frame_Dormant",
+   "category": "WorldSystems",
+   "sha256": "de49f0da5c3841fb1bbafeb52cc8ec6d69cd785afe9afd4ffd33e69ad80266e1",
+   "dest": "Assets/Art/Codex/WorldSystems/Vein_Gate_Frame_Dormant.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.11328
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "shares scale and registration with Vein_Gate_Frame"
+  },
+  {
+   "name": "Vein_Membrane_Stable",
+   "category": "WorldSystems",
+   "sha256": "ff321f2e8c8ebe2404b560e0ee6c932138531d22c0cfed59457273347b5826a9",
+   "dest": "Assets/Art/Codex/WorldSystems/Vein_Membrane_Stable.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.11328
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "shares scale and registration with Vein_Gate_Frame"
+  },
+  {
+   "name": "Vein_Membrane_Wild",
+   "category": "WorldSystems",
+   "sha256": "9172495d9913c511197c44a3f2c605ee47573c0a26cab666468f0e94944fa9b2",
+   "dest": "Assets/Art/Codex/WorldSystems/Vein_Membrane_Wild.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.11328
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "shares scale and registration with Vein_Gate_Frame"
+  },
+  {
+   "name": "Wakeknot_Awake",
+   "category": "WorldSystems",
+   "sha256": "911c649c3208173bf45a2a6131919804725ed91b52cb7bac531d225249b3b958",
+   "dest": "Assets/Art/Codex/WorldSystems/Wakeknot_Awake.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Codex-normalized to terrain density 120 px/u (1 QH = 198 px)"
+  },
+  {
+   "name": "Wakeknot_Dormant",
+   "category": "WorldSystems",
+   "sha256": "83e9c9d9204c2f8701d5c94cc44271622b856deb115086ddf0269afdf6189006",
+   "dest": "Assets/Art/Codex/WorldSystems/Wakeknot_Dormant.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "shares scale and registration with Wakeknot_Awake"
+  },
+  {
+   "name": "Wakeknot_Glow",
+   "category": "WorldSystems",
+   "sha256": "af61182526663de4be025f9b2a20c8bb4b35dd2c25a56f013903023c1f52b9c9",
+   "dest": "Assets/Art/Codex/WorldSystems/Wakeknot_Glow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "shares scale and registration with Wakeknot_Awake"
+  },
+  {
+   "name": "Wakeknot_RotSeal",
+   "category": "WorldSystems",
+   "sha256": "867f4b308899ac57fdc314aea84909323b2cd29f6e5670c7d8f90b46e19af60d",
+   "dest": "Assets/Art/Codex/WorldSystems/Wakeknot_RotSeal.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "shares scale and registration with Wakeknot_Awake"
+  },
+  {
+   "name": "Waymark_Dormant",
+   "category": "WorldSystems",
+   "sha256": "ee4b8925185b656f8178d4be33f32a87d83272534f0cd39b4794723ce41283cc",
+   "dest": "Assets/Art/Codex/WorldSystems/Waymark_Dormant.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.49844,
+    0.12813
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Codex-normalized to terrain density 120 px/u (1 QH = 198 px)"
+  },
+  {
+   "name": "Waymark_Lit",
+   "category": "WorldSystems",
+   "sha256": "9afc87a50707fa4a8b42cb5d79acc544b3ad5fc678edda1737ef509a50311366",
+   "dest": "Assets/Art/Codex/WorldSystems/Waymark_Lit.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.49844,
+    0.12813
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "shares scale and registration with Waymark_Dormant"
   }
  ]
 }

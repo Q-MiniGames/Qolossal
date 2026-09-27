@@ -55,6 +55,14 @@ SHARE_WITH = {
     "GlowPod_Light_On": "GlowPod_Light_Off",
     "HUD_Health_Leaf_Empty": "HUD_Health_Leaf_Full",
     "HUD_Health_Leaf_Half": "HUD_Health_Leaf_Full",
+    # Batch 5 world systems: each family shares one canvas (Phase 2 handoff).
+    "Wakeknot_Dormant": "Wakeknot_Awake",
+    "Wakeknot_Glow": "Wakeknot_Awake",
+    "Wakeknot_RotSeal": "Wakeknot_Awake",
+    "Waymark_Lit": "Waymark_Dormant",
+    "Vein_Gate_Frame_Dormant": "Vein_Gate_Frame",
+    "Vein_Membrane_Stable": "Vein_Gate_Frame",
+    "Vein_Membrane_Wild": "Vein_Gate_Frame",
 }
 
 # World size of the opaque shape: (axis, world units, basis note).
@@ -84,13 +92,13 @@ WORLD_SIZE = {
 CHAIN_SCALE = 54.0 / 78.0
 
 TILE_H = {f"{a}_{k}" for a in ("A0", "A1", "A2", "A3", "A4") for k in ("Ground_Top", "Ceiling_Under", "Platform_OneWay_unused")} | { "Hazard_Thorns_Floor", "Hazard_Thorns_Ceiling",
-          "Whip_Lash_Segment", "HUD_Vine_Segment", "Water_Surface"} | {f"Hazard_Thorns_Floor_A{i}" for i in range(1, 5)}
+          "Whip_Lash_Segment", "HUD_Vine_Segment", "Water_Surface", "Chart_Vein_Line"} | {f"Hazard_Thorns_Floor_A{i}" for i in range(1, 5)}
 TILE_V = {f"{a}_Wall_Side" for a in ("A0", "A1", "A2", "A3", "A4")} | {"Waterfall_Column",  "Hazard_Thorns_Wall", "Platform_Moving_A1_Chain"}
 TILE_FILL = {f"{a}_{k}" for a in ("A0", "A1", "A2", "A3", "A4") for k in ("Ground_Fill", "Wall_Climbable", "Wall_Slippery")} | {"Water_Body"}
 
 BOTTOM_ANCHORED = {"Barrier_Rubble_Intact", "Barrier_Thorns_Intact", "Switch_Plate_Up", "Shrine_Ability",
                    "Portal_Gate_A0", "Spitter_Base", "GlowPod_Light_Off",
-                   "Hazard_Thorns_Floor"}
+                   "Hazard_Thorns_Floor", "Waymark_Dormant", "Vein_Gate_Frame"}
 TOP_ANCHORED = {"Hazard_Thorns_Ceiling"} | {f"{a}_Ceiling_Under" for a in ("A0", "A1", "A2", "A3", "A4")}
 
 GROUND_TOP_WALK_LINE_PX = 96  # T-01: walk line measured from the top edge
@@ -153,6 +161,12 @@ def settings_for(category, name):
     elif category == "UI":
         s["ppu"], s["basis"] = UI_PPU, "UI canvas: 1 px = 1 reference px"
         s["mesh"] = "FullRect"
+    elif category in ("Chart", "StirVistas"):
+        # The map screen and the stir's full-screen vistas are UI images; the map is zoomed, so it keeps mipmaps.
+        s["ppu"], s["basis"] = UI_PPU, "UI canvas: 1 px = 1 reference px"
+        s["mesh"], s["pivot"], s["mipmaps"] = "FullRect", [0.5, 0.5], category == "Chart"
+    elif category == "WorldSystems":
+        s["ppu"], s["basis"] = TERRAIN_PPU, "Codex-normalized to terrain density 120 px/u (1 QH = 198 px)"
     elif category == "Player":
         s["ppu"], s["basis"] = PLAYER_PPU, "Qori rig convention; rig build sets final scale"
     elif name.startswith("Icon_"):
@@ -211,6 +225,17 @@ def decor_sprites(name):
 PIECE_SHEETS = {"Barrier_Rubble_Pieces", "Floor_Weak_Pieces", "Platform_Crumble_Pieces", "Shellback_Shell_Shards"} |     {f"Barrier_Rubble_Pieces_A{i}" for i in range(0, 5)} | {f"Shellback_Shell_Shards_A{i}" for i in range(1, 5)}
 
 
+def rect_sprites(category, name, rects_file):
+    """Sub-sprites from Codex's padded atlas rects (top-left origin), standing on their base."""
+    with open(os.path.join(SOURCE, category, rects_file)) as f:
+        rects = json.load(f)
+    with Image.open(source_path(category, name)) as im:
+        h = im.size[1]
+    base = name.replace("_Sheet", "")
+    return [{"name": f"{base}_{r['piece']:02d}", "rect": [r["rect"][0], h - r["rect"][1] - r["rect"][3], r["rect"][2], r["rect"][3]],
+             "pivot": [0.5, 0.0]} for r in rects]
+
+
 def piece_sprites(category, name):
     """One sub-sprite per separate chunk in a pieces sheet (connected opaque regions)."""
     import numpy as np
@@ -239,6 +264,12 @@ def build_entry(category, name, reviewed_sha):
         entry["sprites"] = decor_sprites(name)
     if name in PIECE_SHEETS:
         entry["sprites"] = piece_sprites(category, name)
+    if name == "KnotChamber_Decor_Sheet":
+        entry["sprites"] = rect_sprites(category, name, "KnotChamber_Decor_Rects.json")
+    if name == "Chart_Frame_9Slice":
+        with open(os.path.join(SOURCE, "Phase2", "QA", "NINE_SLICE.json")) as f:
+            left, right, top, bottom = json.load(f)["border_left_right_top_bottom"]
+        entry["border"] = [left, bottom, right, top]  # Unity order: x=L, y=B, z=R, w=T
     if category == "UI":
         notes_path = os.path.join(SOURCE, "UI", "QA", "NINE_SLICE_NOTES.json")
         with open(notes_path) as f:
