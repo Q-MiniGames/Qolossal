@@ -10,6 +10,8 @@ using UnityEngine.SceneManagement;
 // Builds the A0 terrain kit asset and the A0 test room: one scene that exercises every
 // A0 kit piece (flat ground, slope, ledges, pit, floating and one-way platforms,
 // climbable and slippery walls, a ceiling overhang). Re-running rebuilds both from scratch.
+// Past the gallery, the world reach tries out the titan's world systems: a Waymark, a Vein Gate
+// to the Grip Knot chamber, a Wild Vein, and the Crease, a pit that the Grip stir bridges.
 public static class A0TestRoomBuilder
 {
     const string KitPath = "Assets/Art/Codex/Terrain/A0_TerrainKit.asset";
@@ -20,7 +22,7 @@ public static class A0TestRoomBuilder
     public static void Build()
     {
         TerrainKit kit = BuildKit();
-        Scene scene = NewRoom("A0 Mossy Hollow", new Vector2(-18f, 1.5f), out Camera camera);
+        Scene scene = NewRoom("A0 Mossy Hollow", new Vector2(-18f, 1.5f), out Camera camera, "a0-mossy-hollow", "R1");
         var terrain = new GameObject("Terrain").transform;
 
         TerrainBlock Block(string name, float x, float top, float width, float height, int offset,
@@ -68,8 +70,9 @@ public static class A0TestRoomBuilder
         Block("Weak Floor Pit", 108f, 5f, 3f, 19f, 0);
         Block("Gallery Ground 2", 111f, 9f, 19f, 23f, 10, left: true, right: true);
         Block("Thorn Pit Floor", 130f, 3f, 15f, 17f, 0);
-        Block("Gallery Ground 3", 145f, 9f, 13f, 23f, 10, left: true, right: true);
+        Block("Gallery Ground 3", 145f, 9f, 30f, 23f, 10, left: true, right: true);
         BuildMechanics(kit);
+        BuildWorldReach(kit);
         BuildShrines();
 
         // A Bramble Crawler patrolling the start ground, and one on the plateau.
@@ -94,13 +97,14 @@ public static class A0TestRoomBuilder
 
         Directory.CreateDirectory(Path.GetDirectoryName(ScenePath));
         EditorSceneManager.SaveScene(scene, ScenePath);
+        WorldAtlasBuilder.Record();   // after saving, so the scene has its name
         AddToBuild(ScenePath, 0);
         AssetDatabase.SaveAssets();
         Debug.Log("[A0TestRoomBuilder] Built " + ScenePath);
     }
 
     // A new area scene: global light, Qori, the following camera, the pause menu and the GameArea.
-    internal static Scene NewRoom(string areaName, Vector2 playerAt, out Camera camera)
+    internal static Scene NewRoom(string areaName, Vector2 playerAt, out Camera camera, string levelId = "", string region = "")
     {
         Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
         var light = new GameObject("Global Light 2D").AddComponent<Light2D>();
@@ -123,7 +127,8 @@ public static class A0TestRoomBuilder
 
         var manager = new GameObject("GameManager");
         manager.AddComponent<GamePauseMenu>();
-        manager.AddComponent<GameArea>().displayName = areaName;
+        var area = manager.AddComponent<GameArea>();
+        area.displayName = areaName; area.levelId = levelId; area.region = region;
         return scene;
     }
 
@@ -353,6 +358,35 @@ public static class A0TestRoomBuilder
         AddCheckpoint(root, new Vector2(84f, G), "a0-gallery");
     }
 
+    // The world reach, east of the gallery (ground top y = 9): a Waymark that charts A0, a Vein
+    // Gate to the Grip Knot chamber (where it leads is unknown until used), and a Wild Vein that
+    // settles, once the Grip Knot wakes, into a shortcut to A2's Waymark. Then the Crease: a pit
+    // of thorns too wide to jump, with a Lore Stone in sight beyond it. When the Grip Knot wakes,
+    // the titan's hand clenches and a finger closes over the pit as a bridge.
+    static void BuildWorldReach(TerrainKit kit)
+    {
+        const float G = 9f;
+        var root = new GameObject("World Reach").transform;
+        var room = new AreaRoom("A0", kit, root);
+        room.Waymark(new Vector2(158.5f, G), "a0-waymark");
+        AddPortal(root, new Vector2(164f, G), "a0-knot", R1GripKnotBuilder.SceneName, "r1k-west", "the Grip Knot Chamber", -1f);
+        room.WildVein(new Vector2(170f, G), "a0-wild", Knots.Grip, A2RoomBuilder.SceneName, "a2-arena", "A2 Ancient Grove", -1f);
+
+        // The Crease: a thorn pit between the palm's ridges, and the far ridge beyond.
+        AddBlock(root, kit, "Crease Floor", 175f, 3f, 12f, 17f, 0);
+        var thorns = Image(root, "Crease Thorns", Art("Hazards", "Hazard_Thorns_Floor"), new Vector2(181f, 3f), PropOrder + 1);
+        thorns.drawMode = SpriteDrawMode.Tiled; thorns.size = new Vector2(12f, thorns.sprite.bounds.size.y);
+        var box = thorns.gameObject.AddComponent<BoxCollider2D>(); box.isTrigger = true; box.size = new Vector2(11.8f, .3f); box.offset = new Vector2(0f, .18f);
+        thorns.gameObject.AddComponent<ThornHazard>();
+        AddBlock(root, kit, "Far Ridge", 187f, G, 14f, 23f, 10, left: true);
+        AddBlock(root, kit, "Reach End Wall", 201f, G + 12f, 2f, 35f, 20, left: true);
+        room.Lore(new Vector2(194f, G), "a0-lore", "The hill that holds its hand open to the sky.\nWe planted in its palm, and it never closed.");
+
+        // After the Grip stir: a clenched finger lies across the Crease.
+        using (room.Stir("Crease Bridge", Knots.Grip, afterKnot: true))
+            AddBlock(room.terrain, kit, "Clenched Finger", 174.4f, G, 13.2f, 2.4f, 12, bottom: true);
+    }
+
     // Ability shrines, each before the stretch that needs its relic: the Living Thread at the start
     // (the Seed Carrier over the slope is the first anchor), the Climbing Moss on the pit floor
     // (the climbable column and the end plateau's face need wall jumps), and Bloomfall on top of
@@ -402,7 +436,7 @@ public static class A0TestRoomBuilder
         Place("fallen_log", 71f, 9f); Place("white_flowers", 75f, 9f); Place("broken_pillar", 79f, 9f); Place("grass", 82f, 9f, 5);
     }
 
-    static TerrainKit BuildKit()
+    internal static TerrainKit BuildKit()
     {
         var kit = AssetDatabase.LoadAssetAtPath<TerrainKit>(KitPath);
         if (kit == null)
@@ -470,7 +504,7 @@ public static class A0TestRoomBuilder
 
     // Opens `scenePath` and renders each shot (camera centre, orthographic size) to
     // <-captureDir>/<name>.png at 1920x1080. Returns the folder.
-    internal static string RenderShots(string scenePath, (string name, Vector2 at, float size)[] shots)
+    internal static string RenderShots(string scenePath, (string name, Vector2 at, float size)[] shots, Action prepare = null)
     {
         string[] args = Environment.GetCommandLineArgs();
         int index = Array.IndexOf(args, "-captureDir");
@@ -479,6 +513,7 @@ public static class A0TestRoomBuilder
         EditorSceneManager.OpenScene(scenePath);
         foreach (TerrainBlock block in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
         foreach (TerrainPiece piece in UnityEngine.Object.FindObjectsByType<TerrainPiece>(FindObjectsSortMode.None)) piece.Rebuild();
+        prepare?.Invoke();
         Camera camera = Camera.main;
         camera.aspect = 16f / 9f;   // batch mode reports another screen shape; layers size to the camera's aspect
         var texture = new RenderTexture(1920, 1080, 24);

@@ -10,7 +10,7 @@ public sealed class GamePauseMenu : MonoBehaviour
 {
     public static bool IsPaused { get; private set; }
     private static int resumeFrame = -1;
-    public static bool BlocksGameplayInput => IsPaused || Time.frameCount <= resumeFrame || AreaTransition.IsTransitioning;
+    public static bool BlocksGameplayInput => IsPaused || Time.frameCount <= resumeFrame || AreaTransition.IsTransitioning || StirSequence.IsPlaying;
     private float previousTimeScale = 1f;
     private bool previousAudioPause;
     private bool ownsPause;

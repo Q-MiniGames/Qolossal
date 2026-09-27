@@ -6,22 +6,67 @@ using UnityEngine;
 // The shared pieces an area room builder puts together (A1, A2, ...): terrain, the three-layer
 // background, back walls, water, thorns, rubble, swing rings, falling rocks, a secret alcove with
 // a heart seed, enemies in the area's palette, and decor from the area's sheet. Each builds its
-// objects under a named root and seats them into the terrain (GroundedProp).
+// objects under a named root and seats them into the terrain (GroundedProp). Inside a Stir scope
+// everything goes under a StirVariant instead, so it exists only before or after a knot wakes.
+// Then the world pieces: Waymarks, Vein Gates (fixed and wild), dormant gates, Lore Stones, knots.
 public sealed class AreaRoom
 {
-    public readonly string area;      // "A1", "A2", ...
+    public readonly string area;      // "A0", "A1", "A2", ...
     public readonly TerrainKit kit;
-    public readonly Transform terrain, mechanics, enemies, decor;
+    readonly Transform terrainRoot, mechanicsRoot, enemiesRoot, decorRoot;
+    Transform scope;
+    public Transform terrain => scope != null ? scope : terrainRoot;
+    public Transform mechanics => scope != null ? scope : mechanicsRoot;
+    public Transform enemies => scope != null ? scope : enemiesRoot;
+    public Transform decor => scope != null ? scope : decorRoot;
     const int PropOrder = A0TestRoomBuilder.PropOrder;
 
     public AreaRoom(string area)
     {
         this.area = area;
-        kit = TerrainKitBuilder.Build(area);
-        terrain = new GameObject("Terrain").transform;
-        mechanics = new GameObject("Mechanics").transform;
-        enemies = new GameObject("Enemies").transform;
-        decor = new GameObject("Decor").transform;
+        kit = area == "A0" ? A0TestRoomBuilder.BuildKit() : TerrainKitBuilder.Build(area);
+        terrainRoot = new GameObject("Terrain").transform;
+        mechanicsRoot = new GameObject("Mechanics").transform;
+        enemiesRoot = new GameObject("Enemies").transform;
+        decorRoot = new GameObject("Decor").transform;
+    }
+
+    // Builds under one existing root (A0, whose builder predates this helper).
+    public AreaRoom(string area, TerrainKit kit, Transform root)
+    {
+        this.area = area; this.kit = kit;
+        terrainRoot = mechanicsRoot = enemiesRoot = decorRoot = root;
+    }
+
+    // ---------------------------------------------------------------- stir variants
+
+    sealed class Scope : System.IDisposable
+    {
+        readonly System.Action end; public Scope(System.Action end) => this.end = end;
+        public void Dispose() => end();
+    }
+
+    // Everything built inside `using (room.Stir(...))` exists only after (or before) `knot` wakes.
+    // The scene is saved in a new game's state: before-variants shown, after-variants hidden.
+    public System.IDisposable Stir(string name, string knot, bool afterKnot)
+    {
+        var variant = Variant(name, knot, afterKnot);
+        scope = variant.transform;
+        return new Scope(() => { scope = null; FreshState(variant); });
+    }
+
+    public static StirVariant Variant(string name, string knot, bool afterKnot)
+    {
+        var root = GameObject.Find("Stir Variants")?.transform ?? new GameObject("Stir Variants").transform;
+        var variant = new GameObject($"{name} ({(afterKnot ? "after" : "before")} {knot})").AddComponent<StirVariant>();
+        variant.transform.SetParent(root, false);
+        variant.knot = knot; variant.when = afterKnot ? StirVariant.When.AfterKnot : StirVariant.When.BeforeKnot;
+        return variant;
+    }
+
+    public static void FreshState(StirVariant variant)
+    {
+        foreach (Transform child in variant.transform) child.gameObject.SetActive(variant.when == StirVariant.When.BeforeKnot);
     }
 
     public static Sprite Art(string category, string name) => A0TestRoomBuilder.Art(category, name);
@@ -128,8 +173,96 @@ public sealed class AreaRoom
     public Portal Portal(Vector2 at, string id, string destinationScene, string destinationPortal, string destinationName, float exitSide) =>
         A0TestRoomBuilder.AddPortal(mechanics, at, id, destinationScene, destinationPortal, destinationName, exitSide, area, 48f, kit);
 
-    public Checkpoint Checkpoint(Vector2 at, string id) =>
-        A0TestRoomBuilder.AddCheckpoint(mechanics, at, id, Art("Props", "Checkpoint_Shrine_" + area), 27f, kit);
+    // A0 has no shrine art: its checkpoints are the lantern.
+    public Checkpoint Checkpoint(Vector2 at, string id) => area == "A0"
+        ? A0TestRoomBuilder.AddCheckpoint(mechanics, at, id)
+        : A0TestRoomBuilder.AddCheckpoint(mechanics, at, id, Art("Props", "Checkpoint_Shrine_" + area), 27f, kit);
+
+    // ---------------------------------------------------------------- the titan's world
+
+    // A Waymark: a checkpoint that charts the level, with a map leaf floating over it.
+    public Waymark Waymark(Vector2 at, string id) => AddWaymark(Checkpoint(at, id), area == "A0" ? 1.6f : 1.7f);
+
+    public static Waymark AddWaymark(Checkpoint checkpoint, float iconHeight)
+    {
+        var waymark = checkpoint.gameObject.AddComponent<Waymark>();
+        waymark.unchartedIcon = Art("UI", "Map_Icon_Unexplored"); waymark.chartedIcon = Art("UI", "Map_Icon_Checkpoint");
+        waymark.iconHeight = iconHeight;
+        waymark.icon = Image(checkpoint.transform, "Map Leaf", waymark.unchartedIcon, (Vector2)checkpoint.transform.position + Vector2.up * iconHeight, PropOrder + 4);
+        waymark.icon.transform.localScale = new Vector3(.3f, .3f, 1f);   // the 2.56 u icon canvas to about .75 u
+        return waymark;
+    }
+
+    // A Wild Vein: the hidden-gate arch with a flickering membrane. When `settlesWith` wakes it
+    // settles into a fixed shortcut to `settledArrival` (a portal or Waymark) in `settledScene`.
+    public Portal WildVein(Vector2 at, string id, string settlesWith, string settledScene, string settledArrival, string settledName, float exitSide) =>
+        AddWildVein(mechanics, kit, at, id, settlesWith, settledScene, settledArrival, settledName, exitSide);
+
+    public static Portal AddWildVein(Transform parent, TerrainKit kit, Vector2 at, string id, string settlesWith, string settledScene, string settledArrival, string settledName, float exitSide)
+    {
+        var portal = HiddenArchPortal(parent, kit, at, id, "", "", "", exitSide);
+        portal.name = "Wild Vein " + id;
+        portal.vein = global::Portal.Vein.Wild; portal.settlesWith = settlesWith;
+        portal.settledScene = settledScene; portal.settledArrival = settledArrival; portal.settledName = settledName;
+        return portal;
+    }
+
+    // A Vein Gate in the hidden-gate arch: a vein grown by a stir, rather than an area's own gate.
+    public Portal GrownVein(Vector2 at, string id, string destinationScene, string destinationPortal, string destinationName, float exitSide) =>
+        HiddenArchPortal(mechanics, kit, at, id, destinationScene, destinationPortal, destinationName, exitSide);
+
+    internal static Portal HiddenArchPortal(Transform parent, TerrainKit kit, Vector2 at, string id, string destinationScene, string destinationPortal, string destinationName, float exitSide)
+    {
+        // The hidden arch shares the A1 arch's canvas (398 x 480 at 120 px/u, 48 px below its base), so the A1 membrane fits it.
+        var portal = A0TestRoomBuilder.AddPortal(parent, at, id, destinationScene, destinationPortal, destinationName, exitSide, "A1", 48f, kit);
+        portal.transform.Find("Arch").GetComponent<SpriteRenderer>().sprite = Art("Props", "Portal_Gate_Hidden_Awake");
+        return portal;
+    }
+
+    // Where a vein will grow after a stir: the dormant hidden arch, mossed over, with no membrane.
+    public SpriteRenderer DormantGate(Vector2 at)
+    {
+        Sprite arch = Art("Props", "Portal_Gate_Hidden");
+        var r = Image(mechanics, "Dormant Vein Gate", arch, at + new Vector2(0f, A0TestRoomBuilder.Grounded(arch, 48f)), PropOrder + 2);
+        r.color = new Color(.8f, .82f, .8f);
+        A0TestRoomBuilder.Ground(r.gameObject, kit, at.y, 2.5f, PropOrder + 2);
+        return r;
+    }
+
+    // A Lore Stone standing on the ground at `at`.
+    public LoreStone Lore(Vector2 at, string id, string text)
+    {
+        Sprite art = Art("Props", "Collectible_LoreStone");
+        const float Scale = 1.6f;
+        var stone = new GameObject("Lore Stone " + id).AddComponent<LoreStone>();
+        stone.transform.SetParent(mechanics, false); stone.transform.position = at;
+        stone.stoneId = id; stone.text = text;
+        float lift = Scale * (art.pivot.y - 3f) / art.pixelsPerUnit - .06f;
+        stone.image = Image(stone.transform, "Art", art, at + new Vector2(0f, lift), PropOrder + 1);
+        stone.image.transform.localScale = new Vector3(Scale, Scale, 1f);
+        var box = stone.gameObject.AddComponent<BoxCollider2D>(); box.isTrigger = true; box.size = new Vector2(1.2f, 1.8f); box.offset = new Vector2(0f, .9f);
+        A0TestRoomBuilder.Ground(stone.image.gameObject, kit, at.y, 1f, PropOrder + 1);
+        return stone;
+    }
+
+    // A knot standing on the ground at `at` (placeholder art: a glow pod wrapped in the thorn
+    // barrier), sealed until every guardian is defeated.
+    public TitanKnot Knot(Vector2 at, string knotId, AbilityDefinition ability, string[] echoLines, params GameObject[] guardians)
+    {
+        var knot = new GameObject("Knot " + knotId).AddComponent<TitanKnot>();
+        knot.transform.SetParent(mechanics, false); knot.transform.position = at;
+        knot.knot = knotId; knot.ability = ability; knot.echoLines = echoLines; knot.guardians.AddRange(guardians);
+        knot.coreDim = Art("Hazards", "GlowPod_Light_Off"); knot.coreLit = Art("Hazards", "GlowPod_Light_On");
+        knot.core = Image(knot.transform, "Core", knot.coreDim, at + new Vector2(0f, -.1f), PropOrder + 2);
+        knot.core.transform.localScale = new Vector3(2.3f, 2.3f, 1f);
+        // The thorns bind the knot's lower half, so the dim knot still shows above them.
+        knot.seal = Image(knot.transform, "Thorn Seal", Art("Props", "Barrier_Thorns_Intact"), at + new Vector2(0f, -.15f), PropOrder + 3);
+        knot.seal.transform.localScale = new Vector3(.62f, .5f, 1f);
+        var box = knot.gameObject.AddComponent<BoxCollider2D>(); box.isTrigger = true; box.size = new Vector2(1.8f, 2.8f); box.offset = new Vector2(0f, 1.4f);
+        var seat = new GameObject("Grounding"); seat.transform.SetParent(knot.transform, false); seat.transform.position = at;
+        A0TestRoomBuilder.Ground(seat, kit, at.y, 2.2f, PropOrder + 3);
+        return knot;
+    }
 
     // Swing rings: grapple anchors in the area's ring art.
     public void SwingRings(float y, params float[] xs)

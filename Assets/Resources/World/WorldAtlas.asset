@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4775d4820956df4ea6bc8ac1cba48fb, type: 3}
+  m_Name: WorldAtlas
+  m_EditorClassIdentifier: Assembly-CSharp::WorldAtlas
+  levels:
+  - scene: A0_TestRoom
+    levelId: a0-mossy-hollow
+    displayName: A0 Mossy Hollow
+    region: R1
+    waymark: a0-waymark
+    veins:
+    - portalId: a0-east
+      destinationScene: A1_Aqueduct
+      destinationPortal: a1-west
+      wild: 0
+      knot: 
+      afterKnot: 0
+    - portalId: a0-knot
+      destinationScene: R1_GripKnot
+      destinationPortal: r1k-west
+      wild: 0
+      knot: 
+      afterKnot: 0
+    - portalId: a0-wild
+      destinationScene: 
+      destinationPortal: 
+      wild: 1
+      knot: 
+      afterKnot: 0
+  - scene: A1_Aqueduct
+    levelId: r2-vein-galleries
+    displayName: A1 Aqueduct Ravine
+    region: R2
+    waymark: a1-gallery
+    veins:
+    - portalId: a1-east
+      destinationScene: A2_Grove
+      destinationPortal: a2-west
+      wild: 0
+      knot: 
+      afterKnot: 0
+    - portalId: a1-palm
+      destinationScene: R1_GripKnot
+      destinationPortal: r1k-elbow
+      wild: 0
+      knot: grip
+      afterKnot: 1
+    - portalId: a1-west
+      destinationScene: A0_TestRoom
+      destinationPortal: a0-east
+      wild: 0
+      knot: 
+      afterKnot: 0
+  - scene: A2_Grove
+    levelId: r3-ribwood
+    displayName: A2 Ancient Grove
+    region: R3
+    waymark: a2-arena
+    veins:
+    - portalId: a2-east
+      destinationScene: A3_Falls
+      destinationPortal: a3-west
+      wild: 0
+      knot: 
+      afterKnot: 0
+    - portalId: a2-west
+      destinationScene: A1_Aqueduct
+      destinationPortal: a1-east
+      wild: 0
+      knot: 
+      afterKnot: 0
+  - scene: R1_GripKnot
+    levelId: r1-grip-knot
+    displayName: The Grip Knot
+    region: R1
+    waymark: r1k-waymark
+    veins:
+    - portalId: r1k-elbow
+      destinationScene: A1_Aqueduct
+      destinationPortal: a1-palm
+      wild: 0
+      knot: grip
+      afterKnot: 1
+    - portalId: r1k-west
+      destinationScene: A0_TestRoom
+      destinationPortal: a0-knot
+      wild: 0
+      knot: 
+      afterKnot: 0

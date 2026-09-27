@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// The area portal: a rooted arch with a swirling membrane. The membrane slowly turns and
-// breathes, and brightens while Qori stands in it. Pressing up (W, the up arrow, or up on a
-// gamepad) there takes him to the matching portal (destinationPortal) in the destination scene.
+// A Vein Gate (the area portal): a rooted arch with a swirling membrane. The membrane slowly
+// turns and breathes, and brightens while Qori stands in it. Pressing up (W, the up arrow, or up
+// on a gamepad) there takes him to the matching portal (destinationPortal) in the destination
+// scene. Where a vein leads is unknown until it has been travelled once (the saved game keeps the
+// veins travelled). A Wild Vein flickers, and throws Qori somewhere random each time: a charted
+// Waymark or a vein end he hasn't used (WorldAtlas). When its region's knot wakes it settles
+// into a fixed shortcut (settledScene and settledArrival, a portal or Waymark id).
 [DisallowMultipleComponent]
 public sealed class Portal : MonoBehaviour
 {
@@ -13,6 +17,22 @@ public sealed class Portal : MonoBehaviour
     public string destinationPortal = "";
     [Tooltip("Where it leads, shown in the prompt, e.g. \"A1 Aqueduct Ravine\".")] public string destinationName = "";
     [Tooltip("Side Qori steps out on when he arrives here: -1 left, 1 right.")] public float exitSide = -1f;
+
+    public enum Vein { Fixed, Wild }
+    [Header("Vein")] public Vein vein = Vein.Fixed;
+    [Tooltip("Wild Veins: the knot (Knots id) that settles it into a fixed shortcut.")] public string settlesWith = "";
+    public string settledScene = "", settledArrival = "", settledName = "";
+
+    public bool IsWild => vein == Vein.Wild && !GameSave.IsKnotAwake(settlesWith);
+    bool Settled => vein == Vein.Wild && !IsWild;
+    string Scene => Settled ? settledScene : destinationScene;
+    string Arrival => Settled ? settledArrival : destinationPortal;
+    string Where => Settled ? settledName : !string.IsNullOrEmpty(destinationName) ? destinationName : destinationScene;
+    // Whether Qori has travelled this vein (a Wild Vein never is, until it settles).
+    public bool Known => !IsWild && GameSave.KnowsVein(portalId, Arrival);
+    // Where the last Wild Vein trip went (for tests).
+    public static WorldAtlas.Place LastWildTrip { get; private set; }
+    float quietUntil = float.NegativeInfinity;
 
     PlayerMovement inside;
     bool used; float glow, usedAt; Vector3 membraneScale;
@@ -110,8 +130,20 @@ public sealed class Portal : MonoBehaviour
     public bool Use()
     {
         if (inside == null || !inside.isActiveAndEnabled || AreaTransition.IsTransitioning) return false;
+        if (IsWild)
+        {
+            var atlas = WorldAtlas.Load();
+            var places = atlas != null ? atlas.WildDestinations(portalId) : new System.Collections.Generic.List<WorldAtlas.Place>();
+            if (places.Count == 0) { quietUntil = Time.time + 2.5f; return false; }
+            var place = LastWildTrip = places[Random.Range(0, places.Count)];
+            used = true; usedAt = Time.time;
+            AreaTransition.Travel(place.scene, place.arrival, inside, "The wild vein threw you here");
+            return true;
+        }
+        if (!AreaTransition.CanTravelTo(Scene)) return false;
         used = true; usedAt = Time.time;
-        AreaTransition.Travel(destinationScene, destinationPortal, inside);
+        bool first = GameSave.TravelVein(portalId, Arrival);
+        AreaTransition.Travel(Scene, Arrival, inside, first ? "New vein charted" : "");
         return true;
     }
     public bool QoriInside => inside != null;
@@ -122,18 +154,30 @@ public sealed class Portal : MonoBehaviour
         glow = Mathf.MoveTowards(glow, used ? 1f : inside != null ? .5f : 0f, Time.deltaTime * 2f);
         float breathe = 1f + .03f * Mathf.Sin(Time.time * 1.7f);
         membrane.transform.localScale = new Vector3(membraneScale.x * breathe, membraneScale.y * (2f - breathe), 1f);
-        Color c = membrane.color; c.a = .78f + .12f * Mathf.Sin(Time.time * 2.3f) + .2f * glow; membrane.color = c;
+        Color c = membrane.color; c.a = .78f + .12f * Mathf.Sin(Time.time * 2.3f) + .2f * glow;
+        if (IsWild)
+        {
+            // A wild vein flickers between mint and a pale bruise-violet, and gutters.
+            float n = Mathf.PerlinNoise(Time.time * 3.1f, portalId.Length), flick = Mathf.PerlinNoise(Time.time * 9f, 7.3f);
+            Color tint = Color.Lerp(new Color(.8f, 1f, .92f), new Color(.82f, .7f, 1f), n);
+            c = new Color(tint.r, tint.g, tint.b, Mathf.Clamp01(c.a * Mathf.Lerp(.45f, 1.05f, flick)));
+        }
+        else c = new Color(1f, 1f, 1f, c.a);
+        membrane.color = c;
     }
 
     // While Qori stands in it: how to travel and where to; a portal with nowhere to go says so.
     void OnGUI()
     {
         if (inside == null || AreaTransition.IsTransitioning || GamePauseMenu.IsPaused) return;
-        bool reachable = AreaTransition.CanTravelTo(destinationScene);
-        string where = !string.IsNullOrEmpty(destinationName) ? destinationName : destinationScene;
-        string text = reachable ? "Press W / Up to travel to " + where
-            : string.IsNullOrEmpty(destinationScene) ? "This portal leads nowhere yet"
-            : "Portal to " + destinationScene + " (not in the build's scene list)";
+        string text;
+        if (IsWild) text = Time.time < quietUntil ? "The wild vein is quiet: there is nowhere it can throw you yet"
+            : "A wild vein: it could throw you anywhere. Press W / Up to enter";
+        else if (!AreaTransition.CanTravelTo(Scene))
+            text = string.IsNullOrEmpty(Scene) ? "This vein leads nowhere yet" : "Vein to " + Scene + " (not in the build's scene list)";
+        else if (Known) text = "Press W / Up to travel to " + Where;
+        else text = Settled ? "The wild vein has settled. Press W / Up to find where it leads"
+            : "Press W / Up to enter the vein. Where it leads is unknown";
         float width = Mathf.Min(460f, Screen.width - 24f);
         GUI.Box(new Rect((Screen.width - width) * .5f, Screen.height - 110f, width, 40f), text);
     }

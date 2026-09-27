@@ -22,7 +22,7 @@ public static class A1RoomBuilder
     [MenuItem("Qolossal/Scenes/Build A1 Aqueduct")]
     public static void Build()
     {
-        var scene = A0TestRoomBuilder.NewRoom("A1 Aqueduct Ravine", new Vector2(StartX, StartY), out Camera camera);
+        var scene = A0TestRoomBuilder.NewRoom("A1 Aqueduct Ravine", new Vector2(StartX, StartY), out Camera camera, "r2-vein-galleries", "R2");
         camera.backgroundColor = new Color(.665f, .744f, .77f);   // the far painting's top row
         var room = new AreaRoom("A1");
 
@@ -83,6 +83,7 @@ public static class A1RoomBuilder
 
         Directory.CreateDirectory(Path.GetDirectoryName(ScenePath));
         EditorSceneManager.SaveScene(scene, ScenePath);
+        WorldAtlasBuilder.Record();   // after saving, so the scene has its name
         A0TestRoomBuilder.AddToBuild(ScenePath, 1);
         AssetDatabase.SaveAssets();
         Debug.Log("[A1RoomBuilder] Built " + ScenePath);
@@ -109,7 +110,13 @@ public static class A1RoomBuilder
         room.Portal(new Vector2(0f, 0f), "a1-west", "A0_TestRoom", "a0-east", "A0 Mossy Hollow", 1f);
         room.Portal(new Vector2(137f, -6f), "a1-east", A2RoomBuilder.SceneName, "a2-west", "A2 Ancient Grove", -1f);
         room.Checkpoint(new Vector2(7f, 0f), "a1-entry");
-        room.Checkpoint(new Vector2(128f, -6f), "a1-gallery");
+        room.Waymark(new Vector2(128f, -6f), "a1-gallery");
+
+        // On the ravine plateau, a vein the Grip stir grows from the palm (world design 3.3); a
+        // dormant arch marks the spot until then.
+        using (room.Stir("Palm Vein (dormant)", Knots.Grip, afterKnot: false)) room.DormantGate(new Vector2(46.3f, P));
+        using (room.Stir("Palm Vein", Knots.Grip, afterKnot: true))
+            room.GrownVein(new Vector2(46.3f, P), "a1-palm", R1GripKnotBuilder.SceneName, "r1k-elbow", "the Grip Knot Chamber", 1f);
 
         room.SwingRings(13.2f, 62.5f, 68.5f, 74.5f);   // under the aqueduct span, 6 u apart (the thread catches within 4 u)
         room.Thorns("Plateau Thorns", 86f, 89f, P);

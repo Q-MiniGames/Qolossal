@@ -21,7 +21,7 @@ public static class A2RoomBuilder
     [MenuItem("Qolossal/Scenes/Build A2 Grove")]
     public static void Build()
     {
-        var scene = A0TestRoomBuilder.NewRoom("A2 Ancient Grove", new Vector2(StartX, StartY), out Camera camera);
+        var scene = A0TestRoomBuilder.NewRoom("A2 Ancient Grove", new Vector2(StartX, StartY), out Camera camera, "r3-ribwood", "R3");
         camera.backgroundColor = new Color(.543f, .603f, .597f);   // the far painting's top row
         var room = new AreaRoom("A2");
 
@@ -82,6 +82,7 @@ public static class A2RoomBuilder
 
         Directory.CreateDirectory(Path.GetDirectoryName(ScenePath));
         EditorSceneManager.SaveScene(scene, ScenePath);
+        WorldAtlasBuilder.Record();   // after saving, so the scene has its name
         A0TestRoomBuilder.AddToBuild(ScenePath, 2);
         AssetDatabase.SaveAssets();
         Debug.Log("[A2RoomBuilder] Built " + ScenePath);
@@ -92,7 +93,7 @@ public static class A2RoomBuilder
         room.Portal(new Vector2(0f, 0f), "a2-west", A1RoomBuilder.SceneName, "a1-east", "A1 Aqueduct Ravine", 1f);
         room.Portal(new Vector2(163f, 0f), "a2-east", "A3_Falls", "a3-west", "A3 Falls Sanctuary", -1f);
         room.Checkpoint(new Vector2(7f, 0f), "a2-entry");
-        room.Checkpoint(new Vector2(117f, 0f), "a2-arena");
+        room.Waymark(new Vector2(117f, 0f), "a2-arena");
 
         room.Thorns("Resin Thorns", 73f, 87f, -4f);
         room.SwingRings(25.5f, 135f, 141f);   // over the arena, between the shelf fungus and the ledge
