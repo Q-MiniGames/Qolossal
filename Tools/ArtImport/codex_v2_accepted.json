@@ -201,6 +201,42 @@
    "basis": "request: terrain density 120 px/u"
   },
   {
+   "name": "BG_A5_Mid",
+   "category": "Backgrounds",
+   "sha256": "4b53dfc4d22a8eb870245f107d12e5224783e07c857be38d55acdf0d2f1a5f67",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_A5_Mid.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "BG_A5_Near",
+   "category": "Backgrounds",
+   "sha256": "96e8bfa446bd48d8160eac80e2d3a640fd7c25b9a65207e1914e29cb9a6e92a2",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_A5_Near.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
    "name": "BG_Sky_A0",
    "category": "Backgrounds",
    "sha256": "e1a0c93ba5989f8663ce337386323354938676df852179519d8dda27f59144fb",
@@ -291,6 +327,24 @@
    "basis": "request: terrain density 120 px/u"
   },
   {
+   "name": "BG_Sky_A5",
+   "category": "Backgrounds",
+   "sha256": "71823f8618ac760235d923379fcfebb2d8902ad1a7fdc7ae6db0a1d3146a6e04",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Sky_A5.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
    "name": "BG_Transition_A0",
    "category": "Backgrounds",
    "sha256": "3403aa06b07496d0c007242f36a0dabaf019a217eaa179dbc1af020b763c2897",
@@ -367,6 +421,42 @@
    "category": "Backgrounds",
    "sha256": "cd17cee5b3ab7a35afaa72d3ec5283ab364280081a90a32918ba75107d3ec61a",
    "dest": "Assets/Art/Codex/Backgrounds/BG_Transition_A4.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "BG_Transition_A5",
+   "category": "Backgrounds",
+   "sha256": "5f7c83f397ec2c306c85eba2fc5969c90041a4ca6a8a005ce65b8f147bdef32e",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Transition_A5.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "KneeTerraces",
+   "category": "Backgrounds",
+   "sha256": "871f5f0933bdfffd89932d5c6d439ac2c26a2093b21d5ac6cd94306d274ab677",
+   "dest": "Assets/Art/Codex/Backgrounds/KneeTerraces.png",
    "wrapU": "Repeat",
    "wrapV": "Clamp",
    "mesh": "FullRect",
@@ -2639,6 +2729,181 @@
    "basis": "request: terrain density 120 px/u"
   },
   {
+   "name": "Decor_A5_Sheet",
+   "category": "Decor",
+   "sha256": "9770c4a379d6a3c789de17d9d084a0d362ed6c5c1412420e927da47c2c11df23",
+   "dest": "Assets/Art/Codex/Decor/Decor_A5_Sheet.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": [
+    {
+     "name": "Decor_A5_dry_grass",
+     "rect": [
+      110,
+      856,
+      120,
+      81
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_A5_fern",
+     "rect": [
+      431,
+      823,
+      160,
+      146
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_A5_hay_tuft",
+     "rect": [
+      797,
+      851,
+      110,
+      90
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_A5_limestone_rock",
+     "rect": [
+      116,
+      590,
+      108,
+      100
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_A5_clay_rock",
+     "rect": [
+      449,
+      590,
+      125,
+      100
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_A5_broken_pillar",
+     "rect": [
+      802,
+      566,
+      100,
+      148
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_A5_carved_block",
+     "rect": [
+      80,
+      309,
+      180,
+      150
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_A5_root_tangle",
+     "rect": [
+      451,
+      292,
+      120,
+      184
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_A5_hanging_root",
+     "rect": [
+      802,
+      293,
+      100,
+      183
+     ],
+     "pivot": [
+      0.5,
+      1.0
+     ]
+    },
+    {
+     "name": "Decor_A5_mushrooms",
+     "rect": [
+      126,
+      88,
+      89,
+      80
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_A5_beetle",
+     "rect": [
+      495,
+      119,
+      32,
+      19
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_A5_wheat_sheaf",
+     "rect": [
+      802,
+      64,
+      100,
+      128
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    }
+   ],
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
    "name": "Decor_Foreground_Frame_A0",
    "category": "Decor",
    "sha256": "f4f697f592735d081a8d099a55efda604c059f8256315038c34221925430e40c",
@@ -3269,6 +3534,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Carrier_Body_A5",
+   "category": "Enemies",
+   "sha256": "b0a8e8a1dc5fa51b7a4f395af1ab217b6225ca33ad1644a9a4da3468593c2f38",
+   "dest": "Assets/Art/Codex/Enemies/Carrier_Body_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Carrier_Concept",
    "category": "Enemies",
    "sha256": "36fd4906cd6105f7e1de0bb79b48b00f32d77eea451ea64eab1202de932faabc",
@@ -3377,6 +3660,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Carrier_Head_A5",
+   "category": "Enemies",
+   "sha256": "1fe2cb7106315da03c214d368cf5bda6082749b333c75970f0d243b83682ceed",
+   "dest": "Assets/Art/Codex/Enemies/Carrier_Head_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Carrier_SeedPod",
    "category": "Enemies",
    "sha256": "2076099013af8754249d8f22d65cd9f6912d7a800270a142e473da076198fc29",
@@ -3453,6 +3754,24 @@
    "category": "Enemies",
    "sha256": "06654330135b9f88427b4c52f69a5248a118ff8753d90c8db730d3e548ab449f",
    "dest": "Assets/Art/Codex/Enemies/Carrier_SeedPod_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Carrier_SeedPod_A5",
+   "category": "Enemies",
+   "sha256": "202366767c22d5e53578d5dfb2eb770f85ed71f2938e2d0fcb364cd20cda765c",
+   "dest": "Assets/Art/Codex/Enemies/Carrier_SeedPod_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -3557,6 +3876,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Carrier_WingBack_A5",
+   "category": "Enemies",
+   "sha256": "b53bbdf2e334bbe3f1ae76ffdf9ffc546d93852a78782d2f9f782514054491cd",
+   "dest": "Assets/Art/Codex/Enemies/Carrier_WingBack_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Carrier_WingFront",
    "category": "Enemies",
    "sha256": "6888a7207fe17ceae4e401b048c095dcd43a1a7b5f734bc2cea124c2d3a8e07e",
@@ -3633,6 +3970,24 @@
    "category": "Enemies",
    "sha256": "6b369bacd3a9c7dea5e26969ec109dc5ac5c63185bd27a8cec2aa79cd639edbe",
    "dest": "Assets/Art/Codex/Enemies/Carrier_WingFront_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Carrier_WingFront_A5",
+   "category": "Enemies",
+   "sha256": "29a3c6260ff81d13818bf553228b0698c93d26da7127256b1ca65a412c9c4801",
+   "dest": "Assets/Art/Codex/Enemies/Carrier_WingFront_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -3755,6 +4110,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Crawler_BackThorns_A5",
+   "category": "Enemies",
+   "sha256": "d8a6d4744d1532c9e87331659681c8da2901e57cdaea230c4149db92b2567bc8",
+   "dest": "Assets/Art/Codex/Enemies/Crawler_BackThorns_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Crawler_Body",
    "category": "Enemies",
    "sha256": "354a75f5f9d8892d3c3d6bc20cd0b278b942bd93864d9544fb741b53c716d0be",
@@ -3831,6 +4204,24 @@
    "category": "Enemies",
    "sha256": "85d7a02b5147db639e583ef394e52ef01a9120622c60186c101fcfad88a96a54",
    "dest": "Assets/Art/Codex/Enemies/Crawler_Body_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Crawler_Body_A5",
+   "category": "Enemies",
+   "sha256": "65f44b6a3bae9a49004d3a63033700205011de4b9110def052653a5f56821e14",
+   "dest": "Assets/Art/Codex/Enemies/Crawler_Body_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -3953,6 +4344,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Crawler_Head_A5",
+   "category": "Enemies",
+   "sha256": "da22897762a0bd5bf66a75a587b70c97d92f4bbf23fc56b6915be7ab0a7ee56b",
+   "dest": "Assets/Art/Codex/Enemies/Crawler_Head_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Crawler_Jaw",
    "category": "Enemies",
    "sha256": "5d114f9f742c252821be2b8339fe95998653fe939f8816f197c49468607c3b56",
@@ -4029,6 +4438,24 @@
    "category": "Enemies",
    "sha256": "488d533dd9f1a3d85682f392d0169f6de8c9a79ed93b05095cf26b32579ec9c6",
    "dest": "Assets/Art/Codex/Enemies/Crawler_Jaw_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Crawler_Jaw_A5",
+   "category": "Enemies",
+   "sha256": "d34825687ae7bf570969d0fa273ff4304724526628eeb85aa8f53ea5c16a778f",
+   "dest": "Assets/Art/Codex/Enemies/Crawler_Jaw_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -4133,6 +4560,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Crawler_LegFront_Lower_A5",
+   "category": "Enemies",
+   "sha256": "24d653bbffe003e13c799cbdb1154f3aae8ada06a894c76d3e37f0846f33fa66",
+   "dest": "Assets/Art/Codex/Enemies/Crawler_LegFront_Lower_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Crawler_LegFront_Upper",
    "category": "Enemies",
    "sha256": "9d4c22d0333e9a48e4366c4472ec03acbcbdfea81eba288f3078290193a53e62",
@@ -4209,6 +4654,24 @@
    "category": "Enemies",
    "sha256": "f66346b4cb1faf4791a58d18d5b399694644f10e727884d45fe11dc03f0eabc2",
    "dest": "Assets/Art/Codex/Enemies/Crawler_LegFront_Upper_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Crawler_LegFront_Upper_A5",
+   "category": "Enemies",
+   "sha256": "6da60a7683094c4c4c93b75910e46cd828563927fa7b72cf0ca10326e355f395",
+   "dest": "Assets/Art/Codex/Enemies/Crawler_LegFront_Upper_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -4313,6 +4776,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Crawler_LegHind_Lower_A5",
+   "category": "Enemies",
+   "sha256": "24ec1d0bb73053981afee7e0239a1aa4a2309df6759a9d6648dbc8560dce3daa",
+   "dest": "Assets/Art/Codex/Enemies/Crawler_LegHind_Lower_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Crawler_LegHind_Upper",
    "category": "Enemies",
    "sha256": "d163b2caec48dfa58d64d0c50f4331628ee778cc537389dc73031362cf23db7b",
@@ -4389,6 +4870,24 @@
    "category": "Enemies",
    "sha256": "a8120851138acc0153b8dbf7997da25a39f369f6856c40057977ed0af6f72b84",
    "dest": "Assets/Art/Codex/Enemies/Crawler_LegHind_Upper_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Crawler_LegHind_Upper_A5",
+   "category": "Enemies",
+   "sha256": "b99124a8c415314aa06a6d8f6357fdedeee44c80dcc640e66b03b9504e5684fd",
+   "dest": "Assets/Art/Codex/Enemies/Crawler_LegHind_Upper_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -5105,6 +5604,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Shellback_Body_A5",
+   "category": "Enemies",
+   "sha256": "195b87d096302d9903370d8cc3a0ba39d20e730afa9d32ef3c234ce8775040a1",
+   "dest": "Assets/Art/Codex/Enemies/Shellback_Body_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Shellback_Concept",
    "category": "Enemies",
    "sha256": "92dd1631dc414eb568b6313f40d926d8a14a6ac1d3bd5662bd09050f90be7a6e",
@@ -5213,6 +5730,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Shellback_Head_A5",
+   "category": "Enemies",
+   "sha256": "370deb9807f17c689a0fceed24241cc54ffe7e98e48a7ee64c96d8967fa40adf",
+   "dest": "Assets/Art/Codex/Enemies/Shellback_Head_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Shellback_Leg",
    "category": "Enemies",
    "sha256": "6b316282d21736393171c8dc5d94962c0b61e09714a945cd6cf6578d1b8b3960",
@@ -5289,6 +5824,24 @@
    "category": "Enemies",
    "sha256": "aa6159d7771f11ce2f5695edf69ca402f4672519bece627cfce737e57270df38",
    "dest": "Assets/Art/Codex/Enemies/Shellback_Leg_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Shellback_Leg_A5",
+   "category": "Enemies",
+   "sha256": "c5558bc1cf24e0a410fe1dabc8dd2abadb7000beb379c32f0b38bbf73ced446d",
+   "dest": "Assets/Art/Codex/Enemies/Shellback_Leg_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -5393,6 +5946,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Shellback_Shell_Cracked_A5",
+   "category": "Enemies",
+   "sha256": "5d441bf6d0b8400e2661554e8721bb43b9c10ff5e8276030cf6dd75c16dfda6d",
+   "dest": "Assets/Art/Codex/Enemies/Shellback_Shell_Cracked_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Shellback_Shell_Intact",
    "category": "Enemies",
    "sha256": "e176517cdaa9592cd81d5fc81a48e83ee51acaf0d111ba4511cdf20b63f2aa75",
@@ -5469,6 +6040,24 @@
    "category": "Enemies",
    "sha256": "47633d9ddf5d57f7fb44572a789d89d6007192c6de27c838084f506393e55a9d",
    "dest": "Assets/Art/Codex/Enemies/Shellback_Shell_Intact_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Shellback_Shell_Intact_A5",
+   "category": "Enemies",
+   "sha256": "7004411c7f912687154616394f327ae606cea5a8ce1018ef7b9175f9cc05685f",
+   "dest": "Assets/Art/Codex/Enemies/Shellback_Shell_Intact_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -5968,6 +6557,103 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Shellback_Shell_Shards_A5",
+   "category": "Enemies",
+   "sha256": "1ca333aff1205d71f194d511bfceedf6333f86c46efd7541b600db04cc84f6bb",
+   "dest": "Assets/Art/Codex/Enemies/Shellback_Shell_Shards_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": [
+    {
+     "name": "Shellback_Shell_Shards_A5_00",
+     "rect": [
+      41,
+      452,
+      733,
+      450
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Shellback_Shell_Shards_A5_01",
+     "rect": [
+      65,
+      69,
+      533,
+      370
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Shellback_Shell_Shards_A5_02",
+     "rect": [
+      653,
+      57,
+      391,
+      346
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Shellback_Shell_Shards_A5_03",
+     "rect": [
+      712,
+      409,
+      392,
+      559
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Shellback_Shell_Shards_A5_04",
+     "rect": [
+      1104,
+      91,
+      347,
+      304
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Shellback_Shell_Shards_A5_05",
+     "rect": [
+      1163,
+      457,
+      342,
+      373
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Spitter_Base",
    "category": "Enemies",
    "sha256": "8b92aa9a55ac1b3df3e224ae7d89a9cc0ccc735a8811f8705f9c6864f65d0f80",
@@ -6044,6 +6730,24 @@
    "category": "Enemies",
    "sha256": "cb2e182c291779fdde224534ea5fd5e49f4c1e197982dd284713e3ffeb6bbe45",
    "dest": "Assets/Art/Codex/Enemies/Spitter_Base_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Spitter_Base_A5",
+   "category": "Enemies",
+   "sha256": "ccae1f161ed26ed3136822d1054199a6e4f051d1a4bdb01ee77ddd0bcd963bc8",
+   "dest": "Assets/Art/Codex/Enemies/Spitter_Base_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -6166,6 +6870,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Spitter_Head_Closed_A5",
+   "category": "Enemies",
+   "sha256": "caff6344a79bee9199d7143175c6864eef62868ff7473526f0214f2339d833f1",
+   "dest": "Assets/Art/Codex/Enemies/Spitter_Head_Closed_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Spitter_Head_Open",
    "category": "Enemies",
    "sha256": "a13a58c66fbfa559c37dbfe836d69a76202845ec20827f857365a021b5bf3131",
@@ -6242,6 +6964,24 @@
    "category": "Enemies",
    "sha256": "038e023b97510f6742a505c8e35a2c97b6031cbdca3b4448808ef1125c41d618",
    "dest": "Assets/Art/Codex/Enemies/Spitter_Head_Open_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Spitter_Head_Open_A5",
+   "category": "Enemies",
+   "sha256": "cdac5344428e9c73dc75b75ef0ef1116afa0d79a5f04fa0139711a23eb3b7c90",
+   "dest": "Assets/Art/Codex/Enemies/Spitter_Head_Open_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -6346,6 +7086,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Spitter_Projectile_A5",
+   "category": "Enemies",
+   "sha256": "9922b30c1efce7114715c600b49a987a1780800ab1822be76bc092c96d0ee57a",
+   "dest": "Assets/Art/Codex/Enemies/Spitter_Projectile_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Spitter_Stalk",
    "category": "Enemies",
    "sha256": "f7e30bd9ba99982b07b875ee84ecc0766b4e30789fcb1cbebd180f14e4811be4",
@@ -6436,6 +7194,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Spitter_Stalk_A5",
+   "category": "Enemies",
+   "sha256": "942ad402c08e08041073273cfe163bfbaedd15373be7d723ed15332ef88cce27",
+   "dest": "Assets/Art/Codex/Enemies/Spitter_Stalk_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Thornwing_Body",
    "category": "Enemies",
    "sha256": "7c4f508c1ced7a269155e85704c757213b70509f05e764d3cda55c3c61ad9167",
@@ -6512,6 +7288,24 @@
    "category": "Enemies",
    "sha256": "47ebded9d449f99006591f79f08485a420d4801cc1ac3b5b1d57b0f1dcd7d214",
    "dest": "Assets/Art/Codex/Enemies/Thornwing_Body_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Thornwing_Body_A5",
+   "category": "Enemies",
+   "sha256": "6bfa2f7ace342493ecdb600774bf4c2d26e7ec8fc96fdfeb6c3e8a15fe39f006",
+   "dest": "Assets/Art/Codex/Enemies/Thornwing_Body_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -6634,6 +7428,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Thornwing_Head_A5",
+   "category": "Enemies",
+   "sha256": "1381c634db8e866b12ae271e7fd290a0b28d95ee989d165b3e2175985012dd27",
+   "dest": "Assets/Art/Codex/Enemies/Thornwing_Head_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Thornwing_Tail",
    "category": "Enemies",
    "sha256": "6b19ecf79507212579f59a8c7a7b4899b71558ddef9c04d2140cfc5b82faaf72",
@@ -6710,6 +7522,24 @@
    "category": "Enemies",
    "sha256": "45eaaf19ae227f97211a0d1402998acd03ff9776bf76b16c9e931e7b21ccc8aa",
    "dest": "Assets/Art/Codex/Enemies/Thornwing_Tail_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Thornwing_Tail_A5",
+   "category": "Enemies",
+   "sha256": "5d950da13e6d260d482ea33eb053c15b8671e909cef0b9a808f62f1b44ebf21d",
+   "dest": "Assets/Art/Codex/Enemies/Thornwing_Tail_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -6814,6 +7644,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Thornwing_WingBack_A5",
+   "category": "Enemies",
+   "sha256": "6153b31889204bf9e2945bc28d93ce3891daee04869bb6ae71fc211b2ef690a1",
+   "dest": "Assets/Art/Codex/Enemies/Thornwing_WingBack_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Thornwing_WingFront",
    "category": "Enemies",
    "sha256": "37dfd9499f5fff28b3f18df901b2cb78629e7f2bb01e91b4ff7a9ae78b237e89",
@@ -6890,6 +7738,24 @@
    "category": "Enemies",
    "sha256": "e54f604cc0b00c57e35b443b639f6d0021d091d625a56abfefaf4154dc588997",
    "dest": "Assets/Art/Codex/Enemies/Thornwing_WingFront_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Thornwing_WingFront_A5",
+   "category": "Enemies",
+   "sha256": "559c34db91be97df07574afdce5e02d9a9612d5f5c1dc5d6b8c4e6bcec8380ac",
+   "dest": "Assets/Art/Codex/Enemies/Thornwing_WingFront_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -7318,6 +8184,24 @@
    "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
   },
   {
+   "name": "Knucklebramble_KnotGlow_Bare",
+   "category": "Guardians",
+   "sha256": "1c38a93811daeb9bf51b57d20ef137d08ed63c7e8f4ccb314ecdad2ea15b2457",
+   "dest": "Assets/Art/Codex/Guardians/Knucklebramble_KnotGlow_Bare.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
+  },
+  {
    "name": "FX_Dust_Warning",
    "category": "Hazards",
    "sha256": "cc46f539cda2b72737464ea425e8c8050b5e2f2d5beed08054fb09a22fcb5adc",
@@ -7502,6 +8386,24 @@
    "category": "Hazards",
    "sha256": "bb20ae743a2809b0d76909a4f67151bb5b5e7b634251d4cc142e10edc7e89e4e",
    "dest": "Assets/Art/Codex/Hazards/Hazard_Thorns_Floor_A4.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: hazard strips at terrain density"
+  },
+  {
+   "name": "Hazard_Thorns_Floor_A5",
+   "category": "Hazards",
+   "sha256": "96f51cdedfa51f6768674618e692ba92bf61015fd6e7b42ed9dbba6dadc1f56e",
+   "dest": "Assets/Art/Codex/Hazards/Hazard_Thorns_Floor_A5.png",
    "wrapU": "Repeat",
    "wrapV": "Clamp",
    "mesh": "FullRect",
@@ -7768,6 +8670,24 @@
    "mipmaps": false,
    "ppu": 569.667,
    "basis": "assumed: 3 u moving platform"
+  },
+  {
+   "name": "Platform_Moving_A5",
+   "category": "Hazards",
+   "sha256": "ebbc19ad35031da67e07a03c1c7306e20e9475eb60b2711abb0daa62a8c9fe77",
+   "dest": "Assets/Art/Codex/Hazards/Platform_Moving_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.39453
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Codex-normalized to terrain density 120 px/u"
   },
   {
    "name": "Water_Body",
@@ -8778,6 +9698,24 @@
    "basis": "Codex-normalized to terrain density 120 px/u"
   },
   {
+   "name": "Anchor_Ring_A5",
+   "category": "Props",
+   "sha256": "81f48167e9524778ecafe1d795880755b554474546b772e7b0518770ff73b00d",
+   "dest": "Assets/Art/Codex/Props/Anchor_Ring_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Codex-normalized to terrain density 120 px/u"
+  },
+  {
    "name": "Barrier_Rubble_Intact",
    "category": "Props",
    "sha256": "cc188adced9248dde5f37251cb7bfc066e7713a85fff8725e9d5eb3330d48074",
@@ -8872,6 +9810,24 @@
    "category": "Props",
    "sha256": "aefaabe2fc551f651046c09cfd38da464d3c4b716c0552f9a3f848573f433663",
    "dest": "Assets/Art/Codex/Props/Barrier_Rubble_Intact_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Codex-normalized to terrain density 120 px/u"
+  },
+  {
+   "name": "Barrier_Rubble_Intact_A5",
+   "category": "Props",
+   "sha256": "8016c68ef97be99500cd8b86c5228ff26a91447e3bd4834531ccc731ba5368ad",
+   "dest": "Assets/Art/Codex/Props/Barrier_Rubble_Intact_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -9637,6 +10593,129 @@
    "basis": "Codex-normalized to terrain density 120 px/u"
   },
   {
+   "name": "Barrier_Rubble_Pieces_A5",
+   "category": "Props",
+   "sha256": "56bcd02b18e53c4b6c1c6723a95d2d7464edb672fa3a3d51972ea79acbcb6a1e",
+   "dest": "Assets/Art/Codex/Props/Barrier_Rubble_Pieces_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": [
+    {
+     "name": "Barrier_Rubble_Pieces_A5_00",
+     "rect": [
+      15,
+      218,
+      130,
+      140
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_A5_01",
+     "rect": [
+      15,
+      34,
+      130,
+      125
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_A5_02",
+     "rect": [
+      175,
+      21,
+      130,
+      150
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_A5_03",
+     "rect": [
+      189,
+      207,
+      101,
+      162
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_A5_04",
+     "rect": [
+      335,
+      227,
+      130,
+      124
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_A5_05",
+     "rect": [
+      348,
+      15,
+      104,
+      162
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_A5_06",
+     "rect": [
+      495,
+      212,
+      129,
+      152
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "name": "Barrier_Rubble_Pieces_A5_07",
+     "rect": [
+      495,
+      49,
+      130,
+      94
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Codex-normalized to terrain density 120 px/u"
+  },
+  {
    "name": "Barrier_Thorns_Cut",
    "category": "Props",
    "sha256": "fa8d959080e4f58d31bb1d0bacf96107601039a96840bce2ada66383635ad923",
@@ -9731,6 +10810,24 @@
    "category": "Props",
    "sha256": "be6ce5285fda34a237453208a8d32bb20d8efa7bfbf097b2562381ecc0b528ec",
    "dest": "Assets/Art/Codex/Props/Checkpoint_Shrine_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Codex-normalized to terrain density 120 px/u"
+  },
+  {
+   "name": "Checkpoint_Shrine_A5",
+   "category": "Props",
+   "sha256": "e71da83121b1a777715e5b28101c1119b8c0c8d52de0df4146828d79f253dc26",
+   "dest": "Assets/Art/Codex/Props/Checkpoint_Shrine_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -10210,6 +11307,24 @@
    "basis": "Codex-normalized to terrain density 120 px/u"
   },
   {
+   "name": "Portal_Gate_A5",
+   "category": "Props",
+   "sha256": "d7c51258b743ef7d94e2e67a1d032cd6f554de6e6c570da51909c64e195524b3",
+   "dest": "Assets/Art/Codex/Props/Portal_Gate_A5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Codex-normalized to terrain density 120 px/u"
+  },
+  {
    "name": "Portal_Gate_Hidden",
    "category": "Props",
    "sha256": "90f8a50828f3ae97b985523a7caeabc7b2bac3de88281dfc11497ea3a66ddb3a",
@@ -10340,6 +11455,24 @@
    "category": "Props",
    "sha256": "6d354da89bb026f1824e1f244761e87e3b96995e0a5a613bc81b27db5d8c69fb",
    "dest": "Assets/Art/Codex/Props/Portal_Membrane_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Codex-normalized to terrain density 120 px/u"
+  },
+  {
+   "name": "Portal_Membrane_A5",
+   "category": "Props",
+   "sha256": "01af9b9db07e65cb29d710cb98c59c81c850c8299a5279da35c502a41b3c3cc4",
+   "dest": "Assets/Art/Codex/Props/Portal_Membrane_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -10628,6 +11761,24 @@
    "category": "Props",
    "sha256": "bb2844b6faf5ed1fbe2fbf385fb1f6bfacf918f8b61b61f2b45e48a15ce8dd9d",
    "dest": "Assets/Art/Codex/Props/Wall_Secret_Overlay_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Codex-normalized to terrain density 120 px/u"
+  },
+  {
+   "name": "Wall_Secret_Overlay_A5",
+   "category": "Props",
+   "sha256": "e20f0f3cf734b692e88f641bf9cc5335184b442b4d219cf7e90200e98c029ce9",
+   "dest": "Assets/Art/Codex/Props/Wall_Secret_Overlay_A5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "Tight",
@@ -12014,6 +13165,240 @@
    "category": "Terrain",
    "sha256": "cd7ac06cfea0cf9c7c1a6fb4dc75891f7a7ad56c1ba9a540107621e8982362d7",
    "dest": "Assets/Art/Codex/Terrain/A4_Wall_Slippery.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "A5_Ceiling_Under",
+   "category": "Terrain",
+   "sha256": "76d822354f462f5a019fbc75d81db49a84a90efac993f9522a89f2fea5ea4d28",
+   "dest": "Assets/Art/Codex/Terrain/A5_Ceiling_Under.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    1.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "A5_Corner_Inner_TopRight",
+   "category": "Terrain",
+   "sha256": "ca1a925c0fda6b4ac7faa991c7ae2d084eb53cabbe963ee2b737bceffa41e770",
+   "dest": "Assets/Art/Codex/Terrain/A5_Corner_Inner_TopRight.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "A5_Corner_Outer_BottomRight",
+   "category": "Terrain",
+   "sha256": "4c4eb86816b6cc27162cb7ad66735a3e71125600b3c0e3562272107554ed03fa",
+   "dest": "Assets/Art/Codex/Terrain/A5_Corner_Outer_BottomRight.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "A5_Corner_Outer_TopRight",
+   "category": "Terrain",
+   "sha256": "3cd68df4dec9564ca8ed44615cbc0e71aab900ec9c7b4d3c31cca0d7926e3b24",
+   "dest": "Assets/Art/Codex/Terrain/A5_Corner_Outer_TopRight.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "A5_Ground_Fill",
+   "category": "Terrain",
+   "sha256": "712545ae197e223fccddcbd3b7eacaa0363a2bfa5488d1968cc37f62002df42e",
+   "dest": "Assets/Art/Codex/Terrain/A5_Ground_Fill.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "A5_Ground_Top",
+   "category": "Terrain",
+   "sha256": "d5db05d53bd31807e9458d54e1b0179338cdff53969201b9f79c1dc6af6ed50e",
+   "dest": "Assets/Art/Codex/Terrain/A5_Ground_Top.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.8125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "A5_Platform_Floating_L",
+   "category": "Terrain",
+   "sha256": "e511610b40034f769411af3d155d5dbde0c92e40ce0f2dc944e9d352195e983b",
+   "dest": "Assets/Art/Codex/Terrain/A5_Platform_Floating_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.26506
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "A5_Platform_Floating_M",
+   "category": "Terrain",
+   "sha256": "8a6f7837f1a5ced9954e3f3dc3da86fd7ac4cfbbd6b519b4a8bbb40a58f071d9",
+   "dest": "Assets/Art/Codex/Terrain/A5_Platform_Floating_M.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.22271
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "A5_Platform_Floating_S",
+   "category": "Terrain",
+   "sha256": "aca2821cb96dd0e12270c3cc3a7f811c9c0c18736e8e93cfb6ccc2c15056948a",
+   "dest": "Assets/Art/Codex/Terrain/A5_Platform_Floating_S.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.22754
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "A5_Platform_OneWay",
+   "category": "Terrain",
+   "sha256": "26ab5c7e55acd9bde3617fad4c15439fa4bf51a4456c7e17a0c5d2ccc0e23e80",
+   "dest": "Assets/Art/Codex/Terrain/A5_Platform_OneWay.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.12891
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "A5_Wall_Climbable",
+   "category": "Terrain",
+   "sha256": "d7050ddec32359c0cba9a839a6c6f872c8133f9896c29d1a39a6c0fbcf672c8b",
+   "dest": "Assets/Art/Codex/Terrain/A5_Wall_Climbable.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "A5_Wall_Side",
+   "category": "Terrain",
+   "sha256": "0e0e4420c209228f004800a5a75bce0002a88797138011c403e1d6ae53ee345b",
+   "dest": "Assets/Art/Codex/Terrain/A5_Wall_Side.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "A5_Wall_Slippery",
+   "category": "Terrain",
+   "sha256": "1486db3f6e76cbba1aa520d00a8ea122c1832f33130d90bb2993c7015dd7e50f",
+   "dest": "Assets/Art/Codex/Terrain/A5_Wall_Slippery.png",
    "wrapU": "Repeat",
    "wrapV": "Repeat",
    "mesh": "FullRect",

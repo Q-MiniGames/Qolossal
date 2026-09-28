@@ -91,15 +91,16 @@ WORLD_SIZE = {
 # Opaque chain width in Platform_Moving_A1 (78 px) vs the chain tile (54 px).
 CHAIN_SCALE = 54.0 / 78.0
 
-TILE_H = {f"{a}_{k}" for a in ("A0", "A1", "A2", "A3", "A4") for k in ("Ground_Top", "Ceiling_Under", "Platform_OneWay_unused")} | { "Hazard_Thorns_Floor", "Hazard_Thorns_Ceiling",
-          "Whip_Lash_Segment", "HUD_Vine_Segment", "Water_Surface", "Chart_Vein_Line"} | {f"Hazard_Thorns_Floor_A{i}" for i in range(1, 5)}
-TILE_V = {f"{a}_Wall_Side" for a in ("A0", "A1", "A2", "A3", "A4")} | {"Waterfall_Column",  "Hazard_Thorns_Wall", "Platform_Moving_A1_Chain"}
-TILE_FILL = {f"{a}_{k}" for a in ("A0", "A1", "A2", "A3", "A4") for k in ("Ground_Fill", "Wall_Climbable", "Wall_Slippery")} | {"Water_Body"}
+KIT_AREAS = ("A0", "A1", "A2", "A3", "A4", "A5")   # areas with a terrain kit
+TILE_H = {f"{a}_{k}" for a in KIT_AREAS for k in ("Ground_Top", "Ceiling_Under", "Platform_OneWay_unused")} | { "Hazard_Thorns_Floor", "Hazard_Thorns_Ceiling",
+          "Whip_Lash_Segment", "HUD_Vine_Segment", "Water_Surface", "Chart_Vein_Line"} | {f"Hazard_Thorns_Floor_A{i}" for i in range(1, 6)}
+TILE_V = {f"{a}_Wall_Side" for a in KIT_AREAS} | {"Waterfall_Column",  "Hazard_Thorns_Wall", "Platform_Moving_A1_Chain"}
+TILE_FILL = {f"{a}_{k}" for a in KIT_AREAS for k in ("Ground_Fill", "Wall_Climbable", "Wall_Slippery")} | {"Water_Body"}
 
 BOTTOM_ANCHORED = {"Barrier_Rubble_Intact", "Barrier_Thorns_Intact", "Switch_Plate_Up", "Shrine_Ability",
                    "Portal_Gate_A0", "Spitter_Base", "GlowPod_Light_Off",
                    "Hazard_Thorns_Floor", "Waymark_Dormant", "Vein_Gate_Frame"}
-TOP_ANCHORED = {"Hazard_Thorns_Ceiling"} | {f"{a}_Ceiling_Under" for a in ("A0", "A1", "A2", "A3", "A4")}
+TOP_ANCHORED = {"Hazard_Thorns_Ceiling"} | {f"{a}_Ceiling_Under" for a in KIT_AREAS}
 
 GROUND_TOP_WALK_LINE_PX = 96  # T-01: walk line measured from the top edge
 
@@ -195,7 +196,9 @@ def settings_for(category, name):
         # Rigged guardian parts (Batch 5 Phase 6): Codex's Review11/GUARDIAN_REGISTRATION.json gives
         # each part's pivot on its bone; the rig sets the final scale, like the enemies.
         with open(os.path.join(SOURCE, "Review11", "GUARDIAN_REGISTRATION.json")) as f:
-            reg = {r["name"]: r for r in json.load(f)}[name]
+            regs = {r["name"]: r for r in json.load(f)}
+        # A later state variant (e.g. KnotGlow_Bare) shares its base part's canvas and pivot.
+        reg = regs.get(name) or regs[name.rsplit("_", 1)[0]]
         w, h = reg["canvas"]; px, py = reg["pivot_px_top_left"]
         s["ppu"], s["basis"] = reg["ppu"], "Review11/GUARDIAN_REGISTRATION.json: character density"
         s["pivot"], s["mesh"], s["mipmaps"] = [round(px / w, 5), round(1 - py / h, 5)], "FullRect", True
@@ -259,6 +262,9 @@ def decor_sprites(name):
     slices = os.path.join(SOURCE, "Decor", "QA", name.replace("_Sheet", "_Slices") + ".json")
     if not os.path.exists(slices):   # later batches name them A1_Slices.json
         slices = os.path.join(SOURCE, "Decor", "QA", name.replace("Decor_", "").replace("_Sheet", "_Slices") + ".json")
+    review12 = os.path.join(SOURCE, "Review12", name + "_Slices.json")
+    if not os.path.exists(slices) and os.path.exists(review12):
+        return numbered_decor_sprites(name, review12)
     if not os.path.exists(slices):
         return None
     with open(slices) as f:
@@ -272,7 +278,29 @@ def decor_sprites(name):
     return out
 
 
-PIECE_SHEETS = {"Barrier_Rubble_Pieces", "Floor_Weak_Pieces", "Platform_Crumble_Pieces", "Shellback_Shell_Shards"} |     {f"Barrier_Rubble_Pieces_A{i}" for i in range(0, 5)} | {f"Shellback_Shell_Shards_A{i}" for i in range(1, 5)}
+# From A5 on, Codex numbers the decor slices (top-left rects, Review12/*_Slices.json); the room
+# builders place decor by name, so each number gets the name the decor scale proof shows.
+DECOR_NAMES = {"Decor_A5_Sheet": ["dry_grass", "fern", "hay_tuft", "limestone_rock", "clay_rock", "broken_pillar",
+                                  "carved_block", "root_tangle", "hanging_root", "mushrooms", "beetle", "wheat_sheaf"]}
+
+
+def numbered_decor_sprites(name, path):
+    with open(path) as f:
+        data = json.load(f)
+    with Image.open(source_path("Decor", name)) as im:
+        h = im.size[1]
+    names = DECOR_NAMES[name]
+    if len(names) != len(data):
+        raise SystemExit(f"{name}: {len(data)} slices but {len(names)} names in DECOR_NAMES")
+    out = []
+    for sp, piece in zip(data, names):
+        x, y, w, hh = sp["rect_top_left"]
+        pivot = [0.5, 1.0] if piece.startswith("hanging") else sp.get("pivot", [0.5, 0.0])
+        out.append({"name": f"{name.replace('_Sheet', '')}_{piece}", "rect": [x, h - y - hh, w, hh], "pivot": pivot})
+    return out
+
+
+PIECE_SHEETS = {"Barrier_Rubble_Pieces", "Floor_Weak_Pieces", "Platform_Crumble_Pieces", "Shellback_Shell_Shards"} |     {f"Barrier_Rubble_Pieces_A{i}" for i in range(0, 6)} | {f"Shellback_Shell_Shards_A{i}" for i in range(1, 6)}
 
 
 def rect_sprites(category, name, rects_file):
