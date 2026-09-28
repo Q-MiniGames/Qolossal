@@ -132,6 +132,21 @@ def pivot_for(name, size, bbox):
     return [0.5, 0.5]
 
 
+QORI_PARTS = os.path.join(PROJECT, "Assets", "Art", "Characters", "QoriRig", "Parts")
+# The Wilted's extra pieces share a Qori part's canvas and registration.
+WILTED_SHARES = {"ThornArmor_Torso": "Torso", "Healed_Torso": "Torso", "ThornArmor_Head": "Head_Neutral"}
+NINE_SLICE = {"UI_Dialogue_9Slice": (96, 96, 96, 96), "UI_NamePlate": (48, 24, 48, 24)}   # L, B, R, T
+
+
+def qori_part_import(part):
+    """Pivot and pixels per unit of a Qori rig part, from its .meta (the Wilted reuses the rig's bones)."""
+    import re
+    text = open(os.path.join(QORI_PARTS, f"Qori_{part}.png.meta"), encoding="utf-8").read()
+    pivot = re.search(r"spritePivot: \{x: ([-\d.e]+), y: ([-\d.e]+)\}", text)
+    ppu = re.search(r"spritePixelsToUnits: ([\d.]+)", text)
+    return [float(pivot.group(1)), float(pivot.group(2))], float(ppu.group(1))
+
+
 def settings_for(category, name):
     path = source_path(category, name)
     size, bbox = opaque_bbox(path)
@@ -161,6 +176,21 @@ def settings_for(category, name):
     elif category == "UI":
         s["ppu"], s["basis"] = UI_PPU, "UI canvas: 1 px = 1 reference px"
         s["mesh"] = "FullRect"
+    elif category == "Characters/Wilted":
+        part = name[len("Wilted_"):]
+        pivot, ppu = qori_part_import(WILTED_SHARES.get(part, part))
+        s["ppu"], s["pivot"], s["basis"] = ppu, pivot, f"Qori rig registration (Qori_{WILTED_SHARES.get(part, part)})"
+        s["mipmaps"] = True
+    elif category in ("Characters/Loam", "Characters/Scribble", "Characters/Sproutling", "Characters/Echo"):
+        s["ppu"], s["basis"] = CHARACTER_PPU, "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+        s["mipmaps"] = True
+        if category == "Characters/Sproutling":
+            s["pivot"] = [550 / 832, 1 - 748 / 832]   # the shared body anchor and ground line
+    elif category in ("Characters/Portraits", "Characters/Dialogue"):
+        s["ppu"], s["basis"] = UI_PPU, "UI canvas: 1 px = 1 reference px"
+        s["mesh"], s["pivot"] = "FullRect", [0.5, 0.5]
+        if name in NINE_SLICE:
+            s["border"] = list(NINE_SLICE[name])
     elif category in ("Chart", "StirVistas"):
         # The map screen and the stir's full-screen vistas are UI images; the map is zoomed, so it keeps mipmaps.
         s["ppu"], s["basis"] = UI_PPU, "UI canvas: 1 px = 1 reference px"
@@ -318,7 +348,8 @@ def main(argv):
     for name in names:
         if name not in status:
             raise SystemExit(f"{name} is not in DELIVERY_STATUS.json")
-        category = status[name]["category"]
+        rel = status[name].get("path")
+        category = os.path.dirname(rel).replace("\\", "/") if rel else status[name]["category"]
         path = source_path(category, name)
         if not os.path.exists(path):
             raise SystemExit(f"Missing file: {path}")

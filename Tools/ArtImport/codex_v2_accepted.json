@@ -399,6 +399,844 @@
    "basis": "request: terrain density 120 px/u"
   },
   {
+   "name": "UI_Dialogue_9Slice",
+   "category": "Characters/Dialogue",
+   "sha256": "b672a97f5d8cf0cd0682c6bbe5cd914f13275fb3a1bf70d77b023f07b1940393",
+   "dest": "Assets/Art/Codex/Characters/Dialogue/UI_Dialogue_9Slice.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    96,
+    96,
+    96,
+    96
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "UI_NamePlate",
+   "category": "Characters/Dialogue",
+   "sha256": "f77839886621d5e58cb103caf82085f8a7b0e1008787e9169aa3e01b6544bb94",
+   "dest": "Assets/Art/Codex/Characters/Dialogue/UI_NamePlate.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "FX_Echo_Face",
+   "category": "Characters/Echo",
+   "sha256": "de08efed94667eb890e9898bc761acad594c3293a6d1a382ac698205309a3377",
+   "dest": "Assets/Art/Codex/Characters/Echo/FX_Echo_Face.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "FX_Echo_Wisp",
+   "category": "Characters/Echo",
+   "sha256": "8c06de4963cd6d612d482f56a3bc7d09db008fbad87b70feea62d5474e0a5275",
+   "dest": "Assets/Art/Codex/Characters/Echo/FX_Echo_Wisp.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "Loam_Body",
+   "category": "Characters/Loam",
+   "sha256": "dd60c135972aa40e20ac0dbd50a58e987d3e3fdb4d3d6d3e52d4b9bfcef4e662",
+   "dest": "Assets/Art/Codex/Characters/Loam/Loam_Body.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "Loam_EyeStalk",
+   "category": "Characters/Loam",
+   "sha256": "b6a43abbe5e05036d22f6014c1576da60ec0605fa1e2dc46ebf43fb75b0a362c",
+   "dest": "Assets/Art/Codex/Characters/Loam/Loam_EyeStalk.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "Loam_Head",
+   "category": "Characters/Loam",
+   "sha256": "59333a2aa5396fd1d5a40ab7b78a70271fd45d066f4ec4942bcff95a93e2cf55",
+   "dest": "Assets/Art/Codex/Characters/Loam/Loam_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "Loam_Shell_Shrine",
+   "category": "Characters/Loam",
+   "sha256": "12328793bdc659405f088da53ac62de50bfb446e5a126e01b09790c38d4410ae",
+   "dest": "Assets/Art/Codex/Characters/Loam/Loam_Shell_Shrine.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "Portrait_OldLoam",
+   "category": "Characters/Portraits",
+   "sha256": "c2c13323467f4d0d662a90d1e536c66bb2c663bf48683919a6f6292888031f3b",
+   "dest": "Assets/Art/Codex/Characters/Portraits/Portrait_OldLoam.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Portrait_Scribble",
+   "category": "Characters/Portraits",
+   "sha256": "600740a1e7ac5013427049cab535acbafc46eec723e446ce500ee59ca29a72bf",
+   "dest": "Assets/Art/Codex/Characters/Portraits/Portrait_Scribble.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Portrait_Wilted",
+   "category": "Characters/Portraits",
+   "sha256": "7bd5ac527d1ff39768db1a5bf1e8e39acffef2ba790e8d87bd9c5e74db5e8e63",
+   "dest": "Assets/Art/Codex/Characters/Portraits/Portrait_Wilted.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Scribble_Body",
+   "category": "Characters/Scribble",
+   "sha256": "885e70f7cf3da91c94cf48a5afdf1cc530372636357fde75ee11ca70d278c158",
+   "dest": "Assets/Art/Codex/Characters/Scribble/Scribble_Body.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "Scribble_Head",
+   "category": "Characters/Scribble",
+   "sha256": "93063e235ec865d4af542b260f58076a8c51a820641a4938befafdf1ab4f3fa3",
+   "dest": "Assets/Art/Codex/Characters/Scribble/Scribble_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "Scribble_Leg",
+   "category": "Characters/Scribble",
+   "sha256": "ca2ccaf0bdf948c200a0af6319ff4b5268cd1119e183b15e68955b5fc730beb1",
+   "dest": "Assets/Art/Codex/Characters/Scribble/Scribble_Leg.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "Scribble_MapRoll",
+   "category": "Characters/Scribble",
+   "sha256": "33aa022227ac4ddac3f99b562ed200f34ef2e086822fb93ff051ea4118dad4e2",
+   "dest": "Assets/Art/Codex/Characters/Scribble/Scribble_MapRoll.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "Sproutling_Follow",
+   "category": "Characters/Sproutling",
+   "sha256": "d202b2587489c1cee0f181df3f17cd845b6d08ea2f8c289090c6103fc9bb88ee",
+   "dest": "Assets/Art/Codex/Characters/Sproutling/Sproutling_Follow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.6610576923076923,
+    0.10096153846153844
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "Sproutling_Idle",
+   "category": "Characters/Sproutling",
+   "sha256": "12855630d3ac26f99083d4193cc3a0cabd6e9e4c852e91f80b5365df374c7b8e",
+   "dest": "Assets/Art/Codex/Characters/Sproutling/Sproutling_Idle.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.6610576923076923,
+    0.10096153846153844
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "Sproutling_Scared",
+   "category": "Characters/Sproutling",
+   "sha256": "18557f1849dbf040bed1f9b2931f52c66dd69d43be70012cd94d2b0342ded65f",
+   "dest": "Assets/Art/Codex/Characters/Sproutling/Sproutling_Scared.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.6610576923076923,
+    0.10096153846153844
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "Wilted_Cape1",
+   "category": "Characters/Wilted",
+   "sha256": "14b9b5831defd102ec0d16ad21a57bd07bd79bbb6edbe5b1f47661b5655dc202",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Cape1.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.69856924,
+    0.9463977
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Cape1)"
+  },
+  {
+   "name": "Wilted_Cape1Lower",
+   "category": "Characters/Wilted",
+   "sha256": "a979e464e80eb0aaecab5440ce2750e3a7a150ef1b43d8d14d2a82582cd43b20",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Cape1Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.69324327,
+    0.93540055
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Cape1Lower)"
+  },
+  {
+   "name": "Wilted_Cape2",
+   "category": "Characters/Wilted",
+   "sha256": "2ee35ce1329315a53c9e6eeed7e142c18ccb0dd1e83e4faa86df82007680f90a",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Cape2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5760424,
+    0.89568627
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Cape2)"
+  },
+  {
+   "name": "Wilted_Cape2Lower",
+   "category": "Characters/Wilted",
+   "sha256": "fcca2e973f67ccb177a91d25faac73ccc18cc70512522f07be830ade891eb7c7",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Cape2Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.6084559,
+    0.9260355
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Cape2Lower)"
+  },
+  {
+   "name": "Wilted_Cape3",
+   "category": "Characters/Wilted",
+   "sha256": "75f0aa01357a465ee5b21d1e1aa8b41ac8aefc91979e41a2e680b36124b8e08e",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Cape3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5199449,
+    0.8795848
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Cape3)"
+  },
+  {
+   "name": "Wilted_Cape3Lower",
+   "category": "Characters/Wilted",
+   "sha256": "160f45495e426834b5257636842bf13fc3bfcb3d2394195076f68ba008eaf57b",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Cape3Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5735294,
+    0.9177632
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Cape3Lower)"
+  },
+  {
+   "name": "Wilted_EarLower",
+   "category": "Characters/Wilted",
+   "sha256": "c453b2cb5c58955548fb3aaf540268937a88cb5e7b2f3cf05173e0334aaf3a43",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_EarLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.93549305,
+    0.4550337
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_EarLower)"
+  },
+  {
+   "name": "Wilted_EarUpper",
+   "category": "Characters/Wilted",
+   "sha256": "8107c629553a398cf1ae606f8600b72edcc1c71e1765be84db9b67b38c3ad37b",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_EarUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.9305826,
+    0.17573586
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_EarUpper)"
+  },
+  {
+   "name": "Wilted_Foot",
+   "category": "Characters/Wilted",
+   "sha256": "b5cbda1b75e87bd8cc1bdccf783e5b8470e67ed5421445fbe32acab0d1eb7971",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Foot.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.3068182,
+    0.8116505
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Foot)"
+  },
+  {
+   "name": "Wilted_Forearm",
+   "category": "Characters/Wilted",
+   "sha256": "9edae9282907d9ee0129ce196f02bb4f331ca25abbaba18767bd92ac5122cab0",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Forearm.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.24992372,
+    0.8780627
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Forearm)"
+  },
+  {
+   "name": "Wilted_ForearmOpen",
+   "category": "Characters/Wilted",
+   "sha256": "b0a15f98c38f5db27c379eb595f40545486b8c7455be1f9818efd36aa973920a",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_ForearmOpen.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.2186097,
+    0.8812849
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_ForearmOpen)"
+  },
+  {
+   "name": "Wilted_ForearmReach",
+   "category": "Characters/Wilted",
+   "sha256": "80f915119800c3d04f77d32bdaf4af2a10b6652e7a65bcb01edf60ee56f53264",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_ForearmReach.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.17367141,
+    0.92267054
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_ForearmReach)"
+  },
+  {
+   "name": "Wilted_Head_Blink",
+   "category": "Characters/Wilted",
+   "sha256": "29e5a9fa217b5386ccce654cb36e6387bc27ff1f33211fe5d88c987edbe50be2",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Head_Blink.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5044907,
+    0.119617224
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Head_Blink)"
+  },
+  {
+   "name": "Wilted_Head_Down",
+   "category": "Characters/Wilted",
+   "sha256": "999ae1a68770fbff6402ec62c6937d20d45cd9efb4970f260019b9932b939633",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Head_Down.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.58241343,
+    0.055930115
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Head_Down)"
+  },
+  {
+   "name": "Wilted_Head_Effort",
+   "category": "Characters/Wilted",
+   "sha256": "9c5a740167d4ffffe9ee553aaaa30ea1032f9f17554ce526ae8f9916c521b9d2",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Head_Effort.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5044907,
+    0.119617224
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Head_Effort)"
+  },
+  {
+   "name": "Wilted_Head_Focus",
+   "category": "Characters/Wilted",
+   "sha256": "f489ccfa296bd120b63bbaea8825b24968ebc8f3a50a7b5bf0fee3e306abce82",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Head_Focus.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5150842,
+    0.13756783
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Head_Focus)"
+  },
+  {
+   "name": "Wilted_Head_Hurt",
+   "category": "Characters/Wilted",
+   "sha256": "772cd9d9ecd31c132d8c8c980d0bc74096e9ec0731a28d449553fd63e74dfd04",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Head_Hurt.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5044907,
+    0.119617224
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Head_Hurt)"
+  },
+  {
+   "name": "Wilted_Head_Neutral",
+   "category": "Characters/Wilted",
+   "sha256": "4a67d8bd58c45eeebc33ccbfcd70b349610fca2e2c398efccae20082de94780a",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Head_Neutral.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5044907,
+    0.119617224
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Head_Neutral)"
+  },
+  {
+   "name": "Wilted_Head_Up",
+   "category": "Characters/Wilted",
+   "sha256": "1d48d26ad97e93cd09ed6d2aad800e89f8e402f60f1dcc96c2c8842ac6fba671",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Head_Up.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5253751,
+    0.08851675
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Head_Up)"
+  },
+  {
+   "name": "Wilted_Healed_Torso",
+   "category": "Characters/Wilted",
+   "sha256": "d5c60df663f2b994f0d97b243f11562ae1cebd72729075b2e778993a3d50e046",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Healed_Torso.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5422594,
+    0.0636
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Torso)"
+  },
+  {
+   "name": "Wilted_Shin",
+   "category": "Characters/Wilted",
+   "sha256": "b053cc9c6a4c78c519a30d5b6614658ced26f721783b1d8b16cc591e8bfd2eff",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Shin.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5486111,
+    0.8660714
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Shin)"
+  },
+  {
+   "name": "Wilted_Skirt",
+   "category": "Characters/Wilted",
+   "sha256": "0d883e1b9695b301eb774dae3e449a985667f6dd0890c04f5dd420ab01b343e1",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Skirt.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5860869,
+    1.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Skirt)"
+  },
+  {
+   "name": "Wilted_Thigh",
+   "category": "Characters/Wilted",
+   "sha256": "6f6e3ed0e8ae3686b310367511596d36dea74bb0fbb4ee5477297dd5d69c5ca8",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Thigh.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.3617021,
+    0.89880955
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Thigh)"
+  },
+  {
+   "name": "Wilted_ThornArmor_Head",
+   "category": "Characters/Wilted",
+   "sha256": "f8d991c3d288ec86b94865972210812dfc8929c7b526fb50ef1d897cacd4dfde",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_ThornArmor_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5044907,
+    0.119617224
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Head_Neutral)"
+  },
+  {
+   "name": "Wilted_ThornArmor_Torso",
+   "category": "Characters/Wilted",
+   "sha256": "7aea81a21c063c403ad557638a59b6a5e7496a9f0a55626dfc56587991fc7d33",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_ThornArmor_Torso.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5422594,
+    0.0636
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Torso)"
+  },
+  {
+   "name": "Wilted_Torso",
+   "category": "Characters/Wilted",
+   "sha256": "ef47964f5562fcd832ac0068cf6ad909a08d747409154e93b0d04d31c2502c47",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Torso.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5422594,
+    0.0636
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_Torso)"
+  },
+  {
+   "name": "Wilted_UpperArm",
+   "category": "Characters/Wilted",
+   "sha256": "144ada49f94cf95a0f3c85e1a33241efc55116b839c5a35ca7e5598bd52397bf",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_UpperArm.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.6748786,
+    0.8137149
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_UpperArm)"
+  },
+  {
+   "name": "Wilted_UpperArmReach",
+   "category": "Characters/Wilted",
+   "sha256": "7f2168cb4da1b4a925dc76fe4f5ebe36aee84643b2cbcdc811f00c8157c11157",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_UpperArmReach.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.7457029,
+    0.86462504
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100.0,
+   "basis": "Qori rig registration (Qori_UpperArmReach)"
+  },
+  {
    "name": "Chart_Base",
    "category": "Chart",
    "sha256": "58fb716a92a48b25723c4dcdf45409de55166b831f15d66233dc7a2255a4f3a6",
@@ -696,6 +1534,114 @@
    "category": "Chart",
    "sha256": "2454bb1ec4ab415d32affcfc1b0cacc703d9e84a3a5bdf8423792d89c1886810",
    "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R7.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Stir_Pose_R1",
+   "category": "Chart",
+   "sha256": "5d9d78620aeed88b3975dd6728efae0629be57d5e67058cfd43fc6b1b00600d6",
+   "dest": "Assets/Art/Codex/Chart/Chart_Stir_Pose_R1.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Stir_Pose_R2",
+   "category": "Chart",
+   "sha256": "cd0a3cb6ae6d0ce920d347bf57c3b147597b1e2c876058a6f4332345eba3dba3",
+   "dest": "Assets/Art/Codex/Chart/Chart_Stir_Pose_R2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Stir_Pose_R3",
+   "category": "Chart",
+   "sha256": "a2c0cd01772dbbae4e8ce26a0c68f2844fc1db83d8636883e5f8ce2ae7fca0db",
+   "dest": "Assets/Art/Codex/Chart/Chart_Stir_Pose_R3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Stir_Pose_R4",
+   "category": "Chart",
+   "sha256": "a7b317e12631641921b901ad61e455ad7977c0d4cd112b95cbf89aa0f8f44eaf",
+   "dest": "Assets/Art/Codex/Chart/Chart_Stir_Pose_R4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Stir_Pose_R5",
+   "category": "Chart",
+   "sha256": "151bb54109b262c9ecd73f649b19d4e4f63702e30d86a82ae74872f9d9db6352",
+   "dest": "Assets/Art/Codex/Chart/Chart_Stir_Pose_R5.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Chart_Stir_Pose_R6",
+   "category": "Chart",
+   "sha256": "4270c60c512f4131fa999794e1516c3d62de8b31535312b89a20e3e30e44c312",
+   "dest": "Assets/Art/Codex/Chart/Chart_Stir_Pose_R6.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
    "mesh": "FullRect",
@@ -10780,7 +11726,7 @@
   {
    "name": "Icon_Weapon_SeedpodMace",
    "category": "Weapons",
-   "sha256": "e236ffa656c9948e51b6d00bdb8f7ea0c51c7acf62cab66ae9482df152384567",
+   "sha256": "ca6234920c2ce16f0979107e74e992ca76f6bf8818e448d8973c1ae554969b32",
    "dest": "Assets/Art/Codex/Weapons/Icon_Weapon_SeedpodMace.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
@@ -10852,7 +11798,7 @@
   {
    "name": "Weapon_SeedpodMace_T2",
    "category": "Weapons",
-   "sha256": "b9ac2934271fdde51e306ddce152806ec155073bae150ea30b48f6a5d1cc9c7a",
+   "sha256": "b5e45dc7995f607a2f88d4c8bb60d961cb719e77fc98ce72795424b30195d7c2",
    "dest": "Assets/Art/Codex/Weapons/Weapon_SeedpodMace_T2.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
