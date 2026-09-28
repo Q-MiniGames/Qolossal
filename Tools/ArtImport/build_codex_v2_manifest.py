@@ -191,6 +191,26 @@ def settings_for(category, name):
         s["mesh"], s["pivot"] = "FullRect", [0.5, 0.5]
         if name in NINE_SLICE:
             s["border"] = list(NINE_SLICE[name])
+    elif category == "Guardians":
+        # Rigged guardian parts (Batch 5 Phase 6): Codex's Review11/GUARDIAN_REGISTRATION.json gives
+        # each part's pivot on its bone; the rig sets the final scale, like the enemies.
+        with open(os.path.join(SOURCE, "Review11", "GUARDIAN_REGISTRATION.json")) as f:
+            reg = {r["name"]: r for r in json.load(f)}[name]
+        w, h = reg["canvas"]; px, py = reg["pivot_px_top_left"]
+        s["ppu"], s["basis"] = reg["ppu"], "Review11/GUARDIAN_REGISTRATION.json: character density"
+        s["pivot"], s["mesh"], s["mipmaps"] = [round(px / w, 5), round(1 - py / h, 5)], "FullRect", True
+    elif category == "Mechanics":
+        # Batch 5 Phase 4: Codex's REGISTRATION.json gives each sprite's pivot, density and repeat axis.
+        with open(os.path.join(SOURCE, "Mechanics", "REGISTRATION.json")) as f:
+            reg = {r["name"]: r for r in json.load(f)}[name]
+        if name.startswith("Icon_"):
+            s["ppu"], s["basis"], s["mesh"], s["pivot"] = UI_PPU, "UI canvas: 1 px = 1 reference px", "FullRect", [0.5, 0.5]
+        else:
+            s["ppu"], s["basis"] = reg["ppu"], "Mechanics/REGISTRATION.json: terrain density"
+            s["pivot"] = [round(v, 5) for v in reg["pivot_normalized_bottom_left"]]
+            s["mesh"] = "FullRect"
+            if reg["repeat_axis"] == "H": s["wrapU"] = "Repeat"
+            if reg["repeat_axis"] == "V": s["wrapV"] = "Repeat"
     elif category in ("Chart", "StirVistas"):
         # The map screen and the stir's full-screen vistas are UI images; the map is zoomed, so it keeps mipmaps.
         s["ppu"], s["basis"] = UI_PPU, "UI canvas: 1 px = 1 reference px"

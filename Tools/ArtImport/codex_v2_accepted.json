@@ -447,7 +447,7 @@
   {
    "name": "FX_Echo_Face",
    "category": "Characters/Echo",
-   "sha256": "de08efed94667eb890e9898bc761acad594c3293a6d1a382ac698205309a3377",
+   "sha256": "dd3fb017d3d66536f7087c87e24948f5009cd2442eb73dd183ef5f1d71677af5",
    "dest": "Assets/Art/Codex/Characters/Echo/FX_Echo_Face.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
@@ -1424,7 +1424,7 @@
   {
    "name": "Chart_Stir_Ghost_R1",
    "category": "Chart",
-   "sha256": "e6b1a0b0170eb3a29db719550e3592501e43d4b597d2eccdf31d0c9b8b174bf0",
+   "sha256": "ca2f6da11a60ae3a2dd6265157329e85374910f9d1e9118a7792efa20ef4a76f",
    "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R1.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
@@ -1442,7 +1442,7 @@
   {
    "name": "Chart_Stir_Ghost_R2",
    "category": "Chart",
-   "sha256": "07f56a0ed87a6928d27bd8755d48df9845bb249f122046103029da286f5d80cd",
+   "sha256": "057d84824d25d826ca73e8847630e0ded106a6d365dfaa0bb8e48a15a6375b3f",
    "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R2.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
@@ -1460,7 +1460,7 @@
   {
    "name": "Chart_Stir_Ghost_R3",
    "category": "Chart",
-   "sha256": "718694e600ce1f363c5f72df14302889811f83c7c7ebf6171c07aac1750c6352",
+   "sha256": "696c32218e8a30acb227819cd915a2e9e04a8873c035ab1017a1839fef3a544c",
    "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R3.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
@@ -1478,7 +1478,7 @@
   {
    "name": "Chart_Stir_Ghost_R4",
    "category": "Chart",
-   "sha256": "24ac2b32401ce459d7307d20464e41dd78f8e5666e2611ac4ad529db152e8c02",
+   "sha256": "bc55eb698a389970b9437daed4e75958f0813bb83de4b2dea4eaab1ad85f7321",
    "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R4.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
@@ -1496,7 +1496,7 @@
   {
    "name": "Chart_Stir_Ghost_R5",
    "category": "Chart",
-   "sha256": "7a0ae92b3be067a162c02f925ad58dd24220084b2225f4cbb2b8eb5f527a545a",
+   "sha256": "371148df5d0c22714dc408331280184dcf6eaa87459570b4d5d40cf441efff9e",
    "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R5.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
@@ -1514,7 +1514,7 @@
   {
    "name": "Chart_Stir_Ghost_R6",
    "category": "Chart",
-   "sha256": "7a70225c1710de8bad4447d7090265375e6def3a523c403062e8e4eab9877daa",
+   "sha256": "41e2ab9a5fb4f3eec6a7a73fbf68d9f99803a4cc19923a4264bb343b4de9153f",
    "dest": "Assets/Art/Codex/Chart/Chart_Stir_Ghost_R6.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
@@ -7120,6 +7120,204 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Knucklebramble_Arm1_Lower",
+   "category": "Guardians",
+   "sha256": "fc2f480a10dc4d7684a22c85a05b1f7301d1b7e627ba71743b7e61129ece20ec",
+   "dest": "Assets/Art/Codex/Guardians/Knucklebramble_Arm1_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.19671,
+    0.53527
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
+  },
+  {
+   "name": "Knucklebramble_Arm1_Upper",
+   "category": "Guardians",
+   "sha256": "ac9e746a12665365b99ce9325262b191064dc16d5831b737a43bdad175c9c4a5",
+   "dest": "Assets/Art/Codex/Guardians/Knucklebramble_Arm1_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.20128,
+    0.5138
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
+  },
+  {
+   "name": "Knucklebramble_Arm2_Lower",
+   "category": "Guardians",
+   "sha256": "af9c70fc2fd5475a29365991219ec05270ad244901306a13f6bf1f273c180987",
+   "dest": "Assets/Art/Codex/Guardians/Knucklebramble_Arm2_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.20037,
+    0.52906
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
+  },
+  {
+   "name": "Knucklebramble_Arm2_Upper",
+   "category": "Guardians",
+   "sha256": "aa4db89238ee4f9412fdd0ef8adb2b6382b25686028518fa4fab2c1b70b618be",
+   "dest": "Assets/Art/Codex/Guardians/Knucklebramble_Arm2_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.20311,
+    0.47166
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
+  },
+  {
+   "name": "Knucklebramble_Arm3_Lower",
+   "category": "Guardians",
+   "sha256": "c15bb787fd6cc4bea504f6a7272923ae56f8d033e52c3064a78434bab244e62e",
+   "dest": "Assets/Art/Codex/Guardians/Knucklebramble_Arm3_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.19854,
+    0.54455
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
+  },
+  {
+   "name": "Knucklebramble_Arm3_Upper",
+   "category": "Guardians",
+   "sha256": "18caecb51670f920f90b10de67e25332fd984d0a537f53e9ca7977f5db5bea5b",
+   "dest": "Assets/Art/Codex/Guardians/Knucklebramble_Arm3_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.20037,
+    0.45756
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
+  },
+  {
+   "name": "Knucklebramble_Body",
+   "category": "Guardians",
+   "sha256": "abf06bbd1546ef81421c32e4fbb9ffb4bb8b4b544cde76a0226c688251487a1a",
+   "dest": "Assets/Art/Codex/Guardians/Knucklebramble_Body.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
+  },
+  {
+   "name": "Knucklebramble_Head",
+   "category": "Guardians",
+   "sha256": "1c6935d23efc9e7c4b23521773d64fba4ea885b5af338554e2423c6cc0582a3c",
+   "dest": "Assets/Art/Codex/Guardians/Knucklebramble_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.18069,
+    0.47857
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
+  },
+  {
+   "name": "Knucklebramble_Jaw",
+   "category": "Guardians",
+   "sha256": "5ac37d093d9931b6dc90801f88a9b082f16fe2c5cce7c2e099ba5314ad3deaa8",
+   "dest": "Assets/Art/Codex/Guardians/Knucklebramble_Jaw.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.17294,
+    0.65435
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
+  },
+  {
+   "name": "Knucklebramble_KnotExposed",
+   "category": "Guardians",
+   "sha256": "e3af85fadc85e9fe65b16079ff0def549fc8ed6e12f10d54663ca578ec5d857a",
+   "dest": "Assets/Art/Codex/Guardians/Knucklebramble_KnotExposed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
+  },
+  {
+   "name": "Knucklebramble_KnotGlow",
+   "category": "Guardians",
+   "sha256": "49b087efa7d0e5a8c007d041fb2ed53ff02909e8cb8c7ac496cd5b4c8db36557",
+   "dest": "Assets/Art/Codex/Guardians/Knucklebramble_KnotGlow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
+  },
+  {
    "name": "FX_Dust_Warning",
    "category": "Hazards",
    "sha256": "cc46f539cda2b72737464ea425e8c8050b5e2f2d5beed08054fb09a22fcb5adc",
@@ -7660,6 +7858,708 @@
    "mipmaps": false,
    "ppu": 120,
    "basis": "Codex-normalized to terrain density 120 px/u"
+  },
+  {
+   "name": "Breath_Vent_Exhale",
+   "category": "Mechanics",
+   "sha256": "da368bc257683ed44366dbb5196d3c221a9795ef36cd3fec679c8e6ef44fcad5",
+   "dest": "Assets/Art/Codex/Mechanics/Breath_Vent_Exhale.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.15625
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Breath_Vent_Inhale",
+   "category": "Mechanics",
+   "sha256": "5fc00bf392d6f1c3804e0471711273363c12d484aaf8489ee5ee5618ca5277b6",
+   "dest": "Assets/Art/Codex/Mechanics/Breath_Vent_Inhale.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.15625
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Clench_Finger_Closed",
+   "category": "Mechanics",
+   "sha256": "2843f0e0095b5c827c028f822fc8a4b8c2cec148c0aff06987dfa3089a747357",
+   "dest": "Assets/Art/Codex/Mechanics/Clench_Finger_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.16667
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Clench_Finger_Open",
+   "category": "Mechanics",
+   "sha256": "59384efb920ddeb83847a919778b6891d2d85c274f0cb1ded8812a6f0d4d5218",
+   "dest": "Assets/Art/Codex/Mechanics/Clench_Finger_Open.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.16667
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Crystal_Mirror_0",
+   "category": "Mechanics",
+   "sha256": "40eb8ef05fc2a0091921a8c4cf0e002bd6af3a36f61c907d80f97ba67d0dcb71",
+   "dest": "Assets/Art/Codex/Mechanics/Crystal_Mirror_0.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Crystal_Mirror_135",
+   "category": "Mechanics",
+   "sha256": "74d9808dd89e10340b923a437a519caca00e8afeaabff4e68d782af3e025c10a",
+   "dest": "Assets/Art/Codex/Mechanics/Crystal_Mirror_135.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Crystal_Mirror_45",
+   "category": "Mechanics",
+   "sha256": "7a5d3fda6e76f8a6acb41054e0911ea0560f0da3d551fdbd8e99c334cf1bc69f",
+   "dest": "Assets/Art/Codex/Mechanics/Crystal_Mirror_45.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Crystal_Mirror_90",
+   "category": "Mechanics",
+   "sha256": "474fb43915fa6b3559d722d93ebd654a9d7be1d5340e0ff8fe5d0b84fdfcba80",
+   "dest": "Assets/Art/Codex/Mechanics/Crystal_Mirror_90.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "FX_Breath_Current",
+   "category": "Mechanics",
+   "sha256": "055f88394f0566c8a5275c853b1417e28c45e87c6e54b405e4abd9c23b8b3b13",
+   "dest": "Assets/Art/Codex/Mechanics/FX_Breath_Current.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Icon_Ability_Sight",
+   "category": "Mechanics",
+   "sha256": "329693b21553ca5e7e90b50d4263a804cbd482120e73e18ac25e7c59d810f118",
+   "dest": "Assets/Art/Codex/Mechanics/Icon_Ability_Sight.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Light_Beam",
+   "category": "Mechanics",
+   "sha256": "794f4e9ff2c0e7bcd82c7cbe283aaa41268165f8739b4f84cef4c61de156eff3",
+   "dest": "Assets/Art/Codex/Mechanics/Light_Beam.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Light_Receiver_Off",
+   "category": "Mechanics",
+   "sha256": "0694a171856034e24d0f79d2bd877ff309b1c25bc73c228bdbf5823bcc09ea4b",
+   "dest": "Assets/Art/Codex/Mechanics/Light_Receiver_Off.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.1875
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Light_Receiver_On",
+   "category": "Mechanics",
+   "sha256": "f546616fe4e4877b2fe391cdf0706549e75e28164a90c6467b825365b496cd7b",
+   "dest": "Assets/Art/Codex/Mechanics/Light_Receiver_On.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.1875
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Mill_Wheel",
+   "category": "Mechanics",
+   "sha256": "ef12546936aab0642e7ff93a3833f6d93168050f433e3d1f9911cfe45be399b3",
+   "dest": "Assets/Art/Codex/Mechanics/Mill_Wheel.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Pulse_Bridge_Peak",
+   "category": "Mechanics",
+   "sha256": "d621f3a9740bba9448ecf07b7782df7b6d9af48a9e0d11badebb6265831602c5",
+   "dest": "Assets/Art/Codex/Mechanics/Pulse_Bridge_Peak.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.1875
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Pulse_Bridge_Rest",
+   "category": "Mechanics",
+   "sha256": "65bbcc519c461c559ab32dd9fd95a0f015438c6b828eeeba40c71bfcba0ec511",
+   "dest": "Assets/Art/Codex/Mechanics/Pulse_Bridge_Rest.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.1875
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Pulse_Bridge_Swell",
+   "category": "Mechanics",
+   "sha256": "2798411b5347f13879a4609a40d5506648d901566a773bdabb9c5dd5d92142d9",
+   "dest": "Assets/Art/Codex/Mechanics/Pulse_Bridge_Swell.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.1875
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Relic_SeersLantern",
+   "category": "Mechanics",
+   "sha256": "4564eba79a295737b4498180f3aaaf641a5865e0910fbf5bc0301f7e3cc39bdc",
+   "dest": "Assets/Art/Codex/Mechanics/Relic_SeersLantern.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Sap_Bridge",
+   "category": "Mechanics",
+   "sha256": "bab237a308750d37e9130ebfe68489dda695096cd2780a9acdbdf46f6283f857",
+   "dest": "Assets/Art/Codex/Mechanics/Sap_Bridge.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Sap_Sac_Burst",
+   "category": "Mechanics",
+   "sha256": "c78806ecb5232be529be8238a6a7e22e6eabba837a6b687f6bfaed158df01d5a",
+   "dest": "Assets/Art/Codex/Mechanics/Sap_Sac_Burst.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Sap_Sac_Full",
+   "category": "Mechanics",
+   "sha256": "4b5e0a80ef5a223d9c7b848614705f4772c41aee157eb442f21708032a3c027d",
+   "dest": "Assets/Art/Codex/Mechanics/Sap_Sac_Full.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Sluice_Gate_Closed",
+   "category": "Mechanics",
+   "sha256": "78480a8f5ff31caaa5a829a823599c1a21c43060e94e57f34466c5b20278b207",
+   "dest": "Assets/Art/Codex/Mechanics/Sluice_Gate_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Sluice_Gate_Open",
+   "category": "Mechanics",
+   "sha256": "586d6ee0cd63e09780fdf3be4522c0fa50e4f7b1fe66262b654103da80ed5bdb",
+   "dest": "Assets/Art/Codex/Mechanics/Sluice_Gate_Open.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A0_Closed",
+   "category": "Mechanics",
+   "sha256": "b1d170522127f76f82f8d825f5bcdb5f3283a7c7086906e9b5787c77b400a6ef",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A0_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A0_Open",
+   "category": "Mechanics",
+   "sha256": "831a5b457160884f7fb340dc90e8642c5fc11e7e84f90d3063b6b97e3f5731cc",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A0_Open.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A1_Closed",
+   "category": "Mechanics",
+   "sha256": "e5414d77f723c61b9053e71f5e2840392f631237503606e1ce105c7f1d5d298b",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A1_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A1_Open",
+   "category": "Mechanics",
+   "sha256": "98de7622e76b77869960621b77f51571cbd46c70bd64697c954f30a9f31c41af",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A1_Open.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A2_Closed",
+   "category": "Mechanics",
+   "sha256": "814689f75c7d5383d5c8c2dde14fd305c63ad09717e7d07574ff006c3819ed81",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A2_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A2_Open",
+   "category": "Mechanics",
+   "sha256": "af3500625100a13cb7e14d79a272e04a1c4d3620c0aeb58411d766173269cbf5",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A2_Open.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A3_Closed",
+   "category": "Mechanics",
+   "sha256": "a7d04cc18669539ba9dbebd1751cec651c5bb0e69931785562910557a722c53b",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A3_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A3_Open",
+   "category": "Mechanics",
+   "sha256": "e588994d8730d34abd4edce68a26fe9d7708c1a7f1779a4b778253b08c8483ca",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A3_Open.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A4_Closed",
+   "category": "Mechanics",
+   "sha256": "e2715276e01eb3d30a821e7ae76504068c8713acbd0f43ee22e47658ad660e3e",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A4_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A4_Open",
+   "category": "Mechanics",
+   "sha256": "fca39210bff89e4b5613bb22b5a2918cf249c3067ef0f38a0694533fecb28919",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A4_Open.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A5_Closed",
+   "category": "Mechanics",
+   "sha256": "4f4db62484a265c7bdd657bd09d3e007d49429b3749780c030e6db17bd901732",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A5_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A5_Open",
+   "category": "Mechanics",
+   "sha256": "f81f343eb26e154e8ee50468a54684336fe8b085a8860cba26b67d61f0f720d3",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A5_Open.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A6_Closed",
+   "category": "Mechanics",
+   "sha256": "0b5f485c3afd3b1b94698f6f469631b4826e17513b873f153a029ac858fae95c",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A6_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Stir_Gate_A6_Open",
+   "category": "Mechanics",
+   "sha256": "551bb45d7a40557bfa0c1ea0b81ad5766ad54c558926c900c63e04fa4630ac3c",
+   "dest": "Assets/Art/Codex/Mechanics/Stir_Gate_A6_Open.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Tendon_Anchor",
+   "category": "Mechanics",
+   "sha256": "48dc0f1f19a9fbb9689b34f855489ec8df7a10eceff7c5ec6ceb9006bb997227",
+   "dest": "Assets/Art/Codex/Mechanics/Tendon_Anchor.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.17188
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
+  },
+  {
+   "name": "Tendon_Block",
+   "category": "Mechanics",
+   "sha256": "dc11a290d478846ec0b20897ead65284f48cd3454336de3d743903f38ee525eb",
+   "dest": "Assets/Art/Codex/Mechanics/Tendon_Block.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Mechanics/REGISTRATION.json: terrain density"
   },
   {
    "name": "Qori_Face_Effort",
@@ -11762,7 +12662,7 @@
   {
    "name": "Icon_Weapon_ThornSpear",
    "category": "Weapons",
-   "sha256": "d89274c79f696fa8111097672d1f5dd6d3111fb2753bd6df99f6a9feb09b2ac6",
+   "sha256": "5aa3280e1679a1484451347d90f74dbe686349abb2e0a4c292bf2ed2400a1f8a",
    "dest": "Assets/Art/Codex/Weapons/Icon_Weapon_ThornSpear.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
@@ -11816,7 +12716,7 @@
   {
    "name": "Weapon_ThornSpear_T2",
    "category": "Weapons",
-   "sha256": "5866b2d7b079c6e07b29569cedd4d102d76a01d972ea80fba5c7b5f40bad6fae",
+   "sha256": "7e0e21b6323a2aeb97e551bb2064a776d1314a1a4ddb4f7df2cbea8e3bb34a9c",
    "dest": "Assets/Art/Codex/Weapons/Weapon_ThornSpear_T2.png",
    "wrapU": "Clamp",
    "wrapV": "Clamp",
