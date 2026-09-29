@@ -14,6 +14,7 @@ public static class CodexArtImporter
 {
     public const string ManifestPath = "Tools/ArtImport/codex_v2_accepted.json";
     public const string DestinationRoot = "Assets/Art/Codex/";
+    public const int DefaultMaxSize = 2048;
 
     [Serializable] public class Manifest { public string source; public string destination; public Entry[] assets; }
 
@@ -21,6 +22,8 @@ public static class CodexArtImporter
     {
         public string name, category, sha256, dest, wrapU, wrapV, mesh, basis;
         public float ppu;
+        [Tooltip("Largest imported size (px); 0 means the default 2048. The manifest raises it for larger sources so none are downscaled.")]
+        public int maxSize;
         public float[] pivot, border;
         public bool mipmaps;
         public SubSprite[] sprites;
@@ -95,6 +98,9 @@ public static class CodexArtImporter
             if (importer == null) { Debug.LogError($"[CodexArtImporter] Not imported: {entry.dest}"); problems++; continue; }
             if (!Mathf.Approximately(importer.spritePixelsPerUnit, entry.ppu) || importer.textureType != TextureImporterType.Sprite)
             { Debug.LogError($"[CodexArtImporter] Wrong settings: {entry.dest}"); problems++; }
+            importer.GetSourceTextureWidthAndHeight(out int width, out int height);
+            if (Mathf.Max(width, height) > importer.maxTextureSize)
+            { Debug.LogError($"[CodexArtImporter] {entry.dest} is {width}x{height} but imports at most {importer.maxTextureSize}: it is being downscaled"); problems++; }
             if (entry.sprites != null && entry.sprites.Length > 0)
             {
                 int count = AssetDatabase.LoadAllAssetsAtPath(entry.dest).OfType<Sprite>().Count();
@@ -156,7 +162,7 @@ public sealed class CodexArtPostprocessor : AssetPostprocessor
         importer.filterMode = FilterMode.Bilinear;
         importer.wrapModeU = entry.wrapU == "Repeat" ? TextureWrapMode.Repeat : TextureWrapMode.Clamp;
         importer.wrapModeV = entry.wrapV == "Repeat" ? TextureWrapMode.Repeat : TextureWrapMode.Clamp;
-        importer.maxTextureSize = 2048;
+        importer.maxTextureSize = entry.maxSize > 0 ? entry.maxSize : CodexArtImporter.DefaultMaxSize;
         importer.textureCompression = TextureImporterCompression.CompressedHQ;
 
         var settings = new TextureImporterSettings();

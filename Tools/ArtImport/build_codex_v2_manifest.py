@@ -34,6 +34,7 @@ TERRAIN_PPU = 120  # texel density of the terrain kit, backgrounds and decor
 CHARACTER_PPU = 600  # nominal; rigs normalize final part scale from joints
 PLAYER_PPU = 100  # the Qori rig's convention (QoriRigBuilder / Qori v1 parts)
 UI_PPU = 100  # 1 sprite pixel = 1 canvas reference pixel
+DEFAULT_MAX_SIZE = 2048  # CodexArtImporter.DefaultMaxSize
 
 # Pairs whose files share one canvas and registration: the second uses the
 # first's pixels per unit and pivot, so swapping states never shifts or scales.
@@ -355,6 +356,12 @@ def build_entry(category, name, reviewed_sha):
     entry = {"name": name, "category": category, "sha256": reviewed_sha,
              "dest": f"{DEST_ROOT}/{category}/{name}.png"}
     entry.update(settings_for(category, name))
+    # The importer caps textures at 2048 px; a larger source gets the next power of two so it is
+    # never downscaled (platform import profiles can lower it later, per measured budgets).
+    with Image.open(source_path(category, name)) as im:
+        longest = max(im.size)
+    if longest > DEFAULT_MAX_SIZE:
+        entry["maxSize"] = 1 << (longest - 1).bit_length()
     if category == "Decor" and name.endswith("_Sheet"):
         entry["sprites"] = decor_sprites(name)
     if name in PIECE_SHEETS:
