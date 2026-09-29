@@ -6,8 +6,9 @@ using UnityEngine;
 // The saved game: relics found, pickups collected (heart seeds), the checkpoint touched in each area, and the last checkpoint
 // overall (where a fresh launch continues from). Also the state of the titan's world: the knots
 // woken, the levels charted (at their Waymarks), the veins travelled, and the Sproutlings and Lore
-// Stones found. Written as JSON to the persistent data folder whenever something changes. Health
-// is not saved; a loaded game starts with full hearts.
+// Stones found. Written as JSON to the persistent data folder whenever something changes, safely:
+// a temporary file is swapped in for the old save, which is kept as a backup and read if the save
+// itself is ever unreadable. Health is not saved; a loaded game starts with full hearts.
 public static class GameSave
 {
     [Serializable] sealed class Checkpoint { public string scene, id; }
@@ -27,6 +28,9 @@ public static class GameSave
 
     static Data data;
     public static string FilePath => Path.Combine(Application.persistentDataPath, "qolossal_save.json");
+    // The previous save, kept when a new one replaces it; read if the save itself is unreadable.
+    public static string BackupPath => FilePath + ".bak";
+    static string TempPath => FilePath + ".tmp";
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     static void ResetState() { data = null; WorldChanged = null; }
@@ -36,8 +40,12 @@ public static class GameSave
         get
         {
             if (data != null) return data;
-            try { data = File.Exists(FilePath) ? JsonUtility.FromJson<Data>(File.ReadAllText(FilePath)) : null; }
-            catch (Exception e) { Debug.LogWarning("[GameSave] could not read the save, starting fresh: " + e.Message); }
+            data = Read(FilePath);
+            if (data == null && File.Exists(BackupPath))
+            {
+                data = Read(BackupPath);
+                if (data != null) Debug.LogWarning("[GameSave] the save was unreadable; continuing from the previous one");
+            }
             data ??= new Data();
             // Saves from before the world state (version 1) have none of its lists.
             data.knots ??= new List<string>(); data.charted ??= new List<string>(); data.veins ??= new List<string>();
@@ -53,9 +61,36 @@ public static class GameSave
     // Rereads the file (the editor's World State window, after it has been changed elsewhere).
     public static void Reload() { data = null; WorldChanged?.Invoke(); }
 
+    static Data Read(string path)
+    {
+        if (!File.Exists(path)) return null;
+        try
+        {
+            string json = File.ReadAllText(path);
+            return string.IsNullOrWhiteSpace(json) ? null : JsonUtility.FromJson<Data>(json);
+        }
+        catch (Exception e) { Debug.LogWarning($"[GameSave] could not read {Path.GetFileName(path)}: " + e.Message); return null; }
+    }
+
+    // Writes the whole save to a temporary file, flushed to disk, then swaps it in for the old
+    // one, which is kept as the backup. A crash or power cut mid-write leaves the old save whole.
     static void Write()
     {
-        try { File.WriteAllText(FilePath, JsonUtility.ToJson(Current, true)); }
+        try
+        {
+            using (var stream = new FileStream(TempPath, FileMode.Create, FileAccess.Write, FileShare.None))
+            using (var writer = new StreamWriter(stream))
+            {
+                writer.Write(JsonUtility.ToJson(Current, true));
+                writer.Flush(); stream.Flush(true);
+            }
+            if (!File.Exists(FilePath)) { File.Move(TempPath, FilePath); return; }
+            try { File.Replace(TempPath, FilePath, BackupPath); }
+            catch (PlatformNotSupportedException)   // no atomic replace here: back up, then move into place
+            {
+                File.Copy(FilePath, BackupPath, true); File.Delete(FilePath); File.Move(TempPath, FilePath);
+            }
+        }
         catch (Exception e) { Debug.LogWarning("[GameSave] could not write the save: " + e.Message); }
     }
 
@@ -138,7 +173,7 @@ public static class GameSave
     public static void Clear()
     {
         data = new Data();
-        try { if (File.Exists(FilePath)) File.Delete(FilePath); }
+        try { foreach (string path in new[] { FilePath, BackupPath, TempPath }) if (File.Exists(path)) File.Delete(path); }
         catch (Exception e) { Debug.LogWarning("[GameSave] could not delete the save: " + e.Message); }
         WorldChanged?.Invoke();
     }

@@ -56,6 +56,17 @@ public static class WorldCheck
         GameSave.Reload();
         Expect(GameSave.IsCharted("a0-mossy-hollow") && GameSave.KnowsVein("a0-knot", "r1k-west") && GameSave.HasLoreStone("a0-lore"), "the world state survives a reload from the file");
 
+        // Safe saving: each write swaps a finished file in and keeps the one before as a backup.
+        GameSave.AddLoreStone("a0-lore-2");
+        Expect(File.Exists(GameSave.BackupPath) && !File.Exists(GameSave.FilePath + ".tmp"), "a save keeps the previous one as a backup and leaves no temporary file");
+        Expect(File.ReadAllText(GameSave.BackupPath).Contains("a0-lore") && !File.ReadAllText(GameSave.BackupPath).Contains("a0-lore-2"), "the backup is the save from before the last change");
+        File.WriteAllText(GameSave.FilePath, "{\"version\":2,\"relics\":[\"cli");   // a write cut off half-way
+        GameSave.Reload();
+        Expect(GameSave.IsCharted("a0-mossy-hollow") && GameSave.HasLoreStone("a0-lore"), "a cut-off save falls back to the backup instead of starting over");
+        File.WriteAllText(GameSave.FilePath, "");
+        GameSave.Reload();
+        Expect(GameSave.IsCharted("a0-mossy-hollow"), "so does an empty one");
+
         // The atlas the room builders recorded.
         var atlas = AssetDatabase.LoadAssetAtPath<WorldAtlas>("Assets/Resources/World/WorldAtlas.asset");
         Expect(atlas != null && atlas.levels.Count >= 4, $"the world atlas has the four levels ({atlas?.levels.Count})");
@@ -94,5 +105,8 @@ public static class WorldCheck
                $"after it a clenched finger bridges the Crease at the walk line ({Probe().collider?.name} at {Probe().point.y:F2})");
         GameSave.SetKnotAwake(Knots.Grip, false); variant.Apply();
         Expect(!variant.transform.GetChild(0).gameObject.activeSelf, "and the pit returns if the knot sleeps again");
+
+        GameSave.Clear();
+        Expect(!File.Exists(GameSave.FilePath) && !File.Exists(GameSave.BackupPath), "a new game removes the save and its backup");
     }
 }
