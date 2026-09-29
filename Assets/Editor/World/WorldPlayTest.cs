@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -150,9 +150,18 @@ public static class WorldPlayTest
             {
                 var knot = Object.FindFirstObjectByType<TitanKnot>();
                 Expect(!knot.TryWake() && !StirSequence.IsPlaying, "touching the sealed knot does nothing while the guardian lives");
-                var guardian = Object.FindFirstObjectByType<GroundCreature>();
-                Expect(guardian != null && guardian.transform.localScale.x > 1.5f, "the guardian (a giant Crawler) is in the chamber");
-                for (int i = 0; i < 8; i++) guardian.TakeHit();
+                var guardian = Object.FindFirstObjectByType<KnucklebrambleGuardian>();
+                Expect(guardian != null && guardian.IsAlive, "the Knucklebramble is in the chamber");
+                // Its own fight is GuardianPlayTest's; here its knot is opened and cut until it falls.
+                guardian.Expose();
+                Next(71, t);
+                break;
+            }
+            case 71 when t - stageAt > .6f:   // opened by now: three hits close it, then open it again
+            {
+                var guardian = Object.FindFirstObjectByType<KnucklebrambleGuardian>();
+                for (int i = 0; i < 3; i++) guardian.TakeHit();
+                if (guardian.IsAlive) { guardian.Expose(); Next(71, t); break; }
                 Next(8, t);
                 break;
             }
@@ -171,7 +180,7 @@ public static class WorldPlayTest
                 Expect(!StirSequence.IsPlaying && t - stageAt < 30f, $"the stir plays through ({t - stageAt:F1} s)");
                 Expect(GameSave.IsKnotAwake(Knots.Grip) && knot.Current == TitanKnot.State.Awake, "the Grip Knot is awake and saved");
                 Expect(Qori.GetComponent<PlayerAbilityController>().HasAbility(Relics.ClimbingMoss) && GameSave.HasRelic(Relics.ClimbingMoss), "it gives Climbing Moss");
-                Expect(Object.FindFirstObjectByType<GroundCreature>() == null && PortalNamed("r1k-elbow") != null && Named<SpriteRenderer>("Dormant Vein Gate") == null,
+                Expect(Object.FindFirstObjectByType<KnucklebrambleGuardian>() == null && PortalNamed("r1k-elbow") != null && Named<SpriteRenderer>("Dormant Vein Gate") == null,
                        "the chamber changed at once: the guardian gone, the elbow vein grown");
                 Expect(Mathf.Abs(Camera.main.orthographicSize - 5f) < .01f && !GamePauseMenu.BlocksGameplayInput, "the view and the controls are back");
                 var gate = Object.FindFirstObjectByType<StirGate>();

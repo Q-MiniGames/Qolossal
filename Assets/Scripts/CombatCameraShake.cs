@@ -9,6 +9,8 @@ public sealed class CombatCameraShake : MonoBehaviour
     {
         if(feedback!=null)feedback.OnCameraImpulse-=Impulse;feedback=source;if(feedback!=null)feedback.OnCameraImpulse+=Impulse;
     }
+    // A shake from something other than Qori's own blows (a guardian's slam).
+    public static void Kick(float strength){var shake=FindFirstObjectByType<CombatCameraShake>();if(shake!=null)shake.Impulse(default,strength);}
     void Impulse(Vector2 point,float strength){amplitude=Mathf.Max(amplitude,Mathf.Clamp(strength,0,.08f));until=Time.unscaledTime+.09f;}
     void Update(){transform.position-=applied;applied=Vector3.zero;if(Time.timeScale<=0)until=0;}
     void LateUpdate()

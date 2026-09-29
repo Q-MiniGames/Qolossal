@@ -6,8 +6,7 @@ using UnityEngine;
 // Builds Assets/Scenes/R1_GripKnot.unity, a placeholder Grip Knot chamber (the Palm's Knot
 // Chamber, world design 3.3) from the A0 kit, to try out the knot flow before the titan art and
 // the real R1 levels exist. West to east: the Vein Gate from A0 and a Waymark; the guardian's
-// floor, where a Bramble Crawler grown to twice its size stands in for the Knucklebramble; the
-// knot on its dais, sealed in thorns while the guardian lives; and a dormant arch where, once
+// floor, where the Knucklebramble is rooted (KnucklebrambleRigBuilder); the knot on its dais, sealed in thorns while the guardian lives; and a dormant arch where, once
 // the Grip Knot wakes and the hand clenches, a new vein to the Arm (A1) grows.
 // Menu: Qolossal > Scenes > Build R1 Grip Knot
 public static class R1GripKnotBuilder
@@ -36,19 +35,15 @@ public static class R1GripKnotBuilder
         room.Portal(new Vector2(0f, 0f), "r1k-west", "A0_TestRoom", "a0-knot", "A0 Mossy Hollow", 1f);
         room.Waymark(new Vector2(7f, 0f), "r1k-waymark");
 
-        // The guardian: a Crawler grown to twice its size, sturdier and roaming the whole floor.
-        // It is part of the chamber only before the knot wakes; afterwards the chamber is quiet.
+        // The guardian, rooted mid-floor between the gate and the knot: three thorn-arm slams,
+        // then its knot is exposed. It is part of the chamber only before the knot wakes;
+        // afterwards the chamber is quiet.
         GameObject guardian;
         using (room.Stir("Guardian", Knots.Grip, afterKnot: false))
         {
-            guardian = room.Enemy("GroundCreature01", new Vector2(28f, .8f), false);
-            guardian.name = "Knucklebramble (stand-in)";
-            guardian.transform.localScale = new Vector3(2f, 2f, 1f);
-            var settings = new SerializedObject(guardian.GetComponent<GroundCreature>());
-            settings.FindProperty("maximumHealth").intValue = 8;
-            settings.FindProperty("patrolHalfWidth").floatValue = 6f;
-            settings.FindProperty("detectRange").floatValue = 7f;
-            settings.ApplyModifiedPropertiesWithoutUndo();
+            if (AssetDatabase.LoadAssetAtPath<GameObject>(KnucklebrambleRigBuilder.PrefabPath) == null) KnucklebrambleRigBuilder.Build();
+            guardian = room.Enemy("Knucklebramble01", new Vector2(28f, -.04f), false);
+            guardian.name = "Knucklebramble";
         }
 
         var moss = AssetDatabase.LoadAssetAtPath<AbilityDefinition>("Assets/Resources/Relics/ClimbingMoss.asset");

@@ -1,0 +1,207 @@
+{
+ "ppu": 600.0,
+ "height": 3.3,
+ "bones": [
+  {
+   "name": "Body",
+   "parent": "",
+   "sprite": "Knucklebramble_Body",
+   "pos": [
+    0.0,
+    1.07175
+   ],
+   "artRot": 0.0,
+   "length": 0.0,
+   "order": 10
+  },
+  {
+   "name": "Arm1_Upper",
+   "parent": "Body",
+   "sprite": "Knucklebramble_Arm1_Upper",
+   "pos": [
+    -1.03566,
+    1.544
+   ],
+   "artRot": 2.940100223783382,
+   "length": 1.10479,
+   "order": 4
+  },
+  {
+   "name": "Arm1_Lower",
+   "parent": "Arm1_Upper",
+   "sprite": "Knucklebramble_Arm1_Lower",
+   "pos": null,
+   "artRot": 0.0,
+   "length": 1.205,
+   "order": 5
+  },
+  {
+   "name": "Arm2_Upper",
+   "parent": "Body",
+   "sprite": "Knucklebramble_Arm2_Upper",
+   "pos": [
+    -0.11208,
+    2.03644
+   ],
+   "artRot": 3.386846992230799,
+   "length": 1.10026,
+   "order": 2
+  },
+  {
+   "name": "Arm2_Lower",
+   "parent": "Arm2_Upper",
+   "sprite": "Knucklebramble_Arm2_Lower",
+   "pos": null,
+   "artRot": 0.0,
+   "length": 1.19833,
+   "order": 3
+  },
+  {
+   "name": "Arm3_Upper",
+   "parent": "Body",
+   "sprite": "Knucklebramble_Arm3_Upper",
+   "pos": [
+    1.03606,
+    1.35027
+   ],
+   "artRot": 1.720077046944863,
+   "length": 1.1105,
+   "order": 0
+  },
+  {
+   "name": "Arm3_Lower",
+   "parent": "Arm3_Upper",
+   "sprite": "Knucklebramble_Arm3_Lower",
+   "pos": null,
+   "artRot": 0.0,
+   "length": 1.20167,
+   "order": 1
+  },
+  {
+   "name": "Head",
+   "parent": "Body",
+   "sprite": "Knucklebramble_Head",
+   "pos": [
+    0.02415,
+    0.4309
+   ],
+   "artRot": 0.0,
+   "length": 0.0,
+   "order": 14
+  },
+  {
+   "name": "Jaw",
+   "parent": "Head",
+   "sprite": "Knucklebramble_Jaw",
+   "pos": [
+    0.40082,
+    0.24231
+   ],
+   "artRot": 0.0,
+   "length": 0.0,
+   "order": 13
+  },
+  {
+   "name": "KnotGlow",
+   "parent": "Body",
+   "sprite": "Knucklebramble_KnotGlow",
+   "pos": [
+    0.01429,
+    1.30765
+   ],
+   "artRot": 0.0,
+   "length": 0.0,
+   "order": 20
+  }
+ ],
+ "poses": [
+  {
+   "name": "Rest",
+   "armAngles": [
+    155,
+    70,
+    55,
+    175,
+    -35,
+    -165
+   ]
+  },
+  {
+   "name": "Arm1_Raised",
+   "armAngles": [
+    125,
+    85,
+    55,
+    175,
+    -35,
+    -165
+   ]
+  },
+  {
+   "name": "Arm2_Raised",
+   "armAngles": [
+    155,
+    70,
+    70,
+    105,
+    -35,
+    -165
+   ]
+  },
+  {
+   "name": "Arm3_Raised",
+   "armAngles": [
+    155,
+    70,
+    55,
+    175,
+    35,
+    90
+   ]
+  },
+  {
+   "name": "Knot_Exposed",
+   "armAngles": [
+    140,
+    110,
+    75,
+    70,
+    25,
+    65
+   ]
+  },
+  {
+   "name": "Arm1_Slam",
+   "armAngles": [
+    -168.381,
+    -103.543,
+    55,
+    175,
+    -35,
+    -165
+   ]
+  },
+  {
+   "name": "Arm2_Slam",
+   "armAngles": [
+    155,
+    70,
+    -25.462,
+    -30.068,
+    -35,
+    -165
+   ]
+  },
+  {
+   "name": "Arm3_Slam",
+   "armAngles": [
+    155,
+    70,
+    55,
+    175,
+    -1.326,
+    -77.81
+   ]
+  }
+ ]
+}
