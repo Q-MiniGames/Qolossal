@@ -1,5 +1,7 @@
 # Qolossal: asset request for Codex, Batch 5 ("The Qolossal")
 
+> **Platform direction — user decision, 2026-09-29:** Windows PC, PS5, Xbox Series X|S and Nintendo Switch 2. Original Switch is excluded. Read [the platform policy](../Design/QOLOSSAL_PLATFORM_DIRECTION.md) before applying this brief. Preserve accepted source bytes; use measured platform-specific runtime settings. This addendum does not reopen approvals or start a new batch.
+
 The game's world has been redesigned around one idea: **every area is part of the body of a sleeping titan, the Qolossal.** Read `Tools/Design/QOLOSSAL_WORLD_DESIGN.md` sections 0–1 and 6 before starting; they are the brief for everything here.
 
 **Unchanged from v2** (`Tools/ArtRequests/QOLOSSAL_ASSET_REQUESTS.md`):

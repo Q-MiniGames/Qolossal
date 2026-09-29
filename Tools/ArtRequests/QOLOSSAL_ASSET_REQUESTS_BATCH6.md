@@ -1,5 +1,7 @@
 # Qolossal: asset request for Codex, Batch 6 (everything that's left, in parallel)
 
+> **Platform direction — user decision, 2026-09-29:** Windows PC, PS5, Xbox Series X|S and Nintendo Switch 2. Original Switch is excluded. Read [the platform policy](../Design/QOLOSSAL_PLATFORM_DIRECTION.md) before applying this brief. Preserve accepted source bytes; use measured platform-specific runtime settings. This addendum does not reopen approvals or start a new batch.
+
 Batch 5 settled the world: the titan's design, the Chart, the knots and veins, the characters, the puzzle mechanics, the first guardian and the A5 kit are all accepted. The remaining work is mostly **more of what's already defined**, so this batch is organised differently from the last ones:
 
 - **Six independent workstreams.** Run them in parallel with separate agents. None depends on another, except where a stream says so.

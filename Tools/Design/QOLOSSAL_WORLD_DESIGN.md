@@ -1,5 +1,7 @@
 # Qolossal: world and game design (v1)
 
+> **Platform direction — user decision, 2026-09-29:** Windows PC, PS5, Xbox Series X|S and Nintendo Switch 2. Original Switch is excluded. Read [the platform policy](QOLOSSAL_PLATFORM_DIRECTION.md) before applying this brief. Preserve accepted source bytes; use measured platform-specific runtime settings. This addendum does not reopen approvals or start a new batch.
+
 The big picture first: the Qolossal itself, then the world map cut from its body, then the systems, story, characters, levels, art and music that follow from it. This document drives level building from here on, and the Codex request in `Tools/ArtRequests/QOLOSSAL_ASSET_REQUESTS_BATCH5.md`.
 
 ---

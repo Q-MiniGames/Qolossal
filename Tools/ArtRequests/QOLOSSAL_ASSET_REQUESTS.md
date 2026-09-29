@@ -1,5 +1,7 @@
 # Qolossal: complete asset request for Codex (v2)
 
+> **Platform direction — user decision, 2026-09-29:** Windows PC, PS5, Xbox Series X|S and Nintendo Switch 2. Original Switch is excluded. Read [the platform policy](../Design/QOLOSSAL_PLATFORM_DIRECTION.md) before applying this brief. Preserve accepted source bytes; use measured platform-specific runtime settings. This addendum does not reopen approvals or start a new batch.
+
 This is the full list of artwork Qolossal needs to finish its mechanics and build the first portal-maze loop. It is written for Codex (image generation). Each entry is ready to turn into a prompt.
 
 **How to use this file**
