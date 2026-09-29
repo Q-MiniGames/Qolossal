@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 // Drives Qori's cutout rig (Assets/Art/Characters/QoriRig) from gameplay state.
 // All poses live in AnimationClips; this component only picks the state,
@@ -69,6 +70,14 @@ public sealed class QoriAnimator : MonoBehaviour
     [Header("Rope")]
     public float ropeTiltLimit = 45f;
     public float ropeTiltSmoothing = .08f;
+
+    [Header("Wind Leaf dash and Glidecap glide")]
+    [Tooltip("Degrees Qori leans forward into a dash.")] public float dashLean = 16f;
+    [Tooltip("Most the rig tilts with the drift while gliding.")] public float glideTiltLimit = 10f;
+    [Tooltip("Seconds the canopy takes to spring open.")] public float glidecapOpenSeconds = .15f;
+    [Tooltip("Direction of the free upper arm while gliding (degrees; 0 = forward, 90 = up). Codex's held proof: forward, grip at the chest.")] public float glideUpperArmAngle = 20f;
+    [Tooltip("Direction of the free forearm while gliding (degrees).")] public float glideForearmAngle = 70f;
+    [Tooltip("Sorting order of the free arm while gliding: in front of the torso (10), behind the sword arm (15).")] public int glideArmOrder = 11;
 
     static readonly int IdleState = Animator.StringToHash("Idle");
     static readonly int WalkState = Animator.StringToHash("Walk");
@@ -195,6 +204,8 @@ public sealed class QoriAnimator : MonoBehaviour
         }
         bool wallJumping = Time.time < wallJumpUntil && !movement.IsGrounded && !attached && !movement.IsWallSliding;
         bool ledge = movement.IsLedgeHanging || movement.IsLedgeClimbing;
+        // The Glidecap: the idle pose, with the free near arm raised to its grip (RaiseGlideArm).
+        bool gliding = movement.IsGliding && !attacking && !hanging;
 
         int state; float blend;
         if (attacking)
@@ -210,6 +221,7 @@ public sealed class QoriAnimator : MonoBehaviour
         }
         else if (movement.IsLedgeHanging) { state = LedgeHangState; blend = .08f; }
         else if (hanging) { state = HangState; blend = airBlend; }
+        else if (gliding) { state = IdleState; blend = airBlend; }   // at rest under the canopy, sword in hand
         else if (wallJumping) { state = wallJumpAway ? WallJumpOffState : WallJumpUpState; blend = .04f; }
         else if (movement.IsWallSliding) { state = WallSlideState; blend = .08f; }
         else if (!grounded) { state = velocity.y > .6f ? RiseState : FallState; blend = airBlend; }
@@ -244,7 +256,7 @@ public sealed class QoriAnimator : MonoBehaviour
             if (restart || wallJumping) playedLaunch = movement.LaunchVersion;
         }
 
-        UpdateRopeTilt(attached);
+        UpdateRopeTilt(attached, gliding, velocity);
         // Look up / grip with the fists while hanging, pulling up (early part) or jumping up a wall.
         bool gripping = attached || movement.IsLedgeHanging || (movement.IsLedgeClimbing && movement.LedgeClimbProgress < .45f)
                         || (wallJumping && !wallJumpAway);
@@ -253,6 +265,7 @@ public sealed class QoriAnimator : MonoBehaviour
                       || (movement.IsLedgeClimbing && movement.LedgeClimbProgress < .65f) || (wallJumping && !wallJumpAway);
         UpdateHead(attacking, gripping, grounded, velocity, effort);
         UpdateWeapon(hanging || ledge || movement.IsWallSliding || (wallJumping && !wallJumpAway));
+        glidingNow = gliding;
         UpdateWeaponHand(true);   // every weapon clip is authored for the camera-side hand
         UpdateArms(movement.IsLedgeHanging || (movement.IsLedgeClimbing && movement.LedgeClimbProgress < reachArmsUntil));
         UpdateTint();
@@ -284,6 +297,65 @@ public sealed class QoriAnimator : MonoBehaviour
         feet?.Apply(movement.IsGrounded && !movement.IsLedgeHanging && !movement.IsLedgeClimbing && !movement.IsWallSliding, dt);
         UpdateEars(dt, velocity, forwardAcceleration);
         UpdateCape(dt, forwardAcceleration);
+        RaiseGlideArm();
+        UpdateGlidecap();
+    }
+
+    bool glidingNow; float glideSince = -1f; SpriteRenderer glidecap;
+
+    // Over the Animator's pose: the free near arm (the blade is in the far hand) reaches forward and
+    // up, holding the Glidecap's grip in front of the chest, and is drawn in front of the torso
+    // while it does. Angles are the arm segments' directions in the torso's frame (0 = forward,
+    // 90 = up); the rig's bones rest at zero.
+    SpriteRenderer[] glideArm; int[] glideArmRestOrder;
+    void RaiseGlideArm()
+    {
+        Transform forearm = handNear != null ? handNear.parent : null, upper = forearm != null ? forearm.parent : null;
+        if (upper == null) return;
+        if (glideArm == null)
+        {
+            glideArm = new[] { upper.GetComponent<SpriteRenderer>(), forearm.GetComponent<SpriteRenderer>() };
+            glideArmRestOrder = new int[glideArm.Length];
+            for (int i = 0; i < glideArm.Length; i++) glideArmRestOrder[i] = glideArm[i] != null ? glideArm[i].sortingOrder : 0;
+        }
+        for (int i = 0; i < glideArm.Length; i++)
+            if (glideArm[i] != null) glideArm[i].sortingOrder = glidingNow ? glideArmOrder + i : glideArmRestOrder[i];
+        if (!glidingNow) return;
+        if (glideSince < 0f) glideSince = Time.time;
+        float raise = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01((Time.time - glideSince) / Mathf.Max(.01f, glidecapOpenSeconds)));
+        Vector2 upperRest = forearm.localPosition, forearmRest = handNear.localPosition;
+        float upperAngle = glideUpperArmAngle - Mathf.Atan2(upperRest.y, upperRest.x) * Mathf.Rad2Deg;
+        float forearmAngle = glideForearmAngle - glideUpperArmAngle - Mathf.Atan2(forearmRest.y, forearmRest.x) * Mathf.Rad2Deg + Mathf.Atan2(upperRest.y, upperRest.x) * Mathf.Rad2Deg;
+        upper.localRotation = Quaternion.Slerp(upper.localRotation, Quaternion.Euler(0f, 0f, upperAngle), raise);
+        forearm.localRotation = Quaternion.Slerp(forearm.localRotation, Quaternion.Euler(0f, 0f, forearmAngle), raise);
+    }
+
+    // The opened Glidecap over Qori, its grip (the sprite's pivot) in his raised near hand. It
+    // springs open over the first moments and tilts with him; it sorts just behind his body so
+    // the hand closes over the grip. Lives beside the Facing pivot, where the parent scale is undone.
+    void UpdateGlidecap()
+    {
+        Sprite art = Fx.Library != null ? Fx.Library.glidecapHeld : null;
+        if (!glidingNow || art == null || handNear == null)
+        {
+            if (glidecap != null && glidecap.enabled) glidecap.enabled = false;
+            glideSince = -1f;
+            return;
+        }
+        if (glidecap == null)
+        {
+            glidecap = new GameObject("Glidecap").AddComponent<SpriteRenderer>();
+            glidecap.transform.SetParent(transform, false);
+            glidecap.sprite = art;
+            var group = animator != null ? animator.GetComponent<SortingGroup>() : null;
+            if (group != null) { glidecap.sortingLayerID = group.sortingLayerID; glidecap.sortingOrder = group.sortingOrder - 1; }
+        }
+        if (glideSince < 0f) glideSince = Time.time;
+        float open = Mathf.SmoothStep(.35f, 1f, Mathf.Clamp01((Time.time - glideSince) / Mathf.Max(.01f, glidecapOpenSeconds)));
+        glidecap.enabled = true;
+        glidecap.color = health != null && health.IsDamageFlashVisible ? new Color(1f, 1f, 1f, .3f) : Color.white;
+        glidecap.transform.SetPositionAndRotation(handNear.position, Quaternion.Euler(0f, 0f, ropeTilt));
+        glidecap.transform.localScale = new Vector3(open, Mathf.Lerp(.8f, 1f, open), 1f);
     }
 
     // Leaf ears: a damped spring per ear on top of the animated pose (non-accumulating, like the cloak).
@@ -412,7 +484,9 @@ public sealed class QoriAnimator : MonoBehaviour
         }
     }
 
-    void UpdateRopeTilt(bool attached)
+    // Leans the whole rig: into the rope while swinging, a little with the drift under the Glidecap,
+    // and forward into a Wind Leaf dash.
+    void UpdateRopeTilt(bool attached, bool gliding, Vector2 velocity)
     {
         float target = 0f;
         if (attached)
@@ -423,6 +497,8 @@ public sealed class QoriAnimator : MonoBehaviour
             if (toAnchor.sqrMagnitude > .0001f && toAnchor.y > .35f * toAnchor.magnitude)
                 target = Mathf.Clamp(Vector2.SignedAngle(Vector2.up, toAnchor), -ropeTiltLimit, ropeTiltLimit);
         }
+        else if (gliding) target = Mathf.Clamp(-velocity.x * 1.4f, -glideTiltLimit, glideTiltLimit);   // grip ahead, feet trailing
+        else if (movement.IsDashing) target = -movement.DashDirection * dashLean;
         ropeTilt = Mathf.SmoothDampAngle(ropeTilt, target, ref ropeTiltVelocity, ropeTiltSmoothing, Mathf.Infinity, Time.deltaTime);
         if (facingPivot != null) facingPivot.localRotation = Quaternion.Euler(0f, 0f, ropeTilt);
     }

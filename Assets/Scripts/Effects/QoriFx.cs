@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Qori's movement and combat effects: landing and running dust, wall-slide scrape, hit sparks
-// and blocked-hit chips. Added automatically to the player in any scene.
+// Qori's movement and combat effects: landing and running dust, wall-slide scrape, the Wind Leaf
+// dash's gust and trail, hit sparks and blocked-hit chips. Added automatically to the player in
+// any scene.
 [DisallowMultipleComponent]
 public sealed class QoriFx : MonoBehaviour
 {
     PlayerMovement movement; PlayerCombat combat; Collider2D body;
-    int landing, reset; float nextRunDust, nextScrape; bool wasRunning;
+    int landing, reset, dash; float nextRunDust, nextScrape, dashEndedAt = float.NegativeInfinity; bool wasRunning, wasDashing;
+    SpriteRenderer trail; Vector2 trailFrom, trailTo;
+    const float TrailHeight = .55f, TrailFade = .22f;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void Register()
@@ -25,7 +28,44 @@ public sealed class QoriFx : MonoBehaviour
     void Awake()
     {
         movement = GetComponent<PlayerMovement>(); combat = GetComponent<PlayerCombat>(); body = GetComponent<Collider2D>();
-        landing = movement.LandingVersion; reset = movement.ResetVersion;
+        landing = movement.LandingVersion; reset = movement.ResetVersion; dash = movement.DashVersion;
+    }
+
+    void OnDestroy() { if (trail != null) Destroy(trail.gameObject); }
+
+    // The Wind Leaf dash: a gust bursts from where it starts, and a wind trail stretches behind
+    // Qori to where he is, fading out after the dash.
+    void Dash(FxLibrary lib)
+    {
+        Vector2 centre = body.bounds.center;
+        if (dash != movement.DashVersion)
+        {
+            dash = movement.DashVersion;
+            float d = movement.DashDirection;
+            if (lib.dashBurst != null && lib.dashBurst.Length > 0)
+                Fx.Play(lib.dashBurst, centre - new Vector2(d * .35f, 0f), 12f, 1.5f, 31, d < 0f);
+            Fx.Leaves(centre, 2, .4f);
+            trailFrom = centre;
+        }
+        if (movement.IsDashing) trailTo = centre;
+        if (wasDashing && !movement.IsDashing) dashEndedAt = Time.time;
+        wasDashing = movement.IsDashing;
+
+        float fade = movement.IsDashing ? 1f : 1f - Mathf.Clamp01((Time.time - dashEndedAt) / TrailFade);
+        if (lib.dashTrail == null || fade <= 0f) { if (trail != null) trail.enabled = false; return; }
+        if (trail == null)
+        {
+            trail = new GameObject("Dash Trail").AddComponent<SpriteRenderer>();
+            trail.sprite = lib.dashTrail; trail.drawMode = SpriteDrawMode.Tiled; trail.sortingOrder = 29;
+        }
+        float length = Mathf.Abs(trailTo.x - trailFrom.x);
+        float native = lib.dashTrail.bounds.size.y;
+        trail.enabled = length > .05f;
+        trail.transform.position = new Vector3((trailFrom.x + trailTo.x) * .5f, trailTo.y, 0f);
+        trail.transform.localScale = new Vector3(1f, TrailHeight / native, 1f);
+        trail.size = new Vector2(length, native);
+        trail.flipX = movement.DashDirection < 0f;
+        trail.color = new Color(1f, 1f, 1f, .85f * fade);
     }
 
     void OnEnable() { if (combat != null) combat.OnAttackHit += Hit; }
@@ -36,7 +76,8 @@ public sealed class QoriFx : MonoBehaviour
     void LateUpdate()
     {
         var lib = Fx.Library; if (lib == null) return;
-        if (reset != movement.ResetVersion) { reset = movement.ResetVersion; landing = movement.LandingVersion; return; }
+        if (reset != movement.ResetVersion) { reset = movement.ResetVersion; landing = movement.LandingVersion; dash = movement.DashVersion; return; }
+        Dash(lib);
         if (landing != movement.LandingVersion)
         {
             landing = movement.LandingVersion;

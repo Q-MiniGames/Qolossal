@@ -20,8 +20,13 @@ public static class RelicBuilder
             "In mid-air, hold S and attack to strike downward and bounce off whatever you hit.");
         bloom.bounceSpeed = 10f;
         EditorUtility.SetDirty(bloom);
+        // The titan's own gifts, from the Breath Knot (R3) and the Bloom Knot (R5).
+        Make<RelicAbilityDefinition>("WindLeaf", Relics.WindLeaf, "Wind Leaf", "Dash",
+            "Press C to dash through the air. It renews when you land, cling to a wall or catch a thread.");
+        Make<RelicAbilityDefinition>("Glidecap", Relics.Glidecap, "Glidecap", "Glide",
+            "Hold Jump while falling to open the Glidecap and drift down slowly.");
         AssetDatabase.SaveAssets();
-        Debug.Log("[RelicBuilder] built the three relics in " + Folder);
+        Debug.Log("[RelicBuilder] built the five relics in " + Folder);
     }
 
     static T Make<T>(string name, string id, string display, string icon, string hint) where T : AbilityDefinition

@@ -2,7 +2,8 @@ using System.Linq;
 using UnityEngine;
 
 // A relic that unlocks a movement ability the movement scripts already own (the thread,
-// the wall cling). It does nothing itself; PlayerThread and PlayerMovement ask Relics.Has.
+// the wall cling, the dash, the glide). It does nothing itself; PlayerThread and PlayerMovement
+// ask Relics.Has.
 [CreateAssetMenu(menuName="Qolossal/Abilities/Relic")]
 public sealed class RelicAbilityDefinition : AbilityDefinition
 {
@@ -13,7 +14,8 @@ public sealed class RelicAbilityDefinition : AbilityDefinition
 // (built by Qolossal > Relics > Build Relics).
 public static class Relics
 {
-    public const string LivingThread="living-thread", ClimbingMoss="climbing-moss", Bloomfall="bloomfall";
+    public const string LivingThread="living-thread", ClimbingMoss="climbing-moss", Bloomfall="bloomfall",
+        WindLeaf="wind-leaf", Glidecap="glidecap";
 
     static AbilityDefinition[] all;
     public static AbilityDefinition[] All=>all!=null&&all.All(a=>a!=null)?all:all=Resources.LoadAll<AbilityDefinition>("Relics");

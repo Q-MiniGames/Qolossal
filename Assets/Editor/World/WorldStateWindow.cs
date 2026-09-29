@@ -2,8 +2,8 @@ using UnityEditor;
 using UnityEngine;
 
 // Qolossal > World > World State: the saved game's world state, for play-testing. Wake or put
-// back to sleep any knot (in Play mode the open level's stir variants change at once), and see
-// what has been charted, travelled and found.
+// back to sleep any knot (in Play mode the open level's stir variants change at once), give or
+// take a relic, and see what has been charted, travelled and found.
 public sealed class WorldStateWindow : EditorWindow
 {
     Vector2 scroll;
@@ -28,7 +28,18 @@ public sealed class WorldStateWindow : EditorWindow
         List("Veins travelled", GameSave.Veins);
         List("Lore Stones", GameSave.LoreStones);
         EditorGUILayout.LabelField("Sproutlings", GameSave.Sproutlings.ToString());
-        EditorGUILayout.LabelField("Relics", string.Join(", ", GameSave.Relics));
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("Relics", EditorStyles.boldLabel);
+        var abilities = Application.isPlaying ? Object.FindFirstObjectByType<PlayerAbilityController>() : null;
+        foreach (AbilityDefinition relic in Relics.All)
+        {
+            bool has = GameSave.HasRelic(relic.abilityId);
+            bool set = EditorGUILayout.ToggleLeft(relic.displayName, has);
+            if (set == has) continue;
+            // In Play mode Qori gets (or loses) it at once; a scene outside the game areas gives him every relic anyway.
+            if (set) { GameSave.AddRelic(relic.abilityId); if (abilities != null) abilities.Unlock(relic); }
+            else { GameSave.RemoveRelic(relic.abilityId); if (abilities != null) abilities.Lock(relic.abilityId); }
+        }
         EditorGUILayout.Space();
         EditorGUILayout.LabelField(GameSave.FilePath, EditorStyles.miniLabel);
         using (new EditorGUILayout.HorizontalScope())

@@ -36,6 +36,8 @@ public sealed class PlayerAbilityController : MonoBehaviour
         if(saving&&Array.IndexOf(Relics.All,ability)>=0)GameSave.AddRelic(ability.abilityId);
     }
     public bool HasAbility(string id)=>string.IsNullOrEmpty(id)||unlocked.ContainsKey(id);
+    // Takes an ability away (the World State window and tests); the save is left to the caller.
+    public void Lock(string id){if(unlocked.Remove(id))UnlockVersion++;}
     public void AddResource(float amount)=>resource=Mathf.Max(0,resource+amount);
     bool Requirements(AbilityDefinition ability)
     {

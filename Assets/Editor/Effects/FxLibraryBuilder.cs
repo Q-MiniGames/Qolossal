@@ -31,8 +31,11 @@ public static class FxLibraryBuilder
         lib.hitBlock = One("Weapons", "FX_Hit_Block");
         lib.telegraphGlint = One("Enemies", "FX_Telegraph_Glint");
         lib.sapOrb = One("Enemies", "Drop_SapOrb");
+        lib.dashBurst = Many("Effects", "FX_Dash_Burst_");
+        lib.dashTrail = One("Effects", "FX_Dash_Trail");
+        lib.glidecapHeld = One("Weapons", "Glidecap_Held");
         EditorUtility.SetDirty(lib);
         AssetDatabase.SaveAssets();
-        Debug.Log($"[FxLibraryBuilder] built: dust {lib.dustLand.Length}+{lib.dustRun.Length}, leaves {lib.leaves.Length}, swirl {lib.portalSwirl.Length}, puff {lib.deathPuff.Length}, sparks {lib.hitSparks.Length}");
+        Debug.Log($"[FxLibraryBuilder] built: dust {lib.dustLand.Length}+{lib.dustRun.Length}, leaves {lib.leaves.Length}, swirl {lib.portalSwirl.Length}, puff {lib.deathPuff.Length}, sparks {lib.hitSparks.Length}, dash {lib.dashBurst.Length}");
     }
 }

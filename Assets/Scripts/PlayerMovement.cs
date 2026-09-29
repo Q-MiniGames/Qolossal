@@ -68,6 +68,66 @@ public sealed class PlayerMovement : MonoBehaviour
     [SerializeField, Range(0.1f, 1f)] private float jumpReleaseMultiplier = 0.5f;
     [SerializeField, Min(1f)] private float maximumFallSpeed = 22f;
 
+    [Header("Wind Leaf dash (relic)")]
+    [SerializeField, Min(1f)] private float dashSpeed = 19f;
+    [SerializeField, Min(.02f)] private float dashSeconds = .16f;
+    [Tooltip("Rest after a dash before the next can start (the air dash also needs ground, a wall or a thread).")]
+    [SerializeField, Min(0f)] private float dashCooldown = .3f;
+
+    [Header("Glidecap glide (relic)")]
+    [SerializeField, Min(.1f)] private float glideFallSpeed = 1.8f;
+    [SerializeField, Min(0f)] private float glideSpeed = 7.5f;
+    [Tooltip("How quickly opening the Glidecap brakes a fast fall (units/s per second).")]
+    [SerializeField, Min(1f)] private float glideBrake = 45f;
+    [Tooltip("Off: holding Jump while falling opens the Glidecap, even the jump's own press. " +
+             "On: it needs its own press of Jump in mid-air, clear of walls, held from then on.")]
+    [SerializeField] private bool glideNeedsNewPress = false;
+
+    /// <summary>True during a Wind Leaf dash; DashDirection is -1 or 1.</summary>
+    public bool IsDashing { get; private set; }
+    public float DashDirection { get; private set; } = 1f;
+    public int DashVersion { get; private set; }
+    public Vector2 DashStart { get; private set; }
+    /// <summary>True while the Glidecap is open (jump held while falling).</summary>
+    public bool IsGliding { get; private set; }
+    /// <summary>True once the air dash is spent; ground, a wall or a thread renews it.</summary>
+    public bool AirDashUsed => airDashUsed;
+    private float dashUntil, nextDashAt, lastDashPressedTime = float.NegativeInfinity;
+    private bool airDashUsed;
+    // With glideNeedsNewPress the Glidecap opens only on its own press of Jump in mid-air (one that
+    // didn't make a jump or wall jump), held from then on: holding Jump through a jump or up a
+    // wall never opens it. Without it, any held Jump opens it once he falls.
+    private bool airJumpPress, glideArmed;
+    private const float GlidePull = 12f;   // units/s per second: the drift's own gentle gravity
+    private const float GlideMinHeight = .5f;   // closer to the ground than this, a press is a buffered jump
+    private const float GlideWallClearance = .6f;   // closer to a clingable wall than this, a press is for the wall
+
+    // Ends a dash: an ordinary end keeps walking speed along it; a jump, hit or thread keeps
+    // whatever velocity they set.
+    private void EndDash(ref Vector2 velocity, bool settle)
+    {
+        IsDashing = false;
+        nextDashAt = Time.time + dashCooldown;
+        if (settle) velocity = new Vector2(DashDirection * moveSpeed, 0f);
+        else velocity.x = Mathf.Clamp(velocity.x, -RunSpeed, RunSpeed);   // a dash-jump carries running speed, no more
+    }
+
+    private void CancelDash() { IsDashing = false; IsGliding = false; airJumpPress = glideArmed = false; }
+
+    // A clingable wall within reach on either side: Jump there is for wall jumps (an early press
+    // is buffered into one), so it never opens the Glidecap.
+    private bool NearWall()
+    {
+        if (!Relics.Has(abilities, Relics.ClimbingMoss)) return false;
+        for (int side = -1; side <= 1; side += 2)
+        {
+            int count = body.Cast(Vector2.right * side, groundFilter, wallHits, GlideWallClearance);
+            for (int i = 0; i < count; i++)
+                if (Mathf.Abs(wallHits[i].normal.y) < .25f && WallSurface.AllowsCling(wallHits[i].collider)) return true;
+        }
+        return false;
+    }
+
     [Header("Ground Detection")]
     [SerializeField] private LayerMask groundLayers;
     [SerializeField, Min(0.001f)] private float groundCheckDistance = 0.06f;
@@ -91,6 +151,7 @@ public sealed class PlayerMovement : MonoBehaviour
     private InputAction jumpAction;
     private InputAction growthAction;
     private InputAction runAction;
+    private InputAction dashAction;
     private bool runHeld;
     private float pendingLaunchSpeed;
     private Vector2 pendingKnockback;
@@ -170,6 +231,9 @@ public sealed class PlayerMovement : MonoBehaviour
         runAction.AddBinding("<Keyboard>/leftShift");
         runAction.AddBinding("<Keyboard>/rightShift");
         runAction.AddBinding("<Gamepad>/leftStickPress");
+        dashAction = new InputAction("Dash", InputActionType.Button);
+        dashAction.AddBinding("<Keyboard>/c");
+        dashAction.AddBinding("<Gamepad>/buttonEast");
         ledgeVerticalAction=new InputAction("Ledge vertical",InputActionType.Value);
         ledgeVerticalAction.AddCompositeBinding("1DAxis").With("Positive","<Keyboard>/w").With("Positive","<Keyboard>/upArrow").With("Negative","<Keyboard>/s").With("Negative","<Keyboard>/downArrow");
         ledgeVerticalAction.AddBinding("<Gamepad>/leftStick/y").WithProcessor("axisDeadzone");
@@ -209,6 +273,7 @@ public sealed class PlayerMovement : MonoBehaviour
         jumpAction.Enable();
         growthAction.Enable();
         runAction.Enable();
+        dashAction.Enable();
         ledgeVerticalAction.Enable();
     }
 
@@ -218,6 +283,7 @@ public sealed class PlayerMovement : MonoBehaviour
         jumpAction.Disable();
         growthAction.Disable();
         runAction.Disable();
+        dashAction.Disable();
         ledgeVerticalAction.Disable();
         ReleaseLedge();
         runHeld = false;
@@ -228,7 +294,7 @@ public sealed class PlayerMovement : MonoBehaviour
         moveInput = 0f;
         jumpHeld = false;
         canCutJump = false;
-        lastGroundedTime = lastJumpPressedTime = float.NegativeInfinity;
+        lastGroundedTime = lastJumpPressedTime = lastDashPressedTime = float.NegativeInfinity;
         ResetObservation();
     }
 
@@ -238,6 +304,7 @@ public sealed class PlayerMovement : MonoBehaviour
         jumpAction?.Dispose();
         growthAction?.Dispose();
         runAction?.Dispose();
+        dashAction?.Dispose();
         ledgeVerticalAction?.Dispose();
         if (playerCollider != null && playerCollider.sharedMaterial == slidingMaterial)
             playerCollider.sharedMaterial = originalMaterial;
@@ -255,10 +322,11 @@ public sealed class PlayerMovement : MonoBehaviour
             IsWallSliding=false;
             WallDirection=0;
             jumpHeld = false;
-            lastJumpPressedTime = float.NegativeInfinity;
+            lastJumpPressedTime = lastDashPressedTime = float.NegativeInfinity;
             ledgeVerticalInput=0;
             return;
         }
+        if (dashAction.WasPressedThisFrame()) lastDashPressedTime = Time.time;
         moveInput = moveAction.ReadValue<float>();
         runHeld = runAction.IsPressed();
         ledgeVerticalInput=ledgeVerticalAction.ReadValue<float>();
@@ -270,7 +338,12 @@ public sealed class PlayerMovement : MonoBehaviour
             // One press chooses a flower boost or a normal buffered jump.
             // LaunchUp queues its impulse for the next physics step.
             if (!GrowthFlower.TryActivateClosest(this))
+            {
                 lastJumpPressedTime = Time.time;
+                // Presses on a wall, a ledge or the thread belong to those moves, never the Glidecap.
+                if (!IsGrounded && !IsWallSliding && !IsLedgeHanging && !IsLedgeClimbing && (thread == null || !thread.IsAttached))
+                    airJumpPress = true;
+            }
         }
         if (growthAction.WasPressedThisFrame())
             GrowthPlatform.ActivateClosest(this, float.PositiveInfinity);
@@ -312,6 +385,7 @@ public sealed class PlayerMovement : MonoBehaviour
         pendingKnockback = velocity;
         hasPendingKnockback = true;
         hitRecoveryUntil = Time.time + 0.2f;
+        CancelDash();
         lastGroundedTime = lastJumpPressedTime = float.NegativeInfinity;
         canCutJump = false;
     }
@@ -484,6 +558,48 @@ public sealed class PlayerMovement : MonoBehaviour
             FacingDirection=WallDirection;
         }
 
+        // Wind Leaf: a short, level dash along the input (or facing) direction. On the ground it
+        // can be used again after a short rest; in the air once, until ground, a wall or a thread.
+        if(grounded || IsWallSliding || attached) airDashUsed=false;
+        bool dashAllowed=combatController==null||combatController.CanCancel(CombatCancel.Jump);
+        if(IsDashing && (launch!=LaunchKind.None || recovering || attached || Time.fixedTime>=dashUntil))
+            EndDash(ref velocity, launch==LaunchKind.None && !recovering && !attached);
+        else if(!IsDashing && dashAllowed && Relics.Has(abilities,Relics.WindLeaf) && Time.time-lastDashPressedTime<=jumpBufferTime &&
+                Time.time>=nextDashAt && !recovering && !attached && launch==LaunchKind.None && (grounded || !airDashUsed))
+        {
+            DashDirection=Mathf.Abs(moveInput)>.1f ? Mathf.Sign(moveInput) : FacingDirection;
+            FacingDirection=DashDirection;
+            if(!grounded) airDashUsed=true;
+            IsDashing=true; dashUntil=Time.fixedTime+dashSeconds; DashStart=body.position; DashVersion++;
+            lastDashPressedTime=float.NegativeInfinity; canCutJump=false;
+            wallJumpUntil=wallSteeringUntil=float.NegativeInfinity;
+            if(combatController!=null) combatController.CancelAttack();
+        }
+        if(IsDashing)
+        {
+            velocity=new Vector2(DashDirection*dashSpeed,0f);
+            surfaceWalking=false;
+        }
+
+        // Glidecap: holding Jump while falling opens it (with glideNeedsNewPress, only a fresh
+        // mid-air press), braking the fall to a slow drift that can be steered. Walls, threads,
+        // ledges and dashes close it.
+        // A press that jumped (coyote or buffered) or wall-jumped is spent; one just before landing
+        // is left to the buffered jump.
+        if(!jumpHeld || launch!=LaunchKind.None || grounded || attached || IsWallSliding) glideArmed=false;
+        else if(!glideNeedsNewPress || airJumpPress && !(nearestGround<=GlideMinHeight) && !NearWall()) glideArmed=true;
+        airJumpPress=false;
+        IsGliding=glideArmed && !IsDashing && !grounded && !attached && !recovering && !IsWallSliding &&
+                  launch==LaunchKind.None && velocity.y<=0f && Relics.Has(abilities,Relics.Glidecap);
+        if(IsGliding)
+        {
+            // The canopy replaces gravity (cancelled below): a soft pull down into the drift speed,
+            // or a firm brake from a faster fall.
+            velocity.y=velocity.y>-glideFallSpeed ? Mathf.Max(velocity.y-GlidePull*Time.fixedDeltaTime,-glideFallSpeed)
+                                                  : Mathf.MoveTowards(velocity.y,-glideFallSpeed,glideBrake*Time.fixedDeltaTime);
+            velocity.x=Mathf.MoveTowards(velocity.x,moveInput*glideSpeed,airAcceleration*airControl*Time.fixedDeltaTime);
+        }
+
         // Cutting once also handles quick taps buffered just before landing.
         if (canCutJump && !jumpHeld && velocity.y > 0f)
         {
@@ -499,7 +615,9 @@ public sealed class PlayerMovement : MonoBehaviour
         if (!surfaceWalking) ridingVelocity = Vector2.zero;
         platformVelocity = ridingVelocity;
         carriedThisStep = platformVelocity * Time.fixedDeltaTime;   // measured out of ObservedVelocity next step
-        body.linearVelocity = (surfaceWalking ? velocity - Physics2D.gravity * body.gravityScale * Time.fixedDeltaTime : velocity) + platformVelocity;
+        // A dash and the Glidecap also hold Qori against gravity: they set his fall speed themselves.
+        bool ownGravity = surfaceWalking || IsDashing || IsGliding;
+        body.linearVelocity = (ownGravity ? velocity - Physics2D.gravity * body.gravityScale * Time.fixedDeltaTime : velocity) + platformVelocity;
         IsGrounded = grounded && !attached && launch == LaunchKind.None && (velocity.y <= 0.1f || surfaceWalking);
         IsRunning = IsGrounded && !recovering && runHeld && Mathf.Abs(velocity.x)>moveSpeed+.1f;
         HasGroundContact = grounded && launch == LaunchKind.None && (velocity.y <= 0.1f || surfaceWalking);
@@ -561,7 +679,7 @@ public sealed class PlayerMovement : MonoBehaviour
             LedgePoint=point;LedgeDirection=direction;FacingDirection=direction;
             ledgeHangPosition=hang;ledgeStandPosition=stand;
             savedLedgeGravity=body.gravityScale;ledgeGravityOwned=true;body.gravityScale=0;
-            IsLedgeHanging=true;IsLedgeClimbing=false;ledgeAcross=false;
+            IsLedgeHanging=true;IsLedgeClimbing=false;ledgeAcross=false;CancelDash();airDashUsed=false;
             IsGrounded=HasGroundContact=IsWallSliding=IsRunning=false;
             GroundDistance=LandingTimeEstimate=float.PositiveInfinity;
             lastJumpPressedTime=lastGroundedTime=float.NegativeInfinity;canCutJump=false;
@@ -681,6 +799,7 @@ public sealed class PlayerMovement : MonoBehaviour
         IsRunning = false;
         HasGroundContact = false;
         IsWallSliding=false;WallDirection=0;wallJumpUntil=float.NegativeInfinity;wallSteeringUntil=float.NegativeInfinity;
+        CancelDash();airDashUsed=false;airJumpPress=glideArmed=false;
         GroundNormal = Vector2.up;
         GroundPoint = Vector2.zero;
         GroundDistance = LandingTimeEstimate = float.PositiveInfinity;

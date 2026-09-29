@@ -101,6 +101,8 @@ public static class GameSave
         if (string.IsNullOrEmpty(id) || HasRelic(id)) return;
         Current.relics.Add(id); Write();
     }
+    // Takes a relic away again (the World State window, for play-testing).
+    public static void RemoveRelic(string id) { if (Current.relics.Remove(id)) Write(); }
 
     // One-off pickups (heart seeds), by their permanent ids.
     public static bool HasPickup(string id) => Current.pickups != null && Current.pickups.Contains(id);
