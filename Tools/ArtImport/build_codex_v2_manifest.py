@@ -91,9 +91,9 @@ WORLD_SIZE = {
 # Opaque chain width in Platform_Moving_A1 (78 px) vs the chain tile (54 px).
 CHAIN_SCALE = 54.0 / 78.0
 
-KIT_AREAS = ("A0", "A1", "A2", "A3", "A4", "A5")   # areas with a terrain kit
+KIT_AREAS = ("A0", "A1", "A2", "A3", "A4", "A5", "A6")   # areas with a terrain kit
 TILE_H = {f"{a}_{k}" for a in KIT_AREAS for k in ("Ground_Top", "Ceiling_Under", "Platform_OneWay_unused")} | { "Hazard_Thorns_Floor", "Hazard_Thorns_Ceiling",
-          "Whip_Lash_Segment", "HUD_Vine_Segment", "Water_Surface", "Chart_Vein_Line"} | {f"Hazard_Thorns_Floor_A{i}" for i in range(1, 6)}
+          "Whip_Lash_Segment", "HUD_Vine_Segment", "Water_Surface", "Chart_Vein_Line"} | {f"Hazard_Thorns_Floor_A{i}" for i in range(1, 7)} | {"FX_Dash_Trail"}
 TILE_V = {f"{a}_Wall_Side" for a in KIT_AREAS} | {"Waterfall_Column",  "Hazard_Thorns_Wall", "Platform_Moving_A1_Chain"}
 TILE_FILL = {f"{a}_{k}" for a in KIT_AREAS for k in ("Ground_Fill", "Wall_Climbable", "Wall_Slippery")} | {"Water_Body"}
 
@@ -103,6 +103,8 @@ BOTTOM_ANCHORED = {"Barrier_Rubble_Intact", "Barrier_Thorns_Intact", "Switch_Pla
 TOP_ANCHORED = {"Hazard_Thorns_Ceiling"} | {f"{a}_Ceiling_Under" for a in KIT_AREAS}
 
 GROUND_TOP_WALK_LINE_PX = 96  # T-01: walk line measured from the top edge
+
+W5_ITEMS = {"Sentinel_Spear", "Glidecap_Held", "FX_Dash_Trail", "FX_Lantern_Light"} | {f"FX_Dash_Burst_{i:02d}" for i in range(1, 5)}
 
 
 def sha256(path):
@@ -218,6 +220,15 @@ def settings_for(category, name):
         # The map screen and the stir's full-screen vistas are UI images; the map is zoomed, so it keeps mipmaps.
         s["ppu"], s["basis"] = UI_PPU, "UI canvas: 1 px = 1 reference px"
         s["mesh"], s["pivot"], s["mipmaps"] = "FullRect", [0.5, 0.5], category == "Chart"
+    elif category == "Cinematics":
+        s["ppu"], s["basis"] = UI_PPU, "full-screen 1920x1080 still: 1 px = 1 reference px"
+        s["mesh"], s["pivot"] = "FullRect", [0.5, 0.5]
+    elif name in W5_ITEMS:
+        # Batch 6 W5: Codex's REGISTRATION.json gives each item's density and pivot (spear grip, Glidecap grip).
+        with open(os.path.join(SOURCE, "Batch6", "W5", "REGISTRATION.json")) as f:
+            reg = {r["name"]: r for r in json.load(f)["assets"]}[name]
+        s["ppu"], s["basis"] = reg["ppu"], "Batch6/W5/REGISTRATION.json"
+        s["pivot"], s["mipmaps"] = [round(v, 5) for v in reg["pivot_unity_normalized"]], True
     elif category == "WorldSystems":
         s["ppu"], s["basis"] = TERRAIN_PPU, "Codex-normalized to terrain density 120 px/u (1 QH = 198 px)"
     elif category == "Player":
@@ -263,6 +274,12 @@ def decor_sprites(name):
     if not os.path.exists(slices):   # later batches name them A1_Slices.json
         slices = os.path.join(SOURCE, "Decor", "QA", name.replace("Decor_", "").replace("_Sheet", "_Slices") + ".json")
     review12 = os.path.join(SOURCE, "Review12", name + "_Slices.json")
+    batch6 = os.path.join(SOURCE, "Batch6", "W2", name + "_Slices.json")
+    if not os.path.exists(slices) and os.path.exists(batch6):   # named slices with Unity bottom-left rects
+        with open(batch6) as f:
+            return [{"name": f"{name.replace('_Sheet', '')}_{sp['name']}", "rect": sp["rect_unity_bottom_left"],
+                     "pivot": [0.5, 1.0] if sp["name"].startswith("hanging") else sp.get("pivot", [0.5, 0.0])}
+                    for sp in json.load(f)]
     if not os.path.exists(slices) and os.path.exists(review12):
         return numbered_decor_sprites(name, review12)
     if not os.path.exists(slices):
@@ -300,7 +317,7 @@ def numbered_decor_sprites(name, path):
     return out
 
 
-PIECE_SHEETS = {"Barrier_Rubble_Pieces", "Floor_Weak_Pieces", "Platform_Crumble_Pieces", "Shellback_Shell_Shards"} |     {f"Barrier_Rubble_Pieces_A{i}" for i in range(0, 6)} | {f"Shellback_Shell_Shards_A{i}" for i in range(1, 6)}
+PIECE_SHEETS = {"Barrier_Rubble_Pieces", "Floor_Weak_Pieces", "Platform_Crumble_Pieces", "Shellback_Shell_Shards"} |     {f"Barrier_Rubble_Pieces_A{i}" for i in range(0, 7)} | {f"Shellback_Shell_Shards_A{i}" for i in range(1, 7)}
 
 
 def rect_sprites(category, name, rects_file):
