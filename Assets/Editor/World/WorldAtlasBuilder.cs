@@ -29,17 +29,19 @@ public static class WorldAtlasBuilder
         if (area == null) { Debug.LogWarning($"[WorldAtlas] {scene.name} has no GameArea; not recorded"); return; }
         var atlas = Atlas();
         atlas.levels.RemoveAll(l => string.IsNullOrEmpty(l.scene) || l.scene == scene.name);
-        var level = new WorldAtlas.Level { scene = scene.name, levelId = area.levelId, displayName = area.displayName, region = area.region };
+        var level = new WorldAtlas.Level { scene = scene.name, levelId = area.levelId, displayName = area.displayName, region = area.region, chartPosition = area.chartPosition };
         var waymarks = Object.FindObjectsByType<Waymark>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         if (waymarks.Length > 1) Debug.LogWarning($"[WorldAtlas] {scene.name} has {waymarks.Length} Waymarks; only one charts the level");
         if (waymarks.Length > 0) level.waymark = waymarks[0].GetComponent<Checkpoint>().CheckpointId;
+        var knot = Object.FindAnyObjectByType<TitanKnot>(FindObjectsInactive.Include);
+        if (knot != null) level.knot = knot.knot;
         foreach (var portal in Object.FindObjectsByType<Portal>(FindObjectsInactive.Include, FindObjectsSortMode.None).OrderBy(p => p.portalId))
         {
             var variant = portal.GetComponentInParent<StirVariant>(true);
             level.veins.Add(new WorldAtlas.VeinEnd
             {
                 portalId = portal.portalId, destinationScene = portal.destinationScene, destinationPortal = portal.destinationPortal,
-                wild = portal.vein == Portal.Vein.Wild,
+                wild = portal.vein == Portal.Vein.Wild, settlesWith = portal.settlesWith,
                 knot = variant != null ? variant.knot : "", afterKnot = variant != null && variant.when == StirVariant.When.AfterKnot,
             });
         }

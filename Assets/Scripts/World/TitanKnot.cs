@@ -5,8 +5,9 @@ using UnityEngine;
 // lives the knot is choked in thorns and dim. When the guardian falls the thorns wither and the
 // knot glows; Qori lays his hand on it by touching it, and the stir sequence plays: the ability,
 // Echo's lines, and the titan stirring (StirSequence). A knot already woken glows steadily.
-// Placeholder art until Codex's knot is delivered: a glow pod core in a soft mint halo, wrapped
-// in the thorn barrier.
+// Art: Codex's Wakeknot (Batch 5, K-01). The dormant and awake knots share one canvas, the mint
+// light is its own layer (glow), and the rot seal is a separate layer on top, which withers
+// away on its own when the guardian falls.
 [DisallowMultipleComponent]
 public sealed class TitanKnot : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public sealed class TitanKnot : MonoBehaviour
     [TextArea] public string[] echoLines = new string[0];
     [Tooltip("Optional full-screen painting of the body part moving, shown through the stir's flash.")] public Sprite vista;
     public SpriteRenderer core, seal;
+    [Tooltip("Optional: the knot's own mint light (Wakeknot_Glow), pulsed with the knot's state.")] public SpriteRenderer glowLayer;
     public Sprite coreDim, coreLit;
 
     public enum State { Sealed, Ready, Waking, Awake }
@@ -106,12 +108,19 @@ public sealed class TitanKnot : MonoBehaviour
         }
         core.transform.localScale = coreScale * grow * (1f + pulse);
         halo.transform.localScale = Vector3.one * (core.bounds.size.x * 2.6f) / Mathf.Max(.0001f, halo.transform.parent.lossyScale.x);
-        halo.color = new Color(Mint.r, Mint.g, Mint.b, glow);
+        // With the painted glow layer, the soft halo only lifts the light around the knot.
+        halo.color = new Color(Mint.r, Mint.g, Mint.b, glowLayer != null ? glow * .45f : glow);
+        if (glowLayer != null)
+        {
+            glowLayer.enabled = Current != State.Sealed;
+            glowLayer.transform.localScale = core.transform.localScale;
+            glowLayer.color = new Color(1f, 1f, 1f, Mathf.Clamp01(glow * 1.4f));
+        }
         if (seal != null && Current == State.Ready)
         {
             // The thorns wither: they shrink back and fade in the first second.
             float k = Mathf.Clamp01(since / 1f);
-            seal.transform.localScale = sealScale * Mathf.Lerp(1f, .7f, k);
+            seal.transform.localScale = sealScale * Mathf.Lerp(1f, glowLayer != null ? .9f : .7f, k);
             seal.color = new Color(.75f, .65f, .6f, 1f - k);
             if (k >= 1f) seal.enabled = false;
         }

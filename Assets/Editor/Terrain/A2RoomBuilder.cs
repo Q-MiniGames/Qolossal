@@ -21,7 +21,7 @@ public static class A2RoomBuilder
     [MenuItem("Qolossal/Scenes/Build A2 Grove")]
     public static void Build()
     {
-        var scene = A0TestRoomBuilder.NewRoom("A2 Ancient Grove", new Vector2(StartX, StartY), out Camera camera, "r3-ribwood", "R3");
+        var scene = A0TestRoomBuilder.NewRoom("A2 Ancient Grove", new Vector2(StartX, StartY), out Camera camera, "r3-ribwood", "R3", new Vector2(.55f, .56f));   // the rib forest
         camera.backgroundColor = new Color(.543f, .603f, .597f);   // the far painting's top row
         var room = new AreaRoom("A2");
 

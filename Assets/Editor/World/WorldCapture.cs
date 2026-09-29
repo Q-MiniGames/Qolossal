@@ -6,6 +6,16 @@ using UnityEngine;
 // Usage: -executeMethod WorldCapture.Run -captureDir <folder>
 public static class WorldCapture
 {
+    // Close-ups for placement: the knot on its dais, and the vein gates beside A0's area portal.
+    // Usage: -executeMethod WorldCapture.Details -captureDir <folder>
+    public static void Details()
+    {
+        A0TestRoomBuilder.RenderShots("Assets/Scenes/R1_GripKnot.unity", new (string, Vector2, float)[]
+            { ("detail_knot", new Vector2(50f, 3f), 3.2f), ("detail_chamber_east", new Vector2(54f, 3f), 4.5f) });
+        A0TestRoomBuilder.RenderShots("Assets/Scenes/A0_TestRoom.unity", new (string, Vector2, float)[]
+            { ("detail_a0_gates", new Vector2(166f, 12f), 4.5f) });
+    }
+
     public static void Run()
     {
         void Both(string scene, (string, Vector2, float)[] shots)

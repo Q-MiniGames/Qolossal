@@ -180,51 +180,58 @@ public sealed class AreaRoom
 
     // ---------------------------------------------------------------- the titan's world
 
-    // A Waymark: a checkpoint that charts the level, with a map leaf floating over it.
-    public Waymark Waymark(Vector2 at, string id) => AddWaymark(Checkpoint(at, id), area == "A0" ? 1.6f : 1.7f);
+    // A Waymark: a checkpoint that charts the level, in Codex's root-shrine art (its seed opens
+    // when the level is charted). Its pivot is at the shrine's base.
+    public Waymark Waymark(Vector2 at, string id) => AddWaymark(mechanics, kit, at, id);
 
-    public static Waymark AddWaymark(Checkpoint checkpoint, float iconHeight)
+    public static Waymark AddWaymark(Transform parent, TerrainKit kit, Vector2 at, string id)
     {
+        Sprite dormant = Art("WorldSystems", "Waymark_Dormant");
+        var checkpoint = A0TestRoomBuilder.AddCheckpoint(parent, at, id, dormant, 0f, kit);
         var waymark = checkpoint.gameObject.AddComponent<Waymark>();
-        waymark.unchartedIcon = Art("UI", "Map_Icon_Unexplored"); waymark.chartedIcon = Art("UI", "Map_Icon_Checkpoint");
-        waymark.iconHeight = iconHeight;
-        waymark.icon = Image(checkpoint.transform, "Map Leaf", waymark.unchartedIcon, (Vector2)checkpoint.transform.position + Vector2.up * iconHeight, PropOrder + 4);
-        waymark.icon.transform.localScale = new Vector3(.3f, .3f, 1f);   // the 2.56 u icon canvas to about .75 u
+        waymark.shrineDormant = dormant; waymark.shrineLit = Art("WorldSystems", "Waymark_Lit");
         return waymark;
     }
 
-    // A Wild Vein: the hidden-gate arch with a flickering membrane. When `settlesWith` wakes it
+    // A Wild Vein: the vein arch with the broken, flickering membrane. When `settlesWith` wakes it
     // settles into a fixed shortcut to `settledArrival` (a portal or Waymark) in `settledScene`.
     public Portal WildVein(Vector2 at, string id, string settlesWith, string settledScene, string settledArrival, string settledName, float exitSide) =>
         AddWildVein(mechanics, kit, at, id, settlesWith, settledScene, settledArrival, settledName, exitSide);
 
     public static Portal AddWildVein(Transform parent, TerrainKit kit, Vector2 at, string id, string settlesWith, string settledScene, string settledArrival, string settledName, float exitSide)
     {
-        var portal = HiddenArchPortal(parent, kit, at, id, "", "", "", exitSide);
+        var portal = VeinArchPortal(parent, kit, at, id, "", "", "", exitSide);
         portal.name = "Wild Vein " + id;
         portal.vein = global::Portal.Vein.Wild; portal.settlesWith = settlesWith;
         portal.settledScene = settledScene; portal.settledArrival = settledArrival; portal.settledName = settledName;
         return portal;
     }
 
-    // A Vein Gate in the hidden-gate arch: a vein grown by a stir, rather than an area's own gate.
+    // A Vein Gate in the root-vessel arch: a vein grown by a stir, rather than an area's own gate.
     public Portal GrownVein(Vector2 at, string id, string destinationScene, string destinationPortal, string destinationName, float exitSide) =>
-        HiddenArchPortal(mechanics, kit, at, id, destinationScene, destinationPortal, destinationName, exitSide);
+        VeinArchPortal(mechanics, kit, at, id, destinationScene, destinationPortal, destinationName, exitSide);
 
-    internal static Portal HiddenArchPortal(Transform parent, TerrainKit kit, Vector2 at, string id, string destinationScene, string destinationPortal, string destinationName, float exitSide)
+    // Codex's Vein Gate (K-04): the frame and both membranes share one canvas, pivoted at the
+    // frame's base, so they stand on the ground at `at`. Painted at 3 QH, it's drawn at 70 % so the
+    // arch (about 3.4 u) matches the areas' own portals.
+    internal const float VeinScale = .7f;
+    internal static Portal VeinArchPortal(Transform parent, TerrainKit kit, Vector2 at, string id, string destinationScene, string destinationPortal, string destinationName, float exitSide)
     {
-        // The hidden arch shares the A1 arch's canvas (398 x 480 at 120 px/u, 48 px below its base), so the A1 membrane fits it.
         var portal = A0TestRoomBuilder.AddPortal(parent, at, id, destinationScene, destinationPortal, destinationName, exitSide, "A1", 48f, kit);
-        portal.transform.Find("Arch").GetComponent<SpriteRenderer>().sprite = Art("Props", "Portal_Gate_Hidden_Awake");
+        Vector2 artAt = at + new Vector2(0f, -.08f);   // sunk a little into the moss
+        var arch = portal.transform.Find("Arch").GetComponent<SpriteRenderer>();
+        arch.sprite = Art("WorldSystems", "Vein_Gate_Frame"); arch.transform.position = artAt;
+        arch.transform.localScale = portal.membrane.transform.localScale = new Vector3(VeinScale, VeinScale, 1f);
+        portal.membraneStable = Art("WorldSystems", "Vein_Membrane_Stable"); portal.membraneWild = Art("WorldSystems", "Vein_Membrane_Wild");
+        portal.membrane.sprite = portal.membraneStable; portal.membrane.transform.position = artAt;
         return portal;
     }
 
-    // Where a vein will grow after a stir: the dormant hidden arch, mossed over, with no membrane.
+    // Where a vein will grow after a stir: the vein arch closed with roots and moss.
     public SpriteRenderer DormantGate(Vector2 at)
     {
-        Sprite arch = Art("Props", "Portal_Gate_Hidden");
-        var r = Image(mechanics, "Dormant Vein Gate", arch, at + new Vector2(0f, A0TestRoomBuilder.Grounded(arch, 48f)), PropOrder + 2);
-        r.color = new Color(.8f, .82f, .8f);
+        var r = Image(mechanics, "Dormant Vein Gate", Art("WorldSystems", "Vein_Gate_Frame_Dormant"), at + new Vector2(0f, -.08f), PropOrder + 2);
+        r.transform.localScale = new Vector3(VeinScale, VeinScale, 1f);
         A0TestRoomBuilder.Ground(r.gameObject, kit, at.y, 2.5f, PropOrder + 2);
         return r;
     }
@@ -245,23 +252,64 @@ public sealed class AreaRoom
         return stone;
     }
 
-    // A knot standing on the ground at `at` (placeholder art: a glow pod wrapped in the thorn
-    // barrier), sealed until every guardian is defeated.
+    // A knot standing on the ground at `at`, in Codex's Wakeknot art: the knot (dormant or
+    // awake, one canvas), its mint light as a separate layer, and the rot seal over it, sealed
+    // until every guardian is defeated. The canvas is centre-pivoted; the knot's base is 2.05 u
+    // below its centre, and it's sunk 0.35 u so its root tendrils grow into the ground.
     public TitanKnot Knot(Vector2 at, string knotId, AbilityDefinition ability, string[] echoLines, params GameObject[] guardians)
     {
         var knot = new GameObject("Knot " + knotId).AddComponent<TitanKnot>();
         knot.transform.SetParent(mechanics, false); knot.transform.position = at;
         knot.knot = knotId; knot.ability = ability; knot.echoLines = echoLines; knot.guardians.AddRange(guardians);
-        knot.coreDim = Art("Hazards", "GlowPod_Light_Off"); knot.coreLit = Art("Hazards", "GlowPod_Light_On");
-        knot.core = Image(knot.transform, "Core", knot.coreDim, at + new Vector2(0f, -.1f), PropOrder + 2);
-        knot.core.transform.localScale = new Vector3(2.3f, 2.3f, 1f);
-        // The thorns bind the knot's lower half, so the dim knot still shows above them.
-        knot.seal = Image(knot.transform, "Thorn Seal", Art("Props", "Barrier_Thorns_Intact"), at + new Vector2(0f, -.15f), PropOrder + 3);
-        knot.seal.transform.localScale = new Vector3(.62f, .5f, 1f);
-        var box = knot.gameObject.AddComponent<BoxCollider2D>(); box.isTrigger = true; box.size = new Vector2(1.8f, 2.8f); box.offset = new Vector2(0f, 1.4f);
+        knot.coreDim = Art("WorldSystems", "Wakeknot_Dormant"); knot.coreLit = Art("WorldSystems", "Wakeknot_Awake");
+        Vector2 centre = at + new Vector2(0f, 2.05f - .35f);
+        knot.core = Image(knot.transform, "Knot", knot.coreDim, centre, PropOrder + 2);
+        knot.glowLayer = Image(knot.transform, "Glow", Art("WorldSystems", "Wakeknot_Glow"), centre, PropOrder + 3);
+        knot.seal = Image(knot.transform, "Rot Seal", Art("WorldSystems", "Wakeknot_RotSeal"), centre, PropOrder + 4);
+        var box = knot.gameObject.AddComponent<BoxCollider2D>(); box.isTrigger = true; box.size = new Vector2(2.4f, 3.6f); box.offset = new Vector2(0f, 1.8f);
         var seat = new GameObject("Grounding"); seat.transform.SetParent(knot.transform, false); seat.transform.position = at;
-        A0TestRoomBuilder.Ground(seat, kit, at.y, 2.2f, PropOrder + 3);
+        A0TestRoomBuilder.Ground(seat, kit, at.y, 2.6f, PropOrder + 4);
         return knot;
+    }
+
+    // A body-part gate (Stir_Gate_<area>) standing on the ground at `at`: closed and solid while
+    // `knotId` sleeps, open once it wakes. 2 u wide, 4 u tall, pivoted at its base.
+    public StirGate StirGate(Vector2 at, string knotId, string gateArea = null)
+    {
+        string a = gateArea ?? area;
+        var gate = new GameObject($"Stir Gate {a} ({knotId})") { layer = LayerMask.NameToLayer("Ground") };
+        gate.transform.SetParent(mechanics, false); gate.transform.position = at;
+        var sg = gate.AddComponent<StirGate>();
+        sg.knot = knotId; sg.closed = Art("Mechanics", $"Stir_Gate_{a}_Closed"); sg.open = Art("Mechanics", $"Stir_Gate_{a}_Open");
+        sg.image = Image(gate.transform, "Art", sg.closed, at + new Vector2(0f, -.06f), PropOrder + 2);
+        var box = gate.AddComponent<BoxCollider2D>(); box.size = new Vector2(1.4f, 3.8f); box.offset = new Vector2(0f, 1.9f);
+        sg.solid = box;
+        A0TestRoomBuilder.Ground(sg.image.gameObject, kit, at.y, 2f, PropOrder + 2);
+        return sg;
+    }
+
+    // Clench Finger (Codex M-02) ridges laid end to end across [x0, x1], their walk line at `top`:
+    // one solid ledge. The art's pivot is the content's bottom-left; its moss walk line is 1.15 u above it.
+    public GameObject FingerBridge(string name, float x0, float x1, float top)
+    {
+        const float Width = 4f, WalkAbovePivot = 1.15f;
+        var root = new GameObject(name) { layer = LayerMask.NameToLayer("Ground") };
+        root.transform.SetParent(terrain, false); root.transform.position = new Vector3((x0 + x1) * .5f, top, 0f);
+        // The ridges' ends taper, so they overlap by a fifth to read as one continuous ledge.
+        const float Overlap = .2f;
+        int count = Mathf.Max(1, Mathf.CeilToInt((x1 - x0) / (Width * (1f - Overlap))));
+        float step = (x1 - x0) / count, scale = step / (Width * (1f - Overlap));
+        Sprite art = Art("Mechanics", "Clench_Finger_Open");
+        for (int i = 0; i < count; i++)
+        {
+            float left = x0 + i * step - Width * scale * Overlap * .5f;
+            var r = Image(root.transform, "Finger " + (i + 1), art, new Vector2(left, top - WalkAbovePivot), 14 + i % 2);
+            r.transform.localScale = new Vector3(scale, 1f, 1f);
+            r.flipX = i % 2 == 1;
+            if (r.flipX) r.transform.position += new Vector3(Width * scale, 0f, 0f);   // flipping mirrors about the left-edge pivot
+        }
+        var box = root.AddComponent<BoxCollider2D>(); box.size = new Vector2(x1 - x0, .6f); box.offset = new Vector2(0f, -.3f);
+        return root;
     }
 
     // Swing rings: grapple anchors in the area's ring art.

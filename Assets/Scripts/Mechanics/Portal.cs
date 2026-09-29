@@ -22,6 +22,8 @@ public sealed class Portal : MonoBehaviour
     [Header("Vein")] public Vein vein = Vein.Fixed;
     [Tooltip("Wild Veins: the knot (Knots id) that settles it into a fixed shortcut.")] public string settlesWith = "";
     public string settledScene = "", settledArrival = "", settledName = "";
+    [Tooltip("Vein art (Codex K-04): the calm and the broken membrane; a Wild Vein shows the broken one until it settles.")]
+    public Sprite membraneStable, membraneWild;
 
     public bool IsWild => vein == Vein.Wild && !GameSave.IsKnotAwake(settlesWith);
     bool Settled => vein == Vein.Wild && !IsWild;
@@ -155,6 +157,7 @@ public sealed class Portal : MonoBehaviour
         float breathe = 1f + .03f * Mathf.Sin(Time.time * 1.7f);
         membrane.transform.localScale = new Vector3(membraneScale.x * breathe, membraneScale.y * (2f - breathe), 1f);
         Color c = membrane.color; c.a = .78f + .12f * Mathf.Sin(Time.time * 2.3f) + .2f * glow;
+        if (membraneWild != null) membrane.sprite = IsWild ? membraneWild : membraneStable;
         if (IsWild)
         {
             // A wild vein flickers between mint and a pale bruise-violet, and gutters.

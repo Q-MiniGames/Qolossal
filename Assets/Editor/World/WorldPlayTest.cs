@@ -46,6 +46,42 @@ public static class WorldPlayTest
     static bool Near(Vector2 at, float within = .7f) => Mathf.Abs(Qori.transform.position.x - at.x) < within;
     static void Next(int s, float t) { stage = s; stageAt = t; }
 
+    // The Chart after the whole loop: A0 and the chamber (R1) and A2 (R3) are charted, A1 (R2)
+    // isn't; the Grip Knot is awake; three veins are known. Renders it to <-captureDir>/chart.png.
+    static void ChartChecks()
+    {
+        var chart = ChartScreen.Instance;
+        Expect(chart != null, "the area has a Chart");
+        if (chart == null) return;
+        chart.Open();
+        Expect(ChartScreen.IsOpen && Time.timeScale == 0f && GamePauseMenu.BlocksGameplayInput, "opening the Chart pauses the game and takes the controls");
+        bool Has(string name) => GameObject.Find(name) != null;
+        Expect(Has("Charted R1") && Has("Charted R3") && !Has("Charted R2"), "the mist clears over the charted regions (R1, R3) and not over R2");
+        Expect(Has("Stir R1") && Has("Old pose R1") && !Has("Stir R2"), "the Grip stir shows the clenched hand and the old contour");
+        int veins = Object.FindObjectsByType<UnityEngine.UI.Image>(FindObjectsSortMode.None).Count(i => i.name == "Vein");
+        Expect(veins >= 3, $"the travelled veins are drawn ({veins})");
+        Expect(Has("Qori") && Has("Icon a0-mossy-hollow") && Has("Icon r3-ribwood") && !Has("Icon r2-vein-galleries") && !Has("Icon r1-grip-knot"), "marks on the charted places and Qori, none on the uncharted Arm or the chamber he never charted");
+
+        // Batch mode: render the overlay through the camera to look at it.
+        var canvas = GameObject.Find("Chart Canvas").GetComponent<Canvas>();
+        var camera = Camera.main;
+        canvas.renderMode = RenderMode.ScreenSpaceCamera; canvas.worldCamera = camera; canvas.planeDistance = 1f;
+        Canvas.ForceUpdateCanvases();
+        string[] args = System.Environment.GetCommandLineArgs();
+        int at = System.Array.IndexOf(args, "-captureDir");
+        string folder = at >= 0 && at + 1 < args.Length ? args[at + 1] : "Temp/WorldCaptures";
+        Directory.CreateDirectory(folder);
+        var target = new RenderTexture(1920, 1080, 24); camera.targetTexture = target; camera.Render();
+        RenderTexture.active = target;
+        var read = new Texture2D(1920, 1080, TextureFormat.RGB24, false); read.ReadPixels(new Rect(0, 0, 1920, 1080), 0, 0); read.Apply();
+        File.WriteAllBytes(Path.Combine(folder, "chart.png"), read.EncodeToPNG());
+        camera.targetTexture = null; RenderTexture.active = null;
+        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+
+        chart.Close();
+        Expect(!ChartScreen.IsOpen && Time.timeScale == 1f && !GamePauseMenu.BlocksGameplayInput, "closing it gives the game back");
+    }
+
     static void Tick()
     {
         if (!EditorApplication.isPlaying) return;
@@ -104,6 +140,8 @@ public static class WorldPlayTest
                 var knot = Object.FindFirstObjectByType<TitanKnot>();
                 Expect(knot.Current == TitanKnot.State.Sealed && PortalNamed("r1k-elbow") == null && Named<SpriteRenderer>("Dormant Vein Gate") != null,
                        "the knot is sealed, and the elbow vein is only a dormant arch");
+                var gate = Object.FindFirstObjectByType<StirGate>();
+                Expect(gate != null && !gate.IsOpen && gate.solid.enabled, "the finger-bone stir gate before it is closed and solid");
                 Place((Vector2)knot.transform.position + Vector2.up);
                 Next(7, t);
                 break;
@@ -136,6 +174,8 @@ public static class WorldPlayTest
                 Expect(Object.FindFirstObjectByType<GroundCreature>() == null && PortalNamed("r1k-elbow") != null && Named<SpriteRenderer>("Dormant Vein Gate") == null,
                        "the chamber changed at once: the guardian gone, the elbow vein grown");
                 Expect(Mathf.Abs(Camera.main.orthographicSize - 5f) < .01f && !GamePauseMenu.BlocksGameplayInput, "the view and the controls are back");
+                var gate = Object.FindFirstObjectByType<StirGate>();
+                Expect(gate.IsOpen && !gate.solid.enabled && gate.image.sprite == gate.open, "the stir opened the finger-bone gate");
                 Place(PortalNamed("r1k-elbow").transform.position + Vector3.up);
                 Next(10, t);
                 break;
@@ -160,7 +200,7 @@ public static class WorldPlayTest
             case 13 when Arrived("A0_TestRoom") && t - stageAt > 1f || stage == 13 && t - stageAt > 10f:
             {
                 Expect(Arrived("A0_TestRoom"), "A1's west gate still leads to A0");
-                var finger = Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None).FirstOrDefault(b => b.name == "Clenched Finger");
+                var finger = GameObject.Find("Clenched Finger");
                 var hit = Physics2D.Raycast(new Vector2(181f, 20f), Vector2.down, 30f, LayerMask.GetMask("Ground"));
                 Expect(finger != null && hit.collider != null && hit.collider.name == "Clenched Finger", "in A0 the clenched finger now bridges the Crease");
                 var wild = PortalNamed("a0-wild");
@@ -178,6 +218,7 @@ public static class WorldPlayTest
                 Expect(Arrived(A2RoomBuilder.SceneName) && Near(CheckpointNamed("a2-arena").SpawnPosition), "the settled vein is the shortcut to A2's Waymark");
                 Expect(GameSave.IsCharted("r3-ribwood") && GameSave.CheckpointIn(SceneManager.GetActiveScene().path) == "a2-arena", "arriving on the Waymark charts A2 and sets the checkpoint");
                 Expect(PortalNamed("a0-wild") == null && GameSave.KnowsVein("a0-wild", "a2-arena"), "and that shortcut is now known");
+                ChartChecks();
                 Expect(errors == 0, $"no runtime errors ({errors})");
                 Debug.Log($"[WorldTest] finished with {failures} failure(s)");
                 GameSave.Clear();

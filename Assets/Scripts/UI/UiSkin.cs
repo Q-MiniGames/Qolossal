@@ -36,6 +36,13 @@ public sealed class UiSkin : ScriptableObject
     [Tooltip("Leaf size in frame px; a little larger than a socket so the frame rim overlaps its edge.")]
     public float leafSize = 84;
 
+    [Header("The Chart (map screen): Batch 5 Phase 2 and Review 09 art, all registered to chartBase")]
+    public Sprite chartBase, chartFog, chartFrame, chartVeinLine;
+    [Tooltip("R1 to R7: white where the region lies.")] public Sprite[] chartRegions = new Sprite[7];
+    [Tooltip("R1 to R6: the body part after its knot's stir (the Heart's stir is the ending).")] public Sprite[] chartStirPoses = new Sprite[6];
+    [Tooltip("R1 to R7: the sleeping contour, drawn beside the moved part.")] public Sprite[] chartStirGhosts = new Sprite[7];
+    public Sprite mapKnotDormant, mapKnotAwake, mapWaymark, mapWildVein, mapQori, mapUnexplored;
+
     static UiSkin loaded;
     public static UiSkin Load() => loaded != null ? loaded : loaded = Resources.Load<UiSkin>("UI/UiSkin");
 

@@ -22,7 +22,7 @@ public static class A0TestRoomBuilder
     public static void Build()
     {
         TerrainKit kit = BuildKit();
-        Scene scene = NewRoom("A0 Mossy Hollow", new Vector2(-18f, 1.5f), out Camera camera, "a0-mossy-hollow", "R1");
+        Scene scene = NewRoom("A0 Mossy Hollow", new Vector2(-18f, 1.5f), out Camera camera, "a0-mossy-hollow", "R1", new Vector2(.41f, .52f));   // the open palm
         var terrain = new GameObject("Terrain").transform;
 
         TerrainBlock Block(string name, float x, float top, float width, float height, int offset,
@@ -104,7 +104,7 @@ public static class A0TestRoomBuilder
     }
 
     // A new area scene: global light, Qori, the following camera, the pause menu and the GameArea.
-    internal static Scene NewRoom(string areaName, Vector2 playerAt, out Camera camera, string levelId = "", string region = "")
+    internal static Scene NewRoom(string areaName, Vector2 playerAt, out Camera camera, string levelId = "", string region = "", Vector2 chartPosition = default)
     {
         Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
         var light = new GameObject("Global Light 2D").AddComponent<Light2D>();
@@ -128,7 +128,7 @@ public static class A0TestRoomBuilder
         var manager = new GameObject("GameManager");
         manager.AddComponent<GamePauseMenu>();
         var area = manager.AddComponent<GameArea>();
-        area.displayName = areaName; area.levelId = levelId; area.region = region;
+        area.displayName = areaName; area.levelId = levelId; area.region = region; area.chartPosition = chartPosition;
         return scene;
     }
 
@@ -384,7 +384,7 @@ public static class A0TestRoomBuilder
 
         // After the Grip stir: a clenched finger lies across the Crease.
         using (room.Stir("Crease Bridge", Knots.Grip, afterKnot: true))
-            AddBlock(room.terrain, kit, "Clenched Finger", 174.4f, G, 13.2f, 2.4f, 12, bottom: true);
+            room.FingerBridge("Clenched Finger", 174.4f, 187.6f, G);
     }
 
     // Ability shrines, each before the stretch that needs its relic: the Living Thread at the start

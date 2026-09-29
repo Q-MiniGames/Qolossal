@@ -1,14 +1,17 @@
 using UnityEngine;
 
 // A small root shrine deep in a level: a checkpoint that also charts the level on the titan's
-// map. A map leaf floats over it, a "?" until the level is charted and the Waymark's own mark
-// after. Touching it the first time charts the level and shows a banner.
+// map. Its seed is closed until the level is charted, then opens and glows (Codex's
+// Waymark_Dormant / Waymark_Lit, drawn by the checkpoint's own renderer). Touching it the first
+// time charts the level and shows a banner. An optional map leaf can float over it.
 [DisallowMultipleComponent, RequireComponent(typeof(Checkpoint))]
 public sealed class Waymark : MonoBehaviour
 {
     [Tooltip("The level this charts; empty uses the scene's GameArea level id.")] public string levelId = "";
     public SpriteRenderer icon;
     public Sprite unchartedIcon, chartedIcon;
+    [Tooltip("The shrine's closed and open art, shown by the checkpoint's renderer.")] public Sprite shrineDormant, shrineLit;
+    SpriteRenderer shrine;
     [Tooltip("Height of the map leaf's centre above the Waymark's position.")] public float iconHeight = 2.1f;
 
     float chartedAt = -1f; Vector3 iconScale; string levelName;
@@ -21,6 +24,8 @@ public sealed class Waymark : MonoBehaviour
         var area = GameArea.InScene;
         levelName = area != null && !string.IsNullOrEmpty(area.displayName) ? area.displayName : LevelId;
         if (icon != null) { iconScale = icon.transform.localScale; icon.sprite = IsCharted ? chartedIcon : unchartedIcon; }
+        shrine = GetComponent<SpriteRenderer>();
+        if (shrine != null && shrineLit != null) shrine.sprite = IsCharted ? shrineLit : shrineDormant;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -29,12 +34,14 @@ public sealed class Waymark : MonoBehaviour
         if (!GameSave.Chart(LevelId)) return;
         chartedAt = Time.time;
         if (icon != null) icon.sprite = chartedIcon;
+        if (shrine != null && shrineLit != null) shrine.sprite = shrineLit;
         var lib = Fx.Library;
-        if (lib != null && icon != null)
+        Vector2 burst = icon != null ? (Vector2)icon.transform.position : shrine != null ? (Vector2)shrine.bounds.center : (Vector2)transform.position;
+        if (lib != null)
         {
-            Fx.Pop(lib.telegraphGlint, icon.transform.position, 1.4f, .45f, 45);
+            Fx.Pop(lib.telegraphGlint, burst, 1.4f, .45f, 45);
             if (lib.checkpointMote != null)
-                for (int i = 0; i < 6; i++) Fx.Pop(lib.checkpointMote, (Vector2)icon.transform.position + Random.insideUnitCircle * .5f, .35f, .9f, 44);
+                for (int i = 0; i < 6; i++) Fx.Pop(lib.checkpointMote, burst + Random.insideUnitCircle * .5f, .35f, .9f, 44);
         }
     }
 

@@ -22,7 +22,7 @@ public static class A1RoomBuilder
     [MenuItem("Qolossal/Scenes/Build A1 Aqueduct")]
     public static void Build()
     {
-        var scene = A0TestRoomBuilder.NewRoom("A1 Aqueduct Ravine", new Vector2(StartX, StartY), out Camera camera, "r2-vein-galleries", "R2");
+        var scene = A0TestRoomBuilder.NewRoom("A1 Aqueduct Ravine", new Vector2(StartX, StartY), out Camera camera, "r2-vein-galleries", "R2", new Vector2(.62f, .25f));   // mid-forearm
         camera.backgroundColor = new Color(.665f, .744f, .77f);   // the far painting's top row
         var room = new AreaRoom("A1");
 

@@ -19,7 +19,7 @@ public static class R1GripKnotBuilder
     [MenuItem("Qolossal/Scenes/Build R1 Grip Knot")]
     public static void Build()
     {
-        var scene = A0TestRoomBuilder.NewRoom("The Grip Knot", new Vector2(StartX, StartY), out Camera camera, "r1-grip-knot", "R1");
+        var scene = A0TestRoomBuilder.NewRoom("The Grip Knot", new Vector2(StartX, StartY), out Camera camera, "r1-grip-knot", "R1", new Vector2(.46f, .43f));   // the heel of the palm
         camera.backgroundColor = new Color(.72f, .79f, .77f);
         var room = new AreaRoom("A0");
 
@@ -58,7 +58,9 @@ public static class R1GripKnotBuilder
             "Little seed... is that you?",
         }, guardian);
 
-        // Where the stir grows a vein to the Arm.
+        // A finger-bone gate that opens when the hand clenches, and beyond it where the stir
+        // grows a vein to the Arm.
+        room.StirGate(new Vector2(56f, 0f), Knots.Grip, "A0");
         using (room.Stir("Elbow Vein (dormant)", Knots.Grip, afterKnot: false)) room.DormantGate(new Vector2(59f, 0f));
         using (room.Stir("Elbow Vein", Knots.Grip, afterKnot: true))
             room.GrownVein(new Vector2(59f, 0f), "r1k-elbow", A1RoomBuilder.SceneName, "a1-palm", "A1 Aqueduct Ravine", -1f);

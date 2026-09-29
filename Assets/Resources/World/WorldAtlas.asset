@@ -17,83 +17,101 @@ MonoBehaviour:
     levelId: a0-mossy-hollow
     displayName: A0 Mossy Hollow
     region: R1
+    chartPosition: {x: 0.41, y: 0.52}
     waymark: a0-waymark
+    knot: 
     veins:
     - portalId: a0-east
       destinationScene: A1_Aqueduct
       destinationPortal: a1-west
       wild: 0
+      settlesWith: 
       knot: 
       afterKnot: 0
     - portalId: a0-knot
       destinationScene: R1_GripKnot
       destinationPortal: r1k-west
       wild: 0
+      settlesWith: 
       knot: 
       afterKnot: 0
     - portalId: a0-wild
       destinationScene: 
       destinationPortal: 
       wild: 1
+      settlesWith: grip
       knot: 
       afterKnot: 0
   - scene: A1_Aqueduct
     levelId: r2-vein-galleries
     displayName: A1 Aqueduct Ravine
     region: R2
+    chartPosition: {x: 0.62, y: 0.25}
     waymark: a1-gallery
+    knot: 
     veins:
     - portalId: a1-east
       destinationScene: A2_Grove
       destinationPortal: a2-west
       wild: 0
+      settlesWith: 
       knot: 
       afterKnot: 0
     - portalId: a1-palm
       destinationScene: R1_GripKnot
       destinationPortal: r1k-elbow
       wild: 0
+      settlesWith: 
       knot: grip
       afterKnot: 1
     - portalId: a1-west
       destinationScene: A0_TestRoom
       destinationPortal: a0-east
       wild: 0
+      settlesWith: 
       knot: 
       afterKnot: 0
   - scene: A2_Grove
     levelId: r3-ribwood
     displayName: A2 Ancient Grove
     region: R3
+    chartPosition: {x: 0.55, y: 0.56}
     waymark: a2-arena
+    knot: 
     veins:
     - portalId: a2-east
       destinationScene: A3_Falls
       destinationPortal: a3-west
       wild: 0
+      settlesWith: 
       knot: 
       afterKnot: 0
     - portalId: a2-west
       destinationScene: A1_Aqueduct
       destinationPortal: a1-east
       wild: 0
+      settlesWith: 
       knot: 
       afterKnot: 0
   - scene: R1_GripKnot
     levelId: r1-grip-knot
     displayName: The Grip Knot
     region: R1
+    chartPosition: {x: 0.46, y: 0.43}
     waymark: r1k-waymark
+    knot: grip
     veins:
     - portalId: r1k-elbow
       destinationScene: A1_Aqueduct
       destinationPortal: a1-palm
       wild: 0
+      settlesWith: 
       knot: grip
       afterKnot: 1
     - portalId: r1k-west
       destinationScene: A0_TestRoom
       destinationPortal: a0-knot
       wild: 0
+      settlesWith: 
       knot: 
       afterKnot: 0

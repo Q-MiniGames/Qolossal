@@ -10,7 +10,7 @@ public sealed class GamePauseMenu : MonoBehaviour
 {
     public static bool IsPaused { get; private set; }
     private static int resumeFrame = -1;
-    public static bool BlocksGameplayInput => IsPaused || Time.frameCount <= resumeFrame || AreaTransition.IsTransitioning || StirSequence.IsPlaying;
+    public static bool BlocksGameplayInput => IsPaused || Time.frameCount <= resumeFrame || AreaTransition.IsTransitioning || StirSequence.IsPlaying || ChartScreen.IsOpen;
     private float previousTimeScale = 1f;
     private bool previousAudioPause;
     private bool ownsPause;
@@ -33,7 +33,7 @@ public sealed class GamePauseMenu : MonoBehaviour
     {
         bool toggle = Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame;
         toggle |= Gamepad.current != null && Gamepad.current.startButton.wasPressedThisFrame;
-        if (toggle && !AreaTransition.IsTransitioning)
+        if (toggle && !AreaTransition.IsTransitioning && !ChartScreen.BlocksPause)
         {
             if (ownsPause && confirmingNewGame)
             {
@@ -90,6 +90,14 @@ public sealed class GamePauseMenu : MonoBehaviour
         SceneManager.LoadScene(target);
     }
 
+    // The map of the titan; only in game areas, where the Chart exists.
+    private void OpenChart()
+    {
+        if (ChartScreen.Instance == null) return;
+        Resume();
+        ChartScreen.Instance.Open();
+    }
+
     private void Quit()
     {
         Resume();
@@ -120,7 +128,7 @@ public sealed class GamePauseMenu : MonoBehaviour
         menuCanvas.transform.SetParent(transform, false);
         var dim = GameHud.AddImage(menuCanvas.transform, "Dim", null, new Vector2(.5f, .5f), Vector2.zero, new Vector2(4000f, 4000f));
         dim.color = new Color(.08f, .1f, .1f, .55f); dim.raycastTarget = true;
-        var panel = GameHud.AddImage(menuCanvas.transform, "Panel", skin.panel, new Vector2(.5f, .5f), Vector2.zero, new Vector2(620f, 620f));
+        var panel = GameHud.AddImage(menuCanvas.transform, "Panel", skin.panel, new Vector2(.5f, .5f), Vector2.zero, new Vector2(620f, 720f));
         panel.type = Image.Type.Sliced; panel.preserveAspect = false;
 
         Text Label(Transform parent, string text, float y, int size, float height = 70f)
@@ -147,10 +155,11 @@ public sealed class GamePauseMenu : MonoBehaviour
         }
 
         mainPage = new GameObject("Main", typeof(RectTransform)); mainPage.transform.SetParent(panel.transform, false);
-        Label(mainPage.transform, "Paused", 215f, 46);
-        firstMain = MakeButton(mainPage.transform, "Resume", 100f, Resume);
-        MakeButton(mainPage.transform, "New Game", -35f, () => { confirmingNewGame = true; ShowMenu(true); });
-        MakeButton(mainPage.transform, "Quit", -170f, Quit);
+        Label(mainPage.transform, "Paused", 265f, 46);
+        firstMain = MakeButton(mainPage.transform, "Resume", 155f, Resume);
+        MakeButton(mainPage.transform, "Chart", 35f, OpenChart);
+        MakeButton(mainPage.transform, "New Game", -85f, () => { confirmingNewGame = true; ShowMenu(true); });
+        MakeButton(mainPage.transform, "Quit", -205f, Quit);
 
         confirmPage = new GameObject("Confirm", typeof(RectTransform)); confirmPage.transform.SetParent(panel.transform, false);
         Label(confirmPage.transform, "Start a new game?", 190f, 40);
@@ -167,7 +176,7 @@ public sealed class GamePauseMenu : MonoBehaviour
         if (!ownsPause || menuCanvas != null) return;
         float width = Mathf.Min(360f, Screen.width - 20f);
         Rect panel = new Rect((Screen.width - width) * 0.5f,
-            (Screen.height - 260f) * 0.5f, width, 260f);
+            (Screen.height - 320f) * 0.5f, width, 320f);
         if (confirmingNewGame)
         {
             GUI.Box(panel, "Start a new game?");
@@ -187,9 +196,11 @@ public sealed class GamePauseMenu : MonoBehaviour
         GUI.Box(panel, "Paused");
         if (GUI.Button(new Rect(panel.x + 25f, panel.y + 45f, width - 50f, 45f), "Resume"))
             Resume();
-        if (GUI.Button(new Rect(panel.x + 25f, panel.y + 105f, width - 50f, 45f), "New Game"))
+        if (ChartScreen.Instance != null && GUI.Button(new Rect(panel.x + 25f, panel.y + 105f, width - 50f, 45f), "Chart"))
+            OpenChart();
+        if (GUI.Button(new Rect(panel.x + 25f, panel.y + 165f, width - 50f, 45f), "New Game"))
             confirmingNewGame = true;
-        if (GUI.Button(new Rect(panel.x + 25f, panel.y + 165f, width - 50f, 45f), "Quit"))
+        if (GUI.Button(new Rect(panel.x + 25f, panel.y + 225f, width - 50f, 45f), "Quit"))
             Quit();
     }
 }

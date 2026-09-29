@@ -12,6 +12,7 @@ public sealed class WorldAtlas : ScriptableObject
     {
         public string portalId, destinationScene, destinationPortal;
         public bool wild;
+        [Tooltip("Wild Veins: the knot that settles it.")] public string settlesWith;
         [Tooltip("Set when the portal is inside a stir variant: it exists only before or after this knot.")] public string knot;
         public bool afterKnot;
         public bool Present => string.IsNullOrEmpty(knot) || GameSave.IsKnotAwake(knot) == afterKnot;
@@ -19,7 +20,9 @@ public sealed class WorldAtlas : ScriptableObject
     [Serializable] public sealed class Level
     {
         public string scene, levelId, displayName, region;
+        [Tooltip("Where the level lies on the Chart, 0-1 from the bottom-left.")] public Vector2 chartPosition;
         [Tooltip("The Waymark's checkpoint id, or empty.")] public string waymark;
+        [Tooltip("The knot this level holds (a Knot Chamber), or empty.")] public string knot;
         public List<VeinEnd> veins = new List<VeinEnd>();
     }
 
