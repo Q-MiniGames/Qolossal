@@ -390,7 +390,8 @@ public static class A0TestRoomBuilder
     // Ability shrines, each before the stretch that needs its relic: the Living Thread at the start
     // (the Seed Carrier over the slope is the first anchor), the Climbing Moss on the pit floor
     // (the climbable column and the end plateau's face need wall jumps), and Bloomfall on top of
-    // the end plateau, just before the Shellback.
+    // the end plateau, just before the Shellback. Wind Leaf and the Glidecap stand on the start
+    // ground for now.
     static void BuildShrines()
     {
         RelicBuilder.Build();
@@ -409,6 +410,10 @@ public static class A0TestRoomBuilder
         Shrine("LivingThread", -15.5f, 0f);
         Shrine("ClimbingMoss", 50.3f, -5f);
         Shrine("Bloomfall", 68.8f, 9f);
+        // Stand-ins until the Breath Knot (R3) and Bloom Knot (R5) chambers grant them: early on
+        // the start ground, clear of the stretch MovementAbilityPlayTest uses (x -16 to -8).
+        Shrine("WindLeaf", -1.5f, 0f);
+        Shrine("Glidecap", 7.5f, 0f);
     }
 
     // A0 decor from the sliced sheet, standing on (or hanging from) the room's surfaces.
@@ -485,6 +490,7 @@ public static class A0TestRoomBuilder
             ("gallery_5", new Vector2(151f, 11f), 4f),
             ("shrine_thread", new Vector2(-15.5f, 1.3f), 2.2f), ("shrine_moss", new Vector2(50.3f, -3.7f), 2.2f),
             ("shrine_bloomfall", new Vector2(68.8f, 10.3f), 2.2f),
+            ("shrine_windleaf", new Vector2(-1.5f, 1.3f), 2.2f), ("shrine_glidecap", new Vector2(7.5f, 1.3f), 2.2f),
             ("enemy_carrier", new Vector2(20f, 9.3f), 2.2f), ("enemy_spitter", new Vector2(41.5f, 9.4f), 2.2f),
             ("enemy_thornwing", new Vector2(50f, 8.4f), 2.2f), ("enemy_shellback", new Vector2(76f, 9.8f), 2.2f),
         });

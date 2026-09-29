@@ -98,9 +98,11 @@ public static class MechanicsCheck
             var abilities = player.GetComponent<PlayerAbilityController>();
             if (abilities == null) abilities = player.gameObject.AddComponent<PlayerAbilityController>();
             var shrines = Object.FindObjectsByType<AbilityShrine>(FindObjectsSortMode.None);
-            Expect(shrines.Length == 3 && shrines.All(s => s.ability != null && s.ability.relic != null && s.ability.icon != null && s.relic.sprite == s.ability.relic),
-                   "three ability shrines, each with its relic art and HUD icon");
-            Expect(new[] { Relics.LivingThread, Relics.ClimbingMoss, Relics.Bloomfall }.All(id => !abilities.HasAbility(id)), "Qori starts the test room with no relics");
+            Expect(shrines.Length == 5 && shrines.All(s => s.ability != null && s.ability.relic != null && s.ability.icon != null && s.relic.sprite == s.ability.relic),
+                   $"five ability shrines, each with its relic art and HUD icon ({shrines.Length})");
+            Expect(new[] { Relics.WindLeaf, Relics.Glidecap }.All(id => shrines.Any(s => s.ability.abilityId == id)), "Wind Leaf and the Glidecap have their shrines");
+            Expect(new[] { Relics.LivingThread, Relics.ClimbingMoss, Relics.Bloomfall, Relics.WindLeaf, Relics.Glidecap }.All(id => !abilities.HasAbility(id)),
+                   "Qori starts the test room with no relics");
             Expect(!player.GetComponent<PlayerThread>().Unlocked, "the thread is locked before the Living Thread relic");
             float halfWidth = player.GetComponent<BoxCollider2D>().size.x * Mathf.Abs(player.transform.lossyScale.x) * .5f;
             bool SlidesOnColumn()
@@ -116,6 +118,9 @@ public static class MechanicsCheck
             Expect(moss.IsTaken && abilities.HasAbility(Relics.ClimbingMoss) && !abilities.HasAbility(Relics.LivingThread), "the moss shrine unlocks Climbing Moss only");
             Expect(SlidesOnColumn(), "with Climbing Moss Qori slides on the climbable column");
             Expect(shrines.First(s => s.ability.abilityId == Relics.Bloomfall).ability is PogoAbilityDefinition, "Bloomfall is the pogo bounce");
+            var leaf = shrines.First(s => s.ability.abilityId == Relics.WindLeaf);
+            leaf.Collect(abilities);
+            Expect(leaf.IsTaken && abilities.HasAbility(Relics.WindLeaf) && !abilities.HasAbility(Relics.Glidecap), "the Wind Leaf shrine unlocks the dash only");
         }
         finally { Physics2D.simulationMode = SimulationMode2D.FixedUpdate; }
 
