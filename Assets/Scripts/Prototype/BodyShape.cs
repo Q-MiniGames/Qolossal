@@ -18,6 +18,15 @@ public sealed class BodyShape : MonoBehaviour
     public bool solid = true;
 
     Mesh mesh;
+    float alpha = 1f;
+
+    // Fades the whole shape (fill and rim), e.g. a house front cut away while Qori is inside.
+    public void SetAlpha(float value)
+    {
+        value = Mathf.Clamp01(value);
+        if (Mathf.Approximately(value, alpha)) return;
+        alpha = value; Rebuild();
+    }
     static readonly int MainTex = Shader.PropertyToID("_MainTex");
 
     void OnEnable() => Rebuild();
@@ -50,6 +59,7 @@ public sealed class BodyShape : MonoBehaviour
         {
             vertices[i] = outline[i];
             colors[i] = Color.Lerp(bottom, top, Mathf.InverseLerp(lo, hi, outline[i].y));
+            colors[i].a *= alpha;
         }
         mesh.vertices = vertices; mesh.colors = colors;
         mesh.uv = new Vector2[outline.Length];
@@ -85,7 +95,7 @@ public sealed class BodyShape : MonoBehaviour
         rimMesh.Clear();
         int n = rim.Length;
         var vertices = new Vector3[n * 2]; var colors = new Color[n * 2]; var tris = new int[(n - 1) * 6];
-        Color under = new Color(rimColor.r, rimColor.g, rimColor.b, 0f);
+        Color line = new Color(rimColor.r, rimColor.g, rimColor.b, rimColor.a * alpha), under = new Color(rimColor.r, rimColor.g, rimColor.b, 0f);
         for (int i = 0; i < n; i++)
         {
             Vector2 along = (rim[Mathf.Min(n - 1, i + 1)] - rim[Mathf.Max(0, i - 1)]).normalized;
@@ -93,7 +103,7 @@ public sealed class BodyShape : MonoBehaviour
             if (up.y < 0f) up = -up;
             vertices[i * 2] = rim[i] + up * rimWidth * .25f;
             vertices[i * 2 + 1] = rim[i] - up * rimWidth * .75f;
-            colors[i * 2] = rimColor; colors[i * 2 + 1] = outline != null && outline.Length >= 3 ? under : rimColor;
+            colors[i * 2] = line; colors[i * 2 + 1] = outline != null && outline.Length >= 3 ? under : line;
         }
         for (int i = 0; i < n - 1; i++)
         {
