@@ -29,6 +29,7 @@ public struct CombatDamageResponse
     public CombatHitDisposition Disposition;
     public float Damage;
     public bool SupportsPogo;
+    public bool Killed;   // this blow killed the target
     public static CombatDamageResponse Applied(float damage,bool pogo=false)=>new CombatDamageResponse{Disposition=CombatHitDisposition.Damaged,Damage=damage,SupportsPogo=pogo};
 }
 public interface ICombatDamageReceiver { CombatDamageResponse ReceiveCombatHit(CombatDamage hit); }

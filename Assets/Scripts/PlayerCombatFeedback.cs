@@ -25,6 +25,8 @@ public sealed class PlayerCombatFeedback : MonoBehaviour
         if(hit.Response.Disposition!=CombatHitDisposition.Damaged)return;
         var attack=hit.Hit.Attack;
         if(stoppedExecution!=hit.ExecutionId){stoppedExecution=hit.ExecutionId;combat.RequestHitStop(attack.hitStop);}
+        if(hit.Response.Killed)HitStop.Freeze(HitStop.EnemyKilled);
+        else if(WeaponKinds.Of(hit.Hit)==WeaponKind.Mace)HitStop.Freeze(HitStop.HeavyHit);
         if(attack.hitSound!=null)audioSource.PlayOneShot(attack.hitSound,.4f);
         if(attack.impactEffect!=null)Destroy(Instantiate(attack.impactEffect,hit.Hit.Point,Quaternion.identity),2);
         OnCameraImpulse?.Invoke(hit.Hit.Point,attack.cameraShake);

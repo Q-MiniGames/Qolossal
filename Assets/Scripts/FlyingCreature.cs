@@ -47,7 +47,8 @@ public sealed class FlyingCreature : MonoBehaviour, IReedbladeTarget, ICombatDam
             // Disabling unregisters the anchor. The player's rope releases
             // without resetting the velocity earned during the swing.
             gameObject.SetActive(false);
-            return CombatDamageResponse.Applied(dealt,true);
+            var killed=CombatDamageResponse.Applied(dealt,true);killed.Killed=true;
+            return killed;
         }
         anchor.FlashHit();
         return CombatDamageResponse.Applied(dealt,true);

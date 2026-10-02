@@ -47,6 +47,13 @@ public static class R1GripKnotBuilder
         }
 
         var moss = AssetDatabase.LoadAssetAtPath<AbilityDefinition>("Assets/Resources/Relics/ClimbingMoss.asset");
+        // The guardian's floor locks the camera to the chamber (floor 0 to roof 8): it holds level
+        // through the fight instead of bobbing with every jump.
+        var arena = new GameObject("Camera Lock (guardian floor)").AddComponent<CameraLockZone>();
+        arena.transform.position = new Vector3(29f, 4f, 0f);
+        arena.GetComponent<BoxCollider2D>().size = new Vector2(30f, 8f);
+        arena.view = Rect.MinMaxRect(-6f, -1f, 64f, 9f);
+
         room.Knot(new Vector2(49f, 1.2f), Knots.Grip, moss, new[]
         {
             "...a hand. I had forgotten I had hands.",

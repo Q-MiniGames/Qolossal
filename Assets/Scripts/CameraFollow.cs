@@ -24,6 +24,7 @@ public sealed class CameraFollow : MonoBehaviour
     private PlayerThread thread;
     private Rigidbody2D body;
     private int resetVersion=-1;
+    private float normalSize=-1f;
     public void Configure(Transform followTarget){target=followTarget;needsSnap=true;}
 
     private Vector3 smoothingVelocity;
@@ -75,6 +76,8 @@ public sealed class CameraFollow : MonoBehaviour
             target.position.y + offset.y + lookAhead.y,
             cameraZ);
 
+        desiredPosition=Bounded(desiredPosition,true);
+
         if (needsSnap)
         {
             lookAhead=lookVelocity=Vector2.zero;
@@ -83,7 +86,7 @@ public sealed class CameraFollow : MonoBehaviour
             desiredPosition=new Vector3(target.position.x+offset.x,target.position.y+offset.y,cameraZ);
             if(body!=null && movement!=null && target==movement.transform)
                 desiredPosition=new Vector3(body.position.x+offset.x,body.position.y+offset.y,cameraZ);
-            transform.position = desiredPosition;
+            transform.position = Bounded(desiredPosition,true);
             needsSnap = false;
             return;
         }
@@ -96,8 +99,34 @@ public sealed class CameraFollow : MonoBehaviour
         if(view==null)view=GetComponent<Camera>();
         float band=view.orthographicSize*verticalScreenLimit;
         float playerY=target.position.y;
-        if(next.y-playerY>band){next.y=playerY+band;smoothingVelocity.y=Mathf.Min(smoothingVelocity.y,velocity.y);}
+        if(CameraLockZone.Current!=null){}   // a lock zone frames the space itself
+        else if(next.y-playerY>band){next.y=playerY+band;smoothingVelocity.y=Mathf.Min(smoothingVelocity.y,velocity.y);}
         else if(playerY-next.y>band){next.y=playerY-band;smoothingVelocity.y=Mathf.Max(smoothingVelocity.y,velocity.y);}
-        transform.position = next;
+        // The room's edges always win (a lock zone is eased into through the desired position above).
+        Vector3 held=Bounded(next,false);
+        if(held.x!=next.x)smoothingVelocity.x=0f;
+        if(held.y!=next.y)smoothingVelocity.y=0f;
+        transform.position = held;
+    }
+
+    // Keeps the view inside the room (CameraBounds) and, with `withLock`, inside the lock zone Qori
+    // is standing in. Measured at the normal zoom: when a vista pulls the view out, it may show past
+    // the edges. An axis is left free if Qori is far outside the room (a test or debug teleport).
+    Vector3 Bounded(Vector3 p,bool withLock)
+    {
+        if(view==null)view=GetComponent<Camera>();
+        if(normalSize<0f)normalSize=view.orthographicSize;
+        float halfH=Mathf.Min(view.orthographicSize,normalSize),halfW=halfH*view.aspect;
+        Vector2 c=p;
+        var zone=withLock?CameraLockZone.Current:null;
+        if(zone!=null)c=CameraBounds.Clamp(c,halfW,halfH,zone.view,true);
+        if(CameraBounds.TryGetRoom(out Rect room,out bool hasTop))
+        {
+            Vector2 at=target.position;
+            Vector2 bounded=CameraBounds.Clamp(c,halfW,halfH,room,hasTop);
+            if(at.x>room.xMin-3f&&at.x<room.xMax+3f)c.x=bounded.x;
+            if(at.y>room.yMin-3f)c.y=bounded.y;
+        }
+        return new Vector3(c.x,c.y,p.z);
     }
 }

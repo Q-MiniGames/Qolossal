@@ -41,7 +41,7 @@ public sealed class SentinelEnemy : EnemyBase
         return base.ReceiveCombatHit(hit);
     }
 
-    protected override void OnHurt(CombatDamage hit) { if (state == State.Telegraph) Enter(State.Recover); }
+    protected override void OnHurt(CombatDamage hit) { if (state == State.Telegraph) { Enter(State.Recover); HitStop.Freeze(HitStop.Stagger); } }
 
     void FixedUpdate()
     {

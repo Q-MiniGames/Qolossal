@@ -60,6 +60,8 @@ public sealed class PlayerHealth : MonoBehaviour
         float difference = transform.position.x - source.x;
         float direction = Mathf.Abs(difference) > 0.01f ? Mathf.Sign(difference) : -movement.FacingDirection;
         LastHitTime=Time.time;LastHitDirection=direction;
+        HitStop.Freeze(HitStop.QoriHurt);
+        CombatCameraShake.Kick(.06f);
         movement.ApplyKnockback(new Vector2(direction * Mathf.Max(push.x, knockback.x * .5f), push.y));
     }
 

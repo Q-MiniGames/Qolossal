@@ -146,7 +146,8 @@ public sealed class GroundCreature : MonoBehaviour, IReedbladeTarget, ICombatDam
             body.simulated = false;
             vanishAt = Time.time + 0.2f;
         }
-        return CombatDamageResponse.Applied(dealt,true);
+        var response=CombatDamageResponse.Applied(dealt,true);response.Killed=health<=0;
+        return response;
     }
 
     private void Update()

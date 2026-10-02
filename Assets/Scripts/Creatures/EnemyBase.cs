@@ -38,7 +38,9 @@ public abstract class EnemyBase : MonoBehaviour, ICombatDamageReceiver, IReedbla
         flashUntil = Time.time + .12f;
         OnHurt(hit);
         if (!IsAlive) Die();
-        return CombatDamageResponse.Applied(dealt, true);
+        var response = CombatDamageResponse.Applied(dealt, true);
+        response.Killed = !IsAlive;
+        return response;
     }
 
     protected virtual void OnHurt(CombatDamage hit) { }

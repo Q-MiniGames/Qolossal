@@ -32,6 +32,7 @@ public sealed class ShellbackEnemy : EnemyBase
         {
             if (WeaponKinds.Of(hit) != WeaponKind.Mace) { blockedShakeUntil = Time.time + .15f; return WeaponKinds.Blocked(); }
             shellIntact = false;
+            HitStop.Freeze(HitStop.Stagger);
             flashUntil = Time.time + .12f;
             var shell = rig != null ? rig.Bone("Shell").GetComponentInChildren<SpriteRenderer>() : null;
             if (shell != null) { Debris.Burst(shards, shell.bounds, shell.sortingOrder + 1, hit.Direction * 2f + Vector2.up); shell.sprite = shellCracked; }

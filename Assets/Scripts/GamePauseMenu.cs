@@ -128,7 +128,7 @@ public sealed class GamePauseMenu : MonoBehaviour
         menuCanvas.transform.SetParent(transform, false);
         var dim = GameHud.AddImage(menuCanvas.transform, "Dim", null, new Vector2(.5f, .5f), Vector2.zero, new Vector2(4000f, 4000f));
         dim.color = new Color(.08f, .1f, .1f, .55f); dim.raycastTarget = true;
-        var panel = GameHud.AddImage(menuCanvas.transform, "Panel", skin.panel, new Vector2(.5f, .5f), Vector2.zero, new Vector2(620f, 720f));
+        var panel = GameHud.AddImage(menuCanvas.transform, "Panel", skin.panel, new Vector2(.5f, .5f), Vector2.zero, new Vector2(620f, 840f));
         panel.type = Image.Type.Sliced; panel.preserveAspect = false;
 
         Text Label(Transform parent, string text, float y, int size, float height = 70f)
@@ -149,17 +149,22 @@ public sealed class GamePauseMenu : MonoBehaviour
             var button = image.gameObject.AddComponent<Button>();
             button.transition = Selectable.Transition.SpriteSwap;
             button.spriteState = new SpriteState { highlightedSprite = skin.buttonHover, selectedSprite = skin.buttonHover, pressedSprite = skin.buttonPressed };
-            button.onClick.AddListener(onClick);
+            if (onClick != null) button.onClick.AddListener(onClick);
             Label(image.transform, text, 2f, 32);
             return button;
         }
 
         mainPage = new GameObject("Main", typeof(RectTransform)); mainPage.transform.SetParent(panel.transform, false);
-        Label(mainPage.transform, "Paused", 265f, 46);
-        firstMain = MakeButton(mainPage.transform, "Resume", 155f, Resume);
-        MakeButton(mainPage.transform, "Chart", 35f, OpenChart);
-        MakeButton(mainPage.transform, "New Game", -85f, () => { confirmingNewGame = true; ShowMenu(true); });
-        MakeButton(mainPage.transform, "Quit", -205f, Quit);
+        Label(mainPage.transform, "Paused", 325f, 46);
+        firstMain = MakeButton(mainPage.transform, "Resume", 215f, Resume);
+        MakeButton(mainPage.transform, "Chart", 95f, OpenChart);
+        // Freeze frames on big hits (HitStop): some players prefer them off.
+        var hitPause = MakeButton(mainPage.transform, "Hit pause", -25f, null);
+        var hitPauseText = hitPause.GetComponentInChildren<Text>();
+        hitPauseText.text = HitPauseLabel;
+        hitPause.onClick.AddListener(() => { HitStop.Enabled = !HitStop.Enabled; hitPauseText.text = HitPauseLabel; });
+        MakeButton(mainPage.transform, "New Game", -145f, () => { confirmingNewGame = true; ShowMenu(true); });
+        MakeButton(mainPage.transform, "Quit", -265f, Quit);
 
         confirmPage = new GameObject("Confirm", typeof(RectTransform)); confirmPage.transform.SetParent(panel.transform, false);
         Label(confirmPage.transform, "Start a new game?", 190f, 40);
@@ -171,12 +176,14 @@ public sealed class GamePauseMenu : MonoBehaviour
         return true;
     }
 
+    static string HitPauseLabel => HitStop.Enabled ? "Hit pause: On" : "Hit pause: Off";
+
     private void OnGUI()
     {
         if (!ownsPause || menuCanvas != null) return;
         float width = Mathf.Min(360f, Screen.width - 20f);
         Rect panel = new Rect((Screen.width - width) * 0.5f,
-            (Screen.height - 320f) * 0.5f, width, 320f);
+            (Screen.height - 380f) * 0.5f, width, 380f);
         if (confirmingNewGame)
         {
             GUI.Box(panel, "Start a new game?");
@@ -200,7 +207,9 @@ public sealed class GamePauseMenu : MonoBehaviour
             OpenChart();
         if (GUI.Button(new Rect(panel.x + 25f, panel.y + 165f, width - 50f, 45f), "New Game"))
             confirmingNewGame = true;
-        if (GUI.Button(new Rect(panel.x + 25f, panel.y + 225f, width - 50f, 45f), "Quit"))
+        if (GUI.Button(new Rect(panel.x + 25f, panel.y + 225f, width - 50f, 45f), HitPauseLabel))
+            HitStop.Enabled = !HitStop.Enabled;
+        if (GUI.Button(new Rect(panel.x + 25f, panel.y + 285f, width - 50f, 45f), "Quit"))
             Quit();
     }
 }

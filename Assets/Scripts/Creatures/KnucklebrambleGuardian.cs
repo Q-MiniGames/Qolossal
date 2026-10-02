@@ -88,6 +88,7 @@ public sealed class KnucklebrambleGuardian : EnemyBase
         Fx.DeathPuff(at + Vector2.left * .6f, 2.2f); Fx.DeathPuff(at + Vector2.right * .6f, 2.2f);
         Fx.Leaves(at, 8, 1.2f);
         CombatCameraShake.Kick(.06f);
+        HitStop.Freeze(HitStop.GuardianKilled);
     }
 
     void FixedUpdate()
@@ -135,7 +136,7 @@ public sealed class KnucklebrambleGuardian : EnemyBase
                 else Enter(State.Pause);
                 break;
             case State.Opening:
-                if (t >= openTime) { exposedHits = 0; Enter(State.Exposed); }
+                if (t >= openTime) { exposedHits = 0; Enter(State.Exposed); HitStop.Freeze(HitStop.GuardianExposed); }
                 break;
             case State.Exposed:
                 if (t >= exposedTime) Enter(State.Closing);
