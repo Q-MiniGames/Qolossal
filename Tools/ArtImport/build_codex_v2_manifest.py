@@ -142,6 +142,68 @@ WILTED_SHARES = {"ThornArmor_Torso": "Torso", "Healed_Torso": "Torso", "ThornArm
 NINE_SLICE = {"UI_Dialogue_9Slice": (96, 96, 96, 96), "UI_NamePlate": (48, 24, 48, 24)}   # L, B, R, T
 
 
+_batch7 = {}
+
+
+def batch7_registration(name):
+    """Batch 7's registrations: W5 (pickups, effects, UI: density, pivot, 9-slice border) and W6
+    (one file per guardian: each part's density and pivot on its bone). None if the name isn't there."""
+    if not _batch7:
+        path = os.path.join(SOURCE, "Batch7", "W5", "REGISTRATION.json")
+        if os.path.exists(path):
+            with open(path) as f:
+                for rel, reg in json.load(f).items():
+                    _batch7[os.path.splitext(os.path.basename(rel))[0]] = ("W5", reg)
+        folder = os.path.join(SOURCE, "Batch7", "W6")
+        if os.path.isdir(folder):
+            for file in sorted(os.listdir(folder)):
+                if file.endswith("_REGISTRATION.json"):
+                    with open(os.path.join(folder, file)) as f:
+                        for part in json.load(f)["parts"]:
+                            _batch7[part["name"]] = ("W6/" + file, part)
+    return _batch7.get(name)
+
+
+_batch8 = {}
+
+
+def batch8_registration(name):
+    """Batch 8's registrations: W2 (body terrain and its props), W3 (Qvale), W4 (townspeople parts
+    and portraits, one file per character) and W7 (the renamed town dialogue panel). Each entry is
+    normalized to {ppu, pivot, repeat, border, kind}. None if the name isn't there."""
+    if not _batch8:
+        root = os.path.join(SOURCE, "Batch8")
+        def load(*parts):
+            path = os.path.join(root, *parts)
+            return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+        for n, r in load("W2", "REGISTRATION.json").items():
+            _batch8[n] = {"ppu": r["ppu"], "pivot": r["pivot_unity"], "repeat": r.get("repeat", ""), "kind": "world", "src": "Batch8/W2"}
+        # Review 16 redos (staged as Batch9): the modular pillar.
+        pillars = os.path.join(SOURCE, "Batch9", "W2_Pillars", "REGISTRATION.json")
+        if os.path.exists(pillars):
+            for n, r in json.load(open(pillars, encoding="utf-8")).items():
+                if "pivot_unity" in r:   # skips the assembly notes
+                    _batch8[n] = {"ppu": r["ppu"], "pivot": r["pivot_unity"], "repeat": r.get("repeat", ""), "kind": "world", "src": "Batch9/W2_Pillars"}
+        for n, r in load("W3", "REGISTRATION.json").items():
+            repeat = "x" if r.get("wrapU") == "Repeat" else ""
+            _batch8[n] = {"ppu": r["ppu"], "pivot": r.get("pivot", [0.5, 0.0]), "repeat": repeat, "kind": "world", "src": "Batch8/W3"}   # a sheet: its slices carry their own pivots
+        folder = os.path.join(root, "W4")
+        for file in sorted(os.listdir(folder)) if os.path.isdir(folder) else []:
+            if not file.endswith("_REGISTRATION.json"): continue
+            r = json.load(open(os.path.join(folder, file), encoding="utf-8"))
+            who = file[:-len("_REGISTRATION.json")]
+            for part, info in r["parts"].items():
+                _batch8[os.path.splitext(info["file"])[0]] = {"ppu": r["ppu"], "pivot": info["unity_pivot"], "repeat": "", "kind": "character", "src": "Batch8/W4/" + file}
+            for portrait in r["portraits"]:
+                _batch8[f"Town_{who}_Portrait_{portrait['name']}"] = {"ppu": UI_PPU, "pivot": portrait["pivot"], "repeat": "", "kind": "ui", "src": "Batch8/W4/" + file}
+        for rel, r in load("W7", "REGISTRATION.json").items():
+            n = os.path.splitext(os.path.basename(rel))[0]
+            if n.startswith("UI_"):
+                _batch8[n] = {"ppu": r["ppu"], "pivot": r["pivot_normalized_bottom_left"], "repeat": "", "kind": "ui",
+                              "border": r.get("border_lbrt"), "src": "Batch8/W7"}
+    return _batch8.get(name)
+
+
 def qori_part_import(part):
     """Pivot and pixels per unit of a Qori rig part, from its .meta (the Wilted reuses the rig's bones)."""
     import re
@@ -166,7 +228,23 @@ def settings_for(category, name):
     if name in TILE_H or name in TILE_V or name in TILE_FILL:
         s["mesh"] = "FullRect"  # required for SpriteRenderer tiled draw mode
 
-    if name.startswith("Decor_Foreground_Frame"):
+    batch8 = batch8_registration(name) if category in ("Terrain/Body", "Props", "Town", "Backgrounds", "Decor", "Characters/Town", "UI") else None
+    batch7 = batch7_registration(name) if batch8 is None and category in ("Props", "Effects", "UI", "Guardians") else None
+    if batch8 is not None:
+        s["ppu"], s["basis"], s["mesh"] = batch8["ppu"], batch8["src"], "FullRect"
+        s["pivot"] = [round(v, 5) for v in batch8["pivot"]]
+        if "x" in batch8["repeat"]: s["wrapU"] = "Repeat"
+        if "y" in batch8["repeat"]: s["wrapV"] = "Repeat"
+        if batch8.get("border"): s["border"] = list(batch8["border"])   # already Unity order: L, B, R, T
+        s["mipmaps"] = batch8["kind"] == "character"   # parts drawn well below their painted size
+    elif batch7 is not None:
+        source, reg = batch7
+        s["ppu"], s["basis"], s["mesh"] = reg["ppu"], f"Batch7/{source}", "FullRect"
+        s["pivot"] = [round(v, 5) for v in reg.get("pivot_normalized_bottom_left") or reg["pivot_normalized_unity"]]
+        if reg.get("nine_slice"):
+            s["border"] = list(reg["border_lbrt"])   # already Unity order: x=L, y=B, z=R, w=T
+        s["mipmaps"] = category != "UI"   # world sprites drawn below their painted size
+    elif name.startswith("Decor_Foreground_Frame"):
         s["ppu"], s["basis"] = TERRAIN_PPU, "screen-edge overlay at terrain density"
         s["pivot"] = [0.5, 0.5]
     elif category in ("Terrain", "Decor"):
@@ -274,6 +352,15 @@ def decor_sprites(name):
     slices = os.path.join(SOURCE, "Decor", "QA", name.replace("_Sheet", "_Slices") + ".json")
     if not os.path.exists(slices):   # later batches name them A1_Slices.json
         slices = os.path.join(SOURCE, "Decor", "QA", name.replace("Decor_", "").replace("_Sheet", "_Slices") + ".json")
+    batch9 = os.path.join(SOURCE, "Batch9", "W2_Decor", "DECOR_SLICES.json")
+    if name == "Decor_Body_Sheet" and os.path.exists(batch9):   # Review 16: repacked with clear margins
+        with open(batch9) as f:
+            return [{"name": f"Decor_Body_{piece}", "rect": sp["rect_unity_bottom_left"], "pivot": sp["pivot"]} for piece, sp in json.load(f).items()]
+    batch8 = os.path.join(SOURCE, "Batch8", "W3", name.replace("_Sheet", "_Slices") + ".json")
+    if os.path.exists(batch8):   # Batch 8 Qvale decor: named slices with Unity bottom-left rects
+        with open(batch8) as f:
+            return [{"name": f"{name.replace('_Sheet', '')}_{sp['name']}", "rect": sp["rect_unity_bottom_left"], "pivot": sp.get("pivot", [0.5, 0.0])}
+                    for sp in json.load(f)["slices"]]
     review12 = os.path.join(SOURCE, "Review12", name + "_Slices.json")
     batch6 = os.path.join(SOURCE, "Batch6", "W2", name + "_Slices.json")
     if not os.path.exists(slices) and os.path.exists(batch6):   # named slices with Unity bottom-left rects
@@ -372,7 +459,7 @@ def build_entry(category, name, reviewed_sha):
         with open(os.path.join(SOURCE, "Phase2", "QA", "NINE_SLICE.json")) as f:
             left, right, top, bottom = json.load(f)["border_left_right_top_bottom"]
         entry["border"] = [left, bottom, right, top]  # Unity order: x=L, y=B, z=R, w=T
-    if category == "UI":
+    if category == "UI" and not batch7_registration(name) and not batch8_registration(name):
         notes_path = os.path.join(SOURCE, "UI", "QA", "NINE_SLICE_NOTES.json")
         with open(notes_path) as f:
             notes = json.load(f)

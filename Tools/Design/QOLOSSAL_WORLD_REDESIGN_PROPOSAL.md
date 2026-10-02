@@ -205,3 +205,8 @@ A stir is still the body part you're standing on moving, and it still opens the 
 2. **The old man:** a new character, separate from Old Loam.
 3. **Interiors:** in-place cutaway.
 4. **Scale:** about 2.5× approved (hand ≈ 300 u). The Palm prototype is being rebuilt at this size, without the face, with an unexplained stir and one side chamber.
+
+## 11. Concept picks (Review 14, 2 Oct 2026)
+- **The titan:** A, the Chalk Orchard. Limestone caps, root-tendon seams and olive meadow moss; a broad, sheltering mass.
+- **Qvale:** B, Lantern Vaults. Homes tucked under curved overhangs of warm rock.
+- **The old man:** B, the Lichen Moth. The other townspeople's concepts are approved: the smith (beetle), herbalist (newt), musician (cricket), child (mouse), farmer (hare) and lantern keeper (weevil).

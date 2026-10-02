@@ -273,6 +273,60 @@
    "basis": "request: terrain density 120 px/u"
   },
   {
+   "name": "BG_Qvale_Far",
+   "category": "Backgrounds",
+   "sha256": "28731c7a3b1a253e79066ebb8c09effa9ffcbb364d19e303da88ae6d35c4c84d",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Qvale_Far.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
+   "name": "BG_Qvale_Mid",
+   "category": "Backgrounds",
+   "sha256": "d25dd63182f18a0aba5c7bef5f5678338c565a7a90e2c4be4d230eab5d677fef",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Qvale_Mid.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
+   "name": "BG_Qvale_Near",
+   "category": "Backgrounds",
+   "sha256": "4bc34bbfc8585fd21df1e86e451d9364d56b1305da85abbb88760fc6139cfaf2",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Qvale_Near.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
    "name": "BG_Sky_A0",
    "category": "Backgrounds",
    "sha256": "e1a0c93ba5989f8663ce337386323354938676df852179519d8dda27f59144fb",
@@ -857,6 +911,1140 @@
    "mipmaps": true,
    "ppu": 600,
    "basis": "request: character density 600 px/u (Characters/ASSEMBLY.json)"
+  },
+  {
+   "name": "Town_Child_ArmFarLower",
+   "category": "Characters/Town",
+   "sha256": "66896e920189b612931655a1add665cbcbe39bfe404899bb3f73fb62a95b9adb",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Child_ArmFarLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.45679,
+    0.72973
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Child_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Child_ArmFarUpper",
+   "category": "Characters/Town",
+   "sha256": "012c8e9364448f2fde0f72c81f5009a18d4489b9c6e4fd032f912ab7a6767921",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Child_ArmFarUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.49383,
+    0.69925
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Child_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Child_ArmNearLower",
+   "category": "Characters/Town",
+   "sha256": "9e2d16fe9d1432e4b02bc090f2421b78505b8abda047d925c47e4833e0db95bd",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Child_ArmNearLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.44318,
+    0.72973
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Child_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Child_ArmNearUpper",
+   "category": "Characters/Town",
+   "sha256": "207c59bc5749fcf6dc8b3fb23e6f06db798a6c4fb963b0444c21994d7557610f",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Child_ArmNearUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.48684,
+    0.69925
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Child_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Child_Body",
+   "category": "Characters/Town",
+   "sha256": "db9d5e612752c4a35f5724fb1e4f9f6222fb7d1da118cbca79c3e432e4c359ed",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Child_Body.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.66877,
+    0.89687
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Child_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Child_Head",
+   "category": "Characters/Town",
+   "sha256": "3f23017e90e90650d5c06563a82f23c89a5fd9bd734cdff10ba3b22b39774f5d",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Child_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5522,
+    0.14465
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Child_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Child_Portrait_Calm",
+   "category": "Characters/Town",
+   "sha256": "afab96006a09369cb0e078c70eef48d0d3f3c11b40606a490d07c558f05047eb",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Child_Portrait_Calm.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Child_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Child_Portrait_Happy",
+   "category": "Characters/Town",
+   "sha256": "50f1461733318dcd6108d673097e93822f219e5f362651de4823425fb060ccc7",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Child_Portrait_Happy.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Child_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Child_Portrait_Talking",
+   "category": "Characters/Town",
+   "sha256": "b2c307a36d2a5949cddfe5f8943b525255cd202a13c551f05d9d5550fd875f63",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Child_Portrait_Talking.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Child_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Elder_ArmFarLower",
+   "category": "Characters/Town",
+   "sha256": "a373a81a7c00432063d3f8ec143589c9f8d5aa325af2f1efa949ec805f28f295",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Elder_ArmFarLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.47321,
+    0.85612
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Elder_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Elder_ArmFarUpper",
+   "category": "Characters/Town",
+   "sha256": "3ec80d7c0c51a3c5819d15ed1009243c6c0051bf92ee34c1b8dd9689572404e3",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Elder_ArmFarUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.46429,
+    0.83871
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Elder_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Elder_ArmNearLower",
+   "category": "Characters/Town",
+   "sha256": "99d63c81f15ac971b621e8cf3318cc5d3298ca3c3c4c6938fc637a0dfbd870cb",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Elder_ArmNearLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.46281,
+    0.85612
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Elder_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Elder_ArmNearUpper",
+   "category": "Characters/Town",
+   "sha256": "84b7144e79586e5c139525da9dff5d7caebffcba7c33eba836d7285fea37a47b",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Elder_ArmNearUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.52174,
+    0.83871
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Elder_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Elder_Body",
+   "category": "Characters/Town",
+   "sha256": "1c7a1c23b55461baafb03f3d4136e6f84d376bb6a36dbd8dec2c02ac224edcd3",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Elder_Body.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.63805,
+    0.94296
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Elder_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Elder_Head",
+   "category": "Characters/Town",
+   "sha256": "92c464608f8ccac8013bdd5b8fa1e55f58a4d116d167ba081a4ecef48f0f1a1d",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Elder_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.53054,
+    0.11682
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Elder_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Elder_Portrait_Calm",
+   "category": "Characters/Town",
+   "sha256": "4723d71f7cc12d22ddf4076fd48cd60e204332909db34133fe3088ffbf3486c1",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Elder_Portrait_Calm.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Elder_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Elder_Portrait_WarningTalking",
+   "category": "Characters/Town",
+   "sha256": "06a0c869fe4b5b78ff86071212db1734395db160aee76299350cb0fefa3b40ff",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Elder_Portrait_WarningTalking.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Elder_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Elder_Portrait_Worried",
+   "category": "Characters/Town",
+   "sha256": "402e1c92831f78da27ef11b98b5e0dbc219b9ebbe9dbd082eb4bc005eaa0d5e5",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Elder_Portrait_Worried.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Elder_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Farmer_ArmFarLower",
+   "category": "Characters/Town",
+   "sha256": "506d1397ea7bf31a5d3ee0e50b9f412bbbc9a9e05e5c207efb3e7ece10b26ea8",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Farmer_ArmFarLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.45522,
+    0.85612
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Farmer_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Farmer_ArmFarUpper",
+   "category": "Characters/Town",
+   "sha256": "cd8dee9cc78ede47117849044b393732648b771918c06b86dfd5f8794a2d5b1d",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Farmer_ArmFarUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.46094,
+    0.85075
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Farmer_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Farmer_ArmNearLower",
+   "category": "Characters/Town",
+   "sha256": "dae451b5b598d70274a46c8fb90a4e81faef676675b8550a09184c4c5c1304b1",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Farmer_ArmNearLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.48148,
+    0.85612
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Farmer_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Farmer_ArmNearUpper",
+   "category": "Characters/Town",
+   "sha256": "f13e7a516b12ed81928732f9ccef25c64e6c8610a5e88e167de147cf053303dc",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Farmer_ArmNearUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.45038,
+    0.85075
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Farmer_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Farmer_Body",
+   "category": "Characters/Town",
+   "sha256": "5b3d6cad04bd1c3e8cd491b40896071711c2c7f121f5e3ef4144c465b5b14aaa",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Farmer_Body.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.65156,
+    0.76827
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Farmer_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Farmer_Head",
+   "category": "Characters/Town",
+   "sha256": "f9f40d4574e23a2980134dafd1a6731c7aa8d2bf0b0aeacc3e00bebcd42494df",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Farmer_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.53004,
+    0.17337
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Farmer_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Farmer_Portrait_Calm",
+   "category": "Characters/Town",
+   "sha256": "bdf5d3a49fd5b6f93de72e4c020f8185cd7c816031dd519a90f5499de419e653",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Farmer_Portrait_Calm.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Farmer_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Farmer_Portrait_Happy",
+   "category": "Characters/Town",
+   "sha256": "54c3dd4e1cca45a3a1fb5def14b86dbd4365d4a013c6e8692a39a929b75cd7ee",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Farmer_Portrait_Happy.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Farmer_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Farmer_Portrait_Talking",
+   "category": "Characters/Town",
+   "sha256": "f8d8ef5e48d44add0742565b5ae88a7419dcd7301733cfdba7fe7e4272ddf999",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Farmer_Portrait_Talking.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Farmer_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Herbalist_ArmFarLower",
+   "category": "Characters/Town",
+   "sha256": "cf5ca68738f1f4c6ad2a92a4222bbc0c86f532d09b2ab22c4197714241c832a7",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Herbalist_ArmFarLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.46535,
+    0.83871
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Herbalist_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Herbalist_ArmFarUpper",
+   "category": "Characters/Town",
+   "sha256": "df34c65567ffac9c32c8c9bafe214852d5d06935ebe6d40fe58ee2dd54c6d356",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Herbalist_ArmFarUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.52419,
+    0.82456
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Herbalist_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Herbalist_ArmNearLower",
+   "category": "Characters/Town",
+   "sha256": "5b84d525db8008c2d52ded44a5d3ce85875bbc55a85707f7a6f73cd6b2d5f614",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Herbalist_ArmNearLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.44954,
+    0.83871
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Herbalist_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Herbalist_ArmNearUpper",
+   "category": "Characters/Town",
+   "sha256": "7027c1bad25041617167e6dd6a1b8916660706deffe2b4d453f224fd63e81395",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Herbalist_ArmNearUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.46939,
+    0.82456
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Herbalist_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Herbalist_Body",
+   "category": "Characters/Town",
+   "sha256": "0794fe2a711b29d50d51d56c7767f414d5aa80c111f4118865de6ede7bc0a666",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Herbalist_Body.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.77795,
+    0.87587
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Herbalist_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Herbalist_Head",
+   "category": "Characters/Town",
+   "sha256": "122b6e417db8909e0a44f8cc41ac23139d3d0845937e868c70aafd19d39eecfb",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Herbalist_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5181,
+    0.1206
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Herbalist_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Herbalist_Portrait_Calm",
+   "category": "Characters/Town",
+   "sha256": "bf029384f9bf873c5e79e6b1e30e30f9a0fceba2550e8e741ce9760d2b78ff24",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Herbalist_Portrait_Calm.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Herbalist_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Herbalist_Portrait_Happy",
+   "category": "Characters/Town",
+   "sha256": "dd663703a8158cbd837f3ef4c59b666e9b798a09524a83a87a6f588e3658e30e",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Herbalist_Portrait_Happy.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Herbalist_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Herbalist_Portrait_Talking",
+   "category": "Characters/Town",
+   "sha256": "3a4ee8a7197c83b6d89b521130c15c11578e0d923b72270c7c9321f9946e2b85",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Herbalist_Portrait_Talking.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Herbalist_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Keeper_ArmFarLower",
+   "category": "Characters/Town",
+   "sha256": "fa6095ecc7273a55312ee103131634bbc617f119bf65eea93fde8975327d9f05",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Keeper_ArmFarLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.4381,
+    0.83871
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Keeper_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Keeper_ArmFarUpper",
+   "category": "Characters/Town",
+   "sha256": "f57479eade5c4b0ceb86a42afad4c3a69f2276052262ab08ca866d516bbac790",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Keeper_ArmFarUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.50943,
+    0.81651
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Keeper_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Keeper_ArmNearLower",
+   "category": "Characters/Town",
+   "sha256": "8e657d45faa2ac89b489e42b53720351dd6769c7909c7e930eb24c2f5d87dd61",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Keeper_ArmNearLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.43396,
+    0.83871
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Keeper_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Keeper_ArmNearUpper",
+   "category": "Characters/Town",
+   "sha256": "57cd24ee89fa4065e32cbba2fea59fbab59d9db56b1fbf13990ecf68cda65954",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Keeper_ArmNearUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.49038,
+    0.81651
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Keeper_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Keeper_Body",
+   "category": "Characters/Town",
+   "sha256": "2c8a1b54f473310e42f12554662241eea5700f265c594656ef4c992f211c7aad",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Keeper_Body.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.65126,
+    0.92308
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Keeper_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Keeper_Head",
+   "category": "Characters/Town",
+   "sha256": "0f125c3a71d373f9388686aa5d37db591b450143ea13869ec353f050f8b00d47",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Keeper_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.60539,
+    0.16176
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Keeper_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Keeper_Portrait_Calm",
+   "category": "Characters/Town",
+   "sha256": "e5fdfa5bd0ecd1db9203e7a1f7786424631a18f2045881003ea7c86d0631a2f4",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Keeper_Portrait_Calm.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Keeper_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Keeper_Portrait_Happy",
+   "category": "Characters/Town",
+   "sha256": "3ec16cc7b779199982a284e5a2dfe2391e89f7bb1233a7def06e9e9e851ca08a",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Keeper_Portrait_Happy.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Keeper_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Keeper_Portrait_Talking",
+   "category": "Characters/Town",
+   "sha256": "169d27e75540c111e48007d70d16bfbefc6eb3e1c43b7fb7197819962b1276e8",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Keeper_Portrait_Talking.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Keeper_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Musician_ArmFarLower",
+   "category": "Characters/Town",
+   "sha256": "3621db413c81a1d1e9db137cf8436945be1e93d676574766caafbedc25efd3a0",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Musician_ArmFarLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.47423,
+    0.85075
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Musician_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Musician_ArmFarUpper",
+   "category": "Characters/Town",
+   "sha256": "848f765bee12e0c17c77ffcc6dbac174bd0b079d7476e568f4123cf28773169a",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Musician_ArmFarUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5122,
+    0.81651
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Musician_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Musician_ArmNearLower",
+   "category": "Characters/Town",
+   "sha256": "d7ff02c6f8ad2d265e3e25dbe5822097f79e626cd28f612ac6d78801afa28444",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Musician_ArmNearLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.43519,
+    0.85075
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Musician_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Musician_ArmNearUpper",
+   "category": "Characters/Town",
+   "sha256": "329166964455d8441998da92823119e9989df2ebdbf0da08025dc796a897d6a0",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Musician_ArmNearUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.47423,
+    0.81651
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Musician_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Musician_Body",
+   "category": "Characters/Town",
+   "sha256": "4f430f492fe6ac68e4876a7574ba4e4c68b3df8c43b7c1d75d72e1413b1db9c7",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Musician_Body.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.6199,
+    0.94701
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Musician_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Musician_Head",
+   "category": "Characters/Town",
+   "sha256": "1bfb3f3f49399cc2383f45dce432aa485befa597b2ebcd325d712a7949c89520",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Musician_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.50124,
+    0.14322
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Musician_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Musician_Portrait_Calm",
+   "category": "Characters/Town",
+   "sha256": "d02253c23d281fcb54495e1cc3d5c6d910553c587196eda45f6afe984e82ca24",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Musician_Portrait_Calm.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Musician_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Musician_Portrait_Happy",
+   "category": "Characters/Town",
+   "sha256": "fd9220e3ac254f51c41be1ed05cd1d76a561dc97b9fd47007af2d8612c85c94a",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Musician_Portrait_Happy.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Musician_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Musician_Portrait_Talking",
+   "category": "Characters/Town",
+   "sha256": "3e55e5594ff319eab2d9bb5177cb427d5951e12a2333f55e24e50cfaa2a269c5",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Musician_Portrait_Talking.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Musician_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Smith_ArmFarLower",
+   "category": "Characters/Town",
+   "sha256": "118502367ccb992b51c27545c14a3b2d87e96070eea1f08635743defbd2b5087",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Smith_ArmFarLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.42188,
+    0.86577
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Smith_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Smith_ArmFarUpper",
+   "category": "Characters/Town",
+   "sha256": "4b1e5d7267d9e37b375ec4c68c21d018a8c37c3fcda4c0ba06effeb251246010",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Smith_ArmFarUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.58242,
+    0.85075
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Smith_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Smith_ArmNearLower",
+   "category": "Characters/Town",
+   "sha256": "b7b6c89076537d5e7692f85bab7fb2d5f8db246684f1a591484088b39dda0b70",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Smith_ArmNearLower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.39695,
+    0.86577
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Smith_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Smith_ArmNearUpper",
+   "category": "Characters/Town",
+   "sha256": "71993a4540f62c931af7f860cabebee902af485f90a84fd9cc9215572fee9e3c",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Smith_ArmNearUpper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.53435,
+    0.85075
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Smith_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Smith_Body",
+   "category": "Characters/Town",
+   "sha256": "cdf59df930581699f4abd7e20ca03b66c7c75d65a2853d6783cfc564b41465ba",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Smith_Body.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.67188,
+    0.91067
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Smith_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Smith_Head",
+   "category": "Characters/Town",
+   "sha256": "c8b60b1ac1ab6c0197a90013e53bce69be37b7e122d3a94bf2f88d268e7b8c9c",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Smith_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.65534,
+    0.1484
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch8/W4/Smith_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Smith_Portrait_Calm",
+   "category": "Characters/Town",
+   "sha256": "06c40af9cfa97d1e00f5dafb84c14129fb6a3653b1815fb01d5c3d4adc7fa9e7",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Smith_Portrait_Calm.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Smith_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Smith_Portrait_Happy",
+   "category": "Characters/Town",
+   "sha256": "11b95697b750e2df5c4cb4f52de4390c9b1dac1643d8a3d50c7349cc06eef467",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Smith_Portrait_Happy.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Smith_REGISTRATION.json"
+  },
+  {
+   "name": "Town_Smith_Portrait_Talking",
+   "category": "Characters/Town",
+   "sha256": "0478cb4b0247bc0ba653b59dfdec18d76518da46c16bc63cbe0dd264438e711c",
+   "dest": "Assets/Art/Codex/Characters/Town/Town_Smith_Portrait_Talking.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W4/Smith_REGISTRATION.json"
   },
   {
    "name": "Wilted_Cape1",
@@ -3223,6 +4411,181 @@
    "basis": "request: terrain density 120 px/u"
   },
   {
+   "name": "Decor_Body_Sheet",
+   "category": "Decor",
+   "sha256": "97926db2ebac2bf64e9973a46901f9e11fb4a870785577c03ec1cc8aebf570fa",
+   "dest": "Assets/Art/Codex/Decor/Decor_Body_Sheet.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": [
+    {
+     "name": "Decor_Body_Moss_Cushion",
+     "rect": [
+      34,
+      819,
+      332,
+      162
+     ],
+     "pivot": [
+      0.5,
+      0.09876543209876543
+     ]
+    },
+    {
+     "name": "Decor_Body_Small_Fern",
+     "rect": [
+      427,
+      754,
+      345,
+      293
+     ],
+     "pivot": [
+      0.5,
+      0.05460750853242321
+     ]
+    },
+    {
+     "name": "Decor_Body_Mineral_Vent",
+     "rect": [
+      842,
+      783,
+      316,
+      235
+     ],
+     "pivot": [
+      0.5,
+      0.06808510638297872
+     ]
+    },
+    {
+     "name": "Decor_Body_Root_Nest",
+     "rect": [
+      1242,
+      774,
+      315,
+      252
+     ],
+     "pivot": [
+      0.5,
+      0.06349206349206349
+     ]
+    },
+    {
+     "name": "Decor_Body_Qori_Moss_Nest",
+     "rect": [
+      19,
+      432,
+      362,
+      217
+     ],
+     "pivot": [
+      0.5,
+      0.07373271889400922
+     ]
+    },
+    {
+     "name": "Decor_Body_Chalk_Pebbles",
+     "rect": [
+      431,
+      433,
+      337,
+      214
+     ],
+     "pivot": [
+      0.5,
+      0.07476635514018691
+     ]
+    },
+    {
+     "name": "Decor_Body_Meadow_Flowers",
+     "rect": [
+      844,
+      423,
+      312,
+      234
+     ],
+     "pivot": [
+      0.5,
+      0.06837606837606838
+     ]
+    },
+    {
+     "name": "Decor_Body_Trailing_Ivy",
+     "rect": [
+      1242,
+      448,
+      316,
+      185
+     ],
+     "pivot": [
+      0.5,
+      0.08648648648648649
+     ]
+    },
+    {
+     "name": "Decor_Body_Grass_Tuft",
+     "rect": [
+      43,
+      74,
+      314,
+      213
+     ],
+     "pivot": [
+      0.5,
+      0.07511737089201878
+     ]
+    },
+    {
+     "name": "Decor_Body_Root_Loop",
+     "rect": [
+      441,
+      63,
+      317,
+      234
+     ],
+     "pivot": [
+      0.5,
+      0.06837606837606838
+     ]
+    },
+    {
+     "name": "Decor_Body_Shelf_Mushrooms",
+     "rect": [
+      837,
+      84,
+      325,
+      193
+     ],
+     "pivot": [
+      0.5,
+      0.08290155440414508
+     ]
+    },
+    {
+     "name": "Decor_Body_Lichen_Flake",
+     "rect": [
+      1245,
+      82,
+      309,
+      196
+     ],
+     "pivot": [
+      0.5,
+      0.08163265306122448
+     ]
+    }
+   ],
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
    "name": "Decor_Foreground_Frame_A0",
    "category": "Decor",
    "sha256": "f4f697f592735d081a8d099a55efda604c059f8256315038c34221925430e40c",
@@ -3349,6 +4712,181 @@
    "basis": "screen-edge overlay at terrain density"
   },
   {
+   "name": "Decor_Qvale_Sheet",
+   "category": "Decor",
+   "sha256": "1d282c1b33895767f88fa2df912c86e7ead0e75fbe0de45ab9528043079b05c5",
+   "dest": "Assets/Art/Codex/Decor/Decor_Qvale_Sheet.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": [
+    {
+     "name": "Decor_Qvale_crate_small",
+     "rect": [
+      84,
+      792,
+      216,
+      156
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Qvale_crate_tall",
+     "rect": [
+      468,
+      792,
+      216,
+      288
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Qvale_basket_shells",
+     "rect": [
+      852,
+      792,
+      216,
+      150
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Qvale_pot_herbs",
+     "rect": [
+      1242,
+      792,
+      204,
+      270
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Qvale_water_jug",
+     "rect": [
+      114,
+      408,
+      156,
+      216
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Qvale_banner_olive",
+     "rect": [
+      444,
+      408,
+      264,
+      240
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Qvale_banner_ochre_pair",
+     "rect": [
+      828,
+      408,
+      264,
+      228
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Qvale_wind_chime_seedpods",
+     "rect": [
+      1254,
+      408,
+      180,
+      252
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Qvale_wind_chime_shells",
+     "rect": [
+      90,
+      24,
+      204,
+      264
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Qvale_chalk_mountain_dreams",
+     "rect": [
+      456,
+      24,
+      240,
+      192
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Qvale_chalk_five_ridges",
+     "rect": [
+      828,
+      24,
+      264,
+      204
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Qvale_firewood_stack",
+     "rect": [
+      1224,
+      24,
+      240,
+      156
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    }
+   ],
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
    "name": "FX_Ability_Unlock_Burst",
    "category": "Effects",
    "sha256": "2e2a886a5b7a9c3c733e5e967bcedd5b8b62ff041e3cb004b5718d3960c8493f",
@@ -3365,6 +4903,114 @@
    "mipmaps": true,
    "ppu": 600,
    "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "FX_Amber_Collect_01",
+   "category": "Effects",
+   "sha256": "cf6e67238ab6d94aa2db14e95b8b27304ebc1a36fecbe0c7448b50cfe090e645",
+   "dest": "Assets/Art/Codex/Effects/FX_Amber_Collect_01.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "FX_Amber_Collect_02",
+   "category": "Effects",
+   "sha256": "bbfa572e44355a56ea5be7cf5a018df3de8c9324a0996143dac8e06c78ea9213",
+   "dest": "Assets/Art/Codex/Effects/FX_Amber_Collect_02.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "FX_Amber_Collect_03",
+   "category": "Effects",
+   "sha256": "d467429dd0e3139dd6734b2399f4e5ca8f08d30e2f05ffddc62eb6f68cc46abe",
+   "dest": "Assets/Art/Codex/Effects/FX_Amber_Collect_03.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "FX_Amber_Collect_04",
+   "category": "Effects",
+   "sha256": "1b4128beca3ac29aa50e6e86e39c00c5da4433616396a1d69e7e789fe206065e",
+   "dest": "Assets/Art/Codex/Effects/FX_Amber_Collect_04.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "FX_Amber_Collect_05",
+   "category": "Effects",
+   "sha256": "bc3415e7d067984e72dca183a323135136ed5bdcecd35ba4a7e73b5aec32f259",
+   "dest": "Assets/Art/Codex/Effects/FX_Amber_Collect_05.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "FX_Amber_Collect_06",
+   "category": "Effects",
+   "sha256": "b3750a04692bc738694580cf1bbe6a89adc0281df2cb2a86d40303af71ba3550",
+   "dest": "Assets/Art/Codex/Effects/FX_Amber_Collect_06.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
   },
   {
    "name": "FX_Ambient_Firefly",
@@ -3851,6 +5497,114 @@
    "mipmaps": true,
    "ppu": 600,
    "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "FX_SongShell_Idle_01",
+   "category": "Effects",
+   "sha256": "36a366dfdfc57ea899864bcd3f5c8ebdccb25c887675c1659527111bf0cbdc39",
+   "dest": "Assets/Art/Codex/Effects/FX_SongShell_Idle_01.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "FX_SongShell_Idle_02",
+   "category": "Effects",
+   "sha256": "21a41d87af602ea9664795622d064c496b18570de3a350171197b7bffe6aa26f",
+   "dest": "Assets/Art/Codex/Effects/FX_SongShell_Idle_02.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "FX_SongShell_Idle_03",
+   "category": "Effects",
+   "sha256": "ca0fcc1d468c1a37ef3c35d3afc12b2e123d6ee9fb6b98c0db7d880b0972c357",
+   "dest": "Assets/Art/Codex/Effects/FX_SongShell_Idle_03.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "FX_SongShell_Idle_04",
+   "category": "Effects",
+   "sha256": "56f30f7158a6531ba88b704007ba863b0ac88fde3bad09ed69417444415429da",
+   "dest": "Assets/Art/Codex/Effects/FX_SongShell_Idle_04.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "FX_SongShell_Idle_05",
+   "category": "Effects",
+   "sha256": "e7df34012462c138d7ad041468b03941b0b81819a4c9228fe6d9fb71599cca1b",
+   "dest": "Assets/Art/Codex/Effects/FX_SongShell_Idle_05.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "FX_SongShell_Idle_06",
+   "category": "Effects",
+   "sha256": "5b3cccba006cf873fcb08df3839713f9914280eea378474ff8889620208c1f0a",
+   "dest": "Assets/Art/Codex/Effects/FX_SongShell_Idle_06.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
   },
   {
    "name": "FX_WallSlide_Scrape",
@@ -6733,6 +8487,24 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "Shellback_Shell_Cracked_A6",
+   "category": "Enemies",
+   "sha256": "a3520bc40116e9c4801a39658a815ba4c08f03d4c439bbd6a946f2ac52b264ee",
+   "dest": "Assets/Art/Codex/Enemies/Shellback_Shell_Cracked_A6.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
    "name": "Shellback_Shell_Intact",
    "category": "Enemies",
    "sha256": "e176517cdaa9592cd81d5fc81a48e83ee51acaf0d111ba4511cdf20b63f2aa75",
@@ -9052,6 +10824,1411 @@
    "basis": "request: character density 600 px/u (nominal)"
   },
   {
+   "name": "BrowSentinel_Arm1_Lower",
+   "category": "Guardians",
+   "sha256": "86f428754b135fc2c640eeeed561205a436c39d20a93d25c6933d3b33a341747",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_Arm1_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.13949,
+    0.58125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_Arm1_Upper",
+   "category": "Guardians",
+   "sha256": "dd2d398451bee3c521a16e015bffdbd85eea3290ee3cb1bae09803dfffa9c079",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_Arm1_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.16573,
+    0.57972
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_Arm2_Lower",
+   "category": "Guardians",
+   "sha256": "86f428754b135fc2c640eeeed561205a436c39d20a93d25c6933d3b33a341747",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_Arm2_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.13949,
+    0.58125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_Arm2_Upper",
+   "category": "Guardians",
+   "sha256": "dd2d398451bee3c521a16e015bffdbd85eea3290ee3cb1bae09803dfffa9c079",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_Arm2_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.16573,
+    0.57972
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_Body",
+   "category": "Guardians",
+   "sha256": "7096aabe076d36b351acafa0d1c264fadbaaf1d16ed5b70dd3664d8f00e11f2c",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_Body.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.4998,
+    0.49996
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_Head",
+   "category": "Guardians",
+   "sha256": "d91396bb02682fac5ab29aa61ebe1220de6e5fab05cee724e2180921fc966733",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.50022,
+    0.50016
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_Jaw",
+   "category": "Guardians",
+   "sha256": "4910455f917ff8234704e5560f7144a3ca7e57c1cfdb7f67e3362b418eeb15b9",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_Jaw.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.50033,
+    0.79121
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_KnotExposed",
+   "category": "Guardians",
+   "sha256": "72180dd1393b8c9084d027408a2d047b00d158b1c0874668d5b63d99b7fbcab5",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_KnotExposed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_KnotGlow",
+   "category": "Guardians",
+   "sha256": "c32e2a9ca978e4fd11d7eaff9b84b87226f9386a47b0b0f82c372557f2481f65",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_KnotGlow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_KnotGlow_Bare",
+   "category": "Guardians",
+   "sha256": "eae1b4052d99287deae147fa4e2b4d6aa5f3ee9322c7598fcdaaa9680054ba76",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_KnotGlow_Bare.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_Leg1_Lower",
+   "category": "Guardians",
+   "sha256": "55842ac1045f79cc2d3902d77ebdc31de258ea321f0d4d69b3d58f1b0a4d3e10",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_Leg1_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.21084,
+    0.34303
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_Leg1_Upper",
+   "category": "Guardians",
+   "sha256": "0bbffa59f84677caa0907027366a9763b4c86fae79d38b8b45a0a4416d10222a",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_Leg1_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.16321,
+    0.53114
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_Leg2_Lower",
+   "category": "Guardians",
+   "sha256": "55842ac1045f79cc2d3902d77ebdc31de258ea321f0d4d69b3d58f1b0a4d3e10",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_Leg2_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.21084,
+    0.34303
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_Leg2_Upper",
+   "category": "Guardians",
+   "sha256": "0bbffa59f84677caa0907027366a9763b4c86fae79d38b8b45a0a4416d10222a",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_Leg2_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.16321,
+    0.53114
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_Shield",
+   "category": "Guardians",
+   "sha256": "1cb172732ede57b8f2d70e0573a9e911843575aa721998f92adb5d00673dcaf3",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_Shield.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.49994,
+    0.49999
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json"
+  },
+  {
+   "name": "BrowSentinel_Spear",
+   "category": "Guardians",
+   "sha256": "be3bf35fdd953182cd3e1d6b116f59090e7aade73d3e7c9224e70ae48ed70d89",
+   "dest": "Assets/Art/Codex/Guardians/BrowSentinel_Spear.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.50037,
+    0.30627
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/BrowSentinel_REGISTRATION.json",
+   "maxSize": 4096
+  },
+  {
+   "name": "CisternMatriarch_BodyFront",
+   "category": "Guardians",
+   "sha256": "5f158cdff3132f51099925c5ac4b58d672bfdff705a7c073a8700c6e5a9f4596",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_BodyFront.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.50003,
+    0.49996
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_BodyRear",
+   "category": "Guardians",
+   "sha256": "bf5791acbca6d2805dd19e62736877c385f3903d9da4743fa7da2a178d488b70",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_BodyRear.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.50015,
+    0.50007
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Frill",
+   "category": "Guardians",
+   "sha256": "023b7521ee4803e4bfd464a7845a464fc289206f5d1fa3621bc83d4570067322",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Frill.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.49948,
+    0.50071
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Head",
+   "category": "Guardians",
+   "sha256": "ce3c5e2ec1f1a2c6bc338ac21f8ef21f5f742b3b4fca6613189fabcbc50b37db",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.49987,
+    0.49974
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Jaw",
+   "category": "Guardians",
+   "sha256": "6e742fb1837f3018fc121ca977c464961af2cb10b2bd6e165189b9c4f08a02ba",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Jaw.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.16142,
+    0.67637
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_KnotExposed",
+   "category": "Guardians",
+   "sha256": "eaeaa8253c176f6d2e90c3f89bb5ce6fa6436bcdd2a0e63a8fc0e11c7213328d",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_KnotExposed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_KnotGlow",
+   "category": "Guardians",
+   "sha256": "7d2da921732aec2d3b10dd211916401d3874066d00dcda748dd50df7ddf26ad5",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_KnotGlow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_KnotGlow_Bare",
+   "category": "Guardians",
+   "sha256": "57c384c3de71dcb524054d79666154d36811ba8e922564eded6e156f549cf585",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_KnotGlow_Bare.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Leg1_Lower",
+   "category": "Guardians",
+   "sha256": "823ca19efd82573aea27a2a04ac0a9ba8597e436acfa42273f307cb709d2f458",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Leg1_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.198,
+    0.54199
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Leg1_Upper",
+   "category": "Guardians",
+   "sha256": "5662cedad00d77683934146309737903e0c454f14dcc4a59f9fb0dd23a2a2abc",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Leg1_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.1972,
+    0.55439
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Leg2_Lower",
+   "category": "Guardians",
+   "sha256": "823ca19efd82573aea27a2a04ac0a9ba8597e436acfa42273f307cb709d2f458",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Leg2_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.198,
+    0.54199
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Leg2_Upper",
+   "category": "Guardians",
+   "sha256": "5662cedad00d77683934146309737903e0c454f14dcc4a59f9fb0dd23a2a2abc",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Leg2_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.1972,
+    0.55439
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Leg3_Lower",
+   "category": "Guardians",
+   "sha256": "23c9004ec3f1f1f2add77a8b5f19e164c0d776e9f989bd980a3710aeb66a101a",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Leg3_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.19562,
+    0.53854
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Leg3_Upper",
+   "category": "Guardians",
+   "sha256": "dbc39016855613121901be2f2df9736bc8a1868ebd58a7068fa4d2a151678615",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Leg3_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.195,
+    0.5305
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Leg4_Lower",
+   "category": "Guardians",
+   "sha256": "23c9004ec3f1f1f2add77a8b5f19e164c0d776e9f989bd980a3710aeb66a101a",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Leg4_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.19562,
+    0.53854
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Leg4_Upper",
+   "category": "Guardians",
+   "sha256": "dbc39016855613121901be2f2df9736bc8a1868ebd58a7068fa4d2a151678615",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Leg4_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.195,
+    0.5305
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Tail1",
+   "category": "Guardians",
+   "sha256": "36de798a3ef17b85aa0ca99048520ec908f77c4806946e3633560e3c7200f752",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Tail1.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.1492,
+    0.48863
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Tail2",
+   "category": "Guardians",
+   "sha256": "0528938fbad6209e97e738cd8026ec5ffa5d7ba3503433ab32f78f6af1e41b4a",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Tail2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.16053,
+    0.51496
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "CisternMatriarch_Tail3",
+   "category": "Guardians",
+   "sha256": "ccf9430038bd0c4edad79ca8eaa42c7226171802d9d1e9d23195de07671be053",
+   "dest": "Assets/Art/Codex/Guardians/CisternMatriarch_Tail3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.17386,
+    0.50146
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/CisternMatriarch_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_AntennaL",
+   "category": "Guardians",
+   "sha256": "119e234b060924fbfd83be5dc42288da78e138fc4c30ae7b526cc25b028d6452",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_AntennaL.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.50004,
+    0.15182
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_AntennaR",
+   "category": "Guardians",
+   "sha256": "119e234b060924fbfd83be5dc42288da78e138fc4c30ae7b526cc25b028d6452",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_AntennaR.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.50004,
+    0.15182
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_Arm1_Lower",
+   "category": "Guardians",
+   "sha256": "07d032e56ccdb6abee33e9a66d11960250cd6e2a7eb1eff3f1c36069a6acf4ea",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_Arm1_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.13101,
+    0.42002
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_Arm1_Upper",
+   "category": "Guardians",
+   "sha256": "9abdf57c43c4f11a5ebd92819ec770630b5766e7e0df44b533c34bf6df62de62",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_Arm1_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.14833,
+    0.51264
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_Arm2_Lower",
+   "category": "Guardians",
+   "sha256": "07d032e56ccdb6abee33e9a66d11960250cd6e2a7eb1eff3f1c36069a6acf4ea",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_Arm2_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.13101,
+    0.42002
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_Arm2_Upper",
+   "category": "Guardians",
+   "sha256": "9abdf57c43c4f11a5ebd92819ec770630b5766e7e0df44b533c34bf6df62de62",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_Arm2_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.14833,
+    0.51264
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_Arm3_Lower",
+   "category": "Guardians",
+   "sha256": "07d032e56ccdb6abee33e9a66d11960250cd6e2a7eb1eff3f1c36069a6acf4ea",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_Arm3_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.13101,
+    0.42002
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_Arm3_Upper",
+   "category": "Guardians",
+   "sha256": "9abdf57c43c4f11a5ebd92819ec770630b5766e7e0df44b533c34bf6df62de62",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_Arm3_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.14833,
+    0.51264
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_Arm4_Lower",
+   "category": "Guardians",
+   "sha256": "07d032e56ccdb6abee33e9a66d11960250cd6e2a7eb1eff3f1c36069a6acf4ea",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_Arm4_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.13101,
+    0.42002
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_Arm4_Upper",
+   "category": "Guardians",
+   "sha256": "9abdf57c43c4f11a5ebd92819ec770630b5766e7e0df44b533c34bf6df62de62",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_Arm4_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.14833,
+    0.51264
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_Body",
+   "category": "Guardians",
+   "sha256": "ae99ceb558467f1a989775d5563fb1ff11cfdcb08382b87939c625bfca1b4fa5",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_Body.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.4999,
+    0.50011
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_Head",
+   "category": "Guardians",
+   "sha256": "dd5e6142573bf2dac0db743484fc3bc2d725958b57e537b8116c2887e1a601e8",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.49998,
+    0.49978
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_Jaw",
+   "category": "Guardians",
+   "sha256": "77e457ff14df80421a19636ffbf9c2206be1d9a56e8f9ff42d286e16c051a56d",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_Jaw.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.49928,
+    0.66878
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_KnotExposed",
+   "category": "Guardians",
+   "sha256": "6560ca31929a56830fd73ad046cae5f5f180c1a3538acaf72e45712462a22ef0",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_KnotExposed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_KnotGlow",
+   "category": "Guardians",
+   "sha256": "b45d851619a978dc9637a506083dad4547537280e370ba5786110be09ddd5f59",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_KnotGlow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_KnotGlow_Bare",
+   "category": "Guardians",
+   "sha256": "eddbb278b2059cde990a0b3abb3db5f530fee803267464dc51516ab98ea9bc80",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_KnotGlow_Bare.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_PrismGlow_WingFore1",
+   "category": "Guardians",
+   "sha256": "cce17d6086d211456090f6d38512d60d762603b6d740d3c525a15822c4c97d72",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_PrismGlow_WingFore1.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.06559,
+    0.61619
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_PrismGlow_WingFore2",
+   "category": "Guardians",
+   "sha256": "cce17d6086d211456090f6d38512d60d762603b6d740d3c525a15822c4c97d72",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_PrismGlow_WingFore2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.06559,
+    0.61619
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_PrismGlow_WingHind1",
+   "category": "Guardians",
+   "sha256": "5a2c26783cf75744fcdd9b0087e84c24fe0810bc1f0b15f80d2bd636c4761707",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_PrismGlow_WingHind1.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.08006,
+    0.39825
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_PrismGlow_WingHind2",
+   "category": "Guardians",
+   "sha256": "5a2c26783cf75744fcdd9b0087e84c24fe0810bc1f0b15f80d2bd636c4761707",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_PrismGlow_WingHind2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.08006,
+    0.39825
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_ShutterRing",
+   "category": "Guardians",
+   "sha256": "7eab3d1721efc780e01a96f5498e3650b82c6966dfdbee701563c8fedbd36c24",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_ShutterRing.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.50009,
+    0.49985
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_WingFore1",
+   "category": "Guardians",
+   "sha256": "f46830ad556c71d181fe6637976d9869e47fd05ca01b30c9cf36ba22979c8236",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_WingFore1.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.06559,
+    0.61619
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_WingFore2",
+   "category": "Guardians",
+   "sha256": "f46830ad556c71d181fe6637976d9869e47fd05ca01b30c9cf36ba22979c8236",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_WingFore2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.06559,
+    0.61619
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_WingHind1",
+   "category": "Guardians",
+   "sha256": "e3ed29cbb95309d162d689f6b7cd29944e00baddee4e1d160f0cf62a34cfd716",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_WingHind1.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.08006,
+    0.39825
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "GlassmothQueen_WingHind2",
+   "category": "Guardians",
+   "sha256": "e3ed29cbb95309d162d689f6b7cd29944e00baddee4e1d160f0cf62a34cfd716",
+   "dest": "Assets/Art/Codex/Guardians/GlassmothQueen_WingHind2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.08006,
+    0.39825
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/GlassmothQueen_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_Body",
+   "category": "Guardians",
+   "sha256": "518b78723abf5dd594161eec026ccb9488265fceb91bc3ef5c6efa8c20677128",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_Body.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.49989,
+    0.50002
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_Fleece",
+   "category": "Guardians",
+   "sha256": "9158aacd8f6e6158293899da58dca65ffee2ac1fa4db16b5d3d5bd8551dbb38c",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_Fleece.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.49991,
+    0.49975
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_Head",
+   "category": "Guardians",
+   "sha256": "22b99cebb0182f9e7f867e6f9596fd6bd7daac5b04b0dc90f2e9a051364c69be",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.49995,
+    0.49969
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_HornL",
+   "category": "Guardians",
+   "sha256": "08bd4def72be3b71a6eb8f561dd34d513c854c242e30c449a72a11151fe23d7b",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_HornL.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.45469,
+    0.47286
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_HornR",
+   "category": "Guardians",
+   "sha256": "08bd4def72be3b71a6eb8f561dd34d513c854c242e30c449a72a11151fe23d7b",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_HornR.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.45469,
+    0.47286
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_Jaw",
+   "category": "Guardians",
+   "sha256": "6ea9f3ef137b070c638dbe824f847258c8d9e0ce833526e12ba4a1b368636afb",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_Jaw.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.19465,
+    0.68224
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_KnotExposed",
+   "category": "Guardians",
+   "sha256": "8dcb7292345fcfd75fea693705b5c324a8410a9df859de1334e3f7b7b5e62aba",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_KnotExposed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_KnotGlow",
+   "category": "Guardians",
+   "sha256": "ee80c4e5dc5ffcfff32413211f7fa906b6268b286b2689f4f4320f99f171a3af",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_KnotGlow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_KnotGlow_Bare",
+   "category": "Guardians",
+   "sha256": "f6ebb866664241b0b785009c3e7132fa04cbc8ce1a348587e4d4284b5b6788c7",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_KnotGlow_Bare.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_Leg1_Lower",
+   "category": "Guardians",
+   "sha256": "d7b39894e64dc1e43d556ff4e795eb962054a4aea3336235a54a66da1c07627b",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_Leg1_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.18255,
+    0.47289
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_Leg1_Upper",
+   "category": "Guardians",
+   "sha256": "8e50cb94a1e0989dcadd3fc5cec606e3b7196ae5bfa09e263aeb551ed005fa49",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_Leg1_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.15536,
+    0.56746
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_Leg2_Lower",
+   "category": "Guardians",
+   "sha256": "d7b39894e64dc1e43d556ff4e795eb962054a4aea3336235a54a66da1c07627b",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_Leg2_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.18255,
+    0.47289
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_Leg2_Upper",
+   "category": "Guardians",
+   "sha256": "8e50cb94a1e0989dcadd3fc5cec606e3b7196ae5bfa09e263aeb551ed005fa49",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_Leg2_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.15536,
+    0.56746
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_Leg3_Lower",
+   "category": "Guardians",
+   "sha256": "1f2d199587e1e0a561c70eedf499695c468b03d2327d36ba90b90040573e801b",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_Leg3_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.18388,
+    0.47601
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_Leg3_Upper",
+   "category": "Guardians",
+   "sha256": "28e995d0ff3efb0e155c2f9da1e559f0bf82ae80ae493ef5188e5f4e953033a1",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_Leg3_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.15381,
+    0.53724
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_Leg4_Lower",
+   "category": "Guardians",
+   "sha256": "1f2d199587e1e0a561c70eedf499695c468b03d2327d36ba90b90040573e801b",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_Leg4_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.18388,
+    0.47601
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_Leg4_Upper",
+   "category": "Guardians",
+   "sha256": "28e995d0ff3efb0e155c2f9da1e559f0bf82ae80ae493ef5188e5f4e953033a1",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_Leg4_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.15381,
+    0.53724
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
+   "name": "Hollowhorn_Tail",
+   "category": "Guardians",
+   "sha256": "4294d8d311ec1e6da50b8eda047aaeedc12a6dc108bf657dbbf52f4c9ba3431d",
+   "dest": "Assets/Art/Codex/Guardians/Hollowhorn_Tail.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.17309,
+    0.55596
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Hollowhorn_REGISTRATION.json"
+  },
+  {
    "name": "Knucklebramble_Arm1_Lower",
    "category": "Guardians",
    "sha256": "fc2f480a10dc4d7684a22c85a05b1f7301d1b7e627ba71743b7e61129ece20ec",
@@ -9266,6 +12443,261 @@
    "mipmaps": true,
    "ppu": 600,
    "basis": "Review11/GUARDIAN_REGISTRATION.json: character density"
+  },
+  {
+   "name": "Thornheart_Arm1_Lower",
+   "category": "Guardians",
+   "sha256": "67b55ba5e8783cd0dd8df3fd62173eb625dc4bdbaf8603c08eacc785810cac88",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_Arm1_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.13601,
+    0.43474
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json"
+  },
+  {
+   "name": "Thornheart_Arm1_Upper",
+   "category": "Guardians",
+   "sha256": "5e3c3810077cd75574dd6b073b0c39c54deca77cff46326558c6312940410a0b",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_Arm1_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.13627,
+    0.50273
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json"
+  },
+  {
+   "name": "Thornheart_Arm2_Lower",
+   "category": "Guardians",
+   "sha256": "37a311f45ebe08ee6f059bc9fbd8dc554c90e965d89fbe9acf60eb1a76b0c521",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_Arm2_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.14248,
+    0.42243
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json"
+  },
+  {
+   "name": "Thornheart_Arm2_Upper",
+   "category": "Guardians",
+   "sha256": "bf40b113c9a7b06dba7cfd10ab5ef1ca5686bf11481ceadc30c76f652340e70f",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_Arm2_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.14313,
+    0.44825
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json"
+  },
+  {
+   "name": "Thornheart_Arm3_Lower",
+   "category": "Guardians",
+   "sha256": "7d97a290c4ed66aa7e23fd62ddd0600484f22a7fa7bd4a7a92722973f0bfbea6",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_Arm3_Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.13932,
+    0.41781
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json"
+  },
+  {
+   "name": "Thornheart_Arm3_Upper",
+   "category": "Guardians",
+   "sha256": "5ac43391489f66370d17b0f449637e6cc86e4f893592618be11705beef776efb",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_Arm3_Upper.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.13548,
+    0.46058
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json"
+  },
+  {
+   "name": "Thornheart_Body_Dying",
+   "category": "Guardians",
+   "sha256": "cf3393fad3c4fe83fffa2ed7b069ba6fd9892f773f15d5cda96dcbcd525c5f44",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_Body_Dying.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0102
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json",
+   "maxSize": 4096
+  },
+  {
+   "name": "Thornheart_Body_HalfOpen",
+   "category": "Guardians",
+   "sha256": "2507d7e39bc463b4a8c6f97774a80b6de480b2aef007453105f42f7996d4378e",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_Body_HalfOpen.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0102
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json",
+   "maxSize": 4096
+  },
+  {
+   "name": "Thornheart_Body_Wrapped",
+   "category": "Guardians",
+   "sha256": "8affd8d0f3ccf5db4b1c3b22b9abc1893dd072ec745a22544d3e944733731961",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_Body_Wrapped.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0102
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json",
+   "maxSize": 4096
+  },
+  {
+   "name": "Thornheart_Head",
+   "category": "Guardians",
+   "sha256": "8caf44c7a52c1584146d35ece15962569e746063e59fa7b3637d83939d7da150",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_Head.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.21957
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json"
+  },
+  {
+   "name": "Thornheart_Jaw",
+   "category": "Guardians",
+   "sha256": "44c107199626ab154ce194ecfca6b900b98207bcb18c0013198bcc44ef437bfb",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_Jaw.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.17214,
+    0.66987
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json"
+  },
+  {
+   "name": "Thornheart_KnotExposed",
+   "category": "Guardians",
+   "sha256": "b6a64912bb08d2100a7be67ec6e72c65e1edea15840a53b39e342d27b2fac77b",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_KnotExposed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json"
+  },
+  {
+   "name": "Thornheart_KnotGlow",
+   "category": "Guardians",
+   "sha256": "750efe4deaacb8b36e958637965456dab832241ee76a72ac7ef2dc1aaf5cebcb",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_KnotGlow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json"
+  },
+  {
+   "name": "Thornheart_KnotGlow_Bare",
+   "category": "Guardians",
+   "sha256": "9fb905ebdd5db55ce4ddf897cd30ccb15a1fe3dffac1bc2b2d4a0e0f2545fe27",
+   "dest": "Assets/Art/Codex/Guardians/Thornheart_KnotGlow_Bare.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W6/Thornheart_REGISTRATION.json"
   },
   {
    "name": "FX_Dust_Warning",
@@ -12015,6 +15447,60 @@
    "basis": "assumed: passage-height curtain, 1.5 QH"
   },
   {
+   "name": "BodyWarmSpring_Glow",
+   "category": "Props",
+   "sha256": "275e8d9d642d7df80f4e94cb41f1bffee6549bfec93fb235104802a3b8895db1",
+   "dest": "Assets/Art/Codex/Props/BodyWarmSpring_Glow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "BodyWarmSpring_Pulse",
+   "category": "Props",
+   "sha256": "7a87f84e528a0e705d318e994674e5e600b8a168e460cf89b313e5dfe9d5571a",
+   "dest": "Assets/Art/Codex/Props/BodyWarmSpring_Pulse.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "BodyWarmSpring_Quiet",
+   "category": "Props",
+   "sha256": "63618465a9d08e0789ec49048d64db75f6c2ec0192b86e30f0e9efeda19e651c",
+   "dest": "Assets/Art/Codex/Props/BodyWarmSpring_Quiet.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
    "name": "Checkpoint_Shrine_A1",
    "category": "Props",
    "sha256": "5cfc332a80a505ae05f2ed2a92413d63787146086e6da0853d29f1a7053e548d",
@@ -12444,6 +15930,60 @@
    "basis": "UI canvas: 1 px = 1 reference px"
   },
   {
+   "name": "Pickup_Amber_Large",
+   "category": "Props",
+   "sha256": "62c19268ecc1c090c7fd5c88a3f104c8c3f06e5254cd8a49a4b280b673b3f7d7",
+   "dest": "Assets/Art/Codex/Props/Pickup_Amber_Large.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "Pickup_Amber_Medium",
+   "category": "Props",
+   "sha256": "5ddac095e67e60e103dd3c05557c7f5c7a934fcb025fc5d1ff3ad3dcd1b03261",
+   "dest": "Assets/Art/Codex/Props/Pickup_Amber_Medium.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "Pickup_Amber_Small",
+   "category": "Props",
+   "sha256": "47eb05d3d67612a6554a8fcb6ef78392262bee52f31b1a22a0a3abf03657e8d6",
+   "dest": "Assets/Art/Codex/Props/Pickup_Amber_Small.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
+  },
+  {
    "name": "Pickup_HeartSeed",
    "category": "Props",
    "sha256": "68e5ef17f8162381ff19ea204cf80fb1743b5315fa4789f8fd82e9bb8bd8f885",
@@ -12496,6 +16036,24 @@
    "mipmaps": false,
    "ppu": 120,
    "basis": "Codex-normalized to terrain density 120 px/u"
+  },
+  {
+   "name": "Pickup_SongShell",
+   "category": "Props",
+   "sha256": "261f4ef17d320f52935f1432546c6ec556c68da28efb423715f03f075917faad",
+   "dest": "Assets/Art/Codex/Props/Pickup_SongShell.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch7/W5"
   },
   {
    "name": "Portal_Gate_A0",
@@ -12802,6 +16360,42 @@
    "mipmaps": false,
    "ppu": 120,
    "basis": "Codex-normalized to terrain density 120 px/u"
+  },
+  {
+   "name": "Prop_Chamber_Entrance_GroundCrack",
+   "category": "Props",
+   "sha256": "bf73ebc1a4f599ccdcf1411586ebf1be92c984ae6f818d623e75835b88ae1fe0",
+   "dest": "Assets/Art/Codex/Props/Prop_Chamber_Entrance_GroundCrack.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Prop_Chamber_Entrance_WallCave",
+   "category": "Props",
+   "sha256": "8ff49237ced6e73f51a115142946f27861381159340e09baa0c821318effc8e1",
+   "dest": "Assets/Art/Codex/Props/Prop_Chamber_Entrance_WallCave.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
   },
   {
    "name": "Relic_Bloomfall",
@@ -14694,6 +18288,24 @@
    "basis": "request: terrain density 120 px/u"
   },
   {
+   "name": "A5_Slope_30",
+   "category": "Terrain",
+   "sha256": "c000b80796f01f351834e5e506543241983f69e66a28398a1f8cddcd26eb1404",
+   "dest": "Assets/Art/Codex/Terrain/A5_Slope_30.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
    "name": "A5_Wall_Climbable",
    "category": "Terrain",
    "sha256": "d7050ddec32359c0cba9a839a6c6f872c8133f9896c29d1a39a6c0fbcf672c8b",
@@ -14998,6 +18610,849 @@
    "mipmaps": false,
    "ppu": 120,
    "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "Body_Cliff_Face",
+   "category": "Terrain/Body",
+   "sha256": "9bad76dcf87671f2eb566ead982fab813e78cffb056def65d5169f57dc148469",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Cliff_Face.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Body_Crease_Arc_Fold",
+   "category": "Terrain/Body",
+   "sha256": "0d8734ee5b59b1c03b9d2615e873b73544e512e9a0c8c0f8ee47cd03a57e774a",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Crease_Arc_Fold.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Body_Crease_Branching_Fissure",
+   "category": "Terrain/Body",
+   "sha256": "e9403e9be87aff7600d68b647e16508c75254803254e31f73368ff6a048edb00",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Crease_Branching_Fissure.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Body_Crease_Forked_Diagonal",
+   "category": "Terrain/Body",
+   "sha256": "25c3082f39cd110621730a048c10c2267e6d78657fcbfa699075bc3a61508a64",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Crease_Forked_Diagonal.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Body_Crease_Vertical_Root_Seam",
+   "category": "Terrain/Body",
+   "sha256": "481272df7108181552be0db371fe9d9960d87a5bc2c393614fee6e119a167688",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Crease_Vertical_Root_Seam.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Body_Crease_Y_Split",
+   "category": "Terrain/Body",
+   "sha256": "ee0a62d4b96ad1a373278e0481e3cfc3306a71d19595d75ab30bbb45b59e424f",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Crease_Y_Split.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Body_Crease_Zigzag_Crease",
+   "category": "Terrain/Body",
+   "sha256": "5aecd17edfd13050e2440d42f39b15391d6d3977fb4e02db07ca869b4f7cc303",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Crease_Zigzag_Crease.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Body_Fill",
+   "category": "Terrain/Body",
+   "sha256": "64a5e3f759835b6cae187dce92ee10dc2dac6d8500ce0469791f26586b054592",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Fill.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Body_Fill_Shadow",
+   "category": "Terrain/Body",
+   "sha256": "b6da833d09f2b8283a135b87cbdee0ffdf404b532625ac340c9ac4c87e42ff1e",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Fill_Shadow.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Body_Pale_Cliff",
+   "category": "Terrain/Body",
+   "sha256": "bf2e8186584834c6739e1d3f9b017da33895c1241767fa389c51de2ffaead3c8",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Pale_Cliff.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Body_Top_Strip",
+   "category": "Terrain/Body",
+   "sha256": "0f187eaffb9318f9f914e813b2a0292255bd6dffb111807abf083c461a94a673",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Top_Strip.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Cave_Edge_Strip",
+   "category": "Terrain/Body",
+   "sha256": "24a09ce4915238917bac704f5dbdcc057bec5f349c3c4b93f229438b66a2da12",
+   "dest": "Assets/Art/Codex/Terrain/Body/Cave_Edge_Strip.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Cave_Fill",
+   "category": "Terrain/Body",
+   "sha256": "fcd09921e8f8dd8b0ac61d7cca88528ea7ab0a31f50efc3e6a5c44e28cafe874",
+   "dest": "Assets/Art/Codex/Terrain/Body/Cave_Fill.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W2"
+  },
+  {
+   "name": "Pillar_1_Cap_End",
+   "category": "Terrain/Body",
+   "sha256": "06c6cfa9027a6be16fb0399f4a57fad95ddd7414274034dd666cf9ada7f03a44",
+   "dest": "Assets/Art/Codex/Terrain/Body/Pillar_1_Cap_End.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch9/W2_Pillars"
+  },
+  {
+   "name": "Pillar_1_Cap_Start",
+   "category": "Terrain/Body",
+   "sha256": "955c7703e0fd311eea6b8d2dd718cc88d9f7c376538cf4b200390943b68f22fe",
+   "dest": "Assets/Art/Codex/Terrain/Body/Pillar_1_Cap_Start.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    1,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch9/W2_Pillars"
+  },
+  {
+   "name": "Pillar_1_Middle",
+   "category": "Terrain/Body",
+   "sha256": "36ca190b5d8ad39fc6b8d0919ef3bd829e6d34f91a1713cd7d3260a5b347f21a",
+   "dest": "Assets/Art/Codex/Terrain/Body/Pillar_1_Middle.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch9/W2_Pillars"
+  },
+  {
+   "name": "Pillar_2_Cap_End",
+   "category": "Terrain/Body",
+   "sha256": "713ae84dc59fccd4070584c999044904e3c2ff992c487ae29d365e21e5f8bad3",
+   "dest": "Assets/Art/Codex/Terrain/Body/Pillar_2_Cap_End.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch9/W2_Pillars"
+  },
+  {
+   "name": "Pillar_2_Cap_Start",
+   "category": "Terrain/Body",
+   "sha256": "29f9e8b2e755ef27191d205f7089c53132d4fc99670883a4b84234a6fd340896",
+   "dest": "Assets/Art/Codex/Terrain/Body/Pillar_2_Cap_Start.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    1,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch9/W2_Pillars"
+  },
+  {
+   "name": "Pillar_2_Middle",
+   "category": "Terrain/Body",
+   "sha256": "0d13288af47e414b4d6affcb493353e915d7297df6a9899ced46ef36418e66fb",
+   "dest": "Assets/Art/Codex/Terrain/Body/Pillar_2_Middle.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch9/W2_Pillars"
+  },
+  {
+   "name": "Pillar_Knuckle_Joint",
+   "category": "Terrain/Body",
+   "sha256": "10640749c0ab2fb896a8d14192e48c8ed40342d53d7a10f59d7330ce10080bea",
+   "dest": "Assets/Art/Codex/Terrain/Body/Pillar_Knuckle_Joint.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch9/W2_Pillars"
+  },
+  {
+   "name": "TownWarmSpring_Pool",
+   "category": "Town",
+   "sha256": "cbd57c4239b2dd56c1805b8d65faff64ee18853b66abd315271a01c36ff13276",
+   "dest": "Assets/Art/Codex/Town/TownWarmSpring_Pool.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
+   "name": "TownWarmSpring_PulseGlow",
+   "category": "Town",
+   "sha256": "e61994da462b7f7ad23d4eb20776a1fa886b3e88c4c2e601545531a0868c4200",
+   "dest": "Assets/Art/Codex/Town/TownWarmSpring_PulseGlow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
+   "name": "TownWarmSpring_Rim",
+   "category": "Town",
+   "sha256": "516545cd9b1502405b6f61ff9a435851b72b68a54525a0db40fdbc4ce5815726",
+   "dest": "Assets/Art/Codex/Town/TownWarmSpring_Rim.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
+   "name": "Town_Qvale_HeavedSlab",
+   "category": "Town",
+   "sha256": "a6c36195363ee4fd48275e544f1b7855a1ffbe9278ed360225a37e4a4b6fe4d6",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_HeavedSlab.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.23529
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
+   "name": "Town_Qvale_HomeA_Closed",
+   "category": "Town",
+   "sha256": "4548918b001e3426adbf6548cd79c6897c30305d2659c706594be833dd24d701",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_HomeA_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07865,
+    0.03161
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_HomeA_Cutaway",
+   "category": "Town",
+   "sha256": "4cd288842f89b0576c24eb1421135123f50ad17f18d7ba13eb1ac4687d0784a7",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_HomeA_Cutaway.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07865,
+    0.03161
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_HomeA_FrontWall",
+   "category": "Town",
+   "sha256": "0480c83f775533214bfd04f299028d23b5e83daa0bcd41d311df0fb1541b8b6a",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_HomeA_FrontWall.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07865,
+    0.03161
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_HomeB_Closed",
+   "category": "Town",
+   "sha256": "7ba56c3fb930ae0187dec28d3593789f598815f3a07bd05b3fdbc186587ad4fc",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_HomeB_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07865,
+    0.03483
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_HomeB_Cutaway",
+   "category": "Town",
+   "sha256": "ba06392d2003a49709167bcc5beeea1308af3ba81af663eb033f30c0f2ed7716",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_HomeB_Cutaway.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07865,
+    0.03483
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_HomeB_FrontWall",
+   "category": "Town",
+   "sha256": "f8bcda321d577d76b0ed616729e2e6c17ff57c21c13309afe6d987328a34421d",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_HomeB_FrontWall.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07865,
+    0.03483
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_HomeC_Closed",
+   "category": "Town",
+   "sha256": "42a53ba8b5dd4e17bf0b70f23c19b0c9a14f5b3059aa0825a763191a24df3ec6",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_HomeC_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07865,
+    0.07765
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_HomeC_Cutaway",
+   "category": "Town",
+   "sha256": "ab74ce88bb8e8c912500f7feb6d663be34da7a7081e2bfa139805c20c56a4fd3",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_HomeC_Cutaway.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07865,
+    0.07765
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_HomeC_FrontWall",
+   "category": "Town",
+   "sha256": "dbf502a12ff933bbf9c6922751d44cf7c6a0fbeceb805f0e212b985a7e95cc1e",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_HomeC_FrontWall.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07865,
+    0.07765
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_ListeningBench",
+   "category": "Town",
+   "sha256": "0fa41b1643ba0823e71d190ac4610366cb4cd72fcfe326c7fc40d082375498c4",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_ListeningBench.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.10526
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
+   "name": "Town_Qvale_ListeningTree_Back",
+   "category": "Town",
+   "sha256": "2362b3f831cea27c81d0a3efcb6ddbbef55e61c3a8ef2e44e489a7d74e532b4d",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_ListeningTree_Back.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.01282
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_ListeningTree_Front",
+   "category": "Town",
+   "sha256": "2c67ba11d3748402588da89515bf5934a6ef3070a09fd0566e651c20624d42f9",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_ListeningTree_Front.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.03571
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
+   "name": "Town_Qvale_MusicianCorner",
+   "category": "Town",
+   "sha256": "9279c3ccb39dad0997e896e35f201b9895e6330cd8fec20d74f3450e99da5143",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_MusicianCorner.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.09524
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
+   "name": "Town_Qvale_OldMan_Closed",
+   "category": "Town",
+   "sha256": "dc019d1893428f91889b6bc439f7d3e5dee9ec2d90b1ab75abde239f0c86453a",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_OldMan_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07071,
+    0.05391
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_OldMan_Cutaway",
+   "category": "Town",
+   "sha256": "bc95a053c31fc7ad0ee4d6471449d6075572a220ec9990a8e7fad927e4f8cb07",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_OldMan_Cutaway.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07071,
+    0.05391
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_OldMan_FrontWall",
+   "category": "Town",
+   "sha256": "09092f6f971b519f108d70d3f6f0109327a8575bfc00e410fed939d3bdc01a66",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_OldMan_FrontWall.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07071,
+    0.05391
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_QuakeCrack",
+   "category": "Town",
+   "sha256": "54d6bfc363063fb54a906dffc3ea43d875dd71aa4e06498002025b4584194972",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_QuakeCrack.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.86207
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
+   "name": "Town_Qvale_Smithy",
+   "category": "Town",
+   "sha256": "c02addeb1143c7f93525918d15330e820339b42f5d5698322f6b94de32a2af68",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_Smithy.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.02703
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_Smithy_ForgeGlow",
+   "category": "Town",
+   "sha256": "da7fcc7df62ad9821705f0b037850f6991095fae21a6c7c9483626f71f7e0195",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_Smithy_ForgeGlow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.02703
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_StreetLamp_Glow",
+   "category": "Town",
+   "sha256": "c212cbd62c5d54dce87df38df2ab012f7b32334f41c19dae247128ca6be16fe8",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_StreetLamp_Glow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.04
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
+   "name": "Town_Qvale_StreetLamp_Lit",
+   "category": "Town",
+   "sha256": "03f0ae67d9184d52db166d53d15fb4d79738c8122e664159aafd630190e03bb0",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_StreetLamp_Lit.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.04
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
+  },
+  {
+   "name": "Town_Qvale_StreetLamp_Unlit",
+   "category": "Town",
+   "sha256": "29728a5ff4c56b0392d44256524d75c90250097333831f7685741ee105ed5787",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_StreetLamp_Unlit.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.04
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch8/W3"
   },
   {
    "name": "HUD_Frame",
@@ -15393,6 +19848,29 @@
    "basis": "UI canvas: 1 px = 1 reference px"
   },
   {
+   "name": "UI_Counter_Amber_Frame",
+   "category": "UI",
+   "sha256": "8e468a9d6f0fb1920759410e0c91931475a69a17bda214294837c11ab2e5f15f",
+   "dest": "Assets/Art/Codex/UI/UI_Counter_Amber_Frame.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
    "name": "UI_Cursor_Leaf",
    "category": "UI",
    "sha256": "8f76eaa1f58c03fbea322db0380c53894406c07055ef819665708fde898bcb92",
@@ -15409,6 +19887,321 @@
    "mipmaps": false,
    "ppu": 100,
    "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "UI_Dialogue_ContinueArrow",
+   "category": "UI",
+   "sha256": "9e87a88f45ed91817ea49ab84c1ad7dfe5878a1c978a22169c977c7cad7efc6f",
+   "dest": "Assets/Art/Codex/UI/UI_Dialogue_ContinueArrow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_Dialogue_Nameplate",
+   "category": "UI",
+   "sha256": "946a56ebd4678ed80868f86f382eca80e26d59a9eb9ad32424b6df3aad957739",
+   "dest": "Assets/Art/Codex/UI/UI_Dialogue_Nameplate.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_FastTravel_9Slice",
+   "category": "UI",
+   "sha256": "f4ea5485569ad90e191a20680611edd54d642128fce7380705ebfbea80c8ab45",
+   "dest": "Assets/Art/Codex/UI/UI_FastTravel_9Slice.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    80,
+    80,
+    80,
+    80
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_FastTravel_DestinationRow",
+   "category": "UI",
+   "sha256": "efa97b7a2ca895da604c9acdea5aea7c9cb5591d91f26cfe39a12cd0f45958fd",
+   "dest": "Assets/Art/Codex/UI/UI_FastTravel_DestinationRow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_FastTravel_DestinationRow_Selected",
+   "category": "UI",
+   "sha256": "9b2056fd54c9ca58ff98018cd1871abbd3434c1768fe0a0aaa3625874794c41a",
+   "dest": "Assets/Art/Codex/UI/UI_FastTravel_DestinationRow_Selected.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_FastTravel_Here",
+   "category": "UI",
+   "sha256": "feb1a9aab2ecaf55cbc6e476c888d1e57ba0b2ea5a12acea7778fd45d6d457a9",
+   "dest": "Assets/Art/Codex/UI/UI_FastTravel_Here.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_Icon_Amber",
+   "category": "UI",
+   "sha256": "b474d0dbb892cd812c01a913bd78ea3ea311ea84cf5e5972450a1c2a3cb18fcd",
+   "dest": "Assets/Art/Codex/UI/UI_Icon_Amber.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_Icon_SongShell",
+   "category": "UI",
+   "sha256": "870cabafa9cf0a45367d5fcf3a48e079ad3bc63d4e9547ad87c5d84770ef5b8c",
+   "dest": "Assets/Art/Codex/UI/UI_Icon_SongShell.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_ListeningSpot_9Slice",
+   "category": "UI",
+   "sha256": "f4ea5485569ad90e191a20680611edd54d642128fce7380705ebfbea80c8ab45",
+   "dest": "Assets/Art/Codex/UI/UI_ListeningSpot_9Slice.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    80,
+    80,
+    80,
+    80
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_ListeningSpot_Locked",
+   "category": "UI",
+   "sha256": "ddd79fe1d69d2f90511f6c4cb7b779d0981ce17269be0e2331694c21eeb4f96b",
+   "dest": "Assets/Art/Codex/UI/UI_ListeningSpot_Locked.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_ListeningSpot_Playing",
+   "category": "UI",
+   "sha256": "1b9311b8041fb355241d2bd73b434ce6daaabb618f3caca6f5100ef4f78902ba",
+   "dest": "Assets/Art/Codex/UI/UI_ListeningSpot_Playing.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_ListeningSpot_TrackRow",
+   "category": "UI",
+   "sha256": "efa97b7a2ca895da604c9acdea5aea7c9cb5591d91f26cfe39a12cd0f45958fd",
+   "dest": "Assets/Art/Codex/UI/UI_ListeningSpot_TrackRow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_ListeningSpot_TrackRow_Locked",
+   "category": "UI",
+   "sha256": "5e0bcac214c8fa18a3e6412757eef6b66355f443aa386c6995c2619e2ea95cb7",
+   "dest": "Assets/Art/Codex/UI/UI_ListeningSpot_TrackRow_Locked.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_ListeningSpot_TrackRow_Playing",
+   "category": "UI",
+   "sha256": "85f0b4fa9f0aed6c96eb62aba81d9055dcd14ced0c1d9e808b1137852ebcc279",
+   "dest": "Assets/Art/Codex/UI/UI_ListeningSpot_TrackRow_Playing.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_ListeningSpot_TrackRow_Selected",
+   "category": "UI",
+   "sha256": "9b2056fd54c9ca58ff98018cd1871abbd3434c1768fe0a0aaa3625874794c41a",
+   "dest": "Assets/Art/Codex/UI/UI_ListeningSpot_TrackRow_Selected.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
   },
   {
    "name": "UI_Panel_9Slice",
@@ -15450,6 +20243,185 @@
    "mipmaps": false,
    "ppu": 100,
    "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "UI_Shop_9Slice",
+   "category": "UI",
+   "sha256": "a86837e286c6eec69da14044a17e7d3a08f19419ed64e00b594c3a357720e0c5",
+   "dest": "Assets/Art/Codex/UI/UI_Shop_9Slice.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    80,
+    80,
+    80,
+    80
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_Shop_CannotAfford",
+   "category": "UI",
+   "sha256": "b3c435f2088fae7cf626eca37d9b6c5478d89f2787fb202e8fae5ace86207f1d",
+   "dest": "Assets/Art/Codex/UI/UI_Shop_CannotAfford.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_Shop_ItemRow",
+   "category": "UI",
+   "sha256": "efa97b7a2ca895da604c9acdea5aea7c9cb5591d91f26cfe39a12cd0f45958fd",
+   "dest": "Assets/Art/Codex/UI/UI_Shop_ItemRow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_Shop_ItemRow_CannotAfford",
+   "category": "UI",
+   "sha256": "4b24600aadf5c4f82ee19daa73f71fe6d83fd43fd81abdbb57b1cdd029996cdf",
+   "dest": "Assets/Art/Codex/UI/UI_Shop_ItemRow_CannotAfford.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_Shop_ItemRow_Selected",
+   "category": "UI",
+   "sha256": "9b2056fd54c9ca58ff98018cd1871abbd3434c1768fe0a0aaa3625874794c41a",
+   "dest": "Assets/Art/Codex/UI/UI_Shop_ItemRow_Selected.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_Shop_Price",
+   "category": "UI",
+   "sha256": "8137a6df88c9bb084dc7ceba2ca53375272cef2980a9ff94549da030575c299c",
+   "dest": "Assets/Art/Codex/UI/UI_Shop_Price.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_Shop_Price_CannotAfford",
+   "category": "UI",
+   "sha256": "d9601b10680995c5dd636916489d9857f1841a5ff8a65a8ae353ce079859e03f",
+   "dest": "Assets/Art/Codex/UI/UI_Shop_Price_CannotAfford.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    48,
+    24,
+    48,
+    24
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_TownDialogue_9Slice",
+   "category": "UI",
+   "sha256": "9fb5a671ee5aa40a7420ec226e90219e63731af25c7379c3f5f0bf5b0647bb00",
+   "dest": "Assets/Art/Codex/UI/UI_TownDialogue_9Slice.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    80,
+    80,
+    80,
+    80
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch8/W7"
   },
   {
    "name": "FX_Hit_Block",
