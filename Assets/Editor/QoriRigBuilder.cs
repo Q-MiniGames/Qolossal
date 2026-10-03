@@ -20,7 +20,7 @@ public static class QoriRigBuilder
     const string PrefabPath = Folder + "/QoriRig.prefab";
     const string PlayerPrefabPath = "Assets/Prefabs/Player.prefab";
 
-    [Serializable] class RigData { public int version; public float pixelsPerUnit = 100; public float weaponRestAngle; public int weaponOrder = 12; public PartData[] parts; public BoneData[] bones; public ClipData[] clips; }
+    [Serializable] class RigData { public int version; public float pixelsPerUnit = 100; public float weaponRestAngle; public int weaponOrder = 12; public int weaponOrderFar = 15; public PartData[] parts; public BoneData[] bones; public ClipData[] clips; }
     [Serializable] class PartData { public string name; public string file; public float[] pivot; }
     [Serializable] class BoneData { public string name; public string parent; public string path; public string part; public float[] pos; public float rot; public int order; public float tint = 1; }
     [Serializable] class ClipData { public string name; public float length; public bool loop; public float[] times; public TrackData[] tracks; }
@@ -171,6 +171,7 @@ public static class QoriRigBuilder
             q.weaponMount = mount; q.weaponTip = tip;
             q.weaponMountFar = bones.TryGetValue("WeaponMountFar", out Transform farMount) ? farMount : null;
             q.weapon = weapon;
+            q.weaponOrderFar = data.weaponOrderFar;   // the blade in the camera-side hand: between its upper arm and fist
             q.head = bones["Head"].GetComponent<SpriteRenderer>();
             sprites.TryGetValue("Head_Neutral", out q.headNeutral);
             sprites.TryGetValue("Head_Up", out q.headUp);

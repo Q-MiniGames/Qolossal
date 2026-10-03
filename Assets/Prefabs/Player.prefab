@@ -227,7 +227,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2868432400173942889}
-  - {fileID: 5413489748503119771}
+  - {fileID: 510973684498456152}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3266687034786542799
@@ -386,6 +386,13 @@ MonoBehaviour:
   jumpBufferTime: 0.12
   jumpReleaseMultiplier: 0.5
   maximumFallSpeed: 22
+  dashSpeed: 19
+  dashSeconds: 0.16
+  dashCooldown: 0.3
+  glideFallSpeed: 1.8
+  glideSpeed: 7.5
+  glideBrake: 45
+  glideNeedsNewPress: 0
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -449,7 +456,7 @@ MonoBehaviour:
   maximumHealth: 5
   invulnerabilityTime: 1
   knockback: {x: 7, y: 5}
---- !u!1001 &7670730881381656328
+--- !u!1001 &2757376138995728075
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -522,8 +529,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8183d4b84cdf374d9f394d7175b5638, type: 3}
---- !u!4 &5413489748503119771 stripped
+--- !u!4 &510973684498456152 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2401400632354283667, guid: d8183d4b84cdf374d9f394d7175b5638, type: 3}
-  m_PrefabInstance: {fileID: 7670730881381656328}
+  m_PrefabInstance: {fileID: 2757376138995728075}
   m_PrefabAsset: {fileID: 0}

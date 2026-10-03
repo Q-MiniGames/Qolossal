@@ -310,6 +310,13 @@ def settings_for(category, name):
         s["pivot"], s["mipmaps"] = [round(v, 5) for v in reg["pivot_unity_normalized"]], True
     elif category == "WorldSystems":
         s["ppu"], s["basis"] = TERRAIN_PPU, "Codex-normalized to terrain density 120 px/u (1 QH = 198 px)"
+    elif category == "Player/QoriCloak":
+        # Qori's cloak v2 (Reviews 15-18): the rig copies these into its Parts folder
+        # (Tools/QoriRigAuthoring/cloak_v2.py); here they're recorded at the rig's density and pivots.
+        with open(os.path.join(SOURCE, "Player", "QoriCloak", "QORI_CLOAK_REGISTRATION.json")) as f:
+            reg = {r["name"]: r for r in json.load(f)["parts"]}[name]
+        s["ppu"], s["basis"] = reg["pixelsPerUnit"], "Player/QoriCloak/QORI_CLOAK_REGISTRATION.json"
+        s["pivot"] = [round(v, 5) for v in reg["pivotUnity"]]
     elif category == "Player":
         s["ppu"], s["basis"] = PLAYER_PPU, "Qori rig convention; rig build sets final scale"
     elif name.startswith("Icon_"):

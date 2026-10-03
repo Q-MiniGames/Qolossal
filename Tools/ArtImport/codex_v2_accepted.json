@@ -14162,6 +14162,150 @@
    "basis": "Qori rig convention; rig build sets final scale"
   },
   {
+   "name": "Qori_Cloak1",
+   "category": "Player/QoriCloak",
+   "sha256": "37f9575262172dca7af7af7e454697b755808d3095d56f04844a72f956998c1f",
+   "dest": "Assets/Art/Codex/Player/QoriCloak/Qori_Cloak1.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.73523,
+    0.97277
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Player/QoriCloak/QORI_CLOAK_REGISTRATION.json"
+  },
+  {
+   "name": "Qori_Cloak1Lower",
+   "category": "Player/QoriCloak",
+   "sha256": "9b7212e78ba4a9630c47c3a4fc8e16b2f5dde3fac8e82a79555e4eb6e04bd5ce",
+   "dest": "Assets/Art/Codex/Player/QoriCloak/Qori_Cloak1Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.69324,
+    0.53001
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Player/QoriCloak/QORI_CLOAK_REGISTRATION.json"
+  },
+  {
+   "name": "Qori_Cloak2",
+   "category": "Player/QoriCloak",
+   "sha256": "98e552dca979bdaba259c9ff460cbeffbfaddb6df44f94b715a90c76f51dd5ce",
+   "dest": "Assets/Art/Codex/Player/QoriCloak/Qori_Cloak2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.57604,
+    0.94617
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Player/QoriCloak/QORI_CLOAK_REGISTRATION.json"
+  },
+  {
+   "name": "Qori_Cloak2Lower",
+   "category": "Player/QoriCloak",
+   "sha256": "5a8bf8104b24e6a3ff0b8b13c0503ec753a5288c992045168225b34fb8717ad1",
+   "dest": "Assets/Art/Codex/Player/QoriCloak/Qori_Cloak2Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.57604,
+    0.7944
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Player/QoriCloak/QORI_CLOAK_REGISTRATION.json"
+  },
+  {
+   "name": "Qori_Cloak3",
+   "category": "Player/QoriCloak",
+   "sha256": "9e93315de6221fcbc85711f430978cfe06f20d8e7ffe7b0fef252438254c8817",
+   "dest": "Assets/Art/Codex/Player/QoriCloak/Qori_Cloak3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.51588,
+    0.93579
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Player/QoriCloak/QORI_CLOAK_REGISTRATION.json"
+  },
+  {
+   "name": "Qori_Cloak3Lower",
+   "category": "Player/QoriCloak",
+   "sha256": "1954beba82d9aea6d38d65258992a9a77b8167750e50e69dda785a3df7c76139",
+   "dest": "Assets/Art/Codex/Player/QoriCloak/Qori_Cloak3Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.60352,
+    0.51476
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Player/QoriCloak/QORI_CLOAK_REGISTRATION.json"
+  },
+  {
+   "name": "Qori_Mantle",
+   "category": "Player/QoriCloak",
+   "sha256": "db9482cba5872e7367b260faacc59fa3610d77f6c7ff092051381e1d53b1a786",
+   "dest": "Assets/Art/Codex/Player/QoriCloak/Qori_Mantle.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.54897,
+    0.74405
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Player/QoriCloak/QORI_CLOAK_REGISTRATION.json"
+  },
+  {
+   "name": "Qori_Torso",
+   "category": "Player/QoriCloak",
+   "sha256": "a33b53e07080df3593c36fa36a06459b70e6bd549c2a141b3db94c66b302991a",
+   "dest": "Assets/Art/Codex/Player/QoriCloak/Qori_Torso.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.54226,
+    0.0636
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Player/QoriCloak/QORI_CLOAK_REGISTRATION.json"
+  },
+  {
    "name": "Anchor_Ring_A1",
    "category": "Props",
    "sha256": "8f77d67ef003bd8f651a8567767c1998ddc3ab3ade7604e8b02c21ffe6bb6b76",

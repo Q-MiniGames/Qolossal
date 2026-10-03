@@ -62,5 +62,7 @@ for name, clip in C.items():
     data['clips'].append(dict(name=name, length=clip['length'], loop=clip['loop'],
                                times=[round(float(t), 5) for t in clip['times']], tracks=tracks))
 
+import cloak_v2
+cloak_v2.apply(data)   # the separate shoulder mantle and re-hung cloak panels (Codex Reviews 15-18)
 json.dump(data, open(f'{OUT}/QoriRigData.json', 'w'), separators=(',', ':'))
 print('clips', [(c['name'], len(c['tracks'])) for c in data['clips']], os.path.getsize(f'{OUT}/QoriRigData.json'))
