@@ -26,6 +26,7 @@ WIDTH = 1536
 WEAPONS = {
     "SeedpodMace": 0.14,   # on the leaf-bound handle, past the end cap
     "ThornSpear": 0.13,    # on the cream wrap behind the bud pommel
+    "LeafStaff": 0.16,     # a hand-width up from the butt end (Codex Review 20 art)
 }
 
 

@@ -75,12 +75,15 @@ public static class ArmoryPlayTest
             case 0 when Time.time > 1.2f && armory != null && armory.Weapons != null:
             {
                 var ids = armory.Weapons.Select(w => w.weaponId).ToArray();
-                Expect(ids.SequenceEqual(new[] { "forest-0", "forest-2", "forest-3" }), $"three weapons: sword, mace, spear ({string.Join(", ", ids)})");
-                Expect(armory.Weapons.Select(w => w.displayName).SequenceEqual(new[] { "Leaf Sword", "Seedpod Mace", "Thorn Spear" }), "named Leaf Sword, Seedpod Mace, Thorn Spear");
-                Expect(!armory.Select(3), "there is no fourth weapon to select");
+                Expect(ids.SequenceEqual(new[] { "forest-0", "forest-2", "forest-3", "forest-staff" }), $"four weapons: sword, mace, spear, staff ({string.Join(", ", ids)})");
+                Expect(armory.Weapons.Select(w => w.displayName).SequenceEqual(new[] { "Leaf Sword", "Seedpod Mace", "Thorn Spear", "Leaf Staff" }), "named Leaf Sword, Seedpod Mace, Thorn Spear, Leaf Staff");
+                Expect(!armory.Select(4), "there is no fifth weapon to select");
+                Expect(combat.EquippedWeapon == armory.Weapons[3] && armory.Selected == 3, $"Qori starts with the Leaf Staff ({combat.EquippedWeapon?.displayName})");
                 float sword = armory.Weapons[0].weaponArtwork.bounds.size.x * armory.Weapons[0].artworkScale;
                 float mace = armory.Weapons[1].weaponArtwork.bounds.size.x * armory.Weapons[1].artworkScale;
+                float staff = armory.Weapons[3].weaponArtwork.bounds.size.x * armory.Weapons[3].artworkScale;
                 Expect(mace > sword, $"the mace is drawn longer than the sword ({mace:F2} vs {sword:F2})");
+                Expect(Mathf.Abs(staff - sword) < .03f * sword, $"the staff is drawn the sword's length ({staff:F2} vs {sword:F2})");
                 Expect(armory.SlingWeapon != null && armory.SlingWeapon.weaponId == "resin-sling", "the resin sling is still carried");
                 // Stand Qori on the start ground, clear of enemies.
                 var body = Qori.GetComponent<Rigidbody2D>(); body.position = new Vector2(-16f, .4f); body.linearVelocity = Vector2.zero;

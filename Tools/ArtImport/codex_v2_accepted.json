@@ -20712,6 +20712,24 @@
    "basis": "Batch6/W5/REGISTRATION.json"
   },
   {
+   "name": "Icon_Weapon_LeafStaff",
+   "category": "Weapons",
+   "sha256": "8541f0feb8a33cfe213043ee30de3b669882ce87b2ca2e465304b7b33f7049e6",
+   "dest": "Assets/Art/Codex/Weapons/Icon_Weapon_LeafStaff.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
    "name": "Icon_Weapon_LeafSword",
    "category": "Weapons",
    "sha256": "b34f7ae84b642ac4a31806f9065d69d7923ef2875d72daeb54db788e3b499159",
@@ -20782,6 +20800,42 @@
    "mipmaps": false,
    "ppu": 100,
    "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Qori_Weapon_LeafStaff",
+   "category": "Weapons",
+   "sha256": "3050166af292b6cebba6f17ea54bfa0cbfa2d4d4159e7b25ad1882bf693752cc",
+   "dest": "Assets/Art/Codex/Weapons/Qori_Weapon_LeafStaff.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "Weapon_LeafStaff_T2",
+   "category": "Weapons",
+   "sha256": "017b65744440df4e9b505a9cc60c8a0c53315b7e55c8c0ba34f7070e02b5a479",
+   "dest": "Assets/Art/Codex/Weapons/Weapon_LeafStaff_T2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "request: character density 600 px/u (nominal)"
   },
   {
    "name": "Weapon_LeafSword_T2",

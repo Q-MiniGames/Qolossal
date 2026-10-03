@@ -24,7 +24,10 @@ public sealed class QoriArmory:MonoBehaviour
     {
         active=this;combat=GetComponent<PlayerCombat>();movement=GetComponent<PlayerMovement>();
         Weapons=QoriArmoryFactory.Build(combat.EquippedWeapon,owned,out WeaponDefinition ranged,out AttackDefinition shot);
-        SlingWeapon=ranged;sling=shot;combat.EquipWeapon(Weapons[0]);
+        SlingWeapon=ranged;sling=shot;
+        // Qori starts with the Leaf Staff.
+        int staff=System.Array.FindIndex(Weapons,w=>w.weaponId==QoriArmoryFactory.StaffId);
+        Selected=Mathf.Max(0,staff);combat.EquipWeapon(Weapons[Selected]);
         Visual=gameObject.AddComponent<QoriArmoryVisual>();Visual.Initialize(this,combat);
     }
     public bool Select(int index)

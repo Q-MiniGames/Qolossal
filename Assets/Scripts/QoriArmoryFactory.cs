@@ -8,18 +8,23 @@ public static class QoriArmoryFactory
     // the heavy weapon is drawn the longest. Its art is the heavy leaf-plated maul the user chose
     // (Tools/ArtImport/install_weapon_art.py installs it and the spear).
     const float MaceLength=7.9f;
+    // The Leaf Staff is held a hand-width up from its butt end; its grip-to-tip length is chosen to
+    // draw it the same overall length as the sword: 7.4 / (1 - .17 sword grip) x (1 - .16 staff grip).
+    const float StaffLength=7.489f;
+    public const string StaffId="forest-staff";
     static T Copy<T>(T value,List<Object> owned) where T:Object{var copy=Object.Instantiate(value);owned.Add(copy);return copy;}
     public static WeaponDefinition[] Build(WeaponDefinition original,List<Object> owned,out WeaponDefinition slingWeapon,out AttackDefinition sling)
     {
         // The weapons, keyed by their permanent ids (mechanics and saves use them): the Leaf Sword,
-        // the Seedpod Mace and the Thorn Spear. (forest-1, the Vine Whip, was removed.)
-        string[] ids={"forest-0","forest-2","forest-3"},names={"Leaf Sword","Seedpod Mace","Thorn Spear"};
-        float[] damage={1.2f,2f,1.1f},startup={.16f,.34f,.17f},active={.18f,.20f,.12f},recovery={.23f,.42f,.23f};
-        int[] artRows={0,1,2};string[] cleanArt={"LeafSword","SeedpodMace","ThornSpear"};float[] lengths={7.4f,MaceLength,7.5f};
+        // the Seedpod Mace, the Thorn Spear and the Leaf Staff, Qori's starting weapon (QoriArmory
+        // equips it). (forest-1, the Vine Whip, was removed.)
+        string[] ids={"forest-0","forest-2","forest-3",StaffId},names={"Leaf Sword","Seedpod Mace","Thorn Spear","Leaf Staff"};
+        float[] damage={1.2f,2f,1.1f,1f},startup={.16f,.34f,.17f,.2f},active={.18f,.20f,.12f,.2f},recovery={.23f,.42f,.23f,.26f};
+        int[] artRows={0,1,2,0};string[] cleanArt={"LeafSword","SeedpodMace","ThornSpear","LeafStaff"};float[] lengths={7.4f,MaceLength,7.5f,StaffLength};
         var result=new WeaponDefinition[ids.Length];
         for(int n=0;n<ids.Length;n++)
         {
-            int i=n==0?0:n+1;   // 0 sword, 2 mace, 3 spear: the tuning below is keyed by the old slot numbers
+            int i=n==0?0:n+1;   // 0 sword, 2 mace, 3 spear, 4 staff: the tuning below is keyed by the old slot numbers
             var w=Copy(original,owned);result[n]=w;w.name=w.displayName=names[n];w.weaponId=ids[n];w.damageMultiplier=1;
             ApplyArt(w,artRows[n],lengths[n],owned);
             ApplyCleanArt(w,cleanArt[n],lengths[n],owned);
@@ -32,7 +37,7 @@ public static class QoriArmoryFactory
                 move.animation=Copy(move.animation,owned);move.followUps=new AttackDefinition[0];move.damage=damage[n];
                 move.startup=startup[n];move.active=active[n];move.recovery=recovery[n];move.cooldown=move.TotalDuration+.025f;
                 move.knockback=new Vector2(i==2?5:2, i==2?2:1);
-                move.hitStop=i==2?.06f:.025f;move.bladeRadius=i==2?.24f:.10f;move.bladeStart=i==3?.6f:i==2?.7f:.15f;
+                move.hitStop=i==2?.06f:.025f;move.bladeRadius=i==2?.24f:i==4?.14f:.10f;move.bladeStart=i==3?.6f:i==2||i==4?.7f:.15f;   // the staff hits with its leaf blade
                 var p=move.animation;p.oneHanded=i==0||a!=0;p.straightTrail=i==3||a!=0;p.sweepThroughActive=!p.straightTrail;
                 if(a==0)
                 {

@@ -29,8 +29,8 @@ public static class UiSkinBuilder
         skin.vine = Load("HUD_Vine_Segment");
         Sprite Icon(string name) => AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/Codex/Weapons/Icon_Weapon_" + name + ".png")
             ?? throw new FileNotFoundException("Missing weapon icon; import accepted Codex art first.", name);
-        skin.weaponIds = new[] { "forest-0", "reedblade", "forest-2", "forest-3", "resin-sling" };
-        skin.weaponIcons = new[] { Icon("LeafSword"), Icon("LeafSword"), Icon("SeedpodMace"), Icon("ThornSpear"), Icon("Sling") };
+        skin.weaponIds = new[] { "forest-0", "reedblade", "forest-2", "forest-3", "resin-sling", QoriArmoryFactory.StaffId };
+        skin.weaponIcons = new[] { Icon("LeafSword"), Icon("LeafSword"), Icon("SeedpodMace"), Icon("ThornSpear"), Icon("Sling"), Icon("LeafStaff") };
         Sprite Chart(string name) => AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/Codex/Chart/" + name + ".png")
             ?? throw new FileNotFoundException("Missing Chart sprite; import accepted Codex art first.", name);
         skin.chartBase = Chart("Chart_Base"); skin.chartFog = Chart("Chart_Fog");
