@@ -121,6 +121,10 @@ public sealed class QoriAnimator : MonoBehaviour
     int launchVersion, playedLaunch = -1; float wallJumpUntil, lastWallDirection; bool wallJumpAway;
 
     public bool Ready => isActiveAndEnabled && animator != null && movement != null;
+    /// <summary>A pose held from outside (the listening bench's "Sit"), over every movement state, until released.</summary>
+    public string HeldState { get; private set; }
+    public void Hold(string stateName) => HeldState = stateName;
+    public void Release() => HeldState = null;
     public float VisualFacing => facing;
     /// <summary>The grip the blade is currently attached to (hit detection samples from it).</summary>
     public Transform WeaponMount => weapon != null && weapon.transform.parent != null ? weapon.transform.parent : weaponMount;
@@ -208,7 +212,8 @@ public sealed class QoriAnimator : MonoBehaviour
         bool gliding = movement.IsGliding && !attacking && !hanging;
 
         int state; float blend;
-        if (attacking)
+        if (!string.IsNullOrEmpty(HeldState)) { state = Animator.StringToHash(HeldState); blend = .3f; }
+        else if (attacking)
         {
             state = AttackState(grounded);
             animator.SetFloat(AttackTimeParam, AttackTime());
@@ -294,7 +299,7 @@ public sealed class QoriAnimator : MonoBehaviour
         lastVelocity = velocity; hasLastVelocity = true;
         smoothedAcceleration = Vector2.Lerp(smoothedAcceleration, raw, 1f - Mathf.Exp(-dt / .06f));
         float forwardAcceleration = Mathf.Clamp(smoothedAcceleration.x * facing, -90f, 90f);
-        feet?.Apply(movement.IsGrounded && !movement.IsLedgeHanging && !movement.IsLedgeClimbing && !movement.IsWallSliding, dt);
+        feet?.Apply(string.IsNullOrEmpty(HeldState) && movement.IsGrounded && !movement.IsLedgeHanging && !movement.IsLedgeClimbing && !movement.IsWallSliding, dt);
         UpdateEars(dt, velocity, forwardAcceleration);
         UpdateCape(dt, forwardAcceleration);
         RaiseGlideArm();

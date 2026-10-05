@@ -20,6 +20,7 @@ public sealed class TownShop : MonoBehaviour
         public Effect effect;
         [Tooltip("For SetFlag: the flag set when bought.")] public string flag = "";
         [Tooltip("Sold once, then marked as sold.")] public bool once = true;
+        [Tooltip("TownState.Check condition for it to be listed at all; empty: always.")] public string available = "";
     }
 
     public string title = "Shop";
@@ -27,6 +28,7 @@ public sealed class TownShop : MonoBehaviour
 
     public static bool IsOpenAny { get; private set; }
     public bool IsOpen { get; private set; }
+    readonly List<int> listed = new List<int>();   // the items on sale now (their `available` holds)
     int selected; Canvas canvas; Text heading, amber, detail; readonly List<Text> rows = new List<Text>();
     float deniedAt = -10f; int openedFrame;
 
@@ -40,6 +42,8 @@ public sealed class TownShop : MonoBehaviour
     {
         if (IsOpen) return;
         if (canvas == null) Build();
+        listed.Clear();
+        for (int i = 0; i < items.Count; i++) if (TownState.Check(items[i].available)) listed.Add(i);
         IsOpen = IsOpenAny = true; openedFrame = Time.frameCount; selected = 0;
         ModalUi.Open(); canvas.enabled = true; Refresh();
     }
@@ -68,15 +72,17 @@ public sealed class TownShop : MonoBehaviour
     {
         heading.text = title;
         amber.text = $"Amber  <color=#B3650F>{TownState.Amber}</color>";
-        for (int i = 0; i < items.Count; i++)
+        for (int row = 0; row < rows.Count; row++)
         {
+            if (row >= listed.Count) { rows[row].text = ""; continue; }
+            int i = listed[row];
             var it = items[i];
             string price = IsSold(i) ? "<color=#8C8577>sold</color>" : TownState.Amber >= it.price ? $"<color=#B3650F>{it.price}</color>" : $"<color=#A0503A>{it.price}</color>";
-            rows[i].text = (i == selected ? "▶  " : "    ") + it.name + "  —  " + price;
-            rows[i].color = i == selected ? TownUi.PanelInk : TownUi.PanelDim;
+            rows[row].text = (row == selected ? "▶  " : "    ") + it.name + "  —  " + price;
+            rows[row].color = row == selected ? TownUi.PanelInk : TownUi.PanelDim;
         }
         bool denied = Time.time - deniedAt < 1.2f;
-        detail.text = denied ? "<color=#A0503A>Not enough Amber.</color>" : items.Count > 0 ? items[selected].description : "";
+        detail.text = denied ? "<color=#A0503A>Not enough Amber.</color>" : listed.Count > 0 ? items[listed[selected]].description : "Nothing for sale yet.";
     }
 
     void Update()
@@ -85,9 +91,10 @@ public sealed class TownShop : MonoBehaviour
         if (Time.frameCount != openedFrame)
         {
             if (TownInput.Cancel()) { Close(); return; }
-            if (TownInput.Up()) selected = (selected + items.Count - 1) % items.Count;
-            if (TownInput.Down()) selected = (selected + 1) % items.Count;
-            if (TownInput.Confirm()) Buy(selected);
+            int n = Mathf.Max(1, listed.Count);
+            if (TownInput.Up()) selected = (selected + n - 1) % n;
+            if (TownInput.Down()) selected = (selected + 1) % n;
+            if (TownInput.Confirm() && listed.Count > 0) Buy(listed[selected]);
         }
         Refresh();
     }

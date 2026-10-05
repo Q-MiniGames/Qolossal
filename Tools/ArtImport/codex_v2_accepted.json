@@ -435,6 +435,96 @@
    "basis": "request: terrain density 120 px/u"
   },
   {
+   "name": "BG_Sky_Terraces",
+   "category": "Backgrounds",
+   "sha256": "276bc2152987a636e08b2d01fd8c8b2b6ec1013e2b01c2805058718ec0a2cea5",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Sky_Terraces.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "BG_Terraces_Far",
+   "category": "Backgrounds",
+   "sha256": "7339031434df4eb4b94c99c541edc205c3cb47d08cefa66f2ee78c50dc99693c",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Terraces_Far.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch12/W1"
+  },
+  {
+   "name": "BG_Terraces_Mid",
+   "category": "Backgrounds",
+   "sha256": "dcb3025eeefe7658aec2f29b2e7a9838602e85329edb46d2890312a387aa86ba",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Terraces_Mid.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch12/W1"
+  },
+  {
+   "name": "BG_Terraces_Mill_Landmark",
+   "category": "Backgrounds",
+   "sha256": "44867fbdacabbece8eec3cccab494a0e902f1e3be65c1aae6fbb941e4f0bbfba",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Terraces_Mill_Landmark.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W4"
+  },
+  {
+   "name": "BG_Terraces_Near",
+   "category": "Backgrounds",
+   "sha256": "761de60935b030c58111422ff10d2e80a3fdfaee446526f3396e85722f1889cf",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Terraces_Near.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch12/W1"
+  },
+  {
    "name": "BG_Transition_A0",
    "category": "Backgrounds",
    "sha256": "3403aa06b07496d0c007242f36a0dabaf019a217eaa179dbc1af020b763c2897",
@@ -2155,6 +2245,114 @@
    "basis": "Qori rig registration (Qori_Cape3Lower)"
   },
   {
+   "name": "Wilted_Cloak1",
+   "category": "Characters/Wilted",
+   "sha256": "4c8dc18f6fc2b6876bffa2105b66fe4699243102ef2ddb5f3fafc7c78ea4e175",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Cloak1.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.73523,
+    0.97277
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
+   "name": "Wilted_Cloak1Lower",
+   "category": "Characters/Wilted",
+   "sha256": "87a1dd648064012f79d351ee63de88c361e3b491f9695d6b978c4ae151e7c3ab",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Cloak1Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.69324,
+    0.53001
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
+   "name": "Wilted_Cloak2",
+   "category": "Characters/Wilted",
+   "sha256": "06f64ebf451a47e1637cdadc26b3141620d12e103da770a6d81e26acfb1e629d",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Cloak2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.57604,
+    0.94617
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
+   "name": "Wilted_Cloak2Lower",
+   "category": "Characters/Wilted",
+   "sha256": "5f823a4face42a0b8d18db7554e718e416316ab8f91c9969ed32180d5ba515c6",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Cloak2Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.57604,
+    0.7944
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
+   "name": "Wilted_Cloak3",
+   "category": "Characters/Wilted",
+   "sha256": "bad83868ba05a7a68bb21554ee022c9b17b7700a63d24296e16781ab312ccaf3",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Cloak3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.51588,
+    0.93579
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
+   "name": "Wilted_Cloak3Lower",
+   "category": "Characters/Wilted",
+   "sha256": "dce138c5c1a6528892649ddaf0fcf39eab83ae4ecd4fc11ee0d5023dd1c779c1",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Cloak3Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.60352,
+    0.51476
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
    "name": "Wilted_EarLower",
    "category": "Characters/Wilted",
    "sha256": "c453b2cb5c58955548fb3aaf540268937a88cb5e7b2f3cf05173e0334aaf3a43",
@@ -2389,6 +2587,132 @@
    "basis": "Qori rig registration (Qori_Head_Up)"
   },
   {
+   "name": "Wilted_Healed_Cloak1",
+   "category": "Characters/Wilted",
+   "sha256": "b099cd8ef6bc23a163cd183041a4289880b3d15b192c7584d32db06343412ea5",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Healed_Cloak1.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.73523,
+    0.97277
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
+   "name": "Wilted_Healed_Cloak1Lower",
+   "category": "Characters/Wilted",
+   "sha256": "c53dc0550d1eded7cc35cf18ba8e0b0fbca23dfe498cf3f8783bf35561109b74",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Healed_Cloak1Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.69324,
+    0.53001
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
+   "name": "Wilted_Healed_Cloak2",
+   "category": "Characters/Wilted",
+   "sha256": "e4c2d934272cae02ceaffa0f7e9bc99dbbec785e9730b163a367f060f9d70f69",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Healed_Cloak2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.57604,
+    0.94617
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
+   "name": "Wilted_Healed_Cloak2Lower",
+   "category": "Characters/Wilted",
+   "sha256": "3abc4b3d16ae7172cd0f21e630a28f27f9b28f2fe130c4212eec891fa2c034a0",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Healed_Cloak2Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.57604,
+    0.7944
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
+   "name": "Wilted_Healed_Cloak3",
+   "category": "Characters/Wilted",
+   "sha256": "8402ea56fd94370ce6c7948416bbedffab376a6aed3d55cae0f9ed004a8f6bcc",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Healed_Cloak3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.51588,
+    0.93579
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
+   "name": "Wilted_Healed_Cloak3Lower",
+   "category": "Characters/Wilted",
+   "sha256": "b37fdbbf171845cbaed74929608fe4a8d789cad3d60f51c96cb3dad88d71a595",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Healed_Cloak3Lower.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.60352,
+    0.51476
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
+   "name": "Wilted_Healed_Mantle",
+   "category": "Characters/Wilted",
+   "sha256": "d1c8b65423248fc50e9ad9feb5abecbf2145b02ad3c8a4bf76bf51100d99e77c",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Healed_Mantle.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.54897,
+    0.74405
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
    "name": "Wilted_Healed_Torso",
    "category": "Characters/Wilted",
    "sha256": "d5c60df663f2b994f0d97b243f11562ae1cebd72729075b2e778993a3d50e046",
@@ -2405,6 +2729,42 @@
    "mipmaps": true,
    "ppu": 100.0,
    "basis": "Qori rig registration (Qori_Torso)"
+  },
+  {
+   "name": "Wilted_Healed_Torso_Bare",
+   "category": "Characters/Wilted",
+   "sha256": "c9c9519f4a5dada1b670bb9d663935cbe1f19b828ccf46067573698e8e5f3f6d",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Healed_Torso_Bare.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.54226,
+    0.0636
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
+   "name": "Wilted_Mantle",
+   "category": "Characters/Wilted",
+   "sha256": "23f1f19f8ac99a75455a7da78e327d110e56cb6c88613e81efc66d053e9e499c",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Mantle.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.54897,
+    0.74405
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
   },
   {
    "name": "Wilted_Shin",
@@ -2479,6 +2839,24 @@
    "basis": "Qori rig registration (Qori_Head_Neutral)"
   },
   {
+   "name": "Wilted_ThornArmor_Mantle",
+   "category": "Characters/Wilted",
+   "sha256": "2be44c42d203f6903296d80763e72e389940b3cebfb20963edc8b646eaab7fa1",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_ThornArmor_Mantle.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.54897,
+    0.74405
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
    "name": "Wilted_ThornArmor_Torso",
    "category": "Characters/Wilted",
    "sha256": "7aea81a21c063c403ad557638a59b6a5e7496a9f0a55626dfc56587991fc7d33",
@@ -2497,6 +2875,24 @@
    "basis": "Qori rig registration (Qori_Torso)"
   },
   {
+   "name": "Wilted_ThornArmor_Torso_Bare",
+   "category": "Characters/Wilted",
+   "sha256": "681135a548ee7d821bf7f427cf0f2349911f2ccf971f5799b92b1c36540542fc",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_ThornArmor_Torso_Bare.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.54226,
+    0.0636
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
+  },
+  {
    "name": "Wilted_Torso",
    "category": "Characters/Wilted",
    "sha256": "ef47964f5562fcd832ac0068cf6ad909a08d747409154e93b0d04d31c2502c47",
@@ -2513,6 +2909,24 @@
    "mipmaps": true,
    "ppu": 100.0,
    "basis": "Qori rig registration (Qori_Torso)"
+  },
+  {
+   "name": "Wilted_Torso_Bare",
+   "category": "Characters/Wilted",
+   "sha256": "c8e16a1368d69ade0d7b7bc660415c2686f8633368a65d47de2d8b2adf5a29c7",
+   "dest": "Assets/Art/Codex/Characters/Wilted/Wilted_Torso_Bare.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "Tight",
+   "pivot": [
+    0.54226,
+    0.0636
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 100,
+   "basis": "Batch10/W1"
   },
   {
    "name": "Wilted_UpperArm",
@@ -3150,6 +3564,132 @@
    "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
   },
   {
+   "name": "Reveal_Face_01_Brow",
+   "category": "Cinematics",
+   "sha256": "0a2ad237f292546ada0b43b93e5329500063aa483249b21ca664711042d8c315",
+   "dest": "Assets/Art/Codex/Cinematics/Reveal_Face_01_Brow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
+   "name": "Reveal_Face_02_Pullout",
+   "category": "Cinematics",
+   "sha256": "81f5e17806936bef4d27277a1708a17d93ac0d4ba6ffbde4f2e1c95b178361b0",
+   "dest": "Assets/Art/Codex/Cinematics/Reveal_Face_02_Pullout.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch12/W2"
+  },
+  {
+   "name": "Reveal_Face_03_Whole",
+   "category": "Cinematics",
+   "sha256": "f2b6f20fa39b8def9c77f3ed7065f77daf49e6983e42a78e593fe2643661204c",
+   "dest": "Assets/Art/Codex/Cinematics/Reveal_Face_03_Whole.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch12/W2"
+  },
+  {
+   "name": "Title_A_Composite",
+   "category": "Cinematics",
+   "sha256": "89cc621798ece05d1b3f464ae8f93b892c04b616ceec8ed3bc0518e5957b8948",
+   "dest": "Assets/Art/Codex/Cinematics/Title_A_Composite.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
+   "name": "Title_A_Far",
+   "category": "Cinematics",
+   "sha256": "288c053fd3eef6ae727a88764d1ca766c7fc232484efe4848f7281cb58388d47",
+   "dest": "Assets/Art/Codex/Cinematics/Title_A_Far.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
+   "name": "Title_A_Ridge",
+   "category": "Cinematics",
+   "sha256": "0649f781f3709b5eb155bbe140ad5d5ad8f654bcedc2af626cdd85e39db67849",
+   "dest": "Assets/Art/Codex/Cinematics/Title_A_Ridge.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
+   "name": "Title_A_Sky",
+   "category": "Cinematics",
+   "sha256": "890850aebb340bad1db2dce57576debd21acb6568a75bec94e0a55c30af4bec8",
+   "dest": "Assets/Art/Codex/Cinematics/Title_A_Sky.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
    "name": "Title_Background_v2",
    "category": "Cinematics",
    "sha256": "1f6bb12400a893fe1fa3bc1934bafbb3d147f3e416008f3f0d14cf4d2bbded30",
@@ -3184,6 +3724,60 @@
    "mipmaps": false,
    "ppu": 100,
    "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
+   "name": "Ending_Careful_01_HeadLift",
+   "category": "Cinematics/Spoilers",
+   "sha256": "3ad7c55a7b922d69b309e1b1c34f4aa45b5069b811d76637b53a8ede6645aa6b",
+   "dest": "Assets/Art/Codex/Cinematics/Spoilers/Ending_Careful_01_HeadLift.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
+   "name": "Ending_Careful_02_Lap",
+   "category": "Cinematics/Spoilers",
+   "sha256": "a3f86ad1216731e7335fb3d7935dd07980f0d81a65710d2a53888537c6c1ee3c",
+   "dest": "Assets/Art/Codex/Cinematics/Spoilers/Ending_Careful_02_Lap.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
+   "name": "Ending_Careful_03_Shoulder",
+   "category": "Cinematics/Spoilers",
+   "sha256": "3979cc30eb3d0b78184fc7f4bc7fc85f26f91e22ff80fe493dd393313f9fc410",
+   "dest": "Assets/Art/Codex/Cinematics/Spoilers/Ending_Careful_03_Shoulder.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch12/W3"
   },
   {
    "name": "Decor_A0_Sheet",
@@ -4586,6 +5180,181 @@
    "basis": "Batch8/W2"
   },
   {
+   "name": "Decor_Causeway_Sheet",
+   "category": "Decor",
+   "sha256": "c3ad8a48f4600406ffd5698962b37c4f459726512616f43abc2064a98173f4c3",
+   "dest": "Assets/Art/Codex/Decor/Decor_Causeway_Sheet.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": [
+    {
+     "name": "Decor_Causeway_Small_Fern",
+     "rect": [
+      0,
+      640,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0.05
+     ]
+    },
+    {
+     "name": "Decor_Causeway_Moss_Cushion",
+     "rect": [
+      320,
+      640,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0.05
+     ]
+    },
+    {
+     "name": "Decor_Causeway_Chalk_Pebbles",
+     "rect": [
+      640,
+      640,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0.05
+     ]
+    },
+    {
+     "name": "Decor_Causeway_Meadow_Flowers",
+     "rect": [
+      960,
+      640,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0.05
+     ]
+    },
+    {
+     "name": "Decor_Causeway_Trailing_Ivy",
+     "rect": [
+      0,
+      320,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0.05
+     ]
+    },
+    {
+     "name": "Decor_Causeway_Roadside_Milestone",
+     "rect": [
+      320,
+      320,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0.05
+     ]
+    },
+    {
+     "name": "Decor_Causeway_Broken_Paving",
+     "rect": [
+      640,
+      320,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0.05
+     ]
+    },
+    {
+     "name": "Decor_Causeway_Mineral_Vent",
+     "rect": [
+      960,
+      320,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0.05
+     ]
+    },
+    {
+     "name": "Decor_Causeway_Reed_Tuft",
+     "rect": [
+      0,
+      0,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0.05
+     ]
+    },
+    {
+     "name": "Decor_Causeway_Root_Nest",
+     "rect": [
+      320,
+      0,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0.05
+     ]
+    },
+    {
+     "name": "Decor_Causeway_Shelf_Mushrooms",
+     "rect": [
+      640,
+      0,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0.05
+     ]
+    },
+    {
+     "name": "Decor_Causeway_Fallen_Branch",
+     "rect": [
+      960,
+      0,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0.05
+     ]
+    }
+   ],
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
    "name": "Decor_Foreground_Frame_A0",
    "category": "Decor",
    "sha256": "f4f697f592735d081a8d099a55efda604c059f8256315038c34221925430e40c",
@@ -4885,6 +5654,181 @@
    "mipmaps": false,
    "ppu": 120,
    "basis": "Batch8/W3"
+  },
+  {
+   "name": "Decor_Terraces_Sheet",
+   "category": "Decor",
+   "sha256": "46471500a8cda3d4ec259ada7a42ed2dc0237a7cce292b4bccd198a754f6d1ba",
+   "dest": "Assets/Art/Codex/Decor/Decor_Terraces_Sheet.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": [
+    {
+     "name": "Decor_Terraces_olive_fern",
+     "rect": [
+      0,
+      640,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Terraces_chalk_pebbles",
+     "rect": [
+      320,
+      640,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Terraces_moss_cushion",
+     "rect": [
+      640,
+      640,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Terraces_white_daisies",
+     "rect": [
+      960,
+      640,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Terraces_coiled_rope",
+     "rect": [
+      0,
+      320,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Terraces_watering_jug",
+     "rect": [
+      320,
+      320,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Terraces_harvested_grain",
+     "rect": [
+      640,
+      320,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Terraces_split_fence",
+     "rect": [
+      960,
+      320,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Terraces_root_stump",
+     "rect": [
+      0,
+      0,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Terraces_bean_basket",
+     "rect": [
+      320,
+      0,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Terraces_field_marker",
+     "rect": [
+      640,
+      0,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    },
+    {
+     "name": "Decor_Terraces_dry_grass",
+     "rect": [
+      960,
+      0,
+      320,
+      320
+     ],
+     "pivot": [
+      0.5,
+      0
+     ]
+    }
+   ],
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W4"
   },
   {
    "name": "FX_Ability_Unlock_Burst",
@@ -5659,6 +6603,159 @@
    "mipmaps": true,
    "ppu": 600,
    "basis": "request: character density 600 px/u (nominal)"
+  },
+  {
+   "name": "FX_WeaponFound_01",
+   "category": "Effects",
+   "sha256": "429590e677d2d1ddd37a8f6229586517ebd0797f1222a04d2e1df44b2abae230",
+   "dest": "Assets/Art/Codex/Effects/FX_WeaponFound_01.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch10/W2"
+  },
+  {
+   "name": "FX_WeaponFound_02",
+   "category": "Effects",
+   "sha256": "cfa368b6f82168e18c445a6df5d7da5192167300048616448d8383b2576b1ac5",
+   "dest": "Assets/Art/Codex/Effects/FX_WeaponFound_02.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch10/W2"
+  },
+  {
+   "name": "FX_WeaponFound_03",
+   "category": "Effects",
+   "sha256": "6938b4f796bcb59c7c9754cee546cff44c3b24f02f6c025ae7133ab7fc72f8c0",
+   "dest": "Assets/Art/Codex/Effects/FX_WeaponFound_03.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch10/W2"
+  },
+  {
+   "name": "FX_WeaponFound_04",
+   "category": "Effects",
+   "sha256": "b2394faa767f83919b464248f1a2438e6738f6f8ce27659ac6b23342efc0c7ea",
+   "dest": "Assets/Art/Codex/Effects/FX_WeaponFound_04.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch10/W2"
+  },
+  {
+   "name": "FX_WeaponFound_05",
+   "category": "Effects",
+   "sha256": "0f9768c61a38fac9209ed9f7111c93c1ed098cabc27f1ba54ce43628d75fb936",
+   "dest": "Assets/Art/Codex/Effects/FX_WeaponFound_05.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch10/W2"
+  },
+  {
+   "name": "FX_WeaponFound_06",
+   "category": "Effects",
+   "sha256": "a68746970853d1093bbb053fdcf9b860a0a74b378d4759eff29b6d8e5a3bd4b1",
+   "dest": "Assets/Art/Codex/Effects/FX_WeaponFound_06.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": true,
+   "ppu": 600,
+   "basis": "Batch10/W2"
+  },
+  {
+   "name": "SlashStrip_Staff",
+   "category": "Effects",
+   "sha256": "45b003d2b5548d509d12880904c34e5c1543b1e7d1ed4ba0cd2f1fb4dd181511",
+   "dest": "Assets/Art/Codex/Effects/SlashStrip_Staff.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": [
+    {
+     "name": "SlashStrip_Staff_0",
+     "rect": [
+      0,
+      60,
+      6,
+      11
+     ],
+     "pivot": [
+      0,
+      0
+     ]
+    },
+    {
+     "name": "SlashStrip_Staff_1",
+     "rect": [
+      5,
+      0,
+      474,
+      128
+     ],
+     "pivot": [
+      0,
+      0
+     ]
+    }
+   ],
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch10/W6"
   },
   {
    "name": "Carrier_Body",
@@ -16506,6 +17603,204 @@
    "basis": "Codex-normalized to terrain density 120 px/u"
   },
   {
+   "name": "Prop_Causeway_Aqueduct_Arch_Broken",
+   "category": "Props",
+   "sha256": "6a9ea84805df11310968325bc6acfa5a98421fe7301d7a51e654ebd771bff219",
+   "dest": "Assets/Art/Codex/Props/Prop_Causeway_Aqueduct_Arch_Broken.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Prop_Causeway_Aqueduct_Arch_Intact",
+   "category": "Props",
+   "sha256": "9cc388ee50205affaebc12b0900376275b1eacd6ca6d854c955c9ae613b971d5",
+   "dest": "Assets/Art/Codex/Props/Prop_Causeway_Aqueduct_Arch_Intact.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Prop_Causeway_Aqueduct_Channel_Broken",
+   "category": "Props",
+   "sha256": "65d4a30b4344e0cde27b419b0862801dfcc9150378b206fa78ab36e9c3ad3828",
+   "dest": "Assets/Art/Codex/Props/Prop_Causeway_Aqueduct_Channel_Broken.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Prop_Causeway_Chamber_Entrance",
+   "category": "Props",
+   "sha256": "f1b6f37d8b469b473ff25913ac7989d958c1cdc8fabe73bce570b3e59fc2b0fa",
+   "dest": "Assets/Art/Codex/Props/Prop_Causeway_Chamber_Entrance.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Prop_Causeway_WarmSpring_Glow",
+   "category": "Props",
+   "sha256": "233faedd6af8c2b0ce9785ccf6912aab92912de056e11a51b808dfc9a29cda5b",
+   "dest": "Assets/Art/Codex/Props/Prop_Causeway_WarmSpring_Glow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Prop_Causeway_WarmSpring_Pulse",
+   "category": "Props",
+   "sha256": "d50944b937883963ac4f897f823434ca7258064b74f4ad94bee68d2cc28607d0",
+   "dest": "Assets/Art/Codex/Props/Prop_Causeway_WarmSpring_Pulse.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Prop_Causeway_WarmSpring_Quiet",
+   "category": "Props",
+   "sha256": "dc2143d8fbbd6756997bd0e6b174ab715927ead6c5d8cb098fb1440f231e8e64",
+   "dest": "Assets/Art/Codex/Props/Prop_Causeway_WarmSpring_Quiet.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Prop_Chamber_Entrance_A2",
+   "category": "Props",
+   "sha256": "53dc334e8f77c29af9807faff17684333f396f75c1c7d022d2d34d5f0b911031",
+   "dest": "Assets/Art/Codex/Props/Prop_Chamber_Entrance_A2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W3"
+  },
+  {
+   "name": "Prop_Chamber_Entrance_A3",
+   "category": "Props",
+   "sha256": "a8bbd21aa549b3c500f2cb0ac94c8a107da645cd8da4b7aef8851a16df9e9d57",
+   "dest": "Assets/Art/Codex/Props/Prop_Chamber_Entrance_A3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W3"
+  },
+  {
+   "name": "Prop_Chamber_Entrance_A4",
+   "category": "Props",
+   "sha256": "bf85c0335b731fd6655d0640b9a257151e97bf36ee4bba5f155cbd330ece21ed",
+   "dest": "Assets/Art/Codex/Props/Prop_Chamber_Entrance_A4.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W3"
+  },
+  {
+   "name": "Prop_Chamber_Entrance_A6",
+   "category": "Props",
+   "sha256": "039cbc1d35a6f37f10379870d500bbba2dd72b0cf302137f24d1cd1afc1208e8",
+   "dest": "Assets/Art/Codex/Props/Prop_Chamber_Entrance_A6.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W3"
+  },
+  {
    "name": "Prop_Chamber_Entrance_GroundCrack",
    "category": "Props",
    "sha256": "bf73ebc1a4f599ccdcf1411586ebf1be92c984ae6f818d623e75835b88ae1fe0",
@@ -16540,6 +17835,114 @@
    "mipmaps": false,
    "ppu": 120,
    "basis": "Batch8/W2"
+  },
+  {
+   "name": "Prop_WeaponShrine_Open",
+   "category": "Props",
+   "sha256": "3c23f28e57da44fd091618c7878d03f5de89e191654514fb5948d5be697e19f5",
+   "dest": "Assets/Art/Codex/Props/Prop_WeaponShrine_Open.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.05405
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W2"
+  },
+  {
+   "name": "Prop_WeaponShrine_Sealed",
+   "category": "Props",
+   "sha256": "abdcb3f8a25ab012b7c0d6b5ec88535caf37e46c755bb44f272580e7d4a8732e",
+   "dest": "Assets/Art/Codex/Props/Prop_WeaponShrine_Sealed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.05405
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W2"
+  },
+  {
+   "name": "Prop_WeaponShrine_WeaponSlot",
+   "category": "Props",
+   "sha256": "b51d5c66af2e3a70f2a1e6164f2f5af279085bc204c062367450edf352b77efd",
+   "dest": "Assets/Art/Codex/Props/Prop_WeaponShrine_WeaponSlot.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.05405
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W2"
+  },
+  {
+   "name": "Props_Terraces_Beans",
+   "category": "Props",
+   "sha256": "40b731c4f08f28d2a010a3ac4ba2e3c474fe9cd7ee529e96ba41e7101aa52421",
+   "dest": "Assets/Art/Codex/Props/Props_Terraces_Beans.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W4"
+  },
+  {
+   "name": "Props_Terraces_Grain",
+   "category": "Props",
+   "sha256": "3a3f0ae7d56d2c732ad573cbb0f4f4f8955d8050732f3a5e09ad189b45895e39",
+   "dest": "Assets/Art/Codex/Props/Props_Terraces_Grain.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W4"
+  },
+  {
+   "name": "Props_Terraces_Scarecrow",
+   "category": "Props",
+   "sha256": "31406e8177ac8687754c4c15ee9527c0a661a502448b00df9601f1046619f378",
+   "dest": "Assets/Art/Codex/Props/Props_Terraces_Scarecrow.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W4"
   },
   {
    "name": "Relic_Bloomfall",
@@ -16864,6 +18267,132 @@
    "mipmaps": false,
    "ppu": 120,
    "basis": "Codex-normalized to terrain density 120 px/u"
+  },
+  {
+   "name": "Quake_Cradle",
+   "category": "QuakeVistas",
+   "sha256": "cd6248347d764b656b3b5ad6d2f8e18d23c2c3df8a08d9e2752bb5ac25e75f86",
+   "dest": "Assets/Art/Codex/QuakeVistas/Quake_Cradle.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
+   "name": "Quake_LongCauseway",
+   "category": "QuakeVistas",
+   "sha256": "ed3c55747af2a32fd74b2ba48412622138c41591355402bb1795836cc6a9b96d",
+   "dest": "Assets/Art/Codex/QuakeVistas/Quake_LongCauseway.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
+   "name": "Quake_Qvale",
+   "category": "QuakeVistas",
+   "sha256": "a17f00a8aba10831825c2c767a78d7ed7e5f4c061d2f30a4f5228e346c1108e1",
+   "dest": "Assets/Art/Codex/QuakeVistas/Quake_Qvale.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
+   "name": "Quake_Ribwood",
+   "category": "QuakeVistas",
+   "sha256": "a3cc21e6c2d910f03edefe4b486f5ddce3b6766371c348037ce071409c838912",
+   "dest": "Assets/Art/Codex/QuakeVistas/Quake_Ribwood.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
+   "name": "Quake_Summit",
+   "category": "QuakeVistas",
+   "sha256": "7c8c8218a46669c26a6b8fbbf49662fc6348f6c889d78e0bb8a8c0b1332b3e9b",
+   "dest": "Assets/Art/Codex/QuakeVistas/Quake_Summit.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
+   "name": "Quake_Terraces",
+   "category": "QuakeVistas",
+   "sha256": "68b12536fd409ee72040bf682372fcc1d486cc7a4a9040e38a53c104b96c2997",
+   "dest": "Assets/Art/Codex/QuakeVistas/Quake_Terraces.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
+  },
+  {
+   "name": "Quake_WindwardHeights",
+   "category": "QuakeVistas",
+   "sha256": "fb21da432534f75a7d90cb4b41322e90925d22873b7a01f5a51f0eef9f4996ba",
+   "dest": "Assets/Art/Codex/QuakeVistas/Quake_WindwardHeights.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "full-screen 1920x1080 still: 1 px = 1 reference px"
   },
   {
    "name": "Stir_R1_Clench",
@@ -18774,6 +20303,150 @@
    "basis": "Batch8/W2"
   },
   {
+   "name": "Body_Cliff_Ledge_A",
+   "category": "Terrain/Body",
+   "sha256": "c8522e8879102a7b75e91e830842f3a8fec0c673c7ebd6a8b91ebb255ebf7500",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Cliff_Ledge_A.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.75,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Body_Cliff_Ledge_B",
+   "category": "Terrain/Body",
+   "sha256": "bb78af4e4e094d4aeb0a6f68ab57bd00733187fd64668547baddb74b94bb9489",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Cliff_Ledge_B.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.75,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Body_Cliff_Side_L",
+   "category": "Terrain/Body",
+   "sha256": "d010d271718acf3c43b334a0916e74b1830a41eccb93f06ad6783e0286348e3c",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Cliff_Side_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Body_Cliff_Side_R",
+   "category": "Terrain/Body",
+   "sha256": "c766cde73d1fb88c95f15a50117cb96aa8f26458b544e24c9882f24bd0f7fc30",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Cliff_Side_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.875,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Body_Corner_Foot_L",
+   "category": "Terrain/Body",
+   "sha256": "1adb3b4836d65b4cc2fec21f69a3848829967786fef309bac903561be47033ce",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Corner_Foot_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.10938
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Body_Corner_Foot_R",
+   "category": "Terrain/Body",
+   "sha256": "db05a1323c056d553d6ad975b0f11d3f2e304e68dd73d088a2ff9c11d33bc11a",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Corner_Foot_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.875,
+    0.10938
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Body_Corner_Top_L",
+   "category": "Terrain/Body",
+   "sha256": "75e9a1cb880973570632facc383e28f23bf4044b4f3fc145d7ecaaac37280fc1",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Corner_Top_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.8125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Body_Corner_Top_R",
+   "category": "Terrain/Body",
+   "sha256": "d295b12ebb3f84606216c0e54d1f072e8d442dac2b37b3db27a8ee0b8cbddff0",
+   "dest": "Assets/Art/Codex/Terrain/Body/Body_Corner_Top_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.875,
+    0.8125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
    "name": "Body_Crease_Arc_Fold",
    "category": "Terrain/Body",
    "sha256": "0d8734ee5b59b1c03b9d2615e873b73544e512e9a0c8c0f8ee47cd03a57e774a",
@@ -19116,6 +20789,870 @@
    "basis": "Batch9/W2_Pillars"
   },
   {
+   "name": "Causeway_Aqueduct_Channel",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "bd6a14f18722721fe03f1130a816713280658b0d796f32b5987bd76abdc045ab",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Aqueduct_Channel.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Cave_Edge_Strip",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "87862ea882c303342a774bd305937544662586b36f767a75643eb73b0a165802",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Cave_Edge_Strip.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Cave_Fill",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "1189ceaa675a65f34ddb605370726149ef3d778580874b5ea4ab1e97f67d181b",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Cave_Fill.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Cliff_Face",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "122ea0e0ec104557f3a1fd46c869ffccff3cd5d69dba9be135b6c7b4b28ecd64",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Cliff_Face.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Cliff_Ledge_A",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "e5001aaf36ebba41dc547bc9f3926dca456df14b54d2eb75f6c389b1d5bb093b",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Cliff_Ledge_A.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.75,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Causeway_Cliff_Ledge_B",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "10e2900be6413b5f2f738179dd2490366cf5eb72f7d8f47d8f17233fa0f4ffc7",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Cliff_Ledge_B.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.75,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Causeway_Cliff_Side_L",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "bb10beec4d78515234cd21e71dc877a4426e5481d0a8ad7c25b55669e66decbc",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Cliff_Side_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Causeway_Cliff_Side_R",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "b0f851a76026df126de1e26223a1318716c4096827c776ebeec2347024d38e40",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Cliff_Side_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.875,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Causeway_Corner_Foot_L",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "69e98d5e2ed9b15a8e2ce74e04bf1e289d8b648e8b8537a3baea4f1da9b9dba8",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Corner_Foot_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.10938
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Causeway_Corner_Foot_R",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "9c5bb7ea16f009caff37452fba1d14642ea7f3a96713ff4ae281fc2741eda033",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Corner_Foot_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.875,
+    0.10938
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Causeway_Corner_Top_L",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "9c729f415fbfcfcceb8070bed845a6c35ebfaa40fe9f9ae849e0503b72c19c54",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Corner_Top_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.8125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Causeway_Corner_Top_R",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "8a51136a110eb1cacb713381a2eb2f38356de0bbbfaae3976519ee4ab8e0f62a",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Corner_Top_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.875,
+    0.8125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Causeway_Crease_Arc_Fold",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "8b85a7abcbf86e24d2a06c5c7dbfa4e2c864a868bf3e30a3df58b3db026cbe85",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Crease_Arc_Fold.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Crease_Branching_Fissure",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "9662c0180fd8db81f0eb465edc757b693003ece09e028ec341311466827bedb2",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Crease_Branching_Fissure.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Crease_Forked_Diagonal",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "2697a60c804bd44be55950407bf83a1572ef02ae73bf3ce1ad354f6251f93553",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Crease_Forked_Diagonal.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Crease_Vertical_Root_Seam",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "c752555727c110d6c0532f92d563b71f2cde506f94ef7eb4c5023d9191f9fd4c",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Crease_Vertical_Root_Seam.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Crease_Y_Split",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "13b0ec30f54fa51d337dae55745546afad7512cc28736e611519543424157891",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Crease_Y_Split.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Crease_Zigzag_Crease",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "c3817c49b60120d252d3c867121e24743e0b97f6078ee99ddb9361723d15b8f3",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Crease_Zigzag_Crease.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Fill",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "ed47b13fc418a13cd5d2a9509ffdf52a78d771a7858afa95429f295bf25e6551",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Fill.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Fill_Shadow",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "1364fb85e764c127adfd05626779be62894497d37555cdca6f03f924ecd3c9e4",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Fill_Shadow.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Pale_Cliff",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "86393897d30ede4e6b1bbe96d74dd14f65df8d7640b77da316d1ab3630cb36d7",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Pale_Cliff.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Pillar_1_Cap_End",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "f4baf729bfb075ec7e5975ab08b5889fc601a1834659c37cf39cf41ddd9e192f",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Pillar_1_Cap_End.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Pillar_1_Cap_Start",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "ac393b0e33f8e22a7474bd54e8004babe657eea628275f25ee170256ac755cd3",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Pillar_1_Cap_Start.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    1,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Pillar_1_Middle",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "544c845816aa71ecb8c4f3116afb5bfe35d0fc983663e642762b6eee2e62caa0",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Pillar_1_Middle.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Pillar_2_Cap_End",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "f95c28334129c0ac7fcc43924ec307b6cc8f4d7e4e19a8d089bce070a9690584",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Pillar_2_Cap_End.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Pillar_2_Cap_Start",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "1544010cc9cc2676f29d23d974d1c8683a51274fc63e50d283d88fdddee4899f",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Pillar_2_Cap_Start.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    1,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Pillar_2_Middle",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "09ab3381273ae572ab430e86c0131d9cac0c245d6a74e9e2847f05804a74b788",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Pillar_2_Middle.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Pillar_Joint",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "33fcaf927047c7c0df780635fbc77064cb14fbe29a8fd8a112b331386561a288",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Pillar_Joint.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Road_Paving",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "6be2f800244e47fced029ec4ce7c54408fc44f59cf09a66549cbfdd9e39a6e82",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Road_Paving.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Tendon_Cap_End",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "66e7fe40a20cda97c973dcf41a6f9be4d3ceb50fc5ee53b314222492071f67ae",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Tendon_Cap_End.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Tendon_Cap_Start",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "6e82abdf904554dc37f27b46bb7e2509213b0c2d017952d6462ce5de35bc3a74",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Tendon_Cap_Start.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    1,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Tendon_Middle",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "77c3315be22831815a8fcc0f1ff1f28ee47e9842b0ea48b0ab30d9a06c9ec53d",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Tendon_Middle.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Causeway_Top_Strip",
+   "category": "Terrain/Body/Causeway",
+   "sha256": "872b2b77f7c2983788b83df58fb1e1051c020574a19089532100bfe315b93258",
+   "dest": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Top_Strip.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W3"
+  },
+  {
+   "name": "Terraces_Cliff_Face",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "04e654e6ad0466e20810e8c68c2cee7121e058b90b9b31e91214c423fd631ae0",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Cliff_Face.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W4"
+  },
+  {
+   "name": "Terraces_Cliff_Ledge_A",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "24c999169328b550386656ca43e64463ce67b21709aee2ada44cd238a56c37c2",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Cliff_Ledge_A.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.75,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Terraces_Cliff_Ledge_B",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "96d60b0c631f5b94eac2933dc391825d7ee658010475253778b36d278af49ea3",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Cliff_Ledge_B.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.75,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Terraces_Cliff_Side_L",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "c358e15c290eaf2b1c18ec9e67966ac7005ee78afaf78880f9ce79d4240154e9",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Cliff_Side_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Terraces_Cliff_Side_R",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "7a5439962d274baea60c422a3a1f49ca2ef86b97181795808f4d520d6552044d",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Cliff_Side_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.875,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Terraces_Corner_Foot_L",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "ff1d7df87ac59444981b30f80826762d31194ed0a058a3070835235280889ff6",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Corner_Foot_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.10938
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Terraces_Corner_Foot_R",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "9b4c710a52493e83684445441f7a5c77c572238d1fd7b0ff07535da6845fe740",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Corner_Foot_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.875,
+    0.10938
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Terraces_Corner_Top_L",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "29c1f03707f48eedf9ea02c92a7083b30120e027fd7f9069027861001e4141ad",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Corner_Top_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.8125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Terraces_Corner_Top_R",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "ba3a7bf292ed6cb995e746d6d827860652e2d27735219ba865b59525c19f6205",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Corner_Top_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.875,
+    0.8125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch13/W1"
+  },
+  {
+   "name": "Terraces_Fill",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "62228e37a27ca7135b626aeb7482838633ae899ef6e4c966b670f4730ed61486",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Fill.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W4"
+  },
+  {
+   "name": "Terraces_Fill_Shadow",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "2f2a9f770ede0b964be566025cdd426e9bb4075fd886141e5368d36e6610ca7a",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Fill_Shadow.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W4"
+  },
+  {
+   "name": "Terraces_Top_Strip",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "9629f7128822e3ee6860bc9b93281d8a3f2023a71cc3f2fdac92d8866eeffa72",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Top_Strip.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W4"
+  },
+  {
+   "name": "Terraces_Wall_Ledge_Long",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "0b5284ef4b9e022eb7b3323f9940e5d91a2257ce604c389f582989f0725e3673",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Wall_Ledge_Long.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W4"
+  },
+  {
+   "name": "Terraces_Wall_Ledge_Medium",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "58c1c13795469a7679aafc34a12f19aca46da647464826dc124dbb6acb253b79",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Wall_Ledge_Medium.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W4"
+  },
+  {
+   "name": "Terraces_Wall_Ledge_Short",
+   "category": "Terrain/Body/Terraces",
+   "sha256": "aed0a76e6cbd15e66fb28eadba999ba67f7682ff60ee277c9f5d83301d992ac8",
+   "dest": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Wall_Ledge_Short.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch10/W4"
+  },
+  {
    "name": "TownWarmSpring_Pool",
    "category": "Town",
    "sha256": "cbd57c4239b2dd56c1805b8d65faff64ee18853b66abd315271a01c36ff13276",
@@ -19412,6 +21949,44 @@
    "mipmaps": false,
    "ppu": 120,
    "basis": "Batch8/W3"
+  },
+  {
+   "name": "Town_Qvale_Loft_Closed",
+   "category": "Town",
+   "sha256": "d34b66768db5434abb8075ddc5a6c6d2023786728634fbebbc662dbf7598aa05",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_Loft_Closed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07865,
+    0.0316
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch13/W2",
+   "maxSize": 4096
+  },
+  {
+   "name": "Town_Qvale_Loft_Cutaway",
+   "category": "Town",
+   "sha256": "fc768a840cae99f372c245a281f36d7a3d1d32b4c1526e0b9bf800a8207b8acf",
+   "dest": "Assets/Art/Codex/Town/Town_Qvale_Loft_Cutaway.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.07865,
+    0.0316
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch13/W2",
+   "maxSize": 4096
   },
   {
    "name": "Town_Qvale_MusicianCorner",
@@ -19759,6 +22334,96 @@
    "mipmaps": false,
    "ppu": 100,
    "basis": "UI canvas: 1 px = 1 reference px"
+  },
+  {
+   "name": "Icon_Upgrade_HeartSeed",
+   "category": "UI",
+   "sha256": "da57687aa899fe3fd716ca5139d86f1ee8295e08e812e3ab3208ae2bd89a2a50",
+   "dest": "Assets/Art/Codex/UI/Icon_Upgrade_HeartSeed.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch10/W6"
+  },
+  {
+   "name": "Icon_Upgrade_MaceT2",
+   "category": "UI",
+   "sha256": "0311164d869811630735ded0daaf8f6b65043c259e517790ca614b2a58c0ca6c",
+   "dest": "Assets/Art/Codex/UI/Icon_Upgrade_MaceT2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch10/W6"
+  },
+  {
+   "name": "Icon_Upgrade_SpearT2",
+   "category": "UI",
+   "sha256": "9cb7bdfd9c06cf4701fdd307e6fee97d936c1e2847f7591cbfa27b299866a31a",
+   "dest": "Assets/Art/Codex/UI/Icon_Upgrade_SpearT2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch10/W6"
+  },
+  {
+   "name": "Icon_Upgrade_StaffT2",
+   "category": "UI",
+   "sha256": "31f9b77a6fb9563acb2ec021f66f0a6f15e3c0ca832a97208d88fc6eba57afea",
+   "dest": "Assets/Art/Codex/UI/Icon_Upgrade_StaffT2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch10/W6"
+  },
+  {
+   "name": "Icon_Upgrade_SwordT2",
+   "category": "UI",
+   "sha256": "553a2fce0c2b210515c08423ba1a28444dd6c1235dbb977b6d27aa15d01afd8b",
+   "dest": "Assets/Art/Codex/UI/Icon_Upgrade_SwordT2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch10/W6"
   },
   {
    "name": "Map_Icon_AbilityShrine",
@@ -20159,6 +22824,114 @@
    "mipmaps": false,
    "ppu": 100,
    "basis": "Batch7/W5"
+  },
+  {
+   "name": "UI_Glyph_Key_E",
+   "category": "UI",
+   "sha256": "8fab9876c2fe02cf657b3c88366f3f0e69697ed413e21c0facdea273d2ea68d3",
+   "dest": "Assets/Art/Codex/UI/UI_Glyph_Key_E.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch13/W4"
+  },
+  {
+   "name": "UI_Glyph_Key_Esc",
+   "category": "UI",
+   "sha256": "355aa15966ac061e0d2cc42fe2b38300245d7d1f7868001332d428bd469e6c82",
+   "dest": "Assets/Art/Codex/UI/UI_Glyph_Key_Esc.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch13/W4"
+  },
+  {
+   "name": "UI_Glyph_Key_W",
+   "category": "UI",
+   "sha256": "ee9c580edef151f1a3dd6ad0cc4afcd711c8a09aa7b919fe91acdfcad6b2cbb3",
+   "dest": "Assets/Art/Codex/UI/UI_Glyph_Key_W.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch13/W4"
+  },
+  {
+   "name": "UI_Glyph_Pad_DpadUp",
+   "category": "UI",
+   "sha256": "1506113c11c59434f1338cc62fda297a4d0f6fae5bba06ea7c1bf03b4bb2b189",
+   "dest": "Assets/Art/Codex/UI/UI_Glyph_Pad_DpadUp.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch13/W4"
+  },
+  {
+   "name": "UI_Glyph_Pad_East",
+   "category": "UI",
+   "sha256": "46ee41801cabc862c65617c643d6a0076ee529d1b1d957c851e4245601dba1c7",
+   "dest": "Assets/Art/Codex/UI/UI_Glyph_Pad_East.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch13/W4"
+  },
+  {
+   "name": "UI_Glyph_Pad_South",
+   "category": "UI",
+   "sha256": "770ac80a1a0a913c7e2d00ae17b055bbd1101d3263ce39cca7cd3f876c5f9e03",
+   "dest": "Assets/Art/Codex/UI/UI_Glyph_Pad_South.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch13/W4"
   },
   {
    "name": "UI_Icon_Amber",
@@ -20566,6 +23339,29 @@
    "mipmaps": false,
    "ppu": 100,
    "basis": "Batch8/W7"
+  },
+  {
+   "name": "UI_WeaponFound_Banner",
+   "category": "UI",
+   "sha256": "79e822aabe6f05bc891f2c064e262f7a70756e2a5576b14c83288b5fd60b7b1a",
+   "dest": "Assets/Art/Codex/UI/UI_WeaponFound_Banner.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "border": [
+    80,
+    80,
+    80,
+    80
+   ],
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 100,
+   "basis": "Batch10/W2"
   },
   {
    "name": "FX_Hit_Block",

@@ -93,9 +93,10 @@ public sealed class GamePauseMenu : MonoBehaviour
     // The map of the titan; only in game areas, where the Chart exists.
     private void OpenChart()
     {
-        if (ChartScreen.Instance == null) return;
+        if (ChartScreen.Instance == null && ChartScreen.OpenReplacement == null) return;
         Resume();
-        ChartScreen.Instance.Open();
+        if (ChartScreen.Instance != null) ChartScreen.Instance.Open();
+        else ChartScreen.OpenReplacement();
     }
 
     private void Quit()
@@ -203,7 +204,7 @@ public sealed class GamePauseMenu : MonoBehaviour
         GUI.Box(panel, "Paused");
         if (GUI.Button(new Rect(panel.x + 25f, panel.y + 45f, width - 50f, 45f), "Resume"))
             Resume();
-        if (ChartScreen.Instance != null && GUI.Button(new Rect(panel.x + 25f, panel.y + 105f, width - 50f, 45f), "Chart"))
+        if ((ChartScreen.Instance != null || ChartScreen.OpenReplacement != null) && GUI.Button(new Rect(panel.x + 25f, panel.y + 105f, width - 50f, 45f), "Chart"))
             OpenChart();
         if (GUI.Button(new Rect(panel.x + 25f, panel.y + 165f, width - 50f, 45f), "New Game"))
             confirmingNewGame = true;

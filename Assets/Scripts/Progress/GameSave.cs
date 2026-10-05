@@ -12,9 +12,12 @@ using UnityEngine;
 public static class GameSave
 {
     [Serializable] sealed class Checkpoint { public string scene, id; }
+    [Serializable] sealed class Counter { public string key; public int value; }
     [Serializable] sealed class Data
     {
-        public int version = 2;
+        // 3: flags and counters (the Mountain Relief Atlas route: discoveries, rewards, rescued
+        // residents, purchases, Amber, the reveal). Older saves migrate by gaining empty lists.
+        public int version = Version;
         public List<string> relics = new List<string>();
         public List<string> knots = new List<string>();        // Knots ids, in the order woken
         public List<string> charted = new List<string>();      // GameArea level ids
@@ -24,16 +27,31 @@ public static class GameSave
         public List<string> pickups = new List<string>();
         public List<Checkpoint> checkpoints = new List<Checkpoint>();
         public string lastScene = "";
+        public List<string> flags = new List<string>();
+        public List<Counter> counters = new List<Counter>();
     }
+    const int Version = 3;
 
     static Data data;
-    public static string FilePath => Path.Combine(Application.persistentDataPath, "qolossal_save.json");
+    // Play tests run with "-saveFile <name>" so they never touch the player's own save.
+    static string fileName;
+    static string FileName
+    {
+        get
+        {
+            if (fileName != null) return fileName;
+            string[] args = Environment.GetCommandLineArgs();
+            int at = Array.IndexOf(args, "-saveFile");
+            return fileName = at >= 0 && at + 1 < args.Length ? Path.GetFileName(args[at + 1]) : "qolossal_save.json";
+        }
+    }
+    public static string FilePath => Path.Combine(Application.persistentDataPath, FileName);
     // The previous save, kept when a new one replaces it; read if the save itself is unreadable.
     public static string BackupPath => FilePath + ".bak";
     static string TempPath => FilePath + ".tmp";
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-    static void ResetState() { data = null; WorldChanged = null; }
+    static void ResetState() { data = null; WorldChanged = null; FlagsChanged = null; }
 
     static Data Current
     {
@@ -50,6 +68,9 @@ public static class GameSave
             // Saves from before the world state (version 1) have none of its lists.
             data.knots ??= new List<string>(); data.charted ??= new List<string>(); data.veins ??= new List<string>();
             data.sproutlings ??= new List<string>(); data.loreStones ??= new List<string>(); data.pickups ??= new List<string>();
+            // Version 2 and earlier: no flags or counters yet.
+            data.flags ??= new List<string>(); data.counters ??= new List<Counter>();
+            if (data.version < Version) data.version = Version;
             return data;
         }
     }
@@ -157,6 +178,31 @@ public static class GameSave
     public static IReadOnlyList<string> LoreStones => Current.loreStones;
     public static bool HasLoreStone(string id) => Current.loreStones.Contains(id);
     public static void AddLoreStone(string id) { if (!string.IsNullOrEmpty(id) && !HasLoreStone(id)) { Current.loreStones.Add(id); Write(); } }
+
+    // ---------------------------------------------------------------- flags and counters
+
+    // A permanent fact, by id ("mra:MR01_C01:reward", "town:resident:smith", "mra:reveal-complete").
+    public static bool HasFlag(string flag) => !string.IsNullOrEmpty(flag) && Current.flags.Contains(flag);
+    public static IReadOnlyList<string> Flags => Current.flags;
+    // Returns true the first time.
+    public static bool SetFlag(string flag)
+    {
+        if (string.IsNullOrEmpty(flag) || HasFlag(flag)) return false;
+        Current.flags.Add(flag); Write(); FlagsChanged?.Invoke();
+        return true;
+    }
+    public static void ClearFlag(string flag) { if (Current.flags.Remove(flag)) { Write(); FlagsChanged?.Invoke(); } }
+    public static event Action FlagsChanged;
+
+    // A saved number (Amber, the town's quakes).
+    public static int Count(string key) => Current.counters.Find(c => c.key == key)?.value ?? 0;
+    public static void SetCount(string key, int value)
+    {
+        var entry = Current.counters.Find(c => c.key == key);
+        if (entry == null) Current.counters.Add(entry = new Counter { key = key });
+        if (entry.value == value) return;
+        entry.value = value; Write();
+    }
 
     // ---------------------------------------------------------------- checkpoints
 

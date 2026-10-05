@@ -22,6 +22,9 @@ public sealed class ListeningSpot : MonoBehaviour
 
     public List<Track> tracks = new List<Track>();
     public Vector2 frameCentre; public float frameSize = 6.5f;
+    [Tooltip("Seat Qori on the bench (`seat`: the middle of the seat's top); off: he sits where he stands.")] public bool hasSeat;
+    public Vector2 seat;
+    Vector2 standAt; QoriAnimator pose;
     public static bool IsSitting { get; private set; }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
@@ -56,6 +59,22 @@ public sealed class ListeningSpot : MonoBehaviour
         if (IsSitting) return;
         if (canvas == null) Build();
         IsSitting = true; leaving = false; openedFrame = Time.frameCount; selected = Mathf.Max(0, playing);
+        VistaZone.Suspended = true;   // a zoom zone around the bench lets go while the bench frames the view
+        // Onto the seat: held still there in the Sit pose until he gets up.
+        if (qori != null)
+        {
+            standAt = qori.position;
+            pose = qori.GetComponentInChildren<QoriAnimator>();
+            if (pose != null) pose.Hold("Sit");
+            if (hasSeat)
+            {
+                // His hip joint (the thighs' pivot) just above the seat's top, so the thighs rest on it.
+                var hip = pose != null ? Find(pose.transform, "ThighNear") : null;
+                Vector2 offset = hip != null ? (Vector2)(hip.position - qori.transform.position) : new Vector2(0f, -.3f);
+                qori.linearVelocity = Vector2.zero; qori.simulated = false;
+                qori.transform.position = new Vector3(seat.x - offset.x, seat.y + .07f - offset.y, qori.transform.position.z);
+            }
+        }
         ModalUi.Open(); canvas.enabled = true;
         view = Camera.main; follow = view != null ? view.GetComponent<CameraFollow>() : null;
         if (follow != null) follow.enabled = false;
@@ -70,6 +89,9 @@ public sealed class ListeningSpot : MonoBehaviour
     {
         if (!IsSitting || leaving) return;
         leaving = true; canvas.enabled = false; ease = 0f;
+        // Up off the seat, back where he stood; the view then eases back to him.
+        if (pose != null) pose.Release();
+        if (qori != null && hasSeat) { qori.transform.position = standAt; qori.simulated = true; qori.linearVelocity = Vector2.zero; }
         cameraFrom = view.transform.position; sizeFrom = view.orthographicSize;
         Play(-1);
     }
@@ -82,6 +104,13 @@ public sealed class ListeningSpot : MonoBehaviour
         if (t.clip == null) t.clip = PlaceholderMusic.Make(t.seed, t.bpm);
         source.clip = t.clip; source.time = 0f; source.Play();
         playing = i; targetVolume = .8f;
+    }
+
+    static Transform Find(Transform t, string name)
+    {
+        if (t.name == name) return t;
+        foreach (Transform c in t) { var f = Find(c, name); if (f != null) return f; }
+        return null;
     }
 
     void Build()
@@ -129,6 +158,7 @@ public sealed class ListeningSpot : MonoBehaviour
         {
             if (ease < 1f) return;
             IsSitting = false; leaving = false;
+            VistaZone.Suspended = false;
             if (follow != null) follow.enabled = true;
             if (hud != null) hud.enabled = true;
             ModalUi.Close();

@@ -3,22 +3,39 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// A named place Qori can arrive at in a scene, other than a portal or a checkpoint: an ordinary
+// exit's landing, the safe spot outside a cave he returns from.
+public interface IArrivalPoint
+{
+    string ArrivalId { get; }
+    Vector2 ArrivalPosition { get; }
+    float ArrivalFacing { get; }
+}
+
 // Moves Qori between areas through portals: fades to black, loads the destination scene, puts
 // him beside the matching portal (or at a Waymark, where a Wild Vein can throw him) with the
-// hearts and weapon he left with, and fades back in. The area's name shows on arrival, with an
-// optional note under it ("New vein charted").
+// hearts and weapon he left with, and fades back in. The area's name shows on arrival, on a plate,
+// with an optional note under it ("New vein charted"): once per place, so stepping back and forth
+// across a boundary, or coming out of a cave into the same region, doesn't repeat it.
 public sealed class AreaTransition : MonoBehaviour
 {
-    const float FadeSeconds = .35f, NameSeconds = 2.5f;
+    const float FadeSeconds = .35f, NameSeconds = 2.6f, RepeatAfterSeconds = 90f;
 
     public static bool IsTransitioning { get; private set; }
     static AreaTransition instance;
 
-    Image curtain; Text areaName, note;
+    Image curtain, namePlate; Text areaName, note;
+    static readonly System.Collections.Generic.Dictionary<string, float> shownAt = new System.Collections.Generic.Dictionary<string, float>();
+    /// <summary>The last area name shown on arrival, and how many have been shown (for tests).</summary>
+    public static string LastShownName { get; private set; } = "";
+    public static int NamesShown { get; private set; }
     float nameShownAt = float.NegativeInfinity;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-    static void ResetState() { IsTransitioning = false; instance = null; }
+    static void ResetState() { IsTransitioning = false; instance = null; shownAt.Clear(); LastShownName = ""; NamesShown = 0; }
+
+    /// <summary>Forgets which area names were shown recently (tests start from a clean slate).</summary>
+    public static void ForgetShownNames() => shownAt.Clear();
 
     public static bool CanTravelTo(string scene) => !string.IsNullOrEmpty(scene) && Application.CanStreamedLevelBeLoaded(scene);
 
@@ -44,6 +61,8 @@ public sealed class AreaTransition : MonoBehaviour
         canvas.transform.SetParent(transform, false);
         curtain = GameHud.AddImage(canvas.transform, "Curtain", null, new Vector2(.5f, .5f), Vector2.zero, new Vector2(4000f, 4000f));
         curtain.color = new Color(.03f, .05f, .05f, 0f); curtain.preserveAspect = false;
+        namePlate = GameHud.AddImage(canvas.transform, "Area Name Plate", null, new Vector2(.5f, 1f), new Vector2(0f, -170f), new Vector2(600f, 96f));
+        namePlate.color = new Color(.08f, .07f, .05f, 0f); namePlate.raycastTarget = false;
         areaName = Label(canvas.transform, "Area Name", -170f, 52);
         note = Label(canvas.transform, "Arrival Note", -228f, 30);
     }
@@ -81,16 +100,20 @@ public sealed class AreaTransition : MonoBehaviour
         yield return null;   // let the new scene's Start methods run (checkpoint restore) first
 
         var player = FindAnyObjectByType<PlayerMovement>();
-        Portal arrival = null; Checkpoint waymark = null;
+        Portal arrival = null; Checkpoint waymark = null; IArrivalPoint point = null;
         foreach (var portal in FindObjectsByType<Portal>(FindObjectsSortMode.None))
             if (portal.portalId == arrivalId) arrival = portal;
         if (arrival == null)
             foreach (var checkpoint in FindObjectsByType<Checkpoint>(FindObjectsSortMode.None))
                 if (checkpoint.CheckpointId == arrivalId) waymark = checkpoint;
+        if (arrival == null && waymark == null)
+            foreach (var behaviour in FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None))
+                if (behaviour is IArrivalPoint p && p.ArrivalId == arrivalId) point = p;
         if (player != null)
         {
             if (arrival != null) player.PlaceAt(arrival.ArrivalPoint, arrival.exitSide, !player.HasCheckpoint);
             else if (waymark != null) player.PlaceAt(waymark.SpawnPosition, 0f, !player.HasCheckpoint);   // its trigger makes it his checkpoint
+            else if (point != null) player.PlaceAt(point.ArrivalPosition, point.ArrivalFacing, !player.HasCheckpoint);
             else Debug.LogWarning($"[AreaTransition] no portal or checkpoint '{arrivalId}' in {scene}; Qori starts at the scene's start");
             var health = player.GetComponent<PlayerHealth>();
             if (health != null && hearts > 0) health.SetHealth(hearts);
@@ -98,7 +121,13 @@ public sealed class AreaTransition : MonoBehaviour
             if (combat != null && weapon != null) combat.EquipWeapon(weapon);
         }
         var area = GameArea.InScene;
-        areaName.text = area != null ? area.displayName : "";
+        string key = area != null ? (string.IsNullOrEmpty(area.levelId) ? area.displayName : area.levelId) : "";
+        bool show = area != null && !string.IsNullOrEmpty(area.displayName) &&
+                    (!shownAt.TryGetValue(key, out float last) || Time.unscaledTime - last > RepeatAfterSeconds);
+        areaName.text = show ? area.displayName : "";
+        if (show) { shownAt[key] = Time.unscaledTime; LastShownName = area.displayName; NamesShown++; }
+        if (show || !string.IsNullOrEmpty(arrivalNote))
+            ((RectTransform)namePlate.transform).sizeDelta = new Vector2(Mathf.Max(areaName.preferredWidth, note.preferredWidth) + 120f, string.IsNullOrEmpty(arrivalNote) ? 96f : 150f);
         note.text = arrivalNote;
         nameShownAt = Time.unscaledTime + FadeSeconds * .5f;
         yield return Fade(1f, 0f);
@@ -109,7 +138,9 @@ public sealed class AreaTransition : MonoBehaviour
     {
         float t = Time.unscaledTime - nameShownAt;
         float a = t < 0f ? 0f : Mathf.Clamp01(Mathf.Min(t / .4f, (NameSeconds - t) / .6f));
-        areaName.color = new Color(1f, 1f, 1f, a);
+        areaName.color = new Color(1f, .96f, .86f, a);
         note.color = new Color(.72f, 1f, .88f, a);
+        bool any = !string.IsNullOrEmpty(areaName.text) || !string.IsNullOrEmpty(note.text);
+        namePlate.color = new Color(.08f, .07f, .05f, any ? a * .62f : 0f);
     }
 }
