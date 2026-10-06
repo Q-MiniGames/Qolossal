@@ -25,10 +25,10 @@ This file stands alone. A new session opened in `C:\UnityProjects\Qolossal` shou
 
 ## 2. Git
 
-- **Branch:** `mountain-relief-atlas`. On 7 Oct the user said "commit", and the section 4 work (SFX, depth backgrounds, Batch 14 art, the footstep and glide changes) was committed on top of `c6ef1f3`. It is **not merged**; `main` is at `4d8dc24`. **Nothing is pushed.**
+- **Branch:** `mountain-relief-atlas`. On 7 Oct the user said "commit", and the section 4 work (SFX, depth backgrounds, Batch 14 art, the footstep and glide changes) was committed on top of `c6ef1f3`. On 7 Oct it was merged into `main` (merge commit `092451f`), and `main` is now checked out. **Nothing is pushed: the repository has no git remote configured.**
 - **Git LFS** carries the music WAVs, SFX WAVs, PNGs and (from 7 Oct) WEBP evidence clips.
 - `Tools/IncomingArt/` (the Codex staging and review docs) is git-ignored.
-- **Pending merge:** merge `mountain-relief-atlas` into `main`, then push. LFS will upload about 440 MB of music, 457 MB of SFX, and the new art.
+- **Pending push:** add a remote (with LFS storage), then push `main`. LFS will upload about 440 MB of music, 457 MB of SFX, and the new art.
 - **Commit rule:** commit only after the user has play-tested and said so. End commit messages with:
   `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
 
