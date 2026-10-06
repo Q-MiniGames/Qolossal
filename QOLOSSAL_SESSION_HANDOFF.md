@@ -25,10 +25,10 @@ This file stands alone. A new session opened in `C:\UnityProjects\Qolossal` shou
 
 ## 2. Git
 
-- **Branch:** `mountain-relief-atlas`. On 7 Oct the user said "commit", and the section 4 work (SFX, depth backgrounds, Batch 14 art, the footstep and glide changes) was committed on top of `c6ef1f3`. On 7 Oct it was merged into `main` (merge commit `092451f`), and `main` is now checked out. **Nothing is pushed: the repository has no git remote configured.**
+- **Branch:** `mountain-relief-atlas`. On 7 Oct the user said "commit", and the section 4 work (SFX, depth backgrounds, Batch 14 art, the footstep and glide changes) was committed on top of `c6ef1f3`. On 7 Oct it was merged into `main` (merge commit `092451f`), and `main` is now checked out. **Pushed:** the remote `origin` is `https://github.com/Q-MiniGames/Qolossal.git`, and `main` tracks `origin/main`. The first push on 7 Oct uploaded 2075 LFS objects (2.3 GB). The `mountain-relief-atlas` branch is local only, because it's fully merged.
 - **Git LFS** carries the music WAVs, SFX WAVs, PNGs and (from 7 Oct) WEBP evidence clips.
 - `Tools/IncomingArt/` (the Codex staging and review docs) is git-ignored.
-- **Pending push:** add a remote (with LFS storage), then push `main`. LFS will upload about 440 MB of music, 457 MB of SFX, and the new art.
+- **Codex can also remote-control this PC** (from 7 Oct). Check `git status` before work and before committing.
 - **Commit rule:** commit only after the user has play-tested and said so. End commit messages with:
   `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
 
