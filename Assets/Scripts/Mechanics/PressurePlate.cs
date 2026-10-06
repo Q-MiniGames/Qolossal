@@ -25,6 +25,7 @@ public sealed class PressurePlate : MechanismSwitch
         }
         if (now == pressed) return;
         pressed = now;
+        if (pressed) Sfx.Play("PressurePlate_Down", transform.position);
         image.sprite = pressed ? down : up;
         Signal(pressed);
     }

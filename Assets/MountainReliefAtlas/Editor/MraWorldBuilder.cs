@@ -58,6 +58,18 @@ public static partial class MraWorldBuilder
         Debug.Log($"[MraWorldBuilder] Built {world.regions.Length} regions and {world.chambers.Count(c => !c.InPlace)} chambers in {SceneFolder}");
     }
 
+    /// <summary>Batch: rebuilds only the regions named by -mraOnly (e.g. MR03); chambers and houses untouched.</summary>
+    public static void BuildRegionsBatch()
+    {
+        string[] args = System.Environment.GetCommandLineArgs();
+        int i = System.Array.IndexOf(args, "-mraOnly");
+        string only = i >= 0 && i + 1 < args.Length ? args[i + 1] : "";
+        if (only == "") { Debug.LogError("[MraWorldBuilder] BuildRegionsBatch needs -mraOnly"); return; }
+        Prepare();
+        foreach (var r in world.regions.Where(r => only.Split(',').Contains(r.id))) { BuildRegion(r); Debug.Log("[MraWorldBuilder] rebuilt " + r.scene); }
+        AssetDatabase.SaveAssets();
+    }
+
     public static World Prepare()
     {
         AssetDatabase.ImportAsset(Folder + "Resources/MRA/mra_world.json", ImportAssetOptions.ForceUpdate);
@@ -104,6 +116,7 @@ public static partial class MraWorldBuilder
         Decor(r, f, Group(root, "Decor"), pieces);
         RockDressing(r, f, Group(root, "Rock dressing"), pieces);
         CliffDressing(r, f, Group(root, "Cliff dressing"), pieces);
+        if (r.id == "MR03") DepthExtras(r, camera, root, pieces);
         Save(scene, ScenePath(r.scene));
     }
 
@@ -696,7 +709,8 @@ public static partial class MraWorldBuilder
         // The layers can only be darkened by a tint, so the lift comes from a veil of sky colour
         // between the valley and the rock, hung on the camera.
         var (nearHaze, midHaze) = (.08f, .18f);
-        float veil = r.id switch { "MR07" => .3f, "MR08" => .24f, "MR05" => .1f, _ => 0f };
+        // A depth region's own warm set needs none (the Summit's veil was for the dark slate A6 set).
+        float veil = DepthRegions.Contains(r.id) ? 0f : r.id switch { "MR07" => .3f, "MR08" => .24f, "MR05" => .1f, _ => 0f };
         if (veil > 0f)
         {
             string veilPath = Folder + "Resources/MRA/MRA_HazeVeil.png";
@@ -713,6 +727,7 @@ public static partial class MraWorldBuilder
             v.color = new Color(tone.r, tone.g, tone.b, veil);
         }
         Layer("Sky - " + Path.GetFileName(f.sky), sky, null, 24f, new Vector2(1f, 1f), -12f, -110, Color.white, f.skyColour, 0f);
+        if (DepthRegions.Contains(r.id)) { DepthLayers(root, camera, r, climb, HazeTo); return; }
         Sprite mid = ArtOrNull(f.mid), near = ArtOrNull(f.near), far = ArtOrNull(f.far);
         if (FarPainting.TryGetValue(r.id, out string painting))
             Layer("Far painting - " + Path.GetFileNameWithoutExtension(painting), null, AssetDatabase.LoadAssetAtPath<Texture2D>(painting), 20f, new Vector2(.985f, .997f), -10.6f, -105, Color.white, f.skyColour, 0f, false);
@@ -729,6 +744,14 @@ public static partial class MraWorldBuilder
             // The Near strip stands in the lower third (its foot at the frame's bottom), a touch hazed,
             // so Qori, enemies and landing edges read in front of it, not against it.
             Layer("Near - " + Path.GetFileName(f.near), near, null, 7.0f, new Vector2(.62f, .994f), -5.2f, -80, HazeTo(nearHaze), Average(near, 0f, .03f) * HazeTo(nearHaze), 16f);
+        if (r.id == "MR04")
+        {
+            // Qvale's own basin (Batch 14, Review 25): the far side of it, homes under the overhangs, a 5 u
+            // band over the Mid's hills (mockup M2) with its skyline 1.3 u above the frame's centre (37% down).
+            var rim = Art("Backgrounds/BG_Qvale_VaultRim_Mid");
+            Layer("Vault rim - BG_Qvale_VaultRim_Mid", rim, null, 5f, new Vector2(.9f, .997f), 1.3f - Skyline(rim) * 5f, -88, HazeTo(.12f), Average(rim, 0f, .03f) * HazeTo(.12f), 14f);
+            OverlookVista(root, camera, r);
+        }
         if (r.id == "MR03")
         {
             // The accepted mill landmark: one painting (not repeating) that drifts into view over the
@@ -736,6 +759,116 @@ public static partial class MraWorldBuilder
             Vector2 ridge = Pos(r.NodeById("MR03_N07"));
             var mill = Layer("Landmark - BG_Terraces_Mill_Landmark", Art("Backgrounds/BG_Terraces_Mill_Landmark"), null, 5.5f, new Vector2(.9f, .997f), -1.2f, -95, HazeTo(.1f), Color.white, 0f, false);
             mill.baseX = (ridge.x + 6f) * (1f - mill.follow.x);
+        }
+    }
+
+    // ---------------------------------------------------------------- depth backgrounds
+
+    // Regions whose backgrounds use real depth (ParallaxLayer.depth): each plane moves at the speed
+    // its distance gives it (screen speed 1/depth, the terrain being 1), zooms like a camera pulling
+    // back, and sinks across the climb by its distance. Each has its own Far/Mid/Near set over
+    // BG_Sky_Terraces: the Terraces (Review 23), the Cradle and the Summit (Batch 14, Review 25).
+    // The Terraces also has its mill landmark, foreground plants and Mill Ridge lookout (DepthExtras).
+    static readonly Dictionary<string, string> DepthSets = new Dictionary<string, string>
+    {
+        { "MR01", "Cradle" }, { "MR03", "Terraces" }, { "MR07", "Summit" },
+    };
+    static ICollection<string> DepthRegions => DepthSets.Keys;
+    const float FarDepth = 25f, MillDepth = 14f, MidDepth = 10f, NearDepth = 5f, ForegroundDepth = .75f;
+    // How far a plane sinks on screen over the whole climb: 5 / depth (near 1 u, mid .5 u, far .2 u).
+    static float ClimbSink(float depth) => Mathf.Min(1.2f, 5f / depth);
+
+    static ParallaxLayer DepthLayer(Transform root, Camera camera, Vector2 climb, string name, Sprite sprite, Texture2D texture, float height, float depth,
+        float bottom, int order, Color tint, float extend, bool repeat, float climbSink)
+    {
+        var layer = new GameObject(name).AddComponent<ParallaxLayer>();
+        layer.transform.SetParent(root, false);
+        layer.sprite = sprite; layer.texture = texture; layer.height = height; layer.repeat = repeat; layer.depth = depth;
+        layer.follow = new Vector2(1f - 1f / depth, .997f);   // for reading; FollowX comes from depth
+        layer.climbProgression = true; layer.climbRange = climb; layer.climbShift = climbSink;
+        layer.baseY = bottom; layer.tint = tint; layer.extendBelow = extend; layer.sortingOrder = order; layer.targetCamera = camera;
+        layer.belowColor = sprite != null && extend > 0f ? Average(sprite, 0f, .03f) * tint : Color.white;
+        layer.composedForSize = 5f; layer.belowBlend = 1.2f;
+        return layer;
+    }
+
+    // A region's set: one painting split by distance, drawn 10 u tall (1:1 at 1080p for the Terraces'
+    // 1920 x 1080 canvases; the Batch 14 sets are 2560 x 1440, the same proportions). The Far and Mid
+    // stand 1.2 u higher than the Near, so the valley floor shows above the walk line. In the Terraces
+    // the mill landmark stands between them at its own depth, 2.8 u tall.
+    static void DepthLayers(Transform root, Camera camera, Region r, Vector2 climb, System.Func<float, Color> hazeTo)
+    {
+        string set = DepthSets[r.id];
+        DepthLayer(root, camera, climb, $"Far - BG_{set}_Far (depth 25)", Art($"Backgrounds/BG_{set}_Far"), null, 10f, FarDepth, -3.8f, -105, Color.white, 14f, true, ClimbSink(FarDepth));
+        if (r.id == "MR03")
+        {
+            Vector2 ridge = Pos(r.NodeById("MR03_N07"));
+            var mill = DepthLayer(root, camera, climb, "Landmark - BG_Terraces_Mill_Landmark (depth 14)", Art("Backgrounds/BG_Terraces_Mill_Landmark"), null, 2.8f, MillDepth, .2f, -97, hazeTo(.18f), 0f, false, ClimbSink(MillDepth));
+            mill.baseX = (ridge.x + 6f) / MillDepth;   // centred when the camera is 6 u past Mill Ridge
+        }
+        DepthLayer(root, camera, climb, $"Mid - BG_{set}_Mid (depth 10)", Art($"Backgrounds/BG_{set}_Mid"), null, 10f, MidDepth, -3.8f, -90, Color.white, 14f, true, ClimbSink(MidDepth));
+        DepthLayer(root, camera, climb, $"Near - BG_{set}_Near (depth 5)", Art($"Backgrounds/BG_{set}_Near"), null, 10f, NearDepth, -5f, -80, Color.white, 16f, true, ClimbSink(NearDepth));
+    }
+
+    // Qvale's listening overlook (Batch 14, Review 25): the view down the valley, shown only while Qori
+    // sits on the bench. It fades in over 1.4 s as the seated camera eases out and the street's layers
+    // fade under it (SeatedVistaFade). Composed for the street's size 5 as 10 u from the frame's bottom,
+    // so at the seated size 6.2 it fills the frame's height, and its 35 u width covers the frame and
+    // the camera's travel. Centred on the seated frame (the bench, 7 u past MR04_N09; MraTownBuilder).
+    static void OverlookVista(Transform root, Camera camera, Region r)
+    {
+        var street = root.GetComponentsInChildren<ParallaxLayer>().Where(l => l.follow.y < 1f).ToArray();
+        float frameX = r.NodeById("MR04_N09").position.x + 7f - 1.5f;
+        var vista = new GameObject("Overlook vista - BG_Qvale_Overlook_Vista (seated)").AddComponent<ParallaxLayer>();
+        vista.transform.SetParent(root, false);
+        vista.sprite = Art("Backgrounds/BG_Qvale_Overlook_Vista"); vista.height = 10f; vista.repeat = false;
+        vista.follow = new Vector2(.95f, 1f); vista.baseY = -5f; vista.baseX = frameX * (1f - .95f);
+        vista.composedForSize = 5f; vista.extendBelow = 0f; vista.sortingOrder = -78; vista.targetCamera = camera;
+        vista.tint = new Color(1f, 1f, 1f, 0f);
+        var fade = vista.gameObject.AddComponent<SeatedVistaFade>();
+        fade.vista = vista; fade.under = street;
+    }
+
+    // In front of the terrain: sparse clumps of accepted Terraces decor (dry grass, olive fern, hay
+    // tufts), drawn large and darkened like plants close to the camera, passing faster than the
+    // terrain at the bottom of the frame. Each is a sub-rectangle of its decor sheet (the file is
+    // untouched). Not where a big drop is near, where the camera looks down for the landing.
+    // Also a lookout zoom at Mill Ridge (the region had none), to show zoom with depth.
+    static void DepthExtras(Region r, Camera camera, Transform root, List<Piece> pieces)
+    {
+        var bg = root.Find("Background");
+        var wanted = new[] { "Decor_Terraces_dry_grass", "Decor_Terraces_olive_fern", "Decor_A5_hay_tuft", "Decor_A5_dry_grass", "Decor_A5_fern" };
+        var plants = Slices("Decor/Decor_Terraces_Sheet").Concat(Slices("Decor/Decor_A5_Sheet")).Where(x => wanted.Contains(x.name)).ToArray();
+        if (bg != null && plants.Length > 0)
+        {
+            var climb = new Vector2(r.nodes.Min(n => Pos(n).y) + 1f, r.nodes.Max(n => Pos(n).y) + 1f);
+            var random = new System.Random(r.ordinal * 7919);
+            int k = 0;
+            for (float x = r.cameraMin.x + 14f; x < r.cameraMax.x - 14f; x += 14f + (float)random.NextDouble() * 12f)
+            {
+                // It stays in the bottom fifth of the frame (under the walk line, at 35-40%). Climbs are
+                // fine; a big drop nearby (over 3 u within 6 u) is not.
+                float g0 = Ground(pieces, x - 6f), g1 = Ground(pieces, x), g2 = Ground(pieces, x + 6f);
+                if (float.IsNaN(g0) || float.IsNaN(g1) || float.IsNaN(g2) || g1 - Mathf.Min(g0, g2) > 3f) continue;
+                var plant = plants[random.Next(plants.Length)];
+                var tex = plant.texture; var tr = plant.textureRect;
+                // Large and cropped by the frame's bottom edge: only the top ~55% rises into view
+                // (the bottom fifth of the frame), as a plant right in front of the camera would.
+                float tall = 3f + (float)random.NextDouble();
+                var clump = DepthLayer(bg, camera, climb, $"Foreground - {plant.name} {k}", null, tex, tall, ForegroundDepth,
+                    -5f - tall * .45f, 60, new Color(.5f, .46f, .4f, 1f), 0f, false, 0f);
+                clump.uvRect = new Rect(tr.x / tex.width, tr.y / tex.height, tr.width / tex.width, tr.height / tex.height);
+                clump.baseX = x / ForegroundDepth;   // passes the frame's centre when the camera is at x
+                k++;
+            }
+        }
+        var n7 = r.NodeById("MR03_N07");
+        if (n7 != null && Object.FindObjectsByType<VistaZone>(FindObjectsSortMode.None).All(v => Mathf.Abs(v.transform.position.x - Pos(n7).x) > 8f))
+        {
+            var vista = new GameObject("Lookout vista (Mill Ridge, depth prototype)").AddComponent<VistaZone>();
+            vista.transform.SetParent(root, false); vista.transform.position = Pos(n7) + new Vector2(0f, 2f);
+            vista.GetComponent<BoxCollider2D>().size = new Vector2(Mathf.Max(8f, n7.padWidth), 4f);
+            vista.size = 7f; vista.lift = 1.5f;
         }
     }
 

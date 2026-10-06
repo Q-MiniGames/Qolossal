@@ -49,7 +49,8 @@ public static partial class MraWorldBuilder
         };
         switch (region)
         {
-            case "MR01": { var f = F("A0", "Terrain/Body/Body", "A0", "BG_Sky_A0", "A0"); return f; }
+            // The Cradle's Batch 14 depth set is painted for the apricot dawn of BG_Sky_Terraces.
+            case "MR01": { var f = F("A0", "Terrain/Body/Body", "A0", "BG_Sky_Terraces", "A0"); return f; }
             case "MR02":
             {
                 var f = F("A1", "Terrain/Body/Causeway/Causeway", "A1", "BG_Sky_A1", "A1");
@@ -67,7 +68,8 @@ public static partial class MraWorldBuilder
             {
                 // The town: the Causeway's laid-stone road surface (not the homes' own pale limestone, so the
                 // street reads as a street in front of them), Qvale's own backgrounds and decor.
-                var f = F("Qvale", "Terrain/Body/Causeway/Causeway", "A5", "BG_Sky_A5", "Qvale");
+                // The dawn sky (proposal Option A): the Batch 14 basin rim and overlook view are painted for it.
+                var f = F("Qvale", "Terrain/Body/Causeway/Causeway", "A5", "BG_Sky_Terraces", "Qvale");
                 f.caveTop = "Terrain/Body/Causeway/Causeway_Cave_Edge_Strip"; f.caveFill = "Terrain/Body/Causeway/Causeway_Cave_Fill";
                 f.far = "Backgrounds/BG_Qvale_Far"; f.decor = "Decor/Decor_Qvale_Sheet"; f.shrine = "Props/Checkpoint_Shrine_A5";
                 return f;

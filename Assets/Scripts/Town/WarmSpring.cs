@@ -12,7 +12,7 @@ public sealed class WarmSpring : MonoBehaviour
 
     Vector3 baseScale; float phase;
 
-    void Awake() { if (glow != null) baseScale = glow.localScale; }
+    void Awake() { if (glow != null) baseScale = glow.localScale; SfxEmitter.Attach(gameObject, "Spring_Pulse"); }
 
     void Update()
     {

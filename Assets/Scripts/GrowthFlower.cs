@@ -107,6 +107,7 @@ public sealed class GrowthFlower : MonoBehaviour
         if (closest == null || !player.LaunchUp(closest.launchSpeed)) return false;
         closest.readyAt = Time.time + closest.cooldown;
         closest.pulseUntil = Time.time + 0.3f;
+        Sfx.Play("GrowthFlower_Bloom", closest.transform.position);
         return true;
     }
 

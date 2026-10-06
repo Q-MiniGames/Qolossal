@@ -1,0 +1,137 @@
+{
+ "regions": [
+  {"id": "MR01", "name": "The Cradle", "scene": "MRAtlas_MR01_Cradle", "camera_x": [-6, 332], "camera_y": [-8, 98],
+   "layers": [
+    {"name": "Sky - BG_Sky_A0", "source": "Assets/Art/Codex/Backgrounds/BG_Sky_A0.png", "src_w": 1920, "src_h": 1080, "world_h": 24, "world_w": 42.667, "repeat": true, "follow": [1, 1], "climb": false, "climb_shift": 0, "base_y": -12, "order": -110, "tint": [1, 1, 1], "mag_720": 1.6, "mag_1080": 2.4, "mag_1440": 3.2, "mag_2160": 4.8, "full_cover_camera_x": null},
+    {"name": "Far painting - MistyValley_Background_v1", "source": "Assets/Art/Backgrounds/MistyValley_Background_v1.png", "src_w": 1672, "src_h": 941, "world_h": 20, "world_w": 35.537, "repeat": false, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -10.6, "order": -105, "tint": [1, 1, 1], "mag_720": 1.53, "mag_1080": 2.295, "mag_1440": 3.061, "mag_2160": 4.591, "full_cover_camera_x": [63.956, 241.544, 0.525]},
+    {"name": "Mid - BG_A0_Mid", "source": "Assets/Art/Codex/Backgrounds/BG_A0_Mid.png", "src_w": 2048, "src_h": 576, "world_h": 7.2, "world_w": 25.6, "repeat": true, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -2.863, "order": -90, "tint": [0.98, 0.997, 1], "mag_720": 0.9, "mag_1080": 1.35, "mag_1440": 1.8, "mag_2160": 2.7, "full_cover_camera_x": null},
+    {"name": "Near - BG_A0_Near", "source": "Assets/Art/Codex/Backgrounds/BG_A0_Near.png", "src_w": 2048, "src_h": 576, "world_h": 7, "world_w": 24.889, "repeat": true, "follow": [0.9, 0.994], "climb": true, "climb_shift": 0.6, "base_y": -5.2, "order": -80, "tint": [0.991, 0.999, 1], "mag_720": 0.875, "mag_1080": 1.313, "mag_1440": 1.75, "mag_2160": 2.625, "full_cover_camera_x": null}
+   ],
+   "spots": [
+    {"label": "low", "at": [168, 14], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.532, 1.468, 1], [0.242, 0.962, 1], [0.008, 0.708, 1]]},
+    {"label": "mid", "at": [40, 23], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.551, 1.449, 0.921], [0.222, 0.942, 1], [-0.011, 0.689, 1]]},
+    {"label": "high", "at": [295, 42], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.59, 1.41, 0.756], [0.184, 0.904, 1], [-0.05, 0.65, 1]]},
+    {"label": "climb", "at": [248.5, 30.5], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.568, 1.433, 1], [0.206, 0.926, 1], [-0.027, 0.672, 1]]},
+    {"label": "west_edge", "at": [2.889, 24], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.554, 1.446, 0.713], [0.22, 0.94, 1], [-0.014, 0.686, 1]]},
+    {"label": "east_edge", "at": [323.111, 42], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.59, 1.41, 0.597], [0.184, 0.904, 1], [-0.05, 0.65, 1]]},
+    {"label": "vista0", "at": [262, 40.5], "size": 7, "layers": [[-0.7, 1.7, 1], [-0.589, 1.411, 0.925], [0.185, 0.905, 1], [-0.049, 0.651, 1]]},
+    {"label": "encounter", "at": [80, 22.289], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.55, 1.45, 1], [0.224, 0.944, 1], [-0.01, 0.69, 1]]}
+   ]},
+  {"id": "MR02", "name": "The Long Causeway", "scene": "MRAtlas_MR02_Causeway", "camera_x": [-6, 422], "camera_y": [-8, 208],
+   "layers": [
+    {"name": "Sky - BG_Sky_A1", "source": "Assets/Art/Codex/Backgrounds/BG_Sky_A1.png", "src_w": 1920, "src_h": 1080, "world_h": 24, "world_w": 42.667, "repeat": true, "follow": [1, 1], "climb": false, "climb_shift": 0, "base_y": -12, "order": -110, "tint": [1, 1, 1], "mag_720": 1.6, "mag_1080": 2.4, "mag_1440": 3.2, "mag_2160": 4.8, "full_cover_camera_x": null},
+    {"name": "Far painting - Aqueduct", "source": "Assets/Resources/WorldBackground/Aqueduct.png", "src_w": 1672, "src_h": 941, "world_h": 20, "world_w": 35.537, "repeat": false, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -10.6, "order": -105, "tint": [1, 1, 1], "mag_720": 1.53, "mag_1080": 2.295, "mag_1440": 3.061, "mag_2160": 4.591, "full_cover_camera_x": [106.622, 284.211, 0.415]},
+    {"name": "Mid - BG_A1_Mid", "source": "Assets/Art/Codex/Backgrounds/BG_A1_Mid.png", "src_w": 2048, "src_h": 576, "world_h": 7.2, "world_w": 25.6, "repeat": true, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -3.125, "order": -90, "tint": [0.97, 0.99, 1], "mag_720": 0.9, "mag_1080": 1.35, "mag_1440": 1.8, "mag_2160": 2.7, "full_cover_camera_x": null},
+    {"name": "Near - BG_A1_Near", "source": "Assets/Art/Codex/Backgrounds/BG_A1_Near.png", "src_w": 2048, "src_h": 576, "world_h": 7, "world_w": 24.889, "repeat": true, "follow": [0.9, 0.994], "climb": true, "climb_shift": 0.6, "base_y": -5.2, "order": -80, "tint": [0.987, 0.995, 1], "mag_720": 0.875, "mag_1080": 1.313, "mag_1440": 1.75, "mag_2160": 2.625, "full_cover_camera_x": null}
+   ],
+   "spots": [
+    {"label": "low", "at": [12, 16], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.53, 1.47, 0.524], [0.217, 0.937, 1], [0.01, 0.71, 1]]},
+    {"label": "mid", "at": [208, 93], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.56, 1.44, 1], [0.188, 0.908, 1], [-0.02, 0.68, 1]]},
+    {"label": "high", "at": [386, 174], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.59, 1.41, 0.484], [0.157, 0.878, 1], [-0.05, 0.65, 1]]},
+    {"label": "climb", "at": [160.5, 68.5], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.55, 1.45, 1], [0.197, 0.917, 1], [-0.01, 0.69, 1]]},
+    {"label": "west_edge", "at": [2.889, 16], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.53, 1.47, 0.473], [0.217, 0.937, 1], [0.01, 0.71, 1]]},
+    {"label": "east_edge", "at": [413.111, 174], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.59, 1.41, 0.331], [0.157, 0.878, 1], [-0.05, 0.65, 1]]},
+    {"label": "encounter", "at": [100.5, 43.4], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.541, 1.459, 1], [0.207, 0.927, 1], [-0.001, 0.699, 1]]}
+   ]},
+  {"id": "MR03", "name": "The Terraces", "scene": "MRAtlas_MR03_Terraces", "camera_x": [-6, 392], "camera_y": [-8, 228],
+   "layers": [
+    {"name": "Sky - BG_Sky_Terraces", "source": "Assets/Art/Codex/Backgrounds/BG_Sky_Terraces.png", "src_w": 1920, "src_h": 1080, "world_h": 24, "world_w": 42.667, "repeat": true, "follow": [1, 1], "climb": false, "climb_shift": 0, "base_y": -12, "order": -110, "tint": [1, 1, 1], "mag_720": 1.6, "mag_1080": 2.4, "mag_1440": 3.2, "mag_2160": 4.8, "full_cover_camera_x": null},
+    {"name": "Far ridge (hazed Mid) - BG_A5_Mid", "source": "Assets/Art/Codex/Backgrounds/BG_A5_Mid.png", "src_w": 2048, "src_h": 576, "world_h": 4.4, "world_w": 15.644, "repeat": true, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -0.004, "order": -100, "tint": [1, 0.916, 0.83], "mag_720": 0.55, "mag_1080": 0.825, "mag_1440": 1.1, "mag_2160": 1.65, "full_cover_camera_x": null},
+    {"name": "Landmark - BG_Terraces_Mill_Landmark", "source": "Assets/Art/Codex/Backgrounds/BG_Terraces_Mill_Landmark.png", "src_w": 720, "src_h": 800, "world_h": 5.5, "world_w": 4.95, "repeat": false, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -1.2, "order": -95, "tint": [1, 0.981, 0.962], "mag_720": 0.495, "mag_1080": 0.743, "mag_1440": 0.99, "mag_2160": 1.485, "full_cover_camera_x": [0, 0, 0]},
+    {"name": "Mid - BG_A5_Mid", "source": "Assets/Art/Codex/Backgrounds/BG_A5_Mid.png", "src_w": 2048, "src_h": 576, "world_h": 7.2, "world_w": 25.6, "repeat": true, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -3.425, "order": -90, "tint": [1, 0.966, 0.932], "mag_720": 0.9, "mag_1080": 1.35, "mag_1440": 1.8, "mag_2160": 2.7, "full_cover_camera_x": null},
+    {"name": "Near - BG_A5_Near", "source": "Assets/Art/Codex/Backgrounds/BG_A5_Near.png", "src_w": 2048, "src_h": 576, "world_h": 7, "world_w": 24.889, "repeat": true, "follow": [0.9, 0.994], "climb": true, "climb_shift": 0.6, "base_y": -5.2, "order": -80, "tint": [1, 0.985, 0.97], "mag_720": 0.875, "mag_1080": 1.313, "mag_1440": 1.75, "mag_2160": 2.625, "full_cover_camera_x": null}
+   ],
+   "spots": [
+    {"label": "low", "at": [12, 14], "size": 5, "layers": [[-0.7, 1.7, 1], [0.529, 0.969, 1], [0.41, 0.96, 0.565], [0.187, 0.907, 1], [0.01, 0.71, 1]]},
+    {"label": "mid", "at": [200, 127], "size": 5, "layers": [[-0.7, 1.7, 1], [0.489, 0.929, 1], [0.37, 0.92, 0.278], [0.147, 0.867, 1], [-0.03, 0.67, 1]]},
+    {"label": "high", "at": [287, 183], "size": 5, "layers": [[-0.7, 1.7, 1], [0.47, 0.91, 1], [0.35, 0.9, 0.278], [0.127, 0.848, 1], [-0.05, 0.65, 1]]},
+    {"label": "climb", "at": [272.5, 171], "size": 5, "layers": [[-0.7, 1.7, 1], [0.473, 0.913, 1], [0.354, 0.904, 0.278], [0.131, 0.851, 1], [-0.046, 0.654, 1]]},
+    {"label": "west_edge", "at": [2.889, 14], "size": 5, "layers": [[-0.7, 1.7, 1], [0.529, 0.969, 1], [0.41, 0.96, 0.616], [0.187, 0.907, 1], [0.01, 0.71, 1]]},
+    {"label": "east_edge", "at": [383.111, 164], "size": 5, "layers": [[-0.7, 1.7, 1], [0.476, 0.916, 1], [0.356, 0.906, 0.132], [0.134, 0.854, 1], [-0.044, 0.656, 1]]},
+    {"label": "encounter", "at": [94.5, 54.183], "size": 5, "layers": [[-0.7, 1.7, 1], [0.515, 0.955, 1], [0.395, 0.945, 0.1], [0.173, 0.893, 1], [-0.005, 0.695, 1]]}
+   ]},
+  {"id": "MR04", "name": "Qvale", "scene": "MRAtlas_MR04_Qvale", "camera_x": [-6, 292], "camera_y": [-8, 93],
+   "layers": [
+    {"name": "Sky - BG_Sky_A5", "source": "Assets/Art/Codex/Backgrounds/BG_Sky_A5.png", "src_w": 1920, "src_h": 1080, "world_h": 24, "world_w": 42.667, "repeat": true, "follow": [1, 1], "climb": false, "climb_shift": 0, "base_y": -12, "order": -110, "tint": [1, 1, 1], "mag_720": 1.6, "mag_1080": 2.4, "mag_1440": 3.2, "mag_2160": 4.8, "full_cover_camera_x": null},
+    {"name": "Far - BG_Qvale_Far", "source": "Assets/Art/Codex/Backgrounds/BG_Qvale_Far.png", "src_w": 2048, "src_h": 576, "world_h": 4.8, "world_w": 17.067, "repeat": true, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -0.458, "order": -100, "tint": [0.993, 1, 0.968], "mag_720": 0.6, "mag_1080": 0.9, "mag_1440": 1.2, "mag_2160": 1.8, "full_cover_camera_x": null},
+    {"name": "Mid - BG_Qvale_Mid", "source": "Assets/Art/Codex/Backgrounds/BG_Qvale_Mid.png", "src_w": 2048, "src_h": 576, "world_h": 7.2, "world_w": 25.6, "repeat": true, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -2.925, "order": -90, "tint": [0.995, 1, 0.977], "mag_720": 0.9, "mag_1080": 1.35, "mag_1440": 1.8, "mag_2160": 2.7, "full_cover_camera_x": null},
+    {"name": "Near - BG_Qvale_Near", "source": "Assets/Art/Codex/Backgrounds/BG_Qvale_Near.png", "src_w": 2048, "src_h": 576, "world_h": 7, "world_w": 24.889, "repeat": true, "follow": [0.9, 0.994], "climb": true, "climb_shift": 0.6, "base_y": -5.2, "order": -80, "tint": [0.998, 1, 0.99], "mag_720": 0.875, "mag_1080": 1.313, "mag_1440": 1.75, "mag_2160": 2.625, "full_cover_camera_x": null}
+   ],
+   "spots": [
+    {"label": "low", "at": [60, 10], "size": 5, "layers": [[-0.7, 1.7, 1], [0.481, 0.961, 1], [0.235, 0.955, 1], [0.007, 0.707, 1]]},
+    {"label": "mid", "at": [195, 10], "size": 5, "layers": [[-0.7, 1.7, 1], [0.481, 0.961, 1], [0.235, 0.955, 1], [0.007, 0.707, 1]]},
+    {"label": "high", "at": [260, 32], "size": 5, "layers": [[-0.7, 1.7, 1], [0.424, 0.904, 1], [0.178, 0.897, 1], [-0.05, 0.65, 1]]},
+    {"label": "climb", "at": [250, 26], "size": 5, "layers": [[-0.7, 1.7, 1], [0.438, 0.918, 1], [0.191, 0.911, 1], [-0.036, 0.664, 1]]},
+    {"label": "west_edge", "at": [2.889, 30], "size": 5, "layers": [[-0.7, 1.7, 1], [0.427, 0.907, 1], [0.18, 0.9, 1], [-0.047, 0.653, 1]]},
+    {"label": "east_edge", "at": [283.111, 32], "size": 5, "layers": [[-0.7, 1.7, 1], [0.424, 0.904, 1], [0.178, 0.897, 1], [-0.05, 0.65, 1]]},
+    {"label": "vista0", "at": [163, 11.4], "size": 7.6, "layers": [[-0.7, 1.7, 1], [0.478, 0.958, 1], [0.231, 0.951, 1], [0.003, 0.703, 1]]},
+    {"label": "overlook_seated", "at": [222.5, 12.3], "size": 6.2, "layers": [[-0.7, 1.7, 1], [0.475, 0.955, 1], [0.229, 0.949, 1], [0.001, 0.701, 1]]}
+   ]},
+  {"id": "MR05", "name": "The Ribwood", "scene": "MRAtlas_MR05_Ribwood", "camera_x": [-6, 442], "camera_y": [-8, 238],
+   "layers": [
+    {"name": "Sky - BG_Sky_A2", "source": "Assets/Art/Codex/Backgrounds/BG_Sky_A2.png", "src_w": 1920, "src_h": 1080, "world_h": 24, "world_w": 42.667, "repeat": true, "follow": [1, 1], "climb": false, "climb_shift": 0, "base_y": -12, "order": -110, "tint": [1, 1, 1], "mag_720": 1.6, "mag_1080": 2.4, "mag_1440": 3.2, "mag_2160": 4.8, "full_cover_camera_x": null},
+    {"name": "Far painting - AncientGrove", "source": "Assets/Resources/WorldBackground/AncientGrove.png", "src_w": 1672, "src_h": 941, "world_h": 20, "world_w": 35.537, "repeat": false, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -10.6, "order": -105, "tint": [1, 1, 1], "mag_720": 1.53, "mag_1080": 2.295, "mag_1440": 3.061, "mag_2160": 4.591, "full_cover_camera_x": [115.456, 293.044, 0.396]},
+    {"name": "Mid - BG_A2_Mid", "source": "Assets/Art/Codex/Backgrounds/BG_A2_Mid.png", "src_w": 2048, "src_h": 576, "world_h": 7.2, "world_w": 25.6, "repeat": true, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -3.575, "order": -90, "tint": [0.979, 0.991, 1], "mag_720": 0.9, "mag_1080": 1.35, "mag_1440": 1.8, "mag_2160": 2.7, "full_cover_camera_x": null},
+    {"name": "Near - BG_A2_Near", "source": "Assets/Art/Codex/Backgrounds/BG_A2_Near.png", "src_w": 2048, "src_h": 576, "world_h": 7, "world_w": 24.889, "repeat": true, "follow": [0.9, 0.994], "climb": true, "climb_shift": 0.6, "base_y": -5.2, "order": -80, "tint": [0.991, 0.996, 1], "mag_720": 0.875, "mag_1080": 1.313, "mag_1440": 1.75, "mag_2160": 2.625, "full_cover_camera_x": null}
+   ],
+   "spots": [
+    {"label": "low", "at": [12, 16], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.53, 1.47, 0.474], [0.172, 0.892, 1], [0.01, 0.71, 1]]},
+    {"label": "mid", "at": [222, 141], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.568, 1.432, 1], [0.134, 0.854, 1], [-0.028, 0.672, 1]]},
+    {"label": "high", "at": [402, 214], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.59, 1.41, 0.443], [0.113, 0.833, 1], [-0.05, 0.65, 1]]},
+    {"label": "climb", "at": [304.5, 183], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.581, 1.419, 0.992], [0.122, 0.842, 1], [-0.041, 0.659, 1]]},
+    {"label": "west_edge", "at": [2.889, 16], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.53, 1.47, 0.423], [0.172, 0.892, 1], [0.01, 0.71, 1]]},
+    {"label": "east_edge", "at": [433.111, 214], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.59, 1.41, 0.268], [0.113, 0.833, 1], [-0.05, 0.65, 1]]},
+    {"label": "vista0", "at": [362, 210.5], "size": 7, "layers": [[-0.7, 1.7, 1], [-0.589, 1.411, 0.652], [0.113, 0.833, 1], [-0.049, 0.651, 1]]},
+    {"label": "encounter", "at": [98, 60.9], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.544, 1.456, 0.958], [0.159, 0.879, 1], [-0.004, 0.696, 1]]}
+   ]},
+  {"id": "MR06", "name": "The Windward Heights", "scene": "MRAtlas_MR06_Heights", "camera_x": [-6, 462], "camera_y": [-8, 303],
+   "layers": [
+    {"name": "Sky - BG_Sky_A3", "source": "Assets/Art/Codex/Backgrounds/BG_Sky_A3.png", "src_w": 1920, "src_h": 1080, "world_h": 24, "world_w": 42.667, "repeat": true, "follow": [1, 1], "climb": false, "climb_shift": 0, "base_y": -12, "order": -110, "tint": [1, 1, 1], "mag_720": 1.6, "mag_1080": 2.4, "mag_1440": 3.2, "mag_2160": 4.8, "full_cover_camera_x": null},
+    {"name": "Far painting - FallsSanctuary", "source": "Assets/Resources/WorldBackground/FallsSanctuary.png", "src_w": 1672, "src_h": 941, "world_h": 20, "world_w": 35.537, "repeat": false, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -10.6, "order": -105, "tint": [1, 1, 1], "mag_720": 1.53, "mag_1080": 2.295, "mag_1440": 3.061, "mag_2160": 4.591, "full_cover_camera_x": [134.039, 311.628, 0.379]},
+    {"name": "Mid - BG_A3_Mid", "source": "Assets/Art/Codex/Backgrounds/BG_A3_Mid.png", "src_w": 2048, "src_h": 576, "world_h": 7.2, "world_w": 25.6, "repeat": true, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -3.625, "order": -90, "tint": [0.978, 0.991, 1], "mag_720": 0.9, "mag_1080": 1.35, "mag_1440": 1.8, "mag_2160": 2.7, "full_cover_camera_x": null},
+    {"name": "Near - BG_A3_Near", "source": "Assets/Art/Codex/Backgrounds/BG_A3_Near.png", "src_w": 2048, "src_h": 576, "world_h": 7, "world_w": 24.889, "repeat": true, "follow": [0.9, 0.994], "climb": true, "climb_shift": 0.6, "base_y": -5.2, "order": -80, "tint": [0.99, 0.996, 1], "mag_720": 0.875, "mag_1080": 1.313, "mag_1440": 1.75, "mag_2160": 2.625, "full_cover_camera_x": null}
+   ],
+   "spots": [
+    {"label": "low", "at": [12, 18], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.53, 1.47, 0.37], [0.167, 0.887, 1], [0.01, 0.71, 1]]},
+    {"label": "mid", "at": [247, 168], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.566, 1.434, 1], [0.132, 0.852, 1], [-0.026, 0.674, 1]]},
+    {"label": "high", "at": [440, 272], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.59, 1.41, 0.334], [0.108, 0.828, 1], [-0.05, 0.65, 1]]},
+    {"label": "climb", "at": [265, 181.5], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.569, 1.431, 1], [0.129, 0.849, 1], [-0.029, 0.671, 1]]},
+    {"label": "west_edge", "at": [2.889, 18], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.53, 1.47, 0.319], [0.167, 0.887, 1], [0.01, 0.71, 1]]},
+    {"label": "east_edge", "at": [453.111, 272], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.59, 1.41, 0.26], [0.108, 0.828, 1], [-0.05, 0.65, 1]]},
+    {"label": "vista0", "at": [166, 114.5], "size": 7, "layers": [[-0.7, 1.7, 1], [-0.553, 1.447, 1], [0.144, 0.864, 1], [-0.013, 0.687, 1]]},
+    {"label": "encounter", "at": [105, 75.8], "size": 5, "layers": [[-0.7, 1.7, 1], [-0.544, 1.456, 0.893], [0.154, 0.874, 1], [-0.004, 0.696, 1]]}
+   ]},
+  {"id": "MR07", "name": "The Summit", "scene": "MRAtlas_MR07_Summit", "camera_x": [-6, 362], "camera_y": [-8, 218],
+   "layers": [
+    {"name": "Sky - BG_Sky_Terraces", "source": "Assets/Art/Codex/Backgrounds/BG_Sky_Terraces.png", "src_w": 1920, "src_h": 1080, "world_h": 24, "world_w": 42.667, "repeat": true, "follow": [1, 1], "climb": false, "climb_shift": 0, "base_y": -12, "order": -110, "tint": [1, 1, 1], "mag_720": 1.6, "mag_1080": 2.4, "mag_1440": 3.2, "mag_2160": 4.8, "full_cover_camera_x": null},
+    {"name": "Far ridge (hazed Mid) - BG_A6_Mid", "source": "Assets/Art/Codex/Backgrounds/BG_A6_Mid.png", "src_w": 2048, "src_h": 576, "world_h": 4.4, "world_w": 15.644, "repeat": true, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": 0.393, "order": -100, "tint": [1, 1, 1], "mag_720": 0.55, "mag_1080": 0.825, "mag_1440": 1.1, "mag_2160": 1.65, "full_cover_camera_x": null},
+    {"name": "Mid - BG_A6_Mid", "source": "Assets/Art/Codex/Backgrounds/BG_A6_Mid.png", "src_w": 2048, "src_h": 576, "world_h": 7.2, "world_w": 25.6, "repeat": true, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -2.775, "order": -90, "tint": [1, 1, 1], "mag_720": 0.9, "mag_1080": 1.35, "mag_1440": 1.8, "mag_2160": 2.7, "full_cover_camera_x": null},
+    {"name": "Near - BG_A6_Near", "source": "Assets/Art/Codex/Backgrounds/BG_A6_Near.png", "src_w": 2048, "src_h": 576, "world_h": 7, "world_w": 24.889, "repeat": true, "follow": [0.9, 0.994], "climb": true, "climb_shift": 0.6, "base_y": -5.2, "order": -80, "tint": [1, 1, 1], "mag_720": 0.875, "mag_1080": 1.313, "mag_1440": 1.75, "mag_2160": 2.625, "full_cover_camera_x": null}
+   ],
+   "spots": [
+    {"label": "low", "at": [12, 20], "size": 5, "layers": [[-0.7, 1.7, 1], [0.569, 1.009, 1], [0.252, 0.972, 1], [0.01, 0.71, 1]]},
+    {"label": "mid", "at": [195, 136], "size": 5, "layers": [[-0.7, 1.7, 1], [0.524, 0.964, 1], [0.207, 0.927, 1], [-0.036, 0.664, 1]]},
+    {"label": "high", "at": [301, 174], "size": 5, "layers": [[-0.7, 1.7, 1], [0.509, 0.949, 1], [0.193, 0.913, 1], [-0.05, 0.65, 1]]},
+    {"label": "climb", "at": [313, 161.5], "size": 5, "layers": [[-0.7, 1.7, 1], [0.514, 0.954, 1], [0.197, 0.917, 1], [-0.046, 0.654, 1]]},
+    {"label": "west_edge", "at": [2.889, 20], "size": 5, "layers": [[-0.7, 1.7, 1], [0.569, 1.009, 1], [0.252, 0.972, 1], [0.01, 0.71, 1]]},
+    {"label": "east_edge", "at": [353.111, 150], "size": 5, "layers": [[-0.7, 1.7, 1], [0.518, 0.958, 1], [0.201, 0.921, 1], [-0.041, 0.659, 1]]},
+    {"label": "vista0", "at": [275, 171.5], "size": 7, "layers": [[-0.7, 1.7, 1], [0.51, 0.95, 1], [0.193, 0.913, 1], [-0.049, 0.651, 1]]},
+    {"label": "encounter", "at": [91, 81.084], "size": 5, "layers": [[-0.7, 1.7, 1], [0.545, 0.985, 1], [0.228, 0.948, 1], [-0.014, 0.686, 1]]}
+   ]},
+  {"id": "MR08", "name": "The Descent", "scene": "MRAtlas_MR08_Descent", "camera_x": [-6, 312], "camera_y": [-8, 208],
+   "layers": [
+    {"name": "Sky - BG_Sky_A4", "source": "Assets/Art/Codex/Backgrounds/BG_Sky_A4.png", "src_w": 1920, "src_h": 1080, "world_h": 24, "world_w": 42.667, "repeat": true, "follow": [1, 1], "climb": false, "climb_shift": 0, "base_y": -12, "order": -110, "tint": [1, 1, 1], "mag_720": 1.6, "mag_1080": 2.4, "mag_1440": 3.2, "mag_2160": 4.8, "full_cover_camera_x": null},
+    {"name": "Far ridge (hazed Mid) - BG_A4_Mid", "source": "Assets/Art/Codex/Backgrounds/BG_A4_Mid.png", "src_w": 2048, "src_h": 576, "world_h": 4.4, "world_w": 15.644, "repeat": true, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": 0.546, "order": -100, "tint": [0.828, 0.977, 1], "mag_720": 0.55, "mag_1080": 0.825, "mag_1440": 1.1, "mag_2160": 1.65, "full_cover_camera_x": null},
+    {"name": "Mid - BG_A4_Mid", "source": "Assets/Art/Codex/Backgrounds/BG_A4_Mid.png", "src_w": 2048, "src_h": 576, "world_h": 7.2, "world_w": 25.6, "repeat": true, "follow": [0.9, 0.997], "climb": true, "climb_shift": 0.6, "base_y": -2.525, "order": -90, "tint": [0.931, 0.991, 1], "mag_720": 0.9, "mag_1080": 1.35, "mag_1440": 1.8, "mag_2160": 2.7, "full_cover_camera_x": null},
+    {"name": "Near - BG_A4_Near", "source": "Assets/Art/Codex/Backgrounds/BG_A4_Near.png", "src_w": 2048, "src_h": 576, "world_h": 7, "world_w": 24.889, "repeat": true, "follow": [0.9, 0.994], "climb": true, "climb_shift": 0.6, "base_y": -5.2, "order": -80, "tint": [0.969, 0.996, 1], "mag_720": 0.875, "mag_1080": 1.313, "mag_1440": 1.75, "mag_2160": 2.625, "full_cover_camera_x": null}
+   ],
+   "spots": [
+    {"label": "low", "at": [249, 27], "size": 5, "layers": [[-0.7, 1.7, 1], [0.584, 1.024, 1], [0.277, 0.997, 1], [0.01, 0.71, 1]]},
+    {"label": "mid", "at": [144, 89], "size": 5, "layers": [[-0.7, 1.7, 1], [0.56, 1, 1], [0.252, 0.972, 1], [-0.015, 0.685, 1]]},
+    {"label": "high", "at": [12, 178], "size": 5, "layers": [[-0.7, 1.7, 1], [0.525, 0.965, 1], [0.218, 0.938, 1], [-0.05, 0.65, 1]]},
+    {"label": "climb", "at": [258, 36], "size": 5, "layers": [[-0.7, 1.7, 1], [0.581, 1.021, 1], [0.274, 0.994, 1], [0.006, 0.706, 1]]},
+    {"label": "west_edge", "at": [2.889, 178], "size": 5, "layers": [[-0.7, 1.7, 1], [0.525, 0.965, 1], [0.218, 0.938, 1], [-0.05, 0.65, 1]]},
+    {"label": "east_edge", "at": [303.111, 61], "size": 5, "layers": [[-0.7, 1.7, 1], [0.571, 1.011, 1], [0.264, 0.984, 1], [-0.004, 0.696, 1]]}
+   ]}
+ ]
+}

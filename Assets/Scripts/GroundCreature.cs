@@ -61,7 +61,9 @@ public sealed class GroundCreature : MonoBehaviour, IReedbladeTarget, ICombatDam
         groundFilter = new ContactFilter2D();
         groundFilter.SetLayerMask(groundLayers);
         groundFilter.useTriggers = false;
+        skitter = SfxEmitter.Attach(gameObject, "Crawler_Move", false);
     }
+    private SfxEmitter skitter;
 
     private void FixedUpdate()
     {
@@ -141,6 +143,7 @@ public sealed class GroundCreature : MonoBehaviour, IReedbladeTarget, ICombatDam
         if (health == 0)
         {
             Fx.DeathPuff(shape.bounds.center, 1.1f);
+            Sfx.Play("Combat_EnemyDefeat", shape.bounds.center);
             SapOrb.MaybeDrop(shape.bounds.center);
             body.linearVelocity = Vector2.zero;
             body.simulated = false;
@@ -152,6 +155,7 @@ public sealed class GroundCreature : MonoBehaviour, IReedbladeTarget, ICombatDam
 
     private void Update()
     {
+        if (skitter != null) skitter.Playing = health > 0 && Mathf.Abs(body.linearVelocity.x) > .2f;
         visual.color = health <= 0 ? Color.gray : Time.time < flashUntil ? Color.white : restingColor;
         if (health <= 0 && Time.time >= vanishAt) gameObject.SetActive(false);
     }

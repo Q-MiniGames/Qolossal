@@ -23,8 +23,9 @@ public sealed class MraKnot : MonoBehaviour
     float shake; Vector3 shaken; Camera view; Vector3 coreScale;
     public bool IsAwake => GameSave.IsKnotAwake(knot);
 
+    SfxEmitter hum;
     void Awake() { GetComponent<BoxCollider2D>().isTrigger = true; if (core != null) coreScale = core.transform.localScale; }
-    void Start() => Show(IsAwake ? 1f : 0f);
+    void Start() { Show(IsAwake ? 1f : 0f); hum = SfxEmitter.Attach(gameObject, "Knot_Idle", !IsAwake); }
 
     void OnTriggerEnter2D(Collider2D other) { if (MraState.IsQori(other)) Wake(); }
 
@@ -40,7 +41,10 @@ public sealed class MraKnot : MonoBehaviour
     {
         IsPlaying = true; ModalUi.Open();
         view = Camera.main;
+        Sfx.Play("Knot_Wake", transform.position);
+        if (hum != null) hum.Playing = false;
         for (float t = 0f; t < .8f; t += Time.deltaTime) { Show(t / .8f); shake = .05f * t; yield return null; }
+        Sfx.Play("Quake_Stir");
         for (float t = 0f; t < 1.8f; t += Time.deltaTime) { shake = Mathf.Lerp(.1f, .38f, t / 1.8f); yield return null; }
         // Saved at the height of the quake: the land changes under the dust.
         GameSave.WakeKnot(knot);

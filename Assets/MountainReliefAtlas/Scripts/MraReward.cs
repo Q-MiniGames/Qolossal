@@ -34,6 +34,7 @@ public sealed class MraReward : MonoBehaviour
     {
         if (takenAt >= 0f || !GameSave.SetFlag(rewardId)) return false;
         takenAt = Time.time;
+        Sfx.Play(kind == Kind.SongShell ? "SongShell_Get" : kind == Kind.HeartSeed ? "HeartSeed_Get" : kind == Kind.Amber ? "Amber_PickupBig" : "LoreStone_Read");
         switch (kind)
         {
             case Kind.SongShell: TownState.Set("shell:" + rewardId); TownHud.Toast($"Found a song shell: “{title}”.\nThe listening tree in Qvale can play it now.", 5f); break;

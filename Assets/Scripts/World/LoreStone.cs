@@ -19,6 +19,7 @@ public sealed class LoreStone : MonoBehaviour
         if (other.attachedRigidbody == null || other.attachedRigidbody.GetComponent<PlayerMovement>() == null) return;
         if (readAt >= 0f && Time.time - readAt < ReadSeconds) return;
         bool first = !GameSave.HasLoreStone(stoneId);
+        if (first) Sfx.Play("LoreStone_Read");
         GameSave.AddLoreStone(stoneId);
         readAt = Time.time;
         if (first && Fx.Library != null) Fx.Pop(Fx.Library.telegraphGlint, image.transform.position, 1.2f, .4f, 45);

@@ -6,6 +6,6 @@ public sealed class MraSwell : MonoBehaviour
 {
     public float amplitude = .35f, period = 8f;
     Vector3 rest;
-    void Awake() => rest = transform.localPosition;
+    void Awake() { rest = transform.localPosition; SfxEmitter.Attach(gameObject, "Swell_Loop"); }
     void Update() => transform.localPosition = rest + Vector3.up * amplitude * Mathf.Sin(Time.time * 2f * Mathf.PI / Mathf.Max(.1f, period));
 }

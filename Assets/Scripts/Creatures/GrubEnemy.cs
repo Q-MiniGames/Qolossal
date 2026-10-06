@@ -37,8 +37,12 @@ public sealed class GrubEnemy : EnemyBase
         Enter(State.Buried);
     }
 
+    SfxEmitter burrow;
     void Enter(State s)
     {
+        if (burrow == null) burrow = SfxEmitter.Attach(gameObject, "Grub_Burrow", false);
+        burrow.Playing = s == State.Tunnel || s == State.Telegraph;
+        if (s == State.Rise) Sfx.Play("Grub_Erupt", body.position);
         state = s; since = Time.time;
         hitbox.enabled = !IsBuried;
         if (rig != null) foreach (var r in rig.renderers) if (r != null) r.enabled = !IsBuried;

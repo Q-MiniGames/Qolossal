@@ -28,8 +28,13 @@ public sealed class NewtEnemy : EnemyBase
         Enter(State.Submerged);
     }
 
+    SfxEmitter ripples;
     void Enter(State s)
     {
+        if (ripples == null) ripples = SfxEmitter.Attach(gameObject, "Newt_Ripple", false);
+        ripples.Playing = s == State.Submerged || s == State.Telegraph;
+        if (s == State.Leap) Sfx.Play("Newt_Leap", body.position);
+        else if (s == State.Submerged && state == State.Return) Sfx.Play("Newt_Leap", body.position, .5f);   // back into the water
         state = s; since = Time.time;
         bool hidden = s == State.Submerged;
         hitbox.enabled = !hidden;

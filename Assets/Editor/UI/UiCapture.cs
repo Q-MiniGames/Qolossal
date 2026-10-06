@@ -33,12 +33,13 @@ public static class UiCapture
 
         var pause = UnityEngine.Object.FindFirstObjectByType<GamePauseMenu>() ?? new GameObject("Pause").AddComponent<GamePauseMenu>();
 
-        void Shot(string name, int health, bool menu, bool confirm)
+        void Shot(string name, int health, bool menu, bool confirm, bool sound = false)
         {
             typeof(PlayerHealth).GetField("health", Any).SetValue(player, health);
             typeof(GameHud).GetMethod("Update", Any).Invoke(hud, null);
             weaponImage.sprite = UiSkin.Load().weaponIcons[0]; weaponImage.enabled = true;
             typeof(GamePauseMenu).GetField("confirmingNewGame", Any).SetValue(pause, confirm);
+            typeof(GamePauseMenu).GetField("soundOptions", Any).SetValue(pause, sound);
             typeof(GamePauseMenu).GetMethod("ShowMenu", Any).Invoke(pause, new object[] { menu });
             foreach (var canvas in UnityEngine.Object.FindObjectsByType<Canvas>(FindObjectsInactive.Include, FindObjectsSortMode.None))
             {
@@ -59,6 +60,7 @@ public static class UiCapture
         Shot("hud_hurt", 2, false, false);
         Shot("menu_main", 5, true, false);
         Shot("menu_confirm", 5, true, true);
+        Shot("menu_sound", 5, true, false, true);
         Debug.Log("[UiCapture] written");
     }
 }

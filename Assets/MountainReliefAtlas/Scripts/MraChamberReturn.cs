@@ -15,7 +15,9 @@ public sealed class MraChamberReturn : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         var qori = MraState.QoriOf(other);
-        if (qori != null && !AreaTransition.IsTransitioning) AreaTransition.Travel(parentScene, returnId, qori);
+        if (qori == null || AreaTransition.IsTransitioning) return;
+        if (Mra.World.Load()?.ChamberByScene(gameObject.scene.name) is Mra.Chamber c && c.IsHouse) Sfx.Play("Door_Exit");
+        AreaTransition.Travel(parentScene, returnId, qori);
     }
 
     void OnGUI()

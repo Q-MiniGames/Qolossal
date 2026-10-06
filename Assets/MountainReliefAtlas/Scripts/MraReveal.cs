@@ -44,6 +44,7 @@ public sealed class MraReveal : MonoBehaviour
         if (follow != null) follow.enabled = false;
         VistaZone.Suspended = true;
         Vector3 from = view.transform.position; float size = view.orthographicSize;
+        Sfx.PlayStory("Story_Reveal");
         for (float t = 0f; t < pullSeconds; t += Time.deltaTime)
         {
             float k = Mathf.SmoothStep(0f, 1f, t / pullSeconds);
@@ -69,5 +70,6 @@ public sealed class MraReveal : MonoBehaviour
         IsPlaying = false; ModalUi.Close();
     }
 
-    void OnDisable() { if (IsPlaying) { IsPlaying = false; VistaZone.Suspended = false; ModalUi.Close(); } }
+    // Cut short (a scene change, a quit): its sound stops with it.
+    void OnDisable() { if (IsPlaying) { IsPlaying = false; VistaZone.Suspended = false; ModalUi.Close(); Sfx.Stop("Story_Reveal"); } }
 }

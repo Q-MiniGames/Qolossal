@@ -46,6 +46,7 @@ public sealed class ListeningSpot : MonoBehaviour
         GetComponent<BoxCollider2D>().isTrigger = true;
         source = gameObject.AddComponent<AudioSource>();
         source.loop = true; source.playOnAwake = false; source.spatialBlend = 0f; source.volume = 0f;
+        source.outputAudioMixerGroup = Sfx.MusicGroup;
     }
 
     static Rigidbody2D QoriOf(Collider2D other) =>
@@ -58,6 +59,7 @@ public sealed class ListeningSpot : MonoBehaviour
     {
         if (IsSitting) return;
         if (canvas == null) Build();
+        Sfx.Play("Qori_Sit");
         IsSitting = true; leaving = false; openedFrame = Time.frameCount; selected = Mathf.Max(0, playing);
         VistaZone.Suspended = true;   // a zoom zone around the bench lets go while the bench frames the view
         // Onto the seat: held still there in the Sit pose until he gets up.
@@ -89,6 +91,7 @@ public sealed class ListeningSpot : MonoBehaviour
     {
         if (!IsSitting || leaving) return;
         leaving = true; canvas.enabled = false; ease = 0f;
+        Sfx.Play("UI_Back");
         // Up off the seat, back where he stood; the view then eases back to him.
         if (pose != null) pose.Release();
         if (qori != null && hasSeat) { qori.transform.position = standAt; qori.simulated = true; qori.linearVelocity = Vector2.zero; }
@@ -140,7 +143,7 @@ public sealed class ListeningSpot : MonoBehaviour
 
     void Update()
     {
-        source.volume = Mathf.MoveTowards(source.volume, targetVolume, Time.deltaTime / 1.5f);
+        source.volume = Mathf.MoveTowards(source.volume, targetVolume * SfxSettings.Music, Time.deltaTime / 1.5f);
         if (source.volume <= 0f && targetVolume <= 0f && source.isPlaying) source.Stop();
 
         if (!IsSitting)
@@ -166,9 +169,9 @@ public sealed class ListeningSpot : MonoBehaviour
         }
         if (Time.frameCount == openedFrame) return;
         if (TownInput.Cancel()) { Leave(); return; }
-        if (TownInput.Up()) selected = (selected + tracks.Count - 1) % tracks.Count;
-        if (TownInput.Down()) selected = (selected + 1) % tracks.Count;
-        if (TownInput.Confirm()) Play(selected);
+        if (TownInput.Up()) { selected = (selected + tracks.Count - 1) % tracks.Count; Sfx.Play("UI_Move"); }
+        if (TownInput.Down()) { selected = (selected + 1) % tracks.Count; Sfx.Play("UI_Move"); }
+        if (TownInput.Confirm()) { Sfx.Play("UI_Confirm"); Play(selected); }
         Refresh();
     }
 

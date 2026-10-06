@@ -21,6 +21,7 @@ public sealed class WaterfallSplash : MonoBehaviour
         echo = new GameObject("Splash echo").AddComponent<SpriteRenderer>();
         echo.transform.SetParent(transform, false);
         echo.sprite = image.sprite; echo.sortingOrder = image.sortingOrder + 1; echo.flipX = true;
+        SfxEmitter.Attach(gameObject, "Waterfall");
     }
 
     void Update()

@@ -273,6 +273,63 @@
    "basis": "request: terrain density 120 px/u"
   },
   {
+   "name": "BG_Cradle_Far",
+   "category": "Backgrounds",
+   "sha256": "6feebf9b7f888ccbfe3557afbfee0671fbacf46cc7df6a8a4aedf62217eb5d16",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Cradle_Far.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch14/W1",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Cradle_Mid",
+   "category": "Backgrounds",
+   "sha256": "b5fdfa46f3f3a2a302b3b52afd5b97e09e9e64ed82f3343ebb8971a15c189d57",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Cradle_Mid.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch14/W1",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Cradle_Near",
+   "category": "Backgrounds",
+   "sha256": "4b657620676db358e7e31b4b21946ae2203b6417a1ecfeb2cb979a231128dcbd",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Cradle_Near.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch14/W1",
+   "maxSize": 4096
+  },
+  {
    "name": "BG_Qvale_Far",
    "category": "Backgrounds",
    "sha256": "28731c7a3b1a253e79066ebb8c09effa9ffcbb364d19e303da88ae6d35c4c84d",
@@ -325,6 +382,44 @@
    "mipmaps": false,
    "ppu": 120,
    "basis": "Batch8/W3"
+  },
+  {
+   "name": "BG_Qvale_Overlook_Vista",
+   "category": "Backgrounds",
+   "sha256": "76ac2bc3af0261e10a173f9ddef032a38409c3508b88d172f55ae7aa65820c09",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Qvale_Overlook_Vista.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch14/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Qvale_VaultRim_Mid",
+   "category": "Backgrounds",
+   "sha256": "a714220e6b00b0f9d44f358bcde83d3d169e83bcf2f55a4462772dd42b704277",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Qvale_VaultRim_Mid.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch14/W3",
+   "maxSize": 4096
   },
   {
    "name": "BG_Sky_A0",
@@ -451,6 +546,63 @@
    "mipmaps": false,
    "ppu": 120,
    "basis": "request: terrain density 120 px/u"
+  },
+  {
+   "name": "BG_Summit_Far",
+   "category": "Backgrounds",
+   "sha256": "fb8ade50fb52d2cc14c96641fa4b5bd6024b3dd83d6cb51ef03b06a10f8dc814",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Summit_Far.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch14/W2",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Summit_Mid",
+   "category": "Backgrounds",
+   "sha256": "4c6899b2a76b0e1c86a56d95df72a80ec7f9eea8c0b8a362328a27c759103ed8",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Summit_Mid.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch14/W2",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Summit_Near",
+   "category": "Backgrounds",
+   "sha256": "d69fa4b5c03c68afe56a4a3b3b0c6910ec641fcead5b4db37fc2b7a06955d994",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Summit_Near.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch14/W2",
+   "maxSize": 4096
   },
   {
    "name": "BG_Terraces_Far",

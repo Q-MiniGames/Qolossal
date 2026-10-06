@@ -51,9 +51,12 @@ public sealed class KnucklebrambleGuardian : EnemyBase
         Enter(State.Dormant);
     }
 
+    bool woken;
     void Enter(State s)
     {
         System.Array.Copy(angles, from, 6);   // each state blends from wherever the arms are
+        if (s == State.Pause && Current == State.Dormant && !woken) { woken = true; Sfx.Play("Guardian_Awaken", body.position); }
+        else if (s == State.Telegraph) Sfx.Play("Guardian_ArmRaise", Claw(StrikingArm));
         Current = s; since = Time.time;
     }
 
@@ -72,6 +75,7 @@ public sealed class KnucklebrambleGuardian : EnemyBase
             return WeaponKinds.Blocked();
         }
         var response = base.ReceiveCombatHit(hit);
+        if (IsAlive) Sfx.Play("Guardian_Hurt", DeathPoint);
         if (IsAlive && ++exposedHits >= hitsPerExposure) Enter(State.Closing);
         return response;
     }
@@ -85,6 +89,7 @@ public sealed class KnucklebrambleGuardian : EnemyBase
     {
         Vector2 at = DeathPoint;
         base.Die();
+        Sfx.Play("Guardian_Defeat", at);
         Fx.DeathPuff(at + Vector2.left * .6f, 2.2f); Fx.DeathPuff(at + Vector2.right * .6f, 2.2f);
         Fx.Leaves(at, 8, 1.2f);
         CombatCameraShake.Kick(.06f);
@@ -122,6 +127,7 @@ public sealed class KnucklebrambleGuardian : EnemyBase
                     var lib = Fx.Library;
                     if (lib != null) Fx.Play(lib.dustLand, new Vector2(claw.x, body.position.y + .6f), 14f, 1.8f, 31);
                     Fx.Leaves(claw, 2, .5f);
+                    Sfx.Play("Guardian_ArmSlam", claw);
                     CombatCameraShake.Kick(.04f);
                     Enter(State.Hold);
                 }

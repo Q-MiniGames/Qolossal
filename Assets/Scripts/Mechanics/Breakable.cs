@@ -35,6 +35,7 @@ public sealed class Breakable : MonoBehaviour, ICombatDamageReceiver
     public void Break(Vector2 direction)
     {
         broken = true;
+        Sfx.Play("Breakable_Smash", transform.position);
         if (solid != null) solid.enabled = false;
         if (intact == null) return;
         Debris.Burst(pieces, intact.bounds, intact.sortingOrder + 1, direction * 2.5f);

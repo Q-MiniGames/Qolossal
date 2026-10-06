@@ -62,6 +62,7 @@ public sealed class AbilityShrine : MonoBehaviour
     {
         if (state != State.Waiting) return;
         taker = player; player.Unlock(ability);
+        Sfx.Play("Relic_Get");
         state = State.Flying; stateAt = Time.time; flyFrom = relic.transform.position;
     }
 

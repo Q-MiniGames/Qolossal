@@ -125,7 +125,7 @@ public sealed class AreaTransition : MonoBehaviour
         bool show = area != null && !string.IsNullOrEmpty(area.displayName) &&
                     (!shownAt.TryGetValue(key, out float last) || Time.unscaledTime - last > RepeatAfterSeconds);
         areaName.text = show ? area.displayName : "";
-        if (show) { shownAt[key] = Time.unscaledTime; LastShownName = area.displayName; NamesShown++; }
+        if (show) { shownAt[key] = Time.unscaledTime; LastShownName = area.displayName; NamesShown++; Sfx.PlayAfter("Banner_Show", FadeSeconds * .5f); }
         if (show || !string.IsNullOrEmpty(arrivalNote))
             ((RectTransform)namePlate.transform).sizeDelta = new Vector2(Mathf.Max(areaName.preferredWidth, note.preferredWidth) + 120f, string.IsNullOrEmpty(arrivalNote) ? 96f : 150f);
         note.text = arrivalNote;

@@ -121,6 +121,7 @@ public sealed class MraChart : MonoBehaviour
     {
         if (IsOpen) return;
         IsOpen = true;
+        Sfx.Play("Chart_Open");
         previousTimeScale = Time.timeScale; Time.timeScale = 0f;
         ModalUi.Open();
         canvas.enabled = true;
@@ -136,6 +137,7 @@ public sealed class MraChart : MonoBehaviour
     {
         if (!IsOpen) return;
         IsOpen = false; closedFrame = Time.frameCount;
+        Sfx.Play("Chart_Close");
         Time.timeScale = previousTimeScale <= 0f ? 1f : previousTimeScale;
         canvas.enabled = false;
         ModalUi.Close();
@@ -344,6 +346,7 @@ public sealed class MraChart : MonoBehaviour
         if (!CanTravel(out var to, out var waymark)) return false;
         var qori = FindAnyObjectByType<PlayerMovement>();
         Hide();
+        Sfx.Play("Waymark_Travel");
         AreaTransition.Travel(to.scene, waymark.checkpointId, qori, "");
         return true;
     }

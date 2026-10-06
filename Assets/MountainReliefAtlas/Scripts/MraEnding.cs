@@ -39,9 +39,11 @@ public sealed class MraEnding : MonoBehaviour
     IEnumerator Run()
     {
         IsPlaying = true; ModalUi.Open();
+        Sfx.PlayStory("Story_EyeOpen");
         GameSave.WakeKnot(knot);
         GameSave.SetFlag(MraState.EndingFlag);
         yield return MraStills.Play(stills, captions, 6f);
+        Sfx.PlayStory("Story_Ending");
         TownHud.Caption("Carefully.", "Everything it held is still here.");
         IsPlaying = false; ModalUi.Close();
     }
@@ -51,5 +53,6 @@ public sealed class MraEnding : MonoBehaviour
         if (near && !Done && !MraState.Busy) MraState.Prompt(transform.position + Vector3.up * 3f, "▲ Lay a hand on the roots");
     }
 
-    void OnDisable() { if (IsPlaying) { IsPlaying = false; ModalUi.Close(); } }
+    // Cut short (a scene change, a quit): its sounds stop with it.
+    void OnDisable() { if (IsPlaying) { IsPlaying = false; ModalUi.Close(); Sfx.Stop("Story_EyeOpen"); Sfx.Stop("Story_Ending"); } }
 }

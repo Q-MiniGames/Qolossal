@@ -53,6 +53,7 @@ public abstract class EnemyBase : MonoBehaviour, ICombatDamageReceiver, IReedbla
         diedAt = Time.time;
         Vector2 centre = DeathPoint;
         Fx.DeathPuff(centre);
+        Sfx.Play("Combat_EnemyDefeat", centre);
         SapOrb.MaybeDrop(centre);
         foreach (Collider2D c in GetComponentsInChildren<Collider2D>()) c.enabled = false;
         if (body != null) { body.linearVelocity = Vector2.zero; body.simulated = false; }

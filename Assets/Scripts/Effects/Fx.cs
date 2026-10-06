@@ -40,7 +40,8 @@ public static class Fx
     }
 
     // The bright four-point glint that warns of an enemy attack.
-    public static void Glint(Vector2 at) { var lib = Library; if (lib != null) Pop(lib.telegraphGlint, at, .55f, .35f, 45); }
+    // An enemy's warning glint (only enemy telegraphs use it), with its warning tick.
+    public static void Glint(Vector2 at) { Sfx.Play("Enemy_Telegraph", at); var lib = Library; if (lib != null) Pop(lib.telegraphGlint, at, .55f, .35f, 45); }
 
     // A few loose leaves thrown up from `at`; they tumble and fall.
     public static void Leaves(Vector2 at, int count, float strength)

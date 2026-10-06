@@ -26,7 +26,7 @@ using UnityEngine.SceneManagement;
 //   5  the Chart: marker correspondence at every beat, gamepad-only control with the mouse
 //      removed, focus and zoom kept, a gamepad reconnect; captures at 1920x1080 and 1280x720.
 // Results: "[MraTest] PASS/FAIL ..." lines and <captureDir>/mra_test_results.json.
-public sealed class MraTestDriver : MonoBehaviour
+public sealed partial class MraTestDriver : MonoBehaviour
 {
     public string captureDir = "Temp/Captures";
     readonly List<string> results = new List<string>();
@@ -57,6 +57,26 @@ public sealed class MraTestDriver : MonoBehaviour
         keys = InputSystem.AddDevice<Keyboard>("MRA Test Keyboard");
         Expect(Path.GetFileName(GameSave.FilePath) == "mra_playtest.json", "the test uses its own save file (" + Path.GetFileName(GameSave.FilePath) + ")");
         GameSave.Clear();
+        {
+            var args = System.Environment.GetCommandLineArgs();
+            int at = System.Array.IndexOf(args, "-mraDepthCapture");
+            if (at >= 0)
+            {
+                // A recorded run for the background comparison (MraDepthCapture.cs).
+                foreach (var id in new[] { Relics.ClimbingMoss, Relics.LivingThread, Relics.Bloomfall, Relics.WindLeaf, Relics.Glidecap }) GameSave.AddRelic(id);
+                yield return Run("depth capture", DepthCapture(at + 1 < args.Length ? args[at + 1] : "run"));
+                Finish(); yield break;
+            }
+        }
+        if (System.Environment.GetCommandLineArgs().Contains("-mraAudioOnly"))
+        {
+            // The sound-effect hooks alone (MraAudioTest.cs).
+            foreach (var id in new[] { Relics.ClimbingMoss, Relics.LivingThread, Relics.Bloomfall, Relics.WindLeaf, Relics.Glidecap }) GameSave.AddRelic(id);
+            foreach (var r in W.regions) GameSave.SetFlag(MraState.VisitedFlag(r.id));
+            foreach (var f in new[] { "mra:MR02_C01:reward", "mra:MR03_C03:reward", "mra:MR05_C01:reward" }) GameSave.SetFlag(f);   // Brannick and others home
+            yield return Run("audio", AudioChecks());
+            Finish(); yield break;
+        }
         if (System.Environment.GetCommandLineArgs().Contains("-mraEncountersOnly"))
         {
             yield return Run("encounters", EncounterChecks());

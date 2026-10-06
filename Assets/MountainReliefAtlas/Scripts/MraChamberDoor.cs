@@ -12,6 +12,8 @@ public sealed class MraChamberDoor : MonoBehaviour
     bool near; PlayerMovement qori;
 
     public string DiscoveredFlag => "mra:" + chamberId + ":discovered";
+    // A Qvale home (its own interior scene) rather than a cave.
+    bool IsHouse => Mra.World.Load()?.ChamberById(chamberId) is Mra.Chamber c && c.IsHouse;
     public bool Ready => string.IsNullOrEmpty(prerequisite) || GameSave.HasRelic(prerequisite);
 
     void Awake() => GetComponent<BoxCollider2D>().isTrigger = true;
@@ -20,7 +22,7 @@ public sealed class MraChamberDoor : MonoBehaviour
     {
         var q = MraState.QoriOf(other); if (q == null) return;
         near = true; qori = q;
-        if (GameSave.SetFlag(DiscoveredFlag)) TownHud.Toast("Found: " + chamberName);
+        if (GameSave.SetFlag(DiscoveredFlag)) { TownHud.Toast("Found: " + chamberName); Sfx.Play("Discovery"); }
     }
     void OnTriggerExit2D(Collider2D other) { if (MraState.IsQori(other)) near = false; }
 
@@ -35,6 +37,7 @@ public sealed class MraChamberDoor : MonoBehaviour
         if (AreaTransition.IsTransitioning) return false;
         if (!Ready) { TownHud.Toast($"{chamberName}: you'll need the {MraState.Describe("relic:" + prerequisite)} in there."); return false; }
         if (qori == null) qori = FindAnyObjectByType<PlayerMovement>();
+        Sfx.Play(IsHouse ? "Door_Enter" : "Cave_Enter");
         AreaTransition.Travel(chamberScene, "entry", qori);
         return true;
     }

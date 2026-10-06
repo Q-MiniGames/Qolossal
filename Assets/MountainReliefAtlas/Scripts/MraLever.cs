@@ -36,8 +36,9 @@ public sealed class MraLever : MechanismSwitch
     // Up calls this; so can tests.
     public void Use()
     {
-        if (sequence != null) { sequence.Press(this); return; }
+        if (sequence != null) { Sfx.Play("SeedSwitch_Hit", transform.position); sequence.Press(this); return; }
         if (latch && isOn) return;
+        Sfx.Play(GetComponent<MraWheelSpin>() != null ? "Wheel_Turn" : "Lever_Pull", transform.position);
         SetLit(!isOn || latch);
         Signal(isOn);
         if (Fx.Library != null) Fx.Leaves(transform.position + Vector3.up, 4, .8f);

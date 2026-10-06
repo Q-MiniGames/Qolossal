@@ -35,10 +35,15 @@ public sealed class MraGate : MonoBehaviour, IMechanismTarget
     void OnEnable() { GameSave.FlagsChanged += Refresh; GameSave.WorldChanged += Refresh; }
     void OnDisable() { GameSave.FlagsChanged -= Refresh; GameSave.WorldChanged -= Refresh; }
 
+    bool shown;
     public void Refresh()
     {
         if (this == null) return;
+        bool was = IsOpen;
         IsOpen = ShouldBeOpen;
+        // A change while Qori is here (not the scene's own setup) is heard.
+        if (shown && was != IsOpen) Sfx.Play(IsOpen ? "Gate_Open" : "Gate_Close", transform.position);
+        shown = true;
         if (visual != null) visual.SetOpen(IsOpen);
         else if (solid != null) solid.enabled = !IsOpen;
         foreach (var art in plainArt) if (art != null) art.enabled = !IsOpen;

@@ -34,6 +34,7 @@ public sealed class SapOrb : MonoBehaviour
         if (player != null && to.magnitude < Collect && player.Health < player.MaximumHealth)
         {
             player.Heal(1);
+            Sfx.Play("Heal");
             Fx.Pop(image.sprite, transform.position, .6f, .25f, 26);
             Destroy(gameObject); return;
         }

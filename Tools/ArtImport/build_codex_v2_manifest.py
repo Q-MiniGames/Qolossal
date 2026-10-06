@@ -261,6 +261,12 @@ def batch12_registration(name):
                 continue
             for e in json.load(open(path, encoding="utf-8")):
                 _batch12[e["name"]] = {"ppu": e["pixelsPerUnit"], "pivot": e["pivot"], "wrapU": e["wrapU"], "wrapV": e["wrapV"], "src": batch + "/" + e["workstream"]}
+        # Batch 14 (Review 25): the depth backgrounds for the Cradle, the Summit and Qvale (144 PPU,
+        # bottom-centre pivot; the overlook vista clamps, the rest repeat in U).
+        path = os.path.join(SOURCE, "Batch14", "MANIFEST.json")
+        if os.path.exists(path):
+            for e in json.load(open(path, encoding="utf-8"))["assets"]:
+                _batch12[e["name"]] = {"ppu": e["ppu"], "pivot": e["pivot"], "wrapU": e["wrapU"], "wrapV": e["wrapV"], "src": "Batch14/" + e["workstream"]}
     return _batch12.get(name)
 
 

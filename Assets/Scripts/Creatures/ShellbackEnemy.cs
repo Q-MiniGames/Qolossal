@@ -23,7 +23,9 @@ public sealed class ShellbackEnemy : EnemyBase
         body.interpolation = RigidbodyInterpolation2D.Interpolate;
         centreX = body.position.x;
         ground = new ContactFilter2D(); ground.SetLayerMask(LayerMask.GetMask("Ground")); ground.useTriggers = false;
+        steps = SfxEmitter.Attach(gameObject, "Shellback_Walk", false);
     }
+    SfxEmitter steps;
 
     public override CombatDamageResponse ReceiveCombatHit(CombatDamage hit)
     {
@@ -32,6 +34,7 @@ public sealed class ShellbackEnemy : EnemyBase
         {
             if (WeaponKinds.Of(hit) != WeaponKind.Mace) { blockedShakeUntil = Time.time + .15f; return WeaponKinds.Blocked(); }
             shellIntact = false;
+            Sfx.Play("Shellback_ShellCrack", body.position);
             HitStop.Freeze(HitStop.Stagger);
             flashUntil = Time.time + .12f;
             var shell = rig != null ? rig.Bone("Shell").GetComponentInChildren<SpriteRenderer>() : null;
@@ -62,6 +65,7 @@ public sealed class ShellbackEnemy : EnemyBase
         if (rig == null) return;
         rig.Face(direction);
         float speed = Mathf.Abs(body.linearVelocity.x);
+        if (steps != null) steps.Playing = IsAlive && speed > .2f;
         phase += Time.deltaTime * speed * 4.5f;
         for (int i = 0; i < Legs.Length; i++)
         {

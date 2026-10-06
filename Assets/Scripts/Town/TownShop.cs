@@ -36,6 +36,8 @@ public sealed class TownShop : MonoBehaviour
     static void ResetState() => IsOpenAny = false;
 
     string SoldFlag(int i) => $"sold:{name}:{i}";
+    // Which shop this is, for its sounds: Brannick's forge, Scribble's pages, or any other.
+    string Kind => title.IndexOf("forge", StringComparison.OrdinalIgnoreCase) >= 0 ? "forge" : title.IndexOf("pages", StringComparison.OrdinalIgnoreCase) >= 0 ? "pages" : "";
     public bool IsSold(int i) => items[i].once && TownState.Has(SoldFlag(i));
 
     public void Open()
@@ -46,12 +48,14 @@ public sealed class TownShop : MonoBehaviour
         for (int i = 0; i < items.Count; i++) if (TownState.Check(items[i].available)) listed.Add(i);
         IsOpen = IsOpenAny = true; openedFrame = Time.frameCount; selected = 0;
         ModalUi.Open(); canvas.enabled = true; Refresh();
+        Sfx.Play(Kind == "forge" ? "Smithy_Anvil" : Kind == "pages" ? "Map_Unroll" : "UI_Confirm");
     }
 
     public void Close()
     {
         if (!IsOpen) return;
         IsOpen = IsOpenAny = false; canvas.enabled = false; ModalUi.Close();
+        Sfx.Play("UI_Back");
     }
 
     void Build()
@@ -92,8 +96,8 @@ public sealed class TownShop : MonoBehaviour
         {
             if (TownInput.Cancel()) { Close(); return; }
             int n = Mathf.Max(1, listed.Count);
-            if (TownInput.Up()) selected = (selected + n - 1) % n;
-            if (TownInput.Down()) selected = (selected + 1) % n;
+            if (TownInput.Up()) { selected = (selected + n - 1) % n; Sfx.Play("UI_Move"); }
+            if (TownInput.Down()) { selected = (selected + 1) % n; Sfx.Play("UI_Move"); }
             if (TownInput.Confirm() && listed.Count > 0) Buy(listed[selected]);
         }
         Refresh();
@@ -104,13 +108,15 @@ public sealed class TownShop : MonoBehaviour
     {
         if (IsSold(i)) return false;
         var it = items[i];
-        if (!TownState.Spend(it.price)) { deniedAt = Time.time; return false; }
+        if (!TownState.Spend(it.price)) { deniedAt = Time.time; Sfx.Play("Shop_Cannot"); return false; }
+        Sfx.Play(Kind == "forge" ? "Smithy_Upgrade" : Kind == "pages" ? "Map_Stamp" : "Shop_Buy");
         if (it.once) TownState.Set(SoldFlag(i));
         switch (it.effect)
         {
             case Effect.HeartSeed:
                 var health = FindAnyObjectByType<PlayerHealth>();
                 if (health != null) health.AddMaximum(1);
+                Sfx.Play("HeartSeed_Get");
                 TownHud.Toast("A new heart seed takes root. (+1 heart)");
                 break;
             case Effect.SetFlag:

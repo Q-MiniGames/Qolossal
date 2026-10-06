@@ -13,6 +13,15 @@ using UnityEngine;
 // camera height shared by every layer. Jumps, landings and the camera's framing leads don't move
 // it; a sustained climb lowers the near layers more than the far ones, in a fixed depth order.
 // Layers run after the camera (execution order), so they never lag it by a frame.
+//
+// Depth (optional, `depth` > 0): the layer's distance from the camera relative to the gameplay
+// terrain (terrain = 1, a far ridge = 25, a foreground plant nearer than the terrain < 1). It sets
+// the horizontal rate as a real camera would (screen speed 1/depth: follow.x = 1 - 1/depth, so a
+// foreground layer below 1 moves faster than the terrain), and it makes zoom behave like a camera
+// pulling back instead of a picture being scaled: zoomed out by k, a layer at depth D keeps
+// D / (D + k - 1) of its size on screen relative to the terrain, so the far ridges hardly change,
+// the near hills shrink a little, and a foreground plane shrinks more than the terrain.
+// Depth 0 keeps the earlier behaviour exactly (follow as set; every layer zooms by k together).
 [ExecuteAlways, DisallowMultipleComponent, DefaultExecutionOrder(10000)]
 public sealed class ParallaxLayer : MonoBehaviour
 {
@@ -35,6 +44,10 @@ public sealed class ParallaxLayer : MonoBehaviour
     [Tooltip("Colour of the band under the painting, usually the average of its bottom row.")] public Color belowColor = Color.white;
     [Tooltip("How far up into the painting the band fades in.")] [Min(0f)] public float belowBlend = .6f;
     public int sortingOrder = -90;
+    [Tooltip("0: off (follow and zoom as set). Otherwise distance from the camera relative to the terrain (1): sets the horizontal rate and the zoom response.")]
+    [Min(0f)] public float depth;
+    [Tooltip("The part of the painting drawn, in UV (x, y, width, height from bottom-left); (0, 0, 1, 1): all of it.")]
+    public Rect uvRect = new Rect(0f, 0f, 1f, 1f);
     public Camera targetCamera;
 
     private static readonly int MainTex = Shader.PropertyToID("_MainTex");
@@ -44,7 +57,15 @@ public sealed class ParallaxLayer : MonoBehaviour
 
     private Texture2D Painting => sprite != null ? sprite.texture : texture;
     private float Height => height > 0f ? height : sprite != null ? sprite.rect.height / sprite.pixelsPerUnit : texture != null ? texture.height / texturePixelsPerUnit : 0f;
-    private float Width => sprite != null ? Height * sprite.rect.width / sprite.rect.height : texture != null ? Height * texture.width / texture.height : 1f;
+    private float Width => (sprite != null ? Height * sprite.rect.width / sprite.rect.height : texture != null ? Height * texture.width / texture.height : 1f)
+                           * (uvRect.height > 0f ? uvRect.width / uvRect.height : 1f);
+
+    /// <summary>The horizontal share of the camera's motion the layer copies (from depth when set).</summary>
+    public float FollowX => depth > 0f ? 1f - 1f / depth : follow.x;
+
+    // The layer's size multiplier for a zoom of k (the view's size over composedForSize): k for an
+    // infinitely far layer (it holds its size on screen), 1 for the terrain (world-fixed).
+    float ZoomScale(float k) => depth > 0f ? k * depth / (depth + k - 1f) : k;
 
     private void OnEnable()
     {
@@ -106,6 +127,7 @@ public sealed class ParallaxLayer : MonoBehaviour
         Vector3 cam = view.transform.position;
         float halfWidth = view.orthographicSize * view.aspect + 1f;
         float k = composedForSize > 0f && view.orthographic ? view.orthographicSize / composedForSize : 1f;
+        k = ZoomScale(k);
         float h = Height * k, w = Width * k;
         float y;
         if (climbProgression)
@@ -124,14 +146,16 @@ public sealed class ParallaxLayer : MonoBehaviour
         // Where the painting's centre sits relative to the camera, in world units.
         // Zoomed (composedForSize), the offset scales with the layer, so every layer zooms about the
         // camera centre together instead of sliding against the others.
-        float drift = (baseX + cam.x * follow.x - cam.x) * k;
+        float drift = (baseX + cam.x * FollowX - cam.x) * k;
         float left = -halfWidth, right = halfWidth;
         if (!repeat) { left = Mathf.Max(left, drift - w * .5f); right = Mathf.Min(right, drift + w * .5f); }
-        float U(float x) => (x - drift) / w + .5f;
+        // A sub-rectangle (uvRect) maps onto the quad; repeating layers wrap within the whole texture.
+        float U(float x) => uvRect.x + ((x - drift) / w + .5f) * uvRect.width;
+        float v0 = uvRect.y, v1 = uvRect.y + uvRect.height;
 
         paintingMesh.Clear();
         paintingMesh.vertices = new[] { new Vector3(left, 0f), new Vector3(right, 0f), new Vector3(left, h), new Vector3(right, h) };
-        paintingMesh.uv = new[] { new Vector2(U(left), 0f), new Vector2(U(right), 0f), new Vector2(U(left), 1f), new Vector2(U(right), 1f) };
+        paintingMesh.uv = new[] { new Vector2(U(left), v0), new Vector2(U(right), v0), new Vector2(U(left), v1), new Vector2(U(right), v1) };
         paintingMesh.colors = new[] { tint, tint, tint, tint };
         paintingMesh.triangles = new[] { 0, 2, 1, 1, 2, 3 };
         paintingMesh.RecalculateBounds();

@@ -14,7 +14,7 @@ public sealed class MraDiscovery : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (!MraState.IsQori(other)) return;
-        if (GameSave.SetFlag(flag)) TownHud.Toast(label);
+        if (GameSave.SetFlag(flag)) { TownHud.Toast(label); Sfx.Play("Discovery"); }
         if (rewardOnVisit && !string.IsNullOrEmpty(rewardId)) GameSave.SetFlag(rewardId);
     }
 }

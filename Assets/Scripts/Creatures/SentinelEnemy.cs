@@ -26,7 +26,12 @@ public sealed class SentinelEnemy : EnemyBase
         ground = new ContactFilter2D(); ground.SetLayerMask(LayerMask.GetMask("Ground")); ground.useTriggers = false;
     }
 
-    void Enter(State s) { state = s; since = Time.time; }
+    float nextStep;
+    void Enter(State s)
+    {
+        state = s; since = Time.time;
+        if (s == State.Bash) Sfx.Play("Sentinel_Bash", body.position);
+    }
 
     public override CombatDamageResponse ReceiveCombatHit(CombatDamage hit)
     {
@@ -80,6 +85,7 @@ public sealed class SentinelEnemy : EnemyBase
                 break;
         }
         body.linearVelocity = new Vector2(vx, body.linearVelocity.y);
+        if (Mathf.Abs(vx) > .2f && state != State.Bash && Time.time >= nextStep) { nextStep = Time.time + .55f; Sfx.Play("Sentinel_Step", pos); }
     }
 
     protected override void LateUpdate()

@@ -41,6 +41,7 @@ public sealed class MraMusicPlayer : MonoBehaviour
     {
         var s = gameObject.AddComponent<AudioSource>();
         s.playOnAwake = false; s.loop = false; s.spatialBlend = 0f; s.volume = 0f; s.priority = 0;
+        s.outputAudioMixerGroup = Sfx.MusicGroup;   // the mixer's Music group, when there is one
         return s;
     }
 
@@ -69,7 +70,8 @@ public sealed class MraMusicPlayer : MonoBehaviour
         if (bGain <= 0f && b.isPlaying) b.Stop();
         float duck = ListeningSpot.IsSitting ? 0f : 1f;
         duckGain = Mathf.MoveTowards(duckGain, duck, Time.unscaledDeltaTime / 1.5f);
-        a.volume = level * aGain * duckGain; b.volume = level * bGain * duckGain;
+        float setting = SfxSettings.Music;   // the player's Music volume
+        a.volume = level * aGain * duckGain * setting; b.volume = level * bGain * duckGain * setting;
     }
     float duckGain = 1f;
 }

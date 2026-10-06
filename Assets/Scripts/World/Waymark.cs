@@ -33,6 +33,7 @@ public sealed class Waymark : MonoBehaviour
         if (other.attachedRigidbody == null || other.attachedRigidbody.GetComponent<PlayerMovement>() == null) return;
         if (!GameSave.Chart(LevelId)) return;
         chartedAt = Time.time;
+        Sfx.Play("Waymark_Light");
         if (icon != null) icon.sprite = chartedIcon;
         if (shrine != null && shrineLit != null) shrine.sprite = shrineLit;
         var lib = Fx.Library;

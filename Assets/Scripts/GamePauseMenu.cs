@@ -18,9 +18,10 @@ public sealed class GamePauseMenu : MonoBehaviour
     private string restartError;
     // Skinned menu (UiSkin): built on first pause; the IMGUI menu below is the fallback.
     private Canvas menuCanvas;
-    private GameObject mainPage, confirmPage;
+    private GameObject mainPage, confirmPage, soundPage;
+    private bool soundOptions;
     private Text errorText;
-    private Button firstMain, firstConfirm;
+    private Button firstMain, firstConfirm, firstSound;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     private static void ResetState()
@@ -35,10 +36,11 @@ public sealed class GamePauseMenu : MonoBehaviour
         toggle |= Gamepad.current != null && Gamepad.current.startButton.wasPressedThisFrame;
         if (toggle && !AreaTransition.IsTransitioning && !ChartScreen.BlocksPause && !ModalUi.IsOpen)   // an open dialogue, shop or listening spot takes Escape itself
         {
-            if (ownsPause && confirmingNewGame)
+            if (ownsPause && (confirmingNewGame || soundOptions))
             {
-                confirmingNewGame = false;
+                confirmingNewGame = soundOptions = false;
                 restartError = null;
+                Sfx.Play("UI_Back");
                 ShowMenu(true);
             }
             else if (ownsPause) Resume();
@@ -48,6 +50,7 @@ public sealed class GamePauseMenu : MonoBehaviour
 
     private void Pause()
     {
+        Sfx.Play("UI_Pause");
         ShowMenu(true);
         previousTimeScale = Time.timeScale;
         previousAudioPause = AudioListener.pause;
@@ -60,10 +63,11 @@ public sealed class GamePauseMenu : MonoBehaviour
     private void Resume()
     {
         if (!ownsPause) return;
+        Sfx.Play("UI_Unpause");
         Time.timeScale = previousTimeScale;
         AudioListener.pause = previousAudioPause;
         ownsPause = false;
-        confirmingNewGame = false;
+        confirmingNewGame = soundOptions = false;
         restartError = null;
         IsPaused = false;
         resumeFrame = Time.frameCount;
@@ -115,10 +119,11 @@ public sealed class GamePauseMenu : MonoBehaviour
         if (menuCanvas == null) return;
         menuCanvas.gameObject.SetActive(visible);
         if (!visible) return;
-        mainPage.SetActive(!confirmingNewGame);
+        mainPage.SetActive(!confirmingNewGame && !soundOptions);
         confirmPage.SetActive(confirmingNewGame);
+        soundPage.SetActive(soundOptions && !confirmingNewGame);
         errorText.text = restartError ?? "";
-        EventSystem.current?.SetSelectedGameObject((confirmingNewGame ? firstConfirm : firstMain).gameObject);
+        EventSystem.current?.SetSelectedGameObject((confirmingNewGame ? firstConfirm : soundOptions ? firstSound : firstMain).gameObject);
     }
 
     private bool BuildMenu()
@@ -129,7 +134,7 @@ public sealed class GamePauseMenu : MonoBehaviour
         menuCanvas.transform.SetParent(transform, false);
         var dim = GameHud.AddImage(menuCanvas.transform, "Dim", null, new Vector2(.5f, .5f), Vector2.zero, new Vector2(4000f, 4000f));
         dim.color = new Color(.08f, .1f, .1f, .55f); dim.raycastTarget = true;
-        var panel = GameHud.AddImage(menuCanvas.transform, "Panel", skin.panel, new Vector2(.5f, .5f), Vector2.zero, new Vector2(620f, 840f));
+        var panel = GameHud.AddImage(menuCanvas.transform, "Panel", skin.panel, new Vector2(.5f, .5f), Vector2.zero, new Vector2(620f, 960f));
         panel.type = Image.Type.Sliced; panel.preserveAspect = false;
 
         Text Label(Transform parent, string text, float y, int size, float height = 70f)
@@ -150,22 +155,40 @@ public sealed class GamePauseMenu : MonoBehaviour
             var button = image.gameObject.AddComponent<Button>();
             button.transition = Selectable.Transition.SpriteSwap;
             button.spriteState = new SpriteState { highlightedSprite = skin.buttonHover, selectedSprite = skin.buttonHover, pressedSprite = skin.buttonPressed };
+            button.onClick.AddListener(() => Sfx.Play(text == "Cancel" || text == "Back" ? "UI_Back" : "UI_Confirm"));
             if (onClick != null) button.onClick.AddListener(onClick);
             Label(image.transform, text, 2f, 32);
             return button;
         }
 
         mainPage = new GameObject("Main", typeof(RectTransform)); mainPage.transform.SetParent(panel.transform, false);
-        Label(mainPage.transform, "Paused", 325f, 46);
-        firstMain = MakeButton(mainPage.transform, "Resume", 215f, Resume);
-        MakeButton(mainPage.transform, "Chart", 95f, OpenChart);
+        Label(mainPage.transform, "Paused", 385f, 46);
+        firstMain = MakeButton(mainPage.transform, "Resume", 275f, Resume);
+        MakeButton(mainPage.transform, "Chart", 155f, OpenChart);
         // Freeze frames on big hits (HitStop): some players prefer them off.
-        var hitPause = MakeButton(mainPage.transform, "Hit pause", -25f, null);
+        var hitPause = MakeButton(mainPage.transform, "Hit pause", 35f, null);
         var hitPauseText = hitPause.GetComponentInChildren<Text>();
         hitPauseText.text = HitPauseLabel;
         hitPause.onClick.AddListener(() => { HitStop.Enabled = !HitStop.Enabled; hitPauseText.text = HitPauseLabel; });
-        MakeButton(mainPage.transform, "New Game", -145f, () => { confirmingNewGame = true; ShowMenu(true); });
-        MakeButton(mainPage.transform, "Quit", -265f, Quit);
+        MakeButton(mainPage.transform, "Sound", -85f, () => { soundOptions = true; ShowMenu(true); });
+        MakeButton(mainPage.transform, "New Game", -205f, () => { confirmingNewGame = true; ShowMenu(true); });
+        MakeButton(mainPage.transform, "Quit", -325f, Quit);
+
+        // Sound: each press steps a volume down by a fifth, from silent back to full.
+        soundPage = new GameObject("Sound", typeof(RectTransform)); soundPage.transform.SetParent(panel.transform, false);
+        Label(soundPage.transform, "Sound", 385f, 46);
+        Button Volume(string name, float y, System.Func<float> get, System.Action<float> set)
+        {
+            var b = MakeButton(soundPage.transform, name, y, null);
+            var t = b.GetComponentInChildren<Text>(); t.text = SfxSettings.Label(name, get());
+            b.onClick.AddListener(() => { set(SfxSettings.Step(get())); t.text = SfxSettings.Label(name, get()); });
+            return b;
+        }
+        firstSound = Volume("Master", 275f, () => SfxSettings.Master, v => SfxSettings.Master = v);
+        Volume("Music", 155f, () => SfxSettings.Music, v => SfxSettings.Music = v);
+        Volume("Effects", 35f, () => SfxSettings.Effects, v => SfxSettings.Effects = v);
+        Volume("Ambience", -85f, () => SfxSettings.Ambience, v => SfxSettings.Ambience = v);
+        MakeButton(soundPage.transform, "Back", -205f, () => { soundOptions = false; ShowMenu(true); });
 
         confirmPage = new GameObject("Confirm", typeof(RectTransform)); confirmPage.transform.SetParent(panel.transform, false);
         Label(confirmPage.transform, "Start a new game?", 190f, 40);
