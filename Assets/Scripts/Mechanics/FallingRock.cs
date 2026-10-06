@@ -76,6 +76,7 @@ public sealed class FallingRock : MonoBehaviour, IContactHazard
 
     void Shatter(Vector2 at)
     {
+        Sfx.Play("Rock_Fall", at);
         var lib = Fx.Library;
         if (lib != null) { Fx.Play(lib.dustLand, at + Vector2.up * .15f, 14f, 1.6f, 31); Fx.Leaves(at, 2, .6f); }
         image.enabled = false; if (hitbox != null) hitbox.enabled = false;

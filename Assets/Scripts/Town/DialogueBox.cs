@@ -57,6 +57,7 @@ public sealed class DialogueBox : MonoBehaviour
         lineText.text = "";
     }
 
+    bool LowVoice => Sfx.Library != null && System.Array.IndexOf(Sfx.Library.lowVoiceSpeakers, nameText.text) >= 0;
     string Body => lines[index].Contains("|") ? lines[index].Substring(lines[index].IndexOf('|') + 1) : lines[index];
 
     void Update()
@@ -65,8 +66,11 @@ public sealed class DialogueBox : MonoBehaviour
         string body = Body;
         if (shown < body.Length)
         {
+            int before = shown;
             shown = Mathf.Min(body.Length, Mathf.FloorToInt((Time.unscaledTime - typedAt) / CharSeconds));
             lineText.text = body.Substring(0, shown);
+            // A soft blip every third letter as it types (the library's cooldown thins it further).
+            if (shown / 3 != before / 3 && shown < body.Length && !char.IsWhiteSpace(body[shown - 1])) Sfx.Play(LowVoice ? "Dialogue_Blip_Low" : "Dialogue_Blip_Small");
         }
         arrow.enabled = shown >= body.Length && Mathf.Repeat(Time.unscaledTime, .9f) < .6f;
         if (Time.frameCount == openedFrame) return;   // the key that opened it doesn't also skip

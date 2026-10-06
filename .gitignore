@@ -48,3 +48,9 @@ crashlytics-build.properties
 /Tools/QoriRigAuthoring/work/
 __pycache__/
 /Tools/CreatureRigAuthoring/work/
+
+# Music staging (the imported WAVs live in Assets/Audio/Music, via Git LFS)
+/Tools/IncomingMusic/
+# Raw full-resolution QA capture folders (sheets, frames and results are committed)
+/Tools/MountainReliefAtlas/QA/captures/
+/Tools/MountainReliefAtlas/QA/LevelPolish/captures/

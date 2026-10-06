@@ -22,6 +22,7 @@ public sealed class HeartSeed : MonoBehaviour
         var health = other.attachedRigidbody.GetComponent<PlayerHealth>();
         if (health == null) return;
         collectedAt = Time.time;
+        Sfx.Play("HeartSeed_Get");
         GameSave.AddPickup(seedId);
         health.AddMaximum(1);
         var lib = Fx.Library;

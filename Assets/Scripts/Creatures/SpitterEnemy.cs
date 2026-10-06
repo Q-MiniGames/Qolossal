@@ -29,6 +29,7 @@ public sealed class SpitterEnemy : EnemyBase
         if (swellStart < 0f && sees && Time.time >= nextShot)
         {
             swellStart = Time.time;
+            Sfx.Play("Spitter_Swell", at);
             if (rig != null && rig.Point("Mouth") != null) Fx.Glint(rig.Point("Mouth").position);
         }
         if (swellStart >= 0f && Time.time - swellStart >= swellTime)
@@ -46,6 +47,7 @@ public sealed class SpitterEnemy : EnemyBase
         // Keep shots mostly forward: the flower can't spit behind or straight up.
         aim = new Vector2(Mathf.Sign(facing) * Mathf.Max(.55f, Mathf.Abs(aim.x)), Mathf.Clamp(aim.y, -.6f, .6f)).normalized;
         SpitterSeed.Launch(seed, from, aim * seedSpeed);
+        Sfx.Play("Spitter_Spit", from);
     }
 
     protected override void OnHurt(CombatDamage hit) => swellStart = -1f;

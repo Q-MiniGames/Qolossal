@@ -28,6 +28,8 @@ public sealed class QoriMovementFeedback : MonoBehaviour
     public void Initialize(PlayerMovement owner,QoriBodyRig bodyRig)
     {
         movement=owner;rig=bodyRig;if(owner==null)return;
+        // The recorded sounds (QoriSounds) replace these rustles wherever the player has them.
+        if(owner.GetComponent<QoriSounds>()!=null)tuning.sounds=false;
         thread=owner.GetComponent<PlayerThread>();
         audioSource=gameObject.AddComponent<AudioSource>();audioSource.playOnAwake=false;audioSource.spatialBlend=0;
         ownsFoot=tuning.footstepSound==null;ownsLand=tuning.landingSound==null;ownsThread=tuning.threadSound==null;

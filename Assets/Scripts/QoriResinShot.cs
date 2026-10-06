@@ -19,6 +19,7 @@ public sealed class QoriResinShot:MonoBehaviour
         var trail=obj.AddComponent<TrailRenderer>();trail.time=.065f;trail.startWidth=.035f;trail.endWidth=0;trail.minVertexDistance=.04f;trail.sortingOrder=13;
         shot.material=new Material(Shader.Find("Sprites/Default"));trail.sharedMaterial=shot.material;
         trail.startColor=new Color(1,.73f,.27f,.45f);trail.endColor=new Color(1,.73f,.27f,0);
+        Sfx.Play("Weapon_Sling_Shot");
         return shot;
     }
     void Update()
@@ -37,9 +38,10 @@ public sealed class QoriResinShot:MonoBehaviour
             {
                 var response=receiver.ReceiveCombatHit(new CombatDamage{Source=owner.gameObject,Attack=attack,Weapon=weapon,Point=hit.point,Normal=hit.normal,Direction=velocity.normalized,Damage=attack.damage,Knockback=velocity.normalized*attack.knockback.x+Vector2.up*attack.knockback.y});
                 if(response.Disposition==CombatHitDisposition.Ignored)continue;
+                Sfx.Play(response.Disposition==CombatHitDisposition.Blocked?"Combat_Blocked":"Weapon_Sling_Impact",hit.point);
                 Destroy(gameObject);return;
             }
-            if(!collider.isTrigger){Destroy(gameObject);return;}
+            if(!collider.isTrigger){Sfx.Play("Weapon_Sling_Impact",hit.point,.6f);Destroy(gameObject);return;}
         }
         transform.position+=(Vector3)delta;
     }

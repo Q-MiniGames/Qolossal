@@ -204,6 +204,72 @@ def batch8_registration(name):
     return _batch8.get(name)
 
 
+_batch10 = {}
+
+
+def batch10_registration(name):
+    """Batch 10's registrations (Review 21): W1 (the Wilted's mantle and cloak panels on Qori's bones),
+    W2 (weapon shrine, its reveal frames, the found banner), W3 (Long Causeway kit), W4 (Terraces kit)
+    and W6 (staff slash strip, upgrade icons). Normalized to {ppu, pivot, repeat, border, kind, sprites}."""
+    if not _batch10:
+        root = os.path.join(SOURCE, "Batch10")
+        def load(*parts):
+            path = os.path.join(root, *parts)
+            return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+        for p in load("W1", "REGISTRATION.json").get("parts", []):
+            _batch10[p["name"]] = {"ppu": p["pixelsPerUnit"], "pivot": p["pivotUnity"], "repeat": "", "kind": "character", "src": "Batch10/W1"}
+        w2 = load("W2", "REGISTRATION.json")
+        if w2:
+            for state in ("Sealed", "Open", "WeaponSlot"):
+                _batch10[f"Prop_WeaponShrine_{state}"] = {"ppu": w2["shrine"]["ppu"], "pivot": w2["shrine"]["pivot_unity"], "repeat": "", "kind": "world", "src": "Batch10/W2"}
+            for i in range(1, w2["fx"]["frames"] + 1):
+                _batch10[f"FX_WeaponFound_{i:02d}"] = {"ppu": w2["fx"]["ppu"], "pivot": w2["fx"]["pivot"], "repeat": "", "kind": "fx", "src": "Batch10/W2"}
+            b = w2["banner"]
+            left, bottom, right, top = b["border_left_bottom_right_top"]
+            _batch10["UI_WeaponFound_Banner"] = {"ppu": b["ppu"], "pivot": b["pivot"], "repeat": "", "kind": "ui", "border": [left, bottom, right, top], "src": "Batch10/W2"}
+        for stream, area in (("W3", "Causeway"), ("W4", "Terraces")):
+            slices = load(stream, "DECOR_SLICES.json")
+            for n, r in load(stream, "REGISTRATION.json").items():
+                if "canvas" not in r:   # assembly notes, not files
+                    continue
+                entry = {"ppu": r["ppu"], "pivot": r["pivot_unity"], "repeat": r.get("repeat") or "", "kind": "world", "src": f"Batch10/{stream}"}
+                if n == f"Decor_{area}_Sheet":
+                    # Slice keys are either "Causeway_Small_Fern" or "olive_fern": one Decor_<area>_ prefix either way.
+                    entry["sprites"] = [{"name": f"Decor_{area}_{k[len(area) + 1:] if k.startswith(area + '_') else k}",
+                                         "rect": s["rect_unity_bottom_left"], "pivot": s["pivot"]} for k, s in slices.items()]
+                _batch10[n] = entry
+        for n, r in load("W6", "REGISTRATION.json").items():
+            entry = {"ppu": r["ppu"], "pivot": r["pivot"], "repeat": "", "kind": "ui" if n.startswith("Icon_") else "fx", "src": "Batch10/W6"}
+            if r.get("slices"):   # matches the live SlashStrip_Sword's two sprites
+                entry["sprites"] = [{"name": s["name"], "rect": s["unity_bottom_left_rect"], "pivot": s["pivot"]} for s in r["slices"]]
+            _batch10[n] = entry
+    return _batch10.get(name)
+
+
+_batch12 = {}
+
+
+def batch12_registration(name):
+    """Batch 12's redo registrations (Review 23) and Batch 13's (Review 24), from their MANIFEST.json: the seamless Terraces
+    Far/Mid/Near (120 PPU, bottom-centre pivot, Repeat U) and the reveal/ending stills (100 PPU,
+    centre). These replace Batch 10's registration of the same names, which was for opaque,
+    non-repeating paintings."""
+    if not _batch12:
+        for batch in ("Batch12", "Batch13"):   # Batch 13 (Review 24): limestone cliff kit, loft, cave mouths, glyphs
+            path = os.path.join(SOURCE, batch, "MANIFEST.json")
+            if not os.path.exists(path):
+                continue
+            for e in json.load(open(path, encoding="utf-8")):
+                _batch12[e["name"]] = {"ppu": e["pixelsPerUnit"], "pivot": e["pivot"], "wrapU": e["wrapU"], "wrapV": e["wrapV"], "src": batch + "/" + e["workstream"]}
+        # Batch 14 (Review 25): the depth backgrounds for the Cradle, the Summit and Qvale (144 PPU,
+        # bottom-centre pivot; the overlook vista clamps, the rest repeat in U).
+        path = os.path.join(SOURCE, "Batch14", "MANIFEST.json")
+        if os.path.exists(path):
+            for e in json.load(open(path, encoding="utf-8"))["assets"]:
+                _batch12[e["name"]] = {"ppu": e["ppu"], "pivot": e["pivot"], "wrapU": e["wrapU"], "wrapV": e["wrapV"], "src": "Batch14/" + e["workstream"]}
+    return _batch12.get(name)
+
+
 def qori_part_import(part):
     """Pivot and pixels per unit of a Qori rig part, from its .meta (the Wilted reuses the rig's bones)."""
     import re
@@ -227,6 +293,24 @@ def settings_for(category, name):
         s["wrapV"] = "Repeat"
     if name in TILE_H or name in TILE_V or name in TILE_FILL:
         s["mesh"] = "FullRect"  # required for SpriteRenderer tiled draw mode
+
+    batch12 = batch12_registration(name)
+    if batch12 is not None:
+        s["ppu"], s["basis"], s["mesh"] = batch12["ppu"], batch12["src"], "FullRect"
+        s["pivot"] = [round(float(v), 5) for v in batch12["pivot"]]
+        s["wrapU"], s["wrapV"] = batch12["wrapU"], batch12["wrapV"]
+        return s
+
+    batch10 = batch10_registration(name)
+    if batch10 is not None:
+        s["ppu"], s["basis"], s["mesh"] = batch10["ppu"], batch10["src"], "FullRect"
+        s["pivot"] = [round(v, 5) for v in batch10["pivot"]]
+        if "x" in batch10["repeat"]: s["wrapU"] = "Repeat"
+        if "y" in batch10["repeat"]: s["wrapV"] = "Repeat"
+        if batch10.get("border"): s["border"] = list(batch10["border"])
+        if batch10["kind"] == "character": s["mesh"] = "Tight"   # like the accepted Wilted parts
+        s["mipmaps"] = batch10["kind"] in ("character", "fx") and not name.startswith("SlashStrip_")
+        return s
 
     batch8 = batch8_registration(name) if category in ("Terrain/Body", "Props", "Town", "Backgrounds", "Decor", "Characters/Town", "UI") else None
     batch7 = batch7_registration(name) if batch8 is None and category in ("Props", "Effects", "UI", "Guardians") else None
@@ -299,7 +383,7 @@ def settings_for(category, name):
         # The map screen and the stir's full-screen vistas are UI images; the map is zoomed, so it keeps mipmaps.
         s["ppu"], s["basis"] = UI_PPU, "UI canvas: 1 px = 1 reference px"
         s["mesh"], s["pivot"], s["mipmaps"] = "FullRect", [0.5, 0.5], category == "Chart"
-    elif category == "Cinematics":
+    elif category in ("Cinematics", "Cinematics/Spoilers", "QuakeVistas"):   # Batch 11: ending stills, quake vistas
         s["ppu"], s["basis"] = UI_PPU, "full-screen 1920x1080 still: 1 px = 1 reference px"
         s["mesh"], s["pivot"] = "FullRect", [0.5, 0.5]
     elif name in W5_ITEMS:
@@ -456,7 +540,9 @@ def build_entry(category, name, reviewed_sha):
         longest = max(im.size)
     if longest > DEFAULT_MAX_SIZE:
         entry["maxSize"] = 1 << (longest - 1).bit_length()
-    if category == "Decor" and name.endswith("_Sheet"):
+    if (batch10_registration(name) or {}).get("sprites"):
+        entry["sprites"] = batch10_registration(name)["sprites"]
+    elif category == "Decor" and name.endswith("_Sheet"):
         entry["sprites"] = decor_sprites(name)
     if name in PIECE_SHEETS:
         entry["sprites"] = piece_sprites(category, name)
@@ -466,7 +552,7 @@ def build_entry(category, name, reviewed_sha):
         with open(os.path.join(SOURCE, "Phase2", "QA", "NINE_SLICE.json")) as f:
             left, right, top, bottom = json.load(f)["border_left_right_top_bottom"]
         entry["border"] = [left, bottom, right, top]  # Unity order: x=L, y=B, z=R, w=T
-    if category == "UI" and not batch7_registration(name) and not batch8_registration(name):
+    if category == "UI" and not batch7_registration(name) and not batch8_registration(name) and not batch10_registration(name):
         notes_path = os.path.join(SOURCE, "UI", "QA", "NINE_SLICE_NOTES.json")
         with open(notes_path) as f:
             notes = json.load(f)

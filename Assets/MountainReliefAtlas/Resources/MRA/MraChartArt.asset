@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fb2076a237ecf49a66d153dce6edd0, type: 3}
+  m_Name: MraChartArt
+  m_EditorClassIdentifier: Assembly-CSharp::MraChartArt
+  maps:
+  - {fileID: 21300000, guid: 5618cac3e4781a54b8e1de78c2b00adf, type: 3}
+  - {fileID: 21300000, guid: 170399363735cdd4ba5505c9dc62fd64, type: 3}
+  - {fileID: 21300000, guid: cec199a93d0c2ae42a154d4edfffc52b, type: 3}
+  - {fileID: 21300000, guid: dae924a481687aa4ebcf8c7b87b18488, type: 3}
+  - {fileID: 21300000, guid: 2ec97aa0b2a7e204383f8e93095ec55d, type: 3}
+  - {fileID: 21300000, guid: 5b1272c95e6b6654fabb2d1427784e58, type: 3}
+  - {fileID: 21300000, guid: fe133e92f2c38104fbe4106b56e5da17, type: 3}
+  - {fileID: 21300000, guid: a1f349e572264bc4fbb35d7fc387a597, type: 3}
+  frame: {fileID: 21300000, guid: 03bc5893df9adf840b61351d9a1d4f8f, type: 3}
+  qori: {fileID: 21300000, guid: 765633c1a9d173c44a214a1f0a522f58, type: 3}
+  waymark: {fileID: 21300000, guid: 4525b76c5d7f1a749867b2a6a88b7193, type: 3}
+  shrine: {fileID: 21300000, guid: 7c0ed6fa791e0b04abcc81d099d0568d, type: 3}
+  cave: {fileID: 21300000, guid: 5d924e14b75064745b45d801b90d32f8, type: 3}
+  unexplored: {fileID: 21300000, guid: d75ccc670097eb343b572955213e11ab, type: 3}
+  npc: {fileID: 21300000, guid: 2067cefaf0eb41c4fae1bd0121670156, type: 3}
+  finalAssembly: {fileID: 21300000, guid: 0962b2fc4fa2ef346a4c6c21365b1077, type: 3}

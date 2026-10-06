@@ -21,6 +21,7 @@ public sealed class MovingPlatform : MonoBehaviour
         body.bodyType = RigidbodyType2D.Kinematic;
         body.interpolation = RigidbodyInterpolation2D.Interpolate;
         start = body.position;
+        SfxEmitter.Attach(gameObject, "MovingPlatform_Loop");
     }
 
     // Moves by velocity so riders (PlayerMovement adds this body's velocity while standing on it)

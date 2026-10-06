@@ -8,8 +8,13 @@ public static class WeaponKinds
     public static WeaponKind Of(CombatDamage hit)
     {
         if (hit.Attack != null && hit.Attack.slingProjectile) return WeaponKind.Sling;
-        if (hit.Weapon == null) return WeaponKind.Unknown;
-        switch (hit.Weapon.weaponId)
+        return OfWeapon(hit.Weapon);
+    }
+
+    public static WeaponKind OfWeapon(WeaponDefinition weapon)
+    {
+        if (weapon == null) return WeaponKind.Unknown;
+        switch (weapon.weaponId)
         {
             case "forest-0": case "reedblade": return WeaponKind.Sword;
             case "forest-2": return WeaponKind.Mace;

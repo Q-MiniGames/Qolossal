@@ -55,6 +55,8 @@ public sealed class PlayerMovement : MonoBehaviour
     public float LastLandingSpeed { get; private set; }
     public float LastLandingTime { get; private set; } = float.NegativeInfinity;
     public int ResetVersion { get; private set; }
+    /// <summary>Counts returns to the checkpoint (a death, a fall, deep water); a scene's own start counts too.</summary>
+    public int RespawnVersion { get; private set; }
     [Header("Running")]
     [SerializeField, Min(0f)] private float moveSpeed = 7f;
     [SerializeField, Min(0f)] private float runSpeed = 10.5f;
@@ -90,6 +92,8 @@ public sealed class PlayerMovement : MonoBehaviour
     public Vector2 DashStart { get; private set; }
     /// <summary>True while the Glidecap is open (jump held while falling).</summary>
     public bool IsGliding { get; private set; }
+    /// <summary>True while Jump is held.</summary>
+    public bool JumpHeld => jumpHeld;
     /// <summary>True once the air dash is spent; ground, a wall or a thread renews it.</summary>
     public bool AirDashUsed => airDashUsed;
     private float dashUntil, nextDashAt, lastDashPressedTime = float.NegativeInfinity;
@@ -185,6 +189,7 @@ public sealed class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        if (GetComponent<QoriSounds>() == null) gameObject.AddComponent<QoriSounds>();
         body = GetComponent<Rigidbody2D>();
         combatController=GetComponent<PlayerCombat>();
         ResetObservation();
@@ -367,6 +372,9 @@ public sealed class PlayerMovement : MonoBehaviour
         if (checkpoint == null) return;
         if (activeCheckpoint != null && activeCheckpoint != checkpoint)
             activeCheckpoint.SetActiveMarker(false);
+        // A new checkpoint is heard (a Waymark charting its level plays its own, over this one), but
+        // not the one an arrival lands Qori on.
+        if (activeCheckpoint != checkpoint && !AreaTransition.IsTransitioning && Time.timeSinceLevelLoad > .5f) Sfx.Play("Checkpoint_Touch");
         activeCheckpoint = checkpoint;
         respawnPosition = position;
         checkpoint.SetActiveMarker(true);
@@ -733,6 +741,7 @@ public sealed class PlayerMovement : MonoBehaviour
     {
         if (!isActiveAndEnabled) return;
         Teleport(respawnPosition);
+        RespawnVersion++;
         PlayerHealth health = GetComponent<PlayerHealth>();
         if (health != null) health.RestoreAfterRespawn();
     }

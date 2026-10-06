@@ -22,6 +22,8 @@ public sealed class VistaZone : MonoBehaviour
     // Set while a stir moves the camera itself: the zones let go (and drop their lift).
     public static bool Suspended;
     public static float NormalSize => normalSize > 0f ? normalSize : 5f;
+    /// <summary>The lift the active zone adds for rendering (it is off the camera between LateUpdate and the next Update; tests read it).</summary>
+    public static float CurrentLift => zone != null && !Suspended ? zone.lift * Mathf.SmoothStep(0f, 1f, current) : 0f;
 
     void Awake() { GetComponent<BoxCollider2D>().isTrigger = true; }
 

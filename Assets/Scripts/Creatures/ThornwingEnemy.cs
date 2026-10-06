@@ -18,9 +18,16 @@ public sealed class ThornwingEnemy : EnemyBase
         GetComponent<CircleCollider2D>().isTrigger = true;
         home = body.position;
         maximumHealth = Mathf.Max(1, maximumHealth);
+        wings = SfxEmitter.Attach(gameObject, "Thornwing_Hover");
     }
+    SfxEmitter wings;
 
-    void Enter(State s) { state = s; since = Time.time; }
+    void Enter(State s)
+    {
+        state = s; since = Time.time;
+        if (s == State.Telegraph) Sfx.Play("Thornwing_Rear", body.position);
+        else if (s == State.Dive) Sfx.Play("Thornwing_Dive", body.position);
+    }
 
     void FixedUpdate()
     {
@@ -62,6 +69,7 @@ public sealed class ThornwingEnemy : EnemyBase
     protected override void LateUpdate()
     {
         base.LateUpdate();
+        if (wings != null) wings.Playing = IsAlive;
         if (rig == null) return;
         rig.Face(facing);
         bool diving = state == State.Dive, rearing = state == State.Telegraph;

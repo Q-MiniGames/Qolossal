@@ -22,9 +22,11 @@ public sealed class ChartScreen : MonoBehaviour
     // The pause menu ignores Esc on the frame the Chart closed with it.
     public static bool BlocksPause => IsOpen || Time.frameCount == closedFrame;
     public static ChartScreen Instance { get; private set; }
+    // A scene's own map, opened by the pause menu's Chart button where this Chart doesn't exist.
+    public static System.Action OpenReplacement;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-    static void ResetState() { IsOpen = false; closedFrame = -1; Instance = null; }
+    static void ResetState() { IsOpen = false; closedFrame = -1; Instance = null; OpenReplacement = null; }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void Register()
@@ -37,7 +39,7 @@ public sealed class ChartScreen : MonoBehaviour
     // Every game area gets a Chart (sandbox and lab scenes don't).
     static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (Instance != null || GameArea.InScene == null) return;
+        if (Instance != null || GameArea.InScene == null || !GameArea.InScene.legacyChart) return;
         var skin = UiSkin.Load();
         if (skin == null || skin.chartBase == null || WorldAtlas.Load() == null) return;
         new GameObject("Chart").AddComponent<ChartScreen>();

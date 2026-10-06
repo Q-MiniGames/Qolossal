@@ -23,7 +23,7 @@ public sealed class CrumblePlatform : MonoBehaviour
         if (state != State.Solid || collision.rigidbody == null || collision.rigidbody.GetComponent<PlayerMovement>() == null) return;
         // Only when landed on top (contact normal points down into the platform from the player).
         for (int i = 0; i < collision.contactCount; i++)
-            if (collision.GetContact(i).normal.y < -.6f) { state = State.Shaking; since = Time.time; return; }
+            if (collision.GetContact(i).normal.y < -.6f) { state = State.Shaking; since = Time.time; Sfx.Play("Platform_Crumble", transform.position); return; }
     }
 
     void Update()
@@ -45,6 +45,7 @@ public sealed class CrumblePlatform : MonoBehaviour
                 if (Time.time - since >= respawn && !Blocked())
                 {
                     state = State.Solid; solid.enabled = true; image.enabled = true;
+                    Sfx.Play("Platform_Reform", transform.position);
                     image.color = new Color(1f, 1f, 1f, 0f);
                 }
                 break;

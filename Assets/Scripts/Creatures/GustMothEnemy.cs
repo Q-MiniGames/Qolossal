@@ -23,9 +23,11 @@ public sealed class GustMothEnemy : EnemyBase
         body.bodyType = RigidbodyType2D.Kinematic; body.interpolation = RigidbodyInterpolation2D.Interpolate;
         GetComponent<CircleCollider2D>().isTrigger = true;
         home = body.position;
+        wings = SfxEmitter.Attach(gameObject, "GustMoth_Wings");
     }
+    SfxEmitter wings;
 
-    void Enter(State s) { state = s; since = Time.time; }
+    void Enter(State s) { state = s; since = Time.time; if (wings != null) wings.Playing = IsAlive; }
 
     void FixedUpdate()
     {
@@ -54,6 +56,7 @@ public sealed class GustMothEnemy : EnemyBase
     // The wind blast: painted streaks rolling forward, and a push for Qori if he's in its path.
     void Blast(Vector2 pos)
     {
+        Sfx.Play("GustMoth_Blast", pos);
         if (gust != null)
             for (int i = 0; i < 3; i++)
             {

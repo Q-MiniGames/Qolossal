@@ -14,7 +14,13 @@ public sealed class SecretWall : MonoBehaviour
 
     void Awake() => GetComponent<BoxCollider2D>().isTrigger = true;
 
-    void OnTriggerEnter2D(Collider2D other) { if (IsQori(other)) inside = true; }
+    bool revealed;
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!IsQori(other)) return;
+        inside = true;
+        if (!revealed) { revealed = true; Sfx.Play("SecretWall_Open", transform.position); }
+    }
     void OnTriggerExit2D(Collider2D other) { if (IsQori(other)) inside = false; }
     static bool IsQori(Collider2D c) => c.attachedRigidbody != null && c.attachedRigidbody.GetComponent<PlayerMovement>() != null;
 

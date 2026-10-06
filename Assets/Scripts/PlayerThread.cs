@@ -71,6 +71,7 @@ public sealed class PlayerThread : MonoBehaviour
         hookAction = new InputAction("Hook", InputActionType.Button);
 
         hookAction.AddBinding("<Mouse>/rightButton");
+        hookAction.AddBinding("<Gamepad>/rightTrigger");   // casts; the left trigger pulls (below)
 
         if (obstacleLayers.value == 0)
             obstacleLayers = LayerMask.GetMask("Ground");

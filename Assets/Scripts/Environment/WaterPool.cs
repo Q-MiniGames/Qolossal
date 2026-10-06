@@ -15,7 +15,7 @@ public sealed class WaterPool : MonoBehaviour
         var player = other.attachedRigidbody != null ? other.attachedRigidbody.GetComponent<PlayerMovement>() : null;
         if (player == null) return;
         wader = player;
-        if (player.LastLandingSpeed > 3f || !player.IsGrounded) Ripple(player, 1.1f);   // splashing in
+        if (player.LastLandingSpeed > 3f || !player.IsGrounded) { Ripple(player, 1.1f); Sfx.Play("Qori_Step_Water"); }   // splashing in
     }
 
     void OnTriggerExit2D(Collider2D other)

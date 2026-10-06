@@ -52,6 +52,7 @@ public sealed class PlayerHealth : MonoBehaviour
         if (!isActiveAndEnabled || !movement.isActiveAndEnabled || Time.time < protectedUntil) return;
         health--;
         protectedUntil = Time.time + invulnerabilityTime;
+        Sfx.Play(health <= 0 ? "Qori_Death" : "Qori_Hurt");
         if (health <= 0)
         {
             movement.Respawn();

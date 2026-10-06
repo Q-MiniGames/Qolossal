@@ -17,6 +17,7 @@ public sealed class SeedSwitch : MechanismSwitch, ICombatDamageReceiver
         shakeUntil = Time.time + .15f;
         if (WeaponKinds.Of(hit) != WeaponKind.Sling) return WeaponKinds.Blocked();
         triggered = true;
+        Sfx.Play("SeedSwitch_Hit", transform.position);
         image.sprite = on;
         Signal(true);
         return CombatDamageResponse.Applied(0f);
