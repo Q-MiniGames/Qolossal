@@ -549,7 +549,6 @@ GameObject:
   - component: {fileID: 843235589}
   - component: {fileID: 843235588}
   - component: {fileID: 843235587}
-  - component: {fileID: 843235586}
   - component: {fileID: 843235590}
   m_Layer: 0
   m_Name: GameManager
@@ -558,22 +557,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &843235586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843235585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3e045b4f449d134c9074910b963b411, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MraSession
-  regionId: MR06
-  chamberId: MR06_C01
-  redirectScene: MRAtlas_MR07_Summit
-  redirectArrival: mra:MR07:cp:10
 --- !u!114 &843235587
 MonoBehaviour:
   m_ObjectHideFlags: 0

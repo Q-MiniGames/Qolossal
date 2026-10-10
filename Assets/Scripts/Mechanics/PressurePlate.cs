@@ -15,7 +15,7 @@ public sealed class PressurePlate : MechanismSwitch
 
     void FixedUpdate()
     {
-        var filter = new ContactFilter2D(); filter.NoFilter();
+        var filter = ContactFilter2D.noFilter;
         int n = sensor.Overlap(filter, found);
         bool now = false;
         for (int i = 0; i < n; i++)

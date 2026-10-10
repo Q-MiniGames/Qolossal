@@ -75,7 +75,8 @@ public sealed class MraFrameProbe : MonoBehaviour
         void Write() => File.WriteAllText(ReportPath, rows.ToString() + string.Join(",\n", regionRows) + "\n ]\n}\n");
         Write();
         Debug.Log("[MraFrameProbe] baseline");
-        var baseline = SceneManager.LoadSceneAsync("A0_TestRoom");
+        // The test room is out of the shipping build list; the baseline runs only when it's included.
+        var baseline = Application.CanStreamedLevelBeLoaded("A0_TestRoom") ? SceneManager.LoadSceneAsync("A0_TestRoom") : null;
         if (baseline != null)
         {
             float limit = Time.realtimeSinceStartup + 30f;

@@ -76,12 +76,15 @@ public sealed class GamePauseMenu : MonoBehaviour
 
     private void OnDisable() => Resume();
 
-    // Forgets the saved game. In an area, the game restarts in the first area (the first scene in
-    // the build list); a sandbox scene just restarts itself.
+    // The first area of a new game: the Cradle, by path rather than build position.
+    const string FirstArea = "Assets/MountainReliefAtlas/Scenes/MRAtlas_MR01_Cradle.unity";
+
+    // Forgets the saved game. In an area, the game restarts in the first area (MR01 Cradle);
+    // a sandbox scene just restarts itself.
     private void StartNewGame()
     {
         Scene scene = SceneManager.GetActiveScene();
-        int target = GameArea.InScene != null ? 0 : scene.buildIndex;
+        int target = GameArea.InScene != null ? SceneUtility.GetBuildIndexByScenePath(FirstArea) : scene.buildIndex;
         // Validate before deleting anything: the level must be loadable.
         if (target < 0 || !Application.CanStreamedLevelBeLoaded(target))
         {
