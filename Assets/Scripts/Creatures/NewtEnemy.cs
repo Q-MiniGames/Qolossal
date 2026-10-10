@@ -50,7 +50,7 @@ public sealed class NewtEnemy : EnemyBase
     Vector2 LandingNear(Vector2 target)
     {
         float x = home.x + Mathf.Clamp(target.x - home.x, -leapReach, leapReach);
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(x, home.y + 3f), Vector2.down, 8f, LayerMask.GetMask("Ground"));
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(x, home.y + 3f), Vector2.down, 8f, GroundLayer.Mask);
         return hit ? hit.point : new Vector2(x, home.y);
     }
 

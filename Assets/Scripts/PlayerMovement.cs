@@ -69,6 +69,15 @@ public sealed class PlayerMovement : MonoBehaviour
     [SerializeField, Min(0f)] private float jumpBufferTime = 0.12f;
     [SerializeField, Range(0.1f, 1f)] private float jumpReleaseMultiplier = 0.5f;
     [SerializeField, Min(1f)] private float maximumFallSpeed = 22f;
+    [Tooltip("Gravity multiplier while falling: a quicker, weightier fall than the rise.")]
+    [SerializeField, Min(1f)] private float fallGravityMultiplier = 1.7f;
+    [Tooltip("Gravity multiplier near the top of a jump while Jump is held: a brief hang at the apex.")]
+    [SerializeField, Range(.1f, 1f)] private float apexGravityMultiplier = .55f;
+    [Tooltip("Vertical speed (units/s) either side of zero that counts as the apex.")]
+    [SerializeField, Min(0f)] private float apexSpeedBand = 1.5f;
+    [Tooltip("How quickly Qori's own air speed fades with the stick released (units/s per second). " +
+             "Momentum from a thread swing or a flower boost is kept until he lands.")]
+    [SerializeField, Min(0f)] private float airDeceleration = 25f;
 
     [Header("Wind Leaf dash (relic)")]
     [SerializeField, Min(1f)] private float dashSpeed = 19f;
@@ -143,8 +152,11 @@ public sealed class PlayerMovement : MonoBehaviour
     [SerializeField] private float resetBelowY = -15f;
     private const float GroundSnapDistance = .3f;
     private const float MaxSlopeRise = 1.2f;   // tan of ~50 degrees, the steepest walkable surface
-    private const int LaunchGraceSteps = 8;   // physics steps after a jump/boost before ground can catch Qori
-    private int stepsSinceLaunch = LaunchGraceSteps + 1;
+    private const float LaunchGraceSeconds = .16f;   // after a jump/boost, before ground can catch Qori
+    private int LaunchGraceSteps => Mathf.CeilToInt(LaunchGraceSeconds / Time.fixedDeltaTime - .001f);
+    private int stepsSinceLaunch = int.MaxValue / 2;
+    // A thread swing's or flower boost's momentum: kept through the air (no air drag) until he lands.
+    private bool carryingMomentum;
 
     private Rigidbody2D body;
     private BoxCollider2D playerCollider;
@@ -495,6 +507,8 @@ public sealed class PlayerMovement : MonoBehaviour
             LandingVersion++;
         }
         if(!grounded && !attached && !recovering && launch==LaunchKind.None && WallDirection!=0 && velocity.y<=1f && moveInput*WallDirection>=-.1f && ledgeVerticalInput>=-.1f && Time.time>=ledgeRetryAt && TryGrabLedge(WallDirection))return;
+        if (attached || launch == LaunchKind.FlowerBoost) carryingMomentum = true;
+        else if (grounded || WallDirection != 0) carryingMomentum = false;
         if (recovering)
         {
             // Let physics resolve the hit before normal steering resumes.
@@ -533,6 +547,11 @@ public sealed class PlayerMovement : MonoBehaviour
             if (!alreadyFaster)
                 velocity.x = Mathf.MoveTowards(velocity.x, moveInput * moveSpeed,
                     airAcceleration * airControl * Time.fixedDeltaTime);
+        }
+        else if (!carryingMomentum && Time.time >= wallSteeringUntil)
+        {
+            // Stick released in the air: his own speed fades, so a jump ends about where it's let go.
+            velocity.x = Mathf.MoveTowards(velocity.x, 0f, airDeceleration * airControl * Time.fixedDeltaTime);
         }
 
         bool combatAllowsJump=combatController==null||combatController.CanCancel(CombatCancel.Jump);
@@ -617,6 +636,18 @@ public sealed class PlayerMovement : MonoBehaviour
         if (velocity.y <= 0f)
             canCutJump = false;
 
+        // A weightier fall than rise, and a brief hang at the apex while Jump is held. Left alone while
+        // something else owns his vertical motion (ground, thread, wall, dash, Glidecap, an air attack's
+        // own gravity) and in the step a launch sets his speed.
+        bool freeFlight = !grounded && !attached && !IsWallSliding && !IsDashing && !IsGliding && launch == LaunchKind.None &&
+                          (combatController == null || Mathf.Approximately(combatController.GravityMultiplier, 1f));
+        if (freeFlight)
+        {
+            float multiplier = jumpHeld && Mathf.Abs(velocity.y) <= apexSpeedBand ? apexGravityMultiplier
+                : velocity.y < 0f ? Mathf.Lerp(1f, fallGravityMultiplier, -velocity.y / Mathf.Max(.01f, apexSpeedBand))
+                : 1f;
+            velocity.y += Physics2D.gravity.y * body.gravityScale * (multiplier - 1f) * Time.fixedDeltaTime;
+        }
         velocity.y = Mathf.Max(velocity.y, -maximumFallSpeed);
         surfaceWalking &= launch == LaunchKind.None && !attached;
         // Cancel this step's gravity while walking on the ground, so he stands still on slopes.
@@ -811,7 +842,7 @@ public sealed class PlayerMovement : MonoBehaviour
         IsRunning = false;
         HasGroundContact = false;
         IsWallSliding=false;WallDirection=0;wallJumpUntil=float.NegativeInfinity;wallSteeringUntil=float.NegativeInfinity;
-        CancelDash();airDashUsed=false;airJumpPress=glideArmed=false;
+        CancelDash();airDashUsed=false;airJumpPress=glideArmed=false;carryingMomentum=false;
         GroundNormal = Vector2.up;
         GroundPoint = Vector2.zero;
         GroundDistance = LandingTimeEstimate = float.PositiveInfinity;

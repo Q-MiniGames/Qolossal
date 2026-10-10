@@ -54,7 +54,7 @@ public sealed class WorldPropVisual : MonoBehaviour
         if (kind == Kind.PlatformLeaf) { GroundSeated = true; return; }
         // Seat decorative roots on nearby ground without moving the interaction marker.
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position + Vector3.up * .25f,
-            Vector2.down, 3f, LayerMask.GetMask("Ground"));
+            Vector2.down, 3f, GroundLayer.Mask);
         foreach (RaycastHit2D ground in hits)
         {
             if (ground.collider == null || ground.collider.isTrigger || ground.normal.y <= .5f ||

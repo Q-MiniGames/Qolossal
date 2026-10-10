@@ -22,7 +22,7 @@ public sealed class SpitterSeed : MonoBehaviour, ICombatDamageReceiver
         float dt = Time.deltaTime;
         velocity.y -= 2.5f * dt;
         Vector2 pos = transform.position, step = velocity * dt;
-        if (Physics2D.Raycast(pos, step.normalized, step.magnitude + .08f, LayerMask.GetMask("Ground"))) { Sfx.Play("Spitter_SeedHit", pos); Destroy(gameObject); return; }
+        if (Physics2D.Raycast(pos, step.normalized, step.magnitude + .08f, GroundLayer.Mask)) { Sfx.Play("Spitter_SeedHit", pos); Destroy(gameObject); return; }
         transform.position = pos + step;
         transform.rotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg);
         if ((life -= dt) <= 0f) Destroy(gameObject);

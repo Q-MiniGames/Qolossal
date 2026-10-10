@@ -173,13 +173,13 @@ public sealed class GamePauseMenu : MonoBehaviour
         var hitPauseText = hitPause.GetComponentInChildren<Text>();
         hitPauseText.text = HitPauseLabel;
         hitPause.onClick.AddListener(() => { HitStop.Enabled = !HitStop.Enabled; hitPauseText.text = HitPauseLabel; });
-        MakeButton(mainPage.transform, "Sound", -85f, () => { soundOptions = true; ShowMenu(true); });
+        MakeButton(mainPage.transform, "Options", -85f, () => { soundOptions = true; ShowMenu(true); });
         MakeButton(mainPage.transform, "New Game", -205f, () => { confirmingNewGame = true; ShowMenu(true); });
         MakeButton(mainPage.transform, "Quit", -325f, Quit);
 
-        // Sound: each press steps a volume down by a fifth, from silent back to full.
+        // Options: the four volumes (each press steps one down by a fifth, from silent back to full) and screen shake.
         soundPage = new GameObject("Sound", typeof(RectTransform)); soundPage.transform.SetParent(panel.transform, false);
-        Label(soundPage.transform, "Sound", 385f, 46);
+        Label(soundPage.transform, "Options", 385f, 46);
         Button Volume(string name, float y, System.Func<float> get, System.Action<float> set)
         {
             var b = MakeButton(soundPage.transform, name, y, null);
@@ -191,7 +191,11 @@ public sealed class GamePauseMenu : MonoBehaviour
         Volume("Music", 155f, () => SfxSettings.Music, v => SfxSettings.Music = v);
         Volume("Effects", 35f, () => SfxSettings.Effects, v => SfxSettings.Effects = v);
         Volume("Ambience", -85f, () => SfxSettings.Ambience, v => SfxSettings.Ambience = v);
-        MakeButton(soundPage.transform, "Back", -205f, () => { soundOptions = false; ShowMenu(true); });
+        // Screen shake: full, half, off.
+        var shake = MakeButton(soundPage.transform, "Screen shake", -205f, null);
+        var shakeText = shake.GetComponentInChildren<Text>(); shakeText.text = ScreenShakeLabel;
+        shake.onClick.AddListener(() => { CombatCameraShake.Scale = CombatCameraShake.Scale > .75f ? .5f : CombatCameraShake.Scale > .25f ? 0f : 1f; shakeText.text = ScreenShakeLabel; });
+        MakeButton(soundPage.transform, "Back", -325f, () => { soundOptions = false; ShowMenu(true); });
 
         confirmPage = new GameObject("Confirm", typeof(RectTransform)); confirmPage.transform.SetParent(panel.transform, false);
         Label(confirmPage.transform, "Start a new game?", 190f, 40);
@@ -204,6 +208,7 @@ public sealed class GamePauseMenu : MonoBehaviour
     }
 
     static string HitPauseLabel => HitStop.Enabled ? "Hit pause: On" : "Hit pause: Off";
+    static string ScreenShakeLabel => $"Screen shake: {Mathf.RoundToInt(CombatCameraShake.Scale * 100f)}%";
 
     private void OnGUI()
     {

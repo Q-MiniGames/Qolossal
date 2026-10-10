@@ -55,7 +55,7 @@ public sealed class FallingRock : MonoBehaviour, IContactHazard
                 speed += gravity * Time.deltaTime;
                 float step = speed * Time.deltaTime;
                 float half = image != null ? image.bounds.extents.y * .8f : .4f;
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, step + half, LayerMask.GetMask("Ground"));
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, step + half, GroundLayer.Mask);
                 if (hit) { Shatter(hit.point); break; }
                 transform.position += Vector3.down * step;
                 break;

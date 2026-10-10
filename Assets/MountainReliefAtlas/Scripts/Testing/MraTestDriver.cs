@@ -175,7 +175,11 @@ public sealed partial class MraTestDriver : MonoBehaviour
     bool InGround()
     {
         var box = Qori.GetComponent<BoxCollider2D>();
-        var hits = Physics2D.OverlapBoxAll(Body.position + box.offset, box.size * .9f, 0f, LayerMask.GetMask("Ground"));
+        // The collider's world box (the Player root is scaled 0.8 x 1.2), shrunk to 90%: the unscaled
+        // 1 x 1 size made the probe wider than Qori, so standing against a wall read as being inside it.
+        Vector2 scale = Qori.transform.lossyScale;
+        Vector2 size = Vector2.Scale(box.size, new Vector2(Mathf.Abs(scale.x), Mathf.Abs(scale.y)));
+        var hits = Physics2D.OverlapBoxAll((Vector2)box.bounds.center, size * .9f, 0f, LayerMask.GetMask("Ground"));
         return hits.Any(h => !h.isTrigger && h.attachedRigidbody != Body);
     }
 

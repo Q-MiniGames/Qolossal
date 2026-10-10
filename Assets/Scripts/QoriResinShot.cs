@@ -8,7 +8,7 @@ public sealed class QoriResinShot:MonoBehaviour
     Material material;PlayerMovement movement;
     public static QoriResinShot Launch(PlayerCombat owner,Vector2 origin,AttackDefinition attack,WeaponDefinition weapon,Vector2 direction)
     {
-        var obstruction=Physics2D.Linecast(owner.transform.position,origin,LayerMask.GetMask("Ground"));
+        var obstruction=Physics2D.Linecast(owner.transform.position,origin,GroundLayer.Mask);
         if(obstruction.collider!=null)return null;
         var obj=new GameObject("Resin seed");obj.transform.position=origin;
         var shot=obj.AddComponent<QoriResinShot>();shot.owner=owner;shot.attack=attack;shot.weapon=weapon;

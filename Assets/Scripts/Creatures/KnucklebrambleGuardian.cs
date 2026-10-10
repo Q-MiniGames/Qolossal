@@ -92,7 +92,7 @@ public sealed class KnucklebrambleGuardian : EnemyBase
         Sfx.Play("Guardian_Defeat", at);
         Fx.DeathPuff(at + Vector2.left * .6f, 2.2f); Fx.DeathPuff(at + Vector2.right * .6f, 2.2f);
         Fx.Leaves(at, 8, 1.2f);
-        CombatCameraShake.Kick(.06f);
+        CombatCameraShake.Kick(.2f);
         HitStop.Freeze(HitStop.GuardianKilled);
     }
 
@@ -128,7 +128,7 @@ public sealed class KnucklebrambleGuardian : EnemyBase
                     if (lib != null) Fx.Play(lib.dustLand, new Vector2(claw.x, body.position.y + .6f), 14f, 1.8f, 31);
                     Fx.Leaves(claw, 2, .5f);
                     Sfx.Play("Guardian_ArmSlam", claw);
-                    CombatCameraShake.Kick(.04f);
+                    CombatCameraShake.Kick(.12f);
                     Enter(State.Hold);
                 }
                 break;

@@ -100,7 +100,7 @@ public sealed class GrowthFlower : MonoBehaviour
                 continue;
             // Aim above the landing surface so it cannot block its own boost.
             if (Physics2D.Linecast(playerPosition, position,
-                LayerMask.GetMask("Ground")).collider != null)
+                GroundLayer.Mask).collider != null)
                 continue;
             if (distance < closestDistance) { closestDistance = distance; closest = flower; }
         }

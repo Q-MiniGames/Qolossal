@@ -23,7 +23,7 @@ public sealed class SentinelEnemy : EnemyBase
         body.bodyType = RigidbodyType2D.Dynamic; body.gravityScale = 3f; body.freezeRotation = true;
         body.interpolation = RigidbodyInterpolation2D.Interpolate;
         centreX = body.position.x;
-        ground = new ContactFilter2D(); ground.SetLayerMask(LayerMask.GetMask("Ground")); ground.useTriggers = false;
+        ground = new ContactFilter2D(); ground.SetLayerMask(GroundLayer.Mask); ground.useTriggers = false;
     }
 
     float nextStep;
@@ -63,7 +63,7 @@ public sealed class SentinelEnemy : EnemyBase
                 Bounds b = GetComponent<Collider2D>().bounds;
                 bool atLimit = direction < 0f ? pos.x <= centreX - patrolHalfWidth : pos.x >= centreX + patrolHalfWidth;
                 bool wall = body.Cast(Vector2.right * direction, ground, hits, .08f) > 0;
-                bool floorAhead = Physics2D.Raycast(new Vector2(b.center.x + direction * (b.extents.x + .1f), b.min.y + .1f), Vector2.down, .4f, LayerMask.GetMask("Ground"));
+                bool floorAhead = Physics2D.Raycast(new Vector2(b.center.x + direction * (b.extents.x + .1f), b.min.y + .1f), Vector2.down, .4f, GroundLayer.Mask);
                 if (atLimit || wall || !floorAhead) direction = -direction;
                 facing = direction; vx = direction * patrolSpeed;
                 break;

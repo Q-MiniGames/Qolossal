@@ -51,7 +51,7 @@ public sealed class ThornwingEnemy : EnemyBase
                 break;
             case State.Dive:
                 target = pos + diveDirection * diveSpeed * Time.fixedDeltaTime;
-                if (t >= diveTime || Physics2D.Raycast(pos, diveDirection, .5f, LayerMask.GetMask("Ground")))
+                if (t >= diveTime || Physics2D.Raycast(pos, diveDirection, .5f, GroundLayer.Mask))
                     Enter(State.Return);
                 break;
             case State.Return:

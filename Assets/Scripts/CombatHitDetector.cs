@@ -55,7 +55,7 @@ public sealed class CombatHitDetector
                 if(receiver==null||receiver is Behaviour behaviour&&!behaviour.isActiveAndEnabled)continue;
                 if(lastHit.TryGetValue(receiver,out float at)&&(!attack.repeatTarget||owner.AttackElapsed-at<attack.repeatInterval))continue;
                 Vector2 point=collider.ClosestPoint(end),origin=owner.transform.position;
-                var obstacle=Physics2D.Linecast(origin,point,LayerMask.GetMask("Ground")).collider;
+                var obstacle=Physics2D.Linecast(origin,point,GroundLayer.Mask).collider;
                 if(obstacle!=null&&obstacle!=collider&&!obstacle.transform.IsChildOf(receiver.transform))continue;
                 lastHit[receiver]=owner.AttackElapsed;
                 Vector2 axis=attack.direction==AttackAim.Up?Vector2.up:attack.direction==AttackAim.Down?Vector2.down:Vector2.right*owner.AttackDirection;

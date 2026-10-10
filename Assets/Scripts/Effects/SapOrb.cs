@@ -28,7 +28,7 @@ public sealed class SapOrb : MonoBehaviour
         else
         {
             velocity.y -= 6f * dt; velocity.x *= 1f - dt * 2f;
-            if (Physics2D.Raycast(pos, Vector2.down, .2f, LayerMask.GetMask("Ground")) && velocity.y < 0f) velocity = Vector2.zero;
+            if (Physics2D.Raycast(pos, Vector2.down, .2f, GroundLayer.Mask) && velocity.y < 0f) velocity = Vector2.zero;
         }
         transform.position = pos + velocity * dt + Vector2.up * Mathf.Sin(age * 3f) * .003f;
         if (player != null && to.magnitude < Collect && player.Health < player.MaximumHealth)

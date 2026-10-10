@@ -22,7 +22,7 @@ public sealed class ShellbackEnemy : EnemyBase
         body.bodyType = RigidbodyType2D.Dynamic; body.gravityScale = 3f; body.freezeRotation = true;
         body.interpolation = RigidbodyInterpolation2D.Interpolate;
         centreX = body.position.x;
-        ground = new ContactFilter2D(); ground.SetLayerMask(LayerMask.GetMask("Ground")); ground.useTriggers = false;
+        ground = new ContactFilter2D(); ground.SetLayerMask(GroundLayer.Mask); ground.useTriggers = false;
         steps = SfxEmitter.Attach(gameObject, "Shellback_Walk", false);
     }
     SfxEmitter steps;
@@ -53,7 +53,7 @@ public sealed class ShellbackEnemy : EnemyBase
             bool atLimit = direction < 0f ? body.position.x <= centreX - patrolHalfWidth : body.position.x >= centreX + patrolHalfWidth;
             Bounds b = GetComponent<Collider2D>().bounds;
             bool wall = body.Cast(Vector2.right * direction, ground, hits, .08f) > 0;
-            bool floorAhead = Physics2D.Raycast(new Vector2(b.center.x + direction * (b.extents.x + .1f), b.min.y + .1f), Vector2.down, .4f, LayerMask.GetMask("Ground"));
+            bool floorAhead = Physics2D.Raycast(new Vector2(b.center.x + direction * (b.extents.x + .1f), b.min.y + .1f), Vector2.down, .4f, GroundLayer.Mask);
             if (atLimit || wall || !floorAhead) direction = -direction;
         }
         body.linearVelocity = new Vector2(grounded ? direction * patrolSpeed : 0f, body.linearVelocity.y);

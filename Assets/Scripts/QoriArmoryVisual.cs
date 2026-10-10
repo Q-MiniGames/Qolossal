@@ -47,7 +47,7 @@ public sealed class QoriArmoryVisual:MonoBehaviour
             {
                 aimLine.enabled=reticle.enabled=true;
                 float distance=Mathf.Min(6,combat.CurrentAttack.projectileSpeed*combat.CurrentAttack.projectileLifetime);
-                var hit=Physics2D.Raycast(end,aim,distance,LayerMask.GetMask("Ground"));
+                var hit=Physics2D.Raycast(end,aim,distance,GroundLayer.Mask);
                 Vector3 target=hit.collider!=null?(Vector3)hit.point:end+aim*distance;
                 aimLine.SetPosition(0,end);aimLine.SetPosition(1,target);
                 for(int i=0;i<25;i++){float a=i/24f*Mathf.PI*2;reticle.SetPosition(i,target+new Vector3(Mathf.Cos(a),Mathf.Sin(a),0)*.075f);}

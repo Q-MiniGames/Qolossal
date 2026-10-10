@@ -82,7 +82,7 @@ public sealed class GrowthPlatform : MonoBehaviour
             if (distance > plant.activationRadius || distance >= closerThan || playerPosition.y < position.y - 0.1f)
                 continue;
             if (Physics2D.Linecast(playerPosition, position + Vector2.up * 0.25f,
-                LayerMask.GetMask("Ground")).collider != null) continue;
+                GroundLayer.Mask).collider != null) continue;
             closest = plant;
             closerThan = distance;
         }

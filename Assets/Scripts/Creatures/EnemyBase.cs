@@ -72,6 +72,6 @@ public abstract class EnemyBase : MonoBehaviour, ICombatDamageReceiver, IReedbla
         if (Player == null || !Player.isActiveAndEnabled) return false;
         toPlayer = (Vector2)Player.transform.position - from;
         if (Mathf.Abs(toPlayer.x) > range || Mathf.Abs(toPlayer.y) > height) return false;
-        return !Physics2D.Linecast(from, Player.transform.position, LayerMask.GetMask("Ground"));
+        return !Physics2D.Linecast(from, Player.transform.position, GroundLayer.Mask);
     }
 }
