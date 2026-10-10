@@ -273,6 +273,63 @@
    "basis": "request: terrain density 120 px/u"
   },
   {
+   "name": "BG_Causeway_Far",
+   "category": "Backgrounds",
+   "sha256": "c47d6056f06a18f2c922d1520166ee84b04f20e987982ac764871efc30b763ad",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Causeway_Far.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch15/W1",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Causeway_Mid",
+   "category": "Backgrounds",
+   "sha256": "4488d1785a9ba0e0c017455849842c38c24a6bd20a33e22645ba3c97e8638fd0",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Causeway_Mid.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch15/W1",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Causeway_Near",
+   "category": "Backgrounds",
+   "sha256": "03c5c2a18f2c4e72b599a579ea2b1ab5527955532b79af6ae056e9b7e365ac30",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Causeway_Near.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch15/W1",
+   "maxSize": 4096
+  },
+  {
    "name": "BG_Cradle_Far",
    "category": "Backgrounds",
    "sha256": "6feebf9b7f888ccbfe3557afbfee0671fbacf46cc7df6a8a4aedf62217eb5d16",
@@ -289,6 +346,25 @@
    "mipmaps": false,
    "ppu": 144,
    "basis": "Batch14/W1",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Cradle_Far_v2",
+   "category": "Backgrounds",
+   "sha256": "b25a8e656f6accfc90efdc7cc963f31bab3c48b4454e05ba01e3c5922d77e570",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Cradle_Far_v2.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch15/W0",
    "maxSize": 4096
   },
   {
@@ -311,6 +387,25 @@
    "maxSize": 4096
   },
   {
+   "name": "BG_Cradle_Mid_v2",
+   "category": "Backgrounds",
+   "sha256": "d3d3746412ddd62298d73161fb17f806135dfd8d6ee3e8f304900275984a963b",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Cradle_Mid_v2.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch15/W0",
+   "maxSize": 4096
+  },
+  {
    "name": "BG_Cradle_Near",
    "category": "Backgrounds",
    "sha256": "4b657620676db358e7e31b4b21946ae2203b6417a1ecfeb2cb979a231128dcbd",
@@ -327,6 +422,63 @@
    "mipmaps": false,
    "ppu": 144,
    "basis": "Batch14/W1",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Cradle_Near_v2",
+   "category": "Backgrounds",
+   "sha256": "ce1b2bc41d1540f5555355550aa981f190ac632103a4a0aa00f4903cd6a176bf",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Cradle_Near_v2.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch15/W0",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Heights_Far",
+   "category": "Backgrounds",
+   "sha256": "d43224542e602c1773bf31661cd060f46eb34be675975670dbf42da8eb1546cf",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Heights_Far.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch15/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Heights_Near",
+   "category": "Backgrounds",
+   "sha256": "83cea5100d92d3dbf3f60d0abdb9cf44cd91d7f1350693e3ce302bf624e7bdc7",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Heights_Near.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch15/W3",
    "maxSize": 4096
   },
   {
@@ -419,6 +571,82 @@
    "mipmaps": false,
    "ppu": 144,
    "basis": "Batch14/W3",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Qvale_VaultRim_Mid_v2",
+   "category": "Backgrounds",
+   "sha256": "3b720b1f8adbe10cc03bcf39e662e7e4de34ab37e5292450a1e37f25635540ef",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Qvale_VaultRim_Mid_v2.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch15/W0",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Ribwood_Far",
+   "category": "Backgrounds",
+   "sha256": "63bae3e3e63f07a6f29ed1e402b954c67eb21e797e16d13565c323b27fea9ef6",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Ribwood_Far.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch15/W2",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Ribwood_Mid",
+   "category": "Backgrounds",
+   "sha256": "40d5d6dc9e09fe3bfd9ea5dd1d0951505a32db78bbbf3b73319ea613f4dab044",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Ribwood_Mid.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch15/W2",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Ribwood_Near",
+   "category": "Backgrounds",
+   "sha256": "ed1275c7d2cee4913b8a2c08ee6dbfe37a26fae49093590a70dfea7c43f2e5e7",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Ribwood_Near.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch15/W2",
    "maxSize": 4096
   },
   {
@@ -602,6 +830,25 @@
    "mipmaps": false,
    "ppu": 144,
    "basis": "Batch14/W2",
+   "maxSize": 4096
+  },
+  {
+   "name": "BG_Summit_Near_v3",
+   "category": "Backgrounds",
+   "sha256": "fd2b1dc9dec75f59fb696daef989be9afcfa07bfa836f5d5d1829297198a2dd5",
+   "dest": "Assets/Art/Codex/Backgrounds/BG_Summit_Near_v3.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch15c/W2",
    "maxSize": 4096
   },
   {
@@ -21535,6 +21782,528 @@
    "basis": "Batch10/W3"
   },
   {
+   "name": "Qvale_Cliff_Face",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "95cc05d2f21565cf0418503de477e15ebbf1acf8fa0b272770a090bbdf3985bf",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Cliff_Face.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16d/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Cliff_Side_L",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "8c7e03e2f35d37589f76f1388a34328ed12a0f32d3a9fc2c62606c031c006800",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Cliff_Side_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16d/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Cliff_Side_R",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "122879448a5c097cf70a14bc932932c1a9846fc0fb97b503b85437ae11c7b91f",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Cliff_Side_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.875,
+    0.5
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16d/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Corner_Foot_L",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "79f465526b483c13129a1a348cec1cb83a1cc2d648dcc63a12a2bc5b991b03da",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Corner_Foot_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.10938
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16d/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Corner_Foot_R",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "029e7edd9e7b8f7a03b0769cc009558678608ecb040af20d343c0101f865bcd8",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Corner_Foot_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.875,
+    0.10938
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16d/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Corner_Top_L",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "6cfc947dab96788f25a0f4de9b78cbb7052961e65671ec6e954b3722dfdcdb89",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Corner_Top_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.125,
+    0.8125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16d/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Corner_Top_R",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "b1ebd7c94f15300248ee86333f57229c47182e6f50bd357c75f4859d90529caa",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Corner_Top_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.875,
+    0.8125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16d/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Fill",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "ca2a83126c7d8c7aaaebee959e63c050566e126651b17e028c816282aa37f0eb",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Fill.png",
+   "wrapU": "Repeat",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16c/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Inner_L",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "91746cfe2a8cee5482414e444cf0f9f092da99da24a5f460fe9ef8d8e329a71f",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Inner_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.33333,
+    0.3125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16e/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Inner_R",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "dc69376472d11c1398502c543e883d8c976c047bb877d08038e28513d74c4b1e",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Inner_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.66667,
+    0.3125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16e/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Medium_L_v2",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "92fb378d8e1dab2301942ca4fbab7e0590287c95af43a18ff629c790eb97aa4e",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Medium_L_v2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.33333,
+    0.75
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16f/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Medium_R_v2",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "f393d5f0f1a9591e97c732af3ed7a0a7b31eacb684fb38d4683bc6db11d6f6be",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Medium_R_v2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.66667,
+    0.75
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16f/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Medium_SlopeTop_L",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "de9033d9ebf3b8f106e81ebae15df8a627cad9a726850161e74a19943cfb805b",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Medium_SlopeTop_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.33333,
+    0.6125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16g/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Medium_SlopeTop_R",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "4e5c49bc955292898a3969e13a0056075b559cd598a807574b7e4f74d82a1e7a",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Medium_SlopeTop_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.66667,
+    0.6125
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16g/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Outer_L_v2",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "3c838acb38fafc4b10fea2b2102d2b16d0436f8ce052ac7e33a9dcaf9ba52401",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Outer_L_v2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.33333,
+    0.6875
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16f/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Outer_R_v2",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "b4ded7f95c181490de0e465de9da0869a5bbf113518cbf92b146506d5fb4127e",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Outer_R_v2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.66667,
+    0.6875
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16f/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Outer_SlopeTop_L",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "d1832f74e527bcf3bc29791bf9feadd8b3ae25875d196dc0d765655657927c0d",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Outer_SlopeTop_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.33333,
+    0.4987
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16g/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Outer_SlopeTop_R",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "6b51e810d67ee95e9070a97e4e021451b47e87708b84bf0e7f1cb3efc419bca8",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Outer_SlopeTop_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.66667,
+    0.4987
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16g/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Short_L_v2",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "0679f39d7a0ad1afcda4aef35e497172022572417bf1eaa0cee231bcebc49d9c",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Short_L_v2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.33333,
+    0.6875
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16f/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Short_R_v2",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "46c02580751a17b9fa9657df73063bda6e5b2f4f3810ec039d75986474cf7b3b",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Short_R_v2.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.66667,
+    0.6875
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16f/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Short_SlopeTop_L",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "f09a0fa9c1ebff4f597248ea738a0e0385217c71f76fbfa2aaf2561b4a92affc",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Short_SlopeTop_L.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.33333,
+    0.45833
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16g/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Short_SlopeTop_R",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "a0468af25e005e9959eb5be486fb3d13bd65563deac7791f280eb007af9986fc",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Short_SlopeTop_R.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.66667,
+    0.45833
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16g/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Wall_A",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "e708b207dd480e1c125ac808b9ff9f4bc23f4696fa4e90ce8526dcbf71b87875",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Wall_A.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.33333,
+    1.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16e/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Wall_B",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "1936f38eabea75123d11bc40ebe867187caf0c25ce576fbba82366aa6761591b",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Wall_B.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.33333,
+    1.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16e/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Step_Wall_C",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "c43738db901bb98d3226d885000ad1cb29c6450fbe2829a55994dda49b997dbe",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Wall_C.png",
+   "wrapU": "Clamp",
+   "wrapV": "Repeat",
+   "mesh": "FullRect",
+   "pivot": [
+    0.33333,
+    1.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16e/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Top_Strip",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "a11ec9268e1e5951152a202032e9f7fccd3fc60a90d64f5955fbea48b18b9ccc",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Top_Strip.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16c/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Top_Strip_v2",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "14d4ebfb991211e5cbabe77ab64f24920facb43b3845b3e4288eb55f5a54ae55",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Top_Strip_v2.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16d/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Top_Strip_v3",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "69a723a375ffd6557a7c416b7df6be1c2f165971598721c990422ad1df7574bf",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Top_Strip_v3.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16e/Terrain/Body"
+  },
+  {
+   "name": "Qvale_Top_Strip_v5",
+   "category": "Terrain/Body/Qvale",
+   "sha256": "40025b84a94e34760f4876f9b1256c4eedbcb0161f296cfee86854d27068d8f9",
+   "dest": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Top_Strip_v5.png",
+   "wrapU": "Repeat",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 120,
+   "basis": "Batch16i/Terrain/Body"
+  },
+  {
    "name": "Terraces_Cliff_Face",
    "category": "Terrain/Body/Terraces",
    "sha256": "04e654e6ad0466e20810e8c68c2cee7121e058b90b9b31e91214c423fd631ae0",
@@ -21803,6 +22572,196 @@
    "mipmaps": false,
    "ppu": 120,
    "basis": "Batch10/W4"
+  },
+  {
+   "name": "Interior_Qvale_HomeA_Room",
+   "category": "Town",
+   "sha256": "ec54585bc6e28182097b9bd6c23fcbadaf26eb565d3f4c544e74770f37b9c159",
+   "dest": "Assets/Art/Codex/Town/Interior_Qvale_HomeA_Room.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch16/Rooms",
+   "maxSize": 4096
+  },
+  {
+   "name": "Interior_Qvale_HomeA_Room_v3",
+   "category": "Town",
+   "sha256": "c02862544a859096d41d6c7e17a48f1c55d26f97c6c4aae104f796dc29eedde4",
+   "dest": "Assets/Art/Codex/Town/Interior_Qvale_HomeA_Room_v3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch16c/Rooms",
+   "maxSize": 4096
+  },
+  {
+   "name": "Interior_Qvale_HomeB_Room",
+   "category": "Town",
+   "sha256": "91ba6fe52b8c95834bb4b1109d9ac14e46a09d511f4a2efac3d0d79e77c72021",
+   "dest": "Assets/Art/Codex/Town/Interior_Qvale_HomeB_Room.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch16/Rooms",
+   "maxSize": 4096
+  },
+  {
+   "name": "Interior_Qvale_HomeB_Room_v3",
+   "category": "Town",
+   "sha256": "ce3c6ca72496e8b9b44071496bd268c357b2a8ad0cb11526001469fb6045bc4e",
+   "dest": "Assets/Art/Codex/Town/Interior_Qvale_HomeB_Room_v3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch16c/Rooms",
+   "maxSize": 4096
+  },
+  {
+   "name": "Interior_Qvale_HomeC_Room",
+   "category": "Town",
+   "sha256": "36e0665034b46c12e35a69324aeef8062c1d2f10f918bcf54f5bbfef2956cdac",
+   "dest": "Assets/Art/Codex/Town/Interior_Qvale_HomeC_Room.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch16/Rooms",
+   "maxSize": 4096
+  },
+  {
+   "name": "Interior_Qvale_HomeC_Room_v3",
+   "category": "Town",
+   "sha256": "22facef4f06830db861c5a4119fa0d0dd69290a3e746363aa3a4796b8c7677ff",
+   "dest": "Assets/Art/Codex/Town/Interior_Qvale_HomeC_Room_v3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch16c/Rooms",
+   "maxSize": 4096
+  },
+  {
+   "name": "Interior_Qvale_Loft_Room",
+   "category": "Town",
+   "sha256": "3002b77e3e837e9553b945d37e8a652053b3f192452f3b483dc5219e2a961c4e",
+   "dest": "Assets/Art/Codex/Town/Interior_Qvale_Loft_Room.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch16/Rooms",
+   "maxSize": 4096
+  },
+  {
+   "name": "Interior_Qvale_Loft_Room_v3",
+   "category": "Town",
+   "sha256": "2be517ec8ba9850ed0eccf95f52e16fc2a255edce7c8bcaff6f1475703d1aee8",
+   "dest": "Assets/Art/Codex/Town/Interior_Qvale_Loft_Room_v3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch16c/Rooms",
+   "maxSize": 4096
+  },
+  {
+   "name": "Interior_Qvale_OldMan_Room",
+   "category": "Town",
+   "sha256": "3edc38da4f1b50ea7bde46cd4f3983e1c40d17b385b5eb21f9e00d1f22d77248",
+   "dest": "Assets/Art/Codex/Town/Interior_Qvale_OldMan_Room.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch16/Rooms",
+   "maxSize": 4096
+  },
+  {
+   "name": "Interior_Qvale_OldMan_Room_v3",
+   "category": "Town",
+   "sha256": "1e21deb617551a49e7237150c86e7b91b33fb28136d0ab0b207f55438746e0bc",
+   "dest": "Assets/Art/Codex/Town/Interior_Qvale_OldMan_Room_v3.png",
+   "wrapU": "Clamp",
+   "wrapV": "Clamp",
+   "mesh": "FullRect",
+   "pivot": [
+    0.5,
+    0.0
+   ],
+   "border": null,
+   "sprites": null,
+   "mipmaps": false,
+   "ppu": 144,
+   "basis": "Batch16c/Rooms",
+   "maxSize": 4096
   },
   {
    "name": "TownWarmSpring_Pool",

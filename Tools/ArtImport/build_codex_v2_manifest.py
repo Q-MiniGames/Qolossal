@@ -263,10 +263,19 @@ def batch12_registration(name):
                 _batch12[e["name"]] = {"ppu": e["pixelsPerUnit"], "pivot": e["pivot"], "wrapU": e["wrapU"], "wrapV": e["wrapV"], "src": batch + "/" + e["workstream"]}
         # Batch 14 (Review 25): the depth backgrounds for the Cradle, the Summit and Qvale (144 PPU,
         # bottom-centre pivot; the overlook vista clamps, the rest repeat in U).
-        path = os.path.join(SOURCE, "Batch14", "MANIFEST.json")
-        if os.path.exists(path):
-            for e in json.load(open(path, encoding="utf-8"))["assets"]:
-                _batch12[e["name"]] = {"ppu": e["ppu"], "pivot": e["pivot"], "wrapU": e["wrapU"], "wrapV": e["wrapV"], "src": "Batch14/" + e["workstream"]}
+        # Batch 15 (Review 26): the Causeway, Ribwood and Heights depth sets, plus the _v2 touch-ups;
+        # Batch 15c (Review 28): the Summit Near grass redo. Batch 16 (Review 29): the five Qvale
+        # interior rooms (144 PPU, bottom-centre pivot, clamped; no workstream, so their folder). Batch 16c
+        # (Review 40): the side-on _v3 rooms and the Qvale ground (Qvale_Top_Strip and Qvale_Fill, 120 PPU).
+        # Batch 16d (Review 41): the Qvale step kit and the darker-kerb Qvale_Top_Strip_v2 (120 PPU).
+        # Batch 16e/16f (Reviews 42-43): the Qvale step set (pivot on the riser line and walk line);
+        # Batch 16g (Review 44): its slope-top pieces; Batch 16i (Review 46): Qvale_Top_Strip_v5.
+        for batch in ("Batch14", "Batch15", "Batch15c", "Batch16", "Batch16c", "Batch16d", "Batch16e", "Batch16f", "Batch16g", "Batch16i"):
+            path = os.path.join(SOURCE, batch, "MANIFEST.json")
+            if os.path.exists(path):
+                for e in json.load(open(path, encoding="utf-8"))["assets"]:
+                    ws = e.get("workstream") or os.path.dirname(os.path.dirname(e["path"]))
+                    _batch12[e["name"]] = {"ppu": e["ppu"], "pivot": e["pivot"], "wrapU": e["wrapU"], "wrapV": e["wrapV"], "src": batch + "/" + ws}
     return _batch12.get(name)
 
 
