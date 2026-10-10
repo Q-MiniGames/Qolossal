@@ -37,7 +37,7 @@ WORLD = os.path.join(PROJECT, "Assets", "MountainReliefAtlas", "Resources", "MRA
 OUT = os.path.join(PROJECT, "Assets", "MountainReliefAtlas", "Resources", "MRA", "mra_route.json")
 PLOTS = os.path.join(HERE, "QA", "route_design")
 
-MOVED = {"MR06_N11": (440.0, 270.0)}       # the glide span's exit beat (see the handoff)
+MOVED = {"MR06_N11": (440.0, 202.0)}       # the glide span's exit beat, low in the neck dip (see the handoff)
 GLIDE_GAP, GLIDE_DROP, LIFT_HEIGHT = 18.0, 3.0, 5.0
 
 PAD_MIN = 6.0                              # a beat's pad

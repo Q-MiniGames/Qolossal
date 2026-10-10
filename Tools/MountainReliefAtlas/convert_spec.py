@@ -158,6 +158,10 @@ def main(package):
                     "landingWidth": m["landing_width"], "anchorReach": m["anchor_reach"], "headroom": m["minimum_headroom"]},
         "regions": regions, "chambers": chambers, "links": links, "encounters": encounters,
     }
+    # The approved reclining titan route (8 Oct 2026): reclining.py documents what it changes.
+    sys.path.insert(0, HERE)
+    import reclining
+    reclining.apply(world)
     os.makedirs(os.path.dirname(OUT_DATA), exist_ok=True)
     with open(OUT_DATA, "w", encoding="utf-8", newline="\n") as f:
         json.dump(world, f, indent=1, ensure_ascii=False)
