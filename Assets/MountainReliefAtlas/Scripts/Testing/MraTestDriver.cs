@@ -93,6 +93,9 @@ public sealed partial class MraTestDriver : MonoBehaviour
             yield return Run("climb repeat", ClimbRepeat("MRAtlas_MR03_Terraces", new Vector2(189.5f, 118.3f), 197.5f, 5));
             yield return Run("Qvale", Town());
             yield return Run("transitions and parallax", TransitionChecks());
+            yield return Run("route bar", RouteBarChecks());
+            yield return Run("reclining route", RecliningChecks());
+            yield return Run("drift levels", DriftChecks());
             Finish(); yield break;
         }
         yield return Load("MRAtlas_MR01_Cradle");
@@ -103,6 +106,7 @@ public sealed partial class MraTestDriver : MonoBehaviour
         yield return Run("Chart", ChartChecks());
         yield return Run("encounters", EncounterChecks());
         yield return Run("transitions and parallax", TransitionChecks());
+        yield return Run("route bar", RouteBarChecks());
         Finish();
     }
 
@@ -272,7 +276,7 @@ public sealed partial class MraTestDriver : MonoBehaviour
         Expect(seenNodes.Count >= r.nodes.Length - 1, $"{r.id}: Chart marker checked at {seenNodes.Count} of {r.nodes.Length} beats");
     }
 
-    static Vector2 Pos(Node n) => n.id == "MR06_N11" ? new Vector2(440f, 270f) : n.position;
+    static Vector2 Pos(Node n) => n.id == "MR06_N11" ? new Vector2(440f, 202f) : n.position;
 
     // The Cradle's quake crossing: the gate holds until the knot (passed just before) has woken.
     IEnumerator QuakeGate(Region r)
@@ -640,6 +644,9 @@ public sealed partial class MraTestDriver : MonoBehaviour
                 Expect(pods.Length == c.pods.Length && pods.All(p => p.ReceiveCombatHit(default).SupportsPogo), c.id + ": the pods bounce a downward strike (pogo) and can't break");
                 break;
             }
+            case "drift-level":
+                yield return DriftTrial(c);
+                break;
             case "dash-trial":
             {
                 var hz = FindAnyObjectByType<MraTimedHazard>();
@@ -670,6 +677,13 @@ public sealed partial class MraTestDriver : MonoBehaviour
             while (Time.time - t0 < 2.6f) { Press(Key.D); if (Mathf.Abs(Time.time - t0 - 1.1f) < .02f) Frame("bg_4_zooming"); yield return null; }
             Press(); yield return Wait(1.5f); Frame("bg_5_zoomed_out");
         }
+        // The open-fronted smithy, for the house-shape frames.
+        var forgeArt = FindObjectsByType<SpriteRenderer>(FindObjectsSortMode.None).FirstOrDefault(sr => sr.name == "Smithy");
+        if (forgeArt != null)
+        {
+            Place(new Vector2(forgeArt.bounds.center.x, GroundAt(forgeArt.bounds.center.x, forgeArt.bounds.max.y) + 1f));
+            yield return Wait(1.8f); Frame("smithy_street");
+        }
         // Every home: in by its door (Up), the right room, its people; out by walking back through
         // the door, landing safely outside the same house.
         var expected = new Dictionary<string, string> { { "MR04_C02", "herbalist" }, { "MR04_C03", "scribble" }, { "MR04_C04", "pip" }, { "MR04_C05", "tallow" } };
@@ -683,7 +697,7 @@ public sealed partial class MraTestDriver : MonoBehaviour
             Expect(Mathf.Abs(ground - door.transform.position.y) < .15f, $"{c.id}: the door stands on the street (door {door.transform.position.y:F2}, ground {ground:F2})");
             Place((Vector2)door.transform.position + Vector2.up);
             yield return Wait(1.8f);   // the street view eases out first
-            Frame($"house_{c.id}_1_door");
+            Frame($"house_{c.id}_1_door"); RoomShots($"street_{c.id}");
             var view = Camera.main;
             var front = FindObjectsByType<SpriteRenderer>(FindObjectsSortMode.None).FirstOrDefault(sr => sr.transform.parent == door.transform.parent && (sr.name.StartsWith("Exterior") || sr.name.StartsWith("Loft doorway")));
             if (front != null && view != null)
@@ -696,16 +710,22 @@ public sealed partial class MraTestDriver : MonoBehaviour
             yield return WaitScene(c.scene);
             Expect(SceneName == c.scene, $"{c.id}: Up at the door goes into {c.name}");
             Expect(MraMusicPlayer.Current != null && MraMusicPlayer.Current.name == "Music_ASmallLightInTheDark", $"{c.id}: the town's track carries on indoors");
-            Expect(Vector2.Distance(Body.position, c.playerSpawn) < .8f && !InGround(), $"{c.id}: Qori arrives inside, clear of the walls ({Body.position})");
-            yield return Wait(0.6f); Frame($"house_{c.id}_2_inside");
-            var inside = FindObjectsByType<SpriteRenderer>(FindObjectsSortMode.None).FirstOrDefault(sr => sr.name == "Interior (cutaway)");
+            // Qori lands just inside the door painted in the room's left wall, not at the chamber's spawn.
+            var landing = FindObjectsByType<MraArrival>(FindObjectsSortMode.None).FirstOrDefault(x => x.arrivalId == "entry");
+            Vector2 inAt = landing != null ? (Vector2)landing.transform.position : c.playerSpawn;
+            Expect(Vector2.Distance(Body.position, inAt) < .8f && !InGround(), $"{c.id}: Qori arrives inside, clear of the walls ({Body.position})");
+            yield return Wait(0.6f); Frame($"house_{c.id}_2_inside"); RoomShots($"room_{c.id}_1_door");
+            var inside = FindObjectsByType<SpriteRenderer>(FindObjectsSortMode.None).FirstOrDefault(sr => sr.name == "Interior (room)");
+            Expect(inside != null && inside.sprite != null && inside.sprite.name.StartsWith("Interior_Qvale_"), $"{c.id}: its Batch 16 room painting is drawn ({(inside != null && inside.sprite != null ? inside.sprite.name : "none")})");
             if (inside != null && Camera.main != null)
             {
-                // At 16:9 (batch mode's game view is 4:3, so the live camera clamps for a narrower screen).
+                // At 16:9 (batch mode's game view is 4:3, so the live camera clamps for a narrower screen):
+                // the view is the room painting, edge to edge, with no void around it.
                 var v2 = Camera.main; float hh = v2.orthographicSize, hw = hh * 16f / 9f; var b = inside.bounds;
                 CameraBounds.TryGetRoom(out Rect room16, out bool top16);
                 Vector3 cp = CameraBounds.Clamp(v2.transform.position, hw, hh, room16, top16);
-                Expect(b.max.y <= cp.y + hh + .05f && b.min.x >= cp.x - hw - .3f && b.max.x <= cp.x + hw + .3f, $"{c.id}: the whole room painting is in view ({b.min.x:F1}..{b.max.x:F1} x {b.min.y:F1}..{b.max.y:F1}; view {cp.x - hw:F1}..{cp.x + hw:F1} x {cp.y - hh:F1}..{cp.y + hh:F1})");
+                Expect(cp.x - hw >= b.min.x - .05f && cp.x + hw <= b.max.x + .05f && cp.y - hh >= b.min.y - .05f && cp.y + hh <= b.max.y + .05f,
+                    $"{c.id}: the room painting fills the view ({b.min.x:F1}..{b.max.x:F1} x {b.min.y:F1}..{b.max.y:F1}; view {cp.x - hw:F1}..{cp.x + hw:F1} x {cp.y - hh:F1}..{cp.y + hh:F1})");
             }
             if (expected.TryGetValue(c.id, out string who))
                 Expect(FindObjectsByType<TownNpc>(FindObjectsSortMode.None).Any(n => n.id == who), $"{c.id}: {who} is at home inside");
@@ -720,6 +740,31 @@ public sealed partial class MraTestDriver : MonoBehaviour
                 Expect(listed.Count == visited, $"Qvale: Scribble lists {listed.Count} pages, one per visited place ({visited})");
                 scribble.Close();
                 yield return Wait(0.2f);
+            }
+            if (c.id == "MR04_C05")
+            {
+                // The old man's sleeping loft: up its ladder by input (jumping rung to rung) onto the deck.
+                // Room review frames at 1920x1080 and 1280x720 (by the door above), at the free resident spot
+                // (registration x 920 px on the walk line; Tallow stands at 1470), then on the loft.
+                Place(new Vector2(920f / 144f, inAt.y)); yield return Wait(0.8f);
+                RoomShots("room_MR04_C05_2_spot");
+                var deck = GameObject.Find("Sleeping loft (deck)");
+                Expect(deck != null, "MR04_C05: the sleeping loft has a deck");
+                var ladder = FindObjectsByType<EdgeCollider2D>(FindObjectsSortMode.None).Where(e => e.name == "Loft ladder (rung)").OrderBy(e => e.transform.position.y).FirstOrDefault();
+                if (deck != null && ladder != null)
+                {
+                    Place(new Vector2(ladder.bounds.center.x, inAt.y)); yield return Wait(0.4f);
+                    float t0 = Time.time, deckY = deck.transform.position.y;
+                    while (Time.time - t0 < 6f && !(Qori.IsGrounded && Body.position.y > deckY - .1f))
+                    {
+                        // Hold Jump to the apex (about 0.4 s), then let go to land on the next rung.
+                        Press(Key.Space); yield return Wait(0.4f);
+                        Press(); yield return Wait(0.35f);
+                    }
+                    Press();
+                    Expect(Qori.IsGrounded && Body.position.y > deckY - .1f, $"MR04_C05: the ladder climbed by input onto the sleeping loft ({Body.position}, deck {deckY:F2})");
+                    yield return Wait(0.3f); Frame($"house_{c.id}_3_loft"); RoomShots("room_MR04_C05_3_loft");
+                }
             }
             if (c.id == "MR04_C06")
             {
@@ -746,7 +791,7 @@ public sealed partial class MraTestDriver : MonoBehaviour
                 }
             }
             // Out: walk left through the door.
-            Place(c.playerSpawn); yield return Wait(0.3f);
+            Place(inAt); yield return Wait(0.3f);
             float tOut = Time.time;
             while (SceneName == c.scene && Time.time - tOut < 6f) { Press(Key.A); yield return null; }
             Press();
@@ -959,6 +1004,27 @@ public sealed partial class MraTestDriver : MonoBehaviour
         if (card != null) card.renderMode = was;
     }
 
+    // A room frame as played at 16:9, at 1920x1080 and 1280x720: <captureDir>/rooms/<name>_<h>.png.
+    void RoomShots(string name)
+    {
+        var camera = Camera.main; if (camera == null) return;
+        Vector3 camWas = camera.transform.position, at = camWas + Vector3.up * VistaZone.CurrentLift;   // as rendered in play
+        if (CameraBounds.TryGetRoom(out Rect room, out bool top) && VistaZone.CurrentLift == 0f)
+            at = (Vector3)CameraBounds.Clamp(at, camera.orthographicSize * 16f / 9f, camera.orthographicSize, room, top) + new Vector3(0f, 0f, at.z);
+        camera.transform.position = at;
+        foreach (var (w, h) in new[] { (1920, 1080), (1280, 720) })
+        {
+            var rt = new RenderTexture(w, h, 24); camera.targetTexture = rt; camera.aspect = (float)w / h;
+            foreach (var layer in FindObjectsByType<ParallaxLayer>(FindObjectsSortMode.None)) layer.Refresh(camera);   // cover 16:9
+            camera.Render(); RenderTexture.active = rt;
+            var read = new Texture2D(w, h, TextureFormat.RGB24, false); read.ReadPixels(new Rect(0, 0, w, h), 0, 0); read.Apply();
+            Directory.CreateDirectory(Path.Combine(captureDir, "rooms"));
+            File.WriteAllBytes(Path.Combine(captureDir, "rooms", $"{name}_{h}.png"), read.EncodeToPNG());
+            camera.targetTexture = null; RenderTexture.active = null; Destroy(rt); Destroy(read);
+        }
+        camera.ResetAspect(); camera.transform.position = camWas;
+    }
+
     // A close frame at a given spot and camera size (the view is put back afterwards).
     void FrameAt(string name, Vector2 at, float size)
     {
@@ -973,6 +1039,67 @@ public sealed partial class MraTestDriver : MonoBehaviour
         File.WriteAllBytes(Path.Combine(captureDir, "polish_frames", name + ".jpg"), read.EncodeToJPG(90));
         camera.targetTexture = null; camera.aspect = aspect; RenderTexture.active = null; Destroy(rt); Destroy(read);
         camera.transform.position = was; camera.orthographicSize = wasSize;
+    }
+
+    // The route bar at the top of the screen: Qori's progress from entry to exit, the distance
+    // left along the route, and markers (unfound secrets hidden), and none in a home.
+    IEnumerator RouteBarChecks()
+    {
+        yield return Load("MRAtlas_MR01_Cradle");
+        var bar = MraRouteBar.Current;
+        Expect(bar != null, "route bar: shown in the Cradle");
+        if (bar == null) yield break;
+        var region = W.RegionById("MR01");
+        float total = region.edges.Sum(e => MraRoute.Length(e.points));
+        Expect(Mathf.Abs(bar.Total - total) < .01f, $"route bar: the route is {bar.Total:F0} m along its edges");
+        Place(region.NodeById("MR01_N01").spawn); yield return Wait(0.5f);
+        float early = bar.Fraction, earlyLeft = bar.Remaining;
+        var n09 = region.NodeById("MR01_N09");
+        Place(n09.spawn); yield return Wait(0.5f);
+        float along = region.edges.TakeWhile(e => e.source != "MR01_N09").Sum(e => MraRoute.Length(e.points));
+        Expect(bar.Fraction > early + .5f && bar.Remaining < earlyLeft, $"route bar: progress {early:F2} -> {bar.Fraction:F2}, {earlyLeft:F0} m -> {bar.Remaining:F0} m left");
+        Expect(Mathf.Abs(bar.Remaining - (total - along)) < 4f, $"route bar: {bar.Remaining:F0} m left at the stone crossing (route says {total - along:F0})");
+        // Markers: the Waymark, the shrine, two resting places and the caves, the secret one only once found.
+        var caves = W.ChambersOf("MR01").ToList();
+        int expected = 4 + caves.Count(c => c.type != "secret" || GameSave.HasFlag(c.DiscoveredFlag));
+        Expect(bar.MarkersShown == expected, $"route bar: {bar.MarkersShown} markers (expected {expected})");
+        var secret = caves.FirstOrDefault(c => c.type == "secret" && !GameSave.HasFlag(c.DiscoveredFlag));
+        if (secret != null)
+        {
+            GameSave.SetFlag(secret.DiscoveredFlag); yield return null; yield return null;
+            Expect(bar.MarkersShown == expected + 1, $"route bar: {secret.name} marked once found");
+        }
+        Expect(bar.Showing, "route bar: visible in play");
+        yield return CaptureHud("route_bar_MR01");
+        MraChart.Open(); yield return Wait(0.5f);
+        Expect(!bar.Showing, "route bar: hidden while the Chart is open");
+        MraChart.Instance.Hide(); yield return Wait(0.5f);
+        Expect(bar.Showing, "route bar: back after the Chart closes");
+        yield return Load("MRAtlas_MR04_C02");
+        Expect(MraRouteBar.Current == null, "route bar: none inside a home");
+    }
+
+    // The play view with the HUD canvases drawn into it, at 1920x1080 and 1280x720.
+    IEnumerator CaptureHud(string name)
+    {
+        yield return null;
+        var camera = Camera.main;
+        var canvases = FindObjectsByType<Canvas>(FindObjectsSortMode.None).Where(c => c.isRootCanvas && c.enabled && c.renderMode == RenderMode.ScreenSpaceOverlay).OrderBy(c => c.sortingOrder).ToList();
+        for (int i = 0; i < canvases.Count; i++) { canvases[i].renderMode = RenderMode.ScreenSpaceCamera; canvases[i].worldCamera = camera; canvases[i].planeDistance = 1f + (canvases.Count - i) * .01f; }
+        foreach (var (w, h) in new[] { (1920, 1080), (1280, 720) })
+        {
+            var rt = new RenderTexture(w, h, 24); camera.targetTexture = rt; camera.aspect = (float)w / h;
+            Canvas.ForceUpdateCanvases();
+            foreach (var bar in FindObjectsByType<MraRouteBar>(FindObjectsSortMode.None)) bar.SendMessage("Update");   // lay out for this size
+            Canvas.ForceUpdateCanvases(); camera.Render();
+            RenderTexture.active = rt;
+            var read = new Texture2D(w, h, TextureFormat.RGB24, false); read.ReadPixels(new Rect(0, 0, w, h), 0, 0); read.Apply();
+            Directory.CreateDirectory(Path.Combine(captureDir, "mra"));
+            File.WriteAllBytes(Path.Combine(captureDir, "mra", $"{name}_{h}.png"), read.EncodeToPNG());
+            camera.targetTexture = null; RenderTexture.active = null; Destroy(rt); Destroy(read);
+        }
+        camera.ResetAspect();
+        foreach (var c in canvases) c.renderMode = RenderMode.ScreenSpaceOverlay;
     }
 
     IEnumerator Capture(string name)

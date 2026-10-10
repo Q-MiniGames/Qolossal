@@ -34,7 +34,7 @@ public static partial class MraWorldBuilder
 {
     static World world;
     // Beats moved from their authored position to make room for a module (documented in the handoff).
-    static readonly Dictionary<string, Vector2> Moved = new Dictionary<string, Vector2> { { "MR06_N11", new Vector2(440f, 270f) } };
+    static readonly Dictionary<string, Vector2> Moved = new Dictionary<string, Vector2> { { "MR06_N11", new Vector2(440f, 202f) } };   // low in the neck dip (reclining route)
     public static Vector2 Pos(Node n) => Moved.TryGetValue(n.id, out var p) ? p : n.position;
     public static Vector2 Spawn(Node n) => Pos(n) + (n.spawn - n.position);
 
@@ -49,6 +49,7 @@ public static partial class MraWorldBuilder
         foreach (var c in world.chambers)
         {
             if (c.IsHouse) BuildHouse(c);
+            else if (c.IsDrift) BuildDrift(c);
             else if (!c.InPlace) BuildChamber(c);
         }
         RegisterScenes();
@@ -304,7 +305,12 @@ public static partial class MraWorldBuilder
         obj.transform.SetParent(parent, false); obj.transform.position = Pos(node);
         Trigger(obj, new Vector2(4f, 4f), new Vector2(0f, 2f));
         var reveal = obj.AddComponent<MraReveal>();
-        reveal.pullCentre = new Vector2(180f, 118f); reveal.pullSize = 62f; reveal.pullSeconds = 6f;
+        // Reclining route: from the crown, look back down the face (the prow, the steps, the falls
+        // at the chin), then pull out over the whole Summit.
+        float minY = r.nodes.Min(n => Pos(n).y), maxY = r.nodes.Max(n => Pos(n).y);
+        Vector2 entry = Pos(r.NodeById(r.entry)), mid = Pos(r.NodeById(r.primaryWaymark));
+        reveal.lookBack = Vector2.Lerp(entry, mid, .6f) + new Vector2(0f, 6f); reveal.lookBackSize = 22f; reveal.lookBackSeconds = 3.5f;
+        reveal.pullCentre = new Vector2((r.cameraMin.x + r.cameraMax.x) * .5f, (minY + maxY) * .5f); reveal.pullSize = (maxY - minY) * .42f; reveal.pullSeconds = 6f;
         reveal.brow = ArtOrNull("Cinematics/Reveal_Face_01_Brow");
         reveal.finalAssembly = AssetDatabase.LoadAssetAtPath<Sprite>(Folder + "ReviewArt/" + FinalAssemblyFile);
     }
@@ -494,6 +500,7 @@ public static partial class MraWorldBuilder
             var door = obj.AddComponent<MraChamberDoor>();
             door.chamberId = c.id; door.chamberName = c.name; door.chamberScene = c.scene; door.prerequisite = c.prerequisite;
             door.promptHeight = 2.9f;
+            if (c.IsDrift) { DriftLaunch(obj, x, y, pieces); continue; }
             var mouth = Image(obj.transform, "Entrance", Art(f.entrance), new Vector2(x, y), -30, EntranceScale);
             // The cave art is pale limestone; in the bark and slate regions it takes on the regional
             // rock's colour (a renderer tint; the accepted image is unchanged).
@@ -597,7 +604,8 @@ public static partial class MraWorldBuilder
     static void RockDressing(Region r, Family f, Transform parent, List<Piece> pieces)
     {
         string kit = r.id == "MR02" ? "Terrain/Body/Causeway/Causeway_Crease_" : "Terrain/Body/Body_Crease_";
-        if (!(r.id == "MR01" || r.id == "MR02" || r.id == "MR03" || r.id == "MR04")) return;
+        // Not Qvale since Batch 16c: its umber soil isn't rock, and the pale cracks glared on it.
+        if (!(r.id == "MR01" || r.id == "MR02" || r.id == "MR03")) return;
         var creases = new[] { "Arc_Fold", "Branching_Fissure", "Forked_Diagonal", "Vertical_Root_Seam", "Y_Split", "Zigzag_Crease" }
             .Select(n => ArtOrNull(kit + n)).Where(c => c != null).ToArray();
         if (creases.Length == 0) return;
@@ -748,8 +756,8 @@ public static partial class MraWorldBuilder
         {
             // Qvale's own basin (Batch 14, Review 25): the far side of it, homes under the overhangs, a 5 u
             // band over the Mid's hills (mockup M2) with its skyline 1.3 u above the frame's centre (37% down).
-            var rim = Art("Backgrounds/BG_Qvale_VaultRim_Mid");
-            Layer("Vault rim - BG_Qvale_VaultRim_Mid", rim, null, 5f, new Vector2(.9f, .997f), 1.3f - Skyline(rim) * 5f, -88, HazeTo(.12f), Average(rim, 0f, .03f) * HazeTo(.12f), 14f);
+            var rim = Art("Backgrounds/BG_Qvale_VaultRim_Mid_v2");   // Review 26's edge touch-up
+            Layer("Vault rim - BG_Qvale_VaultRim_Mid_v2", rim, null, 5f, new Vector2(.9f, .997f), 1.3f - Skyline(rim) * 5f, -88, HazeTo(.12f), Average(rim, 0f, .03f) * HazeTo(.12f), 14f);
             OverlookVista(root, camera, r);
         }
         if (r.id == "MR03")
@@ -767,11 +775,18 @@ public static partial class MraWorldBuilder
     // Regions whose backgrounds use real depth (ParallaxLayer.depth): each plane moves at the speed
     // its distance gives it (screen speed 1/depth, the terrain being 1), zooms like a camera pulling
     // back, and sinks across the climb by its distance. Each has its own Far/Mid/Near set over
-    // BG_Sky_Terraces: the Terraces (Review 23), the Cradle and the Summit (Batch 14, Review 25).
+    // BG_Sky_Terraces: the Terraces (Review 23), the Cradle and the Summit (Batch 14, Review 25), the
+    // Causeway, the Ribwood and the Heights (Batch 15, Review 26; the Cradle uses its _v2 touch-ups).
+    // The Heights has no Mid: Review 26-28 found every version hid the flying enemies.
     // The Terraces also has its mill landmark, foreground plants and Mill Ridge lookout (DepthExtras).
-    static readonly Dictionary<string, string> DepthSets = new Dictionary<string, string>
+    static readonly Dictionary<string, (string far, string mid, string near)> DepthSets = new Dictionary<string, (string, string, string)>
     {
-        { "MR01", "Cradle" }, { "MR03", "Terraces" }, { "MR07", "Summit" },
+        { "MR01", ("BG_Cradle_Far_v2", "BG_Cradle_Mid_v2", "BG_Cradle_Near_v2") },
+        { "MR02", ("BG_Causeway_Far", "BG_Causeway_Mid", "BG_Causeway_Near") },
+        { "MR03", ("BG_Terraces_Far", "BG_Terraces_Mid", "BG_Terraces_Near") },
+        { "MR05", ("BG_Ribwood_Far", "BG_Ribwood_Mid", "BG_Ribwood_Near") },
+        { "MR06", ("BG_Heights_Far", null, "BG_Heights_Near") },
+        { "MR07", ("BG_Summit_Far", "BG_Summit_Mid", "BG_Summit_Near_v3") },   // Review 28: the feathergrass redo
     };
     static ICollection<string> DepthRegions => DepthSets.Keys;
     const float FarDepth = 25f, MillDepth = 14f, MidDepth = 10f, NearDepth = 5f, ForegroundDepth = .75f;
@@ -798,16 +813,17 @@ public static partial class MraWorldBuilder
     // the mill landmark stands between them at its own depth, 2.8 u tall.
     static void DepthLayers(Transform root, Camera camera, Region r, Vector2 climb, System.Func<float, Color> hazeTo)
     {
-        string set = DepthSets[r.id];
-        DepthLayer(root, camera, climb, $"Far - BG_{set}_Far (depth 25)", Art($"Backgrounds/BG_{set}_Far"), null, 10f, FarDepth, -3.8f, -105, Color.white, 14f, true, ClimbSink(FarDepth));
+        var set = DepthSets[r.id];
+        DepthLayer(root, camera, climb, $"Far - {set.far} (depth 25)", Art($"Backgrounds/{set.far}"), null, 10f, FarDepth, -3.8f, -105, Color.white, 14f, true, ClimbSink(FarDepth));
         if (r.id == "MR03")
         {
             Vector2 ridge = Pos(r.NodeById("MR03_N07"));
             var mill = DepthLayer(root, camera, climb, "Landmark - BG_Terraces_Mill_Landmark (depth 14)", Art("Backgrounds/BG_Terraces_Mill_Landmark"), null, 2.8f, MillDepth, .2f, -97, hazeTo(.18f), 0f, false, ClimbSink(MillDepth));
             mill.baseX = (ridge.x + 6f) / MillDepth;   // centred when the camera is 6 u past Mill Ridge
         }
-        DepthLayer(root, camera, climb, $"Mid - BG_{set}_Mid (depth 10)", Art($"Backgrounds/BG_{set}_Mid"), null, 10f, MidDepth, -3.8f, -90, Color.white, 14f, true, ClimbSink(MidDepth));
-        DepthLayer(root, camera, climb, $"Near - BG_{set}_Near (depth 5)", Art($"Backgrounds/BG_{set}_Near"), null, 10f, NearDepth, -5f, -80, Color.white, 16f, true, ClimbSink(NearDepth));
+        if (set.mid != null)
+            DepthLayer(root, camera, climb, $"Mid - {set.mid} (depth 10)", Art($"Backgrounds/{set.mid}"), null, 10f, MidDepth, -3.8f, -90, Color.white, 14f, true, ClimbSink(MidDepth));
+        DepthLayer(root, camera, climb, $"Near - {set.near} (depth 5)", Art($"Backgrounds/{set.near}"), null, 10f, NearDepth, -5f, -80, Color.white, 16f, true, ClimbSink(NearDepth));
     }
 
     // Qvale's listening overlook (Batch 14, Review 25): the view down the valley, shown only while Qori

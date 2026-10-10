@@ -6,8 +6,8 @@ using UnityEngine;
 // Qvale (the Lantern Vaults). Each home and the musician's loft is an enterable place: on the street,
 // its accepted closed exterior stands on the ground by its door threshold, with a door (Up goes in,
 // MraChamberDoor) and a safe landing outside; inside is its own scene (BuildHouse), the home's
-// accepted cutaway painting as the room, with the same residents and shops, left by walking back out
-// of the door. The smithy stays open-fronted on the street. The listening tree is a peaceful
+// full-screen room painting (Batch 16), with the same residents and shops, left by walking back out
+// of the door painted inside its left wall. The smithy stays open-fronted on the street. The listening tree is a peaceful
 // overlook on a broad level shelf (design_route.py RESTING), its loft and climb moved indoors.
 // Services follow the rescues, all saved: the smith's forge after the Underarch Workshop (MR02_C01),
 // the farmer at home after the Farmer Shelter (MR03_C03), the lamps lit after the Lost Lantern
@@ -46,7 +46,7 @@ public static partial class MraWorldBuilder
         // The smithy: open-fronted. Brannick works it once he's home; until then the forge is cold.
         var smithy = C("MR04_C01");
         var s = Group(root, "Interior MR04_C01 Smithy");
-        var forge = Image(s, "Smithy", Art("Town/Town_Qvale_Smithy"), Local(smithy, new Vector2(10f, 1f)), Streetside);
+        var forge = Painted(Image(s, "Smithy", Art("Town/Town_Qvale_Smithy"), Local(smithy, new Vector2(10f, 1f)), Streetside), "Smithy");
         GroundProp(forge.transform, pieces, new[] { forge }, .1f);
         Discovery(s, smithy);
         var cold = Variant(s, "Before Brannick is home", new[] { "flag:mra:MR02_C01:reward" }, invert: true);
@@ -90,7 +90,7 @@ public static partial class MraWorldBuilder
         // The herbalist's home (home A).
         var herb = C("MR04_C02");
         var h = Home(f, root, herb, "Interior MR04_C02 Herbalist Home", "HomeA");
-        var herbalist = Npc(h, "herbalist", "Sorrel", Local(herb, herb.resident[0] - new Vector2(0f, .8f)), "Herbalist", new[]
+        var herbalist = Npc(h, "herbalist", "Sorrel", Spot("HomeA", 1), "Herbalist", new[]
         {
             T("", true, "Mind the drying racks. You look like you've climbed a long way.", "Heart seeds take root in brave little chests. I'll sell you one, if you've the Amber."),
             T("quake", false, "The jars all hopped on the shelf. Nothing broken. This time."),
@@ -107,12 +107,12 @@ public static partial class MraWorldBuilder
         // The mapmaker's room (home B): Scribble sells pages for visited places.
         var map = C("MR04_C03");
         var m = Home(f, root, map, "Interior MR04_C03 Mapmaker Room", "HomeB");
-        var scribble = Npc(m, "scribble", "Scribble", Local(map, map.resident[0] - new Vector2(0f, .8f)), null, new[]
+        var scribble = Npc(m, "scribble", "Scribble", Spot("HomeB", 1), null, new[]
         {
             T("", true, "Pages! Every place you've walked, I can draw it neater than you saw it.", "Places you haven't been? Go there first. I don't draw guesses."),
             T("", false, "Which page?"),
         });
-        ScribbleFigure(scribble.transform, Local(map, map.resident[0] - new Vector2(0f, .8f)));
+        ScribbleFigure(scribble.transform, Spot("HomeB", 1));
         var pages = world.regions.Select(reg => Item($"Page: {reg.name}", 15, TownShop.Effect.SetFlag, MraState.PageFlag(reg.id),
             $"The paths of {reg.name}, neatly drawn. Hidden places stay yours to find.", "flag:visited:" + reg.id)).ToArray();
         Shop(scribble, "Scribble's pages", pages);
@@ -124,14 +124,14 @@ public static partial class MraWorldBuilder
         // Residents' home (home C): Pip, and Marrow once he's back from the Farmer Shelter.
         var res = C("MR04_C04");
         var hc = Home(f, root, res, "Interior MR04_C04 Residents' Home A", "HomeC");
-        Npc(hc, "pip", "Pip", Local(res, new Vector2(9f, 1f)), "Child", new[]
+        Npc(hc, "pip", "Pip", Spot("HomeC", 1), "Child", new[]
         {
             T("calm", true, "Did you come up from the hollows? Grandfather says nobody climbs up from there.", "I want to see the lake at the top one day."),
             T("quake", true, "The floor jumped! My cup rolled right under the bed.", "Grandfather says it's nothing. He said it twice."),
             T("", false, "Want to see my drawing? It's a mountain. A sleepy one."),
         });
         var farmer = Variant(hc, "After the Farmer Shelter rescue", new[] { "flag:mra:MR03_C03:reward" });
-        Npc(farmer, "marrow", "Marrow", Local(res, res.resident[0] - new Vector2(0f, .8f)), "Farmer", new[]
+        Npc(farmer, "marrow", "Marrow", Spot("HomeC", 2), "Farmer", new[]
         {
             T("", true, "Home! You got me out of that shelter, and I won't forget it.", "The terraces will need me back. Come by in the growing season."),
             T("", false, "Warm soil, good roots. Can't complain."),
@@ -144,32 +144,38 @@ public static partial class MraWorldBuilder
         // The old man's home: a warning, said kindly.
         var old = C("MR04_C05");
         var ho = Home(f, root, old, "Interior MR04_C05 Old Man's Home", "OldMan");
-        Npc(ho, "tallow", "Grandfather Tallow", Local(old, old.resident[0] - new Vector2(0f, .8f)), "Elder", new[]
+        Npc(ho, "tallow", "Grandfather Tallow", Spot("OldMan", 1), "Elder", new[]
         {
             T("calm", true, "Hm. Another climber.", "The springs are warm, the soil is warm, and the hills hum at night.", "Some things hum because they're sleeping, child. Mind your feet up there."),
             T("quake", true, "You felt that. Everyone did.", "Every knot of roots you wake up there, the town shakes down here.", "I won't tell you to stop. I'll tell you to be careful."),
             T("", false, "Careful, child. That's all I ask."),
         });
-
+        // His sleeping loft (REGISTRATION.json: deck front y 753 px, x 1718-2495) and its ladder
+        // (rail centre x ~2375): one-way ledges, the deck and two rungs 1.2 u apart, so Qori hops up
+        // the ladder (jump apex 2.45 u) and walks the deck; from below he passes through them.
+        Ledge(ho, "Sleeping loft (deck)", RoomPx(1718f, 753f), RoomPx(2495f, 753f));
+        float ladder = RoomPx(2375f, RoomWalkPx).x;
+        foreach (float y in new[] { 2.2f, 3.4f })
+            Ledge(ho, "Loft ladder (rung)", new Vector2(ladder - .45f, y), new Vector2(ladder + .45f, y));
     }
 
     static void Loft(Family f, Transform root)
     {
-        // The musician's loft (Batch 13 cutaway, 100 PPU, registered on the door threshold): its
-        // painted stair has 1.2 u risers 5.4, 10.4 and 14.4 u right of the door, the loft floor 3 u
-        // deep (W2 REGISTRATION.json). The collision follows those walk lines; the painting is the look.
+        // The musician's loft (Batch 16 room): its three painted treads (REGISTRATION.json) at y 1055,
+        // 938 and 811 px, from x 1755, 1995 and 2255 to the right wall: risers of 1.56, 0.81 and
+        // 0.88 u. The collision follows those walk lines; the painting is the look.
         var loft = C("MR04_C06");
         var l = Group(root, "Interior MR04_C06 Musician Loft");
-        var room = ArtOrNull("Town/Town_Qvale_Loft_Cutaway");
+        var room = ArtOrNull(RoomArtPath("Loft"));
         Vector2 shellAt = loft.rewardAt[0];
         var stair = new List<Vector2>();
         if (room != null)
         {
-            Image(l, "Interior (cutaway)", room, Local(loft, new Vector2(1.6f, 1f)), Behind);
-            float[] riserX = { 9f, 14f, 18f }; float[] treadY = { 2.2f, 3.4f, 4.6f };
-            for (int i = 0; i < 3; i++) { stair.Add(Local(loft, new Vector2(riserX[i], treadY[i]))); stair.Add(Local(loft, new Vector2(i < 2 ? riserX[i + 1] : 21f, treadY[i]))); }
-            shellAt = new Vector2(19.9f, 5.4f);
-            var steps = Terrain(l, "Loft stair (collision on the painted walk lines)", stair, Local(loft, new Vector2(0f, 1f)).y, f, true, false);
+            RoomImage(l, room);
+            float[] riserPx = { 1755f, 1995f, 2255f, RoomWidthPx }; float[] treadPx = { 1055f, 938f, 811f };
+            for (int i = 0; i < 3; i++) { stair.Add(RoomPx(riserPx[i], treadPx[i])); stair.Add(RoomPx(riserPx[i + 1], treadPx[i])); }
+            shellAt = RoomPx(2470f, 811f) + new Vector2(0f, .8f);   // over the painted shell, top tread
+            var steps = Terrain(l, "Loft stair (collision on the painted walk lines)", stair, 1f, f, true, false);
             steps.enabled = false; steps.fill = null; steps.top = null; steps.face = null; steps.enabled = true;
         }
         else
@@ -192,12 +198,51 @@ public static partial class MraWorldBuilder
         rw.image = Image(shell.transform, "Art", Art("Props/Pickup_SongShell"), shell.transform.position, -8);
     }
 
-    // A home's room, in its interior scene: the accepted cutaway painting, its door threshold on the floor.
+    // A home's room, in its interior scene: its full-screen room painting.
     static Transform Home(Family f, Transform root, Chamber c, string name, string art)
     {
         var g = Group(root, name);
-        Image(g, "Interior (cutaway)", Art($"Town/Town_Qvale_{art}_Cutaway"), Local(c, new Vector2(1.6f, 1f)), Behind);
+        RoomImage(g, Art(RoomArtPath(art)));
         return g;
+    }
+
+    // The rooms are the Batch 16c side-on repaints (Review 40): each home's 16b colours, the wall base,
+    // door and furniture on the walk line, and Qvale's umber ground below it. Same registration as
+    // Batch 16 except the door's height. The Batch 16 paintings stay in the project: set this to ""
+    // and rebuild the houses to go back to them.
+    const string RoomVersion = "_v3";
+    static string RoomArtPath(string room) => $"Town/Interior_Qvale_{room}_Room" + RoomVersion;
+
+    // The Batch 16 rooms (Review 29): 2560 x 1440 at 144 PPU, bottom-centre pivot, registered in
+    // texture pixels (top-left origin). The room's left edge is at x 0 and its floor walk line
+    // (y 1280 px, 160 px up from the bottom) on the scene's floor at y 1.
+    const float RoomPpu = 144f, RoomWidthPx = 2560f, RoomHeightPx = 1440f, RoomWalkPx = 1280f;
+    static Vector2 RoomPx(float x, float y) => new Vector2(x / RoomPpu, 1f + (RoomWalkPx - y) / RoomPpu);
+    static SpriteRenderer RoomImage(Transform parent, Sprite room) =>
+        Image(parent, "Interior (room)", room, RoomPx(RoomWidthPx * .5f, RoomHeightPx), Behind);
+
+    // Each room's inside door (REGISTRATION.json door_approach_px x) and its suggested standing
+    // spots on the floor walk line (suggested_resident_standing_spots_px).
+    static readonly Dictionary<string, float> RoomDoorPx = new Dictionary<string, float>
+    {
+        { "HomeA", 283.5f }, { "HomeB", 273.5f }, { "HomeC", 278.5f }, { "OldMan", 231f }, { "Loft", 246f },
+    };
+    static readonly Dictionary<string, float[]> RoomSpotsPx = new Dictionary<string, float[]>
+    {
+        { "HomeA", new[] { 920f, 1410f, 1710f } }, { "HomeB", new[] { 930f, 1460f, 1690f } },
+        { "HomeC", new[] { 900f, 1420f, 1690f } }, { "OldMan", new[] { 920f, 1470f } }, { "Loft", new[] { 920f, 1560f } },
+    };
+    static Vector2 Spot(string room, int i) => RoomPx(RoomSpotsPx[room][i], RoomWalkPx);
+    static string RoomOf(Chamber c) => HouseArt.TryGetValue(c.id, out string art) ? art : c.id == "MR04_C06" ? "Loft" : null;
+
+    // A one-way ledge: stood on from above, passed through from below and the sides.
+    static void Ledge(Transform parent, string name, Vector2 a, Vector2 b)
+    {
+        var obj = new GameObject(name) { layer = LayerMask.NameToLayer("Ground") };
+        obj.transform.SetParent(parent, false); obj.transform.position = a;
+        var edge = obj.AddComponent<EdgeCollider2D>();
+        edge.points = new[] { Vector2.zero, b - a }; edge.usedByEffector = true;
+        var effector = obj.AddComponent<PlatformEffector2D>(); effector.useOneWay = true; effector.surfaceArc = 160f;
     }
 
     static readonly Dictionary<string, string> HouseArt = new Dictionary<string, string>
@@ -205,9 +250,26 @@ public static partial class MraWorldBuilder
         { "MR04_C02", "HomeA" }, { "MR04_C03", "HomeB" }, { "MR04_C04", "HomeC" }, { "MR04_C05", "OldMan" },
     };
 
-    // The painting a home's interior shows (its accepted cutaway; the loft's Batch 13 cutaway).
-    static Sprite InteriorArt(Chamber c) =>
-        HouseArt.TryGetValue(c.id, out string art) ? Art($"Town/Town_Qvale_{art}_Cutaway") : c.id == "MR04_C06" ? ArtOrNull("Town/Town_Qvale_Loft_Cutaway") : null;
+    // Drawn heights that put each building back in the shape Codex painted it. Batch 8 W3's
+    // build_w3.py fitted each painting to a fixed layout box with separate X and Y resampling
+    // (PROVENANCE.json resample_xy: HomeA 1.400 x 1.435, HomeB 1.017 x 1.611, HomeC 1.020 x 1.654,
+    // OldMan 1.240 x 1.811, Smithy 1.170 x 0.984), so the accepted homes stand 2.5-62% taller than
+    // painted and the smithy 19% wider. The width (doors and street spacing) is kept and the height
+    // scaled by x/y about the floor pivot; the accepted pixels are unchanged. The loft (Batch 13)
+    // matches its painting's shape and draws as it is.
+    static readonly Dictionary<string, float> PaintedHeight = new Dictionary<string, float>
+    {
+        { "HomeA", .9757f }, { "HomeB", .6315f }, { "HomeC", .6164f }, { "OldMan", .6846f }, { "Smithy", 1.1890f },
+    };
+    static float HeightOf(string art) => art != null && PaintedHeight.TryGetValue(art, out float k) ? k : 1f;
+    static SpriteRenderer Painted(SpriteRenderer r, string art)
+    {
+        r.transform.localScale = new Vector3(1f, HeightOf(art), 1f);
+        return r;
+    }
+
+    // The painting a home's interior shows: its Batch 16 room.
+    static Sprite InteriorArt(Chamber c) => RoomOf(c) is string room ? ArtOrNull(RoomArtPath(room)) : null;
 
     // A home on the street: its accepted closed exterior standing on the ground by its door
     // threshold (the art's pivot), a door at the painted doorway with an Up prompt, and the walk-up
@@ -221,7 +283,7 @@ public static partial class MraWorldBuilder
         float doorX;
         if (HouseArt.TryGetValue(c.id, out string art))
         {
-            Image(g, "Exterior (closed)", Art($"Town/Town_Qvale_{art}_Closed"), threshold - new Vector2(0f, .04f), Streetside);
+            Painted(Image(g, "Exterior (closed)", Art($"Town/Town_Qvale_{art}_Closed"), threshold - new Vector2(0f, .04f), Streetside), art);
             doorX = threshold.x + DoorOffset(Art($"Town/Town_Qvale_{art}_Closed"));
         }
         else
@@ -250,43 +312,65 @@ public static partial class MraWorldBuilder
     };
     static float DoorOffset(Sprite s) => DoorOffsets.TryGetValue(s.name.Replace("Town_Qvale_", "").Replace("_Closed", ""), out float d) ? d : 1f;
 
-    // A home's interior scene: the room, its floor at the door threshold, the far wall, the way back
-    // out through the door (like a side chamber's return), and who lives there.
+    // A home's interior scene: the room painting filling a 16:9 view, its floor on the painted walk
+    // line, walls at the painting's edges, the way back out through the door painted inside its left
+    // wall (like a side chamber's return), and who lives there.
     public static void BuildHouse(Chamber c)
     {
         var f = FamilyOf(c.region);
         var region = world.RegionById(c.region);
         groundingScene = c.scene;
-        var scene = Begin(ScenePath(c.scene), out Transform root);
-        var camera = Scaffold(scene, c.playerSpawn, c.name, "mra:" + c.id, c.region, c.id, new Color(.11f, .085f, .06f));
-        Music(root, RegionMusic[c.region]);   // the town's track carries on indoors
-        // The camera shows the whole painted home: sized to its height, the room bounds to its width.
         var art = InteriorArt(c);
-        float left = 0f, right = c.size.x, top = c.size.y;
-        if (art != null)
-        {
-            left = 1.6f - art.pivot.x / art.pixelsPerUnit; right = left + art.rect.width / art.pixelsPerUnit;
-            top = 1f + (art.rect.height - art.pivot.y) / art.pixelsPerUnit;
-        }
-        float floorView = -.4f, camSize = Mathf.Max(5.5f, (top + .5f - floorView) * .5f);
-        camera.orthographicSize = camSize;
-        float halfW = Mathf.Max((right - left) * .5f + .6f, camSize * 16f / 9f);
+        // Qori arrives just inside the painted door, and leaves by walking back into it.
+        float door = art != null ? RoomPx(RoomDoorPx[RoomOf(c)], RoomWalkPx).x : .3f;
+        Vector2 spawn = art != null ? new Vector2(door + 1.5f, c.playerSpawn.y) : c.playerSpawn;
+        var scene = Begin(ScenePath(c.scene), out Transform root);
+        var camera = Scaffold(scene, spawn, c.name, "mra:" + c.id, c.region, c.id, new Color(.11f, .085f, .06f));
+        Music(root, RegionMusic[c.region]);   // the town's track carries on indoors
+        // The camera shows the room: half the painting's height, so a 16:9 view is exactly the
+        // painting, bounded to its edges; a narrower screen pans across it with Qori.
         var bounds = new GameObject("Camera Bounds").AddComponent<CameraBounds>();
         bounds.transform.SetParent(root, false);
-        bounds.room = new Rect((left + right) * .5f - halfW, floorView, halfW * 2f, camSize * 2f + .2f); bounds.top = true;
-        Arrival(root, "entry", c.playerSpawn, 1f);
+        float right = c.size.x;
+        if (art != null)
+        {
+            float w = art.rect.width / art.pixelsPerUnit, h = art.rect.height / art.pixelsPerUnit;
+            right = w;
+            camera.orthographicSize = h * .5f;
+            bounds.room = new Rect(0f, RoomPx(0f, RoomHeightPx).y, w, h);
+        }
+        else
+        {
+            camera.orthographicSize = Mathf.Max(5.5f, (c.size.y + .9f) * .5f);
+            bounds.room = new Rect(0f, -.4f, c.size.x, camera.orthographicSize * 2f + .2f);
+        }
+        bounds.top = true;
+        Arrival(root, "entry", spawn, 1f);
         var room = Group(root, "Room");
-        float back = Mathf.Max(c.size.x - 1.6f, right - .4f);
-        Terrain(room, "Floor", new List<Vector2> { new Vector2(-3f, 1f), new Vector2(back + 3f, 1f) }, -4f, f, true, false, true, new Color(.55f, .45f, .36f));
-        Wall(room, "Back of the room", new Vector2(back, 6f), new Vector2(1f, 14f));
+        var floor = Terrain(room, "Floor", new List<Vector2> { new Vector2(-3f, 1f), new Vector2(right + 3f, 1f) }, -4f, f, true, false, true, new Color(.55f, .45f, .36f));
+        if (art != null) { floor.enabled = false; floor.fill = null; floor.top = null; floor.face = null; floor.enabled = true; }
+        Wall(room, "Back of the room", new Vector2(right + .4f, 6f), new Vector2(1f, 14f));
+        Wall(room, "Beside the door", new Vector2(door - 1.5f, 6f), new Vector2(1f, 14f));
         buildingInterior = true;
         try { HouseContents(f, room, c); }
         finally { buildingInterior = false; }
         var exit = new GameObject("Out to " + region.name);
-        exit.transform.SetParent(root, false); exit.transform.position = new Vector3(.3f, c.size.y * .5f, 0f);
-        Trigger(exit, new Vector2(1.2f, c.size.y + 4f), Vector2.zero);
+        exit.transform.SetParent(root, false); exit.transform.position = new Vector3(door - .3f, c.size.y * .5f, 0f);
+        Trigger(exit, new Vector2(1f, c.size.y + 4f), Vector2.zero);
         var ret = exit.AddComponent<MraChamberReturn>(); ret.parentScene = region.scene; ret.returnId = c.returnId; ret.label = region.name;
         Save(scene, ScenePath(c.scene));
+    }
+
+    /// <summary>Batch: rebuilds only the Qvale home interiors (the street and every other scene untouched);
+    /// -mraOnly MR04_C05[,...] limits it to those homes.</summary>
+    public static void BuildHousesBatch()
+    {
+        string[] args = System.Environment.GetCommandLineArgs();
+        int i = System.Array.IndexOf(args, "-mraOnly");
+        string[] only = i >= 0 && i + 1 < args.Length ? args[i + 1].Split(',') : null;
+        Prepare();
+        foreach (var c in world.chambers.Where(x => x.IsHouse && (only == null || only.Contains(x.id)))) { BuildHouse(c); Debug.Log("[MraWorldBuilder] rebuilt " + c.scene); }
+        UnityEditor.AssetDatabase.SaveAssets();
     }
 
     // Walking up to a home or shop discovers it for the Chart, like a side chamber's mouth.

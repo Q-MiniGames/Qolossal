@@ -38,6 +38,8 @@ namespace Mra
     [Serializable] public sealed class Region
     {
         public string id, name, slug, kit, scene, map, grant, entry, exit, primaryWaymark, visibility;
+        /// <summary>Designer spoiler (the reclining titan, Tools/MountainReliefAtlas/reclining.py): the body place. Never shown in game.</summary>
+        public string body;
         public int ordinal, grantAt, knotAt;
         public Vector2 size, cameraMin, cameraMax;
         public string[] landmarks, chamberIds;
@@ -54,7 +56,15 @@ namespace Mra
         public Vector2 entrance, playerSpawn, returnSpawn, chartUv, size;
         public Vector4[] platforms, walls, gates, water, hazards, catchFloor;
         public Vector2[] switches, anchors, pods, plate, crate, lever, resident, rewardAt;
+        // A floating-platform level (drift-level): movers [left, top, dx, dy] (3 u wide), crumbling
+        // slabs [left, top, width, depth], and the rests a fall returns Qori to.
+        public Vector4[] movers, crumbles;
+        public Vector2[] rests;
+        /// <summary>Designer spoiler: where on the body it is. Never shown in game.</summary>
+        public string body;
 
+        /// <summary>One of the four optional floating-platform levels beside the body (reclining route).</summary>
+        public bool IsDrift => type == "drift-level";
         public bool InPlace => presentation == "in-place-cutaway";
         /// <summary>A Qvale home (or the musician's loft): its own interior scene, entered by its door like a side chamber.</summary>
         public bool IsHouse => presentation == "house-instance";
@@ -78,7 +88,7 @@ namespace Mra
     [Serializable] public sealed class World
     {
         public int schema;
-        public string source, specSha256, chartSha256, encounterSha256, revealFlag;
+        public string source, specSha256, chartSha256, encounterSha256, revealFlag, layout;
         public Metrics metrics;
         public Region[] regions;
         public Chamber[] chambers;

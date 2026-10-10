@@ -746,6 +746,9 @@ public sealed class PlayerMovement : MonoBehaviour
         if (health != null) health.RestoreAfterRespawn();
     }
 
+    // A resting place reached in play (a drift level's safe stone): where a fall now returns him.
+    public void SetRespawn(Vector2 position) => respawnPosition = position;
+
     // Arrival in an area: puts Qori at `position` facing `facing`, keeping his hearts. With
     // `asRespawn` it also becomes where he returns after a fall or defeat.
     public void PlaceAt(Vector2 position, float facing, bool asRespawn)

@@ -42,6 +42,8 @@ public static partial class MraWorldBuilder
         art.cave = ArtOrNull("Chart/Map_Icon_Secret") ?? ArtOrNull("UI/Map_Icon_Secret");
         art.unexplored = ArtOrNull("Chart/Map_Icon_Unexplored") ?? ArtOrNull("UI/Map_Icon_Unexplored");
         art.npc = ArtOrNull("Chart/Map_Icon_NPC");
+        art.routeFrame = ArtOrNull("UI/HUD_Resource_Bar");
+        art.routeFill = ArtOrNull("UI/HUD_Resource_Bar_Fill");
         art.finalAssembly = AssetDatabase.LoadAssetAtPath<Sprite>(Folder + "ReviewArt/" + FinalAssemblyFile);
         EditorUtility.SetDirty(art);
         AssetDatabase.SaveAssets();

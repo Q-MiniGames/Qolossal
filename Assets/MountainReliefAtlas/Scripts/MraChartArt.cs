@@ -7,6 +7,8 @@ public sealed class MraChartArt : ScriptableObject
 {
     [Tooltip("By region ordinal - 1 (MR01 first).")] public Sprite[] maps = new Sprite[0];
     public Sprite frame, qori, waymark, shrine, cave, unexplored, npc;
+    [Tooltip("The route bar at the top of the play screen (MraRouteBar): the accepted HUD bar frame and its fill.")]
+    public Sprite routeFrame, routeFill;
     [Tooltip("Shown only once the reveal is saved.")] public Sprite finalAssembly;
 
     static MraChartArt loaded;

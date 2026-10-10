@@ -1,17 +1,21 @@
 using System.Collections;
 using UnityEngine;
 
-// The reveal, once, on the Summit's reveal ledge. Qori stops on the ledge; the camera eases out over
-// the very same lake, reeds and falls he has just crossed (no terrain is swapped or moved), then
-// the accepted reveal still and the completed Chart are shown. The saved flag mra:reveal-complete
+// The reveal, once, on the Summit's reveal ledge (the crown, on the reclining route). Qori stops on
+// the ledge; the camera first looks back DOWN the way he came (the old man's "look down before you
+// look up"), then eases out over the very same lake, reeds, prow and falls he has just crossed (no
+// terrain is swapped or moved), then the accepted reveal still and the completed Chart are shown. The saved flag mra:reveal-complete
 // opens the way down to the descent; on a later visit nothing replays.
-// Art gaps (see the handoff): the pull-out stills Reveal_Face_02/03 are Review 22 redos and are
-// not used; the final assembly is the approved Batch 11 Chart concept, a review-only import.
+// Art gaps (see the handoff): the pull-out stills Reveal_Face_02/03 show the old seated pose and are
+// not used; the final assembly is still the seated Batch 11 Chart concept, a review-only import,
+// until the reclining Chart painting (Batch 18) and the reclining reveal stills arrive.
 [RequireComponent(typeof(BoxCollider2D))]
 public sealed class MraReveal : MonoBehaviour
 {
     public Vector2 pullCentre;
     public float pullSize = 45f, pullSeconds = 6f;
+    [Tooltip("Where the camera first looks back down the route (world), and how wide; zero size skips it.")]
+    public Vector2 lookBack; public float lookBackSize, lookBackSeconds = 3.5f;
     public Sprite brow, finalAssembly;
 
     public static bool IsPlaying { get; private set; }
@@ -45,11 +49,26 @@ public sealed class MraReveal : MonoBehaviour
         VistaZone.Suspended = true;
         Vector3 from = view.transform.position; float size = view.orthographicSize;
         Sfx.PlayStory("Story_Reveal");
+        // Look back down first: the way he came, falling away below the crown.
+        Vector3 start = from; float startSize = size;
+        if (lookBackSize > 0f)
+        {
+            var back = new Vector3(lookBack.x, lookBack.y, from.z);
+            for (float t = 0f; t < lookBackSeconds; t += Time.deltaTime)
+            {
+                float k = Mathf.SmoothStep(0f, 1f, t / lookBackSeconds);
+                view.transform.position = Vector3.Lerp(from, back, k);
+                view.orthographicSize = Mathf.Lerp(size, lookBackSize, k);
+                yield return null;
+            }
+            yield return new WaitForSeconds(.8f);
+            start = back; startSize = lookBackSize;
+        }
         for (float t = 0f; t < pullSeconds; t += Time.deltaTime)
         {
             float k = Mathf.SmoothStep(0f, 1f, t / pullSeconds);
-            view.transform.position = Vector3.Lerp(from, new Vector3(pullCentre.x, pullCentre.y, from.z), k);
-            view.orthographicSize = Mathf.Lerp(size, pullSize, k);
+            view.transform.position = Vector3.Lerp(start, new Vector3(pullCentre.x, pullCentre.y, from.z), k);
+            view.orthographicSize = Mathf.Lerp(startSize, pullSize, k);
             yield return null;
         }
         // Saved before the stills, so a quit during them still counts.

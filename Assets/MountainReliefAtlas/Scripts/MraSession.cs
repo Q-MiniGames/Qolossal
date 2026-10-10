@@ -35,6 +35,7 @@ public sealed class MraSession : MonoBehaviour
         }
         ChartScreen.OpenReplacement = MraChart.Open;
         MraChart.Ensure();
+        if (!InChamber && !Blocked) MraRouteBar.Ensure(Region);
     }
 
     void Start()

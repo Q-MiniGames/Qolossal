@@ -24,6 +24,8 @@ public static partial class MraWorldBuilder
         public string id, top, fill, face, caveTop, caveFill, sky, far, mid, near, decor, shrine, ring, thorns, entrance;
         /// <summary>The painted cliff kit's name prefix (Batch 13), e.g. Terrain/Body/Body; null for the legacy kits.</summary>
         public string cliffKit;
+        /// <summary>A town step set's name prefix (Batches 16e-16f), e.g. Terrain/Body/Qvale/Qvale_Step_; null for none.</summary>
+        public string stepSet;
         public Color skyColour, midBand, nearBand;
     }
 
@@ -53,7 +55,7 @@ public static partial class MraWorldBuilder
             case "MR01": { var f = F("A0", "Terrain/Body/Body", "A0", "BG_Sky_Terraces", "A0"); return f; }
             case "MR02":
             {
-                var f = F("A1", "Terrain/Body/Causeway/Causeway", "A1", "BG_Sky_A1", "A1");
+                var f = F("A1", "Terrain/Body/Causeway/Causeway", "A1", "BG_Sky_Terraces", "A1");   // the Batch 15 depth set is painted for the dawn sky
                 f.caveTop = "Terrain/Body/Causeway/Causeway_Cave_Edge_Strip"; f.caveFill = "Terrain/Body/Causeway/Causeway_Cave_Fill";
                 f.decor = "Decor/Decor_Causeway_Sheet"; f.entrance = "Props/Prop_Causeway_Chamber_Entrance";
                 return f;
@@ -71,11 +73,20 @@ public static partial class MraWorldBuilder
                 // The dawn sky (proposal Option A): the Batch 14 basin rim and overlook view are painted for it.
                 var f = F("Qvale", "Terrain/Body/Causeway/Causeway", "A5", "BG_Sky_Terraces", "Qvale");
                 f.caveTop = "Terrain/Body/Causeway/Causeway_Cave_Edge_Strip"; f.caveFill = "Terrain/Body/Causeway/Causeway_Cave_Fill";
+                // Batch 16c (Review 40): Qvale's own umber ground, the same soil as under the home floors.
+                // Same rows and settings as the Causeway pair, so the walk line is unchanged.
+                // Batch 16d (Review 41) toned the kerb down; Batch 16e (Review 42) took the pale band from
+                // under its stones (v3); Batch 16i (Review 46) matched its stones to the step set's
+                // (Qvale_Top_Strip_v5, same alpha, walk line and joint columns).
+                f.top = "Terrain/Body/Qvale/Qvale_Top_Strip_v5"; f.fill = "Terrain/Body/Qvale/Qvale_Fill";
+                // Steps: the Qvale step set (Batches 16e-16f, Reviews 42-43), one painted piece per riser
+                // (see Terrain); the cliff kit and faces are not drawn where it is used.
+                f.cliffKit = null; f.face = "Terrain/Body/Qvale/Qvale_Cliff_Face"; f.stepSet = "Terrain/Body/Qvale/Qvale_Step_";
                 f.far = "Backgrounds/BG_Qvale_Far"; f.decor = "Decor/Decor_Qvale_Sheet"; f.shrine = "Props/Checkpoint_Shrine_A5";
                 return f;
             }
-            case "MR05": return F("A2", null, "A2", "BG_Sky_A2", "A2");
-            case "MR06": return F("A3", null, "A3", "BG_Sky_A3", "A3");
+            case "MR05": return F("A2", null, "A2", "BG_Sky_Terraces", "A2");   // Batch 15 depth sets: the dawn sky
+            case "MR06": return F("A3", null, "A3", "BG_Sky_Terraces", "A3");
             case "MR07": return F("A6", null, "A6", "BG_Sky_Terraces", "A6");   // A6 has no sky of its own
             default: return F("A4", null, "A4", "BG_Sky_A4", "A4");
         }
@@ -278,6 +289,32 @@ public static partial class MraWorldBuilder
             t.cliffSideL = ArtOrNull(f.cliffKit + "_Cliff_Side_L"); t.cliffSideR = ArtOrNull(f.cliffKit + "_Cliff_Side_R");
             t.cornerTopL = ArtOrNull(f.cliffKit + "_Corner_Top_L"); t.cornerTopR = ArtOrNull(f.cliffKit + "_Corner_Top_R");
             t.cornerFootL = ArtOrNull(f.cliffKit + "_Corner_Foot_L"); t.cornerFootR = ArtOrNull(f.cliffKit + "_Corner_Foot_R");
+        }
+        if (!cave && f.stepSet != null)
+        {
+            // A town step set: one painted piece per riser, by its height (MraTerrain.StepParts).
+            string s = f.stepSet;
+            t.stepShortL = ArtOrNull(s + "Short_L_v2"); t.stepShortR = ArtOrNull(s + "Short_R_v2");
+            t.stepMediumL = ArtOrNull(s + "Medium_L_v2"); t.stepMediumR = ArtOrNull(s + "Medium_R_v2");
+            t.stepOuterL = ArtOrNull(s + "Outer_L_v2"); t.stepOuterR = ArtOrNull(s + "Outer_R_v2");
+            t.stepInnerL = ArtOrNull(s + "Inner_L"); t.stepInnerR = ArtOrNull(s + "Inner_R");
+            t.stepWalls = new[] { ArtOrNull(s + "Wall_A"), ArtOrNull(s + "Wall_B"), ArtOrNull(s + "Wall_C") }.Where(w => w != null).ToArray();
+            // Slope-top steps (Batch 16g, Review 44), with their registered upper walk lines as
+            // (px inland, px risen): Short climbs 0.5, Medium 0.293, Outer follows riser 8's curve.
+            t.stepShortSlopeL = ArtOrNull(s + "Short_SlopeTop_L"); t.stepShortSlopeR = ArtOrNull(s + "Short_SlopeTop_R");
+            t.stepMediumSlopeL = ArtOrNull(s + "Medium_SlopeTop_L"); t.stepMediumSlopeR = ArtOrNull(s + "Medium_SlopeTop_R");
+            t.stepOuterSlopeL = ArtOrNull(s + "Outer_SlopeTop_L"); t.stepOuterSlopeR = ArtOrNull(s + "Outer_SlopeTop_R");
+            t.shortSlopeRise = new[] { new Vector2(0f, 0f), new Vector2(512f, 256f) };
+            t.mediumSlopeRise = new[] { new Vector2(0f, 0f), new Vector2(512f, 150.016f) };
+            t.outerSlopeRise = new[]
+            {
+                new Vector2(0f, 0f), new Vector2(194.4f, 145.8f), new Vector2(237.72f, 174.36f), new Vector2(283.08f, 196.44f),
+                new Vector2(330.6f, 212.28f), new Vector2(380.28f, 222.12f), new Vector2(432f, 225f), new Vector2(512f, 225f),
+            };
+            t.slopeTopRows = new Vector3(416f, 310f, 385f);
+            // The mortar joints in Qvale_Top_Strip_v3's kerb course (texture px, measured on 9 Oct): the
+            // strip takes over from each step piece at one of them.
+            t.stripJointsPx = new[] { 20f, 69f, 145f, 230f, 297f, 389f, 477f, 571f, 587f, 666f, 740f, 854f, 937f, 985f };
         }
         t.walkLinePx = 96f; t.solid = solid; t.clingable = clingable; t.tint = tint ?? Color.white; t.sortingOffset = sortingOffset;
         t.enabled = true;

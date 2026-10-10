@@ -33,6 +33,8 @@ public static class MraCapture
             foreach (var e in r.edges.Where(e => e.module.Present)) shots.Add(("05_module_" + e.module.template, e.module.position + new Vector2(0f, 2f), 7f));
             if (r.id == "MR06") shots.Add(("05_module_glide-span", MraWorldBuilder.Pos(r.NodeById("MR06_N10")) + new Vector2(13f, 0f), 9f));
             Beat("06_exit", r.NodeById(r.exit));
+            var reveal = Object.FindAnyObjectByType<MraReveal>();
+            if (reveal != null && reveal.lookBackSize > 0f) { shots.Add(("08_reveal_lookback", reveal.lookBack, reveal.lookBackSize)); shots.Add(("09_reveal_pullout", reveal.pullCentre, reveal.pullSize)); }
             shots.Add(("07_overview", (r.cameraMin + r.cameraMax) * .5f, (r.cameraMax.y - r.cameraMin.y) * .55f));
             foreach (var (label, at, size) in shots)
             {
