@@ -1,9 +1,9 @@
 using UnityEngine;
 
 // Qori's own sounds, from gameplay state (PlayerMovement adds this to the player):
-//   footsteps (one per full stride, softer at a run) when a foot of the live rig (QoriAnimator) plants, by the scene's surface, or on wood
-//   or water ground by name; jumps, landings (soft or hard by speed), ledge grabs and climbs, the
-//   Wind Leaf dash, the Glidecap (a loop while it's open), the thread (flick, snag, swing, release),
+//   footsteps (one per full stride, softer at a run) when a foot of the live rig (QoriAnimator) plants, one standard step on
+//   every surface; jumps, landings (soft or hard by speed), ledge grabs and climbs, the
+//   Wind Leaf dash, the Glidecap opening (no loop while it's open: the user removed it), the thread (flick, snag, swing, release),
 //   and the return to the checkpoint. Hurt and death are PlayerHealth's.
 // Footfalls: a foot "plants" when it comes down to its lowest point under the body after lifting
 // clear; without the rig's feet, a step every stride of ground covered.
@@ -11,11 +11,14 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public sealed class QoriSounds : MonoBehaviour
 {
-    const float Lift = .06f, Plant = .02f, MinStride = .3f, FallbackStride = .65f, RunVolume = .7f;
+    // StepSeconds: the recorded steps are 0.3-0.5 s shuffles of several scuffs; only the first footfall
+    // of a take is heard, so steps stay single taps instead of running together into a hiss.
+    // StepVolume sits the steps under the music (-3 dB).
+    const float Lift = .06f, Plant = .02f, MinStride = .3f, FallbackStride = .65f, RunVolume = .7f, StepSeconds = .2f,
+                StepVolume = .7f;
 
     PlayerMovement movement; PlayerThread thread; Rigidbody2D body;
     Transform[] feet; float[] lowest = new float[2]; bool[] lifted = new bool[2];
-    SfxEmitter glideLoop;
     int launch, landing, dash, respawn, attached, released; bool ready;
     bool wasHanging, wasClimbing, wasGliding, canopy; float swingVy, sinceStepX;
     Vector2 lastPos;
@@ -37,27 +40,12 @@ public sealed class QoriSounds : MonoBehaviour
             }
             if (near != null && far != null) feet = new[] { near, far };
         }
-        glideLoop = SfxEmitter.Attach(gameObject, "Qori_Glide_Loop", false, false);
         lastPos = transform.position;
     }
 
-    string StepId()
-    {
-        var ground = movement.GroundCollider;
-        if (ground != null)
-        {
-            string n = ground.name;
-            if (n.IndexOf("water", System.StringComparison.OrdinalIgnoreCase) >= 0 || n.IndexOf("shallow", System.StringComparison.OrdinalIgnoreCase) >= 0) return "Qori_Step_Water";
-            if (n.IndexOf("plank", System.StringComparison.OrdinalIgnoreCase) >= 0 || n.IndexOf("wood", System.StringComparison.OrdinalIgnoreCase) >= 0) return "Qori_Step_Wood";
-        }
-        switch (Sfx.Surface)
-        {
-            case "Stone": return "Qori_Step_Stone";
-            case "Wood": return "Qori_Step_Wood";
-            case "Water": return "Qori_Step_Water";
-            default: return "Qori_Step_Moss";
-        }
-    }
+    // One footstep everywhere, on every surface: the user chose Qori_Step_Water's Take 3 (its library
+    // Favorite) as the game's standard step (8 Oct). The per-surface steps are kept, unused.
+    public const string StepId = "Qori_Step_Water";
 
     void Step()
     {
@@ -66,7 +54,7 @@ public sealed class QoriSounds : MonoBehaviour
         // One sound per full stride (every other footfall), and softer at a run (-3 dB at full speed).
         if (Footfalls % 2 == 1) return;
         float run = Mathf.InverseLerp(movement.WalkSpeed, movement.RunSpeed, Mathf.Abs(movement.ObservedVelocity.x));
-        Sfx.Play(StepId(), Mathf.Lerp(1f, RunVolume, run));
+        Sfx.PlayShort(StepId, StepSeconds, StepVolume * Mathf.Lerp(1f, RunVolume, run));
     }
 
     void LateUpdate()
@@ -77,11 +65,11 @@ public sealed class QoriSounds : MonoBehaviour
             // The first frame sets the baseline: nothing that happened at load is heard.
             ready = true; Sync(); return;
         }
-        // The canopy is heard from the moment the Glidecap opens for as long as Jump stays held in the
-        // air, even through the moments the glide itself lets go (an updraft, a swell's push).
+        // The canopy counts as open from the moment the Glidecap opens for as long as Jump stays held in
+        // the air, even through the moments the glide itself lets go (an updraft, a swell's push), so
+        // its opening sounds once per glide.
         canopy = (canopy || movement.IsGliding) && movement.JumpHeld && !movement.IsGrounded && !movement.IsLedgeHanging
                  && !movement.IsLedgeClimbing && !movement.IsWallSliding && !movement.IsDashing && (thread == null || !thread.IsAttached);
-        if (glideLoop != null) glideLoop.Playing = canopy;
 
         if (respawn != movement.RespawnVersion)
         {

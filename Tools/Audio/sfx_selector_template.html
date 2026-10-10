@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qolossal SFX Selector</title>
+<style>
+:root {
+  --bg: #f6f4ef; --panel: #ffffff; --ink: #22201c; --muted: #6d675d; --line: #e2ddd2;
+  --accent: #2f6f5e; --accent-ink: #ffffff; --fav: #b07a12; --cand: #3a6ea5; --rej: #a8433a;
+  --use: #2f6f5e; --off: #8d877c; --remove-bg: #fbecea; --row-hover: #faf8f3;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1b1a18; --panel: #24221f; --ink: #ece7dd; --muted: #a39c8f; --line: #3a3732;
+    --accent: #5fb39b; --accent-ink: #10201b; --fav: #e0ad4a; --cand: #7fa9d8; --rej: #e07a70;
+    --use: #5fb39b; --off: #8d877c; --remove-bg: #3a2522; --row-hover: #2a2825;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+header { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); padding: 12px 16px; }
+h1 { font-size: 18px; margin: 0 0 4px; }
+.sub { color: var(--muted); font-size: 12.5px; }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+input[type=search], select { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--ink); }
+input[type=search] { flex: 1 1 220px; min-width: 0; }
+label.chk { display: inline-flex; gap: 5px; align-items: center; color: var(--muted); font-size: 13px; }
+button { font: inherit; cursor: pointer; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 6px 10px; }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+.summary { margin-left: auto; color: var(--muted); font-size: 13px; }
+main { max-width: 1100px; margin: 0 auto; padding: 12px 16px 60px; }
+.sound { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; margin: 10px 0; overflow: hidden; }
+.shead { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.sid { font-weight: 650; font-size: 15px; }
+.evt { color: var(--muted); font-size: 12.5px; flex: 1 1 260px; }
+.sact { display: flex; gap: 6px; }
+.sact button { padding: 3px 8px; font-size: 12px; }
+.tag { font-size: 11.5px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.tag.hooked { color: var(--use); border-color: var(--use); }
+.tag.unhooked { color: var(--rej); border-color: var(--rej); }
+table { width: 100%; border-collapse: collapse; }
+td { padding: 6px 12px; border-top: 1px solid var(--line); vertical-align: middle; }
+tr:first-child td { border-top: 0; }
+tr:hover td { background: var(--row-hover); }
+tr.removed td { background: var(--remove-bg); }
+tr.removed .fname { text-decoration: line-through; color: var(--muted); }
+.play { width: 34px; height: 30px; padding: 0; font-size: 13px; }
+.play.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.fname { font-family: ui-monospace, Consolas, monospace; font-size: 12.5px; word-break: break-all; }
+.flags { color: var(--muted); font-size: 12px; }
+.st { font-size: 12px; font-weight: 600; }
+.st.Favorite { color: var(--fav); } .st.Candidate { color: var(--cand); } .st.Rejected { color: var(--rej); } .st.Unheard { color: var(--off); }
+.use { font-size: 12px; } .use.yes { color: var(--use); font-weight: 600; } .use.no { color: var(--off); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.seg button { border: 0; border-radius: 0; padding: 4px 10px; font-size: 12.5px; }
+.seg button.k.sel { background: var(--accent); color: var(--accent-ink); }
+.seg button.r.sel { background: var(--rej); color: #fff; }
+.c-play { width: 46px; } .c-st { width: 92px; } .c-use { width: 90px; } .c-ch { width: 140px; text-align: right; }
+.warn { color: var(--rej); font-size: 12px; padding: 0 12px 8px; }
+.empty { color: var(--muted); padding: 30px; text-align: center; }
+@media (max-width: 640px) {
+  .c-use, .c-st { width: auto; }
+  td { padding: 6px 8px; }
+  tr.take { display: grid; grid-template-columns: 40px 1fr auto; grid-template-areas: "p f c" "p s c"; }
+  tr.take td { border-top: 0; }
+  tr.take { border-top: 1px solid var(--line); }
+  tr.take td:nth-child(1) { grid-area: p; } tr.take td:nth-child(2) { grid-area: f; }
+  tr.take td:nth-child(3) { grid-area: s; padding-top: 0; } tr.take td:nth-child(4) { display: none; }
+  tr.take td:nth-child(5) { grid-area: c; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Qolossal SFX Selector</h1>
+  <div class="sub" id="sub"></div>
+  <div class="bar">
+    <input type="search" id="q" placeholder="Search sounds, files, events">
+    <select id="bus"><option value="">All buses</option></select>
+    <label class="chk"><input type="checkbox" id="onlyUse"> Only takes in use</label>
+    <label class="chk"><input type="checkbox" id="onlyRemove"> Only marked Remove</label>
+    <button id="reset" title="Put every row back to its current state in the game">Reset</button>
+    <button class="primary" id="export">Export choices</button>
+    <span class="summary" id="summary"></span>
+  </div>
+</header>
+<main id="list"></main>
+<audio id="player" preload="none"></audio>
+<script>
+const DATA = /*__DATA__*/null;
+const BASE = "../../";               // this page lives in Tools/Audio/
+const STORE = "qolossal-sfx-selector:" + DATA.generated;
+const $ = s => document.querySelector(s);
+
+// Every row, flattened, with a stable key (its source file).
+const rows = [];
+DATA.sounds.forEach(s => s.takes.forEach(t => rows.push(Object.assign({ sound: s }, t))));
+const orphanSound = { id: "Files not in the library", bus: "", event: "WAV files in Assets/Audio/SFX that no library entry names.", hooked: false, status: "", takes: [] };
+DATA.orphans.forEach((f, i) => { const t = { n: i + 1, file: f, loop: "", play: f, state: "Unheard", heard: false, inUse: false, flags: "", note: "", choice: "keep" }; orphanSound.takes.push(t); rows.push(Object.assign({ sound: orphanSound }, t)); });
+const groups = DATA.sounds.concat(orphanSound.takes.length ? [orphanSound] : []);
+
+const defaults = {}; rows.forEach(r => defaults[r.file] = r.choice);
+let choice = Object.assign({}, defaults);
+try { const saved = JSON.parse(localStorage.getItem(STORE) || "null"); if (saved) for (const k in saved) if (k in choice) choice[k] = saved[k]; } catch (e) {}
+function save() { try { localStorage.setItem(STORE, JSON.stringify(choice)); } catch (e) {} }
+
+const totalTakes = rows.length;
+$("#sub").textContent = `${DATA.sounds.length} sounds, ${totalTakes} takes, read from ${DATA.library} on ${DATA.generated}. ` +
+  `Every row starts at its current state: Rejected takes start as Remove, all others as Keep. Nothing changes in the game until the exported file is applied.`;
+[...new Set(DATA.sounds.map(s => s.bus))].forEach(b => { const o = document.createElement("option"); o.value = o.textContent = b; $("#bus").appendChild(o); });
+
+const player = $("#player"); let playing = null;
+function play(btn, path) {
+  if (playing === btn) { player.pause(); return; }
+  if (playing) playing.classList.remove("on"), playing.textContent = "▶";
+  player.src = BASE + path; player.loop = false;
+  player.play().then(() => { playing = btn; btn.classList.add("on"); btn.textContent = "■"; })
+    .catch(() => { btn.textContent = "!"; btn.title = "Could not play " + path; });
+}
+player.addEventListener("pause", stopUi); player.addEventListener("ended", stopUi);
+function stopUi() { if (playing) { playing.classList.remove("on"); playing.textContent = "▶"; playing = null; } }
+
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function short(p) { return p.split("/").pop(); }
+
+function render() {
+  const q = $("#q").value.trim().toLowerCase(), bus = $("#bus").value;
+  const onlyUse = $("#onlyUse").checked, onlyRemove = $("#onlyRemove").checked;
+  const list = $("#list"); list.innerHTML = ""; let shown = 0;
+  groups.forEach(s => {
+    if (bus && s.bus !== bus) return;
+    const hay = (s.id + " " + s.event + " " + s.hook).toLowerCase();
+    const takes = s.takes.filter(t => (!onlyUse || t.inUse) && (!onlyRemove || choice[t.file] === "remove") &&
+      (!q || hay.includes(q) || t.file.toLowerCase().includes(q)));
+    if (!takes.length) return;
+    shown++;
+    const box = document.createElement("section"); box.className = "sound";
+    const hookTag = s.bus === "" ? "" : s.hooked
+      ? `<span class="tag hooked" title="${esc(s.hook)}">In game</span>`
+      : `<span class="tag unhooked" title="${esc(s.status + ': ' + s.hook)}">Not used in game</span>`;
+    box.innerHTML = `<div class="shead"><span class="sid">${esc(s.id)}</span>${s.bus ? `<span class="tag">${esc(s.bus)}</span>` : ""}${s.loop ? '<span class="tag">Loop</span>' : ""}${hookTag}
+      <span class="evt">${esc(s.event)}${s.bus && !s.hooked ? " · " + esc(s.status.startsWith("unused") ? s.status : s.hook || s.status) : ""}</span><span class="sact"><button data-all="keep">Keep all</button><button data-all="remove">Remove all</button></span></div>`;
+    box.querySelectorAll("[data-all]").forEach(b => b.onclick = () => { s.takes.forEach(t => choice[t.file] = b.dataset.all); save(); render(); });
+    const tbl = document.createElement("table");
+    const w = document.createElement("div"); w.className = "warn";
+    function warn() { w.textContent = s.hooked && s.takes.every(t => choice[t.file] === "remove") ? "Every take is marked Remove, so this sound would go silent in the game." : ""; }
+    takes.forEach(t => {
+      const tr = document.createElement("tr"); tr.className = "take" + (choice[t.file] === "remove" ? " removed" : "");
+      const extra = [t.loop ? (t.play === t.loop ? "plays loop version " + short(t.loop) : "loop version " + short(t.loop) + " (not used)") : "",
+        t.heard ? "" : (s.bus ? "never auditioned" : ""), t.flags, t.note].filter(Boolean).join(" · ");
+      tr.innerHTML = `<td class="c-play"><button class="play" title="Play">▶</button></td>
+        <td><div class="fname">Take ${t.n} · ${esc(short(t.file))}</div>${extra ? `<div class="flags">${esc(extra)}</div>` : ""}</td>
+        <td class="c-st"><span class="st ${t.state}">${t.state}</span></td>
+        <td class="c-use"><span class="use ${t.inUse ? "yes" : "no"}">${t.inUse ? "In use" : "Not in use"}</span></td>
+        <td class="c-ch"><span class="seg"><button class="k">Keep</button><button class="r">Remove</button></span></td>`;
+      tr.querySelector(".play").onclick = e => play(e.currentTarget, t.play);
+      const k = tr.querySelector(".k"), r = tr.querySelector(".r");
+      const sync = () => { const rem = choice[t.file] === "remove"; k.classList.toggle("sel", !rem); r.classList.toggle("sel", rem); tr.classList.toggle("removed", rem); summary(); warn(); };
+      k.onclick = () => { choice[t.file] = "keep"; save(); sync(); };
+      r.onclick = () => { choice[t.file] = "remove"; save(); sync(); };
+      sync();
+      tbl.appendChild(tr);
+    });
+    box.appendChild(tbl); box.appendChild(w);
+    warn();
+    list.appendChild(box);
+  });
+  if (!shown) list.innerHTML = '<div class="empty">Nothing matches.</div>';
+  summary();
+}
+
+function summary() {
+  const rem = rows.filter(r => choice[r.file] === "remove").length;
+  const changed = rows.filter(r => choice[r.file] !== defaults[r.file]).length;
+  $("#summary").textContent = `${totalTakes - rem} keep · ${rem} remove · ${changed} changed`;
+}
+
+$("#export").onclick = () => {
+  const out = {
+    kind: "qolossal-sfx-selection", version: 1, exportedAt: new Date().toISOString(),
+    builtFrom: DATA.library, builtAt: DATA.generated,
+    remove: rows.filter(r => choice[r.file] === "remove").map(r => r.file),
+    sounds: groups.map(s => ({ id: s.id, takes: s.takes.map(t => ({ take: t.n, file: t.file, loopFile: t.loop || undefined, state: t.state, inUse: t.inUse, choice: choice[t.file] })) }))
+  };
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(out, null, 1)], { type: "application/json" }));
+  a.download = "sfx_selection.json"; document.body.appendChild(a); a.click(); a.remove();
+};
+$("#reset").onclick = () => { if (confirm("Put every row back to its current state in the game?")) { choice = Object.assign({}, defaults); save(); render(); } };
+["#q", "#bus", "#onlyUse", "#onlyRemove"].forEach(id => $(id).addEventListener("input", render));
+render();
+</script>
+</body>
+</html>

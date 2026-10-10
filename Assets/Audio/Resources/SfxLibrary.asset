@@ -33,7 +33,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Moss_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 7.69
       useLoopDerivative: 1
       heard: 1
@@ -41,7 +41,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Moss_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 9.5
       useLoopDerivative: 1
       heard: 1
@@ -49,7 +49,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Moss_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 6.69
       useLoopDerivative: 1
       heard: 1
@@ -57,22 +57,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Moss_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 4.48
       useLoopDerivative: 1
       heard: 1
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: e3068aa95021444413fe1366c55a8306, type: 3}
-    - {fileID: 8300000, guid: 204b2a1223e8d5ff60869949cb82c264, type: 3}
-    - {fileID: 8300000, guid: 93200324b44f259758591d245c9a7935, type: 3}
-    - {fileID: 8300000, guid: 7a51750de9ef03ea26d87eb781761fc7, type: 3}
-    gains:
-    - 0.6088356
-    - 0.7498942
-    - 0.54262525
-    - 0.42072663
+    clips: []
+    gains: []
   - id: Qori_Step_Stone
     bus: 0
     loop: 0
@@ -93,7 +85,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Stone_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 9.2
       useLoopDerivative: 1
       heard: 1
@@ -101,7 +93,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Stone_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 6.15
       useLoopDerivative: 1
       heard: 1
@@ -109,7 +101,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Stone_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 1.16
       useLoopDerivative: 1
       heard: 1
@@ -117,22 +109,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Stone_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.79
       useLoopDerivative: 1
       heard: 1
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: e927752386028fba2354165a3ffa507d, type: 3}
-    - {fileID: 8300000, guid: cdfc8e383dd24a7e0d69f8683d881155, type: 3}
-    - {fileID: 8300000, guid: fc8c55b965cb5c29b361b07cb356e87c, type: 3}
-    - {fileID: 8300000, guid: aeba0499c8c5738af30d0922372387bb, type: 3}
-    gains:
-    - 0.7244359
-    - 0.5099176
-    - 0.28707805
-    - 0.22935066
+    clips: []
+    gains: []
   - id: Qori_Step_Wood
     bus: 0
     loop: 0
@@ -153,7 +137,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Wood_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 10.44
       useLoopDerivative: 1
       heard: 1
@@ -161,7 +145,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Wood_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 6.33
       useLoopDerivative: 1
       heard: 1
@@ -169,7 +153,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Wood_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 9.44
       useLoopDerivative: 1
       heard: 1
@@ -177,22 +161,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Wood_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.68
       useLoopDerivative: 1
       heard: 1
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: b1ac6ebda87da1f4180d9899364d173c, type: 3}
-    - {fileID: 8300000, guid: 04ee50b3194dcd4e4e7a39381d7f4700, type: 3}
-    - {fileID: 8300000, guid: df5a319d47ed430978ca71698a59c460, type: 3}
-    - {fileID: 8300000, guid: 72bc032b836bb9df3083356fe1735bef, type: 3}
-    gains:
-    - 0.835603
-    - 0.520595
-    - 0.74473196
-    - 0.1164126
+    clips: []
+    gains: []
   - id: Qori_Step_Water
     bus: 0
     loop: 0
@@ -213,23 +189,23 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Water_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.47
       useLoopDerivative: 1
       heard: 1
       note: 
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Water_02.wav
-      loopPath: 
-      state: 2
+      loopPath:
+      state: 3
       gainDb: -3.93
       useLoopDerivative: 1
       heard: 1
-      note: 
-      flags: 
+      note:
+      flags:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Water_03.wav
-      loopPath: 
-      state: 0
+      loopPath:
+      state: 3
       gainDb: -12.86
       useLoopDerivative: 1
       heard: 1
@@ -237,16 +213,14 @@ MonoBehaviour:
       flags: 'clipped samples in source: 2'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Step_Water_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.19
       useLoopDerivative: 1
       heard: 1
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: bdb0d877be528ad6e35eb27f275b0e54, type: 3}
-    gains:
-    - 0.15977174
+    clips: []
+    gains: []
   - id: Qori_Jump
     bus: 0
     loop: 0
@@ -267,7 +241,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Jump_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.84
       useLoopDerivative: 1
       heard: 1
@@ -275,7 +249,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Jump_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.59
       useLoopDerivative: 1
       heard: 1
@@ -283,7 +257,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Jump_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.25
       useLoopDerivative: 1
       heard: 1
@@ -291,22 +265,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Jump_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.14
       useLoopDerivative: 1
       heard: 1
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: fc4342a3a80e0cfcceb554b29614ceb1, type: 3}
-    - {fileID: 8300000, guid: 759b5a1872e46a074ea02607b1ab1882, type: 3}
-    - {fileID: 8300000, guid: 2fbac612120761f380a3e2987a106716, type: 3}
-    - {fileID: 8300000, guid: 6275c7aed79d636e6fb6e77a001fa43d, type: 3}
-    gains:
-    - 0.20323569
-    - 0.16614987
-    - 0.2440619
-    - 0.36057866
+    clips: []
+    gains: []
   - id: Qori_Land_Soft
     bus: 0
     loop: 0
@@ -327,7 +293,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Land_Soft_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 10.09
       useLoopDerivative: 1
       heard: 1
@@ -335,7 +301,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Land_Soft_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.93
       useLoopDerivative: 1
       heard: 1
@@ -343,7 +309,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Land_Soft_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 5.04
       useLoopDerivative: 1
       heard: 1
@@ -358,14 +324,8 @@ MonoBehaviour:
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: 66ca50ea645ec776c108ba0bca1c2e83, type: 3}
-    - {fileID: 8300000, guid: 66357b8094733e4f8cc19b7f8bd7a8da, type: 3}
-    - {fileID: 8300000, guid: 0a13dec1cf447ee02108fed621997608, type: 3}
     - {fileID: 8300000, guid: 39113f4f1681a2f3f71da80a9aab5539, type: 3}
     gains:
-    - 0.8026016
-    - 0.3949117
-    - 0.4487454
     - 0.7244359
   - id: Qori_Land_Hard
     bus: 0
@@ -387,7 +347,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Land_Hard_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -10.53
       useLoopDerivative: 1
       heard: 1
@@ -395,7 +355,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 7'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Land_Hard_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -18.37
       useLoopDerivative: 1
       heard: 1
@@ -403,7 +363,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 990'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Land_Hard_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -16.74
       useLoopDerivative: 1
       heard: 1
@@ -411,22 +371,14 @@ MonoBehaviour:
       flags: 'clipped samples in source: 8'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Land_Hard_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -9.67
       useLoopDerivative: 1
       heard: 1
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 44e5f94a3076444df4e5a7a89c45b14f, type: 3}
-    - {fileID: 8300000, guid: 3c90d922e322b5b87fe9c97bf52970d7, type: 3}
-    - {fileID: 8300000, guid: c9388fa6225faa69d39b0fe6f8b4769a, type: 3}
-    - {fileID: 8300000, guid: c13ea3b1e63c9bd4c3e16f7ececcf5c9, type: 3}
-    gains:
-    - 0.07473086
-    - 0.030303996
-    - 0.036559477
-    - 0.08250874
+    clips: []
+    gains: []
   - id: Qori_LedgeGrab
     bus: 0
     loop: 0
@@ -447,7 +399,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_LedgeGrab_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.67
       useLoopDerivative: 1
       heard: 1
@@ -455,7 +407,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_LedgeGrab_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.03
       useLoopDerivative: 1
       heard: 1
@@ -463,7 +415,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_LedgeGrab_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -4.03
       useLoopDerivative: 1
       heard: 1
@@ -471,22 +423,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_LedgeGrab_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 5.16
       useLoopDerivative: 1
       heard: 1
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 5dab8aea81c7005df4ee7bac4efe29c1, type: 3}
-    - {fileID: 8300000, guid: 9aeefac187e5446b18613a22b06975b6, type: 3}
-    - {fileID: 8300000, guid: 81f8d6ba210c1664ac29d84850a3bace, type: 3}
-    - {fileID: 8300000, guid: 4eb1f1ef217e55f64c5c41b37fe7d757, type: 3}
-    gains:
-    - 0.16462658
-    - 0.2520577
-    - 0.15794285
-    - 0.45498806
+    clips: []
+    gains: []
   - id: Qori_Climb
     bus: 0
     loop: 0
@@ -507,7 +451,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Climb_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.64
       useLoopDerivative: 1
       heard: 1
@@ -515,7 +459,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Climb_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.39
       useLoopDerivative: 1
       heard: 1
@@ -523,7 +467,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Climb_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -4.14
       useLoopDerivative: 1
       heard: 1
@@ -531,22 +475,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Climb_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.79
       useLoopDerivative: 1
       heard: 1
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 820f396e512b40a554577f7944e9e3aa, type: 3}
-    - {fileID: 8300000, guid: 4c56040068f91f4038d90a073b1a5fe2, type: 3}
-    - {fileID: 8300000, guid: bf32e4cae93c02d892adb24a90e6af42, type: 3}
-    - {fileID: 8300000, guid: a801ffdcbe04b0c9e06c2e5de4c71857, type: 3}
-    gains:
-    - 0.18535316
-    - 0.17001998
-    - 0.15595526
-    - 0.204409
+    clips: []
+    gains: []
   - id: Qori_Dash
     bus: 0
     loop: 0
@@ -575,7 +511,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 2'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Dash_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -9.36
       useLoopDerivative: 1
       heard: 1
@@ -583,7 +519,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 12'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Dash_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -15.09
       useLoopDerivative: 1
       heard: 1
@@ -591,7 +527,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 103'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Dash_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -7.13
       useLoopDerivative: 1
       heard: 1
@@ -599,14 +535,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: 61941e383e03531edbca59d83dae5101, type: 3}
-    - {fileID: 8300000, guid: 990b68803923cdfb6bc2f2097c6ad1d4, type: 3}
-    - {fileID: 8300000, guid: 84926645dbe08e183290f5c9c59f9dc4, type: 3}
-    - {fileID: 8300000, guid: ed6fb4fc32d424207c9b2009dd5d5d8d, type: 3}
     gains:
     - 0.036940265
-    - 0.08550668
-    - 0.044207904
-    - 0.11053505
   - id: Qori_Glide_Open
     bus: 0
     loop: 0
@@ -618,7 +548,7 @@ MonoBehaviour:
       sap, water; gentle storybook feel, not harsh or sci-fi; clean dry, no music
       or voice, short natural tail.
     requestedSeconds: 0.5
-    volume: 0.85
+    volume: 0.927
     pitchJitter: 0.04
     cooldown: 0.05
     maxVoices: 2
@@ -627,18 +557,18 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Glide_Open_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.04
       useLoopDerivative: 1
-      heard: 0
+      heard: 1
       note: 
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Glide_Open_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 19.62
       useLoopDerivative: 1
-      heard: 0
+      heard: 1
       note: 
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Glide_Open_03.wav
@@ -646,39 +576,33 @@ MonoBehaviour:
       state: 0
       gainDb: 10.27
       useLoopDerivative: 1
-      heard: 0
+      heard: 1
       note: 
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Glide_Open_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.89
       useLoopDerivative: 1
-      heard: 0
+      heard: 1
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: f9fdf3fd975792727fd12071146469c9, type: 3}
-    - {fileID: 8300000, guid: 9353bbb9ffb9af00c9d25cc5c2772029, type: 3}
     - {fileID: 8300000, guid: 5a39368981e2747d5fcc69c721582ae0, type: 3}
-    - {fileID: 8300000, guid: c1348a330fe1ec3efe15dfafa71f3a1d, type: 3}
     gains:
-    - 0.25003454
-    - 1
     - 0.8194077
-    - 0.18009432
   - id: Qori_Glide_Loop
     bus: 0
     loop: 1
     gameEvent: While gliding
-    hook: 'QoriMovementFeedback: SfxEmitter on Qori while IsGliding'
-    status: wired
+    hook: 'none: removed at the user''s request (8 Oct 2026); takes kept'
+    status: no-hook
     prompt: Gentle steady wind across a soft fabric canopy, light flutter. Hand-crafted
       2D fantasy platformer SFX, warm, organic, soft-edged; wood, leaf, moss, stone,
       sap, water; gentle storybook feel, not harsh or sci-fi; clean dry, no music
       or voice, short natural tail.
     requestedSeconds: 4
-    volume: 0.85
+    volume: 0.808
     pitchJitter: 0.04
     cooldown: 0.05
     maxVoices: 1
@@ -687,46 +611,38 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Glide_Loop_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Qori_Glide_Loop_01_loop.wav
-      state: 0
+      state: 3
       gainDb: 23.44
-      useLoopDerivative: 1
+      useLoopDerivative: 0
       heard: 0
       note: 
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Glide_Loop_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 16.55
       useLoopDerivative: 1
-      heard: 0
+      heard: 1
       note: 
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Glide_Loop_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 14.17
       useLoopDerivative: 1
-      heard: 0
+      heard: 1
       note: 
       flags: 'quiet: 2.4 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Glide_Loop_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 12.24
       useLoopDerivative: 1
-      heard: 0
+      heard: 1
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 87ee53dece51f274b69dfc82de2ea4f8, type: 3}
-    - {fileID: 8300000, guid: af80d2f7483e81bf05dc2baccb7405dc, type: 3}
-    - {fileID: 8300000, guid: 76aeca21b9f7e60aac854bddfbcb664f, type: 3}
-    - {fileID: 8300000, guid: faa77a3c411179a8622ed69bde80a2d5, type: 3}
-    gains:
-    - 1
-    - 1
-    - 1
-    - 1
+    clips: []
+    gains: []
   - id: Qori_Thread_Shoot
     bus: 0
     loop: 0
@@ -747,7 +663,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Shoot_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.81
       useLoopDerivative: 1
       heard: 0
@@ -755,7 +671,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Shoot_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.68
       useLoopDerivative: 1
       heard: 0
@@ -763,7 +679,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Shoot_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.32
       useLoopDerivative: 1
       heard: 0
@@ -771,22 +687,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Shoot_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.37
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: eb8918382c1f17b985cde24a0944a698, type: 3}
-    - {fileID: 8300000, guid: 77c31da12e81e5847ab97879504bfe84, type: 3}
-    - {fileID: 8300000, guid: e03a58fbe5b3f84ee809cb5afe28ce24, type: 3}
-    - {fileID: 8300000, guid: e6d866ca3f90f1f121fbef6aafdfe72b, type: 3}
-    gains:
-    - 0.20393886
-    - 0.20701413
-    - 0.3280953
-    - 0.2145359
+    clips: []
+    gains: []
   - id: Qori_Thread_Attach
     bus: 0
     loop: 0
@@ -807,7 +715,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Attach_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 18.66
       useLoopDerivative: 1
       heard: 0
@@ -815,7 +723,7 @@ MonoBehaviour:
       flags: 'quiet: 1.0 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Attach_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 10.33
       useLoopDerivative: 1
       heard: 0
@@ -823,7 +731,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Attach_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 7.47
       useLoopDerivative: 1
       heard: 0
@@ -831,22 +739,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Attach_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.17
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 8de90e70de43c3ebf3cc854e1344dfd1, type: 3}
-    - {fileID: 8300000, guid: 22b478dc04dc4ef338f86a3e38501b5c, type: 3}
-    - {fileID: 8300000, guid: 0fb9affe31ba7e7211ccd8497345a865, type: 3}
-    - {fileID: 8300000, guid: 2b5891c29ed040873d3ea329fb708f31, type: 3}
-    gains:
-    - 1
-    - 0.8250875
-    - 0.5936083
-    - 0.36182618
+    clips: []
+    gains: []
   - id: Qori_Thread_Swing
     bus: 0
     loop: 0
@@ -867,7 +767,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Swing_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -5.74
       useLoopDerivative: 1
       heard: 0
@@ -875,7 +775,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 1'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Swing_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -4.26
       useLoopDerivative: 1
       heard: 0
@@ -883,7 +783,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Swing_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -7
       useLoopDerivative: 1
       heard: 0
@@ -891,22 +791,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Swing_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -16.05
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'clipped samples in source: 500'
-    clips:
-    - {fileID: 8300000, guid: 0d7458eb9979c783612d2abd099be103, type: 3}
-    - {fileID: 8300000, guid: f7be8d87de2d1b38bacfa960e99294d8, type: 3}
-    - {fileID: 8300000, guid: 77b5f27828b2e0ea905148948f9e983a, type: 3}
-    - {fileID: 8300000, guid: 7744c30487ea8672f20a1b0a95c68fb5, type: 3}
-    gains:
-    - 0.12971793
-    - 0.15381546
-    - 0.11220185
-    - 0.039582215
+    clips: []
+    gains: []
   - id: Qori_Thread_Release
     bus: 0
     loop: 0
@@ -926,7 +818,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Release_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.68
       useLoopDerivative: 1
       heard: 0
@@ -934,7 +826,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Release_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -9.08
       useLoopDerivative: 1
       heard: 0
@@ -942,7 +834,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 20'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Release_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -5.7
       useLoopDerivative: 1
       heard: 0
@@ -950,22 +842,14 @@ MonoBehaviour:
       flags: 'clipped samples in source: 2'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Thread_Release_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 17.57
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 50e509be002379384a9576096e4228f1, type: 3}
-    - {fileID: 8300000, guid: e8159ad4fef9b4d0d781d1b9bf15c1ae, type: 3}
-    - {fileID: 8300000, guid: 4b37cb4cf8f7cc1e6443e398e526fd21, type: 3}
-    - {fileID: 8300000, guid: 07877f4e3eac6f55dd17a007905c6391, type: 3}
-    gains:
-    - 0.18450153
-    - 0.088307984
-    - 0.13031667
-    - 1
+    clips: []
+    gains: []
   - id: Qori_Hurt
     bus: 0
     loop: 0
@@ -986,7 +870,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Hurt_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -15.27
       useLoopDerivative: 1
       heard: 0
@@ -994,7 +878,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 444'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Hurt_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 17.89
       useLoopDerivative: 1
       heard: 0
@@ -1002,7 +886,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Hurt_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -13.21
       useLoopDerivative: 1
       heard: 0
@@ -1010,22 +894,14 @@ MonoBehaviour:
       flags: 'clipped samples in source: 181'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Hurt_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.33
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 9176ffd67d1a44be4f62d8677dd90103, type: 3}
-    - {fileID: 8300000, guid: b14d9d7b498ce332c0580fa9d700e97c, type: 3}
-    - {fileID: 8300000, guid: 7cc7587292e164bfa7fd02ed3910432a, type: 3}
-    - {fileID: 8300000, guid: 79eb921d6bb7e78a21017764f0cab587, type: 3}
-    gains:
-    - 0.043301206
-    - 1
-    - 0.05489086
-    - 0.24182433
+    clips: []
+    gains: []
   - id: Qori_Death
     bus: 0
     loop: 0
@@ -1046,7 +922,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Death_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.1
       useLoopDerivative: 1
       heard: 0
@@ -1054,7 +930,7 @@ MonoBehaviour:
       flags: 'quiet: 2.1 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Death_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.49
       useLoopDerivative: 1
       heard: 0
@@ -1062,7 +938,7 @@ MonoBehaviour:
       flags: 'quiet: 0.9 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Death_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.14
       useLoopDerivative: 1
       heard: 0
@@ -1070,22 +946,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Death_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.39
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 5cb5a92daa327a5e3e6e9bbaf1de4a96, type: 3}
-    - {fileID: 8300000, guid: c75de8ec741807b20e7af2c2289eae03, type: 3}
-    - {fileID: 8300000, guid: 8837c5c94921600997156996349e7a14, type: 3}
-    - {fileID: 8300000, guid: 8ea34b1a84f83645c29e8d8b859e8349, type: 3}
-    gains:
-    - 0.2483133
-    - 0.33458003
-    - 0.24717242
-    - 0.24015963
+    clips: []
+    gains: []
   - id: Qori_Respawn
     bus: 0
     loop: 0
@@ -1106,7 +974,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Respawn_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.05
       useLoopDerivative: 1
       heard: 0
@@ -1114,7 +982,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Respawn_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.27
       useLoopDerivative: 1
       heard: 0
@@ -1122,7 +990,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Respawn_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.36
       useLoopDerivative: 1
       heard: 0
@@ -1130,22 +998,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Respawn_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 1.69
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 32e49cdc25ea0fc9a8fb64bb87f9324f, type: 3}
-    - {fileID: 8300000, guid: 72417d8418d489e43ae0b17bb5977107, type: 3}
-    - {fileID: 8300000, guid: 7ed32df2024fd5588667465050c74df8, type: 3}
-    - {fileID: 8300000, guid: 69778c60afd2fc10a037fa2fbe44dd19, type: 3}
-    gains:
-    - 0.22258712
-    - 0.24350058
-    - 0.21478306
-    - 0.30514058
+    clips: []
+    gains: []
   - id: Qori_Sit
     bus: 0
     loop: 0
@@ -1166,7 +1026,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Sit_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 14.06
       useLoopDerivative: 1
       heard: 0
@@ -1174,7 +1034,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Sit_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.11
       useLoopDerivative: 1
       heard: 0
@@ -1182,7 +1042,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Sit_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 11.84
       useLoopDerivative: 1
       heard: 0
@@ -1190,22 +1050,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Player/SFX_Qori_Sit_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 17.88
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: c22c3848b1170e1f9792fbd4e38ffbbc, type: 3}
-    - {fileID: 8300000, guid: 190e147f23be266b710ad1487aa2b379, type: 3}
-    - {fileID: 8300000, guid: dba49dedff4613b5954feb7a8a353261, type: 3}
-    - {fileID: 8300000, guid: a7efdcffabb9bca014bee5b8be872543, type: 3}
-    gains:
-    - 1
-    - 0.25438997
-    - 0.981748
-    - 1
+    clips: []
+    gains: []
   - id: Weapon_Staff_Swing
     bus: 1
     loop: 0
@@ -1226,7 +1078,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Staff_Swing_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -12.69
       useLoopDerivative: 1
       heard: 0
@@ -1234,7 +1086,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 170'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Staff_Swing_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -14
       useLoopDerivative: 1
       heard: 0
@@ -1242,7 +1094,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 604'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Staff_Swing_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -12.08
       useLoopDerivative: 1
       heard: 0
@@ -1250,22 +1102,14 @@ MonoBehaviour:
       flags: 'clipped samples in source: 166'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Staff_Swing_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -11.72
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'clipped samples in source: 439'
-    clips:
-    - {fileID: 8300000, guid: e2ace276c3c382348c8c86b16f91833a, type: 3}
-    - {fileID: 8300000, guid: 001d7c1e111942f8890eaee131647cc6, type: 3}
-    - {fileID: 8300000, guid: 8d2d040e5c39811bea1f825414c6e512, type: 3}
-    - {fileID: 8300000, guid: b690ddea3e8fedf84c457fe493f9d1d0, type: 3}
-    gains:
-    - 0.058277387
-    - 0.05011873
-    - 0.06251727
-    - 0.06516284
+    clips: []
+    gains: []
   - id: Weapon_Staff_Hit
     bus: 1
     loop: 0
@@ -1294,7 +1138,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Staff_Hit_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 25.72
       useLoopDerivative: 1
       heard: 0
@@ -1302,7 +1146,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Staff_Hit_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 31.41
       useLoopDerivative: 1
       heard: 0
@@ -1310,7 +1154,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Staff_Hit_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 23.99
       useLoopDerivative: 1
       heard: 0
@@ -1318,13 +1162,7 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: 8ece63eae178980be737c92adafdc406, type: 3}
-    - {fileID: 8300000, guid: e086096575ee5f1e5b065cedc5febf22, type: 3}
-    - {fileID: 8300000, guid: a214862d4d310d7f79afbaf94cd908ec, type: 3}
-    - {fileID: 8300000, guid: a319d5ef44b76aab1b2aa1d21aa6eae8, type: 3}
     gains:
-    - 1
-    - 1
-    - 1
     - 1
   - id: Weapon_Reedblade_Swing
     bus: 1
@@ -1346,7 +1184,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Reedblade_Swing_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -14.22
       useLoopDerivative: 1
       heard: 0
@@ -1354,7 +1192,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 498'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Reedblade_Swing_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -12.7
       useLoopDerivative: 1
       heard: 0
@@ -1362,7 +1200,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 285'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Reedblade_Swing_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -10.33
       useLoopDerivative: 1
       heard: 0
@@ -1377,14 +1215,8 @@ MonoBehaviour:
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: ac2b5db424af184a90727b843770cb2c, type: 3}
-    - {fileID: 8300000, guid: 91afa36c038cb39b2eeaf2b9e03128fd, type: 3}
-    - {fileID: 8300000, guid: 8c04361eaa72087f0dca6f1967de5dc0, type: 3}
     - {fileID: 8300000, guid: 3401bf817b87932f5ab5eabba67723de, type: 3}
     gains:
-    - 0.048865236
-    - 0.05821032
-    - 0.07647157
     - 0.10864256
   - id: Weapon_Reedblade_Hit
     bus: 1
@@ -1406,7 +1238,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Reedblade_Hit_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.79
       useLoopDerivative: 1
       heard: 0
@@ -1414,7 +1246,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Reedblade_Hit_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.22
       useLoopDerivative: 1
       heard: 0
@@ -1422,7 +1254,7 @@ MonoBehaviour:
       flags: 'quiet: 2.5 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Reedblade_Hit_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 10.19
       useLoopDerivative: 1
       heard: 0
@@ -1437,14 +1269,8 @@ MonoBehaviour:
       note: 
       flags: 'clipped samples in source: 38'
     clips:
-    - {fileID: 8300000, guid: 30944cd01940628dde418833757ebe61, type: 3}
-    - {fileID: 8300000, guid: c822b3c0bb78b6a6f8a94625f0e89533, type: 3}
-    - {fileID: 8300000, guid: ac1b6df1cd9844c4efc819be3f532a5e, type: 3}
     - {fileID: 8300000, guid: f803e7d4cbaf6f98f62c68605d26e173, type: 3}
     gains:
-    - 0.18217972
-    - 0.36391503
-    - 0.8118952
     - 0.08298508
   - id: Weapon_Mace_Swing
     bus: 1
@@ -1474,7 +1300,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 234'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Mace_Swing_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -5.75
       useLoopDerivative: 1
       heard: 0
@@ -1482,7 +1308,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Mace_Swing_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.57
       useLoopDerivative: 1
       heard: 0
@@ -1490,7 +1316,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Mace_Swing_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -8.31
       useLoopDerivative: 1
       heard: 0
@@ -1498,14 +1324,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: 094553a803bd2d76efb0702a0d9e2b19, type: 3}
-    - {fileID: 8300000, guid: 83cf5ee51a837e6597b649361015dbfc, type: 3}
-    - {fileID: 8300000, guid: 62c46a90bb5b0b7d7fb8cd1ba2c6fe54, type: 3}
-    - {fileID: 8300000, guid: 94a181725135a73b7466b21e717448a7, type: 3}
     gains:
     - 0.05052427
-    - 0.12956867
-    - 0.16653287
-    - 0.096493915
   - id: Weapon_Mace_Hit
     bus: 1
     loop: 0
@@ -1526,7 +1346,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Mace_Hit_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.96
       useLoopDerivative: 1
       heard: 0
@@ -1534,7 +1354,7 @@ MonoBehaviour:
       flags: 'quiet: 1.6 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Mace_Hit_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.51
       useLoopDerivative: 1
       heard: 0
@@ -1542,7 +1362,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 5'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Mace_Hit_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.47
       useLoopDerivative: 1
       heard: 0
@@ -1558,14 +1378,8 @@ MonoBehaviour:
       flags: 'clipped samples in source: 9; quiet: 3.9 dB short of target at peak
         limit'
     clips:
-    - {fileID: 8300000, guid: ed55432da1dc067b00bc2a49c99982e9, type: 3}
-    - {fileID: 8300000, guid: 993bd055c4351e947c87f4929f9a5bc2, type: 3}
-    - {fileID: 8300000, guid: 55626b8a8cfdc7eb49fda561b023f1b7, type: 3}
     - {fileID: 8300000, guid: cd5d0bcafbe32f8b581417d455034e91, type: 3}
     gains:
-    - 0.22490546
-    - 0.21110573
-    - 0.21208014
     - 0.22387213
   - id: Weapon_Spear_Thrust
     bus: 1
@@ -1587,7 +1401,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Spear_Thrust_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -11.03
       useLoopDerivative: 1
       heard: 0
@@ -1595,7 +1409,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 87'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Spear_Thrust_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.63
       useLoopDerivative: 1
       heard: 0
@@ -1603,7 +1417,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Spear_Thrust_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.77
       useLoopDerivative: 1
       heard: 0
@@ -1611,22 +1425,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Spear_Thrust_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -8.43
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 0693dbce7d4708a9ec1a537a22a64a97, type: 3}
-    - {fileID: 8300000, guid: 91e12c80b843d973dedde93f751e5e67, type: 3}
-    - {fileID: 8300000, guid: 97c9cadd5f49276b37fcf7da278be804, type: 3}
-    - {fileID: 8300000, guid: 2f025f6e03663d918dfc27696566308f, type: 3}
-    gains:
-    - 0.07055049
-    - 0.20820923
-    - 0.11521261
-    - 0.095169984
+    clips: []
+    gains: []
   - id: Weapon_Spear_Hit
     bus: 1
     loop: 0
@@ -1647,7 +1453,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Spear_Hit_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.36
       useLoopDerivative: 1
       heard: 0
@@ -1655,7 +1461,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Spear_Hit_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -8.19
       useLoopDerivative: 1
       heard: 0
@@ -1671,22 +1477,16 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Spear_Hit_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.77
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: ebe0373dd2011f5d3b6df41f0754facf, type: 3}
-    - {fileID: 8300000, guid: d610c3e43dd340fcb71d7e10eb914737, type: 3}
     - {fileID: 8300000, guid: afc5c9c3c9623691b9cf52cf1cf445a6, type: 3}
-    - {fileID: 8300000, guid: 3e952bc840e282485594d7a7cd0b5581, type: 3}
     gains:
-    - 0.21478306
-    - 0.097836286
     - 0.23550491
-    - 0.20488021
   - id: Weapon_Sling_Shot
     bus: 1
     loop: 0
@@ -1707,7 +1507,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Sling_Shot_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 1.07
       useLoopDerivative: 1
       heard: 0
@@ -1715,7 +1515,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Sling_Shot_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.63
       useLoopDerivative: 1
       heard: 0
@@ -1723,7 +1523,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Sling_Shot_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.9
       useLoopDerivative: 1
       heard: 0
@@ -1731,22 +1531,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Sling_Shot_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.63
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: c819ec241b0d69a7034f8525ac128386, type: 3}
-    - {fileID: 8300000, guid: ef9c42025abe498357a45d1fd239186a, type: 3}
-    - {fileID: 8300000, guid: 5a06c32848c34063b47f261e836c379a, type: 3}
-    - {fileID: 8300000, guid: 12528c88998200221bf4d1d183548b13, type: 3}
-    gains:
-    - 0.28411883
-    - 0.2700847
-    - 0.22646444
-    - 0.18556666
+    clips: []
+    gains: []
   - id: Weapon_Sling_Impact
     bus: 1
     loop: 0
@@ -1767,7 +1559,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Sling_Impact_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 16.76
       useLoopDerivative: 1
       heard: 0
@@ -1775,7 +1567,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Sling_Impact_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 21.03
       useLoopDerivative: 1
       heard: 0
@@ -1791,21 +1583,15 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Weapon_Sling_Impact_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 32.53
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: 19f11fba553a234fc7df9461f9c9b3f9, type: 3}
-    - {fileID: 8300000, guid: b1a6db449f8e9fafb30aec1c9c719292, type: 3}
     - {fileID: 8300000, guid: 3dfe4774649611d6b0b1ee9d90bd1823, type: 3}
-    - {fileID: 8300000, guid: fcb21c6943edb56ab0e75b3e817b7059, type: 3}
     gains:
-    - 1
-    - 1
-    - 1
     - 1
   - id: Combat_Pogo_Bounce
     bus: 1
@@ -1827,7 +1613,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_Pogo_Bounce_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 15.68
       useLoopDerivative: 1
       heard: 0
@@ -1835,7 +1621,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_Pogo_Bounce_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 5.42
       useLoopDerivative: 1
       heard: 0
@@ -1843,7 +1629,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_Pogo_Bounce_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 19.96
       useLoopDerivative: 1
       heard: 0
@@ -1858,14 +1644,8 @@ MonoBehaviour:
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: feb47900b2a38670982e5dfa13c81f5b, type: 3}
-    - {fileID: 8300000, guid: 94d4c7d287f4b19384f6295a8e289dca, type: 3}
-    - {fileID: 8300000, guid: 8fef0ef63b7f4e9b02063edad05690ef, type: 3}
     - {fileID: 8300000, guid: 0a41c75339bb44d407be675b41982b23, type: 3}
     gains:
-    - 1
-    - 0.4688134
-    - 1
     - 1
   - id: Combat_Blocked
     bus: 1
@@ -1895,7 +1675,7 @@ MonoBehaviour:
       flags: 'quiet: 4.5 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_Blocked_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 21.03
       useLoopDerivative: 1
       heard: 0
@@ -1903,7 +1683,7 @@ MonoBehaviour:
       flags: 'quiet: 6.8 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_Blocked_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 14.26
       useLoopDerivative: 1
       heard: 0
@@ -1911,7 +1691,7 @@ MonoBehaviour:
       flags: 'quiet: 1.8 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_Blocked_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.72
       useLoopDerivative: 1
       heard: 0
@@ -1919,14 +1699,8 @@ MonoBehaviour:
       flags: 'quiet: 2.4 dB short of target at peak limit'
     clips:
     - {fileID: 8300000, guid: 6fedfea027d3bc444cdda9b1c4c1c1fe, type: 3}
-    - {fileID: 8300000, guid: d76a406de65e5b4b8efc82b643d74ff3, type: 3}
-    - {fileID: 8300000, guid: 081c088645ed64cd5ffc5ba796360d94, type: 3}
-    - {fileID: 8300000, guid: b8e345df5ab761b77aa80e5401e6b0a3, type: 3}
     gains:
     - 1
-    - 1
-    - 1
-    - 0.6854882
   - id: Combat_Parry
     bus: 1
     loop: 0
@@ -1955,7 +1729,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 18'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_Parry_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 18.96
       useLoopDerivative: 1
       heard: 0
@@ -1963,7 +1737,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_Parry_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 25.19
       useLoopDerivative: 1
       heard: 0
@@ -1971,7 +1745,7 @@ MonoBehaviour:
       flags: 'quiet: 1.5 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_Parry_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 40.74
       useLoopDerivative: 1
       heard: 0
@@ -1979,14 +1753,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: 627c731c002b316e1ba2f5f74b26f97c, type: 3}
-    - {fileID: 8300000, guid: 4ccb0f1ac4dcd17f85941f08a7e238e4, type: 3}
-    - {fileID: 8300000, guid: d0ee65e816a2829e19c3033e74975e86, type: 3}
-    - {fileID: 8300000, guid: 5c45b9eb1d210155e5a0f6c5d5ab9d18, type: 3}
     gains:
     - 0.14537844
-    - 1
-    - 1
-    - 1
   - id: Combat_ChargeUp
     bus: 1
     loop: 1
@@ -2007,7 +1775,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_ChargeUp_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.01
       useLoopDerivative: 1
       heard: 0
@@ -2015,7 +1783,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_ChargeUp_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.25
       useLoopDerivative: 1
       heard: 0
@@ -2023,7 +1791,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_ChargeUp_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Combat_ChargeUp_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 2.2
       useLoopDerivative: 1
       heard: 0
@@ -2031,22 +1799,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_ChargeUp_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Combat_ChargeUp_04_loop.wav
-      state: 0
+      state: 3
       gainDb: 0.44
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 61cda58101fb1ab2969e1525727a4808, type: 3}
-    - {fileID: 8300000, guid: cedd79041168d01fd3c2a470a8d4987a, type: 3}
-    - {fileID: 8300000, guid: ad3d675eba731ee82d3ecca76a1c98d9, type: 3}
-    - {fileID: 8300000, guid: 27939e1994a8b7ce9a0bdb4ff7c9fbe1, type: 3}
-    gains:
-    - 0.35522214
-    - 0.21752039
-    - 0.32359365
-    - 0.26424086
+    clips: []
+    gains: []
   - id: Combat_ChargeRelease
     bus: 1
     loop: 0
@@ -2083,7 +1843,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 91'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_ChargeRelease_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -9.45
       useLoopDerivative: 1
       heard: 0
@@ -2091,7 +1851,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 79'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_ChargeRelease_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -8.04
       useLoopDerivative: 1
       heard: 0
@@ -2100,13 +1860,9 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: 568892cbad76cc2c96d801b18ea2b97a, type: 3}
     - {fileID: 8300000, guid: 6dfa71f8bac2ca2fff4d9aa5f9c9eb9e, type: 3}
-    - {fileID: 8300000, guid: 579930b19da9faeec374d7ec19c09506, type: 3}
-    - {fileID: 8300000, guid: 5eba3bd3e554f79c29992fc4f4c14b76, type: 3}
     gains:
     - 0.07655967
     - 0.07682454
-    - 0.08462526
-    - 0.09954055
   - id: Combat_HitStop_Heavy
     bus: 1
     loop: 0
@@ -2135,7 +1891,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_HitStop_Heavy_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -13.22
       useLoopDerivative: 1
       heard: 0
@@ -2143,7 +1899,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_HitStop_Heavy_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.5
       useLoopDerivative: 1
       heard: 0
@@ -2151,7 +1907,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_HitStop_Heavy_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.01
       useLoopDerivative: 1
       heard: 0
@@ -2159,14 +1915,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: fce93bce1c43fba4d4844261d0358e9c, type: 3}
-    - {fileID: 8300000, guid: 4674508ad46f4df88593d9069cbfaa78, type: 3}
-    - {fileID: 8300000, guid: c50c77f2cf9dca9caadfb5a711a36d26, type: 3}
-    - {fileID: 8300000, guid: 4359452c32ba21706e8d0999d6177e73, type: 3}
     gains:
     - 0.08540828
-    - 0.05482769
-    - 0.6683439
-    - 0.17762332
   - id: Combat_EnemyDefeat
     bus: 1
     loop: 0
@@ -2195,7 +1945,7 @@ MonoBehaviour:
       flags: 'quiet: 9.7 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_EnemyDefeat_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 9.18
       useLoopDerivative: 1
       heard: 0
@@ -2203,7 +1953,7 @@ MonoBehaviour:
       flags: 'quiet: 3.3 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_EnemyDefeat_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.47
       useLoopDerivative: 1
       heard: 0
@@ -2211,7 +1961,7 @@ MonoBehaviour:
       flags: 'quiet: 3.0 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Combat/SFX_Combat_EnemyDefeat_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 5.82
       useLoopDerivative: 1
       heard: 0
@@ -2219,14 +1969,8 @@ MonoBehaviour:
       flags: 'quiet: 6.1 dB short of target at peak limit'
     clips:
     - {fileID: 8300000, guid: 00d655da25d8c5e22b963741b592d27d, type: 3}
-    - {fileID: 8300000, guid: ac499c1fa119fc15d31d3ca77b4d4225, type: 3}
-    - {fileID: 8300000, guid: 5fd51f31bc448d90619435246f69e747, type: 3}
-    - {fileID: 8300000, guid: 751fcfd9b8dd43f262e75d96f9739541, type: 3}
     gains:
     - 1
-    - 0.7227698
-    - 0.6660395
-    - 0.4909079
   - id: Crawler_Move
     bus: 2
     loop: 1
@@ -2256,7 +2000,7 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Crawler_Move_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Crawler_Move_02_loop.wav
-      state: 0
+      state: 3
       gainDb: 14.05
       useLoopDerivative: 1
       heard: 0
@@ -2265,7 +2009,7 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Crawler_Move_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Crawler_Move_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 8.53
       useLoopDerivative: 1
       heard: 0
@@ -2274,7 +2018,7 @@ MonoBehaviour:
         flagged: crossfade level +8.6 dB against its neighbours'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Crawler_Move_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Crawler_Move_04_loop.wav
-      state: 0
+      state: 3
       gainDb: 6.98
       useLoopDerivative: 1
       heard: 0
@@ -2283,14 +2027,8 @@ MonoBehaviour:
         its neighbours'
     clips:
     - {fileID: 8300000, guid: 99a5d6ecb70ffbf8959dad4dc54b62d0, type: 3}
-    - {fileID: 8300000, guid: 73ee169252a5bd7f8190fe6ca144def3, type: 3}
-    - {fileID: 8300000, guid: 6a77cfd3ff5d6ae41a8e34be70581ead, type: 3}
-    - {fileID: 8300000, guid: 49d156184180bebb1a98fb2cd407d8bc, type: 3}
     gains:
     - 1
-    - 1
-    - 0.67065626
-    - 0.561048
   - id: Thornwing_Hover
     bus: 2
     loop: 1
@@ -2311,7 +2049,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Thornwing_Hover_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.19
       useLoopDerivative: 1
       heard: 0
@@ -2319,7 +2057,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Thornwing_Hover_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Thornwing_Hover_02_loop.wav
-      state: 0
+      state: 3
       gainDb: 2.54
       useLoopDerivative: 1
       heard: 0
@@ -2327,7 +2065,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Thornwing_Hover_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.88
       useLoopDerivative: 1
       heard: 0
@@ -2342,14 +2080,8 @@ MonoBehaviour:
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: 8d081a794ab11d58a11c722e9398a99c, type: 3}
-    - {fileID: 8300000, guid: 787d427f3d1c79b3b0cbdfd87e9d3174, type: 3}
-    - {fileID: 8300000, guid: 73804402aa3a3416e4f9146106b4dc2f, type: 3}
     - {fileID: 8300000, guid: 347f403b264e334168dc27db245656f6, type: 3}
     gains:
-    - 0.3626603
-    - 0.33651158
-    - 0.1606941
     - 0.27195683
   - id: Thornwing_Rear
     bus: 2
@@ -2372,7 +2104,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Thornwing_Rear_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.83
       useLoopDerivative: 1
       heard: 0
@@ -2380,7 +2112,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Thornwing_Rear_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 6.97
       useLoopDerivative: 1
       heard: 0
@@ -2388,7 +2120,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Thornwing_Rear_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.94
       useLoopDerivative: 1
       heard: 0
@@ -2396,22 +2128,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Thornwing_Rear_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.1
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'quiet: 1.0 dB short of target at peak limit'
-    clips:
-    - {fileID: 8300000, guid: cc7068aa39118b9bc09375b2ca3a4718, type: 3}
-    - {fileID: 8300000, guid: 57960644bfd051a898fd9075121f01b6, type: 3}
-    - {fileID: 8300000, guid: 209cdb1c1e4033d2f0caaa6f570c06d7, type: 3}
-    - {fileID: 8300000, guid: 0ba7f5c3ef34054e341041f7743d9eda, type: 3}
-    gains:
-    - 0.16162184
-    - 0.5604024
-    - 0.20090927
-    - 0.31988952
+    clips: []
+    gains: []
   - id: Thornwing_Dive
     bus: 2
     loop: 0
@@ -2432,7 +2156,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Thornwing_Dive_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.92
       useLoopDerivative: 1
       heard: 0
@@ -2440,7 +2164,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Thornwing_Dive_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -4.43
       useLoopDerivative: 1
       heard: 0
@@ -2448,7 +2172,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Thornwing_Dive_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.23
       useLoopDerivative: 1
       heard: 0
@@ -2456,22 +2180,14 @@ MonoBehaviour:
       flags: 'clipped samples in source: 4'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Thornwing_Dive_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.99
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 9eb43e1fcccab725b69cda86763cc258, type: 3}
-    - {fileID: 8300000, guid: ebd3480cd4c367d71ad50fb11287084b, type: 3}
-    - {fileID: 8300000, guid: 6588194f09c972b0f5eb9fb5f96eadd7, type: 3}
-    - {fileID: 8300000, guid: 27e72894ef12ff323ec96fbd1952bd2e, type: 3}
-    gains:
-    - 0.3944573
-    - 0.15083426
-    - 0.122602694
-    - 0.19975607
+    clips: []
+    gains: []
   - id: Spitter_Swell
     bus: 2
     loop: 0
@@ -2493,7 +2209,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Spitter_Swell_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.58
       useLoopDerivative: 1
       heard: 0
@@ -2501,7 +2217,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Spitter_Swell_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.17
       useLoopDerivative: 1
       heard: 0
@@ -2509,7 +2225,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Spitter_Swell_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.62
       useLoopDerivative: 1
       heard: 0
@@ -2517,22 +2233,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Spitter_Swell_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 10.18
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: d83a4c4be56703db2ae72c04b2037b15, type: 3}
-    - {fileID: 8300000, guid: 8d98615478ca41ff679e63c33b990ee4, type: 3}
-    - {fileID: 8300000, guid: ad88c6cc5a863ff7a141c82f77126435, type: 3}
-    - {fileID: 8300000, guid: 92e076f68ff02f9fc648364250a9e9f9, type: 3}
-    gains:
-    - 0.26853445
-    - 0.24632019
-    - 0.165577
-    - 0.81096107
+    clips: []
+    gains: []
   - id: Spitter_Spit
     bus: 2
     loop: 0
@@ -2553,7 +2261,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Spitter_Spit_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.95
       useLoopDerivative: 1
       heard: 0
@@ -2561,7 +2269,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Spitter_Spit_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 12.68
       useLoopDerivative: 1
       heard: 0
@@ -2569,7 +2277,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Spitter_Spit_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 14.25
       useLoopDerivative: 1
       heard: 0
@@ -2577,22 +2285,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Spitter_Spit_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.79
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'quiet: 4.0 dB short of target at peak limit'
-    clips:
-    - {fileID: 8300000, guid: 17a6dae48438424f19a6441aaafebdae, type: 3}
-    - {fileID: 8300000, guid: ad5313bad4b36989517fc1487241ffd4, type: 3}
-    - {fileID: 8300000, guid: d840ab45db3651be462aa94f74876bf4, type: 3}
-    - {fileID: 8300000, guid: 256fc86a56e8a1ac8be1998784059a0c, type: 3}
-    gains:
-    - 0.3527768
-    - 1
-    - 1
-    - 0.34633788
+    clips: []
+    gains: []
   - id: Spitter_SeedHit
     bus: 2
     loop: 0
@@ -2621,7 +2321,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Spitter_SeedHit_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 5.46
       useLoopDerivative: 1
       heard: 0
@@ -2629,7 +2329,7 @@ MonoBehaviour:
       flags: 'quiet: 1.8 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Spitter_SeedHit_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 14.4
       useLoopDerivative: 1
       heard: 0
@@ -2637,7 +2337,7 @@ MonoBehaviour:
       flags: 'quiet: 2.7 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Spitter_SeedHit_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.14
       useLoopDerivative: 1
       heard: 0
@@ -2645,14 +2345,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: 7727e9a8804bf86cef7e7c3dcba0fc29, type: 3}
-    - {fileID: 8300000, guid: f91bfa4381e9595c6d6bf275821f9b4d, type: 3}
-    - {fileID: 8300000, guid: 83c3ff04dc54c861d591d2fa5cc720d8, type: 3}
-    - {fileID: 8300000, guid: 695de361f47b1540c2fe6c29d4948c53, type: 3}
     gains:
     - 0.34994516
-    - 0.47097734
-    - 1
-    - 0.6412096
   - id: Shellback_Walk
     bus: 2
     loop: 1
@@ -2673,7 +2367,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Shellback_Walk_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Shellback_Walk_01_loop.wav
-      state: 0
+      state: 3
       gainDb: 3.84
       useLoopDerivative: 1
       heard: 0
@@ -2681,7 +2375,7 @@ MonoBehaviour:
       flags: 'quiet: 2.9 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Shellback_Walk_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 18.48
       useLoopDerivative: 1
       heard: 0
@@ -2689,7 +2383,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Shellback_Walk_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Shellback_Walk_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 13.74
       useLoopDerivative: 1
       heard: 0
@@ -2697,23 +2391,15 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Shellback_Walk_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Shellback_Walk_04_loop.wav
-      state: 0
+      state: 3
       gainDb: 11.99
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'quiet: 0.9 dB short of target at peak limit; loop derivative seam still
         flagged: crossfade level -4.1 dB against its neighbours'
-    clips:
-    - {fileID: 8300000, guid: 1e54ea319df058ba5445483d65a47950, type: 3}
-    - {fileID: 8300000, guid: b04033873ac8329e9767dba3182562ca, type: 3}
-    - {fileID: 8300000, guid: 5496c9fc063f1112cc0a825a4b64ee05, type: 3}
-    - {fileID: 8300000, guid: e886a18f27a61ed477d26aa5da1ba6b6, type: 3}
-    gains:
-    - 0.3908409
-    - 1
-    - 1
-    - 0.99884933
+    clips: []
+    gains: []
   - id: Shellback_ShellCrack
     bus: 2
     loop: 0
@@ -2734,7 +2420,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Shellback_ShellCrack_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 5.24
       useLoopDerivative: 1
       heard: 0
@@ -2742,7 +2428,7 @@ MonoBehaviour:
       flags: 'quiet: 2.8 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Shellback_ShellCrack_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.33
       useLoopDerivative: 1
       heard: 0
@@ -2750,7 +2436,7 @@ MonoBehaviour:
       flags: 'quiet: 1.2 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Shellback_ShellCrack_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.16
       useLoopDerivative: 1
       heard: 0
@@ -2766,14 +2452,8 @@ MonoBehaviour:
       flags: 'clipped samples in source: 1; quiet: 1.0 dB short of target at peak
         limit'
     clips:
-    - {fileID: 8300000, guid: 658e1feb94f8b1689e16b9d46a02a5f9, type: 3}
-    - {fileID: 8300000, guid: 26893b1fa4f2a4e14f5515a6f090b95a, type: 3}
-    - {fileID: 8300000, guid: 4c55f631a6206a4d835f7f56cce2f69a, type: 3}
     - {fileID: 8300000, guid: e3d46ad3ab81850917ea9be06319d52e, type: 3}
     gains:
-    - 0.45919803
-    - 0.32847324
-    - 0.64268774
     - 0.22387213
   - id: Grub_Burrow
     bus: 2
@@ -2795,7 +2475,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Grub_Burrow_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Grub_Burrow_01_loop.wav
-      state: 0
+      state: 3
       gainDb: 8.21
       useLoopDerivative: 1
       heard: 0
@@ -2812,7 +2492,7 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Grub_Burrow_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Grub_Burrow_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 8.41
       useLoopDerivative: 1
       heard: 0
@@ -2820,7 +2500,7 @@ MonoBehaviour:
       flags: 'quiet: 5.5 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Grub_Burrow_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Grub_Burrow_04_loop.wav
-      state: 0
+      state: 3
       gainDb: -11.45
       useLoopDerivative: 1
       heard: 0
@@ -2828,15 +2508,9 @@ MonoBehaviour:
       flags: 'loop derivative seam still flagged: crossfade level -23.6 dB against
         its neighbours'
     clips:
-    - {fileID: 8300000, guid: b71c51f3c39933f06771f6c3e45a67b8, type: 3}
     - {fileID: 8300000, guid: 0067fb6bd9dbc9b9745489ba183ad5e3, type: 3}
-    - {fileID: 8300000, guid: 0d3bea683beab48e17aeacbcc2f2de56, type: 3}
-    - {fileID: 8300000, guid: 4b428ca7fe6b07fe3984218d684911b6, type: 3}
     gains:
-    - 0.646398
     - 0.22156441
-    - 0.6614545
-    - 0.067220226
   - id: Grub_Erupt
     bus: 2
     loop: 0
@@ -2865,7 +2539,7 @@ MonoBehaviour:
       flags: 'quiet: 1.5 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Grub_Erupt_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 22.66
       useLoopDerivative: 1
       heard: 0
@@ -2873,7 +2547,7 @@ MonoBehaviour:
       flags: 'quiet: 2.8 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Grub_Erupt_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.84
       useLoopDerivative: 1
       heard: 0
@@ -2881,7 +2555,7 @@ MonoBehaviour:
       flags: 'quiet: 3.0 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Grub_Erupt_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 17.09
       useLoopDerivative: 1
       heard: 0
@@ -2889,14 +2563,8 @@ MonoBehaviour:
       flags: 'quiet: 5.2 dB short of target at peak limit'
     clips:
     - {fileID: 8300000, guid: 2c1a0b44a8aca0e87409cc520a734bff, type: 3}
-    - {fileID: 8300000, guid: 7786533f0a06c9150cd085d3d3f62c00, type: 3}
-    - {fileID: 8300000, guid: c6664e1dfffa1abbac1eaec11ef10452, type: 3}
-    - {fileID: 8300000, guid: 6ee3c308e753eee25454b5f471b1da5b, type: 3}
     gains:
     - 0.9451484
-    - 1
-    - 0.27669415
-    - 1
   - id: Newt_Ripple
     bus: 2
     loop: 1
@@ -2926,7 +2594,7 @@ MonoBehaviour:
         crossfade level +24.5 dB against its neighbours'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Newt_Ripple_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Newt_Ripple_02_loop.wav
-      state: 0
+      state: 3
       gainDb: -8.04
       useLoopDerivative: 1
       heard: 0
@@ -2935,7 +2603,7 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Newt_Ripple_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -5.32
       useLoopDerivative: 1
       heard: 0
@@ -2943,7 +2611,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Newt_Ripple_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Newt_Ripple_04_loop.wav
-      state: 0
+      state: 3
       gainDb: -9.33
       useLoopDerivative: 1
       heard: 0
@@ -2952,14 +2620,8 @@ MonoBehaviour:
         its neighbours'
     clips:
     - {fileID: 8300000, guid: 3b14853fab25a7fedaddc1b6a51c9e75, type: 3}
-    - {fileID: 8300000, guid: 8bf04511a8b36dcbce8e8f090d364435, type: 3}
-    - {fileID: 8300000, guid: 420bf16b1f34d997bc88dcea51b2021f, type: 3}
-    - {fileID: 8300000, guid: fb30126d75812c7df982f61343f17239, type: 3}
     gains:
     - 0.07252704
-    - 0.09954055
-    - 0.13614447
-    - 0.085802525
   - id: Newt_Leap
     bus: 2
     loop: 0
@@ -2988,7 +2650,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Newt_Leap_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 10.55
       useLoopDerivative: 1
       heard: 0
@@ -2996,7 +2658,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Newt_Leap_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 4.5
       useLoopDerivative: 1
       heard: 0
@@ -3004,7 +2666,7 @@ MonoBehaviour:
       flags: 'quiet: 0.5 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Newt_Leap_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.02
       useLoopDerivative: 1
       heard: 0
@@ -3012,14 +2674,8 @@ MonoBehaviour:
       flags: 'quiet: 1.0 dB short of target at peak limit'
     clips:
     - {fileID: 8300000, guid: 4e9529b3321f15469801b7638f3f5792, type: 3}
-    - {fileID: 8300000, guid: 9e1bc4f142c28710f047235ea964ef7b, type: 3}
-    - {fileID: 8300000, guid: 535fceb519dd0259ed71a61e18f0cff9, type: 3}
-    - {fileID: 8300000, guid: b746c1f611d89a2a47264f9608ce901f, type: 3}
     gains:
     - 1
-    - 0.84625256
-    - 0.4216965
-    - 0.6324119
   - id: Sentinel_Step
     bus: 2
     loop: 0
@@ -3043,43 +2699,37 @@ MonoBehaviour:
       state: 0
       gainDb: -9.33
       useLoopDerivative: 1
-      heard: 0
+      heard: 1
       note: 
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Sentinel_Step_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -18.31
       useLoopDerivative: 1
-      heard: 0
+      heard: 1
       note: 
       flags: 'clipped samples in source: 329'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Sentinel_Step_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -17.63
       useLoopDerivative: 1
-      heard: 0
+      heard: 1
       note: 
       flags: 'clipped samples in source: 763'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Sentinel_Step_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -10.19
       useLoopDerivative: 1
-      heard: 0
+      heard: 1
       note: 
       flags: 
     clips:
     - {fileID: 8300000, guid: a72ebe391df0abc15b7a683cd6bb98a7, type: 3}
-    - {fileID: 8300000, guid: fb1ff2cb9fb708537cdfd9df84c8a0cc, type: 3}
-    - {fileID: 8300000, guid: 6cd96c6d688c40e88a231766fc1ebb6e, type: 3}
-    - {fileID: 8300000, guid: e6240ffc2d123e7701c5b0f6a9281252, type: 3}
     gains:
     - 0.085802525
-    - 0.030514063
-    - 0.03299895
-    - 0.077714145
   - id: Sentinel_ShieldBlock
     bus: 2
     loop: 0
@@ -3100,7 +2750,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Sentinel_ShieldBlock_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 6.1
       useLoopDerivative: 1
       heard: 0
@@ -3108,7 +2758,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Sentinel_ShieldBlock_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 7.05
       useLoopDerivative: 1
       heard: 0
@@ -3124,22 +2774,16 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Sentinel_ShieldBlock_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.77
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: dceb7e177b379986884c49fa688d3016, type: 3}
-    - {fileID: 8300000, guid: 14bf6f6c5c716d82f073075133d81b08, type: 3}
     - {fileID: 8300000, guid: a013ef9c456fcbf70d4b2192c5d78c7f, type: 3}
-    - {fileID: 8300000, guid: 3108c4162da0e47c78dfbff382c38b6f, type: 3}
     gains:
-    - 0.5069907
-    - 0.56558776
     - 0.4120975
-    - 0.6894456
   - id: Sentinel_Bash
     bus: 2
     loop: 0
@@ -3168,7 +2812,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Sentinel_Bash_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 6.45
       useLoopDerivative: 1
       heard: 0
@@ -3176,7 +2820,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Sentinel_Bash_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 11.4
       useLoopDerivative: 1
       heard: 0
@@ -3184,7 +2828,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Sentinel_Bash_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.85
       useLoopDerivative: 1
       heard: 0
@@ -3192,14 +2836,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: f6e360edb86307793f6cd69ed970ee2c, type: 3}
-    - {fileID: 8300000, guid: a5105062200e35193e210bbde29a1585, type: 3}
-    - {fileID: 8300000, guid: 7e2642a8493239c6002c2b4fa2bbe000, type: 3}
-    - {fileID: 8300000, guid: 907c4634a7e0c93113a9af7b4e285083, type: 3}
     gains:
     - 1
-    - 0.5278372
-    - 0.93325424
-    - 0.11415633
   - id: GustMoth_Wings
     bus: 2
     loop: 1
@@ -3228,7 +2866,7 @@ MonoBehaviour:
       flags: 'quiet: 3.0 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_GustMoth_Wings_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 9.79
       useLoopDerivative: 1
       heard: 0
@@ -3236,7 +2874,7 @@ MonoBehaviour:
       flags: 'quiet: 6.5 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_GustMoth_Wings_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_GustMoth_Wings_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 1.05
       useLoopDerivative: 1
       heard: 0
@@ -3245,7 +2883,7 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_GustMoth_Wings_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_GustMoth_Wings_04_loop.wav
-      state: 0
+      state: 3
       gainDb: 6.89
       useLoopDerivative: 1
       heard: 0
@@ -3254,14 +2892,8 @@ MonoBehaviour:
         its neighbours'
     clips:
     - {fileID: 8300000, guid: f4a4b7343be69f3f67f2fe30e402c998, type: 3}
-    - {fileID: 8300000, guid: ca2d8d4d7bd99fe68064bd8b09096256, type: 3}
-    - {fileID: 8300000, guid: 522a76f4703ebebb4c40d109f281997b, type: 3}
-    - {fileID: 8300000, guid: 47e85198fd47037c2a431d2e48ec0359, type: 3}
     gains:
     - 1
-    - 0.77535397
-    - 0.28346536
-    - 0.5552646
   - id: GustMoth_Blast
     bus: 2
     loop: 0
@@ -3282,7 +2914,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_GustMoth_Blast_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -5.44
       useLoopDerivative: 1
       heard: 0
@@ -3290,7 +2922,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 2'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_GustMoth_Blast_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.5
       useLoopDerivative: 1
       heard: 0
@@ -3306,22 +2938,16 @@ MonoBehaviour:
       flags: 'clipped samples in source: 1'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_GustMoth_Blast_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 16.34
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: c0b1daa947862a2df5fb282cb4712f51, type: 3}
-    - {fileID: 8300000, guid: 16393ffb26e06182d90c8395430031fa, type: 3}
     - {fileID: 8300000, guid: e13ee6f43867d10f8406fd8e6c0ca536, type: 3}
-    - {fileID: 8300000, guid: a4e0da40d3555c9d5efc57c0093fa67a, type: 3}
     gains:
-    - 0.13427651
-    - 0.33496544
     - 0.085113816
-    - 1
   - id: Enemy_Telegraph
     bus: 2
     loop: 0
@@ -3350,7 +2976,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Enemy_Telegraph_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.88
       useLoopDerivative: 1
       heard: 0
@@ -3358,7 +2984,7 @@ MonoBehaviour:
       flags: 'quiet: 0.5 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Enemy_Telegraph_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.45
       useLoopDerivative: 1
       heard: 0
@@ -3366,7 +2992,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Enemy_Telegraph_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.12
       useLoopDerivative: 1
       heard: 0
@@ -3374,14 +3000,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: e8c7e00c25613806e614f120fcccb69f, type: 3}
-    - {fileID: 8300000, guid: 4d083863409496993aa489978078b89f, type: 3}
-    - {fileID: 8300000, guid: e6ac54241270a2189ab59f442932a77b, type: 3}
-    - {fileID: 8300000, guid: b088051ee9d9bf0c19148a9f912b5ddc, type: 3}
     gains:
     - 0.37282068
-    - 0.22698648
-    - 0.21256903
-    - 0.17538805
   - id: Guardian_Awaken
     bus: 2
     loop: 0
@@ -3410,7 +3030,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_Awaken_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -8.53
       useLoopDerivative: 1
       heard: 0
@@ -3418,7 +3038,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_Awaken_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.56
       useLoopDerivative: 1
       heard: 0
@@ -3426,7 +3046,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_Awaken_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.13
       useLoopDerivative: 1
       heard: 0
@@ -3434,14 +3054,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: e9323d676c8f6d48f0e2e498fc0fb437, type: 3}
-    - {fileID: 8300000, guid: 4231548e0a08dade4d97d4d3cce40d78, type: 3}
-    - {fileID: 8300000, guid: 0c89ef91192d98791902a06e97b60990, type: 3}
-    - {fileID: 8300000, guid: 1aaa5ac6c5d0a80bc48586c87be32576, type: 3}
     gains:
     - 0.17640059
-    - 0.09408058
-    - 0.18706822
-    - 0.22054642
   - id: Guardian_ArmRaise
     bus: 2
     loop: 0
@@ -3463,7 +3077,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_ArmRaise_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -9.29
       useLoopDerivative: 1
       heard: 0
@@ -3471,7 +3085,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_ArmRaise_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.77
       useLoopDerivative: 1
       heard: 0
@@ -3479,7 +3093,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_ArmRaise_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -9.57
       useLoopDerivative: 1
       heard: 0
@@ -3487,22 +3101,14 @@ MonoBehaviour:
       flags: 'clipped samples in source: 1'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_ArmRaise_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.62
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 11770fdb607e206893e3faedc0d841a4, type: 3}
-    - {fileID: 8300000, guid: 6d46177b2523632f9f68aff1e96338c8, type: 3}
-    - {fileID: 8300000, guid: 249d4aaa515fe532b3d6a7bcd4852386, type: 3}
-    - {fileID: 8300000, guid: 812c43e246b1842232bdfda22f122839, type: 3}
-    gains:
-    - 0.08619856
-    - 0.16274212
-    - 0.083464146
-    - 0.18578044
+    clips: []
+    gains: []
   - id: Guardian_ArmSlam
     bus: 2
     loop: 0
@@ -3523,7 +3129,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_ArmSlam_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.98
       useLoopDerivative: 1
       heard: 0
@@ -3531,7 +3137,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_ArmSlam_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -12.57
       useLoopDerivative: 1
       heard: 0
@@ -3547,22 +3153,16 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_ArmSlam_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -14.59
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'clipped samples in source: 65'
     clips:
-    - {fileID: 8300000, guid: 5c61cdd293957e7cd574b426a79fc82c, type: 3}
-    - {fileID: 8300000, guid: 0ff98f3ccabd405b6fe877e5fcb68986, type: 3}
     - {fileID: 8300000, guid: cb9c0bd1638b15485b0aed37b8879119, type: 3}
-    - {fileID: 8300000, guid: b361c3a8d729b026e133cec73bf5558e, type: 3}
     gains:
-    - 0.112460494
-    - 0.059088096
     - 0.058344513
-    - 0.0468274
   - id: Guardian_Hurt
     bus: 2
     loop: 0
@@ -3583,7 +3183,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_Hurt_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.11
       useLoopDerivative: 1
       heard: 0
@@ -3591,7 +3191,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 2'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_Hurt_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.11
       useLoopDerivative: 1
       heard: 0
@@ -3599,7 +3199,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_Hurt_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.75
       useLoopDerivative: 1
       heard: 0
@@ -3607,22 +3207,14 @@ MonoBehaviour:
       flags: 'clipped samples in source: 6'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_Hurt_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.3
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: b3342cc765b1b27a31ab5e0d0fc98495, type: 3}
-    - {fileID: 8300000, guid: bddb6723e098e49f6cdbf6ae47770b5f, type: 3}
-    - {fileID: 8300000, guid: 5a5cf605591627c81900546f6bd9effb, type: 3}
-    - {fileID: 8300000, guid: e3b67051cd5d8bc89d7e03af47c60980, type: 3}
-    gains:
-    - 0.19701532
-    - 0.24802761
-    - 0.1830206
-    - 0.19275251
+    clips: []
+    gains: []
   - id: Guardian_Defeat
     bus: 2
     loop: 0
@@ -3653,7 +3245,7 @@ MonoBehaviour:
         limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_Defeat_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1
       useLoopDerivative: 1
       heard: 0
@@ -3662,7 +3254,7 @@ MonoBehaviour:
         limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_Defeat_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 1.1
       useLoopDerivative: 1
       heard: 0
@@ -3670,7 +3262,7 @@ MonoBehaviour:
       flags: 'quiet: 8.5 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Enemy/SFX_Guardian_Defeat_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1
       useLoopDerivative: 1
       heard: 0
@@ -3678,13 +3270,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 7'
     clips:
     - {fileID: 8300000, guid: 10c13182c91364592ac0cf701cbad841, type: 3}
-    - {fileID: 8300000, guid: 446d269d94221335fc6b4ab8f7dc9b56, type: 3}
-    - {fileID: 8300000, guid: c9466b17af53415ca20ba2dc1c82c1ff, type: 3}
-    - {fileID: 8300000, guid: 9f1587faf14eef656da818c45ccfe1c4, type: 3}
     gains:
-    - 0.22387213
-    - 0.22387213
-    - 0.2851018
     - 0.22387213
   - id: Knot_Idle
     bus: 3
@@ -3706,7 +3292,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Knot_Idle_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Knot_Idle_01_loop.wav
-      state: 0
+      state: 3
       gainDb: -18.47
       useLoopDerivative: 1
       heard: 0
@@ -3714,7 +3300,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Knot_Idle_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -11.28
       useLoopDerivative: 1
       heard: 0
@@ -3730,22 +3316,16 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Knot_Idle_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Knot_Idle_04_loop.wav
-      state: 0
+      state: 3
       gainDb: -18.03
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: 82b2ebddbb9dffc783f6632d007bfd41, type: 3}
-    - {fileID: 8300000, guid: e69ce6253edbeddcb5b21663c32e2d40, type: 3}
     - {fileID: 8300000, guid: a1069472add325e9a3a6d6343a120c28, type: 3}
-    - {fileID: 8300000, guid: 35feee1ba7909875992b40132970f245, type: 3}
     gains:
-    - 0.029957118
-    - 0.06854882
     - 0.22105482
-    - 0.031513743
   - id: Knot_Wake
     bus: 3
     loop: 0
@@ -3766,7 +3346,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Knot_Wake_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 26.61
       useLoopDerivative: 1
       heard: 0
@@ -3774,7 +3354,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Knot_Wake_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.86
       useLoopDerivative: 1
       heard: 0
@@ -3790,22 +3370,16 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Knot_Wake_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -7.4
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: ff2578c770251537c6706d80f5b2aaea, type: 3}
-    - {fileID: 8300000, guid: ea1fa790ae487741ec413c1bad1502f9, type: 3}
     - {fileID: 8300000, guid: 1715720094bce6709c6aebd6e607409d, type: 3}
-    - {fileID: 8300000, guid: 151f4e1dc017c09dd7a8697bf942baea, type: 3}
     gains:
-    - 1
-    - 0.114024974
     - 0.48921528
-    - 0.107151926
   - id: Quake_Stir
     bus: 3
     loop: 0
@@ -3826,7 +3400,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Quake_Stir_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 7.3
       useLoopDerivative: 1
       heard: 0
@@ -3842,7 +3416,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Quake_Stir_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.14
       useLoopDerivative: 1
       heard: 0
@@ -3850,22 +3424,16 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Quake_Stir_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -10.23
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: 46ce0ecb8818508125586d8492491fd4, type: 3}
     - {fileID: 8300000, guid: 8bfad18c179399ab0b775596db8f4d0c, type: 3}
-    - {fileID: 8300000, guid: 4da0fab6d6aa8e11ff718cbf2202b375, type: 3}
-    - {fileID: 8300000, guid: 72492f46e4d13215a26379474639f59b, type: 3}
     gains:
-    - 0.58210325
     - 0.12603755
-    - 0.17498466
-    - 0.07735706
   - id: Quake_Small
     bus: 3
     loop: 0
@@ -3894,7 +3462,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Quake_Small_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 7.64
       useLoopDerivative: 1
       heard: 0
@@ -3902,7 +3470,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Quake_Small_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.8
       useLoopDerivative: 1
       heard: 0
@@ -3910,7 +3478,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Quake_Small_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.93
       useLoopDerivative: 1
       heard: 0
@@ -3918,14 +3486,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: d9e27ff5f34b089894a4dc2b49fa5f3c, type: 3}
-    - {fileID: 8300000, guid: 38488b1dc7d4eb6e27581761dc2ca0b1, type: 3}
-    - {fileID: 8300000, guid: 0d51a1bafb86670a848423fbdf50c6ad, type: 3}
-    - {fileID: 8300000, guid: 2a42043c3acd9b17df28e5583184e83a, type: 3}
     gains:
     - 0.36057866
-    - 0.60534084
-    - 0.162181
-    - 0.2256836
   - id: Swell_Loop
     bus: 3
     loop: 1
@@ -3946,7 +3508,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Swell_Loop_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Swell_Loop_01_loop.wav
-      state: 0
+      state: 3
       gainDb: 13.36
       useLoopDerivative: 1
       heard: 0
@@ -3954,7 +3516,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Swell_Loop_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.58
       useLoopDerivative: 1
       heard: 0
@@ -3962,7 +3524,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Swell_Loop_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Swell_Loop_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 2.28
       useLoopDerivative: 1
       heard: 0
@@ -3971,22 +3533,14 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/World/SFX_Swell_Loop_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -8.71
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 314d99ea9d266a1858fe0a6aac608ebc, type: 3}
-    - {fileID: 8300000, guid: eca98fdd4ac82f94904d84e824c734d3, type: 3}
-    - {fileID: 8300000, guid: 0bbd807d4e225a768ec438d76bb5cf61, type: 3}
-    - {fileID: 8300000, guid: 60657e62ea271f46e041fc9a1797afb6, type: 3}
-    gains:
-    - 1
-    - 0.26853445
-    - 0.32658783
-    - 0.09215098
+    clips: []
+    gains: []
   - id: Spring_Pulse
     bus: 3
     loop: 1
@@ -4007,7 +3561,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Spring_Pulse_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 14.05
       useLoopDerivative: 1
       heard: 0
@@ -4015,7 +3569,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Spring_Pulse_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Spring_Pulse_02_loop.wav
-      state: 0
+      state: 3
       gainDb: -5.93
       useLoopDerivative: 1
       heard: 0
@@ -4024,7 +3578,7 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/World/SFX_Spring_Pulse_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Spring_Pulse_03_loop.wav
-      state: 0
+      state: 3
       gainDb: -8
       useLoopDerivative: 1
       heard: 0
@@ -4032,22 +3586,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Spring_Pulse_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 4.57
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: bb3b8fac396bb1ee40646676922c222d, type: 3}
-    - {fileID: 8300000, guid: 2aeac43bd2f2b2224893aacb7182997b, type: 3}
-    - {fileID: 8300000, guid: 10b4d67eb8b72a3ed201bd7d3bd3d6f0, type: 3}
-    - {fileID: 8300000, guid: 8036f5ca9f32e3c7afea6c34991d4913, type: 3}
-    gains:
-    - 1
-    - 0.12691122
-    - 0.1
-    - 0.42510873
+    clips: []
+    gains: []
   - id: Arch_Fall
     bus: 3
     loop: 0
@@ -4068,7 +3614,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Arch_Fall_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.85
       useLoopDerivative: 1
       heard: 0
@@ -4076,7 +3622,7 @@ MonoBehaviour:
       flags: 'quiet: 10.9 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_Arch_Fall_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.99
       useLoopDerivative: 1
       heard: 0
@@ -4085,7 +3631,7 @@ MonoBehaviour:
         limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_Arch_Fall_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.62
       useLoopDerivative: 1
       heard: 0
@@ -4093,22 +3639,14 @@ MonoBehaviour:
       flags: 'quiet: 7.5 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_Arch_Fall_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 16.12
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'quiet: 6.8 dB short of target at peak limit'
-    clips:
-    - {fileID: 8300000, guid: 7173d2e90faeae8451d75a6bafa4b045, type: 3}
-    - {fileID: 8300000, guid: 4ac4b55296de0709666fd90a2e51631a, type: 3}
-    - {fileID: 8300000, guid: 6d43ed567d8076f90c365ede2ac21fe9, type: 3}
-    - {fileID: 8300000, guid: 33a39dfbaa830a6f3656281c69be60d8, type: 3}
-    gains:
-    - 0.695825
-    - 0.22413
-    - 0.6776415
-    - 1
+    clips: []
+    gains: []
   - id: Rock_Fall
     bus: 3
     loop: 0
@@ -4137,7 +3675,7 @@ MonoBehaviour:
       flags: 'quiet: 6.1 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_Rock_Fall_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 1.18
       useLoopDerivative: 1
       heard: 0
@@ -4145,7 +3683,7 @@ MonoBehaviour:
       flags: 'quiet: 4.9 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_Rock_Fall_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1
       useLoopDerivative: 1
       heard: 0
@@ -4154,7 +3692,7 @@ MonoBehaviour:
         limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_Rock_Fall_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.35
       useLoopDerivative: 1
       heard: 0
@@ -4162,14 +3700,8 @@ MonoBehaviour:
       flags: 'quiet: 8.2 dB short of target at peak limit'
     clips:
     - {fileID: 8300000, guid: e940a88cd3172c27db4bb3c6942588e6, type: 3}
-    - {fileID: 8300000, guid: 482cfd4c60613040045651914115f2ff, type: 3}
-    - {fileID: 8300000, guid: fe32c810747c12fbf2239da2ec25afa8, type: 3}
-    - {fileID: 8300000, guid: 00718de854107d287e500b42ad5f40ea, type: 3}
     gains:
     - 0.24575366
-    - 0.28773984
-    - 0.22387213
-    - 0.32923043
   - id: Platform_Crumble
     bus: 3
     loop: 0
@@ -4190,7 +3722,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Platform_Crumble_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 5.62
       useLoopDerivative: 1
       heard: 0
@@ -4198,7 +3730,7 @@ MonoBehaviour:
       flags: 'quiet: 1.3 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_Platform_Crumble_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 4.1
       useLoopDerivative: 1
       heard: 0
@@ -4206,7 +3738,7 @@ MonoBehaviour:
       flags: 'quiet: 2.6 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_Platform_Crumble_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 6.09
       useLoopDerivative: 1
       heard: 0
@@ -4214,23 +3746,15 @@ MonoBehaviour:
       flags: 'quiet: 3.9 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_Platform_Crumble_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'clipped samples in source: 7; quiet: 3.9 dB short of target at peak
         limit'
-    clips:
-    - {fileID: 8300000, guid: d4e24fe101a3f77128ec7e83a1ebe621, type: 3}
-    - {fileID: 8300000, guid: fc11a97daafd622536dae93b4293bbe2, type: 3}
-    - {fileID: 8300000, guid: 182ca773cbd85886383d8870d8360325, type: 3}
-    - {fileID: 8300000, guid: bec4d5b772af150c46c9760b479e5d9a, type: 3}
-    gains:
-    - 0.47973344
-    - 0.40271702
-    - 0.5064074
-    - 0.22387213
+    clips: []
+    gains: []
   - id: Platform_Reform
     bus: 3
     loop: 0
@@ -4251,7 +3775,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Platform_Reform_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1
       useLoopDerivative: 1
       heard: 0
@@ -4260,7 +3784,7 @@ MonoBehaviour:
         limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_Platform_Reform_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.88
       useLoopDerivative: 1
       heard: 0
@@ -4268,7 +3792,7 @@ MonoBehaviour:
       flags: 'quiet: 6.7 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_Platform_Reform_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.96
       useLoopDerivative: 1
       heard: 0
@@ -4276,22 +3800,14 @@ MonoBehaviour:
       flags: 'quiet: 4.6 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_Platform_Reform_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.69
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'quiet: 2.1 dB short of target at peak limit'
-    clips:
-    - {fileID: 8300000, guid: 4b5d45f49710486e4e36e7497c66eb38, type: 3}
-    - {fileID: 8300000, guid: d767045cdd4e917cc4bc454198b156e9, type: 3}
-    - {fileID: 8300000, guid: b81a9ba4259d947ed5d82569134b952b, type: 3}
-    - {fileID: 8300000, guid: a82bb16f3a6bd63648108f6827c6850d, type: 3}
-    gains:
-    - 0.22387213
-    - 0.6982324
-    - 0.22490546
-    - 0.27195683
+    clips: []
+    gains: []
   - id: Thorns_Warn
     bus: 3
     loop: 0
@@ -4312,7 +3828,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Thorns_Warn_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -20.8
       useLoopDerivative: 1
       heard: 0
@@ -4320,7 +3836,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 720'
     - sourcePath: Assets/Audio/SFX/World/SFX_Thorns_Warn_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -9.07
       useLoopDerivative: 1
       heard: 0
@@ -4328,7 +3844,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Thorns_Warn_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -17.86
       useLoopDerivative: 1
       heard: 0
@@ -4336,22 +3852,14 @@ MonoBehaviour:
       flags: 'clipped samples in source: 3'
     - sourcePath: Assets/Audio/SFX/World/SFX_Thorns_Warn_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -18.26
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 10f63d43297fbd6c54f3b72b5a887e46, type: 3}
-    - {fileID: 8300000, guid: 945036e55ef36edd60a50b24442255c2, type: 3}
-    - {fileID: 8300000, guid: 124e1b611503f50e57cf87285ad5ecd2, type: 3}
-    - {fileID: 8300000, guid: f3ceb9176e2ee84f7162f7a31f98966b, type: 3}
-    gains:
-    - 0.022908676
-    - 0.08840973
-    - 0.032136604
-    - 0.03069022
+    clips: []
+    gains: []
   - id: Thorns_Rise
     bus: 3
     loop: 0
@@ -4372,7 +3880,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Thorns_Rise_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 12.34
       useLoopDerivative: 1
       heard: 0
@@ -4380,7 +3888,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Thorns_Rise_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.08
       useLoopDerivative: 1
       heard: 0
@@ -4388,7 +3896,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Thorns_Rise_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -7.31
       useLoopDerivative: 1
       heard: 0
@@ -4396,22 +3904,14 @@ MonoBehaviour:
       flags: 'clipped samples in source: 4'
     - sourcePath: Assets/Audio/SFX/World/SFX_Thorns_Rise_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -4.06
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 362acc7f401155f9d1d22d0bd9d3a243, type: 3}
-    - {fileID: 8300000, guid: 46ed97dca40050c27250b6ebf7662b4a, type: 3}
-    - {fileID: 8300000, guid: a4ff04c432577eb47bbbcc0689831f8b, type: 3}
-    - {fileID: 8300000, guid: a2b5e02132d30796d827e2296facd741, type: 3}
-    gains:
-    - 1
-    - 0.1761976
-    - 0.10826797
-    - 0.1573983
+    clips: []
+    gains: []
   - id: Thorns_Sink
     bus: 3
     loop: 0
@@ -4432,7 +3932,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Thorns_Sink_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.37
       useLoopDerivative: 1
       heard: 0
@@ -4440,7 +3940,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Thorns_Sink_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.46
       useLoopDerivative: 1
       heard: 0
@@ -4448,7 +3948,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Thorns_Sink_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -5.92
       useLoopDerivative: 1
       heard: 0
@@ -4456,22 +3956,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Thorns_Sink_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 5.23
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 46dcf8941f1decc244f7d851ecfce9a9, type: 3}
-    - {fileID: 8300000, guid: e6e3406404481afa8fa7dce89bce6d45, type: 3}
-    - {fileID: 8300000, guid: d709a67823405495967c6200d21bc79e, type: 3}
-    - {fileID: 8300000, guid: 7cbb6f33448b3ebc677ddf114c81cb6a, type: 3}
-    gains:
-    - 0.12064241
-    - 0.1686553
-    - 0.1270574
-    - 0.45866966
+    clips: []
+    gains: []
   - id: Breakable_Smash
     bus: 3
     loop: 0
@@ -4492,7 +3984,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Breakable_Smash_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.62
       useLoopDerivative: 1
       heard: 0
@@ -4500,7 +3992,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 6'
     - sourcePath: Assets/Audio/SFX/World/SFX_Breakable_Smash_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.98
       useLoopDerivative: 1
       heard: 0
@@ -4508,7 +4000,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 2'
     - sourcePath: Assets/Audio/SFX/World/SFX_Breakable_Smash_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.71
       useLoopDerivative: 1
       heard: 0
@@ -4523,14 +4015,8 @@ MonoBehaviour:
       note: 
       flags: 'clipped samples in source: 49'
     clips:
-    - {fileID: 8300000, guid: e8046ed51027deac7fc88e60868884c1, type: 3}
-    - {fileID: 8300000, guid: 8c15d406a3c04ff3e1fb49fea8965d6d, type: 3}
-    - {fileID: 8300000, guid: 0f353cb05d5171a092daad3951ad976f, type: 3}
     - {fileID: 8300000, guid: 4fd1d460ce4a46595fd01b050e93ce15, type: 3}
     gains:
-    - 0.2084491
-    - 0.17823787
-    - 0.38503483
     - 0.09527961
   - id: SecretWall_Open
     bus: 3
@@ -4552,7 +4038,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_SecretWall_Open_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 7.96
       useLoopDerivative: 1
       heard: 0
@@ -4568,7 +4054,7 @@ MonoBehaviour:
       flags: 'quiet: 6.1 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_SecretWall_Open_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 4.66
       useLoopDerivative: 1
       heard: 0
@@ -4576,7 +4062,7 @@ MonoBehaviour:
       flags: 'quiet: 4.3 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_SecretWall_Open_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1
       useLoopDerivative: 1
       heard: 0
@@ -4584,15 +4070,9 @@ MonoBehaviour:
       flags: 'clipped samples in source: 1; quiet: 3.4 dB short of target at peak
         limit'
     clips:
-    - {fileID: 8300000, guid: 9f0de2105d112d6a2556f2e08be8faeb, type: 3}
     - {fileID: 8300000, guid: 929780f2c2d45e68f84eb75f9b0e0cfa, type: 3}
-    - {fileID: 8300000, guid: 952151f86c8c73e5c44bcb909b5b6f64, type: 3}
-    - {fileID: 8300000, guid: 9d9c96144a5006ecf123fd04abd46c15, type: 3}
     gains:
-    - 0.6280584
     - 0.29444215
-    - 0.4295364
-    - 0.22387213
   - id: Gate_Open
     bus: 3
     loop: 0
@@ -4621,7 +4101,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Gate_Open_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -5.9
       useLoopDerivative: 1
       heard: 0
@@ -4629,7 +4109,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Gate_Open_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.7
       useLoopDerivative: 1
       heard: 0
@@ -4637,7 +4117,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 8'
     - sourcePath: Assets/Audio/SFX/World/SFX_Gate_Open_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -4.11
       useLoopDerivative: 1
       heard: 0
@@ -4645,14 +4125,8 @@ MonoBehaviour:
       flags: 'clipped samples in source: 6'
     clips:
     - {fileID: 8300000, guid: 808b699b0541c55de41a2a66d9220cc9, type: 3}
-    - {fileID: 8300000, guid: f1cab6d1560a3c277991786e1aca869d, type: 3}
-    - {fileID: 8300000, guid: 26abf19064d1a854e190a46062d03f64, type: 3}
-    - {fileID: 8300000, guid: e972ccce8f26351c92e997ce651a4be7, type: 3}
     gains:
     - 0.1005773
-    - 0.12735032
-    - 0.16405897
-    - 0.15649483
   - id: Gate_Close
     bus: 3
     loop: 0
@@ -4681,7 +4155,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Gate_Close_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.73
       useLoopDerivative: 1
       heard: 0
@@ -4689,7 +4163,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 8'
     - sourcePath: Assets/Audio/SFX/World/SFX_Gate_Close_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 6.57
       useLoopDerivative: 1
       heard: 0
@@ -4697,7 +4171,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Gate_Close_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.45
       useLoopDerivative: 1
       heard: 0
@@ -4705,14 +4179,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: ab32ca84bbc3824a8e23079c24c0823c, type: 3}
-    - {fileID: 8300000, guid: 51467db2d56e9dd3e5bebbe20ab93158, type: 3}
-    - {fileID: 8300000, guid: 85cb6c15bb6c1d0933f81d1c9b4be00e, type: 3}
-    - {fileID: 8300000, guid: 4c29a8adc3d34f69275ff1ba7123650e, type: 3}
     gains:
     - 0.2086892
-    - 0.1157444
-    - 0.53518015
-    - 0.16884959
   - id: Lever_Pull
     bus: 3
     loop: 0
@@ -4733,7 +4201,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Lever_Pull_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.02
       useLoopDerivative: 1
       heard: 0
@@ -4749,7 +4217,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Lever_Pull_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 1.2
       useLoopDerivative: 1
       heard: 0
@@ -4757,22 +4225,16 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_Lever_Pull_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.23
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: e6f11d0649ba857dd2656317d8116269, type: 3}
     - {fileID: 8300000, guid: 11783a5caa786729400d0d8377d365ed, type: 3}
-    - {fileID: 8300000, guid: 6bb851e522a6016b63ac1cf2235f2ce3, type: 3}
-    - {fileID: 8300000, guid: 8df2c8063034390e11429d692e35696e, type: 3}
     gains:
-    - 0.22335722
     - 0.26853445
-    - 0.28840312
-    - 0.19431217
   - id: Wheel_Turn
     bus: 3
     loop: 0
@@ -4793,7 +4255,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_Wheel_Turn_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.84
       useLoopDerivative: 1
       heard: 0
@@ -4809,7 +4271,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 53'
     - sourcePath: Assets/Audio/SFX/World/SFX_Wheel_Turn_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.54
       useLoopDerivative: 1
       heard: 0
@@ -4817,22 +4279,16 @@ MonoBehaviour:
       flags: 'clipped samples in source: 2'
     - sourcePath: Assets/Audio/SFX/World/SFX_Wheel_Turn_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.75
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'clipped samples in source: 4'
     clips:
-    - {fileID: 8300000, guid: 2fb377f4de32cf7d139bb917ac569b8c, type: 3}
     - {fileID: 8300000, guid: 978b54123778c554b152afa08a14f719, type: 3}
-    - {fileID: 8300000, guid: a12ac21935ff856cc04bcdaa22eb2f5c, type: 3}
-    - {fileID: 8300000, guid: 61c022fecd77f91779db57e7732dc6b8, type: 3}
     gains:
-    - 0.20323569
     - 0.10327614
-    - 0.18749945
-    - 0.1830206
   - id: PressurePlate_Down
     bus: 3
     loop: 0
@@ -4853,7 +4309,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_PressurePlate_Down_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -7.75
       useLoopDerivative: 1
       heard: 0
@@ -4861,7 +4317,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 26'
     - sourcePath: Assets/Audio/SFX/World/SFX_PressurePlate_Down_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -8.22
       useLoopDerivative: 1
       heard: 0
@@ -4869,7 +4325,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 10'
     - sourcePath: Assets/Audio/SFX/World/SFX_PressurePlate_Down_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.87
       useLoopDerivative: 1
       heard: 0
@@ -4877,22 +4333,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_PressurePlate_Down_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 6.38
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 7c990ab763e09feb272b7130aed3752a, type: 3}
-    - {fileID: 8300000, guid: c70ae1364ad9eee3bf5d18233f12139a, type: 3}
-    - {fileID: 8300000, guid: 2c22fbcb2d2f37dc4d9120f01262966e, type: 3}
-    - {fileID: 8300000, guid: adc43b8741c196fa4d7a719de0172a5a, type: 3}
-    gains:
-    - 0.10292005
-    - 0.09749895
-    - 0.22724798
-    - 0.52360046
+    clips: []
+    gains: []
   - id: SeedSwitch_Hit
     bus: 3
     loop: 0
@@ -4913,7 +4361,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_SeedSwitch_Hit_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -7.07
       useLoopDerivative: 1
       heard: 0
@@ -4921,7 +4369,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 7'
     - sourcePath: Assets/Audio/SFX/World/SFX_SeedSwitch_Hit_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 32.68
       useLoopDerivative: 1
       heard: 0
@@ -4929,7 +4377,7 @@ MonoBehaviour:
       flags: 'quiet: 0.7 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/World/SFX_SeedSwitch_Hit_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.81
       useLoopDerivative: 1
       heard: 0
@@ -4937,22 +4385,14 @@ MonoBehaviour:
       flags: 'clipped samples in source: 6'
     - sourcePath: Assets/Audio/SFX/World/SFX_SeedSwitch_Hit_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.01
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'clipped samples in source: 8'
-    clips:
-    - {fileID: 8300000, guid: 38bb5911e6abb9c4b1887f0ed09169d2, type: 3}
-    - {fileID: 8300000, guid: bd02a00bbb34143d9c471f0ca13d1f5c, type: 3}
-    - {fileID: 8300000, guid: bdbd040c39532f0ab3f31f668188ed18, type: 3}
-    - {fileID: 8300000, guid: 6259d0007a6f9047ea0ca6178cdc2187, type: 3}
-    gains:
-    - 0.11130123
-    - 1
-    - 0.11468325
-    - 0.12574768
+    clips: []
+    gains: []
   - id: GrowthFlower_Bloom
     bus: 3
     loop: 0
@@ -4973,7 +4413,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_GrowthFlower_Bloom_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 5.64
       useLoopDerivative: 1
       heard: 0
@@ -4981,7 +4421,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_GrowthFlower_Bloom_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 1.92
       useLoopDerivative: 1
       heard: 0
@@ -4989,7 +4429,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_GrowthFlower_Bloom_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.3
       useLoopDerivative: 1
       heard: 0
@@ -4997,22 +4437,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_GrowthFlower_Bloom_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 7.47
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: e80015b42e0aa107c404337b1f8d2956, type: 3}
-    - {fileID: 8300000, guid: 8ad222893936c17e7b94687f10f014af, type: 3}
-    - {fileID: 8300000, guid: 7dc9be2f3869143b3dd7ba7e330e70f1, type: 3}
-    - {fileID: 8300000, guid: 536634cfd9f04d73d96e57c20443abce, type: 3}
-    gains:
-    - 0.48083934
-    - 0.31332856
-    - 0.3672823
-    - 0.5936083
+    clips: []
+    gains: []
   - id: MovingPlatform_Loop
     bus: 3
     loop: 1
@@ -5033,7 +4465,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_MovingPlatform_Loop_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.52
       useLoopDerivative: 1
       heard: 0
@@ -5041,7 +4473,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_MovingPlatform_Loop_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_MovingPlatform_Loop_02_loop.wav
-      state: 0
+      state: 3
       gainDb: -2.68
       useLoopDerivative: 1
       heard: 0
@@ -5049,7 +4481,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_MovingPlatform_Loop_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -4.42
       useLoopDerivative: 1
       heard: 0
@@ -5057,22 +4489,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_MovingPlatform_Loop_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.01
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'quiet: 0.9 dB short of target at peak limit'
-    clips:
-    - {fileID: 8300000, guid: 391397f360e1b77a19290e11fd476d4f, type: 3}
-    - {fileID: 8300000, guid: c77b6d14c7eaf50606eeac444195f5ac, type: 3}
-    - {fileID: 8300000, guid: ea46690b523650a20608dc305e08d536, type: 3}
-    - {fileID: 8300000, guid: 535e9f167d956bd90d1cde57db73bc4b, type: 3}
-    gains:
-    - 0.18793167
-    - 0.18450153
-    - 0.15100802
-    - 0.251478
+    clips: []
+    gains: []
   - id: HangingChain
     bus: 3
     loop: 0
@@ -5093,7 +4517,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/World/SFX_HangingChain_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 1.45
       useLoopDerivative: 1
       heard: 0
@@ -5109,7 +4533,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_HangingChain_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.49
       useLoopDerivative: 1
       heard: 0
@@ -5117,22 +4541,16 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/World/SFX_HangingChain_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.08
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: d7372b97d9e8dc48ff86b47b96d27ce8, type: 3}
     - {fileID: 8300000, guid: 6dbf2b6b7277f5dac51c2ccd13d9c223, type: 3}
-    - {fileID: 8300000, guid: 87806111a903381b6e08e29269911fe8, type: 3}
-    - {fileID: 8300000, guid: 4ad5fce911de835b76633960e99ce74f, type: 3}
     gains:
-    - 0.2968247
     - 0.1947601
-    - 0.26576635
-    - 0.22181965
   - id: Amb_Cradle
     bus: 8
     loop: 1
@@ -5153,7 +4571,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Cradle_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Cradle_01_loop.wav
-      state: 0
+      state: 3
       gainDb: 9.85
       useLoopDerivative: 1
       heard: 0
@@ -5161,7 +4579,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Cradle_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Cradle_02_loop.wav
-      state: 0
+      state: 3
       gainDb: 21.46
       useLoopDerivative: 1
       heard: 0
@@ -5169,7 +4587,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Cradle_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Cradle_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 25.73
       useLoopDerivative: 1
       heard: 0
@@ -5177,22 +4595,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Cradle_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Cradle_04_loop.wav
-      state: 0
+      state: 3
       gainDb: 19.94
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 217867c01cbc38cbd985b1a0a652dfdd, type: 3}
-    - {fileID: 8300000, guid: c8eb267a8043a24f87e4e640f2e85721, type: 3}
-    - {fileID: 8300000, guid: 061b4875cc79a1d34556bd51f2678847, type: 3}
-    - {fileID: 8300000, guid: fc482595cd8d8ea7960dfcf29970df5b, type: 3}
-    gains:
-    - 0.78072846
-    - 1
-    - 1
-    - 1
+    clips: []
+    gains: []
   - id: Amb_Causeway
     bus: 8
     loop: 1
@@ -5213,7 +4623,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Causeway_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Causeway_01_loop.wav
-      state: 0
+      state: 3
       gainDb: 2
       useLoopDerivative: 1
       heard: 0
@@ -5221,7 +4631,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Causeway_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Causeway_02_loop.wav
-      state: 0
+      state: 3
       gainDb: 7.3
       useLoopDerivative: 1
       heard: 0
@@ -5229,7 +4639,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Causeway_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Causeway_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 10.17
       useLoopDerivative: 1
       heard: 0
@@ -5237,22 +4647,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Causeway_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Causeway_04_loop.wav
-      state: 0
+      state: 3
       gainDb: 12.76
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 892e1f9ed217a56a67ccc24de7b0bdcc, type: 3}
-    - {fileID: 8300000, guid: 8b6315e1be9aa589be20ed2c5b02e8f9, type: 3}
-    - {fileID: 8300000, guid: ff7fd5422b731f607b089d97a35a9222, type: 3}
-    - {fileID: 8300000, guid: f73c6ce9da584d17e72056f7184281e1, type: 3}
-    gains:
-    - 0.31622776
-    - 0.58210325
-    - 0.81002796
-    - 1
+    clips: []
+    gains: []
   - id: Amb_Terraces
     bus: 8
     loop: 1
@@ -5273,7 +4675,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Terraces_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Terraces_01_loop.wav
-      state: 0
+      state: 3
       gainDb: 3.86
       useLoopDerivative: 1
       heard: 0
@@ -5282,7 +4684,7 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Terraces_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Terraces_02_loop.wav
-      state: 0
+      state: 3
       gainDb: 9.23
       useLoopDerivative: 1
       heard: 0
@@ -5290,7 +4692,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Terraces_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Terraces_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 13.59
       useLoopDerivative: 1
       heard: 0
@@ -5298,22 +4700,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Terraces_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Terraces_04_loop.wav
-      state: 0
+      state: 3
       gainDb: 6.75
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 6badd912cdc0bfc5a5cd8521eae83375, type: 3}
-    - {fileID: 8300000, guid: 613e3795b007ca92acef51e202329cb3, type: 3}
-    - {fileID: 8300000, guid: ea5856cf966a22d8ec81d05f39e5b49b, type: 3}
-    - {fileID: 8300000, guid: dc18015ebbae57d52fd0422eec3652ea, type: 3}
-    gains:
-    - 0.39174187
-    - 0.72694236
-    - 1
-    - 0.54638654
+    clips: []
+    gains: []
   - id: Amb_Qvale
     bus: 8
     loop: 1
@@ -5334,7 +4728,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Qvale_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Qvale_01_loop.wav
-      state: 0
+      state: 3
       gainDb: 3.8
       useLoopDerivative: 1
       heard: 0
@@ -5342,7 +4736,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Qvale_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Qvale_02_loop.wav
-      state: 0
+      state: 3
       gainDb: 4.01
       useLoopDerivative: 1
       heard: 0
@@ -5350,7 +4744,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Qvale_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Qvale_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 4.98
       useLoopDerivative: 1
       heard: 0
@@ -5359,23 +4753,15 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Qvale_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Qvale_04_loop.wav
-      state: 0
+      state: 3
       gainDb: 12.77
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'loop derivative seam still flagged: crossfade level +10.1 dB against
         its neighbours'
-    clips:
-    - {fileID: 8300000, guid: b52e11f0dce4a5c44be4d8a007f69f1e, type: 3}
-    - {fileID: 8300000, guid: b335daad33a315aa9a209164a35bb743, type: 3}
-    - {fileID: 8300000, guid: 36b92025aa2c66fe4c226b241910da79, type: 3}
-    - {fileID: 8300000, guid: 21201d2c06d6a3c2c61962317e6d4812, type: 3}
-    gains:
-    - 0.38904515
-    - 0.3985658
-    - 0.44565624
-    - 1
+    clips: []
+    gains: []
   - id: Amb_Ribwood
     bus: 8
     loop: 1
@@ -5396,7 +4782,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Ribwood_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Ribwood_01_loop.wav
-      state: 0
+      state: 3
       gainDb: -13.07
       useLoopDerivative: 1
       heard: 0
@@ -5404,7 +4790,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Ribwood_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Ribwood_02_loop.wav
-      state: 0
+      state: 3
       gainDb: -1.19
       useLoopDerivative: 1
       heard: 0
@@ -5413,7 +4799,7 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Ribwood_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Ribwood_03_loop.wav
-      state: 0
+      state: 3
       gainDb: -6.65
       useLoopDerivative: 1
       heard: 0
@@ -5421,23 +4807,15 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Ribwood_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Ribwood_04_loop.wav
-      state: 0
+      state: 3
       gainDb: -7.7
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'loop derivative seam still flagged: crossfade level -5.7 dB against
         its neighbours'
-    clips:
-    - {fileID: 8300000, guid: 664c76cd8ee06d07bc77bc6906791473, type: 3}
-    - {fileID: 8300000, guid: 27859d0f38ebb46e09ddb52d16a20996, type: 3}
-    - {fileID: 8300000, guid: 4ced5ef2ce18bbde968c9bb03501b00b, type: 3}
-    - {fileID: 8300000, guid: a6d27ed6c54d98cdd78bacdc5f13f4ae, type: 3}
-    gains:
-    - 0.05578276
-    - 0.21902817
-    - 0.11681537
-    - 0.10351422
+    clips: []
+    gains: []
   - id: Amb_Heights
     bus: 8
     loop: 1
@@ -5458,7 +4836,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Heights_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Heights_01_loop.wav
-      state: 0
+      state: 3
       gainDb: -1.31
       useLoopDerivative: 1
       heard: 0
@@ -5466,7 +4844,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Heights_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Heights_02_loop.wav
-      state: 0
+      state: 3
       gainDb: -11.38
       useLoopDerivative: 1
       heard: 0
@@ -5474,7 +4852,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Heights_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Heights_03_loop.wav
-      state: 0
+      state: 3
       gainDb: -5.75
       useLoopDerivative: 1
       heard: 0
@@ -5482,22 +4860,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Heights_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Heights_04_loop.wav
-      state: 0
+      state: 3
       gainDb: 0.64
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: d58293f8f5b01488a5e746707970133f, type: 3}
-    - {fileID: 8300000, guid: 08db7b7151ee83f6950c7401dd9c2b7f, type: 3}
-    - {fileID: 8300000, guid: f11442d1045fdeb63579f892ad23345f, type: 3}
-    - {fileID: 8300000, guid: 6686c82b4302c19f867eb8390f6cf763, type: 3}
-    gains:
-    - 0.21602301
-    - 0.06776415
-    - 0.12956867
-    - 0.27039582
+    clips: []
+    gains: []
   - id: Amb_Summit
     bus: 8
     loop: 1
@@ -5518,7 +4888,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Summit_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Summit_01_loop.wav
-      state: 0
+      state: 3
       gainDb: -3.67
       useLoopDerivative: 1
       heard: 0
@@ -5526,7 +4896,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Summit_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Summit_02_loop.wav
-      state: 0
+      state: 3
       gainDb: 1.09
       useLoopDerivative: 1
       heard: 0
@@ -5534,7 +4904,7 @@ MonoBehaviour:
       flags: 'quiet: 4.2 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Summit_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Summit_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 4.55
       useLoopDerivative: 1
       heard: 0
@@ -5542,22 +4912,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Summit_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Summit_04_loop.wav
-      state: 0
+      state: 3
       gainDb: 1.79
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 08ab63459d109b733f3f0de2d6c2788b, type: 3}
-    - {fileID: 8300000, guid: 6eedf0ae0a54d010a18a30c906fd14b5, type: 3}
-    - {fileID: 8300000, guid: 4a1de85ff07e61e6867437541a63898c, type: 3}
-    - {fileID: 8300000, guid: 0fc8bfe32c60824a0ec2038468e47460, type: 3}
-    gains:
-    - 0.16462658
-    - 0.2847738
-    - 0.42413098
-    - 0.30867395
+    clips: []
+    gains: []
   - id: Amb_Descent
     bus: 8
     loop: 1
@@ -5578,7 +4940,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Descent_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Descent_01_loop.wav
-      state: 0
+      state: 3
       gainDb: 9.7
       useLoopDerivative: 1
       heard: 0
@@ -5587,7 +4949,7 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Descent_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Descent_02_loop.wav
-      state: 0
+      state: 3
       gainDb: -13.3
       useLoopDerivative: 1
       heard: 0
@@ -5596,7 +4958,7 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Descent_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Descent_03_loop.wav
-      state: 0
+      state: 3
       gainDb: -0.75
       useLoopDerivative: 1
       heard: 0
@@ -5605,22 +4967,14 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Descent_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Descent_04_loop.wav
-      state: 0
+      state: 3
       gainDb: 7.62
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 5740eacbe84c75a135056e50d54a2c5b, type: 3}
-    - {fileID: 8300000, guid: aca285131b0d73a483759131c260ed01, type: 3}
-    - {fileID: 8300000, guid: 3f4a1eaeb5a8b4d16eb7b546772cb48a, type: 3}
-    - {fileID: 8300000, guid: ff118d933847d7517b100447a858b8ff, type: 3}
-    gains:
-    - 0.76736146
-    - 0.054325037
-    - 0.23040931
-    - 0.6039486
+    clips: []
+    gains: []
   - id: Amb_Cave
     bus: 8
     loop: 1
@@ -5641,7 +4995,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Cave_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Cave_01_loop.wav
-      state: 0
+      state: 3
       gainDb: 4.83
       useLoopDerivative: 1
       heard: 0
@@ -5649,7 +5003,7 @@ MonoBehaviour:
       flags: 'quiet: 1.8 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Cave_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Cave_02_loop.wav
-      state: 0
+      state: 3
       gainDb: 6.28
       useLoopDerivative: 1
       heard: 0
@@ -5657,7 +5011,7 @@ MonoBehaviour:
       flags: 'quiet: 1.2 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Cave_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Cave_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 0.17
       useLoopDerivative: 1
       heard: 0
@@ -5665,22 +5019,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_Cave_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_Cave_04_loop.wav
-      state: 0
+      state: 3
       gainDb: -5.3
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 8b41eeedd0f41cd08b0384ab975d9b8a, type: 3}
-    - {fileID: 8300000, guid: 3669acf7a546fd00b631c93fc3ee988c, type: 3}
-    - {fileID: 8300000, guid: 436eb3e41e25319db1f7a51a8ea0c93e, type: 3}
-    - {fileID: 8300000, guid: 33390f9c5e5554430e3e16215452b3c7, type: 3}
-    gains:
-    - 0.4380261
-    - 0.51760685
-    - 0.25615335
-    - 0.13645831
+    clips: []
+    gains: []
   - id: Amb_HouseInterior
     bus: 8
     loop: 1
@@ -5701,7 +5047,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_HouseInterior_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_HouseInterior_01_loop.wav
-      state: 0
+      state: 3
       gainDb: 14.34
       useLoopDerivative: 1
       heard: 0
@@ -5709,7 +5055,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_HouseInterior_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_HouseInterior_02_loop.wav
-      state: 0
+      state: 3
       gainDb: 10.85
       useLoopDerivative: 1
       heard: 0
@@ -5717,7 +5063,7 @@ MonoBehaviour:
       flags: 'quiet: 2.9 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_HouseInterior_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_HouseInterior_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 8.29
       useLoopDerivative: 1
       heard: 0
@@ -5725,22 +5071,14 @@ MonoBehaviour:
       flags: 'quiet: 3.7 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Amb_HouseInterior_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Amb_HouseInterior_04_loop.wav
-      state: 0
+      state: 3
       gainDb: 21.15
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'quiet: 3.5 dB short of target at peak limit'
-    clips:
-    - {fileID: 8300000, guid: 035f8432c9fed98a907a3ccb391e39a3, type: 3}
-    - {fileID: 8300000, guid: 99d54e78a29d5a057669d54a5f027ee4, type: 3}
-    - {fileID: 8300000, guid: b6165b2864861edf44c665adcea6f25f, type: 3}
-    - {fileID: 8300000, guid: ac9f532444500948960f62403942a281, type: 3}
-    gains:
-    - 1
-    - 0.87599176
-    - 0.65237904
-    - 1
+    clips: []
+    gains: []
   - id: Water_Stream
     bus: 8
     loop: 1
@@ -5761,7 +5099,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Water_Stream_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Water_Stream_01_loop.wav
-      state: 0
+      state: 3
       gainDb: -3.2
       useLoopDerivative: 1
       heard: 0
@@ -5769,7 +5107,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Water_Stream_02.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Water_Stream_02_loop.wav
-      state: 0
+      state: 3
       gainDb: 0.79
       useLoopDerivative: 1
       heard: 0
@@ -5785,22 +5123,16 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Water_Stream_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.3
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: c6a563c2fd6f7e48fc6d506433ff82e7, type: 3}
-    - {fileID: 8300000, guid: 3767ed8d7e098ebfac37ca3500728bd7, type: 3}
     - {fileID: 8300000, guid: faa592e8058859828c909d66bd0241d8, type: 3}
-    - {fileID: 8300000, guid: da1c0c9fae84e2dfb6e7237e1c4915f6, type: 3}
     gains:
-    - 0.17378008
-    - 0.27510595
     - 0.386367
-    - 0.3672823
   - id: Waterfall
     bus: 8
     loop: 1
@@ -5821,7 +5153,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Waterfall_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Waterfall_01_loop.wav
-      state: 0
+      state: 3
       gainDb: 4.51
       useLoopDerivative: 1
       heard: 0
@@ -5837,7 +5169,7 @@ MonoBehaviour:
       flags: 'quiet: 1.0 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Waterfall_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Waterfall_03_loop.wav
-      state: 0
+      state: 3
       gainDb: -1.81
       useLoopDerivative: 1
       heard: 0
@@ -5845,22 +5177,16 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Waterfall_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Waterfall_04_loop.wav
-      state: 0
+      state: 3
       gainDb: -3.65
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'clipped samples in source: 2'
     clips:
-    - {fileID: 8300000, guid: 84898c8a2f27ecc9302f7610738f618c, type: 3}
     - {fileID: 8300000, guid: bec29c43dbebe30d773c096cf282b9c3, type: 3}
-    - {fileID: 8300000, guid: ef54d1cd0617ff5685fef3b157b5ce92, type: 3}
-    - {fileID: 8300000, guid: 22926c85585ed98cedae99050703b7b8, type: 3}
     gains:
-    - 0.4221823
     - 0.2887354
-    - 0.20393886
-    - 0.16500609
   - id: Night_Hum
     bus: 8
     loop: 1
@@ -5881,7 +5207,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Night_Hum_01.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Night_Hum_01_loop.wav
-      state: 0
+      state: 3
       gainDb: 22.08
       useLoopDerivative: 1
       heard: 0
@@ -5897,7 +5223,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Night_Hum_03.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Night_Hum_03_loop.wav
-      state: 0
+      state: 3
       gainDb: 14.35
       useLoopDerivative: 1
       heard: 0
@@ -5906,7 +5232,7 @@ MonoBehaviour:
         its neighbours'
     - sourcePath: Assets/Audio/SFX/Ambience/SFX_Night_Hum_04.wav
       loopPath: Assets/Audio/SFX/Loops/SFX_Night_Hum_04_loop.wav
-      state: 0
+      state: 3
       gainDb: 2.64
       useLoopDerivative: 1
       heard: 0
@@ -5914,15 +5240,9 @@ MonoBehaviour:
       flags: 'loop derivative seam still flagged: crossfade level +6.7 dB against
         its neighbours'
     clips:
-    - {fileID: 8300000, guid: bcc0a4f664e2b48bd9440cbaedfb31e5, type: 3}
     - {fileID: 8300000, guid: 80133dc8815b8f646009962852a81ccf, type: 3}
-    - {fileID: 8300000, guid: 9199dde16878e059d50c6d8c79e2db89, type: 3}
-    - {fileID: 8300000, guid: 8770e0205a3a90c975f5d648d0bb0d76, type: 3}
     gains:
     - 1
-    - 1
-    - 1
-    - 0.3404082
   - id: Amber_Pickup
     bus: 4
     loop: 0
@@ -5951,7 +5271,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Amber_Pickup_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 7.14
       useLoopDerivative: 1
       heard: 0
@@ -5959,7 +5279,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Amber_Pickup_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -10.78
       useLoopDerivative: 1
       heard: 0
@@ -5967,7 +5287,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 13'
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Amber_Pickup_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -12.08
       useLoopDerivative: 1
       heard: 0
@@ -5975,14 +5295,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: 18f91e7d3252ae3c6360eb59c07e4ee3, type: 3}
-    - {fileID: 8300000, guid: 4f00f14becb202ccf7bd790fcbe02515, type: 3}
-    - {fileID: 8300000, guid: 54e51d66cb31003e363e827634a60728, type: 3}
-    - {fileID: 8300000, guid: b2ca05793e6ea9929b0b5408b831b530, type: 3}
     gains:
     - 1
-    - 0.57147866
-    - 0.07261061
-    - 0.06251727
   - id: Amber_PickupBig
     bus: 4
     loop: 0
@@ -6011,7 +5325,7 @@ MonoBehaviour:
       flags: 'quiet: 0.9 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Amber_PickupBig_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 6.93
       useLoopDerivative: 1
       heard: 0
@@ -6019,7 +5333,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Amber_PickupBig_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.52
       useLoopDerivative: 1
       heard: 0
@@ -6027,7 +5341,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Amber_PickupBig_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 10.93
       useLoopDerivative: 1
       heard: 0
@@ -6035,14 +5349,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: bedaa8ea1e328df2e136bd80ac8f8aba, type: 3}
-    - {fileID: 8300000, guid: a81b4d33b5c1baf2a314ede80ad2db8c, type: 3}
-    - {fileID: 8300000, guid: 7c9affd64606f537e665ee76f3255833, type: 3}
-    - {fileID: 8300000, guid: 9c07516191fd6fc349cb45f76cfa36d0, type: 3}
     gains:
     - 0.43151906
-    - 0.5578276
-    - 0.33573762
-    - 0.8840972
   - id: HeartSeed_Get
     bus: 4
     loop: 0
@@ -6065,7 +5373,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_HeartSeed_Get_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -12.23
       useLoopDerivative: 1
       heard: 0
@@ -6089,22 +5397,18 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_HeartSeed_Get_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.13
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: 03505f3df9138161ff69c2b07bf4cf93, type: 3}
     - {fileID: 8300000, guid: 48dabf757ea26e85ecd0430fd19607ab, type: 3}
     - {fileID: 8300000, guid: 16daeb224298a38831b24a8da204b676, type: 3}
-    - {fileID: 8300000, guid: 2b9a8efc08bab4447608748ff7a996de, type: 3}
     gains:
-    - 0.061446913
     - 0.07879524
     - 0.7294575
-    - 0.1965622
   - id: Heal
     bus: 4
     loop: 0
@@ -6133,7 +5437,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Heal_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 5.28
       useLoopDerivative: 1
       heard: 0
@@ -6141,7 +5445,7 @@ MonoBehaviour:
       flags: 'quiet: 0.9 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Heal_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.64
       useLoopDerivative: 1
       heard: 0
@@ -6149,7 +5453,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Heal_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 6.12
       useLoopDerivative: 1
       heard: 0
@@ -6157,14 +5461,8 @@ MonoBehaviour:
       flags: 'quiet: 0.9 dB short of target at peak limit'
     clips:
     - {fileID: 8300000, guid: a6b2fcca7bf74d42cf661225b2c14b76, type: 3}
-    - {fileID: 8300000, guid: 2dbd568337291b0a5221a1a36d875a24, type: 3}
-    - {fileID: 8300000, guid: 4792538bbe86278bd2a13618cc2e5af9, type: 3}
-    - {fileID: 8300000, guid: fda1d14aacd70b77ac869d35acc8f5bb, type: 3}
     gains:
     - 0.4655861
-    - 0.46131757
-    - 0.6792037
-    - 0.50815946
   - id: Relic_Get
     bus: 4
     loop: 0
@@ -6193,7 +5491,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Relic_Get_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.34
       useLoopDerivative: 1
       heard: 0
@@ -6201,7 +5499,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Relic_Get_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.12
       useLoopDerivative: 1
       heard: 0
@@ -6209,7 +5507,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Relic_Get_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.27
       useLoopDerivative: 1
       heard: 0
@@ -6217,14 +5515,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: f5c8eedf685ebd56441a0f1f5e5d15c5, type: 3}
-    - {fileID: 8300000, guid: db4ae4bec1ef6d8d881a21742d6dc47a, type: 3}
-    - {fileID: 8300000, guid: 6e628056084aeace09e1b898aa780223, type: 3}
-    - {fileID: 8300000, guid: af7ffdee7f17d45c2a0735ab49bfacf7, type: 3}
     gains:
     - 0.18793167
-    - 0.26121613
-    - 0.2477422
-    - 0.25911945
   - id: SongShell_Get
     bus: 4
     loop: 0
@@ -6253,7 +5545,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_SongShell_Get_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.85
       useLoopDerivative: 1
       heard: 0
@@ -6261,7 +5553,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_SongShell_Get_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.13
       useLoopDerivative: 1
       heard: 0
@@ -6269,7 +5561,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_SongShell_Get_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.8
       useLoopDerivative: 1
       heard: 0
@@ -6277,14 +5569,8 @@ MonoBehaviour:
       flags: 'clipped samples in source: 8'
     clips:
     - {fileID: 8300000, guid: 35cb1c7e16ca9375d6102d0dc83c6200, type: 3}
-    - {fileID: 8300000, guid: 23ea75f8e8c9991f99640e34bdd1b780, type: 3}
-    - {fileID: 8300000, guid: e635906b92843eaf4f611b813868a002, type: 3}
-    - {fileID: 8300000, guid: 5ca29f9d8fa436ed34ab7a9b8fcc91ab, type: 3}
     gains:
     - 0.26272416
-    - 0.695825
-    - 0.124022365
-    - 0.11481536
   - id: Waymark_Light
     bus: 4
     loop: 0
@@ -6314,7 +5600,7 @@ MonoBehaviour:
       flags: 'quiet: 1.2 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Waymark_Light_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.76
       useLoopDerivative: 1
       heard: 0
@@ -6322,7 +5608,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Waymark_Light_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.4
       useLoopDerivative: 1
       heard: 0
@@ -6330,7 +5616,7 @@ MonoBehaviour:
       flags: 'quiet: 0.9 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Waymark_Light_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.19
       useLoopDerivative: 1
       heard: 0
@@ -6338,14 +5624,8 @@ MonoBehaviour:
       flags: 'quiet: 3.4 dB short of target at peak limit'
     clips:
     - {fileID: 8300000, guid: 599d3232fbcbb0e106ea64f167de71cb, type: 3}
-    - {fileID: 8300000, guid: 408517dc3ddd07a073649ed0c845c11d, type: 3}
-    - {fileID: 8300000, guid: 927ac4096b4e07d202f07cc800e6a787, type: 3}
-    - {fileID: 8300000, guid: 96811155325b22228e12bc20c999acd7, type: 3}
     gains:
     - 0.29546088
-    - 0.27415743
-    - 0.3715352
-    - 0.3626603
   - id: Waymark_Travel
     bus: 4
     loop: 0
@@ -6375,7 +5655,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Waymark_Travel_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -9.06
       useLoopDerivative: 1
       heard: 0
@@ -6383,7 +5663,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 22'
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Waymark_Travel_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -9.42
       useLoopDerivative: 1
       heard: 0
@@ -6391,7 +5671,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 64'
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Waymark_Travel_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -14.12
       useLoopDerivative: 1
       heard: 0
@@ -6399,14 +5679,8 @@ MonoBehaviour:
       flags: 'clipped samples in source: 554'
     clips:
     - {fileID: 8300000, guid: bcc1397abfc11bb28c0d86847a402984, type: 3}
-    - {fileID: 8300000, guid: f4ace99570f9ae7f6dee69498d3b1c49, type: 3}
-    - {fileID: 8300000, guid: 605fd80db1976c6c0e5eff183a094955, type: 3}
-    - {fileID: 8300000, guid: 64013771fb9aa8f433195f2a775b5dee, type: 3}
     gains:
     - 0.065765776
-    - 0.088511564
-    - 0.08491805
-    - 0.04943107
   - id: Checkpoint_Touch
     bus: 4
     loop: 0
@@ -6435,7 +5709,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Checkpoint_Touch_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.04
       useLoopDerivative: 1
       heard: 0
@@ -6443,7 +5717,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Checkpoint_Touch_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.08
       useLoopDerivative: 1
       heard: 0
@@ -6451,7 +5725,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Checkpoint_Touch_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.39
       useLoopDerivative: 1
       heard: 0
@@ -6459,14 +5733,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: 44bfa3f3dda0f6499cef00c0b2570bdd, type: 3}
-    - {fileID: 8300000, guid: d7421ba1cb371f34c46c5cdc016d5343, type: 3}
-    - {fileID: 8300000, guid: f2cef64c874e39493382b6046a9fc116, type: 3}
-    - {fileID: 8300000, guid: e0dd7917fcb6cc69dacab0f2ee417ed8, type: 3}
     gains:
     - 0.13197753
-    - 0.31768742
-    - 0.22181965
-    - 0.12036494
   - id: LoreStone_Read
     bus: 4
     loop: 0
@@ -6487,7 +5755,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_LoreStone_Read_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.15
       useLoopDerivative: 1
       heard: 0
@@ -6495,7 +5763,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_LoreStone_Read_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -5.76
       useLoopDerivative: 1
       heard: 0
@@ -6503,7 +5771,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 11'
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_LoreStone_Read_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1
       useLoopDerivative: 1
       heard: 0
@@ -6518,14 +5786,8 @@ MonoBehaviour:
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: fedad1b2f147720111ddcdb3520b9851, type: 3}
-    - {fileID: 8300000, guid: 9099d613db975ced2d3a427396cb5f44, type: 3}
-    - {fileID: 8300000, guid: 2dfb394eee39fa7c5173cc845f4f9904, type: 3}
     - {fileID: 8300000, guid: 7d08f4564565ec9aed52a9f88dbc92bd, type: 3}
     gains:
-    - 0.19611013
-    - 0.12941958
-    - 0.22387213
     - 0.18155156
   - id: Discovery
     bus: 4
@@ -6555,7 +5817,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Discovery_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 5.13
       useLoopDerivative: 1
       heard: 0
@@ -6563,7 +5825,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Discovery_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.77
       useLoopDerivative: 1
       heard: 0
@@ -6571,7 +5833,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Discovery_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 19.23
       useLoopDerivative: 1
       heard: 0
@@ -6579,14 +5841,8 @@ MonoBehaviour:
       flags: 'quiet: 1.7 dB short of target at peak limit'
     clips:
     - {fileID: 8300000, guid: 48cdc3b2807cafc6d27ef82b34e9bd98, type: 3}
-    - {fileID: 8300000, guid: 1db1aaa989f451dee184f1f9b372b1a1, type: 3}
-    - {fileID: 8300000, guid: 45f9f4c77ec388778b2191f4832218bf, type: 3}
-    - {fileID: 8300000, guid: df00496905a96806eaad9e44b9ffad2e, type: 3}
     gains:
     - 0.21527818
-    - 0.4534193
-    - 0.20488021
-    - 1
   - id: Door_Enter
     bus: 4
     loop: 0
@@ -6623,7 +5879,7 @@ MonoBehaviour:
       flags: 'quiet: 3.3 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Door_Enter_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.54
       useLoopDerivative: 1
       heard: 0
@@ -6631,7 +5887,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Door_Enter_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.18
       useLoopDerivative: 1
       heard: 0
@@ -6640,13 +5896,9 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: 24df0c5b729239041639c97c2abd0c2a, type: 3}
     - {fileID: 8300000, guid: 6c5991c9391e43e78ec86274f9fe3b59, type: 3}
-    - {fileID: 8300000, guid: f17c5e19ef62386157e55c86b4991a47, type: 3}
-    - {fileID: 8300000, guid: 93e0e8723317f8b9d11bc79e69833602, type: 3}
     gains:
     - 0.2285599
     - 0.3741106
-    - 0.23604783
-    - 0.6441693
   - id: Door_Exit
     bus: 4
     loop: 0
@@ -6667,7 +5919,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Door_Exit_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.27
       useLoopDerivative: 1
       heard: 0
@@ -6675,7 +5927,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Door_Exit_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 11.06
       useLoopDerivative: 1
       heard: 0
@@ -6683,7 +5935,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Door_Exit_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.04
       useLoopDerivative: 1
       heard: 0
@@ -6698,14 +5950,8 @@ MonoBehaviour:
       note: 
       flags: 'quiet: 2.0 dB short of target at peak limit'
     clips:
-    - {fileID: 8300000, guid: 7c7514a152d0f25cfdf5cef4797f5d8b, type: 3}
-    - {fileID: 8300000, guid: e7f82ec4e32b39da2feebb893050176b, type: 3}
-    - {fileID: 8300000, guid: c9a9bc95cb51dc6aef8b6ae8abdd66f0, type: 3}
     - {fileID: 8300000, guid: 00f748ad6478cf3010fe37242476305e, type: 3}
     gains:
-    - 0.25911945
-    - 0.8974288
-    - 0.35645112
     - 0.22620386
   - id: Cave_Enter
     bus: 4
@@ -6727,7 +5973,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Cave_Enter_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 23.95
       useLoopDerivative: 1
       heard: 0
@@ -6743,7 +5989,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Cave_Enter_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 23.36
       useLoopDerivative: 1
       heard: 0
@@ -6751,21 +5997,15 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Pickup/SFX_Cave_Enter_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 37.58
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: dcd0ffcc63dbe41020a9a9c504eb3960, type: 3}
     - {fileID: 8300000, guid: bd841181839a88854cb880412ced169a, type: 3}
-    - {fileID: 8300000, guid: 5419abb06609526bd2415554c82c6df0, type: 3}
-    - {fileID: 8300000, guid: b481c7299f40137ff7452cf1a205354d, type: 3}
     gains:
-    - 1
-    - 1
-    - 1
     - 1
   - id: Smithy_Anvil
     bus: 5
@@ -6795,7 +6035,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Smithy_Anvil_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 1.77
       useLoopDerivative: 1
       heard: 0
@@ -6803,7 +6043,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Smithy_Anvil_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.77
       useLoopDerivative: 1
       heard: 0
@@ -6811,7 +6051,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 6'
     - sourcePath: Assets/Audio/SFX/Town/SFX_Smithy_Anvil_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -10.54
       useLoopDerivative: 1
       heard: 0
@@ -6819,14 +6059,8 @@ MonoBehaviour:
       flags: 'clipped samples in source: 6'
     clips:
     - {fileID: 8300000, guid: 9d438e3a94562813f0fff963c709e5cb, type: 3}
-    - {fileID: 8300000, guid: 9abc6da9f2819a373c271a7d4ba29c31, type: 3}
-    - {fileID: 8300000, guid: fe73bc514736a2f2d4b67c56c1212077, type: 3}
-    - {fileID: 8300000, guid: 6b96d5f48a2057f458e186a25a326e2c, type: 3}
     gains:
     - 0.20582588
-    - 0.30796403
-    - 0.16274212
-    - 0.07464488
   - id: Smithy_Upgrade
     bus: 5
     loop: 0
@@ -6855,7 +6089,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Smithy_Upgrade_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 4.93
       useLoopDerivative: 1
       heard: 0
@@ -6863,7 +6097,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Smithy_Upgrade_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.22
       useLoopDerivative: 1
       heard: 0
@@ -6871,7 +6105,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Smithy_Upgrade_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -10.65
       useLoopDerivative: 1
       heard: 0
@@ -6879,14 +6113,8 @@ MonoBehaviour:
       flags: 'clipped samples in source: 6'
     clips:
     - {fileID: 8300000, guid: e9ad6ba5426c3dd6d8e8f8b23d6673cc, type: 3}
-    - {fileID: 8300000, guid: b543025f1ffedcc1e741422ac101b549, type: 3}
-    - {fileID: 8300000, guid: 1a1279abcd6bf2f32887597ba8cc4e64, type: 3}
-    - {fileID: 8300000, guid: 49c70265e894c5059b06fb33925b4111, type: 3}
     gains:
     - 1
-    - 0.44309822
-    - 0.32433963
-    - 0.07370553
   - id: Shop_Buy
     bus: 5
     loop: 0
@@ -6907,7 +6135,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Town/SFX_Shop_Buy_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 0.68
       useLoopDerivative: 1
       heard: 0
@@ -6923,7 +6151,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Shop_Buy_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.89
       useLoopDerivative: 1
       heard: 0
@@ -6931,22 +6159,16 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Shop_Buy_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.01
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: dac2b24304bc3ae6e35d591795b18361, type: 3}
     - {fileID: 8300000, guid: 642c5fd5752aef883abdbe013f46bf55, type: 3}
-    - {fileID: 8300000, guid: 04ff9d4898931d5c50211a16183a495a, type: 3}
-    - {fileID: 8300000, guid: 2354831559487c8c4f9fd09141408bee, type: 3}
     gains:
-    - 0.27164394
     - 0.20346981
-    - 0.2267253
-    - 0.2508996
   - id: Shop_Cannot
     bus: 5
     loop: 0
@@ -6974,7 +6196,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Shop_Cannot_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 23.85
       useLoopDerivative: 1
       heard: 0
@@ -6982,7 +6204,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Shop_Cannot_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 14.16
       useLoopDerivative: 1
       heard: 0
@@ -6990,7 +6212,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Shop_Cannot_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.98
       useLoopDerivative: 1
       heard: 0
@@ -6998,14 +6220,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: 603b9cb215253d27d1c53a2411c72bfc, type: 3}
-    - {fileID: 8300000, guid: 1f8e8fc538fb441835cba35a7d784bcf, type: 3}
-    - {fileID: 8300000, guid: 3508f559d22acd4b41fabfdf5e980e04, type: 3}
-    - {fileID: 8300000, guid: deb8a4094dc42d49fc9bad85beabb181, type: 3}
     gains:
     - 1
-    - 1
-    - 1
-    - 0.35399735
   - id: Map_Unroll
     bus: 5
     loop: 0
@@ -7026,7 +6242,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Town/SFX_Map_Unroll_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 4.84
       useLoopDerivative: 1
       heard: 0
@@ -7034,7 +6250,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Map_Unroll_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.01
       useLoopDerivative: 1
       heard: 0
@@ -7042,7 +6258,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Map_Unroll_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 2.85
       useLoopDerivative: 1
       heard: 0
@@ -7057,14 +6273,8 @@ MonoBehaviour:
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: 1bb9484bce63fabb32e64787be882d6c, type: 3}
-    - {fileID: 8300000, guid: 83ab8db690f52d3e20abac9b9cea3b0b, type: 3}
-    - {fileID: 8300000, guid: db863c5b6607ddb6df235e418ce01c94, type: 3}
     - {fileID: 8300000, guid: 862fbacb64d6580ec1495bd0d70ae86f, type: 3}
     gains:
-    - 0.4385307
-    - 0.19929664
-    - 0.34873858
     - 0.4144766
   - id: Map_Stamp
     bus: 5
@@ -7095,7 +6305,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Map_Stamp_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 1.34
       useLoopDerivative: 1
       heard: 0
@@ -7103,7 +6313,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Map_Stamp_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -5.94
       useLoopDerivative: 1
       heard: 0
@@ -7111,7 +6321,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Map_Stamp_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 10.2
       useLoopDerivative: 1
       heard: 0
@@ -7119,14 +6329,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: c4b98ddd84d3947f1646ac39b7e31098, type: 3}
-    - {fileID: 8300000, guid: b8ff2c7aef046f1f855ce5472840e547, type: 3}
-    - {fileID: 8300000, guid: 551493c228ba5eeb307170b761b5234d, type: 3}
-    - {fileID: 8300000, guid: 8990d54b73182a0b4522daa8d9a5b308, type: 3}
     gains:
     - 0.10115794
-    - 0.29308933
-    - 0.12676518
-    - 0.8128305
   - id: Lantern_Light
     bus: 5
     loop: 0
@@ -7156,7 +6360,7 @@ MonoBehaviour:
         limit'
     - sourcePath: Assets/Audio/SFX/Town/SFX_Lantern_Light_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 13.44
       useLoopDerivative: 1
       heard: 0
@@ -7164,7 +6368,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Lantern_Light_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 11.45
       useLoopDerivative: 1
       heard: 0
@@ -7172,7 +6376,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Lantern_Light_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 11.45
       useLoopDerivative: 1
       heard: 0
@@ -7180,14 +6384,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: fdb6b25151edbb6224b76a85e86ec962, type: 3}
-    - {fileID: 8300000, guid: 3378590afba55fa41ba3cf541509c35a, type: 3}
-    - {fileID: 8300000, guid: 201354f404491810218ecb2da5fca79a, type: 3}
-    - {fileID: 8300000, guid: 5e09878229e3333a23837f513a92da12, type: 3}
     gains:
     - 0.22387213
-    - 1
-    - 0.938642
-    - 0.938642
   - id: Bell_Tower
     bus: 5
     loop: 0
@@ -7216,7 +6414,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Bell_Tower_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.92
       useLoopDerivative: 1
       heard: 0
@@ -7224,7 +6422,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Bell_Tower_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.56
       useLoopDerivative: 1
       heard: 0
@@ -7232,7 +6430,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Bell_Tower_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.05
       useLoopDerivative: 1
       heard: 0
@@ -7240,14 +6438,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: fb0af3b0a3b664391963ab4931255af3, type: 3}
-    - {fileID: 8300000, guid: 91705b0bd1a75fc2ffd9218c6eed7b89, type: 3}
-    - {fileID: 8300000, guid: 0a1c00d0403c9284c1d5277ca91a2f64, type: 3}
-    - {fileID: 8300000, guid: 597d26297db278588e061ad7ed9b989a, type: 3}
     gains:
     - 0.251478
-    - 0.1599558
-    - 0.209894
-    - 0.19838098
   - id: Dialogue_Blip_Small
     bus: 5
     loop: 0
@@ -7268,7 +6460,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Town/SFX_Dialogue_Blip_Small_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.32
       useLoopDerivative: 1
       heard: 0
@@ -7276,7 +6468,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Dialogue_Blip_Small_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -14.13
       useLoopDerivative: 1
       heard: 0
@@ -7292,22 +6484,16 @@ MonoBehaviour:
       flags: 'clipped samples in source: 6'
     - sourcePath: Assets/Audio/SFX/Town/SFX_Dialogue_Blip_Small_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -7.37
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: b01f57abcd03f972a4d3d9bed157fc04, type: 3}
-    - {fileID: 8300000, guid: 35b04a9fa4acbf6e68504c30c3f9ccb5, type: 3}
     - {fileID: 8300000, guid: bf805990c83f622ce75bca36853d9082, type: 3}
-    - {fileID: 8300000, guid: b7d71af639b91480790e16bb1f61db10, type: 3}
     gains:
-    - 0.17139575
-    - 0.049374197
     - 0.08719669
-    - 0.10752266
   - id: Dialogue_Blip_Low
     bus: 5
     loop: 0
@@ -7328,7 +6514,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/Town/SFX_Dialogue_Blip_Low_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.6
       useLoopDerivative: 1
       heard: 0
@@ -7344,7 +6530,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Dialogue_Blip_Low_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.23
       useLoopDerivative: 1
       heard: 0
@@ -7352,22 +6538,16 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Town/SFX_Dialogue_Blip_Low_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -2.84
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: 584f24b1004ead331de11a5726fab4df, type: 3}
     - {fileID: 8300000, guid: 393ab2125d20c93907cbb257c35a25cd, type: 3}
-    - {fileID: 8300000, guid: edd2257b9266b77b0c7f97bfbe7ca424, type: 3}
-    - {fileID: 8300000, guid: c377bd986fd17b8e72f7eb314de2f705, type: 3}
     gains:
-    - 0.20892961
     - 0.13289236
-    - 0.19431217
-    - 0.18113402
   - id: UI_Move
     bus: 6
     loop: 0
@@ -7388,7 +6568,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Move_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.99
       useLoopDerivative: 1
       heard: 0
@@ -7396,7 +6576,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Move_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -7.74
       useLoopDerivative: 1
       heard: 0
@@ -7404,7 +6584,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Move_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -5.04
       useLoopDerivative: 1
       heard: 0
@@ -7419,14 +6599,8 @@ MonoBehaviour:
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: b3312d89c29848ca2c49aada72868418, type: 3}
-    - {fileID: 8300000, guid: 85ae6093e1cdc24280c8407b2557e6d2, type: 3}
-    - {fileID: 8300000, guid: 4c6b59138ef44017a81c117076ae1f7f, type: 3}
     - {fileID: 8300000, guid: 5012c774edca43216d896c163de80f16, type: 3}
     gains:
-    - 0.22413
-    - 0.10303862
-    - 0.14060475
     - 0.07934143
   - id: UI_Confirm
     bus: 6
@@ -7449,7 +6623,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Confirm_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 14.61
       useLoopDerivative: 1
       heard: 0
@@ -7465,7 +6639,7 @@ MonoBehaviour:
       flags: 'quiet: 2.1 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Confirm_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.15
       useLoopDerivative: 1
       heard: 0
@@ -7473,7 +6647,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Confirm_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1
       useLoopDerivative: 1
       heard: 0
@@ -7481,15 +6655,9 @@ MonoBehaviour:
       flags: 'clipped samples in source: 1; quiet: 2.1 dB short of target at peak
         limit'
     clips:
-    - {fileID: 8300000, guid: e31da7b066c7ee41940aa78eb1d20c34, type: 3}
     - {fileID: 8300000, guid: 068af2d00cfc7a70536b94194abe4656, type: 3}
-    - {fileID: 8300000, guid: 39b4a7bc526446ff915191a0cd16309a, type: 3}
-    - {fileID: 8300000, guid: abbeb4b9062c0e7f8d0099b55f1b19ad, type: 3}
     gains:
     - 1
-    - 1
-    - 0.360994
-    - 0.22387213
   - id: UI_Back
     bus: 6
     loop: 0
@@ -7518,7 +6686,7 @@ MonoBehaviour:
       flags: 'quiet: 0.9 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Back_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 13.46
       useLoopDerivative: 1
       heard: 0
@@ -7526,7 +6694,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Back_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.42
       useLoopDerivative: 1
       heard: 0
@@ -7534,7 +6702,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Back_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.42
       useLoopDerivative: 1
       heard: 0
@@ -7542,14 +6710,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: a4880f056f41370e1de4edb4e6aa7336, type: 3}
-    - {fileID: 8300000, guid: 1686848d3c3e2fc8cdeb3659493e6950, type: 3}
-    - {fileID: 8300000, guid: 0fd45069c188b992ca53b478d1a3d0ea, type: 3}
-    - {fileID: 8300000, guid: 00aff4ccc488cd4bacef9767478e2c17, type: 3}
     gains:
     - 0.36140987
-    - 1
-    - 0.66221654
-    - 0.23933157
   - id: UI_Pause
     bus: 6
     loop: 0
@@ -7569,7 +6731,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Pause_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -15.48
       useLoopDerivative: 1
       heard: 0
@@ -7577,7 +6739,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Pause_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -9.06
       useLoopDerivative: 1
       heard: 0
@@ -7585,7 +6747,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Pause_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 1.91
       useLoopDerivative: 1
       heard: 0
@@ -7593,22 +6755,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Pause_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -10.11
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: facb1fe13efff1f934fcf08ceb4f5be1, type: 3}
-    - {fileID: 8300000, guid: 024c0041c45e7c6626e92b36f8dc3107, type: 3}
-    - {fileID: 8300000, guid: 45002330bd209f639addc6e853b7c9ad, type: 3}
-    - {fileID: 8300000, guid: f9343dd2992facf4f4440237ce91077f, type: 3}
-    gains:
-    - 0.042266864
-    - 0.088511564
-    - 0.31296802
-    - 0.078433216
+    clips: []
+    gains: []
   - id: UI_Unpause
     bus: 6
     loop: 0
@@ -7628,7 +6782,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Unpause_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -11.16
       useLoopDerivative: 1
       heard: 0
@@ -7636,7 +6790,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Unpause_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -8.28
       useLoopDerivative: 1
       heard: 0
@@ -7644,7 +6798,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Unpause_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -8.79
       useLoopDerivative: 1
       heard: 0
@@ -7652,22 +6806,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_UI_Unpause_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -8.67
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 'clipped samples in source: 16'
-    clips:
-    - {fileID: 8300000, guid: 3e0658112c89c586342239bcab7dc4a9, type: 3}
-    - {fileID: 8300000, guid: 8fdf4d2261cf0fdbe92eaca2f38396c0, type: 3}
-    - {fileID: 8300000, guid: f945cda94ca50560e4645fe8a049cee2, type: 3}
-    - {fileID: 8300000, guid: 18a5a85367ddc25e88d48739d79974c2, type: 3}
-    gains:
-    - 0.069502436
-    - 0.0968278
-    - 0.09130614
-    - 0.09257635
+    clips: []
+    gains: []
   - id: Chart_Open
     bus: 6
     loop: 0
@@ -7696,7 +6842,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_Chart_Open_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.72
       useLoopDerivative: 1
       heard: 0
@@ -7704,7 +6850,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_Chart_Open_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.06
       useLoopDerivative: 1
       heard: 0
@@ -7712,7 +6858,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_Chart_Open_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1
       useLoopDerivative: 1
       heard: 0
@@ -7720,14 +6866,8 @@ MonoBehaviour:
       flags: 'clipped samples in source: 2'
     clips:
     - {fileID: 8300000, guid: ae8eac34185cfa7230065e18ebbff89f, type: 3}
-    - {fileID: 8300000, guid: d7c334208d983eac40df6f52cdbb84e6, type: 3}
-    - {fileID: 8300000, guid: 0039ff8e318e6861af4ce9eb0fc52a93, type: 3}
-    - {fileID: 8300000, guid: df0c61756a58a1356e4c5d9191a2a518, type: 3}
     gains:
     - 0.12331049
-    - 0.23120649
-    - 0.22233099
-    - 0.22387213
   - id: Chart_Close
     bus: 6
     loop: 0
@@ -7756,7 +6896,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_Chart_Close_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -11.88
       useLoopDerivative: 1
       heard: 0
@@ -7764,7 +6904,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 9'
     - sourcePath: Assets/Audio/SFX/UI/SFX_Chart_Close_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -17.08
       useLoopDerivative: 1
       heard: 0
@@ -7772,7 +6912,7 @@ MonoBehaviour:
       flags: 'clipped samples in source: 136'
     - sourcePath: Assets/Audio/SFX/UI/SFX_Chart_Close_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -11.65
       useLoopDerivative: 1
       heard: 0
@@ -7780,14 +6920,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: f672ea9c7c1c4aa3b9c605837aa7d3dc, type: 3}
-    - {fileID: 8300000, guid: 95ab5a4d7598b6083e230666b81a2124, type: 3}
-    - {fileID: 8300000, guid: d310f879da604bb1ef25c485fbf9bcb1, type: 3}
-    - {fileID: 8300000, guid: 9966b15d93a42122fade87066921884e, type: 3}
     gains:
     - 0.23014417
-    - 0.06397349
-    - 0.035156045
-    - 0.06569011
   - id: Chart_PieceAdd
     bus: 6
     loop: 0
@@ -7808,7 +6942,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/UI/SFX_Chart_PieceAdd_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 5.59
       useLoopDerivative: 1
       heard: 0
@@ -7816,7 +6950,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_Chart_PieceAdd_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.17
       useLoopDerivative: 1
       heard: 0
@@ -7824,7 +6958,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_Chart_PieceAdd_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 14.22
       useLoopDerivative: 1
       heard: 0
@@ -7832,22 +6966,14 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_Chart_PieceAdd_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 25.48
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
-    clips:
-    - {fileID: 8300000, guid: 5a609a698caa4ffe5530a330413df236, type: 3}
-    - {fileID: 8300000, guid: d5636ac2712ef9b41c118e7b70038a0c, type: 3}
-    - {fileID: 8300000, guid: 2923416a274f02b94b60b33e8a241c53, type: 3}
-    - {fileID: 8300000, guid: 0457b19e293a6a3ca612d51372cd9c01, type: 3}
-    gains:
-    - 0.47807938
-    - 0.12345253
-    - 1
-    - 1
+    clips: []
+    gains: []
   - id: Save
     bus: 6
     loop: 0
@@ -7868,7 +6994,7 @@ MonoBehaviour:
     takes:
     - sourcePath: Assets/Audio/SFX/UI/SFX_Save_01.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 8.72
       useLoopDerivative: 1
       heard: 0
@@ -7876,7 +7002,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_Save_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -6.59
       useLoopDerivative: 1
       heard: 0
@@ -7892,22 +7018,16 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_Save_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 4.88
       useLoopDerivative: 1
       heard: 0
       note: 
       flags: 
     clips:
-    - {fileID: 8300000, guid: 63fd3f2095fc1fb9269aa5a24e01d970, type: 3}
-    - {fileID: 8300000, guid: fc716b01b9af743e6826e5bc57618086, type: 3}
     - {fileID: 8300000, guid: c0f8db45bca6513fed3a301c879fe1a6, type: 3}
-    - {fileID: 8300000, guid: c7595a233bb4a90048bb379b03ca82ae, type: 3}
     gains:
-    - 0.6854882
-    - 0.1176251
     - 0.3736801
-    - 0.44055486
   - id: Banner_Show
     bus: 6
     loop: 0
@@ -7936,7 +7056,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_Banner_Show_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -0.15
       useLoopDerivative: 1
       heard: 0
@@ -7944,7 +7064,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_Banner_Show_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 3.96
       useLoopDerivative: 1
       heard: 0
@@ -7952,7 +7072,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/UI/SFX_Banner_Show_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -8.74
       useLoopDerivative: 1
       heard: 0
@@ -7960,14 +7080,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: 69daad90d2f6fe46ca9499e3c36a7cde, type: 3}
-    - {fileID: 8300000, guid: c1a1410d23726f74d63731d59e3b3ca4, type: 3}
-    - {fileID: 8300000, guid: 39574cf4feaa486ffc63b245e039cb90, type: 3}
-    - {fileID: 8300000, guid: 4fa853c68ebfaa7c436bc478db4dbcec, type: 3}
     gains:
     - 0.11926143
-    - 0.246888
-    - 0.39627802
-    - 0.09183327
   - id: Story_Sprout
     bus: 7
     loop: 0
@@ -7997,7 +7111,7 @@ MonoBehaviour:
         limit'
     - sourcePath: Assets/Audio/SFX/Story/SFX_Story_Sprout_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 9.49
       useLoopDerivative: 1
       heard: 0
@@ -8005,7 +7119,7 @@ MonoBehaviour:
       flags: 'quiet: 10.4 dB short of target at peak limit'
     - sourcePath: Assets/Audio/SFX/Story/SFX_Story_Sprout_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1
       useLoopDerivative: 1
       heard: 0
@@ -8014,7 +7128,7 @@ MonoBehaviour:
         limit'
     - sourcePath: Assets/Audio/SFX/Story/SFX_Story_Sprout_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 1.99
       useLoopDerivative: 1
       heard: 0
@@ -8022,14 +7136,8 @@ MonoBehaviour:
       flags: 'quiet: 6.8 dB short of target at peak limit'
     clips:
     - {fileID: 8300000, guid: 676b6b5f22273f114c83c77398a05fe5, type: 3}
-    - {fileID: 8300000, guid: 8dbbfc526b1294e9cc26637b3cb3a68c, type: 3}
-    - {fileID: 8300000, guid: 540a9174a1fbd4a5a67311bfb9aa8697, type: 3}
-    - {fileID: 8300000, guid: b62849cead33f30e6d84bb56f889bad4, type: 3}
     gains:
     - 0.22387213
-    - 0.74903136
-    - 0.22387213
-    - 0.31586388
   - id: Story_Reveal
     bus: 7
     loop: 0
@@ -8058,7 +7166,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Story/SFX_Story_Reveal_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -4.71
       useLoopDerivative: 1
       heard: 0
@@ -8066,7 +7174,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Story/SFX_Story_Reveal_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -1.85
       useLoopDerivative: 1
       heard: 0
@@ -8074,7 +7182,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Story/SFX_Story_Reveal_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -5.34
       useLoopDerivative: 1
       heard: 0
@@ -8082,14 +7190,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: f4fe920b28ab3afd43f7fd8a0e898b10, type: 3}
-    - {fileID: 8300000, guid: 037d4c4e1bb7979fd7d0d0d146e20c31, type: 3}
-    - {fileID: 8300000, guid: 3e172ec5d15e8beb59ccfae9a79e940a, type: 3}
-    - {fileID: 8300000, guid: 71a49fad7664fd4cf8c1df2dbaf4d6ad, type: 3}
     gains:
     - 0.19054607
-    - 0.14604947
-    - 0.20300186
-    - 0.13583136
   - id: Story_EyeOpen
     bus: 7
     loop: 0
@@ -8118,7 +7220,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Story/SFX_Story_EyeOpen_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 7.5
       useLoopDerivative: 1
       heard: 0
@@ -8126,7 +7228,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Story/SFX_Story_EyeOpen_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 12.22
       useLoopDerivative: 1
       heard: 0
@@ -8134,7 +7236,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Story/SFX_Story_EyeOpen_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 10.33
       useLoopDerivative: 1
       heard: 0
@@ -8142,14 +7244,8 @@ MonoBehaviour:
       flags: 
     clips:
     - {fileID: 8300000, guid: 8ef6d4bf51e40deada28e7ce1132d571, type: 3}
-    - {fileID: 8300000, guid: f4231c4c6182b664e38d0232ed2ef706, type: 3}
-    - {fileID: 8300000, guid: 0cdc3d008947270384d73f12ae2f79e7, type: 3}
-    - {fileID: 8300000, guid: 9cecd3ddf885dcf87b0f8221910de544, type: 3}
     gains:
     - 1
-    - 0.5956622
-    - 1
-    - 0.8250875
   - id: Story_Ending
     bus: 7
     loop: 0
@@ -8178,7 +7274,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Story/SFX_Story_Ending_02.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: -3.66
       useLoopDerivative: 1
       heard: 0
@@ -8186,7 +7282,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Story/SFX_Story_Ending_03.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 18.55
       useLoopDerivative: 1
       heard: 0
@@ -8194,7 +7290,7 @@ MonoBehaviour:
       flags: 
     - sourcePath: Assets/Audio/SFX/Story/SFX_Story_Ending_04.wav
       loopPath: 
-      state: 0
+      state: 3
       gainDb: 11.71
       useLoopDerivative: 1
       heard: 0
@@ -8202,14 +7298,8 @@ MonoBehaviour:
       flags: 'quiet: 4.1 dB short of target at peak limit'
     clips:
     - {fileID: 8300000, guid: 4f6b64e21a2f9fcbf6706362c77351d4, type: 3}
-    - {fileID: 8300000, guid: 3834779a5740991a1d13381c71dc2244, type: 3}
-    - {fileID: 8300000, guid: f2cf098f38ed30192dfa48c621049058, type: 3}
-    - {fileID: 8300000, guid: 6ce3f2d3a516e85a0cc19f7267264d92, type: 3}
     gains:
     - 0.2707073
-    - 0.16481625
-    - 1
-    - 0.96716374
   scenes:
   - scenePrefix: MRAtlas_MR01
     ambience: Amb_Cradle

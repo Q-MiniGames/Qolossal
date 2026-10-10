@@ -16,7 +16,9 @@ using UnityEngine.SceneManagement;
 // the rules (variation, cooldowns, voice limits, buses), not how anything sounds.
 public sealed partial class MraTestDriver
 {
-    int Plays(string id) => Sfx.Count(id);
+    // A sound whose takes were all removed (the user's selection, 8 Oct) is silent; its hook still asks
+    // for it, and that request counts as the hook working.
+    int Plays(string id) => Sfx.Count(id) + (Sfx.Has(id) ? 0 : Sfx.Refused(id));
 
     // Runs `act`, then waits `seconds`, and reports whether `id` started at least `min` times.
     IEnumerator Heard(string id, string what, IEnumerator act, float seconds = .3f, int min = 1)
@@ -40,8 +42,12 @@ public sealed partial class MraTestDriver
         Expect(lib.entries.All(e => e.takes.Length == 4), "audio: every sound keeps its four takes");
         int missingSources = lib.entries.Sum(e => e.takes.Count(t => AssetDatabase.LoadAssetAtPath<AudioClip>(t.sourcePath) == null));
         Expect(missingSources == 0, $"audio: all 544 source takes import as AudioClips ({missingSources} missing)");
-        var noClips = lib.entries.Where(e => e.clips == null || e.clips.Length == 0).Select(e => e.id).ToList();
-        Expect(noClips.Count == 0, "audio: every sound has takes in use" + (noClips.Count > 0 ? ": missing " + string.Join(", ", noClips) : ""));
+        // Only the sounds whose every take was removed are silent.
+        var noClips = lib.entries.Where(e => (e.clips == null || e.clips.Length == 0) && !e.takes.All(t => t.state == SfxTakeState.Rejected)).Select(e => e.id).ToList();
+        Expect(noClips.Count == 0, "audio: every sound with a take kept has takes in use" + (noClips.Count > 0 ? ": missing " + string.Join(", ", noClips) : ""));
+        var removed = lib.entries.Where(e => e.takes.All(t => t.state == SfxTakeState.Rejected)).Select(e => e.id).ToList();
+        Expect(removed.All(id => lib.Find(id).clips.Length == 0), "audio: a sound with every take removed has none in use");
+        Debug.Log($"[MraTest] audio: sounds removed entirely ({removed.Count}): " + string.Join(", ", removed));
         Expect(lib.mixer != null && lib.busGroups.Length == 9 && lib.busGroups.All(g => g != null) && lib.musicGroup != null, "audio: the Qolossal mixer routes all nine buses and the music");
         Expect(Mathf.Approximately(lib.headroomDb, 12f), $"audio: effect buses have {lib.headroomDb} dB of headroom for gain matching");
         // Nobody approved anything yet: no take is a Favorite or Rejected unless someone chose it.
@@ -83,18 +89,21 @@ public sealed partial class MraTestDriver
         Expect(SfxPlayer.Instance != null, "audio: one persistent sound-effect player exists");
         Expect(FindObjectsByType<SfxPlayer>(FindObjectsSortMode.None).Length == 1, "audio: only one sound-effect player");
         // Cooldown: ten footsteps in one frame are one.
-        int s0 = Plays("Qori_Step_Moss");
-        for (int i = 0; i < 10; i++) Sfx.Play("Qori_Step_Moss");
-        Expect(Plays("Qori_Step_Moss") - s0 == 1, $"audio: cooldown turns ten same-frame footsteps into one ({Plays("Qori_Step_Moss") - s0})");
+        // (The footstep, or any sound in use if the user removed it.)
+        string cd = Sfx.Has(QoriSounds.StepId) ? QoriSounds.StepId : lib.entries.First(e => e.clips.Length > 0 && !e.loop && e.bus != SfxBus.Story && e.cooldown > 0).id;
+        int s0 = Sfx.Count(cd);
+        for (int i = 0; i < 10; i++) Sfx.Play(cd);
+        Expect(Sfx.Count(cd) - s0 == 1, $"audio: cooldown turns ten same-frame {cd} into one ({Sfx.Count(cd) - s0})");
         // Voice limit: a burst of hits spaced past the cooldown never exceeds the sound's voices.
         int maxSeen = 0;
         for (int i = 0; i < 8; i++) { Sfx.Play("Weapon_Staff_Hit"); maxSeen = Mathf.Max(maxSeen, Sfx.ActiveVoices("Weapon_Staff_Hit")); yield return Wait(.05f); }
         Expect(maxSeen <= lib.Find("Weapon_Staff_Hit").maxVoices && maxSeen >= 1, $"audio: at most {lib.Find("Weapon_Staff_Hit").maxVoices} staff hits sound at once ({maxSeen})");
         // Variation: no take twice running.
-        var e2 = lib.Find("Weapon_Staff_Swing"); var takes = new List<AudioClip>();
-        for (int i = 0; i < 12; i++) { var src = Sfx.Play("Weapon_Staff_Swing"); if (src != null) takes.Add(src.clip); yield return Wait(e2.cooldown + .02f); }
+        // (Most sounds keep one take since the user's selection; any with two or more will do.)
+        var e2 = lib.entries.First(e => e.clips.Length > 1 && !e.loop && e.bus != SfxBus.Story && e.supersedes.Length == 0); var takes = new List<AudioClip>();
+        for (int i = 0; i < 12; i++) { var src = Sfx.Play(e2.id); if (src != null) takes.Add(src.clip); yield return Wait(e2.cooldown + .02f); }
         bool repeats = false; for (int i = 1; i < takes.Count; i++) repeats |= takes[i] == takes[i - 1];
-        Expect(takes.Count >= 10 && !repeats && takes.Distinct().Count() > 1, $"audio: swings vary their take and never repeat one twice running ({takes.Distinct().Count()} takes over {takes.Count})");
+        Expect(takes.Count >= 10 && !repeats && takes.Distinct().Count() > 1, $"audio: {e2.id} varies its take and never repeats one twice running ({takes.Distinct().Count()} takes over {takes.Count})");
         // Superseding: a Waymark lighting stops the plain checkpoint touch.
         yield return Wait(1f);
         Sfx.Play("Checkpoint_Touch"); Sfx.Play("Waymark_Light");
@@ -126,9 +135,17 @@ public sealed partial class MraTestDriver
         var p = SfxPlayer.Instance;
         bool crossfading = p.AmbienceOutGain > 0f && p.AmbienceInGain < 1f;
         Expect(Sfx.Ambience == "Amb_Causeway" && Sfx.Surface == "Stone", $"audio: the Causeway's bed on stone ({Sfx.Ambience}, {Sfx.Surface})");
-        Expect(crossfading, $"audio: the bed changes by crossfade, not a cut (in {p.AmbienceInGain:F2}, out {p.AmbienceOutGain:F2})");
-        yield return Wait(3f);
-        Expect(p.AmbienceInGain >= 1f && p.AmbienceOutGain <= 0f && p.AmbienceSource.isPlaying && p.AmbienceSource.loop, "audio: the crossfade completes into a looping bed");
+        if (Sfx.Has("Amb_Cradle") && Sfx.Has("Amb_Causeway"))
+        {
+            Expect(crossfading, $"audio: the bed changes by crossfade, not a cut (in {p.AmbienceInGain:F2}, out {p.AmbienceOutGain:F2})");
+            yield return Wait(3f);
+            Expect(p.AmbienceInGain >= 1f && p.AmbienceOutGain <= 0f && p.AmbienceSource.isPlaying && p.AmbienceSource.loop, "audio: the crossfade completes into a looping bed");
+        }
+        else
+        {
+            yield return Wait(3f);
+            Expect(!p.AmbienceSource.isPlaying, "audio: with the beds removed, the Causeway is silent");
+        }
         foreach (var (scene, amb, surface) in new[] { ("MRAtlas_MR04_Qvale", "Amb_Qvale", "Stone"), ("MRAtlas_MR04_C04", "Amb_HouseInterior", "Wood"), ("MRAtlas_MR05_C01", "Amb_Cave", "Stone"), ("MRAtlas_MR07_Summit", "Amb_Summit", "Moss") })
         {
             yield return Load(scene);
@@ -141,17 +158,22 @@ public sealed partial class MraTestDriver
         var start = region.nodes[0];
         Place(new Vector2(start.position.x + 2f, GroundAt(start.position.x + 2f, start.position.y + 6f) + 1f));
         yield return Wait(1f);
-        int stepsBefore = Plays("Qori_Step_Moss");
+        string stepId = QoriSounds.StepId;   // the one standard footstep, on every surface
+        int stepsBefore = Plays(stepId);
         var feedback = Qori.GetComponent<QoriSounds>();
         Expect(feedback != null, "audio: the player carries QoriSounds");
         int footBefore = feedback != null ? feedback.Footfalls : 0;
         Press(Key.D); yield return Wait(2f); Press(); yield return Wait(.3f);
-        int steps = Plays("Qori_Step_Moss") - stepsBefore, rigSteps = feedback != null ? feedback.Footfalls - footBefore : -1;
-        Expect(steps >= 3, $"audio: walking plays moss footsteps ({steps})");
+        int steps = Plays(stepId) - stepsBefore, rigSteps = feedback != null ? feedback.Footfalls - footBefore : -1;
+        Expect(steps >= 3, $"audio: walking plays the standard footstep ({steps})");
+        var standard = lib.Find(stepId);
+        bool stepRemoved = standard != null && standard.takes.All(t => t.state == SfxTakeState.Rejected);   // the user's 10 Oct selection
+        Expect(standard != null && (stepRemoved ? standard.clips.Length == 0 : standard.clips.Length == 1 && standard.clips[0] != null && standard.clips[0].name == "SFX_Qori_Step_Water_03"),
+            $"audio: the standard footstep is {(stepRemoved ? "removed (silent)" : "Qori_Step_Water Take 3 alone")} ({(standard != null ? string.Join(", ", standard.clips.Select(c => c != null ? c.name : "null")) : "missing")})");
         Expect(steps <= rigSteps, $"audio: no doubled footsteps: at most one per rig footfall ({steps} sounds, {rigSteps} footfalls)");
-        var stepTimes = Sfx.Log.Where(l => l.Contains(" Qori_Step_Moss ")).Select(l => float.Parse(l.Split(' ')[0], System.Globalization.CultureInfo.InvariantCulture)).ToList();
+        var stepTimes = Sfx.Log.Where(l => l.Contains(" " + stepId + " ")).Select(l => float.Parse(l.Split(' ')[0], System.Globalization.CultureInfo.InvariantCulture)).ToList();
         float closest = 99f; for (int i = 1; i < stepTimes.Count; i++) closest = Mathf.Min(closest, stepTimes[i] - stepTimes[i - 1]);
-        Expect(closest >= lib.Find("Qori_Step_Moss").cooldown - .001f, $"audio: footsteps never closer than their cooldown ({closest:F3} s)");
+        Expect(closest >= lib.Find(stepId).cooldown - .001f, $"audio: footsteps never closer than their cooldown ({closest:F3} s)");
         yield return Heard("Qori_Jump", "a jump by Space", Tap(Key.Space), .2f);
         yield return Wait(1.2f);
         Expect(Plays("Qori_Land_Soft") + Plays("Qori_Land_Hard") >= 1, "audio: the landing plays");
@@ -161,11 +183,12 @@ public sealed partial class MraTestDriver
         Press(Key.Space); yield return Wait(.15f); Press(); yield return Wait(.35f);
         int glideBefore = Plays("Qori_Glide_Open");
         Press(Key.Space); yield return Wait(.5f);
-        var glide = Qori.GetComponents<SfxEmitter>().FirstOrDefault(x => x.id == "Qori_Glide_Loop");
-        bool glideHeard = glide != null && glide.id == "Qori_Glide_Loop" && (Qori.IsGliding ? glide.Playing : true);
+        // The user removed the glide loop (8 Oct): nothing sounds while the Glidecap is open.
+        bool glideSilent = !Qori.GetComponents<SfxEmitter>().Any(x => x.id == "Qori_Glide_Loop") && Sfx.ActiveVoices("Qori_Glide_Loop") == 0;
         Press(); yield return Wait(1f);
-        Expect(Plays("Qori_Glide_Open") > glideBefore || !Qori.IsGliding && glide != null, $"audio: the Glidecap opening plays (opens {Plays("Qori_Glide_Open") - glideBefore})");
-        Expect(glideHeard, "audio: the glide loop follows the Glidecap");
+        Expect(Plays("Qori_Glide_Open") > glideBefore || !Qori.IsGliding, $"audio: the Glidecap opening plays (opens {Plays("Qori_Glide_Open") - glideBefore})");
+        Expect(glideSilent, "audio: no glide loop plays while the Glidecap is open (removed)");
+        yield return MovementSoundProbe(start.position);
         // Attack by the gamepad's attack button: the Leaf Staff's swing.
         if (pad == null) pad = InputSystem.AddDevice<Gamepad>("MRA Audio Pad");
         yield return Heard("Weapon_Staff_Swing", "an attack (Leaf Staff)", PadTap(GamepadButton.LeftShoulder), .4f);
@@ -250,6 +273,7 @@ public sealed partial class MraTestDriver
                 var heard = ids.Where(i => Plays(i) > before[i]).ToList();
                 // A shellback's walk is a loop: heard if its emitter sounds.
                 if (kind == "Shellback" && enemy.GetComponent<SfxEmitter>() is SfxEmitter walk && walk.IsAudible) heard.Add("Shellback_Walk (loop)");
+                if (kind == "Shellback" && !Sfx.Has("Shellback_Walk")) heard.Add("Shellback_Walk (removed)");
                 Expect(heard.Count > 0, $"audio: {r.id} {kind} plays its own sounds ({string.Join(", ", heard)}; telegraph glints {Plays("Enemy_Telegraph") - glint})");
                 // Defeat: one hit too many.
                 if (enemy.GetComponent<EnemyBase>() is EnemyBase foe && foe.IsAlive && kind != "Knucklebramble")
@@ -500,6 +524,51 @@ public sealed partial class MraTestDriver
         Debug.Log("[MraTest] audio: plays by sound: " + string.Join(", ", lib.entries.Where(e => Plays(e.id) > 0).Select(e => e.id + "=" + Plays(e.id))));
         int refusedTotal = lib.entries.Sum(e => Sfx.Refused(e.id));
         Debug.Log($"[MraTest] audio: refused by cooldown/limits/off-screen: {refusedTotal}");
+    }
+
+    // Walking, running and a long held glide, with every movement sound in order: footsteps are one
+    // recorded sound per full stride (the old synthesized rustles silent), and a held glide opens once
+    // and is then silent (the user removed the glide loop on 8 Oct).
+    IEnumerator MovementSoundProbe(Vector3 from)
+    {
+        var sounds = Qori.GetComponent<QoriSounds>();
+        var rustles = Qori.GetComponentInChildren<QoriMovementFeedback>();
+        string Recent(float since) => string.Join(" ", Sfx.Log.Select(l => l.Split(' ')).Where(f => f.Length >= 2 && f[1].StartsWith("Qori_")
+            && float.Parse(f[0], System.Globalization.CultureInfo.InvariantCulture) >= since).Select(f => f[0] + ":" + f[1].Replace("Qori_", "")));
+        foreach (var (label, keys) in new[] { ("walk", new[] { Key.D }), ("run", new[] { Key.D, Key.LeftShift }) })
+        {
+            Place(new Vector2(from.x + 2f, GroundAt(from.x + 2f, from.y + 6f) + 1f));
+            yield return Wait(1f);
+            float t0 = Time.unscaledTime; int foot = sounds.Footfalls, synth = rustles != null ? rustles.FootSounds : 0;
+            string step = QoriSounds.StepId; int steps = Plays(step);
+            Press(keys);
+            int overlap = 0; float end = Time.unscaledTime + 3f;
+            while (Time.unscaledTime < end) { overlap = Mathf.Max(overlap, Sfx.ActiveVoices(step)); yield return null; }
+            Press(); yield return Wait(.5f);
+            int heard = Plays(step) - steps, falls = sounds.Footfalls - foot;
+            Debug.Log($"[MraTest] audio probe {label}: {falls} footfalls, {heard} step sounds, synthesized rustles {(rustles != null && rustles.tuning.sounds ? "ON" : "off")} ({(rustles != null ? rustles.FootSounds - synth : 0)} rig steps); sounds: {Recent(t0)}");
+            Expect(heard >= 2 && heard <= falls / 2 + 1, $"audio: {label}: one step sound per full stride ({heard} sounds, {falls} footfalls)");
+            Expect(overlap == (Sfx.Has(step) ? 1 : 0), $"audio: {label}: each step is a single tap, done before the next ({overlap} at once)");
+        }
+        Expect(rustles == null || !rustles.tuning.sounds, "audio: the old synthesized footstep and landing rustles stay silent beside the recorded sounds");
+
+        // A long glide from high up: Jump pressed once in the air and held the whole way down.
+        Place(new Vector2(from.x + 2f, GroundAt(from.x + 2f, from.y + 6f) + 14f));
+        yield return Wait(.2f);
+        float g0 = Time.unscaledTime; int opens = Plays("Qori_Glide_Open"), loopVoices = 0;
+        Press(Key.Space);   // one press in the air, held: the Glidecap opens and stays open
+        float until = Time.unscaledTime + 3f; int frames = 0, gliding = 0;
+        while (Time.unscaledTime < until && !Qori.IsGrounded)
+        {
+            yield return null; frames++;
+            if (Qori.IsGliding) gliding++;
+            loopVoices = Mathf.Max(loopVoices, Sfx.ActiveVoices("Qori_Glide_Loop"));
+        }
+        Press(); yield return Wait(.6f);
+        int opened = Plays("Qori_Glide_Open") - opens;
+        bool loopPresent = loopVoices > 0 || Qori.GetComponents<SfxEmitter>().Any(x => x.id == "Qori_Glide_Loop");
+        Debug.Log($"[MraTest] audio probe glide: {opened} opens, glide loop {(loopPresent ? "PRESENT" : "absent")}, gliding {gliding}/{frames} frames; sounds: {Recent(g0)}");
+        Expect(opened == 1 && !loopPresent, $"audio: a held glide opens once, then no loop sounds ({opened} opens, loop {(loopPresent ? "present" : "absent")})");
     }
 }
 #endif

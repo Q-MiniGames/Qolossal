@@ -50,7 +50,7 @@ MAP = {
     "Qori_Climb":       ("Climbs up from a ledge", "QoriMovementFeedback: IsLedgeClimbing starts", W, {}),
     "Qori_Dash":        ("Wind Leaf dash", "QoriMovementFeedback: PlayerMovement.DashVersion", W, {}),
     "Qori_Glide_Open":  ("Glidecap opens", "QoriMovementFeedback: IsGliding starts", W, {}),
-    "Qori_Glide_Loop":  ("While gliding", "QoriMovementFeedback: SfxEmitter on Qori while IsGliding", W, dict(target=-30, voices=1)),
+    "Qori_Glide_Loop":  ("While gliding", "none: removed at the user's request (8 Oct 2026); takes kept", N, dict(target=-30, voices=1)),
     "Qori_Thread_Shoot": ("Thread flicks out to an anchor", "QoriMovementFeedback: PlayerThread.AttachmentVersion", W, {}),
     "Qori_Thread_Attach": ("Thread snags (just after the flick)", "QoriMovementFeedback: AttachmentVersion + 0.08 s", W, {}),
     "Qori_Thread_Swing": ("Swinging fast through the bottom of the arc", "QoriMovementFeedback: attached, speed > 5, rising", W, dict(cooldown=.8, voices=1)),

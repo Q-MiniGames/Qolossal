@@ -21,15 +21,24 @@ public static class Sfx
 
     /// <summary>Plays a sound where something happened in the world (positional sounds pan and fade by it).</summary>
     public static AudioSource Play(string id, Vector2 at, float volume = 1f, float pitch = 1f) =>
-        SfxPlayer.Ensure() is SfxPlayer p ? p.Start(id, at, true, volume, pitch, false) : null;
+        SfxPlayer.Ensure() is SfxPlayer p ? p.Begin(id, at, true, volume, pitch, false) : null;
 
     /// <summary>Plays a sound centred (Qori's own sounds, pickups, UI).</summary>
     public static AudioSource Play(string id, float volume = 1f, float pitch = 1f) =>
-        SfxPlayer.Ensure() is SfxPlayer p ? p.Start(id, default, false, volume, pitch, false) : null;
+        SfxPlayer.Ensure() is SfxPlayer p ? p.Begin(id, default, false, volume, pitch, false) : null;
+
+    /// <summary>Plays only the first `seconds` of a sound, fading out over its last moment (a single
+    /// footfall from a take that scuffs on).</summary>
+    public static AudioSource PlayShort(string id, float seconds, float volume = 1f)
+    {
+        var s = Play(id, volume);
+        if (s != null) SfxPlayer.Instance.Shorten(s, seconds);
+        return s;
+    }
 
     /// <summary>A story moment's sound (Story bus): only the reveal and the ending call this.</summary>
     public static AudioSource PlayStory(string id) =>
-        SfxPlayer.Ensure() is SfxPlayer p ? p.Start(id, default, false, 1f, 1f, true) : null;
+        SfxPlayer.Ensure() is SfxPlayer p ? p.Begin(id, default, false, 1f, 1f, true) : null;
 
     /// <summary>Stops every voice of this sound now playing (a story moment cut short).</summary>
     public static void Stop(string id) { if (SfxPlayer.Instance != null) SfxPlayer.Instance.StopVoices(id); }
@@ -88,7 +97,7 @@ public static class SfxSettings
 public sealed class SfxPlayer : MonoBehaviour
 {
     const int PoolSize = 24;
-    const float AmbienceFade = 2.5f, SupersedeWindow = .5f;
+    const float AmbienceFade = 2.5f, SupersedeWindow = .5f, ShortFade = .06f;
 
     public static SfxPlayer Instance { get; private set; }
     public static SfxLibrary Library { get; private set; }
@@ -99,7 +108,7 @@ public sealed class SfxPlayer : MonoBehaviour
     internal static readonly List<string> History = new List<string>();
     static bool searched;
 
-    sealed class Voice { public AudioSource source; public string id; public float started; public SfxBus bus; }
+    sealed class Voice { public AudioSource source; public string id; public float started; public SfxBus bus; public float level, cutAt = float.PositiveInfinity; }
     readonly List<Voice> voices = new List<Voice>();
     readonly Dictionary<string, float> lastPlayed = new Dictionary<string, float>();
     readonly Dictionary<string, float> blockedUntil = new Dictionary<string, float>();
@@ -185,7 +194,7 @@ public sealed class SfxPlayer : MonoBehaviour
 
     static void Note(Dictionary<string, int> d, string id) => d[id] = (d.TryGetValue(id, out int n) ? n : 0) + 1;
 
-    internal AudioSource Start(string id, Vector2 at, bool placed, float volume, float pitch, bool story)
+    internal AudioSource Begin(string id, Vector2 at, bool placed, float volume, float pitch, bool story)
     {
         var e = Library.Find(id);
         if (e == null || e.clips == null || e.clips.Length == 0) { Note(Refusals, id ?? "(null)"); return null; }
@@ -230,7 +239,7 @@ public sealed class SfxPlayer : MonoBehaviour
         s.ignoreListenerPause = e.bus == SfxBus.UI;
         s.priority = e.bus == SfxBus.Story ? 0 : e.bus == SfxBus.UI ? 16 : Rank(e.bus) == 2 ? 64 : 128;
         s.Play();
-        pick.id = id; pick.started = now; pick.bus = e.bus;
+        pick.id = id; pick.started = now; pick.bus = e.bus; pick.level = s.volume; pick.cutAt = float.PositiveInfinity;
         lastPlayed[id] = now;
 
         if (e.supersedes != null)
@@ -247,10 +256,13 @@ public sealed class SfxPlayer : MonoBehaviour
         return s;
     }
 
+    /// <summary>Ends a voice `seconds` into its clip, fading over the last ShortFade.</summary>
+    public void Shorten(AudioSource s, float seconds) { foreach (var v in voices) if (v.source == s) v.cutAt = Mathf.Max(seconds, ShortFade); }
+
     internal IEnumerator After(string id, float seconds, float volume)
     {
         yield return new WaitForSecondsRealtime(seconds);
-        Start(id, default, false, volume, 1f, false);
+        Begin(id, default, false, volume, 1f, false);
     }
 
     // ---------------------------------------------------------------- ambience
@@ -292,12 +304,21 @@ public sealed class SfxPlayer : MonoBehaviour
         ambA.volume = ambALevel * ambAGain * scale;
         ambB.volume = ambBLevel * ambBGain * scale;
 
+        // Shortened voices fade out by their place in the clip (so a pause holds them too).
+        foreach (var v in voices)
+        {
+            if (float.IsPositiveInfinity(v.cutAt) || !v.source.isPlaying) continue;
+            float left = v.cutAt - v.source.time;
+            if (left <= 0f) { v.source.Stop(); v.cutAt = float.PositiveInfinity; }
+            else v.source.volume = v.level * Mathf.Clamp01(left / ShortFade);
+        }
+
         // UI: moving the selection in any uGUI menu ticks.
         var es = EventSystem.current;
         var selected = es != null ? es.currentSelectedGameObject : null;
         if (selected != lastSelected)
         {
-            if (selected != null && lastSelected != null && selected.activeInHierarchy && lastSelected.activeInHierarchy) Start("UI_Move", default, false, 1f, 1f, false);
+            if (selected != null && lastSelected != null && selected.activeInHierarchy && lastSelected.activeInHierarchy) Begin("UI_Move", default, false, 1f, 1f, false);
             lastSelected = selected;
         }
     }
