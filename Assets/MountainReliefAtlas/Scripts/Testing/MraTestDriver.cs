@@ -370,12 +370,19 @@ public sealed partial class MraTestDriver : MonoBehaviour
         yield return Leap(run, launch, n10.y, false);
         Expect(Body.position.x < landing - .5f, $"MR06: without the Glidecap, a running jump and a dash fall short (x {Body.position.x:F1}, landing at {landing:F1})");
         Unlock(Relics.Glidecap);
-        yield return Leap(run, launch, n10.y, true);
-        Expect(Body.position.x > landing && Body.position.y > n10.y - 3.5f, $"MR06: with the Glidecap Qori glides onto the landing ({Body.position})");
+        yield return Leap(run, launch, n10.y, true, landing);
+        // The reclining route's neck dip falls away past the landing (E10 drops 22 u), so the glide carries
+        // on down it: judge the crossing by his height as he passes the landing's edge, which must be clear
+        // of the catch floor 8 u below the launch (MraWorldBuilder.GlideSpan).
+        Expect(Body.position.x > landing && leapCrossY > n10.y - 6f, $"MR06: with the Glidecap Qori glides onto the landing (over its edge at y {leapCrossY:F1}, catch floor {n10.y - 8f:F1}; now {Body.position})");
     }
 
-    IEnumerator Leap(float from, float edge, float ground, bool glide)
+    // Qori's height when a Leap first passed `watchX` (NegativeInfinity if it never did).
+    float leapCrossY;
+
+    IEnumerator Leap(float from, float edge, float ground, bool glide, float watchX = float.PositiveInfinity)
     {
+        leapCrossY = float.NegativeInfinity;
         Place(new Vector2(from, ground + 1f));
         yield return Wait(0.33f);
         float t = Time.time;
@@ -387,6 +394,7 @@ public sealed partial class MraTestDriver : MonoBehaviour
         {
             if (!glide && !dashed && Time.time - t > .38f) { Press(Key.D, Key.LeftShift, Key.C); dashed = true; }
             else if (!glide && dashed && Time.time - t > .45f) Press(Key.D, Key.LeftShift);
+            if (float.IsNegativeInfinity(leapCrossY) && Body.position.x >= watchX) leapCrossY = Body.position.y;
             if (Time.time - t > .3f && Qori.IsGrounded) break;
             yield return null;
         }
