@@ -9,9 +9,15 @@ using UnityEngine;
 [DefaultExecutionOrder(-900)]
 public sealed class HitStop : MonoBehaviour
 {
-    // The moments that freeze the game, in seconds (Hollow Knight-like: short and sharp).
-    public const float QoriHurt = .12f, HeavyHit = .07f, EnemyKilled = .08f, Stagger = .1f, GuardianExposed = .15f, GuardianKilled = .2f;
-    const float FrozenScale = .0001f, Cooldown = .08f;
+    // The moments that freeze the game, in seconds (Hollow Knight-like: short and sharp), from FeedbackTuning.
+    public static float QoriHurt => FeedbackTuning.Current.qoriHurt;
+    public static float HeavyHit => FeedbackTuning.Current.heavyHit;
+    public static float EnemyKilled => FeedbackTuning.Current.enemyKilled;
+    public static float Stagger => FeedbackTuning.Current.stagger;
+    public static float GuardianExposed => FeedbackTuning.Current.guardianExposed;
+    public static float GuardianKilled => FeedbackTuning.Current.guardianKilled;
+    static float Cooldown => FeedbackTuning.Current.hitStopCooldown;
+    const float FrozenScale = .0001f;
     const string PrefKey = "Qolossal.HitStop";
 
     static HitStop runner;

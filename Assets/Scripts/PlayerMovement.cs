@@ -9,10 +9,9 @@ public sealed class PlayerMovement : MonoBehaviour
     public enum LaunchKind { None, Jump, FlowerBoost, WallJump }
     public bool IsWallSliding { get; private set; }
     public float WallDirection { get; private set; }
-    [Header("Wall movement")]
-    [SerializeField, Min(.1f)] private float wallSlideSpeed=2.5f;
-    [SerializeField, Min(.1f)] private float wallJumpHorizontalSpeed=8f;
-    [SerializeField, Min(.01f)] private float wallJumpPushSeconds=.12f;
+    private float wallSlideSpeed => Tuning.wallSlideSpeed;
+    private float wallJumpHorizontalSpeed => Tuning.wallJumpHorizontalSpeed;
+    private float wallJumpPushSeconds => Tuning.wallJumpPushSeconds;
     private float wallJumpUntil=float.NegativeInfinity;
     private float wallSteeringUntil=float.NegativeInfinity;
     private readonly RaycastHit2D[] wallHits=new RaycastHit2D[8];
@@ -57,41 +56,31 @@ public sealed class PlayerMovement : MonoBehaviour
     public int ResetVersion { get; private set; }
     /// <summary>Counts returns to the checkpoint (a death, a fall, deep water); a scene's own start counts too.</summary>
     public int RespawnVersion { get; private set; }
-    [Header("Running")]
-    [SerializeField, Min(0f)] private float moveSpeed = 7f;
-    [SerializeField, Min(0f)] private float runSpeed = 10.5f;
-    [SerializeField, Min(0f)] private float groundAcceleration = 65f;
-    [SerializeField, Min(0f)] private float airAcceleration = 35f;
+    private float moveSpeed => Tuning.moveSpeed;
+    private float runSpeed => Tuning.runSpeed;
+    private float groundAcceleration => Tuning.groundAcceleration;
+    private float airAcceleration => Tuning.airAcceleration;
 
-    [Header("Jumping")]
-    [SerializeField, Min(0f)] private float jumpSpeed = 12f;
-    [SerializeField, Min(0f)] private float coyoteTime = 0.12f;
-    [SerializeField, Min(0f)] private float jumpBufferTime = 0.12f;
-    [SerializeField, Range(0.1f, 1f)] private float jumpReleaseMultiplier = 0.5f;
-    [SerializeField, Min(1f)] private float maximumFallSpeed = 22f;
-    [Tooltip("Gravity multiplier while falling: a quicker, weightier fall than the rise.")]
-    [SerializeField, Min(1f)] private float fallGravityMultiplier = 1.7f;
-    [Tooltip("Gravity multiplier near the top of a jump while Jump is held: a brief hang at the apex.")]
-    [SerializeField, Range(.1f, 1f)] private float apexGravityMultiplier = .55f;
-    [Tooltip("Vertical speed (units/s) either side of zero that counts as the apex.")]
-    [SerializeField, Min(0f)] private float apexSpeedBand = 1.5f;
-    [Tooltip("How quickly Qori's own air speed fades with the stick released (units/s per second). " +
-             "Momentum from a thread swing or a flower boost is kept until he lands.")]
-    [SerializeField, Min(0f)] private float airDeceleration = 25f;
+    private float jumpSpeed => Tuning.jumpSpeed;
+    private float coyoteTime => Tuning.coyoteTime;
+    private float jumpBufferTime => Tuning.jumpBufferTime;
+    private float jumpReleaseMultiplier => Tuning.jumpReleaseMultiplier;
+    private float maximumFallSpeed => Tuning.maximumFallSpeed;
+    private float fallGravityMultiplier => Tuning.fallGravityMultiplier;
+    private float apexGravityMultiplier => Tuning.apexGravityMultiplier;
+    private float apexSpeedBand => Tuning.apexSpeedBand;
+    private float airDeceleration => Tuning.airDeceleration;
 
-    [Header("Wind Leaf dash (relic)")]
-    [SerializeField, Min(1f)] private float dashSpeed = 19f;
-    [SerializeField, Min(.02f)] private float dashSeconds = .16f;
-    [Tooltip("Rest after a dash before the next can start (the air dash also needs ground, a wall or a thread).")]
-    [SerializeField, Min(0f)] private float dashCooldown = .3f;
+    private float dashSpeed => Tuning.dashSpeed;
+    private float dashSeconds => Tuning.dashSeconds;
+    private float dashCooldown => Tuning.dashCooldown;
 
-    [Header("Glidecap glide (relic)")]
-    [SerializeField, Min(.1f)] private float glideFallSpeed = 1.8f;
-    [SerializeField, Min(0f)] private float glideSpeed = 7.5f;
-    [Tooltip("How quickly opening the Glidecap brakes a fast fall (units/s per second).")]
-    [SerializeField, Min(1f)] private float glideBrake = 45f;
+    private float glideFallSpeed => Tuning.glideFallSpeed;
+    private float glideSpeed => Tuning.glideSpeed;
+    private float glideBrake => Tuning.glideBrake;
     [Tooltip("Off: holding Jump while falling opens the Glidecap, even the jump's own press. " +
              "On: it needs its own press of Jump in mid-air, clear of walls, held from then on.")]
+    [Header("Glidecap glide (relic)")]
     [SerializeField] private bool glideNeedsNewPress = false;
 
     /// <summary>True during a Wind Leaf dash; DashDirection is -1 or 1.</summary>
@@ -111,9 +100,9 @@ public sealed class PlayerMovement : MonoBehaviour
     // didn't make a jump or wall jump), held from then on: holding Jump through a jump or up a
     // wall never opens it. Without it, any held Jump opens it once he falls.
     private bool airJumpPress, glideArmed;
-    private const float GlidePull = 12f;   // units/s per second: the drift's own gentle gravity
-    private const float GlideMinHeight = .5f;   // closer to the ground than this, a press is a buffered jump
-    private const float GlideWallClearance = .6f;   // closer to a clingable wall than this, a press is for the wall
+    private float GlidePull => Tuning.glidePull;   // units/s per second: the drift's own gentle gravity
+    private float GlideMinHeight => Tuning.glideMinHeight;   // closer to the ground than this, a press is a buffered jump
+    private float GlideWallClearance => Tuning.glideWallClearance;   // closer to a clingable wall than this, a press is for the wall
 
     // Ends a dash: an ordinary end keeps walking speed along it; a jump, hit or thread keeps
     // whatever velocity they set.
@@ -143,21 +132,24 @@ public sealed class PlayerMovement : MonoBehaviour
 
     [Header("Ground Detection")]
     [SerializeField] private LayerMask groundLayers;
-    [SerializeField, Min(0.001f)] private float groundCheckDistance = 0.06f;
-    [Tooltip("Downward look-ahead for landing presentation; does not extend grounded or coyote detection.")]
-    [SerializeField, Min(0f)] private float landingLookAheadDistance = 1.5f;
+    private float groundCheckDistance => Tuning.groundCheckDistance;
+    private float landingLookAheadDistance => Tuning.landingLookAheadDistance;
 
     [Header("Test Room")]
     [Tooltip("Falling below this height returns the player to their latest checkpoint, or the starting position.")]
     [SerializeField] private float resetBelowY = -15f;
-    private const float GroundSnapDistance = .3f;
-    private const float MaxSlopeRise = 1.2f;   // tan of ~50 degrees, the steepest walkable surface
-    private const float LaunchGraceSeconds = .16f;   // after a jump/boost, before ground can catch Qori
+    private float GroundSnapDistance => Tuning.groundSnapDistance;
+    private float MaxSlopeRise => Tuning.maxSlopeRise;   // tan of ~50 degrees, the steepest walkable surface
+    private float LaunchGraceSeconds => Tuning.launchGraceSeconds;   // after a jump/boost, before ground can catch Qori
     private int LaunchGraceSteps => Mathf.CeilToInt(LaunchGraceSeconds / Time.fixedDeltaTime - .001f);
     private int stepsSinceLaunch = int.MaxValue / 2;
     // A thread swing's or flower boost's momentum: kept through the air (no air drag) until he lands.
     private bool carryingMomentum;
 
+    // The feel values (speeds, gravity, dash, glide): the shared tuning asset, read every step so edits made
+    // in Play mode apply at once. A per-player asset can be set here to try a variant.
+    [SerializeField] private MovementTuning tuning;
+    private MovementTuning Tuning => tuning != null ? tuning : tuning = MovementTuning.Current;
     private Rigidbody2D body;
     private BoxCollider2D playerCollider;
     private PhysicsMaterial2D originalMaterial;

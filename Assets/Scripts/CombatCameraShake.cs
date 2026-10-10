@@ -8,7 +8,10 @@ using UnityEngine;
 [DefaultExecutionOrder(1000),DisallowMultipleComponent]
 public sealed class CombatCameraShake : MonoBehaviour
 {
-    const float MaxOffset = .3f, Decay = 1.6f, Frequency = 22f;
+    // The shake's shape lives in FeedbackTuning (max offset, decay, frequency).
+    static float MaxOffset => FeedbackTuning.Current.shakeMaxOffset;
+    static float Decay => FeedbackTuning.Current.shakeDecay;
+    static float Frequency => FeedbackTuning.Current.shakeFrequency;
     const string PrefKey = "Qolossal.ScreenShake";
 
     PlayerCombatFeedback feedback;Vector3 applied;float trauma,seed;

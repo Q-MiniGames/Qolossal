@@ -129,7 +129,9 @@ public sealed class QoriArmory:MonoBehaviour
         GUI.matrix=prior;
     }
     void OnApplicationFocus(bool focused){if(!focused)CancelAim();}
-    void OnDisable(){CancelAim();menuOpen=false;if(active==this)active=null;}
-    void OnEnable(){active=this;}
+    void OnDisable(){CancelAim();menuOpen=false;if(active==this)active=null;WeaponTuning.Changed-=Retune;}
+    void OnEnable(){active=this;WeaponTuning.Changed+=Retune;}
+    // The tuning asset was edited (Inspector, Play mode): the weapons in hand take the new numbers.
+    void Retune()=>QoriArmoryFactory.ApplyTuning(Weapons,sling);
     void OnDestroy(){if(active==this)active=null;foreach(var item in owned)if(item!=null)Destroy(item);}
 }

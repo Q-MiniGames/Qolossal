@@ -19,7 +19,6 @@ public static class QoriArmoryFactory
         // the Seedpod Mace, the Thorn Spear and the Leaf Staff, Qori's starting weapon (QoriArmory
         // equips it). (forest-1, the Vine Whip, was removed.)
         string[] ids={"forest-0","forest-2","forest-3",StaffId},names={"Leaf Sword","Seedpod Mace","Thorn Spear","Leaf Staff"};
-        float[] damage={1.2f,2f,1.1f,1f},startup={.16f,.34f,.17f,.2f},active={.18f,.20f,.12f,.2f},recovery={.23f,.42f,.23f,.26f};
         int[] artRows={0,1,2,0};string[] cleanArt={"LeafSword","SeedpodMace","ThornSpear","LeafStaff"};float[] lengths={7.4f,MaceLength,7.5f,StaffLength};
         var result=new WeaponDefinition[ids.Length];
         for(int n=0;n<ids.Length;n++)
@@ -34,10 +33,9 @@ public static class QoriArmoryFactory
             {
                 var slot=a==0?CombatMoveSlot.Front:a==1?CombatMoveSlot.Upper:CombatMoveSlot.Lower;
                 var move=Copy(original.moveSet.Find(slot),owned);move.name=move.attackId=names[n]+" "+(AttackAim)a;
-                move.animation=Copy(move.animation,owned);move.followUps=new AttackDefinition[0];move.damage=damage[n];
-                move.startup=startup[n];move.active=active[n];move.recovery=recovery[n];move.cooldown=move.TotalDuration+.025f;
-                move.knockback=new Vector2(i==2?5:2, i==2?2:1);
-                move.hitStop=i==2?.06f:.025f;move.bladeRadius=i==2?.24f:i==4?.14f:.10f;move.bladeStart=i==3?.6f:i==2||i==4?.7f:.15f;   // the staff hits with its leaf blade
+                move.animation=Copy(move.animation,owned);move.followUps=new AttackDefinition[0];
+                // Phases, damage, knockback and impact feedback come from WeaponTuning (ApplyTuning, below).
+                move.bladeRadius=i==2?.24f:i==4?.14f:.10f;move.bladeStart=i==3?.6f:i==2||i==4?.7f:.15f;   // the staff hits with its leaf blade
                 var p=move.animation;p.oneHanded=i==0||a!=0;p.straightTrail=i==3||a!=0;p.sweepThroughActive=!p.straightTrail;
                 if(a==0)
                 {
@@ -60,7 +58,7 @@ public static class QoriArmoryFactory
         opener.followUps=new[]{reverse};reverse.followUps=new[]{quick};quick.followUps=new[]{finish};finish.followUps=new AttackDefinition[0];
         RefreshSwordCombo(result[0]);
         slingWeapon=Copy(result[0],owned);slingWeapon.name=slingWeapon.displayName="Resin Sling";slingWeapon.weaponId="resin-sling";
-        sling=Copy(result[0].moveSet.Find(CombatMoveSlot.Front),owned);sling.name=sling.attackId="Resin seed";sling.slingProjectile=true;sling.damage=.35f;sling.startup=.28f;sling.active=.18f;sling.recovery=.24f;sling.cooldown=.72f;sling.knockback=new Vector2(.5f,.15f);
+        sling=Copy(result[0].moveSet.Find(CombatMoveSlot.Front),owned);sling.name=sling.attackId="Resin seed";sling.slingProjectile=true;
         sling.followUps=new AttackDefinition[0];
         sling.impulse=Vector2.zero;sling.recoil=Vector2.zero;sling.lockFacing=true;
         sling.animation=Copy(sling.animation,owned);sling.animation.oneHanded=true;sling.animation.straightTrail=true;sling.animation.sweepThroughActive=false;
@@ -70,7 +68,50 @@ public static class QoriArmoryFactory
         sling.animation.contact=new AttackAnimationProfile.Pose{weaponAngle=5,leftGrip=new Vector2(2.35f,.15f),freeHand=new Vector2(.2f,-.7f),torsoAngle=-5,shoulderReach=new Vector2(.22f,.04f)};
         sling.animation.followThrough=new AttackAnimationProfile.Pose{weaponAngle=-25,leftGrip=new Vector2(1.5f,-.4f),freeHand=new Vector2(.35f,-.6f),torsoAngle=-2,shoulderReach=new Vector2(.08f,0)};
         slingWeapon.artworkScale*=.55f;
+        ApplyTuning(result,sling);
         return result;
+    }
+    // Writes WeaponTuning's numbers into built weapons: every attack's phases, damage, knockback and
+    // impact feedback, the Leaf Sword's combo follow-ups and the sling. Called after Build, and again by
+    // QoriArmory when the asset is edited in Play mode.
+    public static void ApplyTuning(WeaponDefinition[] weapons,AttackDefinition sling)
+    {
+        var tuning=WeaponTuning.Current;
+        if(weapons!=null)
+            foreach(var weapon in weapons)
+            {
+                var entry=weapon!=null&&weapon.moveSet!=null?tuning.Find(weapon.weaponId):null;
+                if(entry==null)continue;
+                foreach(var slot in weapon.moveSet.moves)
+                {
+                    var move=slot.attack;if(move==null)continue;
+                    Apply(move,entry,entry.phases,tuning.cooldownPad);
+                    if(slot.slot!=CombatMoveSlot.Front||move.followUps==null||move.followUps.Length==0)continue;
+                    // The Leaf Sword's combo: the follow-ups hit like the opener, on their own phases.
+                    var combo=new[]{tuning.swordQuickCut,tuning.swordReturnCut,tuning.swordDepthSweep};
+                    var next=move.followUps[0];
+                    for(int i=0;next!=null&&i<combo.Length;i++)
+                    {
+                        Apply(next,entry,combo[i],tuning.cooldownPad);
+                        next=next.followUps!=null&&next.followUps.Length>0?next.followUps[0]:null;
+                    }
+                }
+            }
+        if(sling!=null)
+        {
+            Phases(sling,tuning.slingPhases,0f);sling.cooldown=tuning.slingCooldown;
+            sling.damage=tuning.slingDamage;sling.knockback=tuning.slingKnockback;
+        }
+    }
+    static void Apply(AttackDefinition move,WeaponTuning.Weapon entry,WeaponTuning.Phases phases,float pad)
+    {
+        Phases(move,phases,pad);
+        move.damage=entry.damage;move.knockback=entry.knockback;
+        move.hitStop=entry.hitStop;move.cameraShake=entry.cameraShake;move.rumble=entry.rumble;
+    }
+    static void Phases(AttackDefinition move,WeaponTuning.Phases phases,float pad)
+    {
+        move.startup=phases.startup;move.active=phases.active;move.recovery=phases.recovery;move.cooldown=move.TotalDuration+pad;
     }
     public static void RefreshSwordCombo(WeaponDefinition weapon)
     {
@@ -95,9 +136,6 @@ public static class QoriArmoryFactory
         p.followThrough=new AttackAnimationProfile.Pose{leftGrip=new Vector2(1.2f,-.1f),weaponAngle=5,weaponYaw=-65,weaponRoll=70,torsoAngle=-13,compression=.15f,freeHand=new Vector2(.1f,-.6f)};
         p.contactFraction=.6f;p.recoveryHold=.3f;
         foreach(var move in new[]{first,second,third,fourth})move.comboWindowStart=.25f;
-        second.startup=.09f;second.active=.13f;second.recovery=.12f;second.cooldown=.365f;
-        third.startup=.07f;third.active=.13f;third.recovery=.14f;third.cooldown=.365f;
-        fourth.startup=.22f;fourth.active=.30f;fourth.recovery=.38f;fourth.cooldown=.925f;
     }
     // One clean PNG per weapon (Resources/Armory/Weapons/<name>.png) with its grip in Grips.txt
     // ("name,gripX,gripY", pivot fractions, y from the bottom). Keeps the weapon's world length
