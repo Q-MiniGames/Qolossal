@@ -1,0 +1,582 @@
+{
+  "schema": "qolossal-retreat-terrace/2",
+  "view_canvas": [
+    2560,
+    1440
+  ],
+  "coordinates": "top-left pixels",
+  "alpha": "straight",
+  "camera": {
+    "benchFrontTurnDegrees": 18,
+    "lookDownDegrees": 7,
+    "focalPx": 1966.7,
+    "eyeHeight_u": 2.3,
+    "behindQori_u": 9.6,
+    "rightOfQori_u": 0.35,
+    "horizonY": 660.0,
+    "pinhole": true
+  },
+  "pixels_per_unit_at_qori": 202.6353234894612,
+  "qori_scale_vs_game": 1.35,
+  "layers": [
+    {
+      "name": "Sky",
+      "file": "Layers/Retreat_OverlookTerrace_Sky.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "reused_byte_identical_from": "Batch25a/Layers/Retreat_Overlook_Sky.png",
+      "byte_identical_from": "Batch25a6/Layers/Retreat_OverlookTerrace_Sky.png"
+    },
+    {
+      "name": "Clouds",
+      "file": "Layers/Retreat_OverlookTerrace_Clouds.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "reused_byte_identical_from": "Batch25a/Layers/Retreat_Overlook_Clouds.png",
+      "wrap": "horizontal",
+      "period_px": 2560,
+      "byte_identical_from": "Batch25a6/Layers/Retreat_OverlookTerrace_Clouds.png"
+    },
+    {
+      "name": "Far",
+      "file": "Layers/Retreat_OverlookTerrace_Far.png",
+      "canvas": [
+        2624,
+        1440
+      ],
+      "offset": [
+        -32,
+        0
+      ],
+      "derived_from": "Batch25a/Layers/Retreat_Overlook_Far.png",
+      "source_translation_px": [
+        0,
+        -120
+      ],
+      "parallax_x_range_px": [
+        -32,
+        32
+      ],
+      "byte_identical_from": "Batch25a6/Layers/Retreat_OverlookTerrace_Far.png"
+    },
+    {
+      "name": "Mid",
+      "file": "Layers/Retreat_OverlookTerrace_Mid.png",
+      "canvas": [
+        2624,
+        1440
+      ],
+      "offset": [
+        -32,
+        0
+      ],
+      "derived_from": "Batch25a/Layers/Retreat_Overlook_Mid.png",
+      "source_translation_px": [
+        0,
+        -120
+      ],
+      "parallax_x_range_px": [
+        -32,
+        32
+      ],
+      "byte_identical_from": "Batch25a6/Layers/Retreat_OverlookTerrace_Mid.png"
+    },
+    {
+      "name": "Mist",
+      "file": "Layers/Retreat_OverlookTerrace_Mist.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "reused_byte_identical_from": "Batch25a/Layers/Retreat_Overlook_Mist.png",
+      "wrap": "horizontal",
+      "period_px": 2560,
+      "byte_identical_from": "Batch25a6/Layers/Retreat_OverlookTerrace_Mist.png"
+    },
+    {
+      "name": "Terrace",
+      "file": "Layers/Retreat_OverlookTerrace_Terrace.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "opaque_from_y": 1240,
+      "parapet_base_line": [
+        [
+          5630.5,
+          1441.9
+        ],
+        [
+          4487.0,
+          1359.9
+        ],
+        [
+          3560.6,
+          1293.4
+        ],
+        [
+          2794.9,
+          1238.5
+        ],
+        [
+          2151.5,
+          1192.3
+        ],
+        [
+          1603.1,
+          1153.0
+        ],
+        [
+          1130.3,
+          1119.0
+        ],
+        [
+          718.3,
+          1089.5
+        ],
+        [
+          356.2,
+          1063.5
+        ],
+        [
+          35.4,
+          1040.5
+        ],
+        [
+          -250.8,
+          1019.9
+        ],
+        [
+          -507.7,
+          1001.5
+        ],
+        [
+          -739.5,
+          984.9
+        ],
+        [
+          -949.8,
+          969.8
+        ],
+        [
+          -1141.5,
+          956.0
+        ]
+      ],
+      "parapet_top_line": [
+        [
+          5712.1,
+          1178.6
+        ],
+        [
+          4542.5,
+          1123.4
+        ],
+        [
+          3598.1,
+          1078.8
+        ],
+        [
+          2819.5,
+          1042.0
+        ],
+        [
+          2166.7,
+          1011.1
+        ],
+        [
+          1611.4,
+          984.9
+        ],
+        [
+          1133.3,
+          962.3
+        ],
+        [
+          717.3,
+          942.7
+        ],
+        [
+          352.1,
+          925.4
+        ],
+        [
+          28.9,
+          910.2
+        ],
+        [
+          -259.2,
+          896.6
+        ],
+        [
+          -517.5,
+          884.4
+        ],
+        [
+          -750.5,
+          873.4
+        ],
+        [
+          -961.7,
+          863.4
+        ],
+        [
+          -1154.0,
+          854.3
+        ]
+      ]
+    },
+    {
+      "name": "Tree",
+      "file": "Layers/Retreat_OverlookTerrace_Tree.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "pivot_px": [
+        42,
+        770
+      ],
+      "motion_degrees": [
+        -0.3,
+        0.3
+      ],
+      "upper_rows_byte_identical_to_25a6": [
+        0,
+        700
+      ]
+    },
+    {
+      "name": "Lantern",
+      "file": "Layers/Retreat_OverlookTerrace_Lantern.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "pivot_px": [
+        260,
+        205
+      ],
+      "motion_degrees": [
+        -4,
+        4
+      ],
+      "parent": "Tree",
+      "attachment_note": "Pivot follows the tree branch; apply lantern swing locally.",
+      "byte_identical_from": "Batch25a6/Layers/Retreat_OverlookTerrace_Lantern.png"
+    },
+    {
+      "name": "LanternGlow",
+      "file": "Layers/Retreat_OverlookTerrace_LanternGlow.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "parent": "Lantern",
+      "pivot_px": [
+        260,
+        205
+      ],
+      "opacity_range": [
+        0.65,
+        1.0
+      ],
+      "byte_identical_from": "Batch25a6/Layers/Retreat_OverlookTerrace_LanternGlow.png"
+    },
+    {
+      "name": "BenchShadow",
+      "file": "Layers/Retreat_OverlookTerrace_BenchShadow.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "BenchBack",
+      "file": "Layers/Retreat_OverlookTerrace_BenchBack.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "painted_whole": true
+    },
+    {
+      "name": "Qori_Body",
+      "file": "Layers/Retreat_OverlookTerrace_Qori_Body.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "painted_whole": true
+    },
+    {
+      "name": "Qori_Head",
+      "file": "Layers/Retreat_OverlookTerrace_Qori_Head.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "pivot_px": [
+        766,
+        794
+      ],
+      "motion_degrees": [
+        -3,
+        3
+      ]
+    },
+    {
+      "name": "Qori_EarFar",
+      "file": "Layers/Retreat_OverlookTerrace_Qori_EarFar.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "pivot_px": [
+        764.4,
+        724.5
+      ],
+      "parent": "Qori_Head",
+      "motion_degrees": [
+        -8,
+        8
+      ]
+    },
+    {
+      "name": "Qori_EarNear",
+      "file": "Layers/Retreat_OverlookTerrace_Qori_EarNear.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "pivot_px": [
+        740.5,
+        723.5
+      ],
+      "parent": "Qori_Head",
+      "motion_degrees": [
+        -8,
+        8
+      ]
+    },
+    {
+      "name": "BenchFront",
+      "file": "Layers/Retreat_OverlookTerrace_BenchFront.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "painted_whole": true
+    },
+    {
+      "name": "Foreground_01",
+      "file": "Layers/Retreat_OverlookTerrace_Foreground_01.png",
+      "canvas": [
+        256,
+        186
+      ],
+      "offset": [
+        -24,
+        1104
+      ],
+      "base_pivot_px": [
+        22,
+        166
+      ],
+      "base_pivot_canvas_px": [
+        -2,
+        1270
+      ],
+      "motion_degrees": [
+        -3,
+        3
+      ],
+      "byte_identical_from": "Batch25a6/Layers/Retreat_OverlookTerrace_Foreground_01.png"
+    },
+    {
+      "name": "Foreground_02",
+      "file": "Layers/Retreat_OverlookTerrace_Foreground_02.png",
+      "canvas": [
+        186,
+        138
+      ],
+      "offset": [
+        806,
+        -9
+      ],
+      "base_pivot_px": [
+        164,
+        19
+      ],
+      "base_pivot_canvas_px": [
+        970,
+        10
+      ],
+      "motion_degrees": [
+        -3,
+        3
+      ],
+      "byte_identical_from": "Batch25a6/Layers/Retreat_OverlookTerrace_Foreground_02.png"
+    },
+    {
+      "name": "Foreground_03",
+      "file": "Layers/Retreat_OverlookTerrace_Foreground_03.png",
+      "canvas": [
+        100,
+        129
+      ],
+      "offset": [
+        167,
+        1141
+      ],
+      "base_pivot_px": [
+        48,
+        109
+      ],
+      "base_pivot_canvas_px": [
+        215,
+        1250
+      ],
+      "motion_degrees": [
+        -3,
+        3
+      ],
+      "byte_identical_from": "Batch25a6/Layers/Retreat_OverlookTerrace_Foreground_03.png"
+    },
+    {
+      "name": "Foreground_04",
+      "file": "Layers/Retreat_OverlookTerrace_Foreground_04.png",
+      "canvas": [
+        88,
+        112
+      ],
+      "offset": [
+        1636,
+        1168
+      ],
+      "base_pivot_px": [
+        44,
+        92
+      ],
+      "base_pivot_canvas_px": [
+        1680,
+        1260
+      ],
+      "motion_degrees": [
+        -3,
+        3
+      ],
+      "byte_identical_from": "Batch25a6/Layers/Retreat_OverlookTerrace_Foreground_04.png"
+    },
+    {
+      "name": "Weather",
+      "file": "Layers/Retreat_OverlookTerrace_Weather.png",
+      "canvas": [
+        2560,
+        480
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "wrap": "vertical",
+      "period_px": 480,
+      "clip_rect": [
+        0,
+        0,
+        1920,
+        1296
+      ],
+      "exclude_rects": [
+        [
+          300,
+          620,
+          1030,
+          1190
+        ]
+      ],
+      "reused_byte_identical_from": "Batch25a/Layers/Retreat_Overlook_Weather.png",
+      "byte_identical_from": "Batch25a6/Layers/Retreat_OverlookTerrace_Weather.png"
+    }
+  ],
+  "ui_zones": {
+    "right": [
+      1920,
+      0,
+      2560,
+      1440
+    ],
+    "bottom": [
+      0,
+      1296,
+      2560,
+      1440
+    ]
+  },
+  "notes": [
+    "Batch25a7: camera 9.6 units behind Qori, higher view, new guides.",
+    "12 protected layers byte-identical to Batch25a6. Tree pixels above y700 and its pivot unchanged.",
+    "Qori body/head paint retained from passed 25a6 and registered to new guides; both ears repainted as full leaves.",
+    "No Blink: eye out of view. Ear transforms inherit head."
+  ]
+}

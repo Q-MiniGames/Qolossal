@@ -17,7 +17,8 @@ public static class ModalUi
 
 // The town's keys. Up (W, the up arrow, the d-pad) talks, sits and shops, like entering a portal;
 // in a window, Confirm is Space, Enter or E (south button), Cancel is Escape or Backspace (east
-// button), and Up and Down move through lists.
+// button), Up and Down (and Left and Right) move through lists, and H or the north button shows or
+// hides a window's controls.
 public static class TownInput
 {
     static Keyboard Key => Keyboard.current;
@@ -30,6 +31,19 @@ public static class TownInput
     public static bool Down() =>
         Key != null && (Key.sKey.wasPressedThisFrame || Key.downArrowKey.wasPressedThisFrame)
         || Pad != null && (Pad.dpad.down.wasPressedThisFrame || Pad.leftStick.down.wasPressedThisFrame);
+
+    public static bool Left() =>
+        Key != null && (Key.aKey.wasPressedThisFrame || Key.leftArrowKey.wasPressedThisFrame)
+        || Pad != null && (Pad.dpad.left.wasPressedThisFrame || Pad.leftStick.left.wasPressedThisFrame);
+
+    public static bool Right() =>
+        Key != null && (Key.dKey.wasPressedThisFrame || Key.rightArrowKey.wasPressedThisFrame)
+        || Pad != null && (Pad.dpad.right.wasPressedThisFrame || Pad.leftStick.right.wasPressedThisFrame);
+
+    // Shows or hides a window's controls (H, or the north button): the listening spot's player.
+    public static bool Toggle() =>
+        Key != null && Key.hKey.wasPressedThisFrame
+        || Pad != null && Pad.buttonNorth.wasPressedThisFrame;
 
     public static bool Confirm() =>
         Key != null && (Key.spaceKey.wasPressedThisFrame || Key.enterKey.wasPressedThisFrame || Key.eKey.wasPressedThisFrame)

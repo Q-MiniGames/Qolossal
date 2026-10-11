@@ -108,7 +108,7 @@ public sealed class QoriArmory:MonoBehaviour
 
     void OnGUI()
     {
-        if(Weapons==null||GamePauseMenu.IsPaused)return;
+        if(Weapons==null||GamePauseMenu.IsPaused||ListeningSpot.IsSitting)return;   // the listening retreat shows only its track list
         var prior=GUI.matrix;float scale=Mathf.Min(Screen.width/1000f,Screen.height/650f);GUI.matrix=Matrix4x4.Scale(Vector3.one*scale);
         float width=Screen.width/scale;
         GUI.Box(new Rect(width-328,18,310,58),Weapons[Selected].displayName+(pending>=0?" → "+Weapons[pending].displayName:"")+"\nTab / View: armory     Hold Q / X: aim; release: fire");

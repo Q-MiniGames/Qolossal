@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 // The listening spot (world redesign proposal v2, section 5.3): a bench under a tree. Press Up
 // beside it to sit: Qori's controls and the HUD go quiet, the camera eases out to frame the spot,
-// and a list of tracks appears. Tracks are unlocked by song shells found around the world (a flag
-// "shell:<id>"); a track with no shell is known from the start. Up and Down choose, Confirm plays or
-// stops, Cancel gets up. A track without a clip (no Suno music yet) uses a placeholder.
+// and a small player appears in the bottom-right corner: one line with the chosen track. Tracks are
+// unlocked by song shells found around the world (a flag "shell:<id>"); a track with no shell is
+// known from the start. Left/Right (or Up/Down) choose, Confirm plays or stops, H (north button)
+// hides or shows the player, Cancel gets up. While a track plays the player fades away after a few
+// idle seconds so the view is left alone; any key brings it back. A track without a clip (no Suno
+// music yet) uses a placeholder.
 [DisallowMultipleComponent, RequireComponent(typeof(BoxCollider2D))]
 public sealed class ListeningSpot : MonoBehaviour
 {
@@ -32,9 +35,12 @@ public sealed class ListeningSpot : MonoBehaviour
 
     bool near; Rigidbody2D qori; int selected, playing = -1, openedFrame;
     AudioSource source; float targetVolume;
-    Canvas canvas; Text heading; readonly List<Text> rows = new List<Text>(); Text hint;
+    Canvas canvas; CanvasGroup group; Text title, count, hint; Image bar;
     Camera view; CameraFollow follow; Vector3 cameraFrom; float sizeFrom, ease; bool leaving;
     Canvas hud;
+    ListeningRetreat retreat;   // the painted listening retreat, when there is one (Batch 25a-6)
+    const float IdleFade = 4f;   // seconds without input, while a track plays, before the player fades
+    float idle, shown = 1f; bool hidden;
 
     public bool Sitting => IsSitting && enabled && canvas != null && canvas.enabled;
     public int Playing => playing;
@@ -58,6 +64,7 @@ public sealed class ListeningSpot : MonoBehaviour
     public void Sit()
     {
         if (IsSitting) return;
+        if (hasSeat) retreat = ListeningRetreat.Open();   // fades to the retreat; the world view eases out behind it
         if (canvas == null) Build();
         Sfx.Play("Qori_Sit");
         IsSitting = true; leaving = false; openedFrame = Time.frameCount; selected = Mathf.Max(0, playing);
@@ -83,6 +90,7 @@ public sealed class ListeningSpot : MonoBehaviour
         cameraFrom = view.transform.position; sizeFrom = view.orthographicSize; ease = 0f;
         var gameHud = FindAnyObjectByType<GameHud>(); hud = gameHud != null ? gameHud.GetComponentInChildren<Canvas>() : null;
         if (hud != null) hud.enabled = false;
+        idle = 0f; hidden = false; shown = 1f;
         Refresh();
     }
 
@@ -92,6 +100,7 @@ public sealed class ListeningSpot : MonoBehaviour
         if (!IsSitting || leaving) return;
         leaving = true; canvas.enabled = false; ease = 0f;
         Sfx.Play("UI_Back");
+        if (retreat != null) { retreat.Close(); retreat = null; }
         // Up off the seat, back where he stood; the view then eases back to him.
         if (pose != null) pose.Release();
         if (qori != null && hasSeat) { qori.transform.position = standAt; qori.simulated = true; qori.linearVelocity = Vector2.zero; }
@@ -120,25 +129,32 @@ public sealed class ListeningSpot : MonoBehaviour
     {
         canvas = GameHud.CreateCanvas("Listening Canvas", 85);
         canvas.transform.SetParent(transform, false);
-        float h = 250f + tracks.Count * 64f;
-        TownUi.Panel(canvas.transform, "Panel", new Vector2(1f, .5f), new Vector2(-400f, 0f), new Vector2(700f, h));
-        heading = TownUi.Label(canvas.transform, "Title", new Vector2(1f, .5f), new Vector2(-400f, h * .5f - 80f), new Vector2(560f, 56f), 38, TextAnchor.MiddleCenter, TownUi.PanelMint, false);
-        heading.text = "The Listening Tree";
-        for (int i = 0; i < tracks.Count; i++)
-            rows.Add(TownUi.Label(canvas.transform, "Track " + i, new Vector2(1f, .5f), new Vector2(-400f, h * .5f - 150f - i * 64f), new Vector2(560f, 56f), 32, TextAnchor.MiddleLeft, TownUi.PanelInk, false));
-        hint = TownUi.Label(canvas.transform, "Hint", new Vector2(1f, .5f), new Vector2(-400f, -h * .5f + 92f), new Vector2(560f, 40f), 24, TextAnchor.MiddleCenter, TownUi.PanelDim, false);
-        hint.text = "Confirm: play / stop     Cancel: get up";
+        group = canvas.gameObject.AddComponent<CanvasGroup>(); group.interactable = false; group.blocksRaycasts = false;
+        // One line in the bottom-right corner, where the retreat painting is kept calm: the leaf bar
+        // (UI_ListeningSpot_TrackRow_Playing, carried by the retreat) with the track, and a hint above.
+        var anchor = new Vector2(1f, 0f);
+        const float x = -260f, y = 104f, w = 440f, h = 72f;
+        var sprite = retreat != null ? retreat.playerBar : null;
+        if (sprite != null)
+        {
+            bar = GameHud.AddImage(canvas.transform, "Bar", sprite, anchor, new Vector2(x, y), new Vector2(w, h));
+            bar.preserveAspect = false; bar.type = Image.Type.Sliced;
+        }
+        else bar = TownUi.Panel(canvas.transform, "Bar", anchor, new Vector2(x, y), new Vector2(w, h + 40f));
+        title = TownUi.Label(canvas.transform, "Track", anchor, new Vector2(x - 18f, y), new Vector2(w - 150f, h - 16f), 25, TextAnchor.MiddleCenter, TownUi.PanelInk, false);
+        title.horizontalOverflow = HorizontalWrapMode.Overflow;
+        count = TownUi.Label(canvas.transform, "Count", anchor, new Vector2(x + w * .5f - 68f, y), new Vector2(80f, h - 16f), 18, TextAnchor.MiddleCenter, TownUi.PanelDim, false);
+        hint = TownUi.Label(canvas.transform, "Hint", anchor, new Vector2(x, y + 56f), new Vector2(w + 60f, 30f), 18, TextAnchor.MiddleCenter, TownUi.PanelInk, false);   // dark ink: the terrace paving under it is pale
+        hint.text = "◀ ▶ choose    Confirm: play / stop    H: hide    Cancel: get up";
         canvas.enabled = false;
     }
 
     void Refresh()
     {
-        for (int i = 0; i < tracks.Count; i++)
-        {
-            string mark = i == playing ? "♪ " : "   ";
-            rows[i].text = (i == selected ? "▶ " : "   ") + mark + (IsUnlocked(i) ? tracks[i].title : "<color=#8C8577>???  (a song shell, somewhere)</color>");
-            rows[i].color = i == selected ? TownUi.PanelInk : TownUi.PanelDim;
-        }
+        bool known = IsUnlocked(selected);
+        string name = known ? tracks[selected].title : "<color=#8C8577>???  a song shell</color>";
+        title.text = "◀  " + (selected == playing ? "♪ " : "") + name + "  ▶";
+        count.text = (selected + 1) + " / " + tracks.Count;
     }
 
     void Update()
@@ -169,9 +185,26 @@ public sealed class ListeningSpot : MonoBehaviour
         }
         if (Time.frameCount == openedFrame) return;
         if (TownInput.Cancel()) { Leave(); return; }
-        if (TownInput.Up()) { selected = (selected + tracks.Count - 1) % tracks.Count; Sfx.Play("UI_Move"); }
-        if (TownInput.Down()) { selected = (selected + 1) % tracks.Count; Sfx.Play("UI_Move"); }
-        if (TownInput.Confirm()) { Sfx.Play("UI_Confirm"); Play(selected); }
+        bool prev = TownInput.Up() || TownInput.Left(), next = TownInput.Down() || TownInput.Right();
+        bool confirm = TownInput.Confirm(), toggle = TownInput.Toggle();
+        if (toggle) { hidden = !hidden && shown > .5f; idle = 0f; }
+        else if (prev || next || confirm)
+        {
+            // While hidden or faded, the first key only brings the player back.
+            bool wasAway = hidden || shown < .5f;
+            hidden = false; idle = 0f;
+            if (!wasAway)
+            {
+                if (prev) { selected = (selected + tracks.Count - 1) % tracks.Count; Sfx.Play("UI_Move"); }
+                if (next) { selected = (selected + 1) % tracks.Count; Sfx.Play("UI_Move"); }
+                if (confirm) { Sfx.Play("UI_Confirm"); Play(selected); }
+            }
+        }
+        else idle += Time.unscaledDeltaTime;
+        // Away when hidden, or after a few idle seconds while music plays; back on any key.
+        bool away = hidden || playing >= 0 && idle > IdleFade;
+        shown = Mathf.MoveTowards(shown, away ? 0f : 1f, Time.unscaledDeltaTime / (away ? .8f : .2f));
+        group.alpha = Mathf.SmoothStep(0f, 1f, shown);
         Refresh();
     }
 
@@ -185,5 +218,5 @@ public sealed class ListeningSpot : MonoBehaviour
         GUI.Label(new Rect(p.x - 150f, Screen.height - p.y - 30f, 300f, 40f), "▲ Sit and listen", style);
     }
 
-    void OnDestroy() { if (IsSitting) { IsSitting = false; ModalUi.Close(); } }
+    void OnDestroy() { if (IsSitting) { IsSitting = false; ModalUi.Close(); } if (retreat != null) retreat.Close(); }
 }
