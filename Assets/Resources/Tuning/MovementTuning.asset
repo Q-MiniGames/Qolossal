@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ece9297b5548e5839edaba04e8815a6, type: 3}
   m_Name: MovementTuning
   m_EditorClassIdentifier: Assembly-CSharp::MovementTuning
+  moveSpeed: 5
+  runSpeed: 7.5
+  groundAcceleration: 50
+  airAcceleration: 28
+  airDeceleration: 20

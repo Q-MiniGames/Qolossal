@@ -27,6 +27,10 @@ public static class QoriRigBuilder
     [Serializable] class TrackData { public string path; public string attr; public float[] v; public float[] t; }
 
     static readonly string[] LocomotionStates = { "Walk", "Run" };
+    // The ground speed (u/s) each gait clip was drawn for: a planted foot slides back at this speed
+    // (measured by QoriGaitMeasure). The Locomotion blend tree uses them as its thresholds, so the blend
+    // parameter is Qori's real ground speed; QoriAnimator's walkClipSpeed/runClipSpeed must match.
+    public const float WalkDrawnSpeed = .75f, RunDrawnSpeed = 3.05f;
 
     [MenuItem("Qolossal/Qori Rig/Build and Install on Player", priority = 0)]
     public static void BuildAndInstall()
@@ -37,6 +41,45 @@ public static class QoriRigBuilder
 
     [MenuItem("Qolossal/Qori Rig/Rebuild Rig Only (no Player change)", priority = 1)]
     public static void BuildOnly() => Build();
+
+    // Adds (or rebuilds) the Locomotion blend tree on the existing controller, without rebuilding the
+    // rig, its clips or the prefab. Batch: QoriRigBuilder.UpdateLocomotionBlend.
+    [MenuItem("Qolossal/Qori Rig/Update Locomotion Blend", priority = 2)]
+    public static void UpdateLocomotionBlend()
+    {
+        var controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(ControllerPath);
+        var walk = AssetDatabase.LoadAssetAtPath<AnimationClip>(ClipFolder + "/Qori_Walk.anim");
+        var run = AssetDatabase.LoadAssetAtPath<AnimationClip>(ClipFolder + "/Qori_Run.anim");
+        if (controller == null || walk == null || run == null) { Debug.LogError("Qori Rig: controller or gait clips missing"); return; }
+        AddLocomotion(controller, walk, run);
+        AssetDatabase.SaveAssets();
+        Debug.Log("Qori Rig: Locomotion blend tree updated (Walk at " + WalkDrawnSpeed + " u/s, Run at " + RunDrawnSpeed + " u/s)");
+        if (Application.isBatchMode) EditorApplication.Exit(0);
+    }
+
+    // One state for walking and running: a 1D blend tree on Speed (Qori's ground speed, u/s) from the
+    // Walk clip to the Run clip, played at a rate (MoveSpeed) that QoriAnimator sets from the speed, so a
+    // start, a stop or a change of pace blends the stride instead of cutting between two cycles.
+    static void AddLocomotion(AnimatorController controller, AnimationClip walk, AnimationClip run)
+    {
+        if (Array.FindIndex(controller.parameters, p => p.name == "Speed") < 0)
+            controller.AddParameter("Speed", AnimatorControllerParameterType.Float);
+        AnimatorStateMachine machine = controller.layers[0].stateMachine;
+        foreach (ChildAnimatorState child in machine.states)
+            if (child.state.name == "Locomotion") machine.RemoveState(child.state);
+        // Its blend tree is a sub-asset of the controller; drop any earlier one (a full rebuild clears the states but not it).
+        foreach (var sub in AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(controller)))
+            if (sub is BlendTree old && old.name == "Locomotion") UnityEngine.Object.DestroyImmediate(old, true);
+        var tree = new BlendTree { name = "Locomotion", blendType = BlendTreeType.Simple1D, blendParameter = "Speed", useAutomaticThresholds = false, hideFlags = HideFlags.HideInHierarchy };
+        AssetDatabase.AddObjectToAsset(tree, controller);
+        tree.AddChild(walk, WalkDrawnSpeed);
+        tree.AddChild(run, RunDrawnSpeed);
+        AnimatorState state = machine.AddState("Locomotion", new Vector3(40, 200, 0));
+        state.motion = tree;
+        state.writeDefaultValues = true;
+        state.speedParameterActive = true; state.speedParameter = "MoveSpeed";
+        EditorUtility.SetDirty(controller);
+    }
 
     [MenuItem("Qolossal/Qori Rig/Revert Player to Legacy Visuals", priority = 20)]
     public static void RevertToLegacy()
@@ -123,6 +166,7 @@ public static class QoriRigBuilder
             if (c.name == "Idle") idle = state;
         }
         if (idle != null) machine.defaultState = idle;
+        if (clips.TryGetValue("Walk", out var walkClip) && clips.TryGetValue("Run", out var runClip)) AddLocomotion(controller, walkClip, runClip);
         EditorUtility.SetDirty(controller);
 
         // 4. Prefab: QoriRig (QoriAnimator, cancels parent scale) > Facing (flip/tilt) > Root (Animator) > bones.

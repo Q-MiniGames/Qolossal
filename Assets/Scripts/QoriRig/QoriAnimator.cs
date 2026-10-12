@@ -32,9 +32,11 @@ public sealed class QoriAnimator : MonoBehaviour
     [Header("Locomotion")]
     [Tooltip("Below this horizontal speed Qori idles.")] public float idleBelow = .25f;
     [Tooltip("Below this speed the walk cycle is used, above it the run cycle.")] public float runAbove = 2.4f;
-    [Tooltip("Speed (world units/s) the walk clip was authored for.")] public float walkClipSpeed = 1.3f;
-    [Tooltip("Speed (world units/s) the run clip was authored for.")] public float runClipSpeed = 7f;
-    public Vector2 runPlaybackRange = new Vector2(.8f, 1.45f);
+    [Tooltip("Ground speed (u/s) the walk clip was drawn for: a planted foot slides back at this speed (Qolossal > Qori Rig > Measure Gait Speeds).")] public float walkClipSpeed = .75f;
+    [Tooltip("Ground speed (u/s) the run clip was drawn for (measured the same way).")] public float runClipSpeed = 3.05f;
+    [Tooltip("Slowest and fastest the walk/run cycle may play (1 = as drawn). Faster than the drawn speed needs a quicker cadence; past the maximum the feet slide a little instead.")]
+    public Vector2 runPlaybackRange = new Vector2(.6f, 1.6f);
+    [Tooltip("Seconds over which the walk-to-run blend follows a change of speed.")] public float speedDamping = .08f;
     [Tooltip("Landings faster than this play the squash.")] public float landSquashSpeed = 4f;
 
     [Header("Blending (seconds)")]
@@ -100,6 +102,8 @@ public sealed class QoriAnimator : MonoBehaviour
     static readonly int[] ComboGround = { AttackFrontState, Animator.StringToHash("AttackFront2"), Animator.StringToHash("AttackFront3"), Animator.StringToHash("AttackFront4") };
     static readonly int[] ComboAir = { AttackAirFrontState, Animator.StringToHash("AttackAirFront2"), Animator.StringToHash("AttackAirFront3"), Animator.StringToHash("AttackAirFront4") };
     static readonly int MoveSpeedParam = Animator.StringToHash("MoveSpeed");
+    static readonly int LocomotionState = Animator.StringToHash("Locomotion");
+    static readonly int SpeedParam = Animator.StringToHash("Speed");
     static readonly int AttackTimeParam = Animator.StringToHash("AttackTime");
     const float LandSeconds = .26f;
     const float WallJumpUpSeconds = .42f, WallJumpOffSeconds = .45f;
@@ -118,6 +122,7 @@ public sealed class QoriAnimator : MonoBehaviour
     float[] earAngle, earVelocity; Quaternion[] earBase, earSet;
     float nextBlink, blinkUntil;
     QoriFootGrounding feet;
+    bool hasLocomotion; float walkClipLength = .62f, runClipLength = .4f;
     int launchVersion, playedLaunch = -1; float wallJumpUntil, lastWallDirection; bool wallJumpAway;
 
     public bool Ready => isActiveAndEnabled && animator != null && movement != null;
@@ -155,6 +160,15 @@ public sealed class QoriAnimator : MonoBehaviour
         for (int i = 0; i < renderers.Length; i++) baseColors[i] = renderers[i] != null ? renderers[i].color : Color.white;
         CancelParentScale();
         if (animator != null) feet = new QoriFootGrounding(animator.transform, movement);
+        // The Locomotion blend tree (Qolossal > Qori Rig > Update Locomotion Blend); without it, the
+        // separate Walk and Run states are used as before.
+        hasLocomotion = animator != null && animator.runtimeAnimatorController != null && animator.HasState(0, LocomotionState);
+        if (animator != null && animator.runtimeAnimatorController != null)
+            foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
+            {
+                if (clip.name == "Qori_Walk") walkClipLength = clip.length;
+                else if (clip.name == "Qori_Run") runClipLength = clip.length;
+            }
         landingVersion = movement.LandingVersion;
         resetVersion = movement.ResetVersion;
         launchVersion = movement.LaunchVersion;
@@ -233,13 +247,23 @@ public sealed class QoriAnimator : MonoBehaviour
         else
         {
             float speed = Mathf.Abs(velocity.x);
+            // Along a slope Qori covers more ground than his horizontal speed says: the gait follows the path.
+            float pathSpeed = velocity.magnitude;
             if (movement.LandingVersion != landingVersion)
             {
                 landingVersion = movement.LandingVersion;
                 if (movement.LastLandingSpeed >= landSquashSpeed && speed < runAbove) landUntil = Time.time + LandSeconds;
             }
             if (Time.time < landUntil && speed < runAbove) { state = LandState; blend = .03f; }
-            else if (speed < idleBelow) { state = IdleState; blend = locomotionBlend; }
+            else if (pathSpeed < idleBelow) { state = IdleState; blend = locomotionBlend; }
+            else if (hasLocomotion)
+            {
+                state = LocomotionState; blend = locomotionBlend;
+                // Entering the state, the blend starts at the real speed; then it follows it, smoothed.
+                if (current != LocomotionState) animator.SetFloat(SpeedParam, pathSpeed);
+                else animator.SetFloat(SpeedParam, pathSpeed, speedDamping, Time.deltaTime);
+                animator.SetFloat(MoveSpeedParam, GaitRate(animator.GetFloat(SpeedParam)));
+            }
             else if (speed < runAbove)
             {
                 state = WalkState; blend = locomotionBlend;
@@ -474,6 +498,17 @@ public sealed class QoriAnimator : MonoBehaviour
             move = move.followUps != null && move.followUps.Length > 0 ? move.followUps[0] : null;
         }
         return 0;
+    }
+
+    // How fast the blended walk/run cycle must play for its planted feet to keep pace with the ground
+    // at `speed`: the blend's stride per cycle over its cycle length gives the speed it was drawn for.
+    float GaitRate(float speed)
+    {
+        float w = Mathf.InverseLerp(walkClipSpeed, runClipSpeed, speed);
+        float length = Mathf.Lerp(walkClipLength, runClipLength, w);
+        float stride = Mathf.Lerp(walkClipSpeed * walkClipLength, runClipSpeed * runClipLength, w);
+        float drawn = stride / Mathf.Max(.01f, length);
+        return Mathf.Clamp(speed / Mathf.Max(.01f, drawn), runPlaybackRange.x, runPlaybackRange.y);
     }
 
     float AttackTime()
