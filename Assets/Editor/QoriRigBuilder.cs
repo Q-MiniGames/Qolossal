@@ -31,6 +31,10 @@ public static class QoriRigBuilder
     // (measured by QoriGaitMeasure). The Locomotion blend tree uses them as its thresholds, so the blend
     // parameter is Qori's real ground speed; QoriAnimator's walkClipSpeed/runClipSpeed must match.
     public const float WalkDrawnSpeed = .75f, RunDrawnSpeed = 3.05f;
+    // The Air blend tree's thresholds (vertical speed, u/s): Fall at -AirBlendSpeed, Rise at +AirBlendSpeed,
+    // so the pose eases from rising to falling over the apex instead of switching.
+    public const float AirBlendSpeed = 4f;
+    const string LandAdditivePath = ClipFolder + "/Qori_LandAdditive.anim";
 
     [MenuItem("Qolossal/Qori Rig/Build and Install on Player", priority = 0)]
     public static void BuildAndInstall()
@@ -42,19 +46,79 @@ public static class QoriRigBuilder
     [MenuItem("Qolossal/Qori Rig/Rebuild Rig Only (no Player change)", priority = 1)]
     public static void BuildOnly() => Build();
 
-    // Adds (or rebuilds) the Locomotion blend tree on the existing controller, without rebuilding the
-    // rig, its clips or the prefab. Batch: QoriRigBuilder.UpdateLocomotionBlend.
-    [MenuItem("Qolossal/Qori Rig/Update Locomotion Blend", priority = 2)]
+    // Adds (or rebuilds) the Locomotion and Air blend trees and the Landing layer on the existing
+    // controller, without rebuilding the rig, its clips or the prefab. Batch: QoriRigBuilder.UpdateLocomotionBlend.
+    [MenuItem("Qolossal/Qori Rig/Update Blends and Landing Layer", priority = 2)]
     public static void UpdateLocomotionBlend()
     {
         var controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(ControllerPath);
-        var walk = AssetDatabase.LoadAssetAtPath<AnimationClip>(ClipFolder + "/Qori_Walk.anim");
-        var run = AssetDatabase.LoadAssetAtPath<AnimationClip>(ClipFolder + "/Qori_Run.anim");
-        if (controller == null || walk == null || run == null) { Debug.LogError("Qori Rig: controller or gait clips missing"); return; }
+        AnimationClip Clip(string name) => AssetDatabase.LoadAssetAtPath<AnimationClip>(ClipFolder + "/Qori_" + name + ".anim");
+        AnimationClip walk = Clip("Walk"), run = Clip("Run"), rise = Clip("Rise"), fall = Clip("Fall"), land = Clip("Land"), idle = Clip("Idle");
+        if (controller == null || walk == null || run == null || rise == null || fall == null || land == null || idle == null) { Debug.LogError("Qori Rig: controller or clips missing"); return; }
         AddLocomotion(controller, walk, run);
+        AddAirAndLanding(controller, rise, fall, land, idle);
         AssetDatabase.SaveAssets();
-        Debug.Log("Qori Rig: Locomotion blend tree updated (Walk at " + WalkDrawnSpeed + " u/s, Run at " + RunDrawnSpeed + " u/s)");
+        Debug.Log("Qori Rig: blends updated (Locomotion: Walk at " + WalkDrawnSpeed + ", Run at " + RunDrawnSpeed + " u/s; Air: Fall/Rise at -/+" + AirBlendSpeed + " u/s) and the Landing layer");
         if (Application.isBatchMode) EditorApplication.Exit(0);
+    }
+
+    // Air: one state for rising and falling, a 1D blend tree on VerticalSpeed (Fall at -AirBlendSpeed,
+    // Rise at +AirBlendSpeed), so the pose eases through the apex.
+    // Landing: an additive layer over the upper body (body, skirt, torso, head, mantle and cloak; not the
+    // legs, arms or blade), playing the Land clip's settle as a difference from the idle pose, so a landing
+    // while walking or running dips and settles without stopping the stride. QoriAnimator sets its weight.
+    static void AddAirAndLanding(AnimatorController controller, AnimationClip rise, AnimationClip fall, AnimationClip land, AnimationClip idle)
+    {
+        string path = AssetDatabase.GetAssetPath(controller);
+        if (Array.FindIndex(controller.parameters, p => p.name == "VerticalSpeed") < 0)
+            controller.AddParameter("VerticalSpeed", AnimatorControllerParameterType.Float);
+        AnimatorStateMachine machine = controller.layers[0].stateMachine;
+        foreach (ChildAnimatorState child in machine.states)
+            if (child.state.name == "Air") machine.RemoveState(child.state);
+        foreach (var sub in AssetDatabase.LoadAllAssetsAtPath(path))
+            if (sub is BlendTree old && old.name == "Air") UnityEngine.Object.DestroyImmediate(old, true);
+        var tree = new BlendTree { name = "Air", blendType = BlendTreeType.Simple1D, blendParameter = "VerticalSpeed", useAutomaticThresholds = false, hideFlags = HideFlags.HideInHierarchy };
+        AssetDatabase.AddObjectToAsset(tree, controller);
+        tree.AddChild(fall, -AirBlendSpeed);
+        tree.AddChild(rise, AirBlendSpeed);
+        AnimatorState air = machine.AddState("Air", new Vector3(40, 270, 0));
+        air.motion = tree;
+        air.writeDefaultValues = true;
+
+        // The settle as its own clip (the Land clip untouched), measured against the idle pose.
+        var settle = AssetDatabase.LoadAssetAtPath<AnimationClip>(LandAdditivePath);
+        if (settle == null) { settle = UnityEngine.Object.Instantiate(land); AssetDatabase.CreateAsset(settle, LandAdditivePath); }
+        else EditorUtility.CopySerialized(land, settle);
+        settle.name = "Qori_LandAdditive";
+        // Not looping, and measured against the idle pose (frame 0) rather than its own first frame.
+        var settings = AnimationUtility.GetAnimationClipSettings(settle);
+        settings.loopTime = false; settings.hasAdditiveReferencePose = true; settings.additiveReferencePoseClip = idle; settings.additiveReferencePoseTime = 0f;
+        AnimationUtility.SetAnimationClipSettings(settle, settings);
+        EditorUtility.SetDirty(settle);
+
+        var layers = controller.layers;
+        for (int i = layers.Length - 1; i >= 1; i--) if (layers[i].name == "Landing") controller.RemoveLayer(i);
+        foreach (var sub in AssetDatabase.LoadAllAssetsAtPath(path))
+            if (sub is AvatarMask oldMask && oldMask.name == "LandingMask") UnityEngine.Object.DestroyImmediate(oldMask, true);
+        var mask = new AvatarMask { name = "LandingMask" };
+        var bones = new[] { "Body", "Body/Skirt", "Body/Torso", "Body/Torso/Mantle", "Body/Torso/Head",
+            "Body/Torso/Cape1", "Body/Torso/Cape1/Cape1Lower", "Body/Torso/Cape2", "Body/Torso/Cape2/Cape2Lower", "Body/Torso/Cape3", "Body/Torso/Cape3/Cape3Lower" };
+        mask.transformCount = bones.Length;
+        for (int i = 0; i < bones.Length; i++) { mask.SetTransformPath(i, bones[i]); mask.SetTransformActive(i, true); }
+        AssetDatabase.AddObjectToAsset(mask, controller);
+        var landing = new AnimatorStateMachine { name = "Landing", hideFlags = HideFlags.HideInHierarchy };
+        AssetDatabase.AddObjectToAsset(landing, controller);
+        AnimatorState empty = landing.AddState("Empty", new Vector3(260, 60, 0));
+        empty.writeDefaultValues = false;
+        AnimatorState play = landing.AddState("LandSettle", new Vector3(260, 140, 0));
+        play.motion = settle; play.writeDefaultValues = false;
+        landing.defaultState = empty;
+        controller.AddLayer(new AnimatorControllerLayer
+        {
+            name = "Landing", stateMachine = landing, blendingMode = AnimatorLayerBlendingMode.Additive,
+            defaultWeight = 0f, avatarMask = mask,
+        });
+        EditorUtility.SetDirty(controller);
     }
 
     // One state for walking and running: a 1D blend tree on Speed (Qori's ground speed, u/s) from the
@@ -167,6 +231,8 @@ public static class QoriRigBuilder
         }
         if (idle != null) machine.defaultState = idle;
         if (clips.TryGetValue("Walk", out var walkClip) && clips.TryGetValue("Run", out var runClip)) AddLocomotion(controller, walkClip, runClip);
+        if (clips.TryGetValue("Rise", out var riseClip) && clips.TryGetValue("Fall", out var fallClip) && clips.TryGetValue("Land", out var landClip) && clips.TryGetValue("Idle", out var idleClip))
+            AddAirAndLanding(controller, riseClip, fallClip, landClip, idleClip);
         EditorUtility.SetDirty(controller);
 
         // 4. Prefab: QoriRig (QoriAnimator, cancels parent scale) > Facing (flip/tilt) > Root (Animator) > bones.

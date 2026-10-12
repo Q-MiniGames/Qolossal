@@ -38,6 +38,9 @@ public sealed class QoriAnimator : MonoBehaviour
     public Vector2 runPlaybackRange = new Vector2(.6f, 1.6f);
     [Tooltip("Seconds over which the walk-to-run blend follows a change of speed.")] public float speedDamping = .08f;
     [Tooltip("Landings faster than this play the squash.")] public float landSquashSpeed = 4f;
+    [Tooltip("Landing speed at which the settle while walking or running is at full strength.")] public float landSettleFullSpeed = 16f;
+    [Tooltip("Strength of the settle for the softest landing that plays it (0..1); harder landings ramp up to 1.")] [Range(0f, 1f)] public float landSettleMinWeight = .35f;
+    [Tooltip("Seconds over which the rise-to-fall blend follows the vertical speed.")] public float verticalSpeedDamping = .05f;
 
     [Header("Blending (seconds)")]
     public float locomotionBlend = .12f;
@@ -104,6 +107,9 @@ public sealed class QoriAnimator : MonoBehaviour
     static readonly int MoveSpeedParam = Animator.StringToHash("MoveSpeed");
     static readonly int LocomotionState = Animator.StringToHash("Locomotion");
     static readonly int SpeedParam = Animator.StringToHash("Speed");
+    static readonly int AirState = Animator.StringToHash("Air");
+    static readonly int VerticalSpeedParam = Animator.StringToHash("VerticalSpeed");
+    static readonly int LandSettleState = Animator.StringToHash("LandSettle");
     static readonly int AttackTimeParam = Animator.StringToHash("AttackTime");
     const float LandSeconds = .26f;
     const float WallJumpUpSeconds = .42f, WallJumpOffSeconds = .45f;
@@ -123,6 +129,7 @@ public sealed class QoriAnimator : MonoBehaviour
     float nextBlink, blinkUntil;
     QoriFootGrounding feet;
     bool hasLocomotion; float walkClipLength = .62f, runClipLength = .4f;
+    bool hasAir; int landingLayer = -1; float settleUntil, settleWeight;
     int launchVersion, playedLaunch = -1; float wallJumpUntil, lastWallDirection; bool wallJumpAway;
 
     public bool Ready => isActiveAndEnabled && animator != null && movement != null;
@@ -163,6 +170,10 @@ public sealed class QoriAnimator : MonoBehaviour
         // The Locomotion blend tree (Qolossal > Qori Rig > Update Locomotion Blend); without it, the
         // separate Walk and Run states are used as before.
         hasLocomotion = animator != null && animator.runtimeAnimatorController != null && animator.HasState(0, LocomotionState);
+        // The Air blend tree and the additive Landing layer (same menu); without them, the separate Rise
+        // and Fall states and the standing-only Land are used as before.
+        hasAir = hasLocomotion && animator.HasState(0, AirState);
+        landingLayer = animator != null && animator.runtimeAnimatorController != null ? animator.GetLayerIndex("Landing") : -1;
         if (animator != null && animator.runtimeAnimatorController != null)
             foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
             {
@@ -193,7 +204,7 @@ public sealed class QoriAnimator : MonoBehaviour
         if (!Ready || Time.deltaTime <= 0f) return;
         if (resetVersion != movement.ResetVersion)
         {
-            resetVersion = movement.ResetVersion; landingVersion = movement.LandingVersion; landUntil = 0f; current = 0;
+            resetVersion = movement.ResetVersion; landingVersion = movement.LandingVersion; landUntil = 0f; settleUntil = 0f; current = 0;
             launchVersion = movement.LaunchVersion; wallJumpUntil = 0f; lastWallDirection = 0f;
             hasLastVelocity = false; smoothedAcceleration = Vector2.zero; capeAngle = null; earAngle = null;
             facing = facingScale = movement.FacingDirection < 0 ? -1f : 1f; ropeTilt = 0f; ropeTiltVelocity = 0f;
@@ -243,6 +254,13 @@ public sealed class QoriAnimator : MonoBehaviour
         else if (gliding) { state = IdleState; blend = airBlend; }   // at rest under the canopy, sword in hand
         else if (wallJumping) { state = wallJumpAway ? WallJumpOffState : WallJumpUpState; blend = .04f; }
         else if (movement.IsWallSliding) { state = WallSlideState; blend = .08f; }
+        else if (!grounded && hasAir)
+        {
+            state = AirState; blend = airBlend;
+            // Rising to falling, eased through the apex; on entering the blend starts at the real speed.
+            if (current != AirState) animator.SetFloat(VerticalSpeedParam, velocity.y);
+            else animator.SetFloat(VerticalSpeedParam, velocity.y, verticalSpeedDamping, Time.deltaTime);
+        }
         else if (!grounded) { state = velocity.y > .6f ? RiseState : FallState; blend = airBlend; }
         else
         {
@@ -253,6 +271,13 @@ public sealed class QoriAnimator : MonoBehaviour
             {
                 landingVersion = movement.LandingVersion;
                 if (movement.LastLandingSpeed >= landSquashSpeed && speed < runAbove) landUntil = Time.time + LandSeconds;
+                // Landing on the move: the stride carries on and the upper body dips and settles on top of it.
+                else if (movement.LastLandingSpeed >= landSquashSpeed && landingLayer >= 0)
+                {
+                    settleWeight = Mathf.Lerp(landSettleMinWeight, 1f, Mathf.InverseLerp(landSquashSpeed, landSettleFullSpeed, movement.LastLandingSpeed));
+                    settleUntil = Time.time + LandSeconds;
+                    animator.Play(LandSettleState, landingLayer, 0f);
+                }
             }
             if (Time.time < landUntil && speed < runAbove) { state = LandState; blend = .03f; }
             else if (pathSpeed < idleBelow) { state = IdleState; blend = locomotionBlend; }
@@ -276,6 +301,7 @@ public sealed class QoriAnimator : MonoBehaviour
             }
         }
         if (wasAttacking && !attacking) blend = attackOutBlend;
+        UpdateLandingSettle(grounded && !attacking && !hanging);
         wasAttacking = attacking;
         bool restart = wallJumping && movement.LaunchVersion != playedLaunch && (state == WallJumpUpState || state == WallJumpOffState);
         if (state != current || restart)
@@ -498,6 +524,17 @@ public sealed class QoriAnimator : MonoBehaviour
             move = move.followUps != null && move.followUps.Length > 0 ? move.followUps[0] : null;
         }
         return 0;
+    }
+
+    // The additive settle's weight: full for the first part of the landing, then easing out over its last 40%.
+    // Leaving the ground, an attack or a hang ends it at once.
+    void UpdateLandingSettle(bool allowed)
+    {
+        if (landingLayer < 0) return;
+        if (!allowed) settleUntil = 0f;
+        float left = settleUntil - Time.time;
+        float weight = left > 0f ? settleWeight * Mathf.Clamp01(left / (LandSeconds * .4f)) : 0f;
+        animator.SetLayerWeight(landingLayer, weight);
     }
 
     // How fast the blended walk/run cycle must play for its planted feet to keep pace with the ground
