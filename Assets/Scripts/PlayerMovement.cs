@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D))]
 public sealed class PlayerMovement : MonoBehaviour
 {
-    public enum LaunchKind { None, Jump, FlowerBoost, WallJump }
+    public enum LaunchKind { None, Jump, FlowerBoost, WallJump, DoubleJump }
     public bool IsWallSliding { get; private set; }
     public float WallDirection { get; private set; }
     private float wallSlideSpeed => Tuning.wallSlideSpeed;
@@ -35,6 +35,11 @@ public sealed class PlayerMovement : MonoBehaviour
     public bool HasGroundContact { get; private set; }
     public float MoveInput => moveInput;
     public bool RunRequested => runHeld;
+    // Running is Qori's normal pace (16 Oct). Areas that want a walk (house interiors, later) set ForceWalk.
+    public bool ForceWalk { get; set; }
+    // Seconds Qori has been running at full speed (0 when not): the sprint attack needs a run-up.
+    public float RunningFor => IsRunning ? Time.time - runningSince : 0f;
+    private float runningSince;
     public bool IsRunning { get; private set; }
     public float WalkSpeed => moveSpeed;
     public float RunSpeed => Mathf.Max(moveSpeed,runSpeed);
@@ -96,10 +101,12 @@ public sealed class PlayerMovement : MonoBehaviour
     public bool AirDashUsed => airDashUsed;
     private float dashUntil, nextDashAt, lastDashPressedTime = float.NegativeInfinity;
     private bool airDashUsed;
+    private bool airJumpUsed;   // the double jump, spent until ground, a wall, a ledge or the thread
+    public bool AirJumpUsed => airJumpUsed;
     // With glideNeedsNewPress the Glidecap opens only on its own press of Jump in mid-air (one that
     // didn't make a jump or wall jump), held from then on: holding Jump through a jump or up a
     // wall never opens it. Without it, any held Jump opens it once he falls.
-    private bool airJumpPress, glideArmed;
+    private bool airJumpPress, glideArmed, glideNeedsPressAfterAttack;
     private float GlidePull => Tuning.glidePull;   // units/s per second: the drift's own gentle gravity
     private float GlideMinHeight => Tuning.glideMinHeight;   // closer to the ground than this, a press is a buffered jump
     private float GlideWallClearance => Tuning.glideWallClearance;   // closer to a clingable wall than this, a press is for the wall
@@ -115,6 +122,67 @@ public sealed class PlayerMovement : MonoBehaviour
     }
 
     private void CancelDash() { IsDashing = false; IsGliding = false; airJumpPress = glideArmed = false; }
+
+    // The evade: a quick dodge along the ground. Qori can't be hurt during it (and for evadeGrace after), and he
+    // passes through enemies: their colliders stop touching his for the evade. The Shellback's stone shell is the
+    // exception: an evade into it stops against it.
+    public bool IsEvading { get; private set; }
+    public bool Untouchable => IsEvading || Time.time < evadeGraceUntil;
+    public float EvadeDirection { get; private set; } = 1f;
+    public int EvadeVersion { get; private set; }
+    private float evadeUntil, nextEvadeAt, evadeGraceUntil, lastEvadePressedTime = float.NegativeInfinity;
+    private readonly System.Collections.Generic.List<Collider2D> passedThrough = new System.Collections.Generic.List<Collider2D>();
+    private readonly Collider2D[] evadeOverlaps = new Collider2D[16];
+    private readonly RaycastHit2D[] evadeHits = new RaycastHit2D[8];
+    private Collider2D[] ownColliders;
+
+    private void StopEvade()
+    {
+        if (IsEvading) { nextEvadeAt = Time.time + Tuning.evadeCooldown; evadeGraceUntil = Time.time + Tuning.evadeGrace; }
+        IsEvading = false;
+    }
+
+    // Enemies (anything with a damage receiver that isn't Qori) the evade is passing: their collisions with Qori are
+    // switched off, and back on once he is clear of them.
+    private void PassThroughEnemies(Vector2 step)
+    {
+        if (ownColliders == null) ownColliders = GetComponents<Collider2D>();
+        var bounds = ownColliders.Length > 0 ? ownColliders[0].bounds : new Bounds(body.position, Vector3.one);
+        int n = Physics2D.OverlapBoxNonAlloc((Vector2)bounds.center + step, (Vector2)bounds.size + new Vector2(Mathf.Abs(step.x) + .3f, 0f), 0f, evadeOverlaps);
+        for (int i = 0; i < n; i++)
+        {
+            var c = evadeOverlaps[i];
+            if (c == null || c.isTrigger || c.attachedRigidbody == body || passedThrough.Contains(c) || IsShellback(c)) continue;
+            if (c.GetComponentInParent<ICombatDamageReceiver>() == null || c.GetComponentInParent<PlayerMovement>() != null) continue;
+            foreach (var own in ownColliders) Physics2D.IgnoreCollision(own, c, true);
+            passedThrough.Add(c);
+        }
+    }
+
+    private void RestorePassedThrough(bool force)
+    {
+        if (passedThrough.Count == 0 || ownColliders == null || ownColliders.Length == 0) return;
+        for (int i = passedThrough.Count - 1; i >= 0; i--)
+        {
+            var c = passedThrough[i];
+            bool clear = c == null || !c.isActiveAndEnabled || !ownColliders[0].bounds.Intersects(c.bounds);
+            if (!force && !clear) continue;
+            if (c != null) foreach (var own in ownColliders) Physics2D.IgnoreCollision(own, c, false);
+            passedThrough.RemoveAt(i);
+        }
+    }
+
+    private static bool IsShellback(Collider2D c) => c != null && c.GetComponentInParent<ShellbackEnemy>() != null;
+
+    // True when the evade's next step would run into a Shellback.
+    private bool ShellbackAhead(float distance)
+    {
+        if (ownColliders == null) ownColliders = GetComponents<Collider2D>();
+        if (ownColliders.Length == 0) return false;
+        int n = ownColliders[0].Cast(new Vector2(EvadeDirection, 0f), evadeHits, distance + .05f, true);
+        for (int i = 0; i < n; i++) if (!evadeHits[i].collider.isTrigger && IsShellback(evadeHits[i].collider)) return true;
+        return false;
+    }
 
     // A clingable wall within reach on either side: Jump there is for wall jumps (an early press
     // is buffered into one), so it never opens the Glidecap.
@@ -159,7 +227,7 @@ public sealed class PlayerMovement : MonoBehaviour
     private InputAction jumpAction;
     private InputAction growthAction;
     private InputAction runAction;
-    private InputAction dashAction;
+    private InputAction dashAction, evadeAction;
     private bool runHeld;
     private float pendingLaunchSpeed;
     private Vector2 pendingKnockback;
@@ -237,9 +305,11 @@ public sealed class PlayerMovement : MonoBehaviour
         growthAction.AddBinding("<Keyboard>/e");
         growthAction.AddBinding("<Gamepad>/rightShoulder");
         runAction = new InputAction("Run", InputActionType.Button);
-        runAction.AddBinding("<Keyboard>/leftShift");
-        runAction.AddBinding("<Keyboard>/rightShift");
         runAction.AddBinding("<Gamepad>/leftStickPress");
+        evadeAction = new InputAction("Evade", InputActionType.Button);
+        evadeAction.AddBinding("<Keyboard>/leftShift");
+        evadeAction.AddBinding("<Keyboard>/rightShift");
+        evadeAction.AddBinding("<Gamepad>/buttonNorth");
         dashAction = new InputAction("Dash", InputActionType.Button);
         dashAction.AddBinding("<Keyboard>/c");
         dashAction.AddBinding("<Gamepad>/buttonEast");
@@ -282,7 +352,7 @@ public sealed class PlayerMovement : MonoBehaviour
         jumpAction.Enable();
         growthAction.Enable();
         runAction.Enable();
-        dashAction.Enable();
+        dashAction.Enable(); evadeAction.Enable();
         ledgeVerticalAction.Enable();
     }
 
@@ -292,7 +362,7 @@ public sealed class PlayerMovement : MonoBehaviour
         jumpAction.Disable();
         growthAction.Disable();
         runAction.Disable();
-        dashAction.Disable();
+        dashAction.Disable(); evadeAction.Disable();
         ledgeVerticalAction.Disable();
         ReleaseLedge();
         runHeld = false;
@@ -336,8 +406,9 @@ public sealed class PlayerMovement : MonoBehaviour
             return;
         }
         if (dashAction.WasPressedThisFrame()) lastDashPressedTime = Time.time;
+        if (evadeAction.WasPressedThisFrame()) lastEvadePressedTime = Time.time;
         moveInput = moveAction.ReadValue<float>();
-        runHeld = runAction.IsPressed();
+        runHeld = !ForceWalk;
         ledgeVerticalInput=ledgeVerticalAction.ReadValue<float>();
         if (Mathf.Abs(moveInput) > 0.1f && Time.time>=wallSteeringUntil)
             FacingDirection = Mathf.Sign(moveInput);
@@ -413,6 +484,9 @@ public sealed class PlayerMovement : MonoBehaviour
         float groundControl=combatController!=null?combatController.GroundControl:1;
         float airControl=combatController!=null?combatController.AirControl:1;
         if(combatController!=null)velocity+=Physics2D.gravity*body.gravityScale*(combatController.GravityMultiplier-1)*Time.fixedDeltaTime;
+        // The plunge: held in the air through its wind-up, then straight down at its speed.
+        float plunge=combatController!=null?combatController.PlungeSpeed:0f;
+        if(plunge>0f){velocity.y=combatController.IsPlungeWindup?0f:-plunge;velocity.x*=.85f;canCutJump=false;}
         ObserveMotion(velocity);
         if(UpdateLedge())return;
         bool wasGrounded = IsGrounded && !impulse;
@@ -570,6 +644,16 @@ public sealed class PlayerMovement : MonoBehaviour
             launch=LaunchKind.WallJump;
             WallDirection=0;
         }
+        // The double jump: a fresh press in mid-air, once. Close to the ground the press is left to the buffered jump.
+        else if(combatAllowsJump && Tuning.doubleJump && !airJumpUsed && !grounded && !recovering && !attached && launch==LaunchKind.None &&
+                !IsLedgeHanging && !IsLedgeClimbing && Time.time-lastJumpPressedTime<=jumpBufferTime && !(nearestGround<=GlideMinHeight))
+        {
+            velocity.y=Tuning.doubleJumpSpeed;
+            airJumpUsed=true;
+            lastJumpPressedTime=float.NegativeInfinity;
+            canCutJump=true;
+            launch=LaunchKind.DoubleJump;
+        }
         if(WallDirection!=0 && wallCling && launch==LaunchKind.None && velocity.y<0 && moveInput*WallDirection>=-.1f)
         {
             velocity.y=Mathf.Max(velocity.y,-wallSlideSpeed);
@@ -579,7 +663,7 @@ public sealed class PlayerMovement : MonoBehaviour
 
         // Wind Leaf: a short, level dash along the input (or facing) direction. On the ground it
         // can be used again after a short rest; in the air once, until ground, a wall or a thread.
-        if(grounded || IsWallSliding || attached) airDashUsed=false;
+        if(grounded || IsWallSliding || attached) airDashUsed=airJumpUsed=false;
         bool dashAllowed=combatController==null||combatController.CanCancel(CombatCancel.Jump);
         if(IsDashing && (launch!=LaunchKind.None || recovering || attached || Time.fixedTime>=dashUntil))
             EndDash(ref velocity, launch==LaunchKind.None && !recovering && !attached);
@@ -600,12 +684,38 @@ public sealed class PlayerMovement : MonoBehaviour
             surfaceWalking=false;
         }
 
+        // Evade (Shift / Y): on the ground, along the input (or facing) direction.
+        if(IsEvading && (Time.fixedTime>=evadeUntil || recovering || attached || launch!=LaunchKind.None || IsDashing))
+            StopEvade();
+        else if(!IsEvading && dashAllowed && grounded && !IsDashing && !recovering && !attached && launch==LaunchKind.None &&
+                Time.time-lastEvadePressedTime<=jumpBufferTime && Time.time>=nextEvadeAt)
+        {
+            EvadeDirection=Mathf.Abs(moveInput)>.1f ? Mathf.Sign(moveInput) : FacingDirection;
+            FacingDirection=EvadeDirection;
+            IsEvading=true; evadeUntil=Time.fixedTime+Tuning.evadeSeconds; EvadeVersion++;
+            lastEvadePressedTime=float.NegativeInfinity;
+            if(combatController!=null) combatController.CancelAttack();
+        }
+        if(IsEvading)
+        {
+            float step=Tuning.evadeSpeed*Time.fixedDeltaTime;
+            if(ShellbackAhead(step)) { StopEvade(); velocity.x=0f; }   // the stone shell stops the dodge
+            else { velocity.x=EvadeDirection*Tuning.evadeSpeed; PassThroughEnemies(new Vector2(EvadeDirection*step,0f)); }
+        }
+        else RestorePassedThrough(false);
+
         // Glidecap: holding Jump while falling opens it (with glideNeedsNewPress, only a fresh
         // mid-air press), braking the fall to a slow drift that can be steered. Walls, threads,
         // ledges and dashes close it.
         // A press that jumped (coyote or buffered) or wall-jumped is spent; one just before landing
         // is left to the buffered jump.
-        if(!jumpHeld || launch!=LaunchKind.None || grounded || attached || IsWallSliding) glideArmed=false;
+        // An attack in the air closes the canopy (Qori can't swing and glide at once): it falls, and only a fresh
+        // Jump press opens it again.
+        bool attackingNow=combatController!=null&&combatController.IsAttackPoseActive;
+        if(attackingNow&&!grounded) glideNeedsPressAfterAttack=true;
+        if(grounded||attached||IsWallSliding) glideNeedsPressAfterAttack=false;
+        if(!jumpHeld || launch!=LaunchKind.None || grounded || attached || IsWallSliding || attackingNow) glideArmed=false;
+        else if(glideNeedsPressAfterAttack){ if(airJumpPress && !(nearestGround<=GlideMinHeight) && !NearWall()){ glideArmed=true; glideNeedsPressAfterAttack=false; } }
         else if(!glideNeedsNewPress || airJumpPress && !(nearestGround<=GlideMinHeight) && !NearWall()) glideArmed=true;
         airJumpPress=false;
         IsGliding=glideArmed && !IsDashing && !grounded && !attached && !recovering && !IsWallSliding &&
@@ -640,7 +750,7 @@ public sealed class PlayerMovement : MonoBehaviour
                 : 1f;
             velocity.y += Physics2D.gravity.y * body.gravityScale * (multiplier - 1f) * Time.fixedDeltaTime;
         }
-        velocity.y = Mathf.Max(velocity.y, -maximumFallSpeed);
+        velocity.y = Mathf.Max(velocity.y, -Mathf.Max(maximumFallSpeed, plunge));
         surfaceWalking &= launch == LaunchKind.None && !attached;
         // Cancel this step's gravity while walking on the ground, so he stands still on slopes.
         if (!surfaceWalking) ridingVelocity = Vector2.zero;
@@ -650,7 +760,9 @@ public sealed class PlayerMovement : MonoBehaviour
         bool ownGravity = surfaceWalking || IsDashing || IsGliding;
         body.linearVelocity = (ownGravity ? velocity - Physics2D.gravity * body.gravityScale * Time.fixedDeltaTime : velocity) + platformVelocity;
         IsGrounded = grounded && !attached && launch == LaunchKind.None && (velocity.y <= 0.1f || surfaceWalking);
+        bool wasRunning = IsRunning;
         IsRunning = IsGrounded && !recovering && runHeld && Mathf.Abs(velocity.x)>moveSpeed+.1f;
+        if (IsRunning && !wasRunning) runningSince = Time.time;
         HasGroundContact = grounded && launch == LaunchKind.None && (velocity.y <= 0.1f || surfaceWalking);
         GroundNormal = HasGroundContact ? groundNormal : Vector2.up;
         GroundPoint = HasGroundContact ? groundPoint : Vector2.zero;
@@ -710,7 +822,7 @@ public sealed class PlayerMovement : MonoBehaviour
             LedgePoint=point;LedgeDirection=direction;FacingDirection=direction;
             ledgeHangPosition=hang;ledgeStandPosition=stand;
             savedLedgeGravity=body.gravityScale;ledgeGravityOwned=true;body.gravityScale=0;
-            IsLedgeHanging=true;IsLedgeClimbing=false;ledgeAcross=false;CancelDash();airDashUsed=false;
+            IsLedgeHanging=true;IsLedgeClimbing=false;ledgeAcross=false;CancelDash();airDashUsed=airJumpUsed=false;
             IsGrounded=HasGroundContact=IsWallSliding=IsRunning=false;
             GroundDistance=LandingTimeEstimate=float.PositiveInfinity;
             lastJumpPressedTime=lastGroundedTime=float.NegativeInfinity;canCutJump=false;
@@ -834,7 +946,8 @@ public sealed class PlayerMovement : MonoBehaviour
         IsRunning = false;
         HasGroundContact = false;
         IsWallSliding=false;WallDirection=0;wallJumpUntil=float.NegativeInfinity;wallSteeringUntil=float.NegativeInfinity;
-        CancelDash();airDashUsed=false;airJumpPress=glideArmed=false;carryingMomentum=false;
+        CancelDash();airDashUsed=airJumpUsed=false;airJumpPress=glideArmed=false;carryingMomentum=false;
+        IsEvading=false;RestorePassedThrough(true);
         GroundNormal = Vector2.up;
         GroundPoint = Vector2.zero;
         GroundDistance = LandingTimeEstimate = float.PositiveInfinity;

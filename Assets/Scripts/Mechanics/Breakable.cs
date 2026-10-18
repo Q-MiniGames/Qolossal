@@ -23,7 +23,7 @@ public sealed class Breakable : MonoBehaviour, ICombatDamageReceiver
     public CombatDamageResponse ReceiveCombatHit(CombatDamage hit)
     {
         if (broken) return new CombatDamageResponse { Disposition = CombatHitDisposition.Ignored };
-        bool right = breaksWith == Rule.Mace ? WeaponKinds.Of(hit) == WeaponKind.Mace
+        bool right = breaksWith == Rule.Mace ? WeaponKinds.IsHeavy(hit)   // the mace, or the charged staff sweep
             : breaksWith == Rule.Sword ? WeaponKinds.Of(hit) == WeaponKind.Sword
             : WeaponKinds.IsDownward(hit);
         shakeUntil = Time.time + (right ? .12f : .2f);

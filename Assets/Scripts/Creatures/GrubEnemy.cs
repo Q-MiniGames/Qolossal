@@ -16,6 +16,13 @@ public sealed class GrubEnemy : EnemyBase
     Collider2D hitbox; SpriteRenderer mouth;
 
     public bool IsBuried => state == State.Buried || state == State.Tunnel || state == State.Telegraph;
+    // For drawn frame-by-frame animation: what it is doing, for how long, which way it faces, and its timings.
+    public string AnimPhase => state.ToString();
+    public float AnimTime => Time.time - since;
+    public float AnimFacing => facing;
+    public float RiseTime => riseTime;
+    public float UpTime => upTime;
+    public float SinkTime => sinkTime;
     public override bool HurtsOnContact => IsAlive && (state == State.Rise || state == State.Up);
 
     protected override void Awake()

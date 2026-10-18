@@ -57,7 +57,8 @@ public static class QoriArmoryFactory
         quick.name=quick.attackId="Leaf Sword 3 - Quick return cut";
         opener.followUps=new[]{reverse};reverse.followUps=new[]{quick};quick.followUps=new[]{finish};finish.followUps=new AttackDefinition[0];
         RefreshSwordCombo(result[0]);
-        slingWeapon=Copy(result[0],owned);slingWeapon.name=slingWeapon.displayName="Resin Sling";slingWeapon.weaponId="resin-sling";
+        BuildStaffMoves(result[3],owned);
+        slingWeapon=Copy(result[0],owned);slingWeapon.name=slingWeapon.displayName="Leaf Bolt";slingWeapon.weaponId="resin-sling";
         sling=Copy(result[0].moveSet.Find(CombatMoveSlot.Front),owned);sling.name=sling.attackId="Resin seed";sling.slingProjectile=true;
         sling.followUps=new AttackDefinition[0];
         sling.impulse=Vector2.zero;sling.recoil=Vector2.zero;sling.lockFacing=true;
@@ -82,17 +83,20 @@ public static class QoriArmoryFactory
             {
                 var entry=weapon!=null&&weapon.moveSet!=null?tuning.Find(weapon.weaponId):null;
                 if(entry==null)continue;
+                bool staff=weapon.weaponId==StaffId;
                 foreach(var slot in weapon.moveSet.moves)
                 {
                     var move=slot.attack;if(move==null)continue;
-                    Apply(move,entry,entry.phases,tuning.cooldownPad);
+                    Apply(move,entry,(staff?StaffPhases(tuning,slot.slot):null)??entry.phases,tuning.cooldownPad);
+                    if(staff)StaffExtras(move,slot.slot,tuning);
                     if(slot.slot!=CombatMoveSlot.Front||move.followUps==null||move.followUps.Length==0)continue;
-                    // The Leaf Sword's combo: the follow-ups hit like the opener, on their own phases.
-                    var combo=new[]{tuning.swordQuickCut,tuning.swordReturnCut,tuning.swordDepthSweep};
+                    // The Leaf Sword's and the Leaf Staff's combos: the follow-ups hit like the opener, on their own phases.
+                    var combo=staff?new[]{tuning.staffBackswing,tuning.staffSpin}:new[]{tuning.swordQuickCut,tuning.swordReturnCut,tuning.swordDepthSweep};
                     var next=move.followUps[0];
                     for(int i=0;next!=null&&i<combo.Length;i++)
                     {
                         Apply(next,entry,combo[i],tuning.cooldownPad);
+                        if(staff){if(i==1)next.knockback*=tuning.staffSpinKnockback;StaffComboFeel(next,i==1,tuning);}
                         next=next.followUps!=null&&next.followUps.Length>0?next.followUps[0]:null;
                     }
                 }
@@ -112,6 +116,71 @@ public static class QoriArmoryFactory
     static void Phases(AttackDefinition move,WeaponTuning.Phases phases,float pad)
     {
         move.startup=phases.startup;move.active=phases.active;move.recovery=phases.recovery;move.cooldown=move.TotalDuration+pad;
+    }
+    // The Leaf Staff's set, drawn frame by frame (Ludo attack clips A1-A4): a three-hit combo (the opener, a
+    // backswing, a spin finisher that hits all round), a spinning lunge when attacking while running and the charged
+    // sweep (hold attack). In the air the opener is used (the flip became the double jump). The rig plays the opener's
+    // swing for the new ones.
+    static void BuildStaffMoves(WeaponDefinition staff,List<Object> owned)
+    {
+        var front=staff.moveSet.Find(CombatMoveSlot.Front);
+        AttackDefinition Make(string id)
+        {
+            var m=Copy(front,owned);m.name=m.attackId="Leaf Staff "+id;m.animation=Copy(front.animation,owned);m.followUps=new AttackDefinition[0];return m;
+        }
+        void Around(AttackDefinition m,CombatHitShape shape,Vector2 size,Vector2 offset){m.hitShape=shape;m.hitboxSize=size;m.hitboxOffset=offset;m.multipleTargets=true;}
+        var back=Make("2 - Backswing");var spin=Make("3 - Spin finisher");
+        Around(spin,CombatHitShape.Circle,new Vector2(3f,3f),new Vector2(0,.3f));
+        front.followUps=new[]{back};back.followUps=new[]{spin};
+        foreach(var m in new[]{front,back,spin})m.comboWindowStart=.25f;
+        var sprint=Make("Sprint lunge");sprint.allowAir=false;
+        Around(sprint,CombatHitShape.Circle,new Vector2(2.6f,2.6f),new Vector2(.9f,.3f));
+        // Down in the air: the plunge, and the burst where it lands (not in the move set: the plunge starts it).
+        var plunge=staff.moveSet.Find(CombatMoveSlot.Lower);
+        var landing=Make("Plunge landing");landing.direction=AttackAim.Down;landing.allowAir=true;landing.lockFacing=true;
+        Around(landing,CombatHitShape.Circle,new Vector2(2.8f,2.8f),new Vector2(0,-.2f));
+        plunge.plungeLanding=landing;plunge.airControl=.3f;plunge.lockFacing=true;plunge.allowGround=false;
+        Around(plunge,CombatHitShape.Box,new Vector2(1.3f,1.6f),new Vector2(0,-.5f));   // the staff's point, under him all the way down
+        var charged=Make("Charged sweep");charged.allowAir=false;charged.breaksArmor=true;   // cracks the Shellback's shell and rubble
+        Around(charged,CombatHitShape.Box,new Vector2(3.6f,1.8f),new Vector2(1.5f,.3f));
+        var moves=new List<CombatMoveSet.Entry>(staff.moveSet.moves)
+        {
+            new CombatMoveSet.Entry{slot=CombatMoveSlot.Dash,attack=sprint},
+            new CombatMoveSet.Entry{slot=CombatMoveSlot.Charged,attack=charged},
+        };
+        staff.moveSet.moves=moves.ToArray();
+    }
+    static WeaponTuning.Phases StaffPhases(WeaponTuning tuning,CombatMoveSlot slot)=>
+        slot==CombatMoveSlot.Front?tuning.staffOpener:slot==CombatMoveSlot.Upper?tuning.staffUpper:slot==CombatMoveSlot.Lower?tuning.staffPlunge:slot==CombatMoveSlot.Dash?tuning.staffSprint:slot==CombatMoveSlot.Charged?tuning.staffCharged:null;
+    // The combo's weight and agility: a step forward per hit while the stick pushes forward (the drawn frames no longer
+    // drift, and standing still he stays put), a harder landing
+    // (pause, freeze, shake, rumble), and moving during the follow-through ends it.
+    static void StaffComboFeel(AttackDefinition move,bool finisher,WeaponTuning tuning)
+    {
+        move.impulse=new Vector2(finisher?tuning.staffFinisherStep:tuning.staffComboStep,0);move.impulseNeedsInput=true;   // steps only when pushed forward
+        move.hitStop=finisher?tuning.staffFinisherHitStop:tuning.staffComboHitStop;move.hitFreeze=finisher?tuning.staffFinisherFreeze:tuning.staffComboFreeze;
+        move.cameraShake=finisher?tuning.staffFinisherShake:tuning.staffComboShake;move.rumble=finisher?tuning.staffFinisherRumble:tuning.staffComboRumble;
+        move.moveCancelsRecovery=true;
+    }
+    static void StaffExtras(AttackDefinition move,CombatMoveSlot slot,WeaponTuning tuning)
+    {
+        if(slot==CombatMoveSlot.Front)StaffComboFeel(move,false,tuning);
+        if(slot==CombatMoveSlot.Dash){move.impulse=new Vector2(tuning.staffSprintPush,0);move.groundControl=tuning.staffSprintCarry;move.knockback*=1.4f;}
+        if(slot==CombatMoveSlot.Lower)
+        {
+            move.plungeSpeed=tuning.staffPlungeSpeed;move.plungeBounce=tuning.staffPlungeBounce;
+            var land=move.plungeLanding;
+            if(land!=null)
+            {
+                Phases(land,tuning.staffPlungeLanding,0f);land.damage=tuning.staffPlungeLandingDamage;land.knockback=new Vector2(4f,3f);
+                land.hitStop=.05f;land.cameraShake=.14f;land.rumble=.4f;
+            }
+        }
+        if(slot==CombatMoveSlot.Charged)
+        {
+            move.damage*=tuning.staffChargedDamage;move.knockback*=2f;move.groundControl=0;
+            move.hitStop=Mathf.Max(move.hitStop,.06f);move.cameraShake=Mathf.Max(move.cameraShake,.12f);move.rumble=Mathf.Max(move.rumble,.35f);
+        }
     }
     public static void RefreshSwordCombo(WeaponDefinition weapon)
     {

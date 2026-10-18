@@ -1,7 +1,8 @@
 using UnityEngine;
 
-// Shellback (E-05): a slow beetle. Its stone shell blocks the sword and spear; only the
-// mace cracks it (shards fly, the mint glow shows through), and after that it can be hurt.
+// Shellback (E-05): a slow beetle. Its stone shell blocks ordinary blows; only a heavy one cracks it
+// (the Leaf Staff's charged sweep, or the mace) (shards fly, the mint glow shows through), and after
+// that it can be hurt.
 [RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D))]
 public sealed class ShellbackEnemy : EnemyBase
 {
@@ -15,6 +16,10 @@ public sealed class ShellbackEnemy : EnemyBase
     static readonly string[] Legs = { "LegNear0", "LegNear1", "LegNear2", "LegFar0", "LegFar1", "LegFar2" };
 
     public bool ShellIntact => shellIntact;
+    // For drawn frame-by-frame animation: when the shell cracked (-1 while intact), its facing and walking speed.
+    public float CrackedAt { get; private set; } = -1f;
+    public float AnimFacing => direction;
+    public float WalkSpeed => body != null ? Mathf.Abs(body.linearVelocity.x) : 0f;
 
     protected override void Awake()
     {
@@ -32,8 +37,8 @@ public sealed class ShellbackEnemy : EnemyBase
         if (!IsAlive) return new CombatDamageResponse { Disposition = CombatHitDisposition.Ignored };
         if (shellIntact)
         {
-            if (WeaponKinds.Of(hit) != WeaponKind.Mace) { blockedShakeUntil = Time.time + .15f; return WeaponKinds.Blocked(); }
-            shellIntact = false;
+            if (!WeaponKinds.IsHeavy(hit)) { blockedShakeUntil = Time.time + .15f; return WeaponKinds.Blocked(); }
+            shellIntact = false; CrackedAt = Time.time;
             Sfx.Play("Shellback_ShellCrack", body.position);
             HitStop.Freeze(HitStop.Stagger);
             flashUntil = Time.time + .12f;

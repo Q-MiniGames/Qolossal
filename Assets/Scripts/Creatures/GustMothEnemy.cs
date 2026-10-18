@@ -13,6 +13,12 @@ public sealed class GustMothEnemy : EnemyBase
 
     enum State { Hover, Telegraph, Beat }
     State state; float since, nextGust, facing = -1f, flap;
+    // For drawn frame-by-frame animation: what it is doing, for how long, which way it faces, and its timings.
+    public string AnimPhase => state.ToString();
+    public float AnimTime => Time.time - since;
+    public float AnimFacing => facing;
+    public float TelegraphTime => telegraphTime;
+    public float BeatTime => beatTime;
     Vector2 home;
 
     public override bool HurtsOnContact => false;

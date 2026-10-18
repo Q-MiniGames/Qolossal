@@ -10,15 +10,16 @@ public sealed class QoriResinShot:MonoBehaviour
     {
         var obstruction=Physics2D.Linecast(owner.transform.position,origin,GroundLayer.Mask);
         if(obstruction.collider!=null)return null;
-        var obj=new GameObject("Resin seed");obj.transform.position=origin;
+        var obj=new GameObject("Leaf bolt");obj.transform.position=origin;
         var shot=obj.AddComponent<QoriResinShot>();shot.owner=owner;shot.attack=attack;shot.weapon=weapon;
         shot.velocity=direction.normalized*attack.projectileSpeed;shot.remaining=attack.projectileLifetime;
         shot.movement=owner.GetComponent<PlayerMovement>();shot.reset=shot.movement.ResetVersion;
-        QoriArmoryArt.Create("ResinSeed",obj.transform,.19f,14);
+        // the staff's leaf bolt (cut from Ludo's staff-shot clip; Resources/Armory/LeafBolt.png), the seed if it is missing
+        if(QoriArmoryArt.Get("LeafBolt")!=null)QoriArmoryArt.Create("LeafBolt",obj.transform,.55f,14);else QoriArmoryArt.Create("ResinSeed",obj.transform,.19f,14);
         obj.transform.rotation=Quaternion.Euler(0,0,Mathf.Atan2(direction.y,direction.x)*Mathf.Rad2Deg);
         var trail=obj.AddComponent<TrailRenderer>();trail.time=.065f;trail.startWidth=.035f;trail.endWidth=0;trail.minVertexDistance=.04f;trail.sortingOrder=13;
         shot.material=new Material(Shader.Find("Sprites/Default"));trail.sharedMaterial=shot.material;
-        trail.startColor=new Color(1,.73f,.27f,.45f);trail.endColor=new Color(1,.73f,.27f,0);
+        trail.startColor=new Color(.62f,1f,.45f,.5f);trail.endColor=new Color(.62f,1f,.45f,0);
         Sfx.Play("Weapon_Sling_Shot");
         return shot;
     }

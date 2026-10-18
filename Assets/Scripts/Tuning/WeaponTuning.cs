@@ -42,6 +42,32 @@ public sealed class WeaponTuning : ScriptableObject
     public Phases swordReturnCut = new Phases(.07f, .13f, .14f);
     public Phases swordDepthSweep = new Phases(.22f, .3f, .38f);
 
+    [Header("Leaf Staff moves (after the opener above)")]
+    [Tooltip("Combo hit 1: the sweep. A short wind-up so the hit lands almost on the press.")] public Phases staffOpener = new Phases(.06f, .1f, .18f);
+    [Tooltip("Combo hit 2: the backswing.")] public Phases staffBackswing = new Phases(.05f, .1f, .16f);
+    [Tooltip("Combo hit 3: the spin finisher (hits all round Qori).")] public Phases staffSpin = new Phases(.08f, .16f, .24f);
+    [Tooltip("The step forward each combo hit takes while the stick pushes forward (u/s push; the third hit's is the larger).")] public float staffComboStep = 3.5f, staffFinisherStep = 5f;
+    [Tooltip("Weight on a landed combo hit: Qori's own pause, a whole-game freeze, camera shake and rumble (hits 1-2, then the finisher).")]
+    [Range(0f, .1f)] public float staffComboHitStop = .06f, staffFinisherHitStop = .09f;
+    [Range(0f, .2f)] public float staffComboFreeze = .035f, staffFinisherFreeze = .06f;
+    [Range(0f, .3f)] public float staffComboShake = .06f, staffFinisherShake = .14f;
+    [Range(0f, 1f)] public float staffComboRumble = .2f, staffFinisherRumble = .45f;
+    [Tooltip("The spin finisher's push, against the opener's.")] [Min(1f)] public float staffSpinKnockback = 1.8f;
+    [Tooltip("Attack while running: the spinning lunge.")] public Phases staffSprint = new Phases(.1f, .24f, .26f);
+    [Tooltip("The lunge's forward push (u/s) and how much of the run it keeps.")] public float staffSprintPush = 4f;
+    [Range(0f, 2f)] public float staffSprintCarry = 1.3f;
+    [Tooltip("Up + attack: the upward swing (quicker than the opener).")] public Phases staffUpper = new Phases(.04f, .1f, .12f);
+    [Tooltip("Down + attack in the air: the plunge. Startup hangs Qori in the air, active is the longest dive (it ends on landing), recovery follows a dive that never lands.")]
+    public Phases staffPlunge = new Phases(.1f, 1.5f, .15f);
+    [Tooltip("The plunge's dive speed (u/s) and its bounce off whatever it hits.")] [Min(1f)] public float staffPlungeSpeed = 24f;
+    [Min(0f)] public float staffPlungeBounce = 10f;
+    [Tooltip("The burst where the plunge lands: hits round Qori's feet.")] public Phases staffPlungeLanding = new Phases(.01f, .08f, .22f);
+    [Min(0f)] public float staffPlungeLandingDamage = 1f;
+    [Tooltip("Hold attack: the release sweep.")] public Phases staffCharged = new Phases(.08f, .2f, .36f);
+    [Tooltip("Seconds attack is held (after the press's own swing) before the charge starts.")] [Min(0f)] public float staffChargeDelay = .35f;
+    [Tooltip("Seconds of charging before a release sweeps; let go sooner and nothing happens.")] [Min(0f)] public float staffChargeTime = .6f;
+    [Tooltip("The charged sweep's damage, against the opener's.")] [Min(1f)] public float staffChargedDamage = 2f;
+
     [Header("Resin Sling")]
     [Min(0f)] public float slingDamage = .35f;
     public Phases slingPhases = new Phases(.28f, .18f, .24f);

@@ -23,7 +23,9 @@ public sealed class QoriArmoryVisual:MonoBehaviour
     {
         if(!QoriPoseLookup.TryGetWeapon(this,ref qoriRig,ref rig,out Transform mount,out Transform tip,out float visualFacing)){OnDisable();return;}
         bool shooting=combat.CurrentAttack!=null&&combat.CurrentAttack.slingProjectile;
-        sling.enabled=shooting;pouch.enabled=shooting;seed.enabled=false;aimLine.enabled=reticle.enabled=false;
+        // The staff shoots the leaf bolt from its tip (16 Oct): the sling's cord, pouch and seed are never shown; the aim
+        // guide and target stay.
+        sling.enabled=false;pouch.enabled=false;seed.enabled=false;aimLine.enabled=reticle.enabled=false;
         if(shooting)
         {
             Vector3 aim=armory.SlingDirection,normal=new Vector3(-aim.y,aim.x,0);
@@ -31,7 +33,7 @@ public sealed class QoriArmoryVisual:MonoBehaviour
             bool loaded=combat.Phase==AttackPhase.Startup||(combat.Phase==AttackPhase.Active&&combat.PhaseProgress<contact);
             // The orbit ends at the release point; the projectile uses this same point.
             float turn=armory.IsAiming?-Mathf.PI*.5f:combat.Phase==AttackPhase.Startup?Mathf.Lerp(-Mathf.PI*2,-Mathf.PI*.5f,combat.PhaseProgress):Mathf.Lerp(-Mathf.PI*.5f,0,Mathf.Clamp01(combat.PhaseProgress/contact));
-            Vector3 release=mount.position+aim*.32f;
+            Vector3 release=tip!=null?tip.position+aim*.08f:mount.position+aim*.32f;   // the staff's tip
             SlingReleasePosition=release;
             Vector3 end=loaded?mount.position+(aim*Mathf.Cos(turn)+normal*Mathf.Sin(turn))*.32f:Vector3.Lerp(release,mount.position+Vector3.down*.32f,combat.Phase==AttackPhase.Recovery?Mathf.SmoothStep(0,1,combat.PhaseProgress):0);
             for(int i=0;i<17;i++)
@@ -42,7 +44,7 @@ public sealed class QoriArmoryVisual:MonoBehaviour
             }
                         float angle=Mathf.Atan2(aim.y,aim.x)*Mathf.Rad2Deg;
             pouch.transform.position=end;pouch.transform.rotation=Quaternion.Euler(0,0,angle+90);
-            seed.enabled=loaded;seed.transform.position=end;seed.transform.rotation=Quaternion.Euler(0,0,angle);
+            end=release;seed.transform.position=end;seed.transform.rotation=Quaternion.Euler(0,0,angle);
             if(armory.IsAiming)
             {
                 aimLine.enabled=reticle.enabled=true;

@@ -25,6 +25,10 @@ public static class WeaponKinds
         }
     }
 
+    // Heavy enough to crack stone (the Shellback's shell, rubble walls): the mace, or an attack marked breaksArmor (the
+    // Leaf Staff's charged sweep, since the mace is gone from Qori's set, 16 Oct).
+    public static bool IsHeavy(CombatDamage hit) => Of(hit) == WeaponKind.Mace || hit.Attack != null && hit.Attack.breaksArmor;
+
     public static bool IsDownward(CombatDamage hit) => hit.Attack != null && hit.Attack.direction == AttackAim.Down;
 
     public static CombatDamageResponse Blocked() => new CombatDamageResponse { Disposition = CombatHitDisposition.Blocked };

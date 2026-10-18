@@ -26,7 +26,8 @@ public sealed class PlayerCombat : MonoBehaviour
     public event Action<AttackDefinition> OnAttackStarted,OnAttackActive,OnAttackFinished,OnAttackInterrupted;
     public event Action<AttackHitResult> OnAttackHit;
     public WeaponDefinition EquippedWeapon=>equippedWeapon;
-    public WeaponDefinition PresentationWeapon=>CurrentAttack!=null&&CurrentAttack.slingProjectile&&armory!=null?armory.SlingWeapon:equippedWeapon;
+    // The shot comes from the staff now (16 Oct: the sling is gone), so the weapon in hand never changes for it.
+    public WeaponDefinition PresentationWeapon=>equippedWeapon;
     QoriArmory armory; bool projectileFired;
     public AttackDefinition CurrentAttack=>running?execution.Definition:null;
     public int ExecutionId {get;private set;}
@@ -44,7 +45,19 @@ public sealed class PlayerCombat : MonoBehaviour
     public bool IsHitStopped=>hitStopRemaining>0;
     public bool HasBufferedAttack=>queued;
     public bool ComboWindowOpen=>running&&Phase==AttackPhase.Recovery&&PhaseProgress>=CurrentAttack.comboWindowStart;
-    public float GroundControl=>CurrentAttack!=null?CurrentAttack.groundControl:1;
+    // The plunge (a down attack with plungeSpeed): PlayerMovement holds Qori still through its wind-up, then dives.
+    public bool IsPlunging=>running&&CurrentAttack.plungeSpeed>0&&Phase!=AttackPhase.Recovery;
+    public bool IsPlungeWindup=>IsPlunging&&Phase==AttackPhase.Startup;
+    public float PlungeSpeed=>IsPlunging?CurrentAttack.plungeSpeed:0;
+    public float GroundControl=>CurrentAttack!=null?CurrentAttack.groundControl:IsCharging?0:1;
+    // Hold attack: the charge (Qori plants his feet; PlayerCombatInput releases it into the Charged move).
+    float chargeStarted=-1;
+    public bool IsCharging=>chargeStarted>=0;
+    public float ChargeElapsed=>IsCharging?Time.time-chargeStarted:0;
+    public bool ChargeReady=>IsCharging&&ChargeElapsed>=WeaponTuning.Current.staffChargeTime;
+    public bool CanCharge=>isActiveAndEnabled&&!running&&movement.IsGrounded&&equippedWeapon!=null&&equippedWeapon.moveSet!=null&&CanUse(equippedWeapon.moveSet.Find(CombatMoveSlot.Charged));
+    public bool BeginCharge(){if(IsCharging)return true;if(!CanCharge)return false;chargeStarted=Time.time;return true;}
+    public void EndCharge()=>chargeStarted=-1;
     public float AirControl=>CurrentAttack!=null?CurrentAttack.airControl:1;
     public float GravityMultiplier=>CurrentAttack!=null?CurrentAttack.gravity:1;
     void Awake()
@@ -104,18 +117,19 @@ public sealed class PlayerCombat : MonoBehaviour
     public void CancelAttack(){queued=false;Interrupt(true);}
     void Interrupt(bool resetCooldown)
     {
-        var old=CurrentAttack;running=false;queued=false;comboPrevious=null;comboUntil=0;hitStopRemaining=0;hitDetector.Reset();
+        var old=CurrentAttack;running=false;queued=false;comboPrevious=null;comboUntil=0;hitStopRemaining=0;hitDetector.Reset();chargeStarted=-1;
         if(resetCooldown)nextAttack=Time.time;
         if(old!=null)OnAttackInterrupted?.Invoke(old);
     }
     void Begin(AttackDefinition move,AttackRequest request)
     {
-        queued=false;queuedDefinition=null;running=true;projectileFired=false;execution.Begin(move);ExecutionId++;
+        queued=false;queuedDefinition=null;running=true;projectileFired=false;execution.Begin(move);ExecutionId++;chargeStarted=-1;
         comboPrevious=null;comboUntil=0;
         swipeDirection=request.Facing;hitDetector.Reset();hitStopRemaining=0;
         nextAttack=Time.time+Mathf.Max(move.cooldown,move.TotalDuration);
         launchVersion=movement.LaunchVersion;threadVersion=thread!=null?thread.AttachmentVersion:0;
-        movement.AddCombatImpulse(new Vector2(move.impulse.x*swipeDirection,move.impulse.y));OnAttackStarted?.Invoke(move);
+        float push=move.impulseNeedsInput&&movement.MoveInput*swipeDirection<.3f?0f:move.impulse.x;
+        movement.AddCombatImpulse(new Vector2(push*swipeDirection,move.impulse.y));OnAttackStarted?.Invoke(move);
     }
     void Update()
     {
@@ -133,6 +147,19 @@ public sealed class PlayerCombat : MonoBehaviour
                     if(!CanUse(CurrentAttack)){CancelAttack();return;}
                     if(Mathf.Abs(armory.SlingDirection.x)>.05f)swipeDirection=Mathf.Sign(armory.SlingDirection.x);
                     dt=Mathf.Min(dt,Mathf.Max(0,CurrentAttack.startup*.98f-execution.Elapsed));
+                }
+                // The plunge meets the ground: the landing burst takes over (or the dive just ends).
+                if(IsPlunging&&Phase==AttackPhase.Active&&movement.IsGrounded)
+                {
+                    var landing=CurrentAttack.plungeLanding;var old=CurrentAttack;running=false;nextAttack=Time.time;OnAttackFinished?.Invoke(old);
+                    if(landing!=null)Begin(landing,new AttackRequest(AttackAim.Down,swipeDirection,CombatMoveSlot.Special));
+                    return;
+                }
+                // Moving during the follow-through ends it (an attack that allows it), as if it had finished.
+                if(Phase==AttackPhase.Recovery&&CurrentAttack.moveCancelsRecovery&&!queued&&Mathf.Abs(movement.MoveInput)>.3f)
+                {
+                    var done=CurrentAttack;running=false;comboPrevious=done;comboFacing=swipeDirection;comboUntil=Time.time+ComboGraceSeconds;nextAttack=Time.time;
+                    OnAttackFinished?.Invoke(done);return;
                 }
                 var previous=Phase;execution.Advance(dt);
                 if(previous==AttackPhase.Startup&&Phase!=AttackPhase.Startup)OnAttackActive?.Invoke(CurrentAttack);
@@ -172,6 +199,13 @@ public sealed class PlayerCombat : MonoBehaviour
     {
         if(result.Response.Disposition==CombatHitDisposition.Damaged&&CurrentAttack!=null)movement.AddCombatImpulse(new Vector2(CurrentAttack.recoil.x*swipeDirection,CurrentAttack.recoil.y));
         OnAttackHit?.Invoke(result);
+        // A plunge that hits something (or is blocked by it) stops diving and bounces off it.
+        var d=result.Response.Disposition;
+        if((d==CombatHitDisposition.Damaged||d==CombatHitDisposition.Blocked)&&IsPlunging&&!IsPlungeWindup)
+        {
+            float bounce=CurrentAttack.plungeBounce;var old=CurrentAttack;running=false;nextAttack=Time.time+.1f;OnAttackFinished?.Invoke(old);
+            movement.QueueCombatBounce(bounce);
+        }
     }
     public void RequestHitStop(float seconds){if(running)hitStopRemaining=Mathf.Max(hitStopRemaining,Mathf.Clamp(seconds,0,.1f));}
     void OnDisable()=>CancelAttack();

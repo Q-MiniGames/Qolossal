@@ -20,6 +20,11 @@ public sealed class SpitterEnemy : EnemyBase
 
     public override bool HurtsOnContact => false;   // only its seeds hurt
 
+    // For drawn frame-by-frame animation: the swell's progress (-1 when not swelling), the last spit, the facing.
+    public float Swell01 => swellStart >= 0f ? Mathf.Clamp01((Time.time - swellStart) / swellTime) : -1f;
+    public float LastSpitTime => openUntil - .35f;
+    public float AnimFacing => facing;
+
     void Update()
     {
         if (!IsAlive) return;

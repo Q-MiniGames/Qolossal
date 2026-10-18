@@ -17,6 +17,11 @@ public sealed class NewtEnemy : EnemyBase
     Collider2D hitbox;
 
     public bool IsSubmerged => state == State.Submerged;
+    // For drawn frame-by-frame animation: what it is doing, for how long, which way it faces, and the leap's length.
+    public string AnimPhase => state.ToString();
+    public float AnimTime => Time.time - since;
+    public float AnimFacing => facing;
+    public float LeapTime => leapTime;
     public override bool HurtsOnContact => IsAlive && state != State.Submerged && state != State.Telegraph;
 
     protected override void Awake()

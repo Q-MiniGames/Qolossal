@@ -26,6 +26,7 @@ public sealed class AttackDefinition : ScriptableObject
     [Header("Movement (multipliers preserve existing momentum)")]
     [Range(0,2)] public float groundControl=1,airControl=1,gravity=1;
     public Vector2 impulse,recoil;
+    [Tooltip("The impulse's forward push only when the stick is held toward the attack (no drifting forward on the spot).")] public bool impulseNeedsInput;
     public bool lockFacing=true;
     [Header("Cancel and combo rules")]
     public CombatCancel startupCancels=CombatCancel.Jump|CombatCancel.Grapple;
@@ -33,6 +34,13 @@ public sealed class AttackDefinition : ScriptableObject
     public CombatCancel recoveryCancels=CombatCancel.Jump|CombatCancel.Grapple|CombatCancel.Ability|CombatCancel.Attack;
     [Range(0,1)] public float comboWindowStart=.45f;
     public AttackDefinition[] followUps=new AttackDefinition[0];
+    [Tooltip("A plunge: above 0, Qori dives straight down at this speed (u/s) through the hit, until he lands or hits something. The wind-up hangs him in the air.")]
+    [Min(0)] public float plungeSpeed;
+    [Tooltip("Heavy enough to crack stone: breaks the Shellback's shell and rubble walls, like the mace did.")] public bool breaksArmor;
+    [Tooltip("A whole-game freeze (seconds) when this attack lands, for weight; 0 = none.")] [Range(0,.2f)] public float hitFreeze;
+    [Tooltip("Moving during the follow-through ends the attack at once (the combo can still continue).")] public bool moveCancelsRecovery;
+    [Tooltip("The plunge's landing burst, started when the dive meets the ground.")] public AttackDefinition plungeLanding;
+    [Tooltip("The plunge's bounce (u/s up) when the dive hits something.")] [Min(0)] public float plungeBounce=9;
     [Header("Feedback hooks")]
     [Range(0,.1f)] public float hitStop=.025f;
     [Range(0,1)] public float cameraShake=.025f,rumble=.1f;

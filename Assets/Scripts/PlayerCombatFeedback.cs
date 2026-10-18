@@ -49,6 +49,7 @@ public sealed class PlayerCombatFeedback : MonoBehaviour
         if(kind==WeaponKind.Mace&&hit.Response.Damage>0f)Sfx.Play("Combat_HitStop_Heavy",at);
         if(stoppedExecution!=hit.ExecutionId){stoppedExecution=hit.ExecutionId;combat.RequestHitStop(attack.hitStop);}
         if(hit.Response.Killed)HitStop.Freeze(HitStop.EnemyKilled);
+        else if(attack.hitFreeze>0f)HitStop.Freeze(attack.hitFreeze);
         else if(WeaponKinds.Of(hit.Hit)==WeaponKind.Mace)HitStop.Freeze(HitStop.HeavyHit);
         if(attack.hitSound!=null)audioSource.PlayOneShot(attack.hitSound,.4f);
         if(attack.impactEffect!=null)Destroy(Instantiate(attack.impactEffect,hit.Hit.Point,Quaternion.identity),2);

@@ -49,7 +49,7 @@ public sealed class PlayerHealth : MonoBehaviour
     // Ignored while invulnerable after a previous hit.
     public void TakeDamage(Vector2 source, Vector2 push)
     {
-        if (!isActiveAndEnabled || !movement.isActiveAndEnabled || Time.time < protectedUntil) return;
+        if (!isActiveAndEnabled || !movement.isActiveAndEnabled || Time.time < protectedUntil || movement.Untouchable) return;
         health--;
         protectedUntil = Time.time + invulnerabilityTime;
         Sfx.Play(health <= 0 ? "Qori_Death" : "Qori_Hurt");

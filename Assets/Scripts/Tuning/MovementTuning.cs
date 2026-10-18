@@ -18,6 +18,9 @@ public sealed class MovementTuning : ScriptableObject
     [Min(0f)] public float jumpSpeed = 12f;
     [Min(0f)] public float coyoteTime = .12f;
     [Min(0f)] public float jumpBufferTime = .12f;
+    [Tooltip("A second jump in mid-air (the flip), once until Qori lands, grabs a wall, a ledge or the thread. Held, it opens the Glidecap on the way down.")]
+    public bool doubleJump = true;
+    [Tooltip("The double jump's upward speed (the first jump's is jumpSpeed).")] [Min(0f)] public float doubleJumpSpeed = 11f;
     [Tooltip("Rising speed kept when Jump is released early.")] [Range(.1f, 1f)] public float jumpReleaseMultiplier = .5f;
     [Min(1f)] public float maximumFallSpeed = 22f;
     [Tooltip("Gravity multiplier while falling: a quicker, weightier fall than the rise.")] [Min(1f)] public float fallGravityMultiplier = 1.7f;
@@ -34,6 +37,13 @@ public sealed class MovementTuning : ScriptableObject
     [Min(1f)] public float dashSpeed = 19f;
     [Min(.02f)] public float dashSeconds = .16f;
     [Tooltip("Rest after a dash before the next can start.")] [Min(0f)] public float dashCooldown = .3f;
+
+    [Header("Evade (the dodge: Shift / Y)")]
+    [Tooltip("A quick dash along the ground that can't be hurt and passes through enemies (not the Shellback, whose stone shell stops it). Ground only.")]
+    [Min(1f)] public float evadeSpeed = 13f;
+    [Min(.05f)] public float evadeSeconds = .26f;
+    [Tooltip("Rest after an evade before the next can start.")] [Min(0f)] public float evadeCooldown = .45f;
+    [Tooltip("Seconds Qori stays untouchable after the evade ends (a little grace for the way out of an enemy).")] [Min(0f)] public float evadeGrace = .08f;
 
     [Header("Glidecap")]
     [Min(.1f)] public float glideFallSpeed = 1.8f;

@@ -11,6 +11,8 @@ public sealed class QoriFx : MonoBehaviour
     int landing, reset, dash; float nextRunDust, nextScrape, dashEndedAt = float.NegativeInfinity; bool wasRunning, wasDashing;
     SpriteRenderer trail; Vector2 trailFrom, trailTo;
     const float TrailHeight = .55f, TrailFade = .22f;
+    [Tooltip("Dust, the dash gust and trail, the wall scrape. Off for drawn frame-by-frame Qori, whose frames carry their own; hit sparks stay.")]
+    public bool movementEffects = true;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void Register()
@@ -77,6 +79,7 @@ public sealed class QoriFx : MonoBehaviour
     {
         var lib = Fx.Library; if (lib == null) return;
         if (reset != movement.ResetVersion) { reset = movement.ResetVersion; landing = movement.LandingVersion; dash = movement.DashVersion; return; }
+        if (!movementEffects) { landing = movement.LandingVersion; dash = movement.DashVersion; wasRunning = false; if (trail != null) trail.enabled = false; return; }
         Dash(lib);
         if (landing != movement.LandingVersion)
         {

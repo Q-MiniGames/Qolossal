@@ -10,6 +10,11 @@ public sealed class ThornwingEnemy : EnemyBase
 
     enum State { Hover, Telegraph, Dive, Return }
     State state; float since, nextDive; Vector2 home, diveDirection, velocity; float facing = -1f, flap;
+    // For drawn frame-by-frame animation: what it is doing, for how long, and which way it faces.
+    public string AnimPhase => state.ToString();
+    public float AnimTime => Time.time - since;
+    public float AnimFacing => facing;
+    public Vector2 DiveDirection => diveDirection;
 
     protected override void Awake()
     {

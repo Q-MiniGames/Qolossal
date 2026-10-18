@@ -2,19 +2,32 @@ using UnityEngine;
 
 // Bark Sentinel (E-08, A2): a heavy guard behind a woven bark shield. It paces its post and turns
 // to keep the shield toward Qori. Hits on the shield bounce off, except the spear, which pierces
-// the weave; hits from behind or from above (a downward strike) always land. When Qori is close
-// in front, it draws the shield back (the cue: a glint) and bashes forward. Touching it hurts.
+// the weave; hits from behind or from above (a downward strike) always land. When Qori is in
+// reach in front, it draws its spear back behind the shield (the cue: a glint) and thrusts it out
+// past the shield (16 Oct, the user: the attack is the spear, not a shield bash): the spear hurts
+// along its reach while thrust out. Touching the Sentinel itself hurts too.
 [RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D))]
 public sealed class SentinelEnemy : EnemyBase
 {
     [SerializeField] float patrolSpeed = .7f, patrolHalfWidth = 2f, watchRange = 6f, bashRange = 1.9f;
     [SerializeField] float telegraphTime = .5f, bashTime = .25f, recoverTime = .7f, bashDistance = .9f;
+    [Tooltip("How far the thrust spear reaches past the Sentinel's front (world units), and the height it is held at.")]
+    [SerializeField] float thrustReach = 2.2f, spearHeight = 1.05f;
+    Transform spear;
 
     enum State { Patrol, Guard, Telegraph, Bash, Recover }
     State state; float since, centreX, facing = -1f, direction = -1f, phase, blockedShakeUntil;
     ContactFilter2D ground; readonly RaycastHit2D[] hits = new RaycastHit2D[4];
 
     public float Facing => facing;
+    // The spear hurts while thrust out: the thrust itself and the first part of the recovery.
+    public bool SpearOut => IsAlive && (state == State.Bash || state == State.Recover && Time.time - since < .2f);
+    // For drawn frame-by-frame animation: what it is doing, for how long, its timings and walking speed.
+    public string AnimPhase => state.ToString();
+    public float AnimTime => Time.time - since;
+    public float TelegraphTime => telegraphTime;
+    public float ThrustTime => bashTime;
+    public float WalkSpeed => body != null ? Mathf.Abs(body.linearVelocity.x) : 0f;
 
     protected override void Awake()
     {
@@ -24,6 +37,11 @@ public sealed class SentinelEnemy : EnemyBase
         body.interpolation = RigidbodyInterpolation2D.Interpolate;
         centreX = body.position.x;
         ground = new ContactFilter2D(); ground.SetLayerMask(GroundLayer.Mask); ground.useTriggers = false;
+        // the spear's reach: a thin trigger in front, hurting only while it is thrust out
+        var s = new GameObject("Spear (hurts in the thrust)"); s.transform.SetParent(transform, false);
+        var box = s.AddComponent<BoxCollider2D>(); box.isTrigger = true; box.size = new Vector2(thrustReach, .35f);
+        s.AddComponent<SentinelSpear>();
+        spear = s.transform;
     }
 
     float nextStep;
@@ -107,5 +125,13 @@ public sealed class SentinelEnemy : EnemyBase
         float shake = Time.time < blockedShakeUntil ? Mathf.Sin(Time.time * 90f) * .02f : 0f;
         rig.Pose("Body", -6f * draw + 8f * thrust + Mathf.Sin(Time.time * 1.6f) * 1f, new Vector2(shake, 0f));
         rig.Pose("Head", state == State.Guard ? 4f : 0f);
+    }
+
+    void Update()
+    {
+        if (spear == null) return;
+        var b = GetComponent<Collider2D>();
+        float front = b != null ? b.bounds.extents.x : .55f;
+        spear.position = (Vector2)transform.position + new Vector2(facing * (front + thrustReach * .5f), spearHeight);
     }
 }

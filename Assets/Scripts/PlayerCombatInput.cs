@@ -16,9 +16,12 @@ public sealed class PlayerCombatInput : MonoBehaviour
     void OnEnable()=>attack.Enable();
     void OnDisable()=>attack.Disable();
     void OnDestroy()=>attack.Dispose();
+    float heldFor;
     void Update()
     {
-        if(GamePauseMenu.BlocksGameplayInput||QoriArmory.BlocksAttackInput||Time.timeScale<=0||!attack.WasPressedThisFrame())return;
+        if(GamePauseMenu.BlocksGameplayInput||QoriArmory.BlocksAttackInput||Time.timeScale<=0){combat.EndCharge();return;}
+        if(!attack.WasPressedThisFrame()){Hold();return;}
+        heldFor=0;
         Keyboard key=Keyboard.current;Gamepad pad=Gamepad.current;
         bool up=key!=null&&(key.wKey.isPressed||key.upArrowKey.isPressed);
         bool down=key!=null&&(key.sKey.isPressed||key.downArrowKey.isPressed);
@@ -29,7 +32,24 @@ public sealed class PlayerCombatInput : MonoBehaviour
         if(rig==null)rig=GetComponentInChildren<QoriBodyRig>();
         float neutralFacing=rig!=null&&rig.BodyActive&&rig.Swing!=null&&rig.Swing.PreserveReleaseFacing?rig.VisualFacing:movement.FacingDirection;
         float facing=Mathf.Abs(horizontal)>.2f?Mathf.Sign(horizontal):neutralFacing;
+        // Attacking after a run-up (running is the normal pace, so it needs half a second of it) is the weapon's lunge
+        // (if it has one), unless a combo is under way.
+        bool sprint=aim==AttackAim.Front&&movement.IsGrounded&&movement.RunningFor>=.5f&&!combat.IsAttackPoseActive;
+        if(sprint&&combat.RequestAttack(new AttackRequest(aim,facing,CombatMoveSlot.Dash)))return;
         combat.RequestAttack(new AttackRequest(aim,facing,CombatMoveSlot.Front));
+    }
+    // Holding attack: once the press's own swing is over and the hold has lasted the delay, Qori charges (feet
+    // planted); letting go after the charge time releases the charged move, sooner lets the charge drop.
+    void Hold()
+    {
+        if(!attack.IsPressed())
+        {
+            if(combat.IsCharging){bool ready=combat.ChargeReady;combat.EndCharge();if(ready)combat.RequestAttack(new AttackRequest(AttackAim.Front,movement.FacingDirection,CombatMoveSlot.Charged));}
+            heldFor=0;return;
+        }
+        heldFor+=Time.deltaTime;
+        if(combat.IsCharging){if(!movement.IsGrounded)combat.EndCharge();return;}
+        if(!combat.IsAttackPoseActive&&!combat.HasBufferedAttack&&heldFor>=WeaponTuning.Current.staffChargeDelay)combat.BeginCharge();
     }
 }
 
