@@ -41,7 +41,7 @@ public sealed class CreatureRig : MonoBehaviour
     // Sets a bone to its rest pose plus an extra rotation (degrees), offset and scale.
     public void Pose(string name, float degrees, Vector2 offset = default, Vector2? scale = null)
     {
-        Transform b = Bone(name); if (b == null) return;
+        Transform b = Bone(name); if (b == null || !restRotation.ContainsKey(name)) return;   // rest pose not read yet (or no such bone)
         b.localRotation = restRotation[name] * Quaternion.Euler(0f, 0f, degrees);
         b.localPosition = restPosition[name] + (Vector3)offset;
         Vector3 s = restScale[name]; Vector2 k = scale ?? Vector2.one;
