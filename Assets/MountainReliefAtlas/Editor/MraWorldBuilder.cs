@@ -814,8 +814,12 @@ public static partial class MraWorldBuilder
     static void DepthLayers(Transform root, Camera camera, Region r, Vector2 climb, System.Func<float, Color> hazeTo)
     {
         var set = DepthSets[r.id];
-        DepthLayer(root, camera, climb, $"Far - {set.far} (depth 25)", Art($"Backgrounds/{set.far}"), null, 10f, FarDepth, -3.8f, -105, Color.white, 14f, true, ClimbSink(FarDepth));
-        if (r.id == "MR03")
+        // The Terraces' native 4K stack (Batch 28d) replaces the sky and the Far/Mid/Near set when present.
+        bool terraces4K = r.id == "MR03" && MraTerraces4K.Available;
+        if (terraces4K) { MraTerraces4K.RemoveOld(root); MraTerraces4K.Apply(root, camera, climb); }
+        if (!terraces4K)
+            DepthLayer(root, camera, climb, $"Far - {set.far} (depth 25)", Art($"Backgrounds/{set.far}"), null, 10f, FarDepth, -3.8f, -105, Color.white, 14f, true, ClimbSink(FarDepth));
+        if (r.id == "MR03" && !terraces4K)
         {
             Vector2 ridge = Pos(r.NodeById("MR03_N07"));
             var mill = DepthLayer(root, camera, climb, "Landmark - BG_Terraces_Mill_Landmark (depth 14)", Art("Backgrounds/BG_Terraces_Mill_Landmark"), null, 2.8f, MillDepth, .2f, -97, hazeTo(.18f), 0f, false, ClimbSink(MillDepth));
@@ -830,6 +834,7 @@ public static partial class MraWorldBuilder
     // sits on the bench. It fades in over 1.4 s as the seated camera eases out and the street's layers
     // fade under it (SeatedVistaFade). Composed for the street's size 5 as 10 u from the frame's bottom,
     // so at the seated size 6.2 it fills the frame's height, and its 35 u width covers the frame and
+        if (terraces4K) return;
     // the camera's travel. Centred on the seated frame (the bench, 7 u past MR04_N09; MraTownBuilder).
     static void OverlookVista(Transform root, Camera camera, Region r)
     {

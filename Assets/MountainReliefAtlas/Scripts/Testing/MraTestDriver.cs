@@ -477,7 +477,7 @@ public sealed partial class MraTestDriver : MonoBehaviour
             Expect(Mathf.Abs(arch.bounds.min.y - g) < .5f, $"MR01: the arch stands on the ground (base {arch.bounds.min.y:F2}, ground {g:F2})");
         }
 
-        // Parallax: standing, then jumping and landing in place: the layers hold their place on screen.
+        // Parallax: standing, then jumping and landing in place: the layers barely move on screen.
         var layers = FindObjectsByType<ParallaxLayer>(FindObjectsSortMode.None).Where(l => l.climbProgression).ToList();
         Expect(layers.Count >= 3, $"MR01: {layers.Count} background layers on the climb progression");
         var n0 = W.RegionById("MR01").NodeById("MR01_N01");
@@ -501,8 +501,8 @@ public sealed partial class MraTestDriver : MonoBehaviour
         }
         Press();
         Expect(standDrift < .01f, $"parallax: standing still, the layers don't move on screen ({standDrift:F3} u)");
-        Expect(jumpDrift < .06f, $"parallax: jumping and landing (camera moved {camMove:F2} u), the layers hold their place on screen ({jumpDrift:F3} u)");
-        // A sustained climb: every layer sinks a little, the near ones most, in depth order.
+        Expect(jumpDrift < .25f, $"parallax: jumping and landing (camera moved {camMove:F2} u), the layers barely move on screen ({jumpDrift:F3} u)");
+        // A sustained climb: real vertical parallax, every layer sinks by its depth, the near ones most.
         var region = W.RegionById("MR01");
         var top = region.nodes.OrderByDescending(n => n.position.y).First();
         var before = layers.ToDictionary(l => l, Rel);
@@ -511,7 +511,8 @@ public sealed partial class MraTestDriver : MonoBehaviour
         var sunk = layers.ToDictionary(l => l, l => before[l] - Rel(l));
         var near = layers.OrderByDescending(l => l.sortingOrder).First(); var far = layers.OrderBy(l => l.sortingOrder).First();
         Expect(sunk.Values.All(v => v > -.01f) && sunk[near] >= sunk[far] - .01f, $"parallax: after climbing the layers sink in depth order (near {sunk[near]:F2} u, far {sunk[far]:F2} u)");
-        Expect(sunk.Values.All(v => v < 1.3f), "parallax: the sinking is bounded (" + string.Join(", ", sunk.Values.Select(v => v.ToString("F2"))) + ")");
+        Expect(sunk[near] > 2f && sunk[near] > sunk[far] * 3f, $"parallax: the climb is felt, the near layer sinks well past the far one (near {sunk[near]:F2} u, far {sunk[far]:F2} u)");
+        Expect(sunk.Values.All(v => v < 40f) && sunk[far] <= 3.01f, "parallax: the far layer keeps its skyline in view (" + string.Join(", ", sunk.Values.Select(v => v.ToString("F2"))) + ")");
 
         // Crossing into the Causeway: the arrival names it once; back and forth again shows nothing new.
         // (Earlier parts of the run travelled here; the 90 s memory starts clean for this check.)

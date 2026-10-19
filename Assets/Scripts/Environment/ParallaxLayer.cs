@@ -8,10 +8,18 @@ using UnityEngine;
 // and `tint` multiplies the painting (atmospheric haze toward the sky on the far layers).
 //
 // Climb progression (optional): instead of following the camera at its own vertical rate, a layer
-// sits at a fixed height on screen (`baseY` is then its bottom relative to the camera centre) and
-// sinks by `climbShift` as the camera climbs through `climbRange`, measured on a slowly smoothed
-// camera height shared by every layer. Jumps, landings and the camera's framing leads don't move
-// it; a sustained climb lowers the near layers more than the far ones, in a fixed depth order.
+// is placed relative to the camera centre (`baseY` is then its bottom when the camera stands at the
+// bottom of `climbRange`) and sinks as the camera climbs, measured on a smoothed camera height
+// shared by every layer, so a single jump or landing barely moves it.
+// Real vertical parallax (`verticalRate` > 0, the default): a layer behind the terrain sinks at the
+// rate its distance gives it, `verticalRate` / depth of the climb (the terrain moves 1), so the
+// near hills drop toward the frame's bottom while the far peaks sink slowly; on a climb longer than
+// `climbBudget` the rate is slowed so the paintings last the whole region. Without a
+// depth, the distance comes from the horizontal follow (follow.x .9: 10). `sinkLimit` bounds the
+// sinking (u at composedForSize); below 0 it is automatic: the farthest planes (depth 20 and over)
+// and the depthless painting stop at 3 u so a skyline stays in view, nearer planes may leave.
+// Planes in front of the terrain (depth < 1) and `verticalRate` 0 keep the earlier, gentle mode:
+// they sink by `climbShift` across `climbRange` and hold their place otherwise.
 // Layers run after the camera (execution order), so they never lag it by a frame.
 //
 // Depth (optional, `depth` > 0): the layer's distance from the camera relative to the gameplay
@@ -34,7 +42,13 @@ public sealed class ParallaxLayer : MonoBehaviour
     [Min(0f)] public float composedForSize;
     [Tooltip("Hold a fixed height on screen and sink by climbShift across climbRange (see the class notes).")] public bool climbProgression;
     [Tooltip("The camera heights (world y) the climb runs between.")] public Vector2 climbRange = new Vector2(0f, 100f);
-    [Tooltip("How far the layer sinks on screen from the bottom of the climb to its top (u, at composedForSize).")] public float climbShift;
+    [Tooltip("How far the layer sinks on screen from the bottom of the climb to its top (u, at composedForSize); the gentle mode only.")] public float climbShift;
+    [Tooltip("Real vertical parallax: the share of 1 / depth the layer sinks per unit climbed (1: as a real camera). 0: the gentle climbShift mode.")]
+    [Min(0f)] public float verticalRate = 1f;
+    [Tooltip("The most the layer sinks with real vertical parallax (u at composedForSize); below 0: automatic (see the class notes).")]
+    public float sinkLimit = -1f;
+    [Tooltip("Real vertical parallax over a long climb: a plane at depth d sinks at most climbBudget / d across climbRange (0: no fitting).")]
+    [Min(0f)] public float climbBudget = 35f;
     [Tooltip("Layer height in world units; 0 uses the sprite's own size.")] [Min(0f)] public float height;
     public bool repeat = true;
     [Tooltip("Share of the camera's movement the layer copies, per axis.")] public Vector2 follow = new Vector2(.8f, .8f);
@@ -66,6 +80,19 @@ public sealed class ParallaxLayer : MonoBehaviour
     // The layer's size multiplier for a zoom of k (the view's size over composedForSize): k for an
     // infinitely far layer (it holds its size on screen), 1 for the terrain (world-fixed).
     float ZoomScale(float k) => depth > 0f ? k * depth / (depth + k - 1f) : k;
+
+    // Real vertical parallax applies to planes behind the terrain.
+    bool RealVertical => verticalRate > 0f && (depth >= 1f || depth <= 0f && FollowX < 1f);
+    float VerticalDepth => depth > 0f ? depth : 1f / Mathf.Max(.01f, 1f - FollowX);
+    float SinkLimit => sinkLimit >= 0f ? sinkLimit : depth > 0f && depth < 20f ? float.PositiveInfinity : 3f;
+
+    /// <summary>How far the layer has sunk on screen with the camera (smoothed) at height y.</summary>
+    public float Sink(float y) => RealVertical ? Mathf.Clamp((y - climbRange.x) * verticalRate * ClimbFit / VerticalDepth, 0f, SinkLimit) : 0f;
+
+    // A long climb would carry the paintings out of the frame early; the rate is then slowed so a
+    // plane at depth d sinks at most climbBudget / d over the whole climb (the near hills, depth 5,
+    // 7 u: down to the frame's bottom at the top of the region), keeping the depth ratios.
+    float ClimbFit => climbBudget > 0f ? Mathf.Min(1f, climbBudget / Mathf.Max(1f, climbRange.y - climbRange.x)) : 1f;
 
     private void OnEnable()
     {
@@ -130,7 +157,9 @@ public sealed class ParallaxLayer : MonoBehaviour
         k = ZoomScale(k);
         float h = Height * k, w = Width * k;
         float y;
-        if (climbProgression)
+        if (climbProgression && RealVertical)
+            y = cam.y + (baseY - Sink(ClimbHeight(view))) * k;
+        else if (climbProgression)
         {
             float t = Mathf.InverseLerp(climbRange.x, climbRange.y, ClimbHeight(view));
             y = cam.y + (baseY - climbShift * (t - .5f)) * k;
@@ -174,9 +203,13 @@ public sealed class ParallaxLayer : MonoBehaviour
         bandMesh.RecalculateBounds();
     }
 
-    // The camera's height, smoothed over a couple of seconds (once per frame, shared by all layers);
+    // The camera's height, smoothed over about a second (once per frame, shared by all layers): a
+    // climb moves the layers with it, a single jump hardly does;
     // outside Play mode (editor views, captures) the camera's own height.
     static float climbHeight, climbVelocity; static int climbFrame = -1; static Camera climbCamera;
+    /// <summary>The smoothed camera height the climb layers sink by (for fades tied to the same climb).</summary>
+    public static float SmoothedClimbHeight(Camera view) => ClimbHeight(view);
+
     static float ClimbHeight(Camera view)
     {
         float y = view.transform.position.y;
@@ -185,7 +218,7 @@ public sealed class ParallaxLayer : MonoBehaviour
         else if (climbFrame != Time.frameCount)
         {
             climbFrame = Time.frameCount;
-            climbHeight = Mathf.SmoothDamp(climbHeight, y, ref climbVelocity, 2.2f, Mathf.Infinity, Time.unscaledDeltaTime);
+            climbHeight = Mathf.SmoothDamp(climbHeight, y, ref climbVelocity, 1f, Mathf.Infinity, Time.unscaledDeltaTime);
         }
         return climbHeight;
     }
