@@ -16,6 +16,23 @@ public sealed class FeedbackTuning : ScriptableObject
     [Range(0f, .5f)] public float guardianKilled = .2f;
     [Tooltip("Rest after a freeze before another can start, so a flurry of hits doesn't stutter.")] [Range(0f, .5f)] public float hitStopCooldown = .08f;
 
+    [Header("A creature taking a hit")]
+    [Tooltip("How long its art blinks white (seconds, real time). 0 turns it off.")] [Range(0f, .3f)] public float hitFlashSeconds = .09f;
+    [Tooltip("How far its art squashes on a hit (0 = off; .2 = 20%).")] [Range(0f, .5f)] public float hitSquash = .2f;
+    [Tooltip("How long the squash takes to spring back (seconds).")] [Range(.02f, .5f)] public float hitSquashSeconds = .22f;
+    [Tooltip("How fast a hit pushes an underground creature (u/s, fading over hitPushSeconds). Rooted creatures don't move.")] [Range(0f, 20f)] public float hitPushSpeed = 6f;
+    [Range(.02f, .5f)] public float hitPushSeconds = .14f;
+    [Tooltip("Leaves knocked loose per hit.")] [Range(0, 12)] public int hitLeaves = 3;
+    [Tooltip("Camera shake when a creature dies.")] [Range(0f, .3f)] public float killShake = .12f;
+    [Tooltip("A hit on a boss's weak point: its own whole-game freeze and camera shake.")] [Range(0f, .3f)] public float weakPointFreeze = .06f;
+    [Range(0f, .3f)] public float weakPointShake = .1f;
+    [Tooltip("A boss entering a new phase: whole-game freeze.")] [Range(0f, .5f)] public float bossPhaseFreeze = .18f;
+
+    [Header("Health bars")]
+    [Tooltip("How long a regular creature's bar stays up after a hit (seconds). 0 turns the bars off.")] [Min(0f)] public float healthBarHoldSeconds = 2.5f;
+    [Tooltip("How long the pale chip waits before it follows the health down (seconds).")] [Min(0f)] public float healthBarChipDelay = .3f;
+    [Tooltip("How fast the chip falls (fraction of the bar per second).")] [Min(.01f)] public float healthBarChipSpeed = 1.2f;
+
     [Header("Camera shake (strength = peak offset in world units of one shake alone)")]
     [Range(0f, .3f)] public float qoriHurtShake = .1f;
     [Range(0f, .3f)] public float guardianSlamShake = .12f;

@@ -1,0 +1,73 @@
+{
+ "id": "E-11",
+ "pivot": "feet",
+ "heightUnits": 1.1,
+ "canvas": [
+  680,
+  484
+ ],
+ "pivotPx": [
+  341.2,
+  398.6
+ ],
+ "figureHeightPx": 285.0,
+ "figureWidthPx": 636.0,
+ "segments": {
+  "Walk": {
+   "clip": "Scuttle and guard",
+   "frames": [
+    0,
+    18
+   ],
+   "scale": 1.0
+  },
+  "Guard": {
+   "clip": "Scuttle and guard",
+   "frames": [
+    22,
+    36
+   ],
+   "scale": 1.0
+  },
+  "Warn": {
+   "clip": "Claw snap",
+   "frames": [
+    0,
+    10
+   ],
+   "scale": 1.0025
+  },
+  "Attack": {
+   "clip": "Claw snap",
+   "frames": [
+    10,
+    20
+   ],
+   "scale": 1.0025
+  },
+  "Recover": {
+   "clip": "Claw snap",
+   "frames": [
+    20,
+    36
+   ],
+   "scale": 1.0025
+  },
+  "Hurt": {
+   "clip": "Hurt and death",
+   "frames": [
+    0,
+    6
+   ],
+   "scale": 1.0067
+  },
+  "Death": {
+   "clip": "Hurt and death",
+   "frames": [
+    6,
+    36
+   ],
+   "scale": 1.0067
+  }
+ }
+}

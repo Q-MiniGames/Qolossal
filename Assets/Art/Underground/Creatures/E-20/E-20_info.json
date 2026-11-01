@@ -1,0 +1,65 @@
+{
+ "id": "E-20",
+ "pivot": "feet",
+ "heightUnits": 1.5,
+ "canvas": [
+  549,
+  439
+ ],
+ "pivotPx": [
+  242.4,
+  394.0
+ ],
+ "figureHeightPx": 291.0,
+ "figureWidthPx": 380.0,
+ "segments": {
+  "Dormant": {
+   "clip": "Wake",
+   "frames": [
+    0,
+    1
+   ],
+   "scale": 1.0
+  },
+  "Warn": {
+   "clip": "Wake",
+   "frames": [
+    0,
+    36
+   ],
+   "scale": 1.0
+  },
+  "Attack": {
+   "clip": "Lunge",
+   "frames": [
+    0,
+    18
+   ],
+   "scale": 0.766
+  },
+  "Vulnerable": {
+   "clip": "Lunge",
+   "frames": [
+    18,
+    36
+   ],
+   "scale": 0.766
+  },
+  "Hurt": {
+   "clip": "Crumble",
+   "frames": [
+    0,
+    4
+   ],
+   "scale": 0.8294
+  },
+  "Death": {
+   "clip": "Crumble",
+   "frames": [
+    0,
+    36
+   ],
+   "scale": 0.8294
+  }
+ }
+}

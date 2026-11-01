@@ -1,0 +1,3695 @@
+{
+ "source": "../../../Assets/Scenes/Game/Qolossal_Underground.unity",
+ "rooms": {
+  "A01": {
+   "id": "A01",
+   "name": "Sluice Arrival",
+   "kind": "arrival",
+   "group": "A",
+   "x": 1480,
+   "y": 170,
+   "w": 36,
+   "h": 22,
+   "doors": [
+    {
+     "link": "A01_A02_main",
+     "to": "A02",
+     "side": "R",
+     "width": 4,
+     "sill": 8.0,
+     "at": 36
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Return to",
+     "name": "Return to Qvale",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Sluice Arrival",
+     "x": 13.68,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:A01",
+     "x": 1.8,
+     "y": 0.66
+    }
+   ]
+  },
+  "A02": {
+   "id": "A02",
+   "name": "Drain Well",
+   "kind": "shaft",
+   "group": "A",
+   "x": 1528,
+   "y": 126,
+   "w": 16,
+   "h": 60,
+   "doors": [
+    {
+     "link": "A01_A02_main",
+     "to": "A01",
+     "side": "L",
+     "width": 4,
+     "sill": 52.0,
+     "at": 0
+    },
+    {
+     "link": "A02_A03_main",
+     "to": "A03",
+     "side": "B",
+     "width": 4,
+     "x0": 4.0,
+     "x1": 8.0,
+     "at": 0
+    },
+    {
+     "link": "A06_A02_shortcut",
+     "to": "A06",
+     "side": "R",
+     "width": 4,
+     "sill": 46.0,
+     "at": 16
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:A02",
+     "x": 6.08,
+     "y": 37.06
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Drain Well",
+     "x": 6.08,
+     "y": 36.86
+    }
+   ]
+  },
+  "A03": {
+   "id": "A03",
+   "name": "Silt Walk",
+   "kind": "hall",
+   "group": "A",
+   "x": 1490,
+   "y": 102,
+   "w": 48,
+   "h": 12,
+   "doors": [
+    {
+     "link": "A02_A03_main",
+     "to": "A02",
+     "side": "T",
+     "width": 4,
+     "x0": 42.0,
+     "x1": 46.0,
+     "at": 12
+    },
+    {
+     "link": "A03_A04_main",
+     "to": "A04",
+     "side": "R",
+     "width": 4,
+     "sill": 4.0,
+     "at": 48
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:A03",
+     "x": 22.08,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Silt Walk",
+     "x": 22.08,
+     "y": 0.46
+    }
+   ]
+  },
+  "A04": {
+   "id": "A04",
+   "name": "Cistern Court",
+   "kind": "landmark",
+   "group": "A",
+   "x": 1552,
+   "y": 84,
+   "w": 64,
+   "h": 36,
+   "doors": [
+    {
+     "link": "A03_A04_main",
+     "to": "A03",
+     "side": "L",
+     "width": 4,
+     "sill": 22.0,
+     "at": 0
+    },
+    {
+     "link": "A04_A05_main",
+     "to": "A05",
+     "side": "R",
+     "width": 4,
+     "sill": 22.0,
+     "at": 64
+    },
+    {
+     "link": "A04_A09_optional",
+     "to": "A09",
+     "side": "B",
+     "width": 3,
+     "x0": 14.5,
+     "x1": 17.5,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:A04",
+     "x": 24.32,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Cistern Court",
+     "x": 24.32,
+     "y": 0.46
+    }
+   ]
+  },
+  "A05": {
+   "id": "A05",
+   "name": "Spillway Rise",
+   "kind": "shaft",
+   "group": "A",
+   "x": 1628,
+   "y": 92,
+   "w": 16,
+   "h": 48,
+   "doors": [
+    {
+     "link": "A04_A05_main",
+     "to": "A04",
+     "side": "L",
+     "width": 4,
+     "sill": 14.0,
+     "at": 0
+    },
+    {
+     "link": "A05_A06_main",
+     "to": "A06",
+     "side": "T",
+     "width": 4,
+     "x0": 6.0,
+     "x1": 10.0,
+     "at": 48
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:A05",
+     "x": 6.08,
+     "y": 3.46
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Spillway Rise",
+     "x": 6.08,
+     "y": 3.26
+    }
+   ]
+  },
+  "A06": {
+   "id": "A06",
+   "name": "Pump Gallery",
+   "kind": "trial",
+   "group": "A",
+   "x": 1554,
+   "y": 154,
+   "w": 60,
+   "h": 32,
+   "doors": [
+    {
+     "link": "A05_A06_main",
+     "to": "A05",
+     "side": "R",
+     "width": 4,
+     "sill": 6.0,
+     "at": 60
+    },
+    {
+     "link": "A06_A07_main",
+     "to": "A07",
+     "side": "R",
+     "width": 4,
+     "sill": 22.0,
+     "at": 60
+    },
+    {
+     "link": "A06_A02_shortcut",
+     "to": "A02",
+     "side": "L",
+     "width": 4,
+     "sill": 18.0,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Pump Gallery",
+     "x": 22.8,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:A06",
+     "x": 22.8,
+     "y": 0.66
+    }
+   ]
+  },
+  "A07": {
+   "id": "A07",
+   "name": "Keeper Refuge",
+   "kind": "refuge",
+   "group": "A",
+   "x": 1628,
+   "y": 170,
+   "w": 42,
+   "h": 14,
+   "doors": [
+    {
+     "link": "A06_A07_main",
+     "to": "A06",
+     "side": "L",
+     "width": 4,
+     "sill": 6.0,
+     "at": 0
+    },
+    {
+     "link": "A07_A08_main",
+     "to": "A08",
+     "side": "R",
+     "width": 4,
+     "sill": 6.0,
+     "at": 42
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Keeper Refuge",
+     "x": 15.96,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:A07",
+     "x": 15.96,
+     "y": 0.66
+    }
+   ]
+  },
+  "A08": {
+   "id": "A08",
+   "name": "Sluice Guardian Arena",
+   "kind": "boss",
+   "group": "A",
+   "x": 1684,
+   "y": 168,
+   "w": 52,
+   "h": 28,
+   "doors": [
+    {
+     "link": "A07_A08_main",
+     "to": "A07",
+     "side": "L",
+     "width": 4,
+     "sill": 8.0,
+     "at": 0
+    },
+    {
+     "link": "A08_A10_optional",
+     "to": "A10",
+     "side": "B",
+     "width": 3,
+     "x0": 18.5,
+     "x1": 21.5,
+     "at": 0
+    },
+    {
+     "link": "A08_HEART_heart",
+     "to": "HEART",
+     "side": "R",
+     "width": 4,
+     "sill": 14.0,
+     "at": 52
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:A08",
+     "x": 23.92,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Sluice Guardian Arena",
+     "x": 23.92,
+     "y": 0.46
+    }
+   ]
+  },
+  "A09": {
+   "id": "A09",
+   "name": "Settling Cache",
+   "kind": "optional",
+   "group": "A",
+   "x": 1554,
+   "y": 48,
+   "w": 28,
+   "h": 20,
+   "doors": [
+    {
+     "link": "A04_A09_optional",
+     "to": "A04",
+     "side": "T",
+     "width": 3,
+     "x0": 12.5,
+     "x1": 15.5,
+     "at": 20
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:A09",
+     "x": 10.64,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Settling Cache",
+     "x": 10.64,
+     "y": 0.46
+    }
+   ]
+  },
+  "A10": {
+   "id": "A10",
+   "name": "Keeper Archive",
+   "kind": "optional",
+   "group": "A",
+   "x": 1688,
+   "y": 118,
+   "w": 30,
+   "h": 20,
+   "doors": [
+    {
+     "link": "A08_A10_optional",
+     "to": "A08",
+     "side": "T",
+     "width": 3,
+     "x0": 14.5,
+     "x1": 17.5,
+     "at": 20
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:A10",
+     "x": 11.4,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Keeper Archive",
+     "x": 11.4,
+     "y": 0.46
+    }
+   ]
+  },
+  "C01": {
+   "id": "C01",
+   "name": "Garden Arrival",
+   "kind": "arrival",
+   "group": "C",
+   "x": 1546,
+   "y": 330,
+   "w": 36,
+   "h": 24,
+   "doors": [
+    {
+     "link": "C01_C02_main",
+     "to": "C02",
+     "side": "T",
+     "width": 4,
+     "x0": 26.0,
+     "x1": 30.0,
+     "at": 24
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Garden Arrival",
+     "x": 13.68,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:C01",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Ribwood",
+     "x": -2.3,
+     "y": 0.0
+    }
+   ]
+  },
+  "C02": {
+   "id": "C02",
+   "name": "Canopy Walk",
+   "kind": "hall",
+   "group": "C",
+   "x": 1588,
+   "y": 366,
+   "w": 42,
+   "h": 12,
+   "doors": [
+    {
+     "link": "C01_C02_main",
+     "to": "C01",
+     "side": "L",
+     "width": 4,
+     "sill": 4.0,
+     "at": 0
+    },
+    {
+     "link": "C02_C03_main",
+     "to": "C03",
+     "side": "R",
+     "width": 4,
+     "sill": 4.0,
+     "at": 42
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:C02",
+     "x": 15.96,
+     "y": 1.86
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Canopy Walk",
+     "x": 15.96,
+     "y": 1.66
+    }
+   ]
+  },
+  "C03": {
+   "id": "C03",
+   "name": "Root Ladder",
+   "kind": "shaft",
+   "group": "C",
+   "x": 1644,
+   "y": 320,
+   "w": 16,
+   "h": 58,
+   "doors": [
+    {
+     "link": "C02_C03_main",
+     "to": "C02",
+     "side": "L",
+     "width": 4,
+     "sill": 50.0,
+     "at": 0
+    },
+    {
+     "link": "C03_C04_main",
+     "to": "C04",
+     "side": "B",
+     "width": 4,
+     "x0": 6.0,
+     "x1": 10.0,
+     "at": 0
+    },
+    {
+     "link": "C03_C10_optional",
+     "to": "C10",
+     "side": "R",
+     "width": 3,
+     "sill": 30.5,
+     "at": 16
+    },
+    {
+     "link": "C06_C03_shortcut",
+     "to": "C06",
+     "side": "R",
+     "width": 4,
+     "sill": 14.0,
+     "at": 16
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:C03",
+     "x": 6.08,
+     "y": 37.06
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Root Ladder",
+     "x": 6.08,
+     "y": 36.86
+    }
+   ]
+  },
+  "C04": {
+   "id": "C04",
+   "name": "Seed Cradle",
+   "kind": "landmark",
+   "group": "C",
+   "x": 1564,
+   "y": 270,
+   "w": 64,
+   "h": 36,
+   "doors": [
+    {
+     "link": "C03_C04_main",
+     "to": "C03",
+     "side": "T",
+     "width": 4,
+     "x0": 38.0,
+     "x1": 42.0,
+     "at": 36
+    },
+    {
+     "link": "C04_C05_main",
+     "to": "C05",
+     "side": "R",
+     "width": 4,
+     "sill": 14.0,
+     "at": 64
+    },
+    {
+     "link": "C04_C09_optional",
+     "to": "C09",
+     "side": "L",
+     "width": 3,
+     "sill": 22.5,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:C04",
+     "x": 24.32,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Seed Cradle",
+     "x": 24.32,
+     "y": 0.46
+    }
+   ]
+  },
+  "C05": {
+   "id": "C05",
+   "name": "Rootfall Well",
+   "kind": "shaft",
+   "group": "C",
+   "x": 1644,
+   "y": 248,
+   "w": 16,
+   "h": 58,
+   "doors": [
+    {
+     "link": "C04_C05_main",
+     "to": "C04",
+     "side": "L",
+     "width": 4,
+     "sill": 36.0,
+     "at": 0
+    },
+    {
+     "link": "C05_C06_main",
+     "to": "C06",
+     "side": "R",
+     "width": 4,
+     "sill": 10.0,
+     "at": 16
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Rootfall Well",
+     "x": 6.08,
+     "y": 3.26
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:C05",
+     "x": 6.08,
+     "y": 3.46
+    }
+   ]
+  },
+  "C06": {
+   "id": "C06",
+   "name": "Bloom Court",
+   "kind": "trial",
+   "group": "C",
+   "x": 1674,
+   "y": 272,
+   "w": 54,
+   "h": 30,
+   "doors": [
+    {
+     "link": "C05_C06_main",
+     "to": "C05",
+     "side": "B",
+     "width": 4,
+     "x0": 24.0,
+     "x1": 28.0,
+     "at": 0
+    },
+    {
+     "link": "C06_C07_main",
+     "to": "C07",
+     "side": "R",
+     "width": 4,
+     "sill": 12.0,
+     "at": 54
+    },
+    {
+     "link": "C06_C03_shortcut",
+     "to": "C03",
+     "side": "L",
+     "width": 4,
+     "sill": 20.0,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Bloom Court",
+     "x": 20.52,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:C06",
+     "x": 20.52,
+     "y": 0.66
+    }
+   ]
+  },
+  "C07": {
+   "id": "C07",
+   "name": "Gardener Rest",
+   "kind": "refuge",
+   "group": "C",
+   "x": 1742,
+   "y": 278,
+   "w": 28,
+   "h": 16,
+   "doors": [
+    {
+     "link": "C06_C07_main",
+     "to": "C06",
+     "side": "L",
+     "width": 4,
+     "sill": 6.0,
+     "at": 0
+    },
+    {
+     "link": "C07_C08_main",
+     "to": "C08",
+     "side": "B",
+     "width": 4,
+     "x0": 12.0,
+     "x1": 16.0,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:C07",
+     "x": 10.64,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Gardener Rest",
+     "x": 10.64,
+     "y": 0.46
+    }
+   ]
+  },
+  "C08": {
+   "id": "C08",
+   "name": "Root Guardian Arena",
+   "kind": "boss",
+   "group": "C",
+   "x": 1742,
+   "y": 236,
+   "w": 40,
+   "h": 28,
+   "doors": [
+    {
+     "link": "C07_C08_main",
+     "to": "C07",
+     "side": "T",
+     "width": 4,
+     "x0": 12.0,
+     "x1": 16.0,
+     "at": 28
+    },
+    {
+     "link": "C08_HEART_heart",
+     "to": "HEART",
+     "side": "B",
+     "width": 4,
+     "x0": 32.0,
+     "x1": 36.0,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Root Guardian Arena",
+     "x": 15.2,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:C08",
+     "x": 15.2,
+     "y": 0.66
+    }
+   ]
+  },
+  "C09": {
+   "id": "C09",
+   "name": "Hidden Nursery",
+   "kind": "optional",
+   "group": "C",
+   "x": 1490,
+   "y": 286,
+   "w": 44,
+   "h": 26,
+   "doors": [
+    {
+     "link": "C04_C09_optional",
+     "to": "C04",
+     "side": "R",
+     "width": 3,
+     "sill": 6.5,
+     "at": 44
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Hidden Nursery",
+     "x": 16.72,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:C09",
+     "x": 16.72,
+     "y": 0.66
+    }
+   ]
+  },
+  "C10": {
+   "id": "C10",
+   "name": "Hanging Garden",
+   "kind": "optional",
+   "group": "C",
+   "x": 1682,
+   "y": 344,
+   "w": 32,
+   "h": 22,
+   "doors": [
+    {
+     "link": "C03_C10_optional",
+     "to": "C03",
+     "side": "L",
+     "width": 3,
+     "sill": 6.5,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:C10",
+     "x": 12.16,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Hanging Garden",
+     "x": 12.16,
+     "y": 0.46
+    }
+   ]
+  },
+  "D01": {
+   "id": "D01",
+   "name": "Windward Shelter",
+   "kind": "arrival",
+   "group": "D",
+   "x": 2020,
+   "y": 438,
+   "w": 40,
+   "h": 24,
+   "doors": [
+    {
+     "link": "D01_D02_main",
+     "to": "D02",
+     "side": "L",
+     "width": 4,
+     "sill": 10.0,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:D01",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Windward Shelter",
+     "x": 15.2,
+     "y": 0.46
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Windward Heights",
+     "x": -2.3,
+     "y": 0.0
+    }
+   ]
+  },
+  "D02": {
+   "id": "D02",
+   "name": "Leeward Well",
+   "kind": "shaft",
+   "group": "D",
+   "x": 1988,
+   "y": 394,
+   "w": 16,
+   "h": 58,
+   "doors": [
+    {
+     "link": "D01_D02_main",
+     "to": "D01",
+     "side": "R",
+     "width": 4,
+     "sill": 54.0,
+     "at": 16
+    },
+    {
+     "link": "D02_D03_main",
+     "to": "D03",
+     "side": "B",
+     "width": 4,
+     "x0": 6.0,
+     "x1": 10.0,
+     "at": 0
+    },
+    {
+     "link": "D04_D02_shortcut",
+     "to": "D04",
+     "side": "L",
+     "width": 4,
+     "sill": 18.0,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:D02",
+     "x": 6.08,
+     "y": 37.06
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Leeward Well",
+     "x": 6.08,
+     "y": 36.86
+    }
+   ]
+  },
+  "D03": {
+   "id": "D03",
+   "name": "Vane Court",
+   "kind": "trial",
+   "group": "D",
+   "x": 2020,
+   "y": 360,
+   "w": 56,
+   "h": 30,
+   "doors": [
+    {
+     "link": "D02_D03_main",
+     "to": "D02",
+     "side": "L",
+     "width": 4,
+     "sill": 16.0,
+     "at": 0
+    },
+    {
+     "link": "D03_D04_main",
+     "to": "D04",
+     "side": "B",
+     "width": 4,
+     "x0": 26.0,
+     "x1": 30.0,
+     "at": 0
+    },
+    {
+     "link": "D03_D09_optional",
+     "to": "D09",
+     "side": "R",
+     "width": 3,
+     "sill": 16.5,
+     "at": 56
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Vane Court",
+     "x": 21.28,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:D03",
+     "x": 21.28,
+     "y": 0.66
+    }
+   ]
+  },
+  "D04": {
+   "id": "D04",
+   "name": "Wind Bridge",
+   "kind": "hall",
+   "group": "D",
+   "x": 1958,
+   "y": 340,
+   "w": 44,
+   "h": 12,
+   "doors": [
+    {
+     "link": "D03_D04_main",
+     "to": "D03",
+     "side": "R",
+     "width": 4,
+     "sill": 4.0,
+     "at": 44
+    },
+    {
+     "link": "D04_D05_main",
+     "to": "D05",
+     "side": "L",
+     "width": 4,
+     "sill": 4.0,
+     "at": 0
+    },
+    {
+     "link": "D04_D02_shortcut",
+     "to": "D02",
+     "side": "T",
+     "width": 4,
+     "x0": 20.0,
+     "x1": 24.0,
+     "at": 12
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Wind Bridge",
+     "x": 16.72,
+     "y": 1.66
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:D04",
+     "x": 16.72,
+     "y": 1.86
+    }
+   ]
+  },
+  "D05": {
+   "id": "D05",
+   "name": "Updraft Hall",
+   "kind": "landmark",
+   "group": "D",
+   "x": 1872,
+   "y": 330,
+   "w": 72,
+   "h": 40,
+   "doors": [
+    {
+     "link": "D04_D05_main",
+     "to": "D04",
+     "side": "R",
+     "width": 4,
+     "sill": 14.0,
+     "at": 72
+    },
+    {
+     "link": "D05_D06_main",
+     "to": "D06",
+     "side": "L",
+     "width": 4,
+     "sill": 6.0,
+     "at": 0
+    },
+    {
+     "link": "D05_D10_optional",
+     "to": "D10",
+     "side": "T",
+     "width": 3,
+     "x0": 22.5,
+     "x1": 25.5,
+     "at": 40
+    },
+    {
+     "link": "D08_D05_shortcut",
+     "to": "D08",
+     "side": "L",
+     "width": 4,
+     "sill": 18.0,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Updraft Hall",
+     "x": 27.36,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:D05",
+     "x": 27.36,
+     "y": 0.66
+    }
+   ]
+  },
+  "D06": {
+   "id": "D06",
+   "name": "Baffled Drop",
+   "kind": "shaft",
+   "group": "D",
+   "x": 1842,
+   "y": 276,
+   "w": 16,
+   "h": 66,
+   "doors": [
+    {
+     "link": "D05_D06_main",
+     "to": "D05",
+     "side": "R",
+     "width": 4,
+     "sill": 60.0,
+     "at": 16
+    },
+    {
+     "link": "D06_D07_main",
+     "to": "D07",
+     "side": "R",
+     "width": 4,
+     "sill": 6.0,
+     "at": 16
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Baffled Drop",
+     "x": 6.08,
+     "y": 3.26
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:D06",
+     "x": 6.08,
+     "y": 3.46
+    }
+   ]
+  },
+  "D07": {
+   "id": "D07",
+   "name": "Still-Air Rest",
+   "kind": "refuge",
+   "group": "D",
+   "x": 1872,
+   "y": 270,
+   "w": 32,
+   "h": 18,
+   "doors": [
+    {
+     "link": "D06_D07_main",
+     "to": "D06",
+     "side": "L",
+     "width": 4,
+     "sill": 12.0,
+     "at": 0
+    },
+    {
+     "link": "D07_D08_main",
+     "to": "D08",
+     "side": "L",
+     "width": 4,
+     "sill": 2.0,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:D07",
+     "x": 12.16,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Still-Air Rest",
+     "x": 12.16,
+     "y": 0.46
+    }
+   ]
+  },
+  "D08": {
+   "id": "D08",
+   "name": "Wind Guardian Arena",
+   "kind": "boss",
+   "group": "D",
+   "x": 1808,
+   "y": 236,
+   "w": 40,
+   "h": 28,
+   "doors": [
+    {
+     "link": "D07_D08_main",
+     "to": "D07",
+     "side": "R",
+     "width": 4,
+     "sill": 12.0,
+     "at": 40
+    },
+    {
+     "link": "D08_D05_shortcut",
+     "to": "D05",
+     "side": "T",
+     "width": 4,
+     "x0": 14.0,
+     "x1": 18.0,
+     "at": 28
+    },
+    {
+     "link": "D08_HEART_heart",
+     "to": "HEART",
+     "side": "B",
+     "width": 4,
+     "x0": 14.0,
+     "x1": 18.0,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:D08",
+     "x": 18.4,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Wind Guardian Arena",
+     "x": 18.4,
+     "y": 0.46
+    }
+   ]
+  },
+  "D09": {
+   "id": "D09",
+   "name": "Glider Roost",
+   "kind": "optional",
+   "group": "D",
+   "x": 2088,
+   "y": 366,
+   "w": 36,
+   "h": 22,
+   "doors": [
+    {
+     "link": "D03_D09_optional",
+     "to": "D03",
+     "side": "L",
+     "width": 3,
+     "sill": 10.5,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Glider Roost",
+     "x": 13.68,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:D09",
+     "x": 13.68,
+     "y": 0.66
+    }
+   ]
+  },
+  "D10": {
+   "id": "D10",
+   "name": "Cloud Archive",
+   "kind": "optional",
+   "group": "D",
+   "x": 1880,
+   "y": 390,
+   "w": 32,
+   "h": 22,
+   "doors": [
+    {
+     "link": "D05_D10_optional",
+     "to": "D05",
+     "side": "B",
+     "width": 3,
+     "x0": 14.5,
+     "x1": 17.5,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Cloud Archive",
+     "x": 12.16,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:D10",
+     "x": 12.16,
+     "y": 0.66
+    }
+   ]
+  },
+  "E01": {
+   "id": "E01",
+   "name": "Quiet Arrival",
+   "kind": "arrival",
+   "group": "E",
+   "x": 2000,
+   "y": 192,
+   "w": 36,
+   "h": 24,
+   "doors": [
+    {
+     "link": "E01_E02_main",
+     "to": "E02",
+     "side": "R",
+     "width": 4,
+     "sill": 8.0,
+     "at": 36
+    },
+    {
+     "link": "E07_E01_shortcut",
+     "to": "E07",
+     "side": "L",
+     "width": 4,
+     "sill": 8.0,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Return to",
+     "name": "Return to the Summit",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Quiet Arrival",
+     "x": 13.68,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:E01",
+     "x": 1.8,
+     "y": 0.66
+    }
+   ]
+  },
+  "E02": {
+   "id": "E02",
+   "name": "Memory Well",
+   "kind": "shaft",
+   "group": "E",
+   "x": 2060,
+   "y": 142,
+   "w": 16,
+   "h": 64,
+   "doors": [
+    {
+     "link": "E01_E02_main",
+     "to": "E01",
+     "side": "L",
+     "width": 4,
+     "sill": 58.0,
+     "at": 0
+    },
+    {
+     "link": "E02_E03_main",
+     "to": "E03",
+     "side": "B",
+     "width": 4,
+     "x0": 6.0,
+     "x1": 10.0,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:E02",
+     "x": 6.08,
+     "y": 39.86
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Memory Well",
+     "x": 6.08,
+     "y": 39.66
+    }
+   ]
+  },
+  "E03": {
+   "id": "E03",
+   "name": "First Memory",
+   "kind": "trial",
+   "group": "E",
+   "x": 2048,
+   "y": 88,
+   "w": 56,
+   "h": 30,
+   "doors": [
+    {
+     "link": "E02_E03_main",
+     "to": "E02",
+     "side": "T",
+     "width": 4,
+     "x0": 18.0,
+     "x1": 22.0,
+     "at": 30
+    },
+    {
+     "link": "E03_E04_main",
+     "to": "E04",
+     "side": "L",
+     "width": 4,
+     "sill": 14.0,
+     "at": 0
+    },
+    {
+     "link": "E03_E09_optional",
+     "to": "E09",
+     "side": "B",
+     "width": 3,
+     "x0": 16.5,
+     "x1": 19.5,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest First Memory",
+     "x": 21.28,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:E03",
+     "x": 21.28,
+     "y": 0.66
+    }
+   ]
+  },
+  "E04": {
+   "id": "E04",
+   "name": "Processional Walk",
+   "kind": "hall",
+   "group": "E",
+   "x": 1988,
+   "y": 98,
+   "w": 44,
+   "h": 12,
+   "doors": [
+    {
+     "link": "E03_E04_main",
+     "to": "E03",
+     "side": "R",
+     "width": 4,
+     "sill": 4.0,
+     "at": 44
+    },
+    {
+     "link": "E04_E05_main",
+     "to": "E05",
+     "side": "L",
+     "width": 4,
+     "sill": 4.0,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Processional Walk",
+     "x": 16.72,
+     "y": 1.66
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:E04",
+     "x": 16.72,
+     "y": 1.86
+    }
+   ]
+  },
+  "E05": {
+   "id": "E05",
+   "name": "The Wilted Sanctuary",
+   "kind": "boss",
+   "group": "E",
+   "x": 1900,
+   "y": 78,
+   "w": 72,
+   "h": 40,
+   "doors": [
+    {
+     "link": "E04_E05_main",
+     "to": "E04",
+     "side": "R",
+     "width": 4,
+     "sill": 24.0,
+     "at": 72
+    },
+    {
+     "link": "E05_E06_main",
+     "to": "E06",
+     "side": "L",
+     "width": 4,
+     "sill": 24.0,
+     "at": 0
+    },
+    {
+     "link": "E05_E10_optional",
+     "to": "E10",
+     "side": "T",
+     "width": 3,
+     "x0": 66.5,
+     "x1": 69.5,
+     "at": 40
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest The Wilted Sanctuary",
+     "x": 27.36,
+     "y": 1.66
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:E05",
+     "x": 27.36,
+     "y": 1.86
+    }
+   ]
+  },
+  "E06": {
+   "id": "E06",
+   "name": "Return Stair",
+   "kind": "shaft",
+   "group": "E",
+   "x": 1872,
+   "y": 94,
+   "w": 16,
+   "h": 64,
+   "doors": [
+    {
+     "link": "E05_E06_main",
+     "to": "E05",
+     "side": "R",
+     "width": 4,
+     "sill": 8.0,
+     "at": 16
+    },
+    {
+     "link": "E06_E07_main",
+     "to": "E07",
+     "side": "T",
+     "width": 4,
+     "x0": 6.0,
+     "x1": 10.0,
+     "at": 64
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:E06",
+     "x": 6.08,
+     "y": 3.46
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Return Stair",
+     "x": 6.08,
+     "y": 3.26
+    }
+   ]
+  },
+  "E07": {
+   "id": "E07",
+   "name": "Last Refuge",
+   "kind": "refuge",
+   "group": "E",
+   "x": 1900,
+   "y": 170,
+   "w": 30,
+   "h": 18,
+   "doors": [
+    {
+     "link": "E06_E07_main",
+     "to": "E06",
+     "side": "L",
+     "width": 4,
+     "sill": 2.0,
+     "at": 0
+    },
+    {
+     "link": "E07_E08_main",
+     "to": "E08",
+     "side": "L",
+     "width": 4,
+     "sill": 12.0,
+     "at": 0
+    },
+    {
+     "link": "E07_E01_shortcut",
+     "to": "E01",
+     "side": "R",
+     "width": 4,
+     "sill": 8.0,
+     "at": 30
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Reward",
+     "name": "Reward ending-reflection",
+     "x": 22.2,
+     "y": 1.86
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Last Refuge",
+     "x": 11.4,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:E07",
+     "x": 11.4,
+     "y": 0.66
+    }
+   ]
+  },
+  "E08": {
+   "id": "E08",
+   "name": "Final Threshold",
+   "kind": "seal",
+   "group": "E",
+   "x": 1854,
+   "y": 174,
+   "w": 32,
+   "h": 28,
+   "doors": [
+    {
+     "link": "E07_E08_main",
+     "to": "E07",
+     "side": "R",
+     "width": 4,
+     "sill": 8.0,
+     "at": 32
+    },
+    {
+     "link": "E08_HEART_heart",
+     "to": "HEART",
+     "side": "L",
+     "width": 4,
+     "sill": 12.0,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:E08",
+     "x": 12.16,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Final Threshold",
+     "x": 12.16,
+     "y": 0.46
+    }
+   ]
+  },
+  "E09": {
+   "id": "E09",
+   "name": "Lost Seed Archive",
+   "kind": "optional",
+   "group": "E",
+   "x": 2050,
+   "y": 48,
+   "w": 32,
+   "h": 22,
+   "doors": [
+    {
+     "link": "E03_E09_optional",
+     "to": "E03",
+     "side": "T",
+     "width": 3,
+     "x0": 14.5,
+     "x1": 17.5,
+     "at": 22
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Lost Seed Archive",
+     "x": 12.16,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:E09",
+     "x": 12.16,
+     "y": 0.66
+    }
+   ]
+  },
+  "E10": {
+   "id": "E10",
+   "name": "Sanctuary Alcove",
+   "kind": "optional",
+   "group": "E",
+   "x": 1960,
+   "y": 140,
+   "w": 32,
+   "h": 22,
+   "doors": [
+    {
+     "link": "E05_E10_optional",
+     "to": "E05",
+     "side": "B",
+     "width": 3,
+     "x0": 6.5,
+     "x1": 9.5,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Sanctuary Alcove",
+     "x": 12.16,
+     "y": 0.46
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward amber",
+     "x": 23.68,
+     "y": 3.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:E10",
+     "x": 12.16,
+     "y": 0.66
+    }
+   ]
+  },
+  "MR01_C01": {
+   "id": "MR01_C01",
+   "name": "Warm Crack",
+   "kind": "early_cave",
+   "group": "MR01",
+   "x": 35,
+   "y": -174,
+   "w": 32,
+   "h": 18,
+   "doors": [
+    {
+     "link": "MR01_1_2",
+     "to": "MR01_C02",
+     "side": "R",
+     "width": 3,
+     "sill": 7.5,
+     "at": 32
+    },
+    {
+     "link": "MR01_6_1",
+     "to": "MR01_C06",
+     "side": "T",
+     "width": 3,
+     "x0": 14.5,
+     "x1": 17.5,
+     "at": 18
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Reward",
+     "name": "Reward song-shell",
+     "x": 23.68,
+     "y": 1.86
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Warm Crack",
+     "x": 12.16,
+     "y": 0.46
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest bench",
+     "x": 19.5,
+     "y": 0.11
+    }
+   ]
+  },
+  "MR01_C02": {
+   "id": "MR01_C02",
+   "name": "Moss Pocket",
+   "kind": "early_cave",
+   "group": "MR01",
+   "x": 115,
+   "y": -186,
+   "w": 40,
+   "h": 24,
+   "doors": [
+    {
+     "link": "MR01_1_2",
+     "to": "MR01_C01",
+     "side": "L",
+     "width": 3,
+     "sill": 19.5,
+     "at": 0
+    },
+    {
+     "link": "MR01_2_3",
+     "to": "MR01_C03",
+     "side": "R",
+     "width": 3,
+     "sill": 5.5,
+     "at": 40
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Moss Pocket",
+     "x": 15.2,
+     "y": 0.46
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward heart-seed",
+     "x": 34.7,
+     "y": 12.2
+    }
+   ]
+  },
+  "MR01_C03": {
+   "id": "MR01_C03",
+   "name": "Pale Alcove",
+   "kind": "early_cave",
+   "group": "MR01",
+   "x": 195,
+   "y": -186,
+   "w": 24,
+   "h": 14,
+   "doors": [
+    {
+     "link": "MR01_2_3",
+     "to": "MR01_C02",
+     "side": "L",
+     "width": 3,
+     "sill": 5.5,
+     "at": 0
+    },
+    {
+     "link": "MR01_3_4",
+     "to": "MR01_C04",
+     "side": "T",
+     "width": 3,
+     "x0": 10.5,
+     "x1": 13.5,
+     "at": 14
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Reward",
+     "name": "Reward lore-stone",
+     "x": 17.76,
+     "y": 1.86
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Pale Alcove",
+     "x": 9.12,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR01_C04": {
+   "id": "MR01_C04",
+   "name": "Root Gallery",
+   "kind": "early_cave",
+   "group": "MR01",
+   "x": 195,
+   "y": -120,
+   "w": 44,
+   "h": 22,
+   "doors": [
+    {
+     "link": "MR01_3_4",
+     "to": "MR01_C03",
+     "side": "B",
+     "width": 3,
+     "x0": 20.5,
+     "x1": 23.5,
+     "at": 0
+    },
+    {
+     "link": "MR01_4_5",
+     "to": "MR01_C05",
+     "side": "T",
+     "width": 3,
+     "x0": 20.5,
+     "x1": 23.5,
+     "at": 22
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Root Gallery",
+     "x": 16.72,
+     "y": 0.46
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward rare-find",
+     "x": 32.56,
+     "y": 0.66
+    }
+   ]
+  },
+  "MR01_C05": {
+   "id": "MR01_C05",
+   "name": "High Crevice",
+   "kind": "early_cave",
+   "group": "MR01",
+   "x": 139,
+   "y": -78,
+   "w": 14,
+   "h": 32,
+   "doors": [
+    {
+     "link": "MR01_4_5",
+     "to": "MR01_C04",
+     "side": "R",
+     "width": 3,
+     "sill": 14.5,
+     "at": 14
+    },
+    {
+     "link": "MR01_5_6",
+     "to": "MR01_C06",
+     "side": "L",
+     "width": 3,
+     "sill": 11.5,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Reward",
+     "name": "Reward amber",
+     "x": 10.36,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest High Crevice",
+     "x": 5.32,
+     "y": 3.26
+    }
+   ]
+  },
+  "MR01_C06": {
+   "id": "MR01_C06",
+   "name": "Hanging Garden",
+   "kind": "early_cave",
+   "group": "MR01",
+   "x": 35,
+   "y": -78,
+   "w": 48,
+   "h": 26,
+   "doors": [
+    {
+     "link": "MR01_5_6",
+     "to": "MR01_C05",
+     "side": "R",
+     "width": 3,
+     "sill": 11.5,
+     "at": 48
+    },
+    {
+     "link": "MR01_6_1",
+     "to": "MR01_C01",
+     "side": "B",
+     "width": 3,
+     "x0": 22.5,
+     "x1": 25.5,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR01_C06",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Hanging Garden",
+     "x": 18.24,
+     "y": 0.46
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward song-shell",
+     "x": 35.52,
+     "y": 0.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Cradle",
+     "x": -2.3,
+     "y": 0.0
+    }
+   ]
+  },
+  "MR02_C01": {
+   "id": "MR02_C01",
+   "name": "Underarch Workshop",
+   "kind": "early_cave",
+   "group": "MR02",
+   "x": 549,
+   "y": -120,
+   "w": 36,
+   "h": 20,
+   "doors": [
+    {
+     "link": "MR02_1_2",
+     "to": "MR02_C02",
+     "side": "L",
+     "width": 3,
+     "sill": 8.5,
+     "at": 0
+    },
+    {
+     "link": "MR02_6_1",
+     "to": "MR02_C06",
+     "side": "T",
+     "width": 3,
+     "x0": 16.5,
+     "x1": 19.5,
+     "at": 20
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Underarch Workshop",
+     "x": 13.68,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR02_C02": {
+   "id": "MR02_C02",
+   "name": "Silt Cistern",
+   "kind": "early_cave",
+   "group": "MR02",
+   "x": 453,
+   "y": -132,
+   "w": 52,
+   "h": 30,
+   "doors": [
+    {
+     "link": "MR02_1_2",
+     "to": "MR02_C01",
+     "side": "R",
+     "width": 3,
+     "sill": 20.5,
+     "at": 52
+    },
+    {
+     "link": "MR02_2_3",
+     "to": "MR02_C03",
+     "side": "L",
+     "width": 3,
+     "sill": 9.5,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Silt Cistern",
+     "x": 19.76,
+     "y": 0.46
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward heart-seed",
+     "x": 38.48,
+     "y": 0.66
+    }
+   ]
+  },
+  "MR02_C03": {
+   "id": "MR02_C03",
+   "name": "Echo Vault",
+   "kind": "early_cave",
+   "group": "MR02",
+   "x": 389,
+   "y": -132,
+   "w": 36,
+   "h": 22,
+   "doors": [
+    {
+     "link": "MR02_2_3",
+     "to": "MR02_C02",
+     "side": "R",
+     "width": 3,
+     "sill": 9.5,
+     "at": 36
+    },
+    {
+     "link": "MR02_3_4",
+     "to": "MR02_C04",
+     "side": "T",
+     "width": 3,
+     "x0": 16.5,
+     "x1": 19.5,
+     "at": 22
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Reward",
+     "name": "Reward song-shell",
+     "x": 26.64,
+     "y": 1.86
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Echo Vault",
+     "x": 13.68,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR02_C04": {
+   "id": "MR02_C04",
+   "name": "Ring Gallery",
+   "kind": "early_cave",
+   "group": "MR02",
+   "x": 375,
+   "y": -66,
+   "w": 50,
+   "h": 24,
+   "doors": [
+    {
+     "link": "MR02_3_4",
+     "to": "MR02_C03",
+     "side": "B",
+     "width": 3,
+     "x0": 23.5,
+     "x1": 26.5,
+     "at": 0
+    },
+    {
+     "link": "MR02_4_5",
+     "to": "MR02_C05",
+     "side": "T",
+     "width": 3,
+     "x0": 23.5,
+     "x1": 26.5,
+     "at": 24
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Reward",
+     "name": "Reward rare-find",
+     "x": 37.0,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Ring Gallery",
+     "x": 19.0,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR02_C05": {
+   "id": "MR02_C05",
+   "name": "Moss Tower",
+   "kind": "early_cave",
+   "group": "MR02",
+   "x": 465,
+   "y": -24,
+   "w": 16,
+   "h": 44,
+   "doors": [
+    {
+     "link": "MR02_4_5",
+     "to": "MR02_C04",
+     "side": "L",
+     "width": 3,
+     "sill": 20.5,
+     "at": 0
+    },
+    {
+     "link": "MR02_5_6",
+     "to": "MR02_C06",
+     "side": "R",
+     "width": 3,
+     "sill": 13.5,
+     "at": 16
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Moss Tower",
+     "x": 6.08,
+     "y": 3.26
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward amber",
+     "x": 11.84,
+     "y": 0.66
+    }
+   ]
+  },
+  "MR02_C06": {
+   "id": "MR02_C06",
+   "name": "High Arch",
+   "kind": "early_cave",
+   "group": "MR02",
+   "x": 525,
+   "y": -24,
+   "w": 60,
+   "h": 30,
+   "doors": [
+    {
+     "link": "MR02_5_6",
+     "to": "MR02_C05",
+     "side": "L",
+     "width": 3,
+     "sill": 13.5,
+     "at": 0
+    },
+    {
+     "link": "MR02_6_1",
+     "to": "MR02_C01",
+     "side": "B",
+     "width": 3,
+     "x0": 28.5,
+     "x1": 31.5,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Reward",
+     "name": "Reward song-shell",
+     "x": 44.4,
+     "y": 0.66
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR02_C06",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Long Causeway",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest High Arch",
+     "x": 22.8,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR03_C01": {
+   "id": "MR03_C01",
+   "name": "Sluice Cellar",
+   "kind": "early_cave",
+   "group": "MR03",
+   "x": 755,
+   "y": 48,
+   "w": 44,
+   "h": 28,
+   "doors": [
+    {
+     "link": "MR03_1_2",
+     "to": "MR03_C02",
+     "side": "R",
+     "width": 3,
+     "sill": 10.5,
+     "at": 44
+    },
+    {
+     "link": "MR03_6_1",
+     "to": "MR03_C06",
+     "side": "T",
+     "width": 3,
+     "x0": 20.5,
+     "x1": 23.5,
+     "at": 28
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Reward",
+     "name": "Reward heart-seed",
+     "x": 32.56,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Sluice Cellar",
+     "x": 16.72,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR03_C02": {
+   "id": "MR03_C02",
+   "name": "Grain Store",
+   "kind": "early_cave",
+   "group": "MR03",
+   "x": 835,
+   "y": 36,
+   "w": 40,
+   "h": 24,
+   "doors": [
+    {
+     "link": "MR03_1_2",
+     "to": "MR03_C01",
+     "side": "L",
+     "width": 3,
+     "sill": 22.5,
+     "at": 0
+    },
+    {
+     "link": "MR03_2_3",
+     "to": "MR03_C03",
+     "side": "R",
+     "width": 3,
+     "sill": 7.5,
+     "at": 40
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Grain Store",
+     "x": 15.2,
+     "y": 0.46
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward amber",
+     "x": 29.6,
+     "y": 0.66
+    }
+   ]
+  },
+  "MR03_C03": {
+   "id": "MR03_C03",
+   "name": "Farmer Shelter",
+   "kind": "early_cave",
+   "group": "MR03",
+   "x": 915,
+   "y": 36,
+   "w": 32,
+   "h": 18,
+   "doors": [
+    {
+     "link": "MR03_2_3",
+     "to": "MR03_C02",
+     "side": "L",
+     "width": 3,
+     "sill": 7.5,
+     "at": 0
+    },
+    {
+     "link": "MR03_3_4",
+     "to": "MR03_C04",
+     "side": "T",
+     "width": 3,
+     "x0": 14.5,
+     "x1": 17.5,
+     "at": 18
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Farmer Shelter",
+     "x": 12.16,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR03_C04": {
+   "id": "MR03_C04",
+   "name": "Mill Undercroft",
+   "kind": "early_cave",
+   "group": "MR03",
+   "x": 915,
+   "y": 102,
+   "w": 48,
+   "h": 26,
+   "doors": [
+    {
+     "link": "MR03_3_4",
+     "to": "MR03_C03",
+     "side": "B",
+     "width": 3,
+     "x0": 22.5,
+     "x1": 25.5,
+     "at": 0
+    },
+    {
+     "link": "MR03_4_5",
+     "to": "MR03_C05",
+     "side": "T",
+     "width": 3,
+     "x0": 22.5,
+     "x1": 25.5,
+     "at": 26
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Mill Undercroft",
+     "x": 18.24,
+     "y": 0.46
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward song-shell",
+     "x": 35.52,
+     "y": 0.66
+    }
+   ]
+  },
+  "MR03_C05": {
+   "id": "MR03_C05",
+   "name": "Wind Shelf",
+   "kind": "early_cave",
+   "group": "MR03",
+   "x": 859,
+   "y": 144,
+   "w": 42,
+   "h": 18,
+   "doors": [
+    {
+     "link": "MR03_4_5",
+     "to": "MR03_C04",
+     "side": "R",
+     "width": 3,
+     "sill": 7.5,
+     "at": 42
+    },
+    {
+     "link": "MR03_5_6",
+     "to": "MR03_C06",
+     "side": "L",
+     "width": 3,
+     "sill": 7.5,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Reward",
+     "name": "Reward rare-find",
+     "x": 34.44,
+     "y": 1.86
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Wind Shelf",
+     "x": 15.96,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR03_C06": {
+   "id": "MR03_C06",
+   "name": "Root Hanger",
+   "kind": "early_cave",
+   "group": "MR03",
+   "x": 755,
+   "y": 144,
+   "w": 60,
+   "h": 32,
+   "doors": [
+    {
+     "link": "MR03_5_6",
+     "to": "MR03_C05",
+     "side": "R",
+     "width": 3,
+     "sill": 7.5,
+     "at": 60
+    },
+    {
+     "link": "MR03_6_1",
+     "to": "MR03_C01",
+     "side": "B",
+     "width": 3,
+     "x0": 28.5,
+     "x1": 31.5,
+     "at": 0
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Reward",
+     "name": "Reward song-shell",
+     "x": 44.4,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Root Hanger",
+     "x": 22.8,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR03_C06",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Terraces",
+     "x": -2.3,
+     "y": 0.0
+    }
+   ]
+  },
+  "PC01": {
+   "id": "PC01",
+   "name": "Firefly Nook",
+   "kind": "single_room_pocket",
+   "group": "MR01",
+   "x": 62.0,
+   "y": -21.111,
+   "w": 12,
+   "h": 8,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Return to",
+     "name": "Return to The Cradle",
+     "x": -2.3,
+     "y": 1.88
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward | firefly Amber cache",
+     "x": 8.3,
+     "y": 1.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Firefly Nook",
+     "x": 10.8,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:PC01",
+     "x": 1.8,
+     "y": 0.66
+    }
+   ]
+  },
+  "PC02": {
+   "id": "PC02",
+   "name": "Old Footprints",
+   "kind": "single_room_pocket",
+   "group": "MR01",
+   "x": 128.0,
+   "y": -25.0,
+   "w": 10,
+   "h": 7,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Return to",
+     "name": "Return to The Cradle",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:PC02",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Old Footprints",
+     "x": 3.8,
+     "y": 0.46
+    }
+   ]
+  },
+  "PC03": {
+   "id": "PC03",
+   "name": "Fern Pocket",
+   "kind": "single_room_pocket",
+   "group": "MR01",
+   "x": 266.0,
+   "y": -3.499,
+   "w": 14,
+   "h": 9,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:PC03",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Cradle",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Fern Pocket",
+     "x": 5.32,
+     "y": 0.46
+    }
+   ]
+  },
+  "PC04": {
+   "id": "PC04",
+   "name": "Mason\u2019s Recess",
+   "kind": "single_room_pocket",
+   "group": "MR02",
+   "x": 305.0,
+   "y": 1.937,
+   "w": 12,
+   "h": 8,
+   "doors": [],
+   "markers": []
+  },
+  "PC05": {
+   "id": "PC05",
+   "name": "Dripstone Hollow",
+   "kind": "single_room_pocket",
+   "group": "MR02",
+   "x": 419.0,
+   "y": 44.575,
+   "w": 14,
+   "h": 9,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:PC05",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Long Causeway",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Dripstone Hollow",
+     "x": 5.32,
+     "y": 0.46
+    }
+   ]
+  },
+  "PC06": {
+   "id": "PC06",
+   "name": "Forgotten Satchel",
+   "kind": "single_room_pocket",
+   "group": "MR02",
+   "x": 551.0,
+   "y": 120.744,
+   "w": 10,
+   "h": 7,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Forgotten Satchel",
+     "x": 3.8,
+     "y": 0.46
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Long Causeway",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:PC06",
+     "x": 1.8,
+     "y": 0.66
+    }
+   ]
+  },
+  "PC07": {
+   "id": "PC07",
+   "name": "Seed Shelf",
+   "kind": "single_room_pocket",
+   "group": "MR03",
+   "x": 689.0,
+   "y": 169.87,
+   "w": 12,
+   "h": 8,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Seed Shelf",
+     "x": 4.56,
+     "y": 0.46
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Terraces",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:PC07",
+     "x": 1.8,
+     "y": 0.66
+    }
+   ]
+  },
+  "PC08": {
+   "id": "PC08",
+   "name": "Millstone Pocket",
+   "kind": "single_room_pocket",
+   "group": "MR03",
+   "x": 822.0,
+   "y": 258.118,
+   "w": 16,
+   "h": 9,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Millstone Pocket",
+     "x": 6.08,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:PC08",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward heart-seed",
+     "x": 11.84,
+     "y": 1.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Terraces",
+     "x": -2.3,
+     "y": 0.0
+    }
+   ]
+  },
+  "PC09": {
+   "id": "PC09",
+   "name": "Lantern Rest",
+   "kind": "single_room_pocket",
+   "group": "MR03",
+   "x": 968.0,
+   "y": 268.834,
+   "w": 14,
+   "h": 8,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:PC09",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Lantern Rest",
+     "x": 5.32,
+     "y": 0.46
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Terraces",
+     "x": -2.3,
+     "y": 0.0
+    }
+   ]
+  },
+  "PC10": {
+   "id": "PC10",
+   "name": "Rootlight Niche",
+   "kind": "single_room_pocket",
+   "group": "MR05",
+   "x": 1375.0,
+   "y": 269.0,
+   "w": 12,
+   "h": 8,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:PC10",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Rootlight Niche",
+     "x": 4.56,
+     "y": 0.46
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward rare-find",
+     "x": 8.88,
+     "y": 1.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Ribwood",
+     "x": -2.3,
+     "y": 0.0
+    }
+   ]
+  },
+  "PC11": {
+   "id": "PC11",
+   "name": "Quiet Wind Pocket",
+   "kind": "single_room_pocket",
+   "group": "MR06",
+   "x": 1765.0,
+   "y": 468.0,
+   "w": 14,
+   "h": 9,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Quiet Wind Pocket",
+     "x": 5.32,
+     "y": 0.46
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Windward Heights",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:PC11",
+     "x": 1.8,
+     "y": 0.66
+    }
+   ],
+   "moved": [
+    -91,
+    -62.481
+   ]
+  },
+  "PC12": {
+   "id": "PC12",
+   "name": "Last Cairn",
+   "kind": "single_room_pocket",
+   "group": "MR07",
+   "x": 2208.0,
+   "y": 660.0,
+   "w": 12,
+   "h": 8,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Return to",
+     "name": "Return to The Summit",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward lore-stone",
+     "x": 8.88,
+     "y": 1.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Last Cairn",
+     "x": 4.56,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:PC12",
+     "x": 1.8,
+     "y": 0.66
+    }
+   ],
+   "moved": [
+    -75,
+    -36.304
+   ]
+  },
+  "HEART": {
+   "id": "HEART",
+   "name": "The Great Heart Hall",
+   "kind": "heart",
+   "group": "H",
+   "x": 1754,
+   "y": 170,
+   "w": 84,
+   "h": 48,
+   "doors": [
+    {
+     "link": "A08_HEART_heart",
+     "to": "A08",
+     "side": "L",
+     "width": 4,
+     "sill": 12.0,
+     "at": 0
+    },
+    {
+     "link": "C08_HEART_heart",
+     "to": "C08",
+     "side": "T",
+     "width": 4,
+     "x0": 20.0,
+     "x1": 24.0,
+     "at": 48
+    },
+    {
+     "link": "D08_HEART_heart",
+     "to": "D08",
+     "side": "T",
+     "width": 4,
+     "x0": 68.0,
+     "x1": 72.0,
+     "at": 48
+    },
+    {
+     "link": "E08_HEART_heart",
+     "to": "E08",
+     "side": "R",
+     "width": 4,
+     "sill": 16.0,
+     "at": 84
+    }
+   ],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest The Great Heart Hall",
+     "x": 38.64,
+     "y": 12.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:HEART",
+     "x": 38.64,
+     "y": 12.66
+    }
+   ]
+  },
+  "MR05_C01": {
+   "id": "MR05_C01",
+   "name": "Lost Lantern",
+   "kind": "cave",
+   "group": "MR05",
+   "x": 1326.0,
+   "y": 248.0,
+   "w": 32.0,
+   "h": 12.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR05_C01",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Ribwood",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Lost Lantern",
+     "x": 12.16,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR05_C02": {
+   "id": "MR05_C02",
+   "name": "Root Loom",
+   "kind": "cave",
+   "group": "MR05",
+   "x": 1431.0,
+   "y": 296.0,
+   "w": 32.0,
+   "h": 14.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR05_C02",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward heart-seed",
+     "x": 23.68,
+     "y": 1.86
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Ribwood",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Root Loom",
+     "x": 12.16,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR05_C03": {
+   "id": "MR05_C03",
+   "name": "Moss Well",
+   "kind": "cave",
+   "group": "MR05",
+   "x": 1396.0,
+   "y": 270.0,
+   "w": 26.0,
+   "h": 16.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Return to",
+     "name": "Return to The Ribwood",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Moss Well",
+     "x": 9.88,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR05_C03",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward rare-find",
+     "x": 19.24,
+     "y": 3.46
+    }
+   ]
+  },
+  "MR05_C04": {
+   "id": "MR05_C04",
+   "name": "Seed Choir",
+   "kind": "cave",
+   "group": "MR05",
+   "x": 1500.0,
+   "y": 341.0,
+   "w": 40,
+   "h": 14,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR05_C04",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward song-shell",
+     "x": 29.6,
+     "y": 1.86
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Seed Choir",
+     "x": 15.2,
+     "y": 0.46
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Ribwood",
+     "x": -2.3,
+     "y": 0.0
+    }
+   ]
+  },
+  "MR05_C05": {
+   "id": "MR05_C05",
+   "name": "Stone Drum",
+   "kind": "cave",
+   "group": "MR05",
+   "x": 1534.0,
+   "y": 359.0,
+   "w": 30.0,
+   "h": 15.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Return to",
+     "name": "Return to The Ribwood",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR05_C05",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward amber",
+     "x": 22.2,
+     "y": 3.46
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Stone Drum",
+     "x": 11.4,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR05_C06": {
+   "id": "MR05_C06",
+   "name": "Canopy Pocket",
+   "kind": "cave",
+   "group": "MR05",
+   "x": 1640.0,
+   "y": 404.0,
+   "w": 36.0,
+   "h": 20.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Canopy Pocket",
+     "x": 13.68,
+     "y": 0.46
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Ribwood",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR05_C06",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward song-shell",
+     "x": 26.64,
+     "y": 1.86
+    }
+   ]
+  },
+  "MR06_C01": {
+   "id": "MR06_C01",
+   "name": "Sheltered Nest",
+   "kind": "cave",
+   "group": "MR06",
+   "x": 1710.0,
+   "y": 446.0,
+   "w": 44,
+   "h": 22,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Sheltered Nest",
+     "x": 16.72,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR06_C01",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward heart-seed",
+     "x": 32.56,
+     "y": 0.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Windward Heights",
+     "x": -2.3,
+     "y": 0.0
+    }
+   ],
+   "moved": [
+    -205,
+    -110
+   ]
+  },
+  "MR06_C02": {
+   "id": "MR06_C02",
+   "name": "Clasp Hollow",
+   "kind": "cave",
+   "group": "MR06",
+   "x": 1794.0,
+   "y": 484.0,
+   "w": 32.0,
+   "h": 14.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR06_C02",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Clasp Hollow",
+     "x": 12.16,
+     "y": 0.46
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Windward Heights",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward rare-find",
+     "x": 23.68,
+     "y": 1.86
+    }
+   ]
+  },
+  "MR06_C03": {
+   "id": "MR06_C03",
+   "name": "Wind Window",
+   "kind": "cave",
+   "group": "MR06",
+   "x": 1834.0,
+   "y": 512.0,
+   "w": 34.0,
+   "h": 12.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Wind Window",
+     "x": 12.92,
+     "y": 0.46
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward amber",
+     "x": 25.16,
+     "y": 0.66
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR06_C03",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Windward Heights",
+     "x": -2.3,
+     "y": 0.0
+    }
+   ]
+  },
+  "MR06_C04": {
+   "id": "MR06_C04",
+   "name": "Echo Steps",
+   "kind": "cave",
+   "group": "MR06",
+   "x": 1875.0,
+   "y": 540.0,
+   "w": 32.0,
+   "h": 12.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Reward",
+     "name": "Reward song-shell",
+     "x": 23.68,
+     "y": 1.86
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Echo Steps",
+     "x": 12.16,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR06_C04",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Windward Heights",
+     "x": -2.3,
+     "y": 0.0
+    }
+   ]
+  },
+  "MR06_C05": {
+   "id": "MR06_C05",
+   "name": "High Drift",
+   "kind": "cave",
+   "group": "MR06",
+   "x": 1951.0,
+   "y": 586.0,
+   "w": 36.0,
+   "h": 20.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR06_C05",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest High Drift",
+     "x": 13.68,
+     "y": 0.46
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Windward Heights",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward song-shell",
+     "x": 26.64,
+     "y": 0.66
+    }
+   ]
+  },
+  "MR06_C06": {
+   "id": "MR06_C06",
+   "name": "Weather Cave",
+   "kind": "cave",
+   "group": "MR06",
+   "x": 2018.0,
+   "y": 632.0,
+   "w": 32.0,
+   "h": 12.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR06_C06",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Windward Heights",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Weather Cave",
+     "x": 12.16,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR07_C01": {
+   "id": "MR07_C01",
+   "name": "Reed Shelter",
+   "kind": "cave",
+   "group": "MR07",
+   "x": 2227.0,
+   "y": 668.0,
+   "w": 24.0,
+   "h": 10.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Return to",
+     "name": "Return to The Summit",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward lore-stone",
+     "x": 19.68,
+     "y": 3.06
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR07_C01",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Reed Shelter",
+     "x": 9.12,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR07_C02": {
+   "id": "MR07_C02",
+   "name": "Falls Pocket",
+   "kind": "cave",
+   "group": "MR07",
+   "x": 2139.0,
+   "y": 622.0,
+   "w": 32.0,
+   "h": 14.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR07_C02",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Falls Pocket",
+     "x": 12.16,
+     "y": 0.46
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Summit",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward heart-seed",
+     "x": 23.68,
+     "y": 1.86
+    }
+   ]
+  },
+  "MR07_C03": {
+   "id": "MR07_C03",
+   "name": "Pale Archive",
+   "kind": "cave",
+   "group": "MR07",
+   "x": 2168.0,
+   "y": 644.0,
+   "w": 32.0,
+   "h": 12.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Rest",
+     "name": "Rest Pale Archive",
+     "x": 12.16,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR07_C03",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward song-shell",
+     "x": 23.68,
+     "y": 3.46
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Summit",
+     "x": -2.3,
+     "y": 0.0
+    }
+   ]
+  },
+  "MR07_C04": {
+   "id": "MR07_C04",
+   "name": "Quiet Terrace",
+   "kind": "cave",
+   "group": "MR07",
+   "x": 2321.0,
+   "y": 710.0,
+   "w": 36.0,
+   "h": 20.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Return to",
+     "name": "Return to The Summit",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward rare-find",
+     "x": 26.64,
+     "y": 1.86
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Quiet Terrace",
+     "x": 13.68,
+     "y": 0.46
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR07_C04",
+     "x": 1.8,
+     "y": 0.66
+    }
+   ]
+  },
+  "MR07_C05": {
+   "id": "MR07_C05",
+   "name": "Watcher's Hollow",
+   "kind": "cave",
+   "group": "MR07",
+   "x": 2348.0,
+   "y": 735.0,
+   "w": 32.0,
+   "h": 12.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Return to",
+     "name": "Return to The Summit",
+     "x": -2.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR07_C05",
+     "x": 1.8,
+     "y": 0.66
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Watcher's Hollow",
+     "x": 12.16,
+     "y": 0.46
+    }
+   ]
+  },
+  "MR07_C06": {
+   "id": "MR07_C06",
+   "name": "Upper Cleft",
+   "kind": "cave",
+   "group": "MR07",
+   "x": 2382,
+   "y": 743.0,
+   "w": 26.0,
+   "h": 16.0,
+   "doors": [],
+   "markers": [
+    {
+     "kind": "Arrival",
+     "name": "Arrival room:MR07_C06",
+     "x": 24.2,
+     "y": 0.66
+    },
+    {
+     "kind": "Return to",
+     "name": "Return to The Summit",
+     "x": 28.3,
+     "y": 0.0
+    },
+    {
+     "kind": "Reward",
+     "name": "Reward amber",
+     "x": 19.24,
+     "y": 1.86
+    },
+    {
+     "kind": "Rest",
+     "name": "Rest Upper Cleft",
+     "x": 9.88,
+     "y": 0.46
+    }
+   ]
+  }
+ }
+}

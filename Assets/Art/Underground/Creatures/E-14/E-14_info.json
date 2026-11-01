@@ -1,0 +1,57 @@
+{
+ "id": "E-14",
+ "pivot": "center",
+ "heightUnits": 1.6,
+ "canvas": [
+  921,
+  567
+ ],
+ "pivotPx": [
+  445.9,
+  283.0
+ ],
+ "figureHeightPx": 324.0,
+ "figureWidthPx": 363.0,
+ "segments": {
+  "Idle": {
+   "clip": "Drift and sting",
+   "frames": [
+    0,
+    14
+   ],
+   "scale": 1.0
+  },
+  "Warn": {
+   "clip": "Drift and sting",
+   "frames": [
+    14,
+    24
+   ],
+   "scale": 1.0
+  },
+  "Attack": {
+   "clip": "Drift and sting",
+   "frames": [
+    24,
+    36
+   ],
+   "scale": 1.0
+  },
+  "Hurt": {
+   "clip": "Scatter",
+   "frames": [
+    0,
+    8
+   ],
+   "scale": 1.0956
+  },
+  "Death": {
+   "clip": "Scatter",
+   "frames": [
+    0,
+    20
+   ],
+   "scale": 1.0956
+  }
+ }
+}

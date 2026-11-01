@@ -1,0 +1,97 @@
+{
+ "id": "G-04",
+ "pivot": "feet",
+ "heightUnits": 6.5,
+ "canvas": [
+  651,
+  502
+ ],
+ "pivotPx": [
+  306.0,
+  457.3
+ ],
+ "figureHeightPx": 354.0,
+ "figureWidthPx": 424.0,
+ "segments": {
+  "Idle": {
+   "clip": "Idle and roar",
+   "frames": [
+    0,
+    16
+   ],
+   "scale": 1.0
+  },
+  "Roar": {
+   "clip": "Idle and roar",
+   "frames": [
+    16,
+    36
+   ],
+   "scale": 1.0
+  },
+  "Warn": {
+   "clip": "Root lash",
+   "frames": [
+    0,
+    12
+   ],
+   "scale": 1.0774
+  },
+  "Attack": {
+   "clip": "Root lash",
+   "frames": [
+    12,
+    24
+   ],
+   "scale": 1.0774
+  },
+  "Recover": {
+   "clip": "Root lash",
+   "frames": [
+    24,
+    36
+   ],
+   "scale": 1.0774
+  },
+  "Open": {
+   "clip": "Bloom open",
+   "frames": [
+    0,
+    12
+   ],
+   "scale": 0.9986
+  },
+  "Exposed": {
+   "clip": "Bloom open",
+   "frames": [
+    12,
+    24
+   ],
+   "scale": 0.9986
+  },
+  "Close": {
+   "clip": "Bloom open",
+   "frames": [
+    24,
+    36
+   ],
+   "scale": 0.9986
+  },
+  "Hurt": {
+   "clip": "Hurt and death",
+   "frames": [
+    0,
+    6
+   ],
+   "scale": 1.0761
+  },
+  "Death": {
+   "clip": "Hurt and death",
+   "frames": [
+    6,
+    36
+   ],
+   "scale": 1.0761
+  }
+ }
+}

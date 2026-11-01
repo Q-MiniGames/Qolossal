@@ -1,0 +1,65 @@
+{
+ "id": "E-12",
+ "pivot": "center",
+ "heightUnits": 1.8,
+ "canvas": [
+  741,
+  501
+ ],
+ "pivotPx": [
+  284.6,
+  259.3
+ ],
+ "figureHeightPx": 338.0,
+ "figureWidthPx": 361.0,
+ "segments": {
+  "Idle": {
+   "clip": "Float and swell",
+   "frames": [
+    0,
+    14
+   ],
+   "scale": 1.0
+  },
+  "Warn": {
+   "clip": "Float and swell",
+   "frames": [
+    14,
+    36
+   ],
+   "scale": 1.0
+  },
+  "Attack": {
+   "clip": "Jet and refill",
+   "frames": [
+    0,
+    14
+   ],
+   "scale": 0.937
+  },
+  "Recover": {
+   "clip": "Jet and refill",
+   "frames": [
+    14,
+    36
+   ],
+   "scale": 0.937
+  },
+  "Hurt": {
+   "clip": "Hurt and death",
+   "frames": [
+    0,
+    6
+   ],
+   "scale": 1.0014
+  },
+  "Death": {
+   "clip": "Hurt and death",
+   "frames": [
+    6,
+    36
+   ],
+   "scale": 1.0014
+  }
+ }
+}

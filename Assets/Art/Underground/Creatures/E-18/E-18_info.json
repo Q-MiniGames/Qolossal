@@ -1,0 +1,65 @@
+{
+ "id": "E-18",
+ "pivot": "feet",
+ "heightUnits": 1.9,
+ "canvas": [
+  698,
+  507
+ ],
+ "pivotPx": [
+  242.3,
+  426.5
+ ],
+ "figureHeightPx": 359.0,
+ "figureWidthPx": 405.0,
+ "segments": {
+  "Idle": {
+   "clip": "Perch and rear",
+   "frames": [
+    0,
+    16
+   ],
+   "scale": 1.0
+  },
+  "Warn": {
+   "clip": "Perch and rear",
+   "frames": [
+    16,
+    36
+   ],
+   "scale": 1.0
+  },
+  "Attack": {
+   "clip": "Spit",
+   "frames": [
+    0,
+    16
+   ],
+   "scale": 0.9271
+  },
+  "Recover": {
+   "clip": "Spit",
+   "frames": [
+    16,
+    36
+   ],
+   "scale": 0.9271
+  },
+  "Hurt": {
+   "clip": "Hurt and death",
+   "frames": [
+    0,
+    6
+   ],
+   "scale": 1.0012
+  },
+  "Death": {
+   "clip": "Hurt and death",
+   "frames": [
+    6,
+    36
+   ],
+   "scale": 1.0012
+  }
+ }
+}

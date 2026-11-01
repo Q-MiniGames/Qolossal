@@ -15,7 +15,7 @@ public sealed class RelicAbilityDefinition : AbilityDefinition
 public static class Relics
 {
     public const string LivingThread="living-thread", ClimbingMoss="climbing-moss", Bloomfall="bloomfall",
-        WindLeaf="wind-leaf", Glidecap="glidecap";
+        WindLeaf="wind-leaf", Glidecap="glidecap", DoubleJump="double-jump";
 
     static AbilityDefinition[] all;
     public static AbilityDefinition[] All=>all!=null&&all.All(a=>a!=null)?all:all=Resources.LoadAll<AbilityDefinition>("Relics");

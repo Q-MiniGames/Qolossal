@@ -8,6 +8,10 @@ using UnityEngine;
 // behind). After the third slam its body splits open and the knot inside is exposed for a few
 // seconds. Blows only land then; before that they glance off the bramble. The exposed body
 // closes again after a few hits, and the cycle starts over.
+// It gets harder as it goes (14 Oct): the first cycle teaches the three arms one at a time; from
+// the second cycle the arms chain into a combo, the next arm rising as the last one recovers;
+// below half health (phase two) everything quickens, it strikes four times in a random order
+// and the knot stays open for less time.
 // Only a slamming arm hurts; the body can be stood against (and on). The rig and the pose table
 // come from Codex's parts (KnucklebrambleRigBuilder, Tools/CreatureRigAuthoring/knucklebramble.py).
 [RequireComponent(typeof(Rigidbody2D))]
@@ -15,8 +19,15 @@ public sealed class KnucklebrambleGuardian : EnemyBase
 {
     [Header("Fight")]
     [SerializeField] float wakeRange = 9f;
-    [SerializeField] float pauseTime = .6f, telegraphTime = .85f, slamTime = .16f, holdTime = .4f, recoverTime = .45f;
-    [SerializeField] float openTime = .35f, exposedTime = 3f, closeTime = .4f;
+    [SerializeField] float pauseTime = .35f, telegraphTime = .6f, slamTime = .14f, holdTime = .3f, recoverTime = .3f;
+    [SerializeField] float openTime = .3f, exposedTime = 2.2f, closeTime = .3f;
+    [Tooltip("From the second cycle the next arm rises straight out of the last slam's recovery, with this shorter warning.")]
+    [SerializeField] float comboTelegraphTime = .42f;
+    [Tooltip("Phase two starts at or below this share of its health.")]
+    [SerializeField, Range(0f, 1f)] float phaseTwoAt = .5f;
+    [Tooltip("In phase two every wind-up, hold and recovery runs this much faster, and the knot stays open for that much less.")]
+    [SerializeField, Min(1f)] float phaseTwoSpeed = 1.3f;
+    [SerializeField, Min(1)] int phaseTwoSlams = 4;
     [SerializeField, Min(1)] int hitsPerExposure = 3;
     [Tooltip("The order the arms strike in each cycle (1 back, 2 top, 3 front).")]
     [SerializeField] int[] armOrder = { 3, 2, 1 };
@@ -35,15 +46,20 @@ public sealed class KnucklebrambleGuardian : EnemyBase
     public int StrikingArm { get; private set; }
     public bool KnotExposed => Current == State.Exposed;
     public float Health => health;
+    public bool PhaseTwo => health <= maximumHealth * phaseTwoAt;
+    public int Cycle => cycle;
 
     float since, facing = 1f, blockedShakeUntil;
-    int swipe, exposedHits;
+    int swipe, exposedHits, cycle, slamsThisCycle = 3;
+    float windup;   // this strike's warning time (the full one, or the combo's shorter one)
     readonly float[] angles = new float[6], rest = new float[6], from = new float[6];
+
+    public override string BossBarName => "The Knucklebramble";
 
     protected override void Awake()
     {
         base.Awake();
-        maximumHealth = Mathf.Max(maximumHealth, 6); health = maximumHealth;
+        maximumHealth = Mathf.Max(maximumHealth, 9); health = maximumHealth;
         body.bodyType = RigidbodyType2D.Kinematic;
         body.useFullKinematicContacts = true;
         Pose("Rest", rest);
@@ -105,20 +121,15 @@ public sealed class KnucklebrambleGuardian : EnemyBase
         switch (Current)
         {
             case State.Dormant:
-                if (sees) { swipe = 0; Enter(State.Pause); }
+                if (sees) { swipe = 0; slamsThisCycle = SlamsThisCycle(); Enter(State.Pause); }
                 break;
             case State.Pause:
-                if (t < pauseTime) break;
+                if (t < pauseTime / Speed) break;
                 if (!sees) { Enter(State.Dormant); break; }
-                StrikingArm = armOrder[swipe % armOrder.Length];
-                // It faces Qori with the arm that will strike: the back arm (1) strikes behind it.
-                float side = Mathf.Abs(to.x) > .05f ? Mathf.Sign(to.x) : facing;
-                facing = StrikingArm == 1 ? -side : side;
-                Fx.Glint(Claw(StrikingArm) + Vector2.up * .2f);
-                Enter(State.Telegraph);
+                BeginStrike(to, telegraphTime);
                 break;
             case State.Telegraph:
-                if (t >= telegraphTime) Enter(State.Slam);
+                if (t >= windup) Enter(State.Slam);
                 break;
             case State.Slam:
                 if (t >= slamTime)
@@ -133,25 +144,53 @@ public sealed class KnucklebrambleGuardian : EnemyBase
                 }
                 break;
             case State.Hold:
-                if (t >= holdTime) Enter(State.Recover);
+                if (t >= holdTime / Speed) Enter(State.Recover);
                 break;
             case State.Recover:
-                if (t < recoverTime) break;
+                // In a combo the next arm starts rising while this one is still settling.
+                bool chain = cycle > 0 && swipe + 1 < slamsThisCycle && sees;
+                if (t < recoverTime / Speed * (chain ? .5f : 1f)) break;
                 StrikingArm = 0;
-                if (++swipe >= armOrder.Length) { swipe = 0; Enter(State.Opening); }
+                if (++swipe >= slamsThisCycle) { swipe = 0; cycle++; Enter(State.Opening); }
+                else if (chain) BeginStrike(to, comboTelegraphTime);
                 else Enter(State.Pause);
                 break;
             case State.Opening:
                 if (t >= openTime) { exposedHits = 0; Enter(State.Exposed); HitStop.Freeze(HitStop.GuardianExposed); }
                 break;
             case State.Exposed:
-                if (t >= exposedTime) Enter(State.Closing);
+                if (t >= exposedTime / Speed) Enter(State.Closing);
                 break;
             case State.Closing:
-                if (t >= closeTime) Enter(State.Pause);
+                if (t >= closeTime / Speed) { slamsThisCycle = SlamsThisCycle(); Enter(State.Pause); }
                 break;
         }
     }
+
+    float Speed => PhaseTwo ? phaseTwoSpeed : 1f;
+    int SlamsThisCycle() => PhaseTwo ? phaseTwoSlams : armOrder.Length;
+
+    // Picks the next arm, turns that arm toward Qori and raises it with a glint.
+    void BeginStrike(Vector2 to, float warning)
+    {
+        int last = StrikingArm > 0 ? StrikingArm : lastArm;
+        if (PhaseTwo)
+        {
+            // A random arm, never the same one twice in a row, so the order can't be learned by rote.
+            int arm = Random.Range(1, 3);
+            StrikingArm = arm >= last ? arm + 1 : arm;
+        }
+        else StrikingArm = armOrder[swipe % armOrder.Length];
+        lastArm = StrikingArm;
+        // It faces Qori with the arm that will strike: the back arm (1) strikes behind it.
+        float side = Mathf.Abs(to.x) > .05f ? Mathf.Sign(to.x) : facing;
+        facing = StrikingArm == 1 ? -side : side;
+        windup = warning / Speed;
+        Fx.Glint(Claw(StrikingArm) + Vector2.up * .2f);
+        Enter(State.Telegraph);
+    }
+
+    int lastArm;
 
     Vector2 Claw(int arm) => arm >= 1 && arm <= claws.Length && claws[arm - 1] != null ? (Vector2)claws[arm - 1].position : body.position;
 
@@ -167,19 +206,19 @@ public sealed class KnucklebrambleGuardian : EnemyBase
         string target; float k;
         switch (Current)
         {
-            case State.Telegraph: target = $"Arm{StrikingArm}_Raised"; k = Smooth(t / telegraphTime); break;
+            case State.Telegraph: target = $"Arm{StrikingArm}_Raised"; k = Smooth(t / windup); break;
             case State.Slam: target = $"Arm{StrikingArm}_Slam"; k = Mathf.Clamp01(t / slamTime); k *= k; break;
             case State.Hold: target = $"Arm{StrikingArm}_Slam"; k = 1f; break;
-            case State.Recover: target = "Rest"; k = Smooth(t / recoverTime); break;
+            case State.Recover: target = "Rest"; k = Smooth(t / (recoverTime / Speed)); break;
             case State.Opening: target = "Knot_Exposed"; k = Smooth(t / openTime); break;
             case State.Exposed: target = "Knot_Exposed"; k = 1f; break;
-            case State.Closing: target = "Rest"; k = Smooth(t / closeTime); break;
+            case State.Closing: target = "Rest"; k = Smooth(t / (closeTime / Speed)); break;
             default: target = "Rest"; k = Smooth(t / .5f); break;
         }
         var goal = new float[6]; Pose(target, goal);
         for (int i = 0; i < 6; i++) angles[i] = Mathf.LerpAngle(from[i], goal[i], k);
         // A tremble as the raised arm gathers itself, and a slow sway at rest.
-        float tremble = Current == State.Telegraph && t > telegraphTime * .6f ? Mathf.Sin(Time.time * 70f) * 2.5f : 0f;
+        float tremble = Current == State.Telegraph && t > windup * .6f ? Mathf.Sin(Time.time * 70f) * 2.5f : 0f;
         for (int arm = 1; arm <= 3; arm++)
         {
             int u = 2 * (arm - 1);
@@ -187,12 +226,12 @@ public sealed class KnucklebrambleGuardian : EnemyBase
             rig.Pose($"Arm{arm}_Upper", Mathf.DeltaAngle(rest[u], angles[u]) + sway);
             rig.Pose($"Arm{arm}_Lower", Mathf.DeltaAngle(rest[u + 1] - rest[u], angles[u + 1] - angles[u]) + sway * .6f);
             // The striking arm comes to the front for the top arm's chop over the head.
-            SetArmInFront(arm, arm == 2 && StrikingArm == 2 && (Current == State.Slam || Current == State.Hold || Current == State.Recover && t < recoverTime * .5f));
+            SetArmInFront(arm, arm == 2 && StrikingArm == 2 && (Current == State.Slam || Current == State.Hold || Current == State.Recover && t < recoverTime / Speed * .5f));
         }
 
         // Body and head: a slow breath, a flinch back while an arm gathers, a heave on the slam.
-        float gather = Current == State.Telegraph ? Smooth(t / telegraphTime) : 0f;
-        float heave = Current == State.Slam || Current == State.Hold ? 1f : Current == State.Recover ? 1f - Smooth(t / recoverTime) : 0f;
+        float gather = Current == State.Telegraph ? Smooth(t / windup) : 0f;
+        float heave = Current == State.Slam || Current == State.Hold ? 1f : Current == State.Recover ? 1f - Smooth(t / (recoverTime / Speed)) : 0f;
         float shake = Time.time < blockedShakeUntil ? Mathf.Sin(Time.time * 90f) * .03f : 0f;
         rig.Pose("Body", -2f * gather + 3f * heave, new Vector2(shake - .05f * gather, .02f * breathe - .06f * heave));
         rig.Pose("Head", 8f * gather - 4f * heave);

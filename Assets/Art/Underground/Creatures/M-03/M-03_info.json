@@ -1,0 +1,73 @@
+{
+ "id": "M-03",
+ "pivot": "feet",
+ "heightUnits": 4.0,
+ "canvas": [
+  669,
+  483
+ ],
+ "pivotPx": [
+  371.5,
+  452.2
+ ],
+ "figureHeightPx": 382.0,
+ "figureWidthPx": 261.0,
+ "segments": {
+  "Walk": {
+   "clip": "Idle and grind",
+   "frames": [
+    0,
+    18
+   ],
+   "scale": 1.0
+  },
+  "Warn": {
+   "clip": "Fist slam",
+   "frames": [
+    0,
+    12
+   ],
+   "scale": 0.887
+  },
+  "Attack": {
+   "clip": "Fist slam",
+   "frames": [
+    12,
+    24
+   ],
+   "scale": 0.887
+  },
+  "Recover": {
+   "clip": "Fist slam",
+   "frames": [
+    24,
+    36
+   ],
+   "scale": 0.887
+  },
+  "Vulnerable": {
+   "clip": "Core open",
+   "frames": [
+    0,
+    36
+   ],
+   "scale": 0.8259
+  },
+  "Hurt": {
+   "clip": "Hurt and death",
+   "frames": [
+    0,
+    6
+   ],
+   "scale": 0.9974
+  },
+  "Death": {
+   "clip": "Hurt and death",
+   "frames": [
+    6,
+    36
+   ],
+   "scale": 0.9974
+  }
+ }
+}

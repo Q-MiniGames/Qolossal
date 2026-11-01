@@ -39,6 +39,6 @@ public sealed class LudoFramesInstaller : MonoBehaviour
         foreach (var c in FindObjectsByType<GroundCreature>(FindObjectsSortMode.None))
             if (c.GetComponent<CrawlerFramesOnCreature>() == null) library.DressCrawler(c.gameObject);
         foreach (var e in FindObjectsByType<EnemyBase>(FindObjectsSortMode.None))
-            if (e.GetComponent<EnemyFramesOnCreature>() == null) library.Dress(e);
+            if (e.GetComponent<EnemyFramesOnCreature>() == null && !UndergroundCreatureFrames.Covers(e)) library.Dress(e);   // underground creatures carry their own frames
     }
 }

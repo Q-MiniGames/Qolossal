@@ -1,0 +1,57 @@
+{
+ "id": "E-16",
+ "pivot": "center",
+ "heightUnits": 1.2,
+ "canvas": [
+  521,
+  553
+ ],
+ "pivotPx": [
+  269.0,
+  269.1
+ ],
+ "figureHeightPx": 342.0,
+ "figureWidthPx": 452.0,
+ "segments": {
+  "Idle": {
+   "clip": "Glide",
+   "frames": [
+    0,
+    36
+   ],
+   "scale": 1.0
+  },
+  "Warn": {
+   "clip": "Bank and swoop",
+   "frames": [
+    0,
+    10
+   ],
+   "scale": 1.0998
+  },
+  "Attack": {
+   "clip": "Bank and swoop",
+   "frames": [
+    10,
+    28
+   ],
+   "scale": 1.0998
+  },
+  "Hurt": {
+   "clip": "Hurt and death",
+   "frames": [
+    0,
+    6
+   ],
+   "scale": 1.0978
+  },
+  "Death": {
+   "clip": "Hurt and death",
+   "frames": [
+    6,
+    36
+   ],
+   "scale": 1.0978
+  }
+ }
+}

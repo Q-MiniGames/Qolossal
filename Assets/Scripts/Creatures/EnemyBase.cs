@@ -19,6 +19,12 @@ public abstract class EnemyBase : MonoBehaviour, ICombatDamageReceiver, IReedbla
     public bool IsAlive => health > 0f;
     public bool IsFlashing => Time.time < flashUntil;
     public virtual bool HurtsOnContact => IsAlive;
+    public float HealthFraction => maximumHealth > 0 ? Mathf.Clamp01(health / maximumHealth) : 0f;
+    // A boss names itself for the bar across the screen; everything else gets a small bar overhead after a hit.
+    public virtual string BossBarName => null;
+    public virtual bool BossBarVisible => health < maximumHealth;
+    protected CreatureHitFeel hitFeel;
+    public CreatureHitFeel HitFeel => hitFeel;
     protected PlayerMovement Player => player != null ? player : player = FindFirstObjectByType<PlayerMovement>();
 
     protected virtual void Awake()
@@ -26,6 +32,8 @@ public abstract class EnemyBase : MonoBehaviour, ICombatDamageReceiver, IReedbla
         body = GetComponent<Rigidbody2D>();
         if (rig == null) rig = GetComponentInChildren<CreatureRig>();
         health = maximumHealth;
+        hitFeel = CreatureHitFeel.On(this);
+        if (rig != null) hitFeel.SetVisual(rig.transform);
     }
 
     public void TakeHit() => ReceiveCombatHit(new CombatDamage { Damage = 1 });
@@ -36,6 +44,7 @@ public abstract class EnemyBase : MonoBehaviour, ICombatDamageReceiver, IReedbla
         float dealt = Mathf.Min(health, hit.Damage);
         health -= dealt;
         flashUntil = Time.time + .12f;
+        if (hitFeel != null) hitFeel.Landed(hit.Point != Vector2.zero ? hit.Point : DeathPoint);
         OnHurt(hit);
         if (!IsAlive) Die();
         var response = CombatDamageResponse.Applied(dealt, true);
@@ -53,6 +62,7 @@ public abstract class EnemyBase : MonoBehaviour, ICombatDamageReceiver, IReedbla
         diedAt = Time.time;
         Vector2 centre = DeathPoint;
         Fx.DeathPuff(centre);
+        CombatCameraShake.Kick(FeedbackTuning.Current.killShake);
         Sfx.Play("Combat_EnemyDefeat", centre);
         SapOrb.MaybeDrop(centre);
         foreach (Collider2D c in GetComponentsInChildren<Collider2D>()) c.enabled = false;

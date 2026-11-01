@@ -1,0 +1,81 @@
+{
+ "id": "M-01",
+ "pivot": "feet",
+ "heightUnits": 3.5,
+ "canvas": [
+  624,
+  472
+ ],
+ "pivotPx": [
+  314.1,
+  389.0
+ ],
+ "figureHeightPx": 271.0,
+ "figureWidthPx": 527.0,
+ "segments": {
+  "Walk": {
+   "clip": "Idle and roar",
+   "frames": [
+    0,
+    16
+   ],
+   "scale": 1.0
+  },
+  "Roar": {
+   "clip": "Idle and roar",
+   "frames": [
+    16,
+    36
+   ],
+   "scale": 1.0
+  },
+  "Warn": {
+   "clip": "Swipe",
+   "frames": [
+    0,
+    12
+   ],
+   "scale": 0.8378
+  },
+  "Attack": {
+   "clip": "Swipe",
+   "frames": [
+    12,
+    24
+   ],
+   "scale": 0.8378
+  },
+  "Recover": {
+   "clip": "Swipe",
+   "frames": [
+    24,
+    36
+   ],
+   "scale": 0.8378
+  },
+  "Vulnerable": {
+   "clip": "Belly open",
+   "frames": [
+    0,
+    36
+   ],
+   "scale": 0.8411
+  },
+  "Hurt": {
+   "clip": "Hurt and death",
+   "frames": [
+    0,
+    6
+   ],
+   "scale": 0.8424
+  },
+  "Death": {
+   "clip": "Hurt and death",
+   "frames": [
+    6,
+    36
+   ],
+   "scale": 0.8424
+  }
+ }
+}

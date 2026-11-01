@@ -1,0 +1,65 @@
+{
+ "id": "E-10",
+ "pivot": "center",
+ "heightUnits": 1.6,
+ "canvas": [
+  753,
+  774
+ ],
+ "pivotPx": [
+  301.3,
+  351.0
+ ],
+ "figureHeightPx": 600.0,
+ "figureWidthPx": 286.0,
+ "segments": {
+  "Idle": {
+   "clip": "Hang and drop",
+   "frames": [
+    0,
+    14
+   ],
+   "scale": 1.0
+  },
+  "Warn": {
+   "clip": "Hang and drop",
+   "frames": [
+    14,
+    22
+   ],
+   "scale": 1.0
+  },
+  "Attack": {
+   "clip": "Hang and drop",
+   "frames": [
+    22,
+    30
+   ],
+   "scale": 1.0
+  },
+  "Walk": {
+   "clip": "Crawl",
+   "frames": [
+    0,
+    36
+   ],
+   "scale": 1.3966
+  },
+  "Hurt": {
+   "clip": "Hurt and death",
+   "frames": [
+    0,
+    6
+   ],
+   "scale": 1.171
+  },
+  "Death": {
+   "clip": "Hurt and death",
+   "frames": [
+    6,
+    36
+   ],
+   "scale": 1.171
+  }
+ }
+}

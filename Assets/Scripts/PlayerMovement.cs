@@ -37,12 +37,17 @@ public sealed class PlayerMovement : MonoBehaviour
     public bool RunRequested => runHeld;
     // Running is Qori's normal pace (16 Oct). Areas that want a walk (house interiors, later) set ForceWalk.
     public bool ForceWalk { get; set; }
+    // Only a cave transition may supply this; normal player input stays blocked during travel.
+    public float? TransitionWalkInput { get; set; }
     // Seconds Qori has been running at full speed (0 when not): the sprint attack needs a run-up.
     public float RunningFor => IsRunning ? Time.time - runningSince : 0f;
     private float runningSince;
     public bool IsRunning { get; private set; }
     public float WalkSpeed => moveSpeed;
     public float RunSpeed => Mathf.Max(moveSpeed,runSpeed);
+    // Sprinting: Shift / L3 held while running (MovementTuning.sprint).
+    public bool IsSprinting { get; private set; }
+    public float TopSpeed => IsSprinting ? Mathf.Max(RunSpeed, Tuning.sprintSpeed) : RunSpeed;
     public Vector2 ObservedDisplacement { get; private set; }
     public Vector2 ObservedVelocity { get; private set; }
     /// <summary>The collider Qori is standing on (null when airborne).</summary>
@@ -118,7 +123,7 @@ public sealed class PlayerMovement : MonoBehaviour
         IsDashing = false;
         nextDashAt = Time.time + dashCooldown;
         if (settle) velocity = new Vector2(DashDirection * moveSpeed, 0f);
-        else velocity.x = Mathf.Clamp(velocity.x, -RunSpeed, RunSpeed);   // a dash-jump carries running speed, no more
+        else velocity.x = Mathf.Clamp(velocity.x, -TopSpeed, TopSpeed);   // a dash-jump carries running speed, no more
     }
 
     private void CancelDash() { IsDashing = false; IsGliding = false; airJumpPress = glideArmed = false; }
@@ -228,7 +233,7 @@ public sealed class PlayerMovement : MonoBehaviour
     private InputAction growthAction;
     private InputAction runAction;
     private InputAction dashAction, evadeAction;
-    private bool runHeld;
+    private bool runHeld, sprintHeld;
     private float pendingLaunchSpeed;
     private Vector2 pendingKnockback;
     private bool hasPendingKnockback;
@@ -305,10 +310,12 @@ public sealed class PlayerMovement : MonoBehaviour
         growthAction.AddBinding("<Keyboard>/e");
         growthAction.AddBinding("<Gamepad>/rightShoulder");
         runAction = new InputAction("Run", InputActionType.Button);
+        runAction.AddBinding("<Keyboard>/leftShift");   // held: the sprint (20 Oct)
+        runAction.AddBinding("<Keyboard>/rightShift");
         runAction.AddBinding("<Gamepad>/leftStickPress");
         evadeAction = new InputAction("Evade", InputActionType.Button);
-        evadeAction.AddBinding("<Keyboard>/leftShift");
-        evadeAction.AddBinding("<Keyboard>/rightShift");
+        evadeAction.AddBinding("<Keyboard>/leftCtrl");
+        evadeAction.AddBinding("<Keyboard>/rightCtrl");
         evadeAction.AddBinding("<Gamepad>/buttonNorth");
         dashAction = new InputAction("Dash", InputActionType.Button);
         dashAction.AddBinding("<Keyboard>/c");
@@ -403,12 +410,19 @@ public sealed class PlayerMovement : MonoBehaviour
             jumpHeld = false;
             lastJumpPressedTime = lastDashPressedTime = float.NegativeInfinity;
             ledgeVerticalInput=0;
+            if (AreaTransition.IsTransitioning && TransitionWalkInput.HasValue)
+            {
+                moveInput = Mathf.Clamp(TransitionWalkInput.Value, -1f, 1f);
+                sprintHeld = false;
+                if (Mathf.Abs(moveInput) > .01f) FacingDirection = Mathf.Sign(moveInput);
+            }
             return;
         }
         if (dashAction.WasPressedThisFrame()) lastDashPressedTime = Time.time;
         if (evadeAction.WasPressedThisFrame()) lastEvadePressedTime = Time.time;
         moveInput = moveAction.ReadValue<float>();
         runHeld = !ForceWalk;
+        sprintHeld = runAction.IsPressed();
         ledgeVerticalInput=ledgeVerticalAction.ReadValue<float>();
         if (Mathf.Abs(moveInput) > 0.1f && Time.time>=wallSteeringUntil)
             FacingDirection = Mathf.Sign(moveInput);
@@ -457,6 +471,14 @@ public sealed class PlayerMovement : MonoBehaviour
         if (!string.IsNullOrEmpty(checkpoint.CheckpointId))
             GameSave.SetCheckpoint(gameObject.scene.path, checkpoint.CheckpointId);
     }
+
+    // A one-way platform he is still rising or falling through holds nothing up: only feet near its top count.
+    bool PassingThrough(Collider2D c) => c.usedByEffector && c.TryGetComponent(out PlatformEffector2D e) && e.useOneWay
+        && playerCollider.bounds.min.y < c.bounds.max.y - OneWayLandingDepth;
+    const float OneWayLandingDepth = .15f;
+
+    // A wind's drag for this physics step: added on top of his own motion, so his controls keep working.
+    public void AddPull(Vector2 velocity) => pullVelocity = velocity;
 
     public void ApplyKnockback(Vector2 velocity)
     {
@@ -525,7 +547,7 @@ public sealed class PlayerMovement : MonoBehaviour
             if (wasGrounded) castDistance = Mathf.Max(castDistance, GroundSnapDistance);
             int count = body.Cast(Vector2.down, groundFilter, groundHits, castDistance);
             for (int i = 0; i < count; i++)
-                if (groundHits[i].normal.y > 0.65f)
+                if (groundHits[i].normal.y > 0.65f && !PassingThrough(groundHits[i].collider))
                 {
                     if (groundHits[i].distance <= groundCheckDistance) grounded = true;
                     if (groundHits[i].distance < nearestGround)
@@ -547,6 +569,12 @@ public sealed class PlayerMovement : MonoBehaviour
         }
         if (grounded)
             lastGroundedTime = Time.time;
+        // Caught just inside a one-way platform's top: stand on it, not in it.
+        if (grounded && groundCollider != null && groundCollider.usedByEffector)
+        {
+            float sunk = groundCollider.bounds.max.y - playerCollider.bounds.min.y;
+            if (sunk > .005f) body.position += Vector2.up * sunk;
+        }
 
         bool attached = thread != null && thread.IsAttached;
         WallDirection=0;
@@ -590,12 +618,12 @@ public sealed class PlayerMovement : MonoBehaviour
         }
         else if (grounded && (impulse || launch != LaunchKind.None))
         {
-            velocity.x = Mathf.MoveTowards(velocity.x, moveInput * (runHeld ? RunSpeed : moveSpeed)*groundControl,
+            velocity.x = Mathf.MoveTowards(velocity.x, moveInput * (runHeld ? TopSpeed : moveSpeed)*groundControl,
                 groundAcceleration * Time.fixedDeltaTime);
         }
         else if (grounded)
         {
-            velocity.x = Mathf.MoveTowards(velocity.x, moveInput * (runHeld ? RunSpeed : moveSpeed)*groundControl,
+            velocity.x = Mathf.MoveTowards(velocity.x, moveInput * (runHeld ? TopSpeed : moveSpeed)*groundControl,
                 groundAcceleration * Time.fixedDeltaTime);
             // Move along the surface (the collider is frictionless, so on a slope gravity would
             // otherwise slide him downhill and uphill walking would read as leaving the ground).
@@ -644,8 +672,8 @@ public sealed class PlayerMovement : MonoBehaviour
             launch=LaunchKind.WallJump;
             WallDirection=0;
         }
-        // The double jump: a fresh press in mid-air, once. Close to the ground the press is left to the buffered jump.
-        else if(combatAllowsJump && Tuning.doubleJump && !airJumpUsed && !grounded && !recovering && !attached && launch==LaunchKind.None &&
+        // The double jump (the Leapseed relic, from the Cradle's shelter hut): a fresh press in mid-air, once. Close to the ground the press is left to the buffered jump.
+        else if(combatAllowsJump && Tuning.doubleJump && Relics.Has(abilities,Relics.DoubleJump) && !airJumpUsed && !grounded && !recovering && !attached && launch==LaunchKind.None &&
                 !IsLedgeHanging && !IsLedgeClimbing && Time.time-lastJumpPressedTime<=jumpBufferTime && !(nearestGround<=GlideMinHeight))
         {
             velocity.y=Tuning.doubleJumpSpeed;
@@ -684,7 +712,7 @@ public sealed class PlayerMovement : MonoBehaviour
             surfaceWalking=false;
         }
 
-        // Evade (Shift / Y): on the ground, along the input (or facing) direction.
+        // Evade (Ctrl / Y): on the ground, along the input (or facing) direction.
         if(IsEvading && (Time.fixedTime>=evadeUntil || recovering || attached || launch!=LaunchKind.None || IsDashing))
             StopEvade();
         else if(!IsEvading && dashAllowed && grounded && !IsDashing && !recovering && !attached && launch==LaunchKind.None &&
@@ -754,7 +782,8 @@ public sealed class PlayerMovement : MonoBehaviour
         surfaceWalking &= launch == LaunchKind.None && !attached;
         // Cancel this step's gravity while walking on the ground, so he stands still on slopes.
         if (!surfaceWalking) ridingVelocity = Vector2.zero;
-        platformVelocity = ridingVelocity;
+        platformVelocity = ridingVelocity + pullVelocity;
+        pullVelocity = Vector2.zero;
         carriedThisStep = platformVelocity * Time.fixedDeltaTime;   // measured out of ObservedVelocity next step
         // A dash and the Glidecap also hold Qori against gravity: they set his fall speed themselves.
         bool ownGravity = surfaceWalking || IsDashing || IsGliding;
@@ -763,6 +792,9 @@ public sealed class PlayerMovement : MonoBehaviour
         bool wasRunning = IsRunning;
         IsRunning = IsGrounded && !recovering && runHeld && Mathf.Abs(velocity.x)>moveSpeed+.1f;
         if (IsRunning && !wasRunning) runningSince = Time.time;
+        if (!Tuning.sprint || ForceWalk || !runHeld) IsSprinting = false;
+        else if (IsRunning && sprintHeld) IsSprinting = true;
+        if (!sprintHeld || (IsGrounded && !IsRunning)) IsSprinting = false;   // let go, stopped, turned, attacking: a jump keeps it
         HasGroundContact = grounded && launch == LaunchKind.None && (velocity.y <= 0.1f || surfaceWalking);
         GroundNormal = HasGroundContact ? groundNormal : Vector2.up;
         GroundPoint = HasGroundContact ? groundPoint : Vector2.zero;
@@ -915,7 +947,7 @@ public sealed class PlayerMovement : MonoBehaviour
 
     // A moving platform's velocity, added to Qori's while he stands on it. The distance it carries
     // him isn't his own motion, so it is taken out of ObservedVelocity (no walk while riding).
-    private Vector2 carriedThisStep, platformVelocity, ridingVelocity;
+    private Vector2 carriedThisStep, platformVelocity, ridingVelocity, pullVelocity;
 
     private void ObserveMotion(Vector2 velocity)
     {

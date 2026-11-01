@@ -14,6 +14,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public sealed class ThornheartBoss : EnemyBase
 {
+    public override string BossBarName => "The Thornheart";
     [Header("Frames (export_thornheart.py; drawn facing right)")]
     public Sprite[] idle = new Sprite[0], raise = new Sprite[0], hurt = new Sprite[0], death = new Sprite[0];
     [Tooltip("The idle body's height in frame pixels, the feet centre and the heart, in canvas pixels (y down).")]

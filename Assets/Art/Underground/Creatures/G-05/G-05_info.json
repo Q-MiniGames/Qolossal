@@ -1,0 +1,105 @@
+{
+ "id": "G-05",
+ "pivot": "feet",
+ "heightUnits": 5.0,
+ "canvas": [
+  750,
+  558
+ ],
+ "pivotPx": [
+  359.5,
+  474.9
+ ],
+ "figureHeightPx": 364.0,
+ "figureWidthPx": 371.0,
+ "segments": {
+  "Idle": {
+   "clip": "Idle and screech",
+   "frames": [
+    0,
+    12
+   ],
+   "scale": 1.0
+  },
+  "Roar": {
+   "clip": "Idle and screech",
+   "frames": [
+    12,
+    36
+   ],
+   "scale": 1.0
+  },
+  "Warn": {
+   "clip": "Wing gust",
+   "frames": [
+    0,
+    10
+   ],
+   "scale": 1.2169
+  },
+  "Attack": {
+   "clip": "Wing gust",
+   "frames": [
+    10,
+    20
+   ],
+   "scale": 1.2169
+  },
+  "Recover": {
+   "clip": "Wing gust",
+   "frames": [
+    20,
+    24
+   ],
+   "scale": 1.2169
+  },
+  "DiveWarn": {
+   "clip": "Dive wind-up",
+   "frames": [
+    0,
+    24
+   ],
+   "scale": 1.1484
+  },
+  "Open": {
+   "clip": "Eye open",
+   "frames": [
+    0,
+    12
+   ],
+   "scale": 1.0041
+  },
+  "Exposed": {
+   "clip": "Eye open",
+   "frames": [
+    12,
+    24
+   ],
+   "scale": 1.0041
+  },
+  "Close": {
+   "clip": "Eye open",
+   "frames": [
+    24,
+    36
+   ],
+   "scale": 1.0041
+  },
+  "Hurt": {
+   "clip": "Hurt and death",
+   "frames": [
+    0,
+    6
+   ],
+   "scale": 1.0
+  },
+  "Death": {
+   "clip": "Hurt and death",
+   "frames": [
+    6,
+    36
+   ],
+   "scale": 1.0
+  }
+ }
+}

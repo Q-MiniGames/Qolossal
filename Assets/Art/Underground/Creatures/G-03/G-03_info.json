@@ -1,0 +1,97 @@
+{
+ "id": "G-03",
+ "pivot": "feet",
+ "heightUnits": 6.0,
+ "canvas": [
+  710,
+  425
+ ],
+ "pivotPx": [
+  320.8,
+  389.2
+ ],
+ "figureHeightPx": 302.0,
+ "figureWidthPx": 533.0,
+ "segments": {
+  "Idle": {
+   "clip": "Idle and roar (redo)",
+   "frames": [
+    0,
+    14
+   ],
+   "scale": 1.0
+  },
+  "Roar": {
+   "clip": "Idle and roar (redo)",
+   "frames": [
+    14,
+    36
+   ],
+   "scale": 1.0
+  },
+  "Warn": {
+   "clip": "Claw sweep",
+   "frames": [
+    0,
+    12
+   ],
+   "scale": 0.9119
+  },
+  "Attack": {
+   "clip": "Claw sweep",
+   "frames": [
+    12,
+    24
+   ],
+   "scale": 0.9119
+  },
+  "Recover": {
+   "clip": "Claw sweep",
+   "frames": [
+    24,
+    36
+   ],
+   "scale": 0.9119
+  },
+  "Open": {
+   "clip": "Valve open",
+   "frames": [
+    0,
+    12
+   ],
+   "scale": 0.9102
+  },
+  "Exposed": {
+   "clip": "Valve open",
+   "frames": [
+    12,
+    24
+   ],
+   "scale": 0.9102
+  },
+  "Close": {
+   "clip": "Valve open",
+   "frames": [
+    24,
+    36
+   ],
+   "scale": 0.9102
+  },
+  "Hurt": {
+   "clip": "Hurt and death",
+   "frames": [
+    0,
+    6
+   ],
+   "scale": 0.8569
+  },
+  "Death": {
+   "clip": "Hurt and death",
+   "frames": [
+    6,
+    36
+   ],
+   "scale": 0.8569
+  }
+ }
+}

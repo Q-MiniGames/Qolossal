@@ -24,6 +24,7 @@ public sealed class PlayerAbilityController : MonoBehaviour
     {
         Combat=GetComponent<PlayerCombat>();Movement=GetComponent<PlayerMovement>();foreach(var ability in unlockedAbilities)Unlock(ability);
         bool area=GameArea.InScene!=null;
+        if(area)GrantEarnedDoubleJump();
         foreach(var relic in Relics.All)if(!area||GameSave.HasRelic(relic.abilityId))Unlock(relic);
         saving=area;
     }
@@ -34,6 +35,16 @@ public sealed class PlayerAbilityController : MonoBehaviour
         if(ability==null||string.IsNullOrEmpty(ability.abilityId)||unlocked.ContainsKey(ability.abilityId))return;
         unlocked[ability.abilityId]=ability;UnlockVersion++;OnAbilityUnlocked?.Invoke(ability);
         if(saving&&Array.IndexOf(Relics.All,ability)>=0)GameSave.AddRelic(ability.abilityId);
+    }
+    // The double jump became a relic (the Cradle's shelter hut) after saves already existed: a save that
+    // has gone past that hut keeps it. Past the hut means another relic, a later Cradle checkpoint, or
+    // any other scene.
+    static void GrantEarnedDoubleJump()
+    {
+        if(GameSave.HasRelic(Relics.DoubleJump))return;
+        string cradle=RegionalSceneCatalog.Folder+"MRAtlas_MR01_Cradle.unity", checkpoint=GameSave.CheckpointIn(cradle), last=GameSave.LastScene;
+        if(GameSave.Relics.Count>0||!string.IsNullOrEmpty(checkpoint)&&checkpoint!="mra:MR01:cp:01"||!string.IsNullOrEmpty(last)&&last!=cradle)
+            GameSave.AddRelic(Relics.DoubleJump);
     }
     public bool HasAbility(string id)=>string.IsNullOrEmpty(id)||unlocked.ContainsKey(id);
     // Takes an ability away (the World State window and tests); the save is left to the caller.

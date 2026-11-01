@@ -206,6 +206,12 @@ public sealed class PlayerCombat : MonoBehaviour
             float bounce=CurrentAttack.plungeBounce;var old=CurrentAttack;running=false;nextAttack=Time.time+.1f;OnAttackFinished?.Invoke(old);
             movement.QueueCombatBounce(bounce);
         }
+        // A blow that glances off a shell or a shut guard throws him back: swinging at armour costs time.
+        else if(d==CombatHitDisposition.Blocked)
+        {
+            movement.ApplyKnockback(new Vector2(-swipeDirection*3.5f,1f));
+            nextAttack=Time.time+.25f;
+        }
     }
     public void RequestHitStop(float seconds){if(running)hitStopRemaining=Mathf.Max(hitStopRemaining,Mathf.Clamp(seconds,0,.1f));}
     void OnDisable()=>CancelAttack();
