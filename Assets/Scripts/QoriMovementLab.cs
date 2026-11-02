@@ -97,7 +97,7 @@ public sealed class QoriMovementLab : MonoBehaviour
         if (!showControls || player == null) return;
         float width = Mathf.Min(650f, Screen.width - 24f);
         GUIStyle text = new GUIStyle(GUI.skin.label) { wordWrap = true };
-        string controls = "A/D or arrows: move (runs) · Shift: evade · Space: jump · F / right mouse: thread · W/S: reel/extend · R: reset\n"
+        string controls = "A/D or arrows: move (runs) · Shift: sprint · Ctrl: evade · Space: jump · F / right mouse: thread · W/S: reel/extend · R: reset\n"
             + "Xbox: stick: move · Hold L3: run · A: jump · RT: thread · LT: reel · D-pad down: extend\n"
             + "Wall: auto-slide; jump to climb; hold away + jump to push off; steer away to drop.\n"
             + "Ledge: catch automatically; Jump / Up climbs; Down / away drops.\n"

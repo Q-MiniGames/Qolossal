@@ -1,0 +1,2 @@
+Room-border revision — 22 October 2026
+Map-wide rock mass and 89 interior backing meshes disabled. 847 narrow border segments built from the unchanged room/passage perimeters, with joined corners. Width1.5u, native texture mapping256px/u. All1624 colliders and777 platforms preserved. Flight code and accepted art unchanged. Before scene snapshot retained. Screenshots inspected at3840x2160 in Windows Unity Editor. Supported targets remain WindowsPC, PS5, XboxSeriesX|S, Switch2 handheld/docked; no console or performance validation claimed.

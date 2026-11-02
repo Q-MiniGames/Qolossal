@@ -9,6 +9,9 @@ public sealed class MovementTuning : ScriptableObject
     [Header("Running (units/s)")]
     [Min(0f)] public float moveSpeed = 7f;
     [Min(0f)] public float runSpeed = 10.5f;
+    [Tooltip("Sprint (20 Oct): hold Shift / L3 while running and Qori speeds up to the sprint speed; the run frames play faster. It lasts through jumps and ends when the key is let go or he stops, turns or attacks.")]
+    public bool sprint = true;
+    [Min(0f)] public float sprintSpeed = 12f;
     [Tooltip("Units/s per second on the ground.")] [Min(0f)] public float groundAcceleration = 65f;
     [Tooltip("Units/s per second in the air, with the stick held.")] [Min(0f)] public float airAcceleration = 35f;
     [Tooltip("Units/s per second in the air with the stick released. Thread-swing and flower-boost momentum is kept until landing.")]
@@ -38,7 +41,7 @@ public sealed class MovementTuning : ScriptableObject
     [Min(.02f)] public float dashSeconds = .16f;
     [Tooltip("Rest after a dash before the next can start.")] [Min(0f)] public float dashCooldown = .3f;
 
-    [Header("Evade (the dodge: Shift / Y)")]
+    [Header("Evade (the dodge: Ctrl / Y)")]
     [Tooltip("A quick dash along the ground that can't be hurt and passes through enemies (not the Shellback, whose stone shell stops it). Ground only.")]
     [Min(1f)] public float evadeSpeed = 13f;
     [Min(.05f)] public float evadeSeconds = .26f;

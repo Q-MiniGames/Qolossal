@@ -131,7 +131,9 @@ public static class QoriArmoryFactory
         void Around(AttackDefinition m,CombatHitShape shape,Vector2 size,Vector2 offset){m.hitShape=shape;m.hitboxSize=size;m.hitboxOffset=offset;m.multipleTargets=true;}
         var back=Make("2 - Backswing");var spin=Make("3 - Spin finisher");
         Around(spin,CombatHitShape.Circle,new Vector2(3f,3f),new Vector2(0,.3f));
-        front.followUps=new[]{back};back.followUps=new[]{spin};
+        // One quick swing repeated on every press, or the three-hit combo (WeaponTuning.staffSingleAttack).
+        if(WeaponTuning.Current.staffSingleAttack)front.followUps=new AttackDefinition[0];
+        else{front.followUps=new[]{back};back.followUps=new[]{spin};}
         foreach(var m in new[]{front,back,spin})m.comboWindowStart=.25f;
         var sprint=Make("Sprint lunge");sprint.allowAir=false;
         Around(sprint,CombatHitShape.Circle,new Vector2(2.6f,2.6f),new Vector2(.9f,.3f));

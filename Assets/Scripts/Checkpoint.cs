@@ -13,6 +13,8 @@ public sealed class Checkpoint : MonoBehaviour
     [SerializeField] private Color activeColor = new Color(0.75f, 1f, 0.9f);
     [Tooltip("An area's own shrine art (e.g. Checkpoint_Shrine_A1), shown instead of the A0 lantern; it brightens when touched.")]
     [SerializeField] private Sprite shrineArt;
+    [Tooltip("Optional art-only child renderer; the checkpoint trigger and spawn transform stay unchanged.")]
+    [SerializeField] private SpriteRenderer shrineRenderer;
     private SpriteRenderer marker;
     private Color restingColor;
     private WorldPropVisual artwork;
@@ -22,7 +24,7 @@ public sealed class Checkpoint : MonoBehaviour
     private void Awake()
     {
         GetComponent<BoxCollider2D>().isTrigger = true;
-        marker = GetComponent<SpriteRenderer>();
+        marker = shrineRenderer != null ? shrineRenderer : GetComponent<SpriteRenderer>();
         if (shrineArt != null)
         {
             marker.sprite = shrineArt;

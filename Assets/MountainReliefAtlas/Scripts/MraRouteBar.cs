@@ -33,6 +33,19 @@ public sealed class MraRouteBar : MonoBehaviour
     /// <summary>The markers drawn now (caves, shrine, Waymark, resting places).</summary>
     public int MarkersShown { get; private set; }
     public bool Showing => group != null && group.alpha > .5f;
+    // Pixel bounds in IMGUI's top-left coordinates, shared with the armory hint.
+    readonly Vector3[] screenCorners = new Vector3[4];
+    public Rect ScreenBounds
+    {
+        get
+        {
+            if (backing == null) return Rect.zero;
+            backing.rectTransform.GetWorldCorners(screenCorners);
+            var lo = RectTransformUtility.WorldToScreenPoint(null, screenCorners[0]);
+            var hi = RectTransformUtility.WorldToScreenPoint(null, screenCorners[2]);
+            return new Rect(lo.x, Screen.height - hi.y, hi.x - lo.x, hi.y - lo.y);
+        }
+    }
 
     Region region;
     Transform qori;
@@ -185,7 +198,12 @@ public sealed class MraRouteBar : MonoBehaviour
         float rise = TrackH * .5f + 9f + IconSize + Mathf.Max(0, tierEnd.Count - 1) * TierRise, below = QoriSize * .5f + 2f;
         float left = width * .5f + capReach + 12f, right = width * .5f + capReach + 14f + 150f;
         backing.rectTransform.sizeDelta = new Vector2(left + right, rise + below + 8f);
-        backing.rectTransform.anchoredPosition = new Vector2((right - left) * .5f, -Top + (rise - below) * .5f);
+        // A second marker tier can exceed the old fixed 80px top margin.
+        float safeTop = (Screen.height - Screen.safeArea.yMax) / canvas.scaleFactor;
+        float top = Mathf.Max(Top, rise + safeTop + 16f);
+        bar.anchoredPosition = new Vector2(0f, -top);
+        remaining.rectTransform.anchoredPosition = new Vector2(width * .5f + capReach + 89f, -top);
+        backing.rectTransform.anchoredPosition = new Vector2((right - left) * .5f, -top + (rise - below) * .5f);
         marker.SetAsLastSibling();   // Qori on top
         markersStale = false;
     }

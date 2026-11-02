@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-// Builds Assets/Scenes/Proto_Palm.unity, the Palm prototype from the world redesign proposal v2
+// Builds Assets/Development/LegacyScenes/Proto_Palm.unity, the Palm prototype from the world redesign proposal v2
 // (Tools/Design/QOLOSSAL_WORLD_REDESIGN_PROPOSAL.md): one hand of the seated titan, at the approved
 // 2.5x scale (hand ~300 u), in placeholder shapes. The titan is a mystery: nothing here names the
 // body or shows it in the background; the hand reads as a strange landscape of long rounded ridges.
@@ -25,7 +25,7 @@ using UnityEngine;
 // Menu: Qolossal > Prototype > Build Palm Prototype
 public static class PalmPrototypeBuilder
 {
-    public const string ScenePath = "Assets/Scenes/Proto_Palm.unity";
+    public const string ScenePath = "Assets/Development/LegacyScenes/Proto_Palm.unity";
     public const float Scale = 2.5f;
 
     // The hand's walk surface at the v1 scale (fingertip at x = 0, valley floor at y = 0), scaled by

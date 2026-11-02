@@ -7,10 +7,11 @@ using UnityEngine.UI;
 // beside it to sit: Qori's controls and the HUD go quiet, the camera eases out to frame the spot,
 // and a small player appears in the bottom-right corner: one line with the chosen track. Tracks are
 // unlocked by song shells found around the world (a flag "shell:<id>"); a track with no shell is
-// known from the start. Left/Right (or Up/Down) choose, Confirm plays or stops, H (north button)
-// hides or shows the player, Cancel gets up. While a track plays the player fades away after a few
-// idle seconds so the view is left alone; any key brings it back. A track without a clip (no Suno
-// music yet) uses a placeholder.
+// known from the start. Left/Right choose a track, Confirm plays or stops, H (north button) hides or
+// shows the player, Cancel gets up. At the Qvale bench, sitting fades to the painted listening
+// retreat, and Up/Down choose its place (seven, fading between them; elsewhere Up/Down choose tracks
+// too). While a track plays the player fades away after a few idle seconds so the view is left
+// alone; any key brings it back. A track without a clip (no Suno music yet) uses a placeholder.
 [DisallowMultipleComponent, RequireComponent(typeof(BoxCollider2D))]
 public sealed class ListeningSpot : MonoBehaviour
 {
@@ -35,10 +36,11 @@ public sealed class ListeningSpot : MonoBehaviour
 
     bool near; Rigidbody2D qori; int selected, playing = -1, openedFrame;
     AudioSource source; float targetVolume;
-    Canvas canvas; CanvasGroup group; Text title, count, hint; Image bar;
+    Canvas canvas; CanvasGroup group; Text title, count, hint, place; Image bar;
     Camera view; CameraFollow follow; Vector3 cameraFrom; float sizeFrom, ease; bool leaving;
     Canvas hud;
-    ListeningRetreat retreat;   // the painted listening retreat, when there is one (Batch 25a-6)
+    bool retreat;   // the painted listening retreat shows (Batch 25a-11 and 26)
+    Sprite barSprite;
     const float IdleFade = 4f;   // seconds without input, while a track plays, before the player fades
     float idle, shown = 1f; bool hidden;
 
@@ -65,6 +67,7 @@ public sealed class ListeningSpot : MonoBehaviour
     {
         if (IsSitting) return;
         if (hasSeat) retreat = ListeningRetreat.Open();   // fades to the retreat; the world view eases out behind it
+        if (retreat) barSprite = ListeningRetreat.PlayerBar;
         if (canvas == null) Build();
         Sfx.Play("Qori_Sit");
         IsSitting = true; leaving = false; openedFrame = Time.frameCount; selected = Mathf.Max(0, playing);
@@ -100,7 +103,7 @@ public sealed class ListeningSpot : MonoBehaviour
         if (!IsSitting || leaving) return;
         leaving = true; canvas.enabled = false; ease = 0f;
         Sfx.Play("UI_Back");
-        if (retreat != null) { retreat.Close(); retreat = null; }
+        if (retreat) { ListeningRetreat.Close(); retreat = false; }
         // Up off the seat, back where he stood; the view then eases back to him.
         if (pose != null) pose.Release();
         if (qori != null && hasSeat) { qori.transform.position = standAt; qori.simulated = true; qori.linearVelocity = Vector2.zero; }
@@ -134,7 +137,7 @@ public sealed class ListeningSpot : MonoBehaviour
         // (UI_ListeningSpot_TrackRow_Playing, carried by the retreat) with the track, and a hint above.
         var anchor = new Vector2(1f, 0f);
         const float x = -260f, y = 104f, w = 440f, h = 72f;
-        var sprite = retreat != null ? retreat.playerBar : null;
+        var sprite = barSprite;
         if (sprite != null)
         {
             bar = GameHud.AddImage(canvas.transform, "Bar", sprite, anchor, new Vector2(x, y), new Vector2(w, h));
@@ -144,8 +147,13 @@ public sealed class ListeningSpot : MonoBehaviour
         title = TownUi.Label(canvas.transform, "Track", anchor, new Vector2(x - 18f, y), new Vector2(w - 150f, h - 16f), 25, TextAnchor.MiddleCenter, TownUi.PanelInk, false);
         title.horizontalOverflow = HorizontalWrapMode.Overflow;
         count = TownUi.Label(canvas.transform, "Count", anchor, new Vector2(x + w * .5f - 68f, y), new Vector2(80f, h - 16f), 18, TextAnchor.MiddleCenter, TownUi.PanelDim, false);
-        hint = TownUi.Label(canvas.transform, "Hint", anchor, new Vector2(x, y + 56f), new Vector2(w + 60f, 30f), 18, TextAnchor.MiddleCenter, TownUi.PanelInk, false);   // dark ink: the terrace paving under it is pale
-        hint.text = "◀ ▶ choose    Confirm: play / stop    H: hide    Cancel: get up";
+        // The place, just above the bar (the retreat only), and the keys above that. White with a
+        // shadow: the scenes run from pale paving to night.
+        place = TownUi.Label(canvas.transform, "Place", anchor, new Vector2(x, y + 52f), new Vector2(w + 60f, 30f), 20, TextAnchor.MiddleCenter, TownUi.Ink);
+        place.enabled = barSprite != null && ListeningRetreat.Use;
+        hint = TownUi.Label(canvas.transform, "Hint", anchor, new Vector2(x - 60f, y + (place.enabled ? 84f : 56f)), new Vector2(w + 150f, 30f), 17, TextAnchor.MiddleCenter, TownUi.Ink);
+        hint.text = place.enabled ? "◀ ▶ song   ▲ ▼ place   Confirm: play/stop   H: hide   Cancel: get up"
+                                  : "◀ ▶ choose    Confirm: play / stop    H: hide    Cancel: get up";
         canvas.enabled = false;
     }
 
@@ -155,6 +163,7 @@ public sealed class ListeningSpot : MonoBehaviour
         string name = known ? tracks[selected].title : "<color=#8C8577>???  a song shell</color>";
         title.text = "◀  " + (selected == playing ? "♪ " : "") + name + "  ▶";
         count.text = (selected + 1) + " / " + tracks.Count;
+        if (place.enabled) place.text = "▲  " + ListeningRetreat.Titles[ListeningRetreat.Current] + "  ▼";
     }
 
     void Update()
@@ -185,10 +194,12 @@ public sealed class ListeningSpot : MonoBehaviour
         }
         if (Time.frameCount == openedFrame) return;
         if (TownInput.Cancel()) { Leave(); return; }
-        bool prev = TownInput.Up() || TownInput.Left(), next = TownInput.Down() || TownInput.Right();
+        bool up = TownInput.Up(), down = TownInput.Down();
+        bool prev = TownInput.Left() || !retreat && up, next = TownInput.Right() || !retreat && down;
+        int placeBy = retreat ? (up ? -1 : 0) + (down ? 1 : 0) : 0;
         bool confirm = TownInput.Confirm(), toggle = TownInput.Toggle();
         if (toggle) { hidden = !hidden && shown > .5f; idle = 0f; }
-        else if (prev || next || confirm)
+        else if (prev || next || confirm || placeBy != 0)
         {
             // While hidden or faded, the first key only brings the player back.
             bool wasAway = hidden || shown < .5f;
@@ -198,6 +209,7 @@ public sealed class ListeningSpot : MonoBehaviour
                 if (prev) { selected = (selected + tracks.Count - 1) % tracks.Count; Sfx.Play("UI_Move"); }
                 if (next) { selected = (selected + 1) % tracks.Count; Sfx.Play("UI_Move"); }
                 if (confirm) { Sfx.Play("UI_Confirm"); Play(selected); }
+                if (placeBy != 0) { ListeningRetreat.Step(placeBy); Sfx.Play("UI_Move"); }   // fades to the next place; the music plays on
             }
         }
         else idle += Time.unscaledDeltaTime;
@@ -218,5 +230,5 @@ public sealed class ListeningSpot : MonoBehaviour
         GUI.Label(new Rect(p.x - 150f, Screen.height - p.y - 30f, 300f, 40f), "▲ Sit and listen", style);
     }
 
-    void OnDestroy() { if (IsSitting) { IsSitting = false; ModalUi.Close(); } if (retreat != null) retreat.Close(); }
+    void OnDestroy() { if (IsSitting) { IsSitting = false; ModalUi.Close(); } if (retreat) ListeningRetreat.Close(); }
 }

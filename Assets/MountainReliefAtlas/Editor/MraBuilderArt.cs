@@ -15,7 +15,7 @@ using UnityEngine.SceneManagement;
 public static partial class MraWorldBuilder
 {
     public const string Folder = "Assets/MountainReliefAtlas/";
-    public const string SceneFolder = Folder + "Scenes/";
+    public const string SceneFolder = "Assets/Scenes/Game/";
     public const string GeneratedRoot = "Generated (MRA builder)";
     const string ArtRoot = "Assets/Art/Codex/";
 
@@ -26,6 +26,14 @@ public static partial class MraWorldBuilder
         public string cliffKit;
         /// <summary>A town step set's name prefix (Batches 16e-16f), e.g. Terrain/Body/Qvale/Qvale_Step_; null for none.</summary>
         public string stepSet;
+        /// <summary>Per piece kind (Short, Medium, Outer, Inner, Wall, Short_SlopeTop, ...), the accepted name suffix (e.g. "_v3").</summary>
+        public Dictionary<string, string> stepVersion;
+        /// <summary>A natural step set (Batch 23): runs are the strip's own columns; slope tops climb 0.4.</summary>
+        public bool naturalSteps;
+        /// <summary>The strip's least-visible joint columns (px), where step seams may fall.</summary>
+        public float[] stripJointsPx;
+        /// <summary>Natural sets: shade the pieces like the fill, and keep a short wall's Inner under the Outer's kerb (MraTerrain).</summary>
+        public bool shadeLikeFill, innerUnderKerb, bodyFade;
         public Color skyColour, midBand, nearBand;
     }
 
@@ -52,12 +60,29 @@ public static partial class MraWorldBuilder
         switch (region)
         {
             // The Cradle's Batch 14 depth set is painted for the apricot dawn of BG_Sky_Terraces.
-            case "MR01": { var f = F("A0", "Terrain/Body/Body", "A0", "BG_Sky_Terraces", "A0"); return f; }
+            case "MR01":
+            {
+                var f = F("A0", "Terrain/Body/Body", "A0", "BG_Sky_Terraces", "A0");
+                // The Cradle's natural step set (Batches 23a-2/23a-3, Reviews 48-49): walls and Inner from
+                // 23a-2, the top-bearing pieces from 23a-3. The cliff kit stays for the open ends.
+                f.stepSet = "Terrain/Body/Body_Step_"; f.naturalSteps = true;
+                f.stepVersion = new Dictionary<string, string>
+                {
+                    ["Wall"] = "_v2", ["Inner"] = "_v2", ["Short"] = "_v3", ["Medium"] = "_v3", ["Outer"] = "_v3",
+                    ["Short_SlopeTop"] = "_v3", ["Medium_SlopeTop"] = "_v3", ["Outer_SlopeTop"] = "_v3",
+                };
+                // Body_Top_Strip's joint columns (Batch 23a, Review 47): gaps between its grass clumps.
+                f.stripJointsPx = new[] { 28f, 112f, 204f, 293f, 384f, 477f, 568f, 660f, 752f, 848f, 944f, 1018f };
+                return f;
+            }
             case "MR02":
             {
                 var f = F("A1", "Terrain/Body/Causeway/Causeway", "A1", "BG_Sky_Terraces", "A1");   // the Batch 15 depth set is painted for the dawn sky
                 f.caveTop = "Terrain/Body/Causeway/Causeway_Cave_Edge_Strip"; f.caveFill = "Terrain/Body/Causeway/Causeway_Cave_Fill";
                 f.decor = "Decor/Decor_Causeway_Sheet"; f.entrance = "Props/Prop_Causeway_Chamber_Entrance";
+                // The Causeway's natural step set (Batch 23b, Review 50), with its strip's joint columns.
+                f.stepSet = "Terrain/Body/Causeway/Causeway_Step_"; f.naturalSteps = true; f.shadeLikeFill = true; f.innerUnderKerb = true; f.bodyFade = true;
+                f.stripJointsPx = new[] { 34f, 102f, 192f, 262f, 352f, 448f, 513f, 616f, 678f, 766f, 823f, 918f, 1018f };
                 return f;
             }
             case "MR03":
@@ -82,6 +107,7 @@ public static partial class MraWorldBuilder
                 // Steps: the Qvale step set (Batches 16e-16f, Reviews 42-43), one painted piece per riser
                 // (see Terrain); the cliff kit and faces are not drawn where it is used.
                 f.cliffKit = null; f.face = "Terrain/Body/Qvale/Qvale_Cliff_Face"; f.stepSet = "Terrain/Body/Qvale/Qvale_Step_";
+                f.stepVersion = new Dictionary<string, string> { ["Short"] = "_v2", ["Medium"] = "_v2", ["Outer"] = "_v2" };
                 f.far = "Backgrounds/BG_Qvale_Far"; f.decor = "Decor/Decor_Qvale_Sheet"; f.shrine = "Props/Checkpoint_Shrine_A5";
                 return f;
             }
@@ -162,6 +188,18 @@ public static partial class MraWorldBuilder
     static void Save(Scene scene, string path)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(path));
+        if (MraCausewaySharedProps4K.IsReviewedBuildTarget(path))
+            MraCausewaySharedProps4K.ApplyForBuild(scene, path);
+        if (path == MraCausewayLiftJoin.TargetPath)
+            MraCausewayLiftJoin.ApplyForBuild(scene, path);
+        if (MraTerracesPickups4K.IsReviewedBuildTarget(path))
+            MraTerracesPickups4K.ApplyForBuild(scene, path);
+        if (MraQvaleShrines4K.IsReviewedBuildTarget(path))
+            MraQvaleShrines4K.ApplyForBuild(scene, path);
+        if (MraRegionalPortals4K.IsReviewedBuildTarget(path))
+            MraRegionalPortals4K.ApplyForBuild(scene, path);
+        if (MraTerracesShrines4K.IsReviewedBuildTarget(path))
+            MraTerracesShrines4K.ApplyForBuild(scene, path);
         EditorSceneManager.SaveScene(scene, path);
     }
 
@@ -292,29 +330,44 @@ public static partial class MraWorldBuilder
         }
         if (!cave && f.stepSet != null)
         {
-            // A town step set: one painted piece per riser, by its height (MraTerrain.StepParts).
-            string s = f.stepSet;
-            t.stepShortL = ArtOrNull(s + "Short_L_v2"); t.stepShortR = ArtOrNull(s + "Short_R_v2");
-            t.stepMediumL = ArtOrNull(s + "Medium_L_v2"); t.stepMediumR = ArtOrNull(s + "Medium_R_v2");
-            t.stepOuterL = ArtOrNull(s + "Outer_L_v2"); t.stepOuterR = ArtOrNull(s + "Outer_R_v2");
-            t.stepInnerL = ArtOrNull(s + "Inner_L"); t.stepInnerR = ArtOrNull(s + "Inner_R");
-            t.stepWalls = new[] { ArtOrNull(s + "Wall_A"), ArtOrNull(s + "Wall_B"), ArtOrNull(s + "Wall_C") }.Where(w => w != null).ToArray();
-            // Slope-top steps (Batch 16g, Review 44), with their registered upper walk lines as
-            // (px inland, px risen): Short climbs 0.5, Medium 0.293, Outer follows riser 8's curve.
-            t.stepShortSlopeL = ArtOrNull(s + "Short_SlopeTop_L"); t.stepShortSlopeR = ArtOrNull(s + "Short_SlopeTop_R");
-            t.stepMediumSlopeL = ArtOrNull(s + "Medium_SlopeTop_L"); t.stepMediumSlopeR = ArtOrNull(s + "Medium_SlopeTop_R");
-            t.stepOuterSlopeL = ArtOrNull(s + "Outer_SlopeTop_L"); t.stepOuterSlopeR = ArtOrNull(s + "Outer_SlopeTop_R");
-            t.shortSlopeRise = new[] { new Vector2(0f, 0f), new Vector2(512f, 256f) };
-            t.mediumSlopeRise = new[] { new Vector2(0f, 0f), new Vector2(512f, 150.016f) };
-            t.outerSlopeRise = new[]
-            {
-                new Vector2(0f, 0f), new Vector2(194.4f, 145.8f), new Vector2(237.72f, 174.36f), new Vector2(283.08f, 196.44f),
-                new Vector2(330.6f, 212.28f), new Vector2(380.28f, 222.12f), new Vector2(432f, 225f), new Vector2(512f, 225f),
-            };
+            // A step set: one painted piece per riser, by its height (MraTerrain.StepParts), under
+            // each piece's accepted name (P: the family's current version of it).
+            string P(string piece) => f.stepSet + piece + (f.stepVersion != null && f.stepVersion.TryGetValue(piece.Split('_')[0] + (piece.Contains("SlopeTop") ? "_SlopeTop" : ""), out var v) ? v : "");
+            t.stepShortL = ArtOrNull(P("Short_L")); t.stepShortR = ArtOrNull(P("Short_R"));
+            t.stepMediumL = ArtOrNull(P("Medium_L")); t.stepMediumR = ArtOrNull(P("Medium_R"));
+            t.stepOuterL = ArtOrNull(P("Outer_L")); t.stepOuterR = ArtOrNull(P("Outer_R"));
+            t.stepInnerL = ArtOrNull(P("Inner_L")); t.stepInnerR = ArtOrNull(P("Inner_R"));
+            t.stepWalls = new[] { ArtOrNull(P("Wall_A")), ArtOrNull(P("Wall_B")), ArtOrNull(P("Wall_C")) }.Where(w => w != null).ToArray();
+            t.stepShortSlopeL = ArtOrNull(P("Short_SlopeTop_L")); t.stepShortSlopeR = ArtOrNull(P("Short_SlopeTop_R"));
+            t.stepMediumSlopeL = ArtOrNull(P("Medium_SlopeTop_L")); t.stepMediumSlopeR = ArtOrNull(P("Medium_SlopeTop_R"));
+            t.stepOuterSlopeL = ArtOrNull(P("Outer_SlopeTop_L")); t.stepOuterSlopeR = ArtOrNull(P("Outer_SlopeTop_R"));
             t.slopeTopRows = new Vector3(416f, 310f, 385f);
-            // The mortar joints in Qvale_Top_Strip_v3's kerb course (texture px, measured on 9 Oct): the
-            // strip takes over from each step piece at one of them.
-            t.stripJointsPx = new[] { 20f, 69f, 145f, 230f, 297f, 389f, 477f, 571f, 587f, 666f, 740f, 854f, 937f, 985f };
+            if (f.naturalSteps)
+            {
+                // Natural step sets (Batch 23, Reviews 47-49): every slope top climbs 0.4 px per px
+                // inland (the game bends its upper run by the rest of the real slope), and every run is
+                // the strip's own columns, so treads take their layout from the steps beside them.
+                var rise = new[] { new Vector2(0f, 0f), new Vector2(512f, 204.8f) };
+                t.shortSlopeRise = rise; t.mediumSlopeRise = rise; t.outerSlopeRise = rise;
+                t.stripDerivedRuns = true;
+                t.stripJointsPx = f.stripJointsPx;
+                t.shadeLikeFill = f.shadeLikeFill; t.innerUnderKerb = f.innerUnderKerb; t.bodyFade = f.bodyFade;
+            }
+            else
+            {
+                // Qvale (Batch 16g, Review 44): registered upper walk lines as (px inland, px risen):
+                // Short climbs 0.5, Medium 0.293, Outer follows riser 8's curve.
+                t.shortSlopeRise = new[] { new Vector2(0f, 0f), new Vector2(512f, 256f) };
+                t.mediumSlopeRise = new[] { new Vector2(0f, 0f), new Vector2(512f, 150.016f) };
+                t.outerSlopeRise = new[]
+                {
+                    new Vector2(0f, 0f), new Vector2(194.4f, 145.8f), new Vector2(237.72f, 174.36f), new Vector2(283.08f, 196.44f),
+                    new Vector2(330.6f, 212.28f), new Vector2(380.28f, 222.12f), new Vector2(432f, 225f), new Vector2(512f, 225f),
+                };
+                // The mortar joints in Qvale_Top_Strip_v3's kerb course (texture px, measured on 9 Oct): the
+                // strip takes over from each step piece at one of them.
+                t.stripJointsPx = new[] { 20f, 69f, 145f, 230f, 297f, 389f, 477f, 571f, 587f, 666f, 740f, 854f, 937f, 985f };
+            }
         }
         t.walkLinePx = 96f; t.solid = solid; t.clingable = clingable; t.tint = tint ?? Color.white; t.sortingOffset = sortingOffset;
         t.enabled = true;
@@ -327,6 +380,7 @@ public static partial class MraWorldBuilder
         var t = Terrain(parent, name, new List<Vector2> { new Vector2(r.xMin, r.yMax), new Vector2(r.xMax, r.yMax) }, r.yMin, f, cave, clingable, true, null, sortingOffset);
         t.enabled = false; t.top = null;
         t.cliffSideL = t.cliffSideR = t.cornerTopL = t.cornerTopR = t.cornerFootL = t.cornerFootR = null;   // a lintel or a wall block: plain rock
+        t.stepWalls = new Sprite[0];   // (and no step set)
         t.enabled = true;
         return t;
     }

@@ -1,3 +1,57 @@
+## Latest update - 2 November 2026: remaining underground art, revision 01 checked
+
+Codex's five fixes are in (`Tools/IncomingArt/Codex_v2/UG_Art_03/revision_01/`): gust, shelter, backdrops for A, E, MR02 and MR03, attached props, the big heart. Its toning left those backdrops nearly black, so I lifted their brightness with `revision_01/tone_fix/tone_up.py` (originals in `tone_fix/before/`). `CheckBatch` 89 rooms, 0 problems; 881 colliders match the pre-revision scene. Awaiting the user's verdict in play. Texture payload 82.4 MiB, 178 MiB Editor allocation. Not committed.
+
+---
+
+## Latest update - 2 November 2026: remaining underground art checked, revision brief written
+
+Codex's UG_Art_03 is installed: 110 PNGs, 38 dressing files, 89 rooms with 0 problems, 881 colliders identical to its baseline, all new hooks working. Good: cave and pocket kits, thorns, tall rock, anchors, pods, valves, spills. To fix: gust, shelter, backdrops A, E, MR02, MR03, floating props, the big heart. Brief: `Tools/ArtRequests/CODEX_PROMPT_UG_ART_03_REVISION_01.md`, not sent yet. Texture payload 74.6 MiB, 159 MiB Editor allocation; no console measurement yet. With rooms no longer black, the outer terrain is the weakest art (MR02's is flat), so stage 5 is the likely next request. Not committed.
+
+---
+
+## Latest update - 2 November 2026: Codex brief for the remaining underground art
+
+Brief: `Tools/ArtRequests/CODEX_PROMPT_UG_ART_03_REMAINING_UNDERGROUND.md`, delivering to `Tools/IncomingArt/Codex_v2/UG_Art_03/`. Covers shared objects, 12 backdrop sets, 7 cave and pocket kits, the Heart, and room props. Left out: outer terrain repaint, foreground, lighting, health bar art. New hooks, compiled outside Unity but never run: `UndergroundArtKit` now falls back to the Shared set per kind, supports `simple`, `fit`, `offset`, `order` and `ppu` on a piece, and `DressRoom` adds backdrops and `Assets/Art/Underground/Dressing/<roomId>.json` props; the builder dresses spill, gust, shelter, pod, valve, anchor, quarter and quarterlight. Old code in `Tools/Design/UndergroundPlatforming_20261030/backup/code_before_art03/`. Not committed.
+
+---
+
+## Latest update - 2 November 2026: tall solid blocks became normal platforms
+
+The user asked for the floor-to-top blocks to be normal platforms. In `layouts.py`, 27 floor-standing solids 5 u or taller in Routes A, C, D and E are now `deck`s with the same top and width; shorter steps and the caves are unchanged. `platforming_v1.json` is regenerated; `validate.py` output is identical; no door, floor hole or marker is newly exposed. Backups: `backup/layouts.before_shelves.py`, `backup/platforming_v1.before_shelves.json`. The scene has NOT been rebuilt (Unity was open): run `Qolossal > Underground > Build Platforming (greybox)` and save, then rerun `CheckBatch` and `UndergroundFightAreaCheck`. Not committed.
+
+---
+
+## Latest update - 2 November 2026: Scene Finder Play button
+
+Each room row in Scene Finder has a Play button: starts play in that room with every skill, on a throwaway save (`play_here_save.json`, chosen in `GameSave.FileName` under `#if UNITY_EDITOR` via `GameSave.PlayHereKey`), wiped on each start, so the real save is untouched. Pressing it again while playing moves Qori without restarting. Compiled outside Unity only, not yet run. Not committed.
+
+---
+
+## Latest update - 2 November 2026: Scene Finder clicks fixed
+
+A room or scene click during Play threw `This cannot be used during play mode` (in Editor.log). `SceneFinder.Go` now stops Play and resumes the click in Edit mode; a room in the underground while playing it just frames. `FocusRoom` and `WorldAreaNavigator.Focus` also bring the Scene tab forward. Compiled outside Unity only; not clicked in the editor yet. Not committed.
+
+---
+
+## Latest update - 2 November 2026: Routes C, D, E kits ready for the user's verdict
+
+Codex's revision 01 is in (`Tools/IncomingArt/Codex_v2/UG_Art_02/revision_01/`): thorns, rock and solids repainted. Its solid tiles didn't really wrap (12 px blending left a visible cut and smear), so I rebuilt the three `Solid_01.png` from its masters with a minimum-error cut: `revision_01/seam_fix/heal_solid.py`, old files in `seam_fix/before/`, room captures in `seam_fix/captures/`. Same size, borders and meta; scene hash unchanged (fd8c5077); `CheckBatch` 89 rooms, 0 problems. Awaiting the user's verdict per route. Not play-tested. Not committed.
+
+---
+
+## Latest update - 2 November 2026: Routes C, D, E kit checked, revision brief written
+
+Codex's kits (`Tools/IncomingArt/Codex_v2/UG_Art_02/`) pass the technical checks: 881 scene colliders identical to the commit, Route A untouched. Decks, crumbles, mover, gates and seals are good. Solids look like fabric and don't match the terrain, rock is too bright, thorns don't read as dangerous. Root cause of the solids: the canvas had to fit the shortest piece, so the repeat was only 0.72 u; `UndergroundArtKit.Dress` now treats only deck, crumble and mover as thin (not yet built). Brief: `Tools/ArtRequests/CODEX_PROMPT_UG_ART_02_REVISION_01.md`, not sent yet. Not committed.
+
+---
+
+## Latest update - 2 November 2026: Codex brief for Routes C, D and E
+
+Brief: `Tools/ArtRequests/CODEX_PROMPT_UG_ART_02_ROUTES_CDE_PLATFORM_KITS.md` (all three kits in one pass, delivered to `Tools/IncomingArt/Codex_v2/UG_Art_02/`). Not sent to Codex yet, and not committed. There is no Route B. New limits from `UndergroundArtKit.Dress`: gates and seals must fit the 0.6 u pieces, thorns are 132 px with a 0.1111 overhang, and every PNG side is a multiple of 4.
+
+---
+
 ## Latest update - 1 November 2026: first underground thread closed
 
 The user said commit and move on. Handoff for part 2: `Tools/Design/UndergroundPlatforming_20261030/HANDOFF_PART2.md`. This thread's files are committed on the local branch `claude/project-thread-yucm6c`, not pushed. Other uncommitted work in this folder was left alone.

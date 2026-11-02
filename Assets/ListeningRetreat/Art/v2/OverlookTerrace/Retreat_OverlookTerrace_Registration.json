@@ -1,0 +1,242 @@
+{
+ "schema": "qolossal-retreat-terrace/3",
+ "view_canvas": [
+  3840,
+  2160
+ ],
+ "coordinates": "top-left pixels",
+ "alpha": "straight",
+ "source": "Art/Codex_v2_full/Retreat_Fixes_v02b/OverlookTerrace/Registration_v02b.json",
+ "layers": [
+  {
+   "name": "Sky",
+   "file": "Layers/Retreat_OverlookTerrace_Sky.png",
+   "canvas": [
+    3840,
+    2160
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "import_max_px": 2048
+  },
+  {
+   "name": "Clouds",
+   "file": "Layers/Retreat_OverlookTerrace_Clouds.png",
+   "canvas": [
+    3840,
+    919
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "wrap": "horizontal",
+   "period_px": 3840,
+   "import_max_px": 2048
+  },
+  {
+   "name": "Far",
+   "file": "Layers/Retreat_OverlookTerrace_Far.png",
+   "canvas": [
+    3968,
+    644
+   ],
+   "offset": [
+    -64,
+    504
+   ],
+   "parallax_x_range_px": [
+    -64,
+    64
+   ],
+   "import_max_px": 2048
+  },
+  {
+   "name": "Mid",
+   "file": "Layers/Retreat_OverlookTerrace_Mid.png",
+   "canvas": [
+    3968,
+    827
+   ],
+   "offset": [
+    -64,
+    780
+   ],
+   "parallax_x_range_px": [
+    -64,
+    64
+   ],
+   "import_max_px": 2048
+  },
+  {
+   "name": "Terrace",
+   "file": "Layers/Retreat_OverlookTerrace_Terrace.png",
+   "canvas": [
+    3840,
+    944
+   ],
+   "offset": [
+    0,
+    1216
+   ],
+   "import_max_px": 2048
+  },
+  {
+   "name": "PropShadow_TreePlanter",
+   "file": "Layers/Retreat_OverlookTerrace_PropShadow_TreePlanter.png",
+   "canvas": [
+    700,
+    220
+   ],
+   "offset": [
+    -30,
+    1651
+   ]
+  },
+  {
+   "name": "Tree",
+   "file": "Layers/Retreat_OverlookTerrace_Tree.png",
+   "canvas": [
+    2343,
+    1722
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "pivot_px": [
+    330,
+    1720
+   ],
+   "motion_degrees": [
+    -0.2,
+    0.2
+   ],
+   "import_max_px": 2048
+  },
+  {
+   "name": "Lantern",
+   "file": "Layers/Retreat_OverlookTerrace_Lantern.png",
+   "canvas": [
+    162,
+    391
+   ],
+   "offset": [
+    505,
+    413
+   ],
+   "pivot_px": [
+    586,
+    413
+   ],
+   "parent": "Tree",
+   "motion_degrees": [
+    -4,
+    4
+   ]
+  },
+  {
+   "name": "LanternGlow",
+   "file": "Layers/Retreat_OverlookTerrace_LanternGlow.png",
+   "canvas": [
+    330,
+    380
+   ],
+   "offset": [
+    421,
+    501
+   ],
+   "pivot_px": [
+    586,
+    413
+   ],
+   "opacity_range": [
+    0.65,
+    1.0
+   ],
+   "parent": "Lantern"
+  },
+  {
+   "name": "BenchBack",
+   "file": "Layers/Retreat_OverlookTerrace_BenchBack.png",
+   "canvas": [
+    747,
+    225
+   ],
+   "offset": [
+    977.1,
+    1512.6
+   ]
+  },
+  {
+   "name": "BenchFront",
+   "file": "Layers/Retreat_OverlookTerrace_BenchFront.png",
+   "canvas": [
+    760,
+    392
+   ],
+   "offset": [
+    947.8,
+    1370.9
+   ]
+  },
+  {
+   "name": "PropShadow_FlowerPot",
+   "file": "Layers/Retreat_OverlookTerrace_PropShadow_FlowerPot.png",
+   "canvas": [
+    380,
+    180
+   ],
+   "offset": [
+    296,
+    1731
+   ]
+  },
+  {
+   "name": "FlowerPot",
+   "file": "Layers/Retreat_OverlookTerrace_FlowerPot.png",
+   "canvas": [
+    254,
+    369
+   ],
+   "offset": [
+    355,
+    1462
+   ]
+  },
+  {
+   "name": "Foreground_01",
+   "file": "Layers/Retreat_OverlookTerrace_Foreground_01.png",
+   "canvas": [
+    1057,
+    565
+   ],
+   "offset": [
+    0,
+    1595
+   ],
+   "base_pivot_canvas_px": [
+    0,
+    2160
+   ],
+   "motion_degrees": [
+    -3,
+    3
+   ]
+  }
+ ],
+ "qori_seat": {
+  "anchor_px": [
+   1438.3,
+   1630.8
+  ],
+  "figure_height_px": 468.0,
+  "insert_before": "BenchFront"
+ },
+ "bench_move_px": [
+  586.6875,
+  447.25
+ ]
+}

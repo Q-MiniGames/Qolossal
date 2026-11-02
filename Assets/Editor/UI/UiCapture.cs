@@ -16,7 +16,7 @@ public static class UiCapture
         int index = Array.IndexOf(args, "-captureDir");
         string folder = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Temp/UiCaptures";
         Directory.CreateDirectory(folder);
-        EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A0_TestRoom.unity");
         foreach (var b in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) b.Rebuild();
         Camera camera = Camera.main;
         foreach (var layer in UnityEngine.Object.FindObjectsByType<ParallaxLayer>(FindObjectsSortMode.None)) layer.Refresh(camera);

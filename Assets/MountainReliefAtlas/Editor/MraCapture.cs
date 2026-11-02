@@ -50,6 +50,53 @@ public static class MraCapture
         Debug.Log("[MraCapture] wrote " + Path.GetFullPath(folder));
     }
 
+    // One camera-height shot per riser of every stepped terrain piece in a scene, at 1920x1080 and
+    // 1280x720, plus a sheet-friendly 1080 shot per riser at twice the zoom.
+    // Usage: -executeMethod MraCapture.Steps -captureDir <folder> -mraScene <scene path> -stepTag <tag>
+    public static void Steps()
+    {
+        string[] args = System.Environment.GetCommandLineArgs();
+        string Arg(string key, string fallback) { int i = System.Array.IndexOf(args, key); return i >= 0 && i + 1 < args.Length ? args[i + 1] : fallback; }
+        string tag = Arg("-stepTag", "after"), folder = Path.Combine(Arg("-captureDir", "Temp/Captures"), "steps_" + tag);
+        Directory.CreateDirectory(folder);
+        EditorSceneManager.OpenScene(Arg("-mraScene", MraWorldBuilder.SceneFolder + "MRAtlas_MR01_Cradle.unity"));
+        int n = 0;
+        foreach (var t in Object.FindObjectsByType<MraTerrain>(FindObjectsSortMode.None).OrderBy(t => t.name))
+        {
+            var s = t.surface; Vector2 o = t.transform.position;
+            for (int i = 0; i < s.Length - 1; i++)
+            {
+                Vector2 a = s[i] + o, b = s[i + 1] + o;
+                if (Mathf.Abs(b.x - a.x) > 1e-4f || Mathf.Abs(b.y - a.y) < .4f) continue;
+                n++;
+                Vector2 at = new Vector2(a.x, (a.y + b.y) * .5f + 1f);
+                string stem = Path.Combine(folder, $"riser_{n:00}_x{a.x:0.0}");
+                Shot(stem + "_1080.png", at, 5f, 1920, 1080);
+                Shot(stem + "_720.png", at, 5f, 1280, 720);
+                Shot(stem + "_close_1080.png", at, 2.5f, 1920, 1080);
+            }
+        }
+        Debug.Log($"[MraCapture] {n} risers -> " + Path.GetFullPath(folder));
+    }
+
+    // One 1920x1080 shot of a scene at a point. Usage: -executeMethod MraCapture.At -captureDir <folder>
+    // -mraScene <scene path> -at <x>,<y> -size <ortho size> -stepTag <file stem>
+    public static void At()
+    {
+        string[] args = System.Environment.GetCommandLineArgs();
+        string Arg(string key, string fallback) { int i = System.Array.IndexOf(args, key); return i >= 0 && i + 1 < args.Length ? args[i + 1] : fallback; }
+        string folder = Arg("-captureDir", "Temp/Captures"); Directory.CreateDirectory(folder);
+        EditorSceneManager.OpenScene(Arg("-mraScene", MraWorldBuilder.SceneFolder + "MRAtlas_MR01_Cradle.unity"));
+        // -showVariants: every MraVariant's children shown (e.g. the crossing after the quake).
+        if (System.Array.IndexOf(args, "-showVariants") >= 0)
+            foreach (var v in Object.FindObjectsByType<MraVariant>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+                foreach (Transform c in v.transform) c.gameObject.SetActive(true);
+        var xy = Arg("-at", "0,0").Split(',');
+        var at = new Vector2(float.Parse(xy[0], System.Globalization.CultureInfo.InvariantCulture), float.Parse(xy[1], System.Globalization.CultureInfo.InvariantCulture));
+        Shot(Path.Combine(folder, Arg("-stepTag", "at") + ".png"), at, float.Parse(Arg("-size", "5"), System.Globalization.CultureInfo.InvariantCulture), 1920, 1080);
+        Debug.Log("[MraCapture] shot at " + at);
+    }
+
     public static void Shot(string path, Vector2 at, float size, int w, int h)
     {
         var camera = Camera.main; camera.aspect = (float)w / h;

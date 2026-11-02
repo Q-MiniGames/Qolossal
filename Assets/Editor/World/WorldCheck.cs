@@ -94,7 +94,7 @@ public static class WorldCheck
         GameSave.SetKnotAwake(Knots.Grip, false);
 
         // A0's Crease: the finger bridge exists only after the Grip Knot wakes.
-        EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A0_TestRoom.unity");
         foreach (var b in Object.FindObjectsByType<TerrainBlock>(FindObjectsInactive.Include, FindObjectsSortMode.None)) b.Rebuild();
         var variant = Object.FindObjectsByType<StirVariant>(FindObjectsSortMode.None).Single(v => v.name.StartsWith("Crease Bridge"));
         Physics2D.SyncTransforms();

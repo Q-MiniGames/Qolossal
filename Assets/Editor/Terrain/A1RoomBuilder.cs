@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-// Builds Assets/Scenes/A1_Aqueduct.unity, the Aqueduct Ravine, from the A1 terrain kit. West to
+// Builds Assets/Development/LegacyScenes/A1_Aqueduct.unity, the Aqueduct Ravine, from the A1 terrain kit. West to
 // east: the portal from A0 and a wading stream; a slope up to the ravine plateau; the ravine,
 // crossed by swinging from rings under a broken aqueduct span (Living Thread), or climbed out
 // of up a vine column (Climbing Moss); the east plateau with thorns and a rubble wall (mace);
@@ -16,7 +16,7 @@ using UnityEngine;
 public static class A1RoomBuilder
 {
     public const string SceneName = "A1_Aqueduct";
-    const string ScenePath = "Assets/Scenes/" + SceneName + ".unity";
+    const string ScenePath = "Assets/Development/LegacyScenes/" + SceneName + ".unity";
     const float StartX = 3f, StartY = 1.5f;
 
     [MenuItem("Qolossal/Scenes/Build A1 Aqueduct")]

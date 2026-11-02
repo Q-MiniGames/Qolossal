@@ -29,7 +29,7 @@ public static class WorldPlayTest
 
     public static void Run()
     {
-        EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A0_TestRoom.unity");
         if (File.Exists(GameSave.FilePath)) File.Copy(GameSave.FilePath, Backup, true);
         GameSave.Clear();
         SessionState.SetBool(Key, true);

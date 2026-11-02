@@ -70,7 +70,7 @@ public static class QoriRigCapture
         int index = Array.IndexOf(args, "-captureDir");
         string folder = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Temp/QoriCaptures";
         Directory.CreateDirectory(folder);
-        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A0_TestRoom.unity");
         foreach (TerrainBlock block in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
 
         GameObject player = GameObject.Find("Player");
@@ -116,7 +116,7 @@ public static class QoriRigCapture
         int index = Array.IndexOf(args, "-captureDir");
         string folder = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Temp/QoriCaptures";
         Directory.CreateDirectory(folder);
-        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A0_TestRoom.unity");
         foreach (TerrainBlock block in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
         GameObject player = GameObject.Find("Player");
         var collider = player.GetComponent<BoxCollider2D>();
@@ -148,7 +148,7 @@ public static class QoriRigCapture
         int index = Array.IndexOf(args, "-captureDir");
         string folder = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Temp/QoriCaptures";
         Directory.CreateDirectory(folder);
-        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A0_TestRoom.unity");
         foreach (TerrainBlock block in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
         foreach (TerrainPiece piece in UnityEngine.Object.FindObjectsByType<TerrainPiece>(FindObjectsSortMode.None)) piece.Rebuild();
         GameObject player = GameObject.Find("Player");
@@ -200,7 +200,7 @@ public static class QoriRigCapture
         int index = Array.IndexOf(args, "-captureDir");
         string folder = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Temp/QoriCaptures";
         Directory.CreateDirectory(folder);
-        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A0_TestRoom.unity");
         foreach (TerrainBlock block in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
         GameObject player = GameObject.Find("Player");
         var collider = player.GetComponent<BoxCollider2D>();
@@ -244,7 +244,7 @@ public static class QoriRigCapture
         int index = Array.IndexOf(args, "-captureDir");
         string folder = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Temp/QoriCaptures";
         Directory.CreateDirectory(folder);
-        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A0_TestRoom.unity");
         foreach (TerrainBlock block in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
         GameObject player = GameObject.Find("Player");
         var collider = player.GetComponent<BoxCollider2D>();

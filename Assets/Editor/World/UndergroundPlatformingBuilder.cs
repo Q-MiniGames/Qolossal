@@ -231,6 +231,7 @@ public static class UndergroundPlatformingBuilder
                 else Make(s, group.transform, sprite);
                 shapes++;
             }
+            UndergroundArtKit.DressRoom(room, group.transform);
             LinkHeartQuarters(room, group);
             foreach (var keeper in group.GetComponentsInChildren<MraArenaGuardian>(true))
                 if (keeper.flag.StartsWith("ug:MINI:")) keeper.rewards = room.GetComponentsInChildren<MraReward>(true);
@@ -370,8 +371,11 @@ public static class UndergroundPlatformingBuilder
             var box = go.AddComponent<BoxCollider2D>(); box.size = r.size; box.isTrigger = trigger; return box;
         }
         // Painted art where the room's kit has it; greybox until then. Colliders are never touched.
-        if (s.kind is "deck" or "crumble" or "mover" or "solid" or "rock" or "gate" or "seal" or "grille" or "thorns" or "water")
-            UndergroundArtKit.Dress(art, parent.GetComponentInParent<UndergroundRoom>(true)?.roomId, s.kind, r.size, Mathf.RoundToInt(r.center.x * 7f + r.center.y * 13f));
+        string roomId = parent.GetComponentInParent<UndergroundRoom>(true)?.roomId;
+        int seed = Mathf.RoundToInt(r.center.x * 7f + r.center.y * 13f);
+        bool painted = s.kind is "deck" or "crumble" or "mover" or "solid" or "rock" or "gate" or "seal" or "grille" or "thorns" or "water"
+            or "spill" or "gust" or "shelter" or "pod" or "valve" or "quarter" or "quarterlight"
+            && UndergroundArtKit.Dress(art, roomId, s.kind, r.size, seed);
         void Ground() => go.layer = LayerMask.NameToLayer("Ground");
         void OneWay(BoxCollider2D box)
         {
@@ -389,13 +393,13 @@ public static class UndergroundPlatformingBuilder
             case "quarter":
             {
                 Box(true); var wake = go.AddComponent<MraHeartQuarter>(); wake.sector = s.flag; wake.promptHeight = 2.6f;
-                art.color = new Color(.6f, .45f, .3f); art.transform.localScale = new Vector3(.8f, 1.6f, 1f);
+                if (!painted) { art.color = new Color(.6f, .45f, .3f); art.transform.localScale = new Vector3(.8f, 1.6f, 1f); }
                 break;
             }
             case "quarterlight":
             {
                 // A quarter of the big oval heart: the quarter-disc sprite, mirrored so its round edge faces out.
-                go.name = "UGP heart quarter " + s.flag; art.sprite = QuarterDisc(); art.sortingOrder = Order - 1;
+                go.name = "UGP heart quarter " + s.flag; if (!painted) art.sprite = QuarterDisc(); art.sortingOrder = Order - 1;
                 art.flipX = s.flag == "A" || s.flag == "C"; art.flipY = s.flag == "A" || s.flag == "E";
                 break;
             }
@@ -445,7 +449,7 @@ public static class UndergroundPlatformingBuilder
             {
                 Box(true); var valve = go.AddComponent<MraUgSwitch>();
                 valve.flag = s.flag; valve.label = s.label; valve.doneText = s.done; valve.wheel = art.transform;
-                art.transform.localScale = new Vector3(.9f, .9f, 1f); art.transform.localPosition = new Vector3(0f, -.2f, 0f);
+                if (!painted) { art.transform.localScale = new Vector3(.9f, .9f, 1f); art.transform.localPosition = new Vector3(0f, -.2f, 0f); }
                 break;
             }
             case "gate":
@@ -453,7 +457,10 @@ public static class UndergroundPlatformingBuilder
                 Ground(); var gate = go.AddComponent<MraGate>(); gate.solid = Box(false); gate.requires = s.requires; gate.plainArt = new[] { art };
                 break;
             }
-            case "anchor": go.AddComponent<ThreadAnchor>(); UnityEngine.Object.DestroyImmediate(art.gameObject); AddOwnSprite(go, sprite, r.size); break;
+            case "anchor":
+                go.AddComponent<ThreadAnchor>(); UnityEngine.Object.DestroyImmediate(art.gameObject); AddOwnSprite(go, sprite, r.size);
+                UndergroundArtKit.Dress(go.GetComponent<SpriteRenderer>(), roomId, s.kind, r.size, seed);
+                break;
             case "pod": Ground(); Box(false); go.AddComponent<MraPod>().art = art.transform; break;
             case "gust":
             {

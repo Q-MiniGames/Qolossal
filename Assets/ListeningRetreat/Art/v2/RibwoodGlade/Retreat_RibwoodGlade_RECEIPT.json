@@ -1,0 +1,53 @@
+{
+ "scene": "RibwoodGlade",
+ "registration": "Art/Codex_v2_full/Retreat_Fixes_v02b/RibwoodGlade/Registration_v02b.json",
+ "reviews": [
+  "CLAUDE_REVIEW_79",
+  "CLAUDE_REVIEW_81",
+  "CLAUDE_REVIEW_83"
+ ],
+ "files": [
+  {
+   "layer": "Sky",
+   "codexName": "01_Backdrop",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/RibwoodGlade/Layers/01_Backdrop.png",
+   "sha256": "50041a8864e62c06990c9e89ea3ab8eb05ab82affd148c70a678c1b0d6b35d5c"
+  },
+  {
+   "layer": "Mid",
+   "codexName": "02_MiddleDistance",
+   "from": "Art/Codex_v2_full/Retreat_Fixes_v02b/RibwoodGlade/Layers/02_MiddleDistance.png",
+   "sha256": "433cc912df139840122678a323acd6b1d1e90097e52a03ae611983f506994cd3"
+  },
+  {
+   "layer": "Ground",
+   "codexName": "03_Ground",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/RibwoodGlade/Layers/03_Ground.png",
+   "sha256": "d76b2cb3e2dc871463f8950ff0da24ac038a17c6749082a5d28b24e005106ecb"
+  },
+  {
+   "layer": "Tree",
+   "codexName": "04_Tree",
+   "from": "Art/Codex_v2_full/Retreat_Fixes_v02/RibwoodGlade/Layers/04_Tree.png",
+   "sha256": "63a016348112182bc5742aa7be5dc98337a0dddee199218aeed371550f2683da"
+  },
+  {
+   "layer": "BenchBack",
+   "from": "Assets/ListeningRetreat/Art/RibwoodGlade/Retreat_RibwoodGlade_BenchBack.png",
+   "sha256": "d7a49ef8e9cd993b6c0922531d345b1363ede8d30f28bae56289d2b47bd94d38",
+   "derived": "enlarged 1.12x"
+  },
+  {
+   "layer": "BenchFront",
+   "from": "Assets/ListeningRetreat/Art/RibwoodGlade/Retreat_RibwoodGlade_BenchFront.png",
+   "sha256": "16723c8c8f9d75e88808e221abc8ed08fe35805b682802d25898f658cb3bc553",
+   "derived": "enlarged 1.12x"
+  },
+  {
+   "layer": "Foreground_01",
+   "codexName": "06_ForegroundPlants",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/RibwoodGlade/Layers/06_ForegroundPlants.png",
+   "sha256": "6edb91a3a01ae3b990758e190356700ccfc8b4f9b009087cad10fa1ce44ac1d4"
+  }
+ ]
+}

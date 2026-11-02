@@ -43,3 +43,20 @@ Build a representative vertical slice including a dense region, traversal/combat
 - Xbox certification: https://learn.microsoft.com/en-us/xbox/gdk/docs/store/policies/console/certification-requirements
 
 Exact non-public requirements must be verified in the approved developer portals; this is project direction, not an SDK or certification specification.
+
+## 4K presentation clarification — 21 October 2026
+
+The user reiterated that Qolossal is a 4K game. Use 3840×2160 as the current art-presentation review target, with native painted detail sufficient for the asset's actual world placement. For the reviewed MraTerrain upgrade, retain exact 2× source dimensions and 240 PPU with unchanged world geometry. Do not equate enlarging a bitmap with adding native detail. Keep native masters and use measured platform import/build profiles. This art target does not certify 4K output or 60 FPS on every console or handheld mode; those results still require hardware validation.
+
+## User-approved Cradle density exception — 22 October 2026
+
+The user approved native 3×/360-PPU sibling paintings for the five remaining Cradle terrain density flags: Body_Top_Strip, Body_Step_Inner_L, Body_Step_Inner_R, Body_Step_Medium_L and Body_Step_Outer_SlopeTop_L. This supersedes the exact 2×/240-PPU rule for those replacement siblings and necessary matching adjoining pieces only. Preserve all accepted source bytes, world dimensions, collision geometry, pivots, and serialized landmarks expressed in 120-PPU reference pixels. New source landmarks scale to exactly 3× the legacy pixels. Paint new native detail; never enlarge accepted RGB to manufacture resolution.
+
+Review adjoining pieces together, retain source and imported-resource QA, and measure density again after import. The five-texture proposal projects a worst saved-placement density of 233.84 px/unit and approximately 11.41 MiB additional BC7 storage without mipmaps; these are projections, not measured runtime memory or hardware readiness. Any additional matching siblings must be included in the final budget. All other platform and acceptance gates remain in force. User response: “Allow native 3× siblings (recommended)”.
+
+
+## User-approved Causeway density exception — 22 October 2026
+
+The user approved native 3×/360-PPU siblings for seven measured Causeway terrain density flags: Causeway_Top_Strip, Causeway_Step_Inner_L, Causeway_Step_Short_L, Causeway_Step_Medium_L, and Causeway_Step_Short_SlopeTop_L, Causeway_Step_Medium_SlopeTop_L, Causeway_Step_Outer_SlopeTop_L. Necessary matching adjoining pieces are included. This extends the previous Cradle-only exception to these Causeway assets; preserve accepted bytes, source registration, world dimensions, collision paths and 120-PPU reference landmarks. Paint native detail, never enlarge accepted RGB.
+
+The seven-file proposal projects a minimum of242.869px/unit and approximately17.1484375MiB additional BC7 base storage versus2× without mipmaps. Matching pieces must be included in the final budget. These are geometric/storage projections, not runtime or console measurements. All independent source, imported-context, seam and platform gates remain. Other assets retain their current contracts. User response: “Allow native 3× Causeway siblings”.

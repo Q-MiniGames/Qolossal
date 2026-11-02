@@ -7,8 +7,13 @@ using UnityEngine;
 public sealed class MraChamberDoor : MonoBehaviour
 {
     public string chamberId, chamberName, chamberScene;
+    public string arrivalId = "entry";
     [Tooltip("The relic id it's meant for (e.g. glidecap); empty for none.")] public string prerequisite;
     [Tooltip("The prompt's height over the mouth's foot: just above the entrance art.")] public float promptHeight = 2.9f;
+    [Tooltip("Opt-in cave threshold: walking inward past this point enters without an Up prompt.")]
+    public bool walkThroughEntrance;
+    [Tooltip("World X direction into this cave: +1 right, -1 left.")]
+    public float walkThroughDirection = 1f;
     bool near; PlayerMovement qori;
 
     public string DiscoveredFlag => "mra:" + chamberId + ":discovered";
@@ -28,7 +33,11 @@ public sealed class MraChamberDoor : MonoBehaviour
 
     void Update()
     {
-        if (near && !MraState.Busy && !GamePauseMenu.BlocksGameplayInput && TownInput.Up()) Enter();
+        if (!near || MraState.Busy || GamePauseMenu.BlocksGameplayInput) return;
+        bool walkingIn = walkThroughEntrance && Ready && qori != null && qori.HasGroundContact &&
+            (qori.transform.position.x-transform.position.x)*walkThroughDirection >= .05f &&
+            qori.ObservedVelocity.x*walkThroughDirection > .1f;
+        if (walkingIn || TownInput.Up()) Enter();
     }
 
     // Up calls this; so can tests. False while the chamber is out of reach.
@@ -38,12 +47,14 @@ public sealed class MraChamberDoor : MonoBehaviour
         if (!Ready) { TownHud.Toast($"{chamberName}: you'll need the {MraState.Describe("relic:" + prerequisite)} in there."); return false; }
         if (qori == null) qori = FindAnyObjectByType<PlayerMovement>();
         Sfx.Play(IsHouse ? "Door_Enter" : "Cave_Enter");
-        AreaTransition.Travel(chamberScene, "entry", qori);
+        if (!AreaTransition.CanTravelTo(chamberScene)) return false;
+        AreaTransition.Travel(chamberScene, arrivalId, qori, "", GetComponent<CaveThresholdPresentation>());
         return true;
     }
 
     void OnGUI()
     {
-        if (near && !MraState.Busy) MraState.Prompt(transform.position + Vector3.up * promptHeight, (Ready ? "▲ Enter " : "▲ Look into ") + chamberName);
+        if (near && !MraState.Busy && !(walkThroughEntrance && Ready))
+            MraState.Prompt(transform.position + Vector3.up * promptHeight, (Ready ? "▲ Enter " : "▲ Look into ") + chamberName);
     }
 }

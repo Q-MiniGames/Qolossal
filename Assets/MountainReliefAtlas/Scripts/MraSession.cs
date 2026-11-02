@@ -9,6 +9,8 @@ using UnityEngine;
 public sealed class MraSession : MonoBehaviour
 {
     public string regionId;
+    [Tooltip("Underground route: keep surface visits, route bar and town counter separate.")]
+    public bool underground;
     [Tooltip("In a side chamber's scene: its chamber id.")] public string chamberId;
     [Tooltip("Where a premature visit to the descent is sent instead: the Summit's reveal ledge.")]
     public string redirectScene = "MRAtlas_MR07_Summit", redirectArrival = "mra:MR07:cp:10";
@@ -26,16 +28,16 @@ public sealed class MraSession : MonoBehaviour
         Region = world?.RegionById(regionId);
         Chamber = string.IsNullOrEmpty(chamberId) ? null : world?.ChamberById(chamberId);
         TownState.BindToSave();
-        TownHud.Ensure().alwaysShowAmber = regionId == "MR04" && !InChamber;
+        TownHud.Ensure().alwaysShowAmber = regionId == "MR04" && !InChamber && !underground;
         Blocked = Region != null && Region.PostReveal && !MraState.Revealed;
-        if (!Blocked && Region != null && !InChamber)
+        if (!Blocked && Region != null && !InChamber && !underground)
         {
             GameSave.SetFlag(MraState.VisitedFlag(regionId));
             TownState.Set("visited:" + regionId);   // Scribble sells pages for visited places
         }
         ChartScreen.OpenReplacement = MraChart.Open;
         MraChart.Ensure();
-        if (!InChamber && !Blocked) MraRouteBar.Ensure(Region);
+        if (!InChamber && !Blocked && !underground) MraRouteBar.Ensure(Region);
     }
 
     void Start()
@@ -47,6 +49,12 @@ public sealed class MraSession : MonoBehaviour
         if (player == null) return;
         if (AreaTransition.CanTravelTo(redirectScene)) AreaTransition.Travel(redirectScene, redirectArrival, player);
         else player.enabled = false;
+    }
+
+    public void SetUndergroundRegion(string id)
+    {
+        if (!underground) return;
+        regionId = id; Region = World.Load()?.RegionById(id);
     }
 
     void OnDestroy()

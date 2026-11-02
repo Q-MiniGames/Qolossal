@@ -31,7 +31,7 @@ public static class GuardianPlayTest
 
     public static void Run()
     {
-        EditorSceneManager.OpenScene("Assets/Scenes/" + R1GripKnotBuilder.SceneName + ".unity");
+        EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/" + R1GripKnotBuilder.SceneName + ".unity");
         if (File.Exists(GameSave.FilePath)) File.Copy(GameSave.FilePath, Backup, true);
         GameSave.Clear();
         SessionState.SetBool(Key, true);
@@ -123,20 +123,22 @@ public static class GuardianPlayTest
                     string strikes = string.Join(", ", order.Where(s => s.StartsWith("Slam")));
                     Expect(strikes == "Slam 3, Slam 2, Slam 1", $"the arms strike front, top, back ({strikes})");
                     for (int i = 0; i < 3; i++) Expect(g.ReceiveCombatHit(Sword).Disposition == CombatHitDisposition.Damaged, $"a blow on the exposed knot lands ({i + 1})");
-                    Expect(g.Health == 3f && g.Current == KnucklebrambleGuardian.State.Closing && g.IsAlive, $"after three hits it closes again ({g.Health} left, {g.Current})");
+                    Expect(g.Health == 6f && g.Current == KnucklebrambleGuardian.State.Closing && g.IsAlive, $"after three hits it closes again ({g.Health} left, {g.Current})");
                     Next(5);
                 }
                 break;
             }
             case 5:
+                // Two more openings (14 Oct: 9 health): the second cycle chains its arms, the last runs in phase two.
                 Qori.GetComponent<PlayerHealth>().Heal(10);
-                if (g.Current == KnucklebrambleGuardian.State.Exposed || t - stageAt > 14f)
+                if (g.Current == KnucklebrambleGuardian.State.Exposed)
                 {
-                    Expect(g.Current == KnucklebrambleGuardian.State.Exposed, "the next cycle opens it again");
+                    bool wasPhaseTwo = g.PhaseTwo;
                     for (int i = 0; i < 3; i++) g.ReceiveCombatHit(Sword);
-                    Expect(!g.IsAlive, "the second opening finishes it");
-                    Next(6);
+                    if (g.IsAlive) Expect(g.PhaseTwo && !wasPhaseTwo, $"the second opening drops it into phase two ({g.Health} left)");
+                    else { Expect(wasPhaseTwo, "the third opening, in phase two, finishes it"); Next(6); }
                 }
+                else if (t - stageAt > 30f) { Expect(false, $"it keeps opening ({g.Current}, cycle {g.Cycle})"); Next(6); }
                 break;
             case 6 when t - stageAt > 1.2f:
             {

@@ -12,7 +12,7 @@ public static class SlopeMovementCheck
 
     public static void Run()
     {
-        EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A0_TestRoom.unity");
         GameObject player = GameObject.Find("Player");
         var movement = player.GetComponent<PlayerMovement>();
         var body = player.GetComponent<Rigidbody2D>();

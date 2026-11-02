@@ -16,16 +16,21 @@ public static class Sfx
 {
     public static SfxLibrary Library => SfxPlayer.Library;
 
+    /// <summary>The ElevenLabs sound effects are removed from the game (16 Oct, the user): every Sfx call and every
+    /// SfxEmitter stays silent, ambience beds included. The WAVs and the library are kept on disk; set this false to
+    /// bring them back. (Ludo's per-clip sounds and the music don't go through Sfx and are unaffected.)</summary>
+    public static bool EffectsRemoved = true;
+
     /// <summary>True if the library has takes in use for this sound.</summary>
     public static bool Has(string id) => Library != null && Library.Find(id) is SfxEntry e && e.clips != null && e.clips.Length > 0;
 
     /// <summary>Plays a sound where something happened in the world (positional sounds pan and fade by it).</summary>
     public static AudioSource Play(string id, Vector2 at, float volume = 1f, float pitch = 1f) =>
-        SfxPlayer.Ensure() is SfxPlayer p ? p.Begin(id, at, true, volume, pitch, false) : null;
+        !EffectsRemoved && SfxPlayer.Ensure() is SfxPlayer p ? p.Begin(id, at, true, volume, pitch, false) : null;
 
     /// <summary>Plays a sound centred (Qori's own sounds, pickups, UI).</summary>
     public static AudioSource Play(string id, float volume = 1f, float pitch = 1f) =>
-        SfxPlayer.Ensure() is SfxPlayer p ? p.Begin(id, default, false, volume, pitch, false) : null;
+        !EffectsRemoved && SfxPlayer.Ensure() is SfxPlayer p ? p.Begin(id, default, false, volume, pitch, false) : null;
 
     /// <summary>Plays only the first `seconds` of a sound, fading out over its last moment (a single
     /// footfall from a take that scuffs on).</summary>
@@ -38,7 +43,7 @@ public static class Sfx
 
     /// <summary>A story moment's sound (Story bus): only the reveal and the ending call this.</summary>
     public static AudioSource PlayStory(string id) =>
-        SfxPlayer.Ensure() is SfxPlayer p ? p.Begin(id, default, false, 1f, 1f, true) : null;
+        !EffectsRemoved && SfxPlayer.Ensure() is SfxPlayer p ? p.Begin(id, default, false, 1f, 1f, true) : null;
 
     /// <summary>Stops every voice of this sound now playing (a story moment cut short).</summary>
     public static void Stop(string id) { if (SfxPlayer.Instance != null) SfxPlayer.Instance.StopVoices(id); }
@@ -46,6 +51,7 @@ public static class Sfx
     /// <summary>Plays after a short delay in real time (e.g. a thread snagging just after it flies).</summary>
     public static void PlayAfter(string id, float seconds, float volume = 1f)
     {
+        if (EffectsRemoved) return;
         var p = SfxPlayer.Ensure(); if (p != null) p.StartCoroutine(p.After(id, seconds, volume));
     }
 
@@ -270,6 +276,7 @@ public sealed class SfxPlayer : MonoBehaviour
     /// <summary>Crossfades to a scene's ambience bed (empty: fades to silence). The same one carries on.</summary>
     public void SetAmbience(string id)
     {
+        if (Sfx.EffectsRemoved) id = "";   // the ambience beds are ElevenLabs sounds too
         id = id ?? "";
         if (id == AmbienceId && (id.Length == 0 || ambA.isPlaying)) return;
         AmbienceId = id;

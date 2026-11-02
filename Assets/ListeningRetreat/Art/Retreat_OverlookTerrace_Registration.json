@@ -38,11 +38,11 @@
       "file": "Layers/Retreat_OverlookTerrace_Clouds.png",
       "canvas": [
         2560,
-        1440
+        260
       ],
       "offset": [
         0,
-        0
+        73
       ],
       "reused_byte_identical_from": "Batch25a/Layers/Retreat_Overlook_Clouds.png",
       "wrap": "horizontal",
@@ -54,11 +54,11 @@
       "file": "Layers/Retreat_OverlookTerrace_Far.png",
       "canvas": [
         2624,
-        1440
+        996
       ],
       "offset": [
         -32,
-        0
+        298
       ],
       "derived_from": "Batch25a/Layers/Retreat_Overlook_Far.png",
       "source_translation_px": [
@@ -76,11 +76,11 @@
       "file": "Layers/Retreat_OverlookTerrace_Mid.png",
       "canvas": [
         2624,
-        1440
+        676
       ],
       "offset": [
         -32,
-        0
+        412
       ],
       "derived_from": "Batch25a/Layers/Retreat_Overlook_Mid.png",
       "source_translation_px": [
@@ -98,11 +98,11 @@
       "file": "Layers/Retreat_OverlookTerrace_Mist.png",
       "canvas": [
         2560,
-        1440
+        120
       ],
       "offset": [
         0,
-        0
+        917
       ],
       "reused_byte_identical_from": "Batch25a/Layers/Retreat_Overlook_Mist.png",
       "wrap": "horizontal",
@@ -114,11 +114,11 @@
       "file": "Layers/Retreat_OverlookTerrace_Terrace.png",
       "canvas": [
         2560,
-        1440
+        548
       ],
       "offset": [
         0,
-        0
+        892
       ],
       "opaque_from_y": 1240,
       "parapet_base_line": [
@@ -250,8 +250,8 @@
       "name": "Tree",
       "file": "Layers/Retreat_OverlookTerrace_Tree.png",
       "canvas": [
-        2560,
-        1440
+        1420,
+        1084
       ],
       "offset": [
         0,
@@ -274,12 +274,12 @@
       "name": "Lantern",
       "file": "Layers/Retreat_OverlookTerrace_Lantern.png",
       "canvas": [
-        2560,
-        1440
+        76,
+        336
       ],
       "offset": [
-        0,
-        0
+        224,
+        198
       ],
       "pivot_px": [
         260,
@@ -297,12 +297,12 @@
       "name": "LanternGlow",
       "file": "Layers/Retreat_OverlookTerrace_LanternGlow.png",
       "canvas": [
-        2560,
-        1440
+        48,
+        60
       ],
       "offset": [
-        0,
-        0
+        236,
+        432
       ],
       "parent": "Lantern",
       "pivot_px": [
@@ -319,24 +319,24 @@
       "name": "BenchShadow",
       "file": "Layers/Retreat_OverlookTerrace_BenchShadow.png",
       "canvas": [
-        2560,
-        1440
+        756,
+        136
       ],
       "offset": [
-        0,
-        0
+        288,
+        1068
       ]
     },
     {
       "name": "BenchBack",
       "file": "Layers/Retreat_OverlookTerrace_BenchBack.png",
       "canvas": [
-        2560,
-        1440
+        664,
+        200
       ],
       "offset": [
-        0,
-        0
+        347,
+        947
       ],
       "painted_whole": true
     },
@@ -344,12 +344,12 @@
       "name": "Qori_Body",
       "file": "Layers/Retreat_OverlookTerrace_Qori_Body.png",
       "canvas": [
-        2560,
-        1440
+        132,
+        276
       ],
       "offset": [
-        0,
-        0
+        691,
+        776
       ],
       "painted_whole": true
     },
@@ -357,12 +357,12 @@
       "name": "Qori_Head",
       "file": "Layers/Retreat_OverlookTerrace_Qori_Head.png",
       "canvas": [
-        2560,
-        1440
+        100,
+        92
       ],
       "offset": [
-        0,
-        0
+        717,
+        706
       ],
       "pivot_px": [
         766,
@@ -374,15 +374,33 @@
       ]
     },
     {
+      "name": "Qori_Blink",
+      "file": "Layers/Retreat_OverlookTerrace_Qori_Blink.png",
+      "canvas": [
+        12,
+        32
+      ],
+      "offset": [
+        798,
+        740
+      ],
+      "parent": "Qori_Head",
+      "pivot_px": [
+        766,
+        794
+      ],
+      "visible_by_default": false
+    },
+    {
       "name": "Qori_EarFar",
       "file": "Layers/Retreat_OverlookTerrace_Qori_EarFar.png",
       "canvas": [
-        2560,
-        1440
+        92,
+        100
       ],
       "offset": [
-        0,
-        0
+        685,
+        636
       ],
       "pivot_px": [
         764.4,
@@ -398,12 +416,12 @@
       "name": "Qori_EarNear",
       "file": "Layers/Retreat_OverlookTerrace_Qori_EarNear.png",
       "canvas": [
-        2560,
-        1440
+        132,
+        100
       ],
       "offset": [
-        0,
-        0
+        622,
+        637
       ],
       "pivot_px": [
         740.5,
@@ -419,12 +437,12 @@
       "name": "BenchFront",
       "file": "Layers/Retreat_OverlookTerrace_BenchFront.png",
       "canvas": [
-        2560,
-        1440
+        676,
+        348
       ],
       "offset": [
-        0,
-        0
+        321,
+        821
       ],
       "painted_whole": true
     },
@@ -432,12 +450,12 @@
       "name": "Foreground_01",
       "file": "Layers/Retreat_OverlookTerrace_Foreground_01.png",
       "canvas": [
-        256,
-        186
+        224,
+        156
       ],
       "offset": [
-        -24,
-        1104
+        -8,
+        1120
       ],
       "base_pivot_px": [
         22,
@@ -457,12 +475,12 @@
       "name": "Foreground_02",
       "file": "Layers/Retreat_OverlookTerrace_Foreground_02.png",
       "canvas": [
-        186,
-        138
+        156,
+        108
       ],
       "offset": [
-        806,
-        -9
+        822,
+        7
       ],
       "base_pivot_px": [
         164,
@@ -482,12 +500,12 @@
       "name": "Foreground_03",
       "file": "Layers/Retreat_OverlookTerrace_Foreground_03.png",
       "canvas": [
-        100,
-        129
+        68,
+        100
       ],
       "offset": [
-        167,
-        1141
+        183,
+        1157
       ],
       "base_pivot_px": [
         48,
@@ -507,12 +525,12 @@
       "name": "Foreground_04",
       "file": "Layers/Retreat_OverlookTerrace_Foreground_04.png",
       "canvas": [
-        88,
-        112
+        56,
+        80
       ],
       "offset": [
-        1636,
-        1168
+        1652,
+        1184
       ],
       "base_pivot_px": [
         44,
@@ -532,11 +550,11 @@
       "name": "Weather",
       "file": "Layers/Retreat_OverlookTerrace_Weather.png",
       "canvas": [
-        2560,
+        1696,
         480
       ],
       "offset": [
-        0,
+        129,
         0
       ],
       "wrap": "vertical",

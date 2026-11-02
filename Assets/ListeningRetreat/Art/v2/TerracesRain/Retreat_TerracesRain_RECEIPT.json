@@ -1,0 +1,59 @@
+{
+ "scene": "TerracesRain",
+ "registration": "Art/Codex_v2_full/Retreat_Fixes_v02b/TerracesRain/Registration_v02b.json",
+ "reviews": [
+  "CLAUDE_REVIEW_79",
+  "CLAUDE_REVIEW_81",
+  "CLAUDE_REVIEW_83"
+ ],
+ "files": [
+  {
+   "layer": "Sky",
+   "codexName": "01_Backdrop",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/TerracesRain/Layers/01_Backdrop.png",
+   "sha256": "6cc7568849b2bab8b6876c9c0811b9f35477b5118bfe336217e012730d8bdc10"
+  },
+  {
+   "layer": "Mid",
+   "codexName": "02_MiddleDistance",
+   "from": "Art/Codex_v2_full/Retreat_Fixes_v02b/TerracesRain/Layers/02_MiddleDistance.png",
+   "sha256": "e9c49143f822bbd3416712fa00f756ba380341e0e41b331593694e023cdd9a7c"
+  },
+  {
+   "layer": "Ground",
+   "codexName": "03_Ground",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/TerracesRain/Layers/03_Ground.png",
+   "sha256": "5355e59c64eb3c3738250ad618557b9fb7c48e87b88a2869f8baa3af31c02ebf"
+  },
+  {
+   "layer": "Tree",
+   "codexName": "04_Tree",
+   "from": "Art/Codex_v2_full/Retreat_Fixes_v02/TerracesRain/Layers/04_Tree.png",
+   "sha256": "1872dc08b7d2d520effb69420c6543f88e5541bb81f37d013e903a7dd03a8180"
+  },
+  {
+   "layer": "BenchBack",
+   "from": "Assets/ListeningRetreat/Art/TerracesRain/Retreat_TerracesRain_BenchBack.png",
+   "sha256": "88728045890d5e3c1b41d4a546a5c8f35c481c5881a9609cc4498dec795fa12b",
+   "derived": "enlarged 1.12x"
+  },
+  {
+   "layer": "BenchFront",
+   "from": "Assets/ListeningRetreat/Art/TerracesRain/Retreat_TerracesRain_BenchFront.png",
+   "sha256": "7891ff899461a973180bdeec4717ff9d2759fee2a765aa7066d6d5c44ccbd524",
+   "derived": "enlarged 1.12x"
+  },
+  {
+   "layer": "Foreground_01",
+   "codexName": "06_ForegroundPlants",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/TerracesRain/Layers/06_ForegroundPlants.png",
+   "sha256": "35ff4a4c65429f461443db4457a9d8c45ee42e3542f922d773642a8f3e79c3d2"
+  },
+  {
+   "layer": "Weather",
+   "codexName": "07_Rain_Tile",
+   "from": "Art/Codex_v2_full/Retreat_Fixes_v02b/TerracesRain/Layers/07_Rain_Tile.png",
+   "sha256": "5b818d476e74e8331d7aba6ed7424d7493f6098368e2bd2555ecdd2d4c5e55e4"
+  }
+ ]
+}

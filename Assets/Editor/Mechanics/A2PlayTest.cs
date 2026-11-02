@@ -25,7 +25,7 @@ public static class A2PlayTest
 
     public static void Run()
     {
-        EditorSceneManager.OpenScene("Assets/Scenes/A2_Grove.unity");
+        EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A2_Grove.unity");
         if (File.Exists(GameSave.FilePath)) File.Copy(GameSave.FilePath, Backup, true);
         GameSave.Clear();
         SessionState.SetBool(Key, true);

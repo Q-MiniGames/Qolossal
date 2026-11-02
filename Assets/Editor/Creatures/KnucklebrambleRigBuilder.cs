@@ -92,7 +92,7 @@ public static class KnucklebrambleRigBuilder
 
             var guardian = root.AddComponent<KnucklebrambleGuardian>();
             var so = new SerializedObject(guardian);
-            so.FindProperty("maximumHealth").intValue = 6;
+            so.FindProperty("maximumHealth").intValue = 9;
             so.FindProperty("rig").objectReferenceValue = rig;
             var poseNames = so.FindProperty("poseNames"); var poseAngles = so.FindProperty("poseAngles");
             poseNames.arraySize = data.poses.Length; poseAngles.arraySize = data.poses.Length * 6;

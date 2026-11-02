@@ -62,3 +62,23 @@ How they play in game (the plan once the frames are in):
 - **Charge attack:** hold attack. The leaves gather, and releasing after the charge does a big sweep worth double damage.
 
 If A2's flip comes out muddled, redo it alone with `Qori jumps and does a forward flip swinging the leaf staff in a full circle, no mouth`.
+
+## Fix set (29 Oct, after the animation review)
+
+Only the clips the review marked as missing, or that can't be fixed by trimming and timing. Everything else is fixed in playback. Use the same Qori reference and settings as the idle (side view facing right, full body, leaf staff in the right hand held forward like the idle). Add the face note to each: Qori has no mouth.
+
+| # | Clip | Prompt | Becomes |
+|---|---|---|---|
+| F1 | Start, skid and turn | `Qori starts running from standing with a quick forward lean, runs a few steps, then skids to a stop with feet braced and cloak swinging forward, then turns around to face left, focused eyes, no mouth` | Run start (3-4 frames), skid (4-6), turn (2-3) |
+| F2 | Hurt and death | `Qori is hit from the front and jolts backwards, eyes squeezed shut, recovers his stance, then is hit again and falls backwards to the ground and lies still, leaf staff dropping beside him, eyes closed, face facing right, no mouth` | Hurt (4-6 frames), death (12-16) |
+| F3 | Air attack | `Qori in mid-air with legs tucked swings the leaf staff in a fast forward arc in front of him, a trail of green leaves following the staff, fierce eyes, face facing right, no mouth` | Air attack (about 8 frames) |
+| F4 | Sprint | `Qori sprints at full speed with long bounding leaps, both feet off the ground between strides, body leaning far forward, leaf staff held low and level, cloak streaming straight back, focused eyes, face facing right, no mouth, seamless loop` | Sprint loop (8-10 frames) |
+| F5 | Walk (interiors) | `Qori walks calmly at a relaxed pace with clear full steps, leaf staff held forward, gentle cloak sway, calm eyes, face facing right, no mouth, seamless loop` | Walk loop for houses (12 frames) |
+| F6 | Look up and crouch | `Qori looks up with wide curious eyes and holds it, then returns to standing, then crouches low and looks down and holds it, leaf staff in hand, face facing right, no mouth` | Look up (in + hold), crouch (in + hold) |
+| F7 | Ledge climb (optional) | `Qori hangs from a ledge with both hands, leaf staff held in one hand along his arm, then pulls himself up onto the ledge and stands up holding the staff forward, calm eyes, face facing right, no mouth` | Ledge climb that keeps the staff and ends in the idle pose |
+
+Order: F2 and F1 first (they show most often), then F3 and F4. F5 only matters for the house interiors. F7 is only needed if trimming the current climb at frame 15 still looks wrong. 7 clips = 63 credits.
+
+If a clip comes out muddled: F1 redo with only `Qori skids to a stop from a run, feet braced, cloak swinging forward, no mouth`; F2 with the hurt and the fall as separate clips. For F4, if Ludo won't lift both feet, add `like a deer bounding`.
+
+Download to `Tools/IncomingArt/Ludo/Qori/Ludo-Qori-<clip>/` as before.

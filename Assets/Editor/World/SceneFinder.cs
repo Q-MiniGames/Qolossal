@@ -8,8 +8,9 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 // Qolossal > Scene Finder: every scene in the project and every underground room, sorted into categories, with a search
-// box. Click a scene to open it; click a room to open the underground and frame that room. The search also finds rooms by
-// the creature in them ("golem"). Nothing is moved on disk: scene paths are hard-wired in the build and the builders.
+// box. Click a scene to open it; click a room to open the underground and frame that room, or its Play button to start
+// playing in it. The search also finds rooms by the creature in them ("golem"). Nothing is moved on disk: scene paths are
+// hard-wired in the build and the builders.
 public sealed class SceneFinder : EditorWindow
 {
     const string RoomsPath = "Tools/Design/UndergroundPlatforming_20261030/rooms.json";
@@ -67,24 +68,141 @@ public sealed class SceneFinder : EditorWindow
                 var entry = e;
                 var open = new Button(() => Go(entry)) { text = entry.label, tooltip = entry.path ?? entry.roomId };
                 open.style.unityTextAlign = TextAnchor.MiddleLeft;
-                fold.Add(open);
+                if (entry.roomId == null) { fold.Add(open); continue; }
+                var row = new VisualElement();
+                row.style.flexDirection = FlexDirection.Row;
+                open.style.flexGrow = 1f; open.style.flexShrink = 1f;
+                row.Add(open);
+                row.Add(new Button(() => Play(entry.roomId)) { text = "Play", tooltip = "Play from this room, with every skill, on a throwaway save" });
+                fold.Add(row);
             }
             list.Add(fold);
         }
     }
 
+    // A click during Play mode can't open a scene: it stops Play and carries on once back in the editor.
+    const string PendingKey = "Qolossal.SceneFinder.Pending";
+
+    [InitializeOnLoadMethod]
+    static void ResumeAfterPlay()
+    {
+        if (SessionState.GetString(PlaceKey, "").Length > 0) EditorApplication.update += PlaceWhenReady;
+        EditorApplication.playModeStateChanged += state =>
+        {
+            if (state != PlayModeStateChange.EnteredEditMode) return;
+            if (SessionState.GetBool(GameSave.PlayHereKey, false)) { SessionState.EraseBool(GameSave.PlayHereKey); GameSave.Reload(); }
+            string pending = SessionState.GetString(PendingKey, ""), play = SessionState.GetString(PendingPlayKey, "");
+            SessionState.EraseString(PendingKey); SessionState.EraseString(PendingPlayKey);
+            if (play.Length > 0) EditorApplication.delayCall += () => StartPlaying(play);
+            else if (pending.Length > 0)
+            {
+                var entry = pending.EndsWith(".unity") ? new Entry { path = pending } : new Entry { roomId = pending };
+                EditorApplication.delayCall += () => Go(entry);
+            }
+        };
+    }
+
+    // ---------------------------------------------------------------- the Play button
+
+    const string PendingPlayKey = "Qolossal.SceneFinder.PendingPlay", PlaceKey = "Qolossal.SceneFinder.PlaceIn";
+    static string UndergroundPath => RegionalSceneCatalog.Folder + RegionalSceneCatalog.Underground + ".unity";
+
+    static void Play(string roomId)
+    {
+        if (!EditorApplication.isPlayingOrWillChangePlaymode) { StartPlaying(roomId); return; }
+        // Already on the throwaway save in the underground: just move there. Otherwise restart on that save.
+        if (EditorApplication.isPlaying && SessionState.GetBool(GameSave.PlayHereKey, false) && UnityEngine.SceneManagement.SceneManager.GetActiveScene().path == UndergroundPath)
+        {
+            Place(roomId);
+            return;
+        }
+        SessionState.SetString(PendingPlayKey, roomId);
+        EditorApplication.isPlaying = false;
+    }
+
+    static void StartPlaying(string roomId)
+    {
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().path != UndergroundPath)
+        {
+            if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
+            EditorSceneManager.OpenScene(UndergroundPath);
+        }
+        SessionState.SetBool(GameSave.PlayHereKey, true);
+        GameSave.Clear();
+        SessionState.SetString(PlaceKey, roomId);
+        EditorApplication.update -= PlaceWhenReady;
+        EditorApplication.update += PlaceWhenReady;
+        EditorApplication.EnterPlaymode();
+    }
+
+    static void PlaceWhenReady()
+    {
+        string roomId = SessionState.GetString(PlaceKey, "");
+        // Play didn't start (compile errors, say): nothing may stay on the throwaway save.
+        if (roomId.Length == 0 || !EditorApplication.isPlayingOrWillChangePlaymode)
+        {
+            EditorApplication.update -= PlaceWhenReady;
+            SessionState.EraseString(PlaceKey);
+            SessionState.EraseBool(GameSave.PlayHereKey);
+            return;
+        }
+        if (!EditorApplication.isPlaying || Time.time < .2f || UnityEngine.Object.FindFirstObjectByType<PlayerMovement>() == null) return;
+        EditorApplication.update -= PlaceWhenReady;
+        SessionState.EraseString(PlaceKey);
+        Place(roomId);
+    }
+
+    static void Place(string roomId)
+    {
+        var qori = UnityEngine.Object.FindFirstObjectByType<PlayerMovement>();
+        var room = UnityEngine.Object.FindObjectsByType<UndergroundRoom>(FindObjectsInactive.Include, FindObjectsSortMode.None).FirstOrDefault(r => r.roomId == roomId);
+        if (qori == null || room == null) { Debug.LogWarning("Scene Finder: can't place Qori in " + roomId); return; }
+        var abilities = qori.GetComponent<PlayerAbilityController>();
+        if (abilities != null) foreach (var relic in Relics.All) abilities.Unlock(relic);
+        Vector2 at = StartSpot(room);
+        var body = qori.GetComponent<Rigidbody2D>();
+        body.position = at; body.linearVelocity = Vector2.zero; qori.transform.position = at;
+        qori.SetRespawn(at);
+    }
+
+    // The room's arrival shelter if it has one, or else the first clear floor from its left.
+    static Vector2 StartSpot(UndergroundRoom room)
+    {
+        var shelter = room.GetComponentInChildren<MraUgShelter>(true);
+        if (shelter != null) return shelter.feet + Vector2.up * .7f;
+        var b = room.WorldBounds;
+        for (float x = b.min.x + 2f; x < b.max.x - 1f; x += 1f)
+        {
+            var top = new Vector2(x, b.max.y - 1f);
+            if (Physics2D.OverlapPoint(top, GroundLayer.Mask)) continue;
+            var ground = Physics2D.Raycast(top, Vector2.down, b.size.y, GroundLayer.Mask);
+            if (!ground || ground.point.y < b.min.y - 1f) continue;
+            if (Physics2D.OverlapCircleAll(ground.point, .9f).Any(c => c.GetComponent<ThornHazard>() != null || c.GetComponent<Hazard>() != null)) continue;
+            return new Vector2(x, ground.point.y + .7f);
+        }
+        return b.center;
+    }
+
     static void Go(Entry e)
     {
+        string underground = RegionalSceneCatalog.Folder + RegionalSceneCatalog.Underground + ".unity";
+        // Playing inside the underground already: a room can be framed without stopping.
+        bool inPlace = e.roomId != null && UnityEngine.SceneManagement.SceneManager.GetActiveScene().path == underground;
+        if (EditorApplication.isPlayingOrWillChangePlaymode && !inPlace)
+        {
+            SessionState.SetString(PendingKey, e.roomId ?? e.path);
+            EditorApplication.isPlaying = false;
+            return;
+        }
         if (e.roomId == null)
         {
             if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) EditorSceneManager.OpenScene(e.path);
             return;
         }
-        string path = RegionalSceneCatalog.Folder + RegionalSceneCatalog.Underground + ".unity";
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().path != path)
+        if (!inPlace)
         {
             if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
-            EditorSceneManager.OpenScene(path);
+            EditorSceneManager.OpenScene(underground);
         }
         var room = UnityEngine.Object.FindObjectsByType<UndergroundRoom>(FindObjectsInactive.Include, FindObjectsSortMode.None).FirstOrDefault(r => r.roomId == e.roomId);
         if (room == null) { Debug.LogWarning("Scene Finder: no room " + e.roomId + " in the underground scene."); return; }

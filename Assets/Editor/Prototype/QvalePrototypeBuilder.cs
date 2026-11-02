@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-// Builds Assets/Scenes/Proto_Qvale.unity, the Qvale prototype from the world redesign proposal v2
+// Builds Assets/Development/LegacyScenes/Proto_Qvale.unity, the Qvale prototype from the world redesign proposal v2
 // (section 5): the town in the warm basin, in placeholder shapes, to try the hub's systems before
 // any art: talking (DialogueBox, TownNpc), houses you walk into (CutawayHouse), the listening spot
 // (ListeningSpot, with placeholder music), Amber and the smithy (TownPickup, TownShop), and a quake
@@ -20,7 +20,7 @@ using UnityEngine;
 // Menu: Qolossal > Prototype > Build Qvale Prototype
 public static class QvalePrototypeBuilder
 {
-    public const string ScenePath = "Assets/Scenes/Proto_Qvale.unity";
+    public const string ScenePath = "Assets/Development/LegacyScenes/Proto_Qvale.unity";
     public static readonly Vector2 Start = new Vector2(-9f, 16.6f);
 
     static readonly Vector2[] Ground =

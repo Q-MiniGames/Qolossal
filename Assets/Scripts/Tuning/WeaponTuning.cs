@@ -43,6 +43,8 @@ public sealed class WeaponTuning : ScriptableObject
     public Phases swordDepthSweep = new Phases(.22f, .3f, .38f);
 
     [Header("Leaf Staff moves (after the opener above)")]
+    [Tooltip("On: the staff's attack is one quick swing, repeated on every press (the Ludo single attack, 20 Oct). Off: the three-hit combo.")]
+    public bool staffSingleAttack = true;
     [Tooltip("Combo hit 1: the sweep. A short wind-up so the hit lands almost on the press.")] public Phases staffOpener = new Phases(.06f, .1f, .18f);
     [Tooltip("Combo hit 2: the backswing.")] public Phases staffBackswing = new Phases(.05f, .1f, .16f);
     [Tooltip("Combo hit 3: the spin finisher (hits all round Qori).")] public Phases staffSpin = new Phases(.08f, .16f, .24f);

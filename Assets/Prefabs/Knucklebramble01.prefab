@@ -1102,17 +1102,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e48fdcc9eeab1d24286070d0dba6619a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KnucklebrambleGuardian
-  maximumHealth: 6
+  maximumHealth: 9
   rig: {fileID: 4305123180144785026}
   wakeRange: 9
-  pauseTime: 0.6
-  telegraphTime: 0.85
-  slamTime: 0.16
-  holdTime: 0.4
-  recoverTime: 0.45
-  openTime: 0.35
-  exposedTime: 3
-  closeTime: 0.4
+  pauseTime: 0.35
+  telegraphTime: 0.6
+  slamTime: 0.14
+  holdTime: 0.3
+  recoverTime: 0.3
+  openTime: 0.3
+  exposedTime: 2.2
+  closeTime: 0.3
+  comboTelegraphTime: 0.42
+  phaseTwoAt: 0.5
+  phaseTwoSpeed: 1.3
+  phaseTwoSlams: 4
   hitsPerExposure: 3
   armOrder: 030000000200000001000000
   poseNames:

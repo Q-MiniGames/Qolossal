@@ -1,0 +1,917 @@
+{
+  "areas": [
+    {
+      "id": "MR01_N00",
+      "name": "Moss nest",
+      "region": "The Cradle",
+      "scene": "MRAtlas_MR01_Cradle"
+    },
+    {
+      "id": "MR01_N01",
+      "name": "Shelter hut",
+      "region": "The Cradle",
+      "scene": "MRAtlas_MR01_Cradle"
+    },
+    {
+      "id": "MR01_N02",
+      "name": "First gorge",
+      "region": "The Cradle",
+      "scene": "MRAtlas_MR01_Cradle"
+    },
+    {
+      "id": "MR01_N03",
+      "name": "Moss ridge",
+      "region": "The Cradle",
+      "scene": "MRAtlas_MR01_Cradle"
+    },
+    {
+      "id": "MR01_N04",
+      "name": "Pale bluff",
+      "region": "The Cradle",
+      "scene": "MRAtlas_MR01_Cradle"
+    },
+    {
+      "id": "MR01_N05",
+      "name": "Warm basin",
+      "region": "The Cradle",
+      "scene": "MRAtlas_MR01_Cradle"
+    },
+    {
+      "id": "MR01_N06",
+      "name": "Moss shrine",
+      "region": "The Cradle",
+      "scene": "MRAtlas_MR01_Cradle"
+    },
+    {
+      "id": "MR01_N07",
+      "name": "Cradle knot",
+      "region": "The Cradle",
+      "scene": "MRAtlas_MR01_Cradle"
+    },
+    {
+      "id": "MR01_N08",
+      "name": "Ravine approach",
+      "region": "The Cradle",
+      "scene": "MRAtlas_MR01_Cradle"
+    },
+    {
+      "id": "MR01_N09",
+      "name": "Fallen stone crossing",
+      "region": "The Cradle",
+      "scene": "MRAtlas_MR01_Cradle"
+    },
+    {
+      "id": "MR01_N10",
+      "name": "High lookout",
+      "region": "The Cradle",
+      "scene": "MRAtlas_MR01_Cradle"
+    },
+    {
+      "id": "MR01_N11",
+      "name": "Causeway exit",
+      "region": "The Cradle",
+      "scene": "MRAtlas_MR01_Cradle"
+    },
+    {
+      "id": "MR02_N00",
+      "name": "Cradle arrival",
+      "region": "The Long Causeway",
+      "scene": "MRAtlas_MR02_Causeway"
+    },
+    {
+      "id": "MR02_N01",
+      "name": "Old road",
+      "region": "The Long Causeway",
+      "scene": "MRAtlas_MR02_Causeway"
+    },
+    {
+      "id": "MR02_N02",
+      "name": "Lower arches",
+      "region": "The Long Causeway",
+      "scene": "MRAtlas_MR02_Causeway"
+    },
+    {
+      "id": "MR02_N03",
+      "name": "Broken arch",
+      "region": "The Long Causeway",
+      "scene": "MRAtlas_MR02_Causeway"
+    },
+    {
+      "id": "MR02_N04",
+      "name": "Root bridge",
+      "region": "The Long Causeway",
+      "scene": "MRAtlas_MR02_Causeway"
+    },
+    {
+      "id": "MR02_N05",
+      "name": "Waystation",
+      "region": "The Long Causeway",
+      "scene": "MRAtlas_MR02_Causeway"
+    },
+    {
+      "id": "MR02_N06",
+      "name": "Thread shrine",
+      "region": "The Long Causeway",
+      "scene": "MRAtlas_MR02_Causeway"
+    },
+    {
+      "id": "MR02_N07",
+      "name": "High cistern",
+      "region": "The Long Causeway",
+      "scene": "MRAtlas_MR02_Causeway"
+    },
+    {
+      "id": "MR02_N08",
+      "name": "Causeway knot",
+      "region": "The Long Causeway",
+      "scene": "MRAtlas_MR02_Causeway"
+    },
+    {
+      "id": "MR02_N09",
+      "name": "Repaired crossing",
+      "region": "The Long Causeway",
+      "scene": "MRAtlas_MR02_Causeway"
+    },
+    {
+      "id": "MR02_N10",
+      "name": "Upper aqueduct",
+      "region": "The Long Causeway",
+      "scene": "MRAtlas_MR02_Causeway"
+    },
+    {
+      "id": "MR02_N11",
+      "name": "Terraces exit",
+      "region": "The Long Causeway",
+      "scene": "MRAtlas_MR02_Causeway"
+    },
+    {
+      "id": "MR03_N00",
+      "name": "Causeway arrival",
+      "region": "The Terraces",
+      "scene": "MRAtlas_MR03_Terraces"
+    },
+    {
+      "id": "MR03_N01",
+      "name": "Lower bridge",
+      "region": "The Terraces",
+      "scene": "MRAtlas_MR03_Terraces"
+    },
+    {
+      "id": "MR03_N02",
+      "name": "Orchard",
+      "region": "The Terraces",
+      "scene": "MRAtlas_MR03_Terraces"
+    },
+    {
+      "id": "MR03_N03",
+      "name": "Farm shelter",
+      "region": "The Terraces",
+      "scene": "MRAtlas_MR03_Terraces"
+    },
+    {
+      "id": "MR03_N04",
+      "name": "Sluice",
+      "region": "The Terraces",
+      "scene": "MRAtlas_MR03_Terraces"
+    },
+    {
+      "id": "MR03_N05",
+      "name": "High terraces",
+      "region": "The Terraces",
+      "scene": "MRAtlas_MR03_Terraces"
+    },
+    {
+      "id": "MR03_N06",
+      "name": "Bloomfall shrine",
+      "region": "The Terraces",
+      "scene": "MRAtlas_MR03_Terraces"
+    },
+    {
+      "id": "MR03_N07",
+      "name": "Mill ridge",
+      "region": "The Terraces",
+      "scene": "MRAtlas_MR03_Terraces"
+    },
+    {
+      "id": "MR03_N08",
+      "name": "Terraces knot",
+      "region": "The Terraces",
+      "scene": "MRAtlas_MR03_Terraces"
+    },
+    {
+      "id": "MR03_N09",
+      "name": "Upper pass",
+      "region": "The Terraces",
+      "scene": "MRAtlas_MR03_Terraces"
+    },
+    {
+      "id": "MR03_N10",
+      "name": "Town overlook",
+      "region": "The Terraces",
+      "scene": "MRAtlas_MR03_Terraces"
+    },
+    {
+      "id": "MR03_N11",
+      "name": "Qvale exit",
+      "region": "The Terraces",
+      "scene": "MRAtlas_MR03_Terraces"
+    },
+    {
+      "id": "MR04_N00",
+      "name": "Terraces arrival",
+      "region": "Qvale",
+      "scene": "MRAtlas_MR04_Qvale"
+    },
+    {
+      "id": "MR04_N01",
+      "name": "Town approach",
+      "region": "Qvale",
+      "scene": "MRAtlas_MR04_Qvale"
+    },
+    {
+      "id": "MR04_N02",
+      "name": "Warm spring",
+      "region": "Qvale",
+      "scene": "MRAtlas_MR04_Qvale"
+    },
+    {
+      "id": "MR04_N03",
+      "name": "Lantern square",
+      "region": "Qvale",
+      "scene": "MRAtlas_MR04_Qvale"
+    },
+    {
+      "id": "MR04_N04",
+      "name": "Smithy",
+      "region": "Qvale",
+      "scene": "MRAtlas_MR04_Qvale"
+    },
+    {
+      "id": "MR04_N05",
+      "name": "Herbalist",
+      "region": "Qvale",
+      "scene": "MRAtlas_MR04_Qvale"
+    },
+    {
+      "id": "MR04_N06",
+      "name": "Scribble's atlas stall",
+      "region": "Qvale",
+      "scene": "MRAtlas_MR04_Qvale"
+    },
+    {
+      "id": "MR04_N07",
+      "name": "Residents' lane",
+      "region": "Qvale",
+      "scene": "MRAtlas_MR04_Qvale"
+    },
+    {
+      "id": "MR04_N08",
+      "name": "Old man's home",
+      "region": "Qvale",
+      "scene": "MRAtlas_MR04_Qvale"
+    },
+    {
+      "id": "MR04_N09",
+      "name": "Listening tree",
+      "region": "Qvale",
+      "scene": "MRAtlas_MR04_Qvale"
+    },
+    {
+      "id": "MR04_N10",
+      "name": "Upper town stair",
+      "region": "Qvale",
+      "scene": "MRAtlas_MR04_Qvale"
+    },
+    {
+      "id": "MR04_N11",
+      "name": "Ribwood exit",
+      "region": "Qvale",
+      "scene": "MRAtlas_MR04_Qvale"
+    },
+    {
+      "id": "MR05_N00",
+      "name": "Qvale arrival",
+      "region": "The Ribwood",
+      "scene": "MRAtlas_MR05_Ribwood"
+    },
+    {
+      "id": "MR05_N01",
+      "name": "Forest gate",
+      "region": "The Ribwood",
+      "scene": "MRAtlas_MR05_Ribwood"
+    },
+    {
+      "id": "MR05_N02",
+      "name": "First wall",
+      "region": "The Ribwood",
+      "scene": "MRAtlas_MR05_Ribwood"
+    },
+    {
+      "id": "MR05_N03",
+      "name": "Fern hollow",
+      "region": "The Ribwood",
+      "scene": "MRAtlas_MR05_Ribwood"
+    },
+    {
+      "id": "MR05_N04",
+      "name": "Root lattice",
+      "region": "The Ribwood",
+      "scene": "MRAtlas_MR05_Ribwood"
+    },
+    {
+      "id": "MR05_N05",
+      "name": "Canopy clearing",
+      "region": "The Ribwood",
+      "scene": "MRAtlas_MR05_Ribwood"
+    },
+    {
+      "id": "MR05_N06",
+      "name": "Wind Leaf shrine",
+      "region": "The Ribwood",
+      "scene": "MRAtlas_MR05_Ribwood"
+    },
+    {
+      "id": "MR05_N07",
+      "name": "Upper grove",
+      "region": "The Ribwood",
+      "scene": "MRAtlas_MR05_Ribwood"
+    },
+    {
+      "id": "MR05_N08",
+      "name": "Swell knot",
+      "region": "The Ribwood",
+      "scene": "MRAtlas_MR05_Ribwood"
+    },
+    {
+      "id": "MR05_N09",
+      "name": "Settled ridge",
+      "region": "The Ribwood",
+      "scene": "MRAtlas_MR05_Ribwood"
+    },
+    {
+      "id": "MR05_N10",
+      "name": "Canopy lookout",
+      "region": "The Ribwood",
+      "scene": "MRAtlas_MR05_Ribwood"
+    },
+    {
+      "id": "MR05_N11",
+      "name": "Heights exit",
+      "region": "The Ribwood",
+      "scene": "MRAtlas_MR05_Ribwood"
+    },
+    {
+      "id": "MR06_N00",
+      "name": "Ribwood arrival",
+      "region": "The Windward Heights",
+      "scene": "MRAtlas_MR06_Heights"
+    },
+    {
+      "id": "MR06_N01",
+      "name": "Sheltered ledge",
+      "region": "The Windward Heights",
+      "scene": "MRAtlas_MR06_Heights"
+    },
+    {
+      "id": "MR06_N02",
+      "name": "Lower wind shelf",
+      "region": "The Windward Heights",
+      "scene": "MRAtlas_MR06_Heights"
+    },
+    {
+      "id": "MR06_N03",
+      "name": "Thread notch",
+      "region": "The Windward Heights",
+      "scene": "MRAtlas_MR06_Heights"
+    },
+    {
+      "id": "MR06_N04",
+      "name": "Old lookout",
+      "region": "The Windward Heights",
+      "scene": "MRAtlas_MR06_Heights"
+    },
+    {
+      "id": "MR06_N05",
+      "name": "High saddle",
+      "region": "The Windward Heights",
+      "scene": "MRAtlas_MR06_Heights"
+    },
+    {
+      "id": "MR06_N06",
+      "name": "Glidecap shrine",
+      "region": "The Windward Heights",
+      "scene": "MRAtlas_MR06_Heights"
+    },
+    {
+      "id": "MR06_N07",
+      "name": "Crosswind shelf",
+      "region": "The Windward Heights",
+      "scene": "MRAtlas_MR06_Heights"
+    },
+    {
+      "id": "MR06_N08",
+      "name": "Heights knot",
+      "region": "The Windward Heights",
+      "scene": "MRAtlas_MR06_Heights"
+    },
+    {
+      "id": "MR06_N09",
+      "name": "Settled bridge",
+      "region": "The Windward Heights",
+      "scene": "MRAtlas_MR06_Heights"
+    },
+    {
+      "id": "MR06_N10",
+      "name": "Upper rest",
+      "region": "The Windward Heights",
+      "scene": "MRAtlas_MR06_Heights"
+    },
+    {
+      "id": "MR06_N11",
+      "name": "Summit exit",
+      "region": "The Windward Heights",
+      "scene": "MRAtlas_MR06_Heights"
+    },
+    {
+      "id": "MR07_N00",
+      "name": "Heights arrival",
+      "region": "The Summit",
+      "scene": "MRAtlas_MR07_Summit"
+    },
+    {
+      "id": "MR07_N01",
+      "name": "Lower falls",
+      "region": "The Summit",
+      "scene": "MRAtlas_MR07_Summit"
+    },
+    {
+      "id": "MR07_N02",
+      "name": "Pale steps",
+      "region": "The Summit",
+      "scene": "MRAtlas_MR07_Summit"
+    },
+    {
+      "id": "MR07_N03",
+      "name": "Reed approach",
+      "region": "The Summit",
+      "scene": "MRAtlas_MR07_Summit"
+    },
+    {
+      "id": "MR07_N04",
+      "name": "Reed bed",
+      "region": "The Summit",
+      "scene": "MRAtlas_MR07_Summit"
+    },
+    {
+      "id": "MR07_N05",
+      "name": "Lake shore",
+      "region": "The Summit",
+      "scene": "MRAtlas_MR07_Summit"
+    },
+    {
+      "id": "MR07_N06",
+      "name": "Seam ledge",
+      "region": "The Summit",
+      "scene": "MRAtlas_MR07_Summit"
+    },
+    {
+      "id": "MR07_N07",
+      "name": "Upper shelf",
+      "region": "The Summit",
+      "scene": "MRAtlas_MR07_Summit"
+    },
+    {
+      "id": "MR07_N08",
+      "name": "Summit knot",
+      "region": "The Summit",
+      "scene": "MRAtlas_MR07_Summit"
+    },
+    {
+      "id": "MR07_N09",
+      "name": "Lake lookout",
+      "region": "The Summit",
+      "scene": "MRAtlas_MR07_Summit"
+    },
+    {
+      "id": "MR07_N10",
+      "name": "Reveal ledge",
+      "region": "The Summit",
+      "scene": "MRAtlas_MR07_Summit"
+    },
+    {
+      "id": "MR07_N11",
+      "name": "Descent entrance",
+      "region": "The Summit",
+      "scene": "MRAtlas_MR07_Summit"
+    }
+  ],
+  "connections": [
+    {
+      "id": "CAVE_PC01",
+      "upperScene": "MRAtlas_MR01_Cradle",
+      "upperRegion": "The Cradle",
+      "upperAreaId": "MR01_N02",
+      "upperAreaName": "First gorge",
+      "lowerRoomId": "PC01",
+      "lowerRoomName": "Firefly Nook",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_PC02",
+      "upperScene": "MRAtlas_MR01_Cradle",
+      "upperRegion": "The Cradle",
+      "upperAreaId": "MR01_N05",
+      "upperAreaName": "Warm basin",
+      "lowerRoomId": "PC02",
+      "lowerRoomName": "Old Footprints",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_PC03",
+      "upperScene": "MRAtlas_MR01_Cradle",
+      "upperRegion": "The Cradle",
+      "upperAreaId": "MR01_N08",
+      "upperAreaName": "Ravine approach",
+      "lowerRoomId": "PC03",
+      "lowerRoomName": "Fern Pocket",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR01_C06",
+      "upperScene": "MRAtlas_MR01_Cradle",
+      "upperRegion": "The Cradle",
+      "upperAreaId": "MR01_N10",
+      "upperAreaName": "High lookout",
+      "lowerRoomId": "MR01_C06",
+      "lowerRoomName": "Hanging Garden",
+      "requirements": "relic:glidecap",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_PC04",
+      "upperScene": "MRAtlas_MR02_Causeway",
+      "upperRegion": "The Long Causeway",
+      "upperAreaId": "MR02_N02",
+      "upperAreaName": "Lower arches",
+      "lowerRoomId": "PC04",
+      "lowerRoomName": "Mason’s Recess",
+      "requirements": "No unlock requirement",
+      "activation": "Walk left into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_PC05",
+      "upperScene": "MRAtlas_MR02_Causeway",
+      "upperRegion": "The Long Causeway",
+      "upperAreaId": "MR02_N05",
+      "upperAreaName": "Waystation",
+      "lowerRoomId": "PC05",
+      "lowerRoomName": "Dripstone Hollow",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_PC06",
+      "upperScene": "MRAtlas_MR02_Causeway",
+      "upperRegion": "The Long Causeway",
+      "upperAreaId": "MR02_N08",
+      "upperAreaName": "Causeway knot",
+      "lowerRoomId": "PC06",
+      "lowerRoomName": "Forgotten Satchel",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR02_C06",
+      "upperScene": "MRAtlas_MR02_Causeway",
+      "upperRegion": "The Long Causeway",
+      "upperAreaId": "MR02_N10",
+      "upperAreaName": "Upper aqueduct",
+      "lowerRoomId": "MR02_C06",
+      "lowerRoomName": "High Arch",
+      "requirements": "relic:glidecap",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_PC07",
+      "upperScene": "MRAtlas_MR03_Terraces",
+      "upperRegion": "The Terraces",
+      "upperAreaId": "MR03_N02",
+      "upperAreaName": "Orchard",
+      "lowerRoomId": "PC07",
+      "lowerRoomName": "Seed Shelf",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_PC08",
+      "upperScene": "MRAtlas_MR03_Terraces",
+      "upperRegion": "The Terraces",
+      "upperAreaId": "MR03_N05",
+      "upperAreaName": "High terraces",
+      "lowerRoomId": "PC08",
+      "lowerRoomName": "Millstone Pocket",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_PC09",
+      "upperScene": "MRAtlas_MR03_Terraces",
+      "upperRegion": "The Terraces",
+      "upperAreaId": "MR03_N08",
+      "upperAreaName": "Terraces knot",
+      "lowerRoomId": "PC09",
+      "lowerRoomName": "Lantern Rest",
+      "requirements": "No unlock requirement",
+      "activation": "Walk left into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR03_C06",
+      "upperScene": "MRAtlas_MR03_Terraces",
+      "upperRegion": "The Terraces",
+      "upperAreaId": "MR03_N09",
+      "upperAreaName": "Upper pass",
+      "lowerRoomId": "MR03_C06",
+      "lowerRoomName": "Root Hanger",
+      "requirements": "relic:glidecap",
+      "activation": "Walk left into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_A01",
+      "upperScene": "MRAtlas_MR04_Qvale",
+      "upperRegion": "Qvale",
+      "upperAreaId": "MR04_N06",
+      "upperAreaName": "Scribble's atlas stall",
+      "lowerRoomId": "A01",
+      "lowerRoomName": "Sluice Arrival",
+      "requirements": "No unlock requirement",
+      "activation": "Walk left into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR05_C01",
+      "upperScene": "MRAtlas_MR05_Ribwood",
+      "upperRegion": "The Ribwood",
+      "upperAreaId": "MR05_N01",
+      "upperAreaName": "Forest gate",
+      "lowerRoomId": "MR05_C01",
+      "lowerRoomName": "Lost Lantern",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_PC10",
+      "upperScene": "MRAtlas_MR05_Ribwood",
+      "upperRegion": "The Ribwood",
+      "upperAreaId": "MR05_N02",
+      "upperAreaName": "First wall",
+      "lowerRoomId": "PC10",
+      "lowerRoomName": "Rootlight Niche",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR05_C03",
+      "upperScene": "MRAtlas_MR05_Ribwood",
+      "upperRegion": "The Ribwood",
+      "upperAreaId": "MR05_N03",
+      "upperAreaName": "Fern hollow",
+      "lowerRoomId": "MR05_C03",
+      "lowerRoomName": "Moss Well",
+      "requirements": "relic:climbing-moss",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR05_C02",
+      "upperScene": "MRAtlas_MR05_Ribwood",
+      "upperRegion": "The Ribwood",
+      "upperAreaId": "MR05_N04",
+      "upperAreaName": "Root lattice",
+      "lowerRoomId": "MR05_C02",
+      "lowerRoomName": "Root Loom",
+      "requirements": "relic:living-thread",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR05_C04",
+      "upperScene": "MRAtlas_MR05_Ribwood",
+      "upperRegion": "The Ribwood",
+      "upperAreaId": "MR05_N05",
+      "upperAreaName": "Canopy clearing",
+      "lowerRoomId": "MR05_C04",
+      "lowerRoomName": "Seed Choir",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_C01",
+      "upperScene": "MRAtlas_MR05_Ribwood",
+      "upperRegion": "The Ribwood",
+      "upperAreaId": "MR05_N07",
+      "upperAreaName": "Upper grove",
+      "lowerRoomId": "C01",
+      "lowerRoomName": "Garden Arrival",
+      "requirements": "relic:living-thread, relic:bloomfall",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR05_C05",
+      "upperScene": "MRAtlas_MR05_Ribwood",
+      "upperRegion": "The Ribwood",
+      "upperAreaId": "MR05_N07",
+      "upperAreaName": "Upper grove",
+      "lowerRoomId": "MR05_C05",
+      "lowerRoomName": "Stone Drum",
+      "requirements": "relic:bloomfall",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR05_C06",
+      "upperScene": "MRAtlas_MR05_Ribwood",
+      "upperRegion": "The Ribwood",
+      "upperAreaId": "MR05_N10",
+      "upperAreaName": "Canopy lookout",
+      "lowerRoomId": "MR05_C06",
+      "lowerRoomName": "Canopy Pocket",
+      "requirements": "relic:glidecap",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR06_C01",
+      "upperScene": "MRAtlas_MR06_Heights",
+      "upperRegion": "The Windward Heights",
+      "upperAreaId": "MR06_N01",
+      "upperAreaName": "Sheltered ledge",
+      "lowerRoomId": "MR06_C01",
+      "lowerRoomName": "Sheltered Nest",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_PC11",
+      "upperScene": "MRAtlas_MR06_Heights",
+      "upperRegion": "The Windward Heights",
+      "upperAreaId": "MR06_N02",
+      "upperAreaName": "Lower wind shelf",
+      "lowerRoomId": "PC11",
+      "lowerRoomName": "Quiet Wind Pocket",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR06_C02",
+      "upperScene": "MRAtlas_MR06_Heights",
+      "upperRegion": "The Windward Heights",
+      "upperAreaId": "MR06_N03",
+      "upperAreaName": "Thread notch",
+      "lowerRoomId": "MR06_C02",
+      "lowerRoomName": "Clasp Hollow",
+      "requirements": "relic:living-thread",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR06_C03",
+      "upperScene": "MRAtlas_MR06_Heights",
+      "upperRegion": "The Windward Heights",
+      "upperAreaId": "MR06_N04",
+      "upperAreaName": "Old lookout",
+      "lowerRoomId": "MR06_C03",
+      "lowerRoomName": "Wind Window",
+      "requirements": "relic:wind-leaf",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR06_C04",
+      "upperScene": "MRAtlas_MR06_Heights",
+      "upperRegion": "The Windward Heights",
+      "upperAreaId": "MR06_N05",
+      "upperAreaName": "High saddle",
+      "lowerRoomId": "MR06_C04",
+      "lowerRoomName": "Echo Steps",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR06_C05",
+      "upperScene": "MRAtlas_MR06_Heights",
+      "upperRegion": "The Windward Heights",
+      "upperAreaId": "MR06_N07",
+      "upperAreaName": "Crosswind shelf",
+      "lowerRoomId": "MR06_C05",
+      "lowerRoomName": "High Drift",
+      "requirements": "relic:glidecap",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_D01",
+      "upperScene": "MRAtlas_MR06_Heights",
+      "upperRegion": "The Windward Heights",
+      "upperAreaId": "MR06_N09",
+      "upperAreaName": "Settled bridge",
+      "lowerRoomId": "D01",
+      "lowerRoomName": "Windward Shelter",
+      "requirements": "relic:climbing-moss, relic:wind-leaf, relic:glidecap",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR06_C06",
+      "upperScene": "MRAtlas_MR06_Heights",
+      "upperRegion": "The Windward Heights",
+      "upperAreaId": "MR06_N09",
+      "upperAreaName": "Settled bridge",
+      "lowerRoomId": "MR06_C06",
+      "lowerRoomName": "Weather Cave",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR07_C02",
+      "upperScene": "MRAtlas_MR07_Summit",
+      "upperRegion": "The Summit",
+      "upperAreaId": "MR07_N01",
+      "upperAreaName": "Lower falls",
+      "lowerRoomId": "MR07_C02",
+      "lowerRoomName": "Falls Pocket",
+      "requirements": "relic:living-thread",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR07_C03",
+      "upperScene": "MRAtlas_MR07_Summit",
+      "upperRegion": "The Summit",
+      "upperAreaId": "MR07_N02",
+      "upperAreaName": "Pale steps",
+      "lowerRoomId": "MR07_C03",
+      "lowerRoomName": "Pale Archive",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_PC12",
+      "upperScene": "MRAtlas_MR07_Summit",
+      "upperRegion": "The Summit",
+      "upperAreaId": "MR07_N02",
+      "upperAreaName": "Pale steps",
+      "lowerRoomId": "PC12",
+      "lowerRoomName": "Last Cairn",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR07_C01",
+      "upperScene": "MRAtlas_MR07_Summit",
+      "upperRegion": "The Summit",
+      "upperAreaId": "MR07_N03",
+      "upperAreaName": "Reed approach",
+      "lowerRoomId": "MR07_C01",
+      "lowerRoomName": "Reed Shelter",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR07_C04",
+      "upperScene": "MRAtlas_MR07_Summit",
+      "upperRegion": "The Summit",
+      "upperAreaId": "MR07_N06",
+      "upperAreaName": "Seam ledge",
+      "lowerRoomId": "MR07_C04",
+      "lowerRoomName": "Quiet Terrace",
+      "requirements": "relic:glidecap",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR07_C05",
+      "upperScene": "MRAtlas_MR07_Summit",
+      "upperRegion": "The Summit",
+      "upperAreaId": "MR07_N07",
+      "upperAreaName": "Upper shelf",
+      "lowerRoomId": "MR07_C05",
+      "lowerRoomName": "Watcher's Hollow",
+      "requirements": "No unlock requirement",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_MR07_C06",
+      "upperScene": "MRAtlas_MR07_Summit",
+      "upperRegion": "The Summit",
+      "upperAreaId": "MR07_N08",
+      "upperAreaName": "Summit knot",
+      "lowerRoomId": "MR07_C06",
+      "lowerRoomName": "Upper Cleft",
+      "requirements": "relic:climbing-moss",
+      "activation": "Walk right into the recessed cave passage"
+    },
+    {
+      "id": "CAVE_E01",
+      "upperScene": "MRAtlas_MR07_Summit",
+      "upperRegion": "The Summit",
+      "upperAreaId": "MR07_N11",
+      "upperAreaName": "Descent entrance",
+      "lowerRoomId": "E01",
+      "lowerRoomName": "Quiet Arrival",
+      "requirements": "flag:mra:reveal-complete",
+      "activation": "Walk left into the recessed cave passage"
+    }
+  ]
+}

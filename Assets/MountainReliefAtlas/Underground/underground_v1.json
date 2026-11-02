@@ -1,0 +1,6146 @@
+{
+ "schema": 1,
+ "package": "Underground_Master_v1_2026-10-17",
+ "sources": [
+  {
+   "file": "ROOMS.json",
+   "sha256": "04095f603d7bc2c9bfa520d4ce1b86a2237b5925c1c0ae622315654bf22d5567"
+  },
+  {
+   "file": "ENTRANCES.json",
+   "sha256": "08e0b9517a7b78c62a6eebb6db84ea2da5f86b223adad53feeb36da33788de05"
+  },
+  {
+   "file": "GRAPH.json",
+   "sha256": "df62434bf26d39c5b26d4542a8809bde2de91f1cc680235d1d6e921b0fa1aff9"
+  },
+  {
+   "file": "STATE_CONTRACT.json",
+   "sha256": "7a139fa8f31e328536f69ae30518abf68f63b1d8386efbd438b8261033a0189a"
+  }
+ ],
+ "adjustments": [
+  {
+   "room": "B1",
+   "item": "ANCHOR",
+   "field": "feet",
+   "original": "[9, 8]",
+   "adjusted": "[9, 7.2]",
+   "reason": "The Living Thread's measured attach range is 4.0 u, not 9. From the launch shelf's edge (Qori's centre at 6.6, 4.6) the anchor at (9, 8) is 4.16 u away and can't be cast to; at (9, 7.2) it is 3.54 u. It stays above the catch floor with the same swing line."
+  },
+  {
+   "room": "B2",
+   "item": "west_baffle",
+   "field": "rect",
+   "original": "[10, 3, 1, 8]",
+   "adjusted": "[10, 4.4, 1, 6.6]",
+   "reason": "The baffle's foot left 1.0 u over the low walk (top 2) for a 1.2 u body, so the designed lower return (29,2 -> 17,2 -> 3,2) was impassable. Raised to the package's 2.4 u headroom minimum; its top (11) and the upper loop are unchanged."
+  },
+  {
+   "room": "B2",
+   "item": "east_mid",
+   "field": "rect",
+   "original": "[22, 9.5, 9, 0.5]",
+   "adjusted": "[24, 9.5, 7, 0.5]",
+   "reason": "The live movement has no drop-through: one-way decks only let Qori up. East_mid ran wall to baffle, so after the Root latch (28, 10) there was no way down to the exit (29, 2). A 2 u gap at its west end lets him drop to east_low; the latch, E2 under it and the climb back up are unchanged."
+  },
+  {
+   "room": "B2",
+   "item": "east_low",
+   "field": "rect",
+   "original": "[22, 5.5, 9, 0.5]",
+   "adjusted": "[22, 5.5, 7, 0.5]",
+   "reason": "Same cause: a 2 u gap at its east end lets Qori drop to the low walk beside the exit, so the designed zigzag descent (28,10 -> 25.5,8 -> 28,6 -> 29,2) works as walk-off drops."
+  },
+  {
+   "room": "MR02_C03",
+   "item": "ANCHOR_0",
+   "field": "feet",
+   "original": "[7, 9]",
+   "adjusted": "[7, 8.4]",
+   "reason": "Thread range 4.0 u: from a top-4 deck (Qori's centre 4.6 u) the anchor at height 9 is 4.4 u away and can't be cast to standing; at 8.4 it is 3.8 u. From the top-6 decks it stays above the 0.8 u minimum length."
+  },
+  {
+   "room": "MR02_C03",
+   "item": "ANCHOR_1",
+   "field": "feet",
+   "original": "[14, 9]",
+   "adjusted": "[14, 8.4]",
+   "reason": "Thread range 4.0 u: from a top-4 deck (Qori's centre 4.6 u) the anchor at height 9 is 4.4 u away and can't be cast to standing; at 8.4 it is 3.8 u. From the top-6 decks it stays above the 0.8 u minimum length."
+  },
+  {
+   "room": "MR02_C03",
+   "item": "ANCHOR_2",
+   "field": "feet",
+   "original": "[21, 9]",
+   "adjusted": "[21, 8.4]",
+   "reason": "Thread range 4.0 u: from a top-4 deck (Qori's centre 4.6 u) the anchor at height 9 is 4.4 u away and can't be cast to standing; at 8.4 it is 3.8 u. From the top-6 decks it stays above the 0.8 u minimum length."
+  },
+  {
+   "room": "MR02_C03",
+   "item": "ANCHOR_3",
+   "field": "feet",
+   "original": "[28, 9]",
+   "adjusted": "[28, 8.4]",
+   "reason": "Thread range 4.0 u: from a top-4 deck (Qori's centre 4.6 u) the anchor at height 9 is 4.4 u away and can't be cast to standing; at 8.4 it is 3.8 u. From the top-6 decks it stays above the 0.8 u minimum length."
+  },
+  {
+   "room": "MR02_C03",
+   "item": "ANCHOR_4",
+   "field": "feet",
+   "original": "[35, 9]",
+   "adjusted": "[35, 8.4]",
+   "reason": "Thread range 4.0 u: from a top-4 deck (Qori's centre 4.6 u) the anchor at height 9 is 4.4 u away and can't be cast to standing; at 8.4 it is 3.8 u. From the top-6 decks it stays above the 0.8 u minimum length."
+  },
+  {
+   "room": "C1",
+   "item": "ANCHOR_0",
+   "field": "feet",
+   "original": "[7, 9]",
+   "adjusted": "[7, 8.4]",
+   "reason": "Thread range 4.0 u: from a top-4 deck (Qori's centre 4.6 u) the anchor at height 9 is 4.4 u away and can't be cast to standing; at 8.4 it is 3.8 u. From the top-6 decks it stays above the 0.8 u minimum length."
+  },
+  {
+   "room": "C1",
+   "item": "ANCHOR_1",
+   "field": "feet",
+   "original": "[14, 9]",
+   "adjusted": "[14, 8.4]",
+   "reason": "Thread range 4.0 u: from a top-4 deck (Qori's centre 4.6 u) the anchor at height 9 is 4.4 u away and can't be cast to standing; at 8.4 it is 3.8 u. From the top-6 decks it stays above the 0.8 u minimum length."
+  },
+  {
+   "room": "C1",
+   "item": "ANCHOR_2",
+   "field": "feet",
+   "original": "[21, 9]",
+   "adjusted": "[21, 8.4]",
+   "reason": "Thread range 4.0 u: from a top-4 deck (Qori's centre 4.6 u) the anchor at height 9 is 4.4 u away and can't be cast to standing; at 8.4 it is 3.8 u. From the top-6 decks it stays above the 0.8 u minimum length."
+  },
+  {
+   "room": "C2",
+   "item": "WEIGHT_0",
+   "field": "feet",
+   "original": "[8, 7]",
+   "adjusted": "[8, 6.4]",
+   "reason": "'Pull from dry floor': from the floor (Qori's centre 2.6) the weight at height 7 is 4.4 u away, past the 4.0 u thread range; at 6.4 it is 3.8 u."
+  },
+  {
+   "room": "C2",
+   "item": "WEIGHT_1",
+   "field": "feet",
+   "original": "[15, 7]",
+   "adjusted": "[15, 6.4]",
+   "reason": "'Pull from dry floor': from the floor (Qori's centre 2.6) the weight at height 7 is 4.4 u away, past the 4.0 u thread range; at 6.4 it is 3.8 u."
+  }
+ ],
+ "rooms": [
+  {
+   "id": "HEART",
+   "name": "Great Hollow / Heart Chamber",
+   "region": "MR08",
+   "theme": "Heart sanctuary",
+   "size": [
+    30,
+    20
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      30,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      19,
+      30,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      18
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      29,
+      1,
+      1,
+      18
+     ],
+     "clingable": false
+    },
+    {
+     "id": "W_rib_0",
+     "rect": [
+      10,
+      1,
+      2,
+      3
+     ],
+     "clingable": false
+    },
+    {
+     "id": "W_rib_1",
+     "rect": [
+      10,
+      7,
+      2,
+      6
+     ],
+     "clingable": false
+    },
+    {
+     "id": "W_rib_2",
+     "rect": [
+      10,
+      16,
+      2,
+      3
+     ],
+     "clingable": false
+    },
+    {
+     "id": "E_rib_0",
+     "rect": [
+      18,
+      1,
+      2,
+      3
+     ],
+     "clingable": false
+    },
+    {
+     "id": "E_rib_1",
+     "rect": [
+      18,
+      7,
+      2,
+      6
+     ],
+     "clingable": false
+    },
+    {
+     "id": "E_rib_2",
+     "rect": [
+      18,
+      16,
+      2,
+      3
+     ],
+     "clingable": false
+    },
+    {
+     "id": "W_divide_left",
+     "rect": [
+      1,
+      8,
+      3,
+      4
+     ],
+     "clingable": false
+    },
+    {
+     "id": "W_divide_right",
+     "rect": [
+      6,
+      8,
+      4,
+      4
+     ],
+     "clingable": false
+    },
+    {
+     "id": "E_divide_left",
+     "rect": [
+      20,
+      8,
+      3,
+      4
+     ],
+     "clingable": false
+    },
+    {
+     "id": "E_divide_right",
+     "rect": [
+      25,
+      8,
+      4,
+      4
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "AB_lift",
+     "rect": [
+      4,
+      1.5,
+      2,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "moving",
+     "condition": ""
+    },
+    {
+     "id": "W_lower_floor",
+     "rect": [
+      1,
+      1.5,
+      9,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "CD_lift",
+     "rect": [
+      23,
+      1.5,
+      2,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "moving",
+     "condition": ""
+    },
+    {
+     "id": "E_lower_floor",
+     "rect": [
+      20,
+      1.5,
+      9,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "E_descent_0",
+     "rect": [
+      12,
+      15.5,
+      3.5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "E_descent_1",
+     "rect": [
+      14.5,
+      12.5,
+      3.5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "E_descent_2",
+     "rect": [
+      12,
+      9.5,
+      3.5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "E_descent_3",
+     "rect": [
+      14.5,
+      6.5,
+      3.5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "E_descent_4",
+     "rect": [
+      12,
+      3.5,
+      3.5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "E_descent_5",
+     "rect": [
+      12,
+      1.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "A_inspection_step",
+     "rect": [
+      7,
+      2.5,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "C_inspection_step",
+     "rect": [
+      20,
+      2.5,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [
+    {
+     "id": "W_window_0",
+     "rect": [
+      10,
+      4,
+      2,
+      3
+     ],
+     "clingable": false,
+     "opensWhenAll": [
+      "NEVER"
+     ]
+    },
+    {
+     "id": "W_window_1",
+     "rect": [
+      10,
+      13,
+      2,
+      3
+     ],
+     "clingable": false,
+     "opensWhenAll": [
+      "NEVER"
+     ]
+    },
+    {
+     "id": "E_window_0",
+     "rect": [
+      18,
+      4,
+      2,
+      3
+     ],
+     "clingable": false,
+     "opensWhenAll": [
+      "NEVER"
+     ]
+    },
+    {
+     "id": "E_window_1",
+     "rect": [
+      18,
+      13,
+      2,
+      3
+     ],
+     "clingable": false,
+     "opensWhenAll": [
+      "NEVER"
+     ]
+    },
+    {
+     "id": "AB_lift_hatch",
+     "rect": [
+      4,
+      8,
+      2,
+      4
+     ],
+     "clingable": false,
+     "opensWhenAll": [
+      "cw:heart:visited:A",
+      "cw:heart:visited:B",
+      "cw:heart:link:AB"
+     ]
+    },
+    {
+     "id": "CD_lift_hatch",
+     "rect": [
+      23,
+      8,
+      2,
+      4
+     ],
+     "clingable": false,
+     "opensWhenAll": [
+      "cw:heart:visited:C",
+      "cw:heart:visited:D",
+      "cw:heart:link:CD"
+     ]
+    }
+   ],
+   "markers": [
+    {
+     "id": "PORT_A",
+     "kind": "portal",
+     "feet": [
+      2.5,
+      2
+     ],
+     "detail": "Explicit interact; return to A3",
+     "target": "A3:TO_HEART",
+     "requires": []
+    },
+    {
+     "id": "SPAWN_A",
+     "kind": "spawn",
+     "feet": [
+      3.3,
+      2
+     ],
+     "detail": "Set visited only after safe arrival",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "PORT_B",
+     "kind": "portal",
+     "feet": [
+      2.5,
+      12
+     ],
+     "detail": "Explicit interact; return to B3",
+     "target": "B3:TO_HEART",
+     "requires": []
+    },
+    {
+     "id": "SPAWN_B",
+     "kind": "spawn",
+     "feet": [
+      3.3,
+      12
+     ],
+     "detail": "Set visited only after safe arrival",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "PORT_C",
+     "kind": "portal",
+     "feet": [
+      27.5,
+      2
+     ],
+     "detail": "Explicit interact; return to C3",
+     "target": "C3:TO_HEART",
+     "requires": []
+    },
+    {
+     "id": "SPAWN_C",
+     "kind": "spawn",
+     "feet": [
+      26.7,
+      2
+     ],
+     "detail": "Set visited only after safe arrival",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "PORT_D",
+     "kind": "portal",
+     "feet": [
+      27.5,
+      12
+     ],
+     "detail": "Explicit interact; return to D3",
+     "target": "D3:TO_HEART",
+     "requires": []
+    },
+    {
+     "id": "SPAWN_D",
+     "kind": "spawn",
+     "feet": [
+      26.7,
+      12
+     ],
+     "detail": "Set visited only after safe arrival",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "PORT_E",
+     "kind": "portal",
+     "feet": [
+      15,
+      16
+     ],
+     "detail": "Explicit interact; return to E3",
+     "target": "E3:TO_HEART",
+     "requires": []
+    },
+    {
+     "id": "SPAWN_E",
+     "kind": "spawn",
+     "feet": [
+      14,
+      16
+     ],
+     "detail": "Set visited only after safe arrival",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "REWARD_A",
+     "kind": "reward",
+     "feet": [
+      8,
+      3
+     ],
+     "detail": "Independent one-time reward; no through-wall pickup",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "LOOK_A",
+     "kind": "look",
+     "feet": [
+      7.3,
+      3
+     ],
+     "detail": "Inspect another section; no invisible movement barrier",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "REWARD_B",
+     "kind": "reward",
+     "feet": [
+      8,
+      12
+     ],
+     "detail": "Independent one-time reward; no through-wall pickup",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "LOOK_B",
+     "kind": "look",
+     "feet": [
+      7.3,
+      12
+     ],
+     "detail": "Inspect another section; no invisible movement barrier",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "REWARD_C",
+     "kind": "reward",
+     "feet": [
+      22,
+      3
+     ],
+     "detail": "Independent one-time reward; no through-wall pickup",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "LOOK_C",
+     "kind": "look",
+     "feet": [
+      22.7,
+      3
+     ],
+     "detail": "Inspect another section; no invisible movement barrier",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "REWARD_D",
+     "kind": "reward",
+     "feet": [
+      22,
+      12
+     ],
+     "detail": "Independent one-time reward; no through-wall pickup",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "LOOK_D",
+     "kind": "look",
+     "feet": [
+      22.7,
+      12
+     ],
+     "detail": "Inspect another section; no invisible movement barrier",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "LATCH_AB",
+     "kind": "control",
+     "feet": [
+      6.5,
+      2
+     ],
+     "detail": "Lower lift call/latch; both visits required",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "CALL_AB_UPPER",
+     "kind": "control",
+     "feet": [
+      6.5,
+      12
+     ],
+     "detail": "Upper lift call/latch; same flags as lower station",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "LATCH_CD",
+     "kind": "control",
+     "feet": [
+      25.5,
+      2
+     ],
+     "detail": "Lower lift call/latch; both visits required",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "CALL_CD_UPPER",
+     "kind": "control",
+     "feet": [
+      25.5,
+      12
+     ],
+     "detail": "Upper lift call/latch; same flags as lower station",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "CORE",
+     "kind": "core",
+     "feet": [
+      15,
+      2
+     ],
+     "detail": "Existing ending interaction; reveal flag required",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "E_RETURN",
+     "kind": "control",
+     "feet": [
+      17,
+      2
+     ],
+     "detail": "Safe lift/return to E port only; no outer connection",
+     "target": "",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Five entries in ONE scene; each has its own return port and visit flag.",
+    "Four permanent rib windows allow sight, but block bodies, thread and attacks.",
+    "AB / CD lifts unlock only after independent visits to BOTH sectors plus a local latch.",
+    "Core is background art; its base interaction is reached only through E. No sixth door.",
+    "All coordinates are world units. Marker y is feet height; floor top is authoritative."
+   ],
+   "routeRequires": []
+  },
+  {
+   "id": "A1",
+   "name": "Dry Drain",
+   "region": "MR04",
+   "theme": "Cistern",
+   "size": [
+    24,
+    12
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      24,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      11,
+      24,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      10
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      23,
+      1,
+      1,
+      10
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "entry",
+     "rect": [
+      1,
+      2.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "stone1",
+     "rect": [
+      8,
+      2.0,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "stone2",
+     "rect": [
+      12.5,
+      2.0,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "exit",
+     "rect": [
+      17,
+      2.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    }
+   ],
+   "hazards": [
+    {
+     "id": "water_high",
+     "rect": [
+      7,
+      1,
+      10,
+      2.2
+     ],
+     "clingable": false,
+     "activeWhen": "not cw:A:drain"
+    },
+    {
+     "id": "water_low",
+     "rect": [
+      7,
+      1,
+      10,
+      0.4
+     ],
+     "clingable": false,
+     "activeWhen": "cw:A:drain"
+    }
+   ],
+   "gates": [
+    {
+     "id": "exit_grate",
+     "rect": [
+      19,
+      3,
+      0.6,
+      8
+     ],
+     "clingable": false,
+     "opensWhenAll": [
+      "cw:A:drain"
+     ]
+    }
+   ],
+   "markers": [
+    {
+     "id": "IN",
+     "kind": "portal",
+     "feet": [
+      2.5,
+      3
+     ],
+     "detail": "Surface A return",
+     "target": "ENT_A",
+     "requires": []
+    },
+    {
+     "id": "CHECK",
+     "kind": "checkpoint",
+     "feet": [
+      4,
+      3
+     ],
+     "detail": "",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "VALVE",
+     "kind": "control",
+     "feet": [
+      5.5,
+      3
+     ],
+     "detail": "Set cw:A:drain; water lowers; exit grate opens",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "OUT",
+     "kind": "portal",
+     "feet": [
+      21,
+      3
+     ],
+     "detail": "To Twin Sluices",
+     "target": "A2",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Safe first valve lesson; no combat.",
+    "Visible barred exit opens with the drain flag, preventing late abilities from skipping the lesson.",
+    "Always allow retreat through IN. No swimming."
+   ],
+   "routeRequires": []
+  },
+  {
+   "id": "A2",
+   "name": "Twin Sluices",
+   "region": "MR04",
+   "theme": "Cistern",
+   "size": [
+    28,
+    14
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      28,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      13,
+      28,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      12
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      27,
+      1,
+      1,
+      12
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "entry",
+     "rect": [
+      1,
+      2.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "step1",
+     "rect": [
+      8.5,
+      2.0,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "step2",
+     "rect": [
+      13,
+      2.0,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "valve2",
+     "rect": [
+      17.5,
+      2.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "exit",
+     "rect": [
+      23,
+      2.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "return_lift",
+     "rect": [
+      7,
+      2.5,
+      10.5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "moving",
+     "condition": "cw:A:sluice_solved"
+    }
+   ],
+   "hazards": [
+    {
+     "id": "water_high",
+     "rect": [
+      7,
+      1,
+      10.5,
+      2.4
+     ],
+     "clingable": false,
+     "activeWhen": "not cw:A:basin_drained"
+    },
+    {
+     "id": "water_low",
+     "rect": [
+      7,
+      1,
+      10.5,
+      0.4
+     ],
+     "clingable": false,
+     "activeWhen": "cw:A:basin_drained"
+    }
+   ],
+   "gates": [
+    {
+     "id": "exit_grate",
+     "rect": [
+      24,
+      3,
+      0.6,
+      10
+     ],
+     "clingable": false,
+     "opensWhenAll": [
+      "cw:A:sluice_solved"
+     ]
+    }
+   ],
+   "markers": [
+    {
+     "id": "IN",
+     "kind": "portal",
+     "feet": [
+      2.5,
+      3
+     ],
+     "detail": "Back to Dry Drain",
+     "target": "A1",
+     "requires": []
+    },
+    {
+     "id": "CHECK",
+     "kind": "checkpoint",
+     "feet": [
+      4,
+      3
+     ],
+     "detail": "",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "V1",
+     "kind": "control",
+     "feet": [
+      5.5,
+      3
+     ],
+     "detail": "Set cw:A:basin_drained",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "V2",
+     "kind": "control",
+     "feet": [
+      19,
+      3
+     ],
+     "detail": "Requires basin_drained; set cw:A:sluice_solved",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "OUT",
+     "kind": "portal",
+     "feet": [
+      25.5,
+      3
+     ],
+     "detail": "To Dry Gallery",
+     "target": "A3",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "First control drains the crossing; second raises the return platform and opens the far grille.",
+    "Second control requires drain flag even if reached with late-game skills.",
+    "Raised return platform must not trap the player; occupied motion pauses and resets to a safe endpoint."
+   ],
+   "routeRequires": []
+  },
+  {
+   "id": "A3",
+   "name": "Dry Gallery",
+   "region": "MR04",
+   "theme": "Cistern",
+   "size": [
+    24,
+    12
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      24,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      11,
+      24,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      10
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      23,
+      1,
+      1,
+      10
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "gallery",
+     "rect": [
+      1,
+      2.5,
+      22,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [],
+   "markers": [
+    {
+     "id": "IN",
+     "kind": "portal",
+     "feet": [
+      2.5,
+      3
+     ],
+     "detail": "Back to Twin Sluices",
+     "target": "A2",
+     "requires": []
+    },
+    {
+     "id": "CHECK",
+     "kind": "checkpoint",
+     "feet": [
+      5,
+      3
+     ],
+     "detail": "Dry safe rest",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "BOSS",
+     "kind": "portal",
+     "feet": [
+      9,
+      3
+     ],
+     "detail": "Optional Cistern Matriarch; return here",
+     "target": "BOSS_A",
+     "requires": []
+    },
+    {
+     "id": "RETURN",
+     "kind": "control",
+     "feet": [
+      14,
+      3
+     ],
+     "detail": "Unlock cw:return:A; exact return ENT_A",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "TO_HEART",
+     "kind": "portal",
+     "feet": [
+      21,
+      3
+     ],
+     "detail": "Arrival HEART:PORT_A",
+     "target": "HEART:A",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "A safe fork, not an arena. Optional guardian never gates Heart A.",
+    "Return latch unlocks only ENT_A; do not return to whichever door was used last.",
+    "Boss annex footprint is reserved; fight geometry comes in the combat pass."
+   ],
+   "routeRequires": []
+  },
+  {
+   "id": "B1",
+   "name": "Bell Arch",
+   "region": "MR03",
+   "theme": "Resonant stone",
+   "size": [
+    24,
+    14
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      24,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      13,
+      24,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      12
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      23,
+      1,
+      1,
+      12
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "safe_floor",
+     "rect": [
+      1,
+      1.5,
+      22,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "launch",
+     "rect": [
+      3,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "arrival",
+     "rect": [
+      12,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "exit",
+     "rect": [
+      19,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "step",
+     "rect": [
+      1,
+      2.5,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [
+    {
+     "id": "thread_gate",
+     "rect": [
+      18,
+      1,
+      0.6,
+      12
+     ],
+     "clingable": false,
+     "opensWhenAll": [
+      "cw:B:thread_latch"
+     ]
+    }
+   ],
+   "markers": [
+    {
+     "id": "IN",
+     "kind": "portal",
+     "feet": [
+      2,
+      3
+     ],
+     "detail": "Terraces surface entrance",
+     "target": "ENT_B",
+     "requires": []
+    },
+    {
+     "id": "CHECK",
+     "kind": "checkpoint",
+     "feet": [
+      5,
+      4
+     ],
+     "detail": "",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ANCHOR",
+     "kind": "anchor",
+     "feet": [
+      9,
+      7.2
+     ],
+     "detail": "Thread target above catch floor; collision line of sight required",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "PULL",
+     "kind": "anchor",
+     "feet": [
+      15,
+      7
+     ],
+     "detail": "Thread latch sets cw:B:thread_latch; accessible from arrival shelf",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "BELL",
+     "kind": "clue",
+     "feet": [
+      14,
+      4
+     ],
+     "detail": "First symbol: Bell; teach how to inspect and replay a landmark clue",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "OUT",
+     "kind": "portal",
+     "feet": [
+      21,
+      4
+     ],
+     "detail": "To Three Landmarks",
+     "target": "B2",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Teach Living Thread over a safe floor, with an explicit thread-operated gate.",
+    "A double jump could bypass a simple gap: gate requires a thread pull, not an arbitrary jump distance.",
+    "No combat; the three-shape clue uses visible forms as well as sound."
+   ],
+   "routeRequires": [
+    "living-thread"
+   ]
+  },
+  {
+   "id": "B2",
+   "name": "Three Landmarks",
+   "region": "MR03",
+   "theme": "Resonant stone",
+   "size": [
+    32,
+    20
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      32,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      19,
+      32,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      18
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      31,
+      1,
+      1,
+      18
+     ],
+     "clingable": false
+    },
+    {
+     "id": "west_baffle",
+     "rect": [
+      10,
+      4.4,
+      1,
+      6.6
+     ],
+     "clingable": false
+    },
+    {
+     "id": "east_baffle",
+     "rect": [
+      21,
+      5,
+      1,
+      9
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "low_walk",
+     "rect": [
+      1,
+      1.5,
+      30,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "west_mid",
+     "rect": [
+      1,
+      5.5,
+      9,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "west_high",
+     "rect": [
+      1,
+      9.5,
+      9,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "upper",
+     "rect": [
+      7,
+      13.5,
+      18,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "east_mid",
+     "rect": [
+      24,
+      9.5,
+      7,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "east_low",
+     "rect": [
+      22,
+      5.5,
+      7,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "W1",
+     "rect": [
+      5,
+      3.5,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "W2",
+     "rect": [
+      5,
+      7.5,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "W3",
+     "rect": [
+      5,
+      11.5,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "E1",
+     "rect": [
+      24,
+      3.5,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "E2",
+     "rect": [
+      24,
+      7.5,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "E3",
+     "rect": [
+      24,
+      11.5,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "inner_branch",
+     "rect": [
+      12,
+      5.5,
+      7,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "inner_step",
+     "rect": [
+      13,
+      3.5,
+      3,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [
+    {
+     "id": "lower_return_gate",
+     "rect": [
+      21,
+      1,
+      1,
+      4
+     ],
+     "clingable": false,
+     "opensWhenAll": [
+      "cw:B:maze_return"
+     ]
+    }
+   ],
+   "markers": [
+    {
+     "id": "IN",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "From Bell Arch",
+     "target": "B1",
+     "requires": []
+    },
+    {
+     "id": "CHECK",
+     "kind": "checkpoint",
+     "feet": [
+      4.5,
+      2
+     ],
+     "detail": "",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "BELL",
+     "kind": "clue",
+     "feet": [
+      3,
+      6
+     ],
+     "detail": "One ring symbol; west landmark",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "FOSSIL",
+     "kind": "clue",
+     "feet": [
+      15,
+      14
+     ],
+     "detail": "Two spiral symbol; upper landmark",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ROOT",
+     "kind": "control",
+     "feet": [
+      28,
+      10
+     ],
+     "detail": "Three branch symbol; latch sets cw:B:maze_return, opening lower return",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "AMBER",
+     "kind": "reward",
+     "feet": [
+      17,
+      6
+     ],
+     "detail": "Optional short dead-end; return to lower corridor",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "OUT",
+     "kind": "portal",
+     "feet": [
+      29,
+      2
+     ],
+     "detail": "To Resonator Door; clues useful there",
+     "target": "B3",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Physical loop maze: Bell -> Fossil -> Root, then exit. Wrong routes loop back.",
+    "No enemies, timed doors, teleport maze or hearing-only clue.",
+    "Small optional amber alcove is visible from the lower return. Never place the mandatory skill here.",
+    "One-way decks permit ascent from below; solid baffles create readable branches."
+   ],
+   "routeRequires": [
+    "living-thread"
+   ]
+  },
+  {
+   "id": "B3",
+   "name": "Resonator Door",
+   "region": "MR03",
+   "theme": "Resonant stone",
+   "size": [
+    24,
+    12
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      24,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      11,
+      24,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      10
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      23,
+      1,
+      1,
+      10
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "gallery",
+     "rect": [
+      1,
+      2.5,
+      22,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [
+    {
+     "id": "resonator_gate",
+     "rect": [
+      16,
+      3,
+      0.6,
+      8
+     ],
+     "clingable": false,
+     "opensWhenAll": [
+      "cw:B:bowls_solved"
+     ]
+    }
+   ],
+   "markers": [
+    {
+     "id": "IN",
+     "kind": "portal",
+     "feet": [
+      2.5,
+      3
+     ],
+     "detail": "Back to maze",
+     "target": "B2",
+     "requires": []
+    },
+    {
+     "id": "CHECK",
+     "kind": "checkpoint",
+     "feet": [
+      4,
+      3
+     ],
+     "detail": "",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "BOWL1",
+     "kind": "control",
+     "feet": [
+      7,
+      3
+     ],
+     "detail": "Bell symbol; interact contributes to sequence",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "BOWL2",
+     "kind": "control",
+     "feet": [
+      10,
+      3
+     ],
+     "detail": "Fossil symbol; interact contributes to sequence",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "BOWL3",
+     "kind": "control",
+     "feet": [
+      13,
+      3
+     ],
+     "detail": "Root symbol; interact contributes to sequence",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "REPLAY",
+     "kind": "clue",
+     "feet": [
+      5,
+      3
+     ],
+     "detail": "Repeat visual clue / reset input",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "RETURN",
+     "kind": "control",
+     "feet": [
+      18,
+      3
+     ],
+     "detail": "Unlock cw:return:B; exact return ENT_B",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "TO_HEART",
+     "kind": "portal",
+     "feet": [
+      21,
+      3
+     ],
+     "detail": "Arrival HEART:PORT_B",
+     "target": "HEART:B",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Three bowls must be activated in landmark order: Bell, Fossil, Root.",
+    "Wrong input clears current sequence, never solved state; reset and replay hints are free.",
+    "Colour and sound supplement symbols; neither is the only clue."
+   ],
+   "routeRequires": [
+    "living-thread"
+   ]
+  },
+  {
+   "id": "BOSS_A",
+   "name": "Cistern Matriarch",
+   "region": "MR04",
+   "theme": "Cistern",
+   "size": [
+    36,
+    18
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      36,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      17,
+      36,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      16
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      35,
+      1,
+      1,
+      16
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      34,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "shelter_0",
+     "rect": [
+      7,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "shelter_1",
+     "rect": [
+      25,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [],
+   "markers": [
+    {
+     "id": "WAVE_START",
+     "kind": "control",
+     "feet": [
+      7,
+      2
+     ],
+     "detail": "Opt-in combat; retreat remains possible",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      2
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "REWARD",
+     "kind": "reward",
+     "feet": [
+      32,
+      2
+     ],
+     "detail": "Existing reward ID retained; collect only in this room",
+     "target": "",
+     "requires": [
+      "ug:BOSS_A:solved"
+     ]
+    },
+    {
+     "id": "BOSS_START",
+     "kind": "enemy",
+     "feet": [
+      21.599999999999998,
+      2
+     ],
+     "detail": "Boss spawn; aggro after opt-in; no spawn damage",
+     "target": "",
+     "requires": []
+    }
+   ],
+   "rewardId": "ug:BOSS_A:reward",
+   "reward": "optional guardian reward; registry assignment pending",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Optional guardian arena: dry side shelves, central shallow basin, return doorway never dependent on victory",
+    "No mandatory skill or ending progress requires this boss."
+   ],
+   "routeRequires": []
+  },
+  {
+   "id": "MR01_C02",
+   "name": "Moss Pocket",
+   "region": "MR01",
+   "theme": "Moss nursery",
+   "size": [
+    36,
+    20
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      36,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      19,
+      36,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      18
+     ],
+     "clingable": true
+    },
+    {
+     "id": "right",
+     "rect": [
+      35,
+      1,
+      1,
+      18
+     ],
+     "clingable": true
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      34,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "ledge_0",
+     "rect": [
+      2,
+      3.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_1",
+     "rect": [
+      29,
+      5.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_2",
+     "rect": [
+      2,
+      7.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_3",
+     "rect": [
+      29,
+      9.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_4",
+     "rect": [
+      2,
+      11.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_5",
+     "rect": [
+      29,
+      13.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "top_reward",
+     "rect": [
+      29,
+      14.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [],
+   "markers": [
+    {
+     "id": "RETURN",
+     "kind": "control",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Always-open return lift from top to entry; climbing faces are outer walls",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "SKILL",
+     "kind": "skill",
+     "feet": [
+      8,
+      2
+     ],
+     "detail": "Grant climbing-moss; preserve separate existing reward",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "ENT_MR01_C02",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      2
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "REWARD",
+     "kind": "reward",
+     "feet": [
+      32,
+      15
+     ],
+     "detail": "Existing reward ID retained; collect only in this room",
+     "target": "",
+     "requires": [
+      "ug:MR01_C02:lesson_complete"
+     ]
+    }
+   ],
+   "rewardId": "mra:MR01_C02:reward",
+   "reward": "heart-seed",
+   "existingScene": "MRAtlas_MR01_C02",
+   "existingReturnId": "mra:MR01_C02:return",
+   "notes": [
+    "Low ramp to Climbing Moss, then short wall lesson with catch floor",
+    "Landmark: Moss cradle",
+    "Reward: heart-seed; retain mra:MR01_C02:reward",
+    "Relic reachable before wall climb"
+   ],
+   "routeRequires": []
+  },
+  {
+   "id": "MR02_C03",
+   "name": "Echo Vault",
+   "region": "MR02",
+   "theme": "Aqueduct and cistern",
+   "size": [
+    40,
+    16
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      40,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      15,
+      40,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      14
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      39,
+      1,
+      1,
+      14
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      38,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "deck_0",
+     "rect": [
+      5,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "deck_1",
+     "rect": [
+      12,
+      5.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "deck_2",
+     "rect": [
+      19,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "deck_3",
+     "rect": [
+      26,
+      5.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "deck_4",
+     "rect": [
+      33,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "reward_shelf",
+     "rect": [
+      34,
+      5.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [],
+   "markers": [
+    {
+     "id": "ANCHOR_0",
+     "kind": "anchor",
+     "feet": [
+      7,
+      8.4
+     ],
+     "detail": "Thread anchor with clear sightline",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ANCHOR_1",
+     "kind": "anchor",
+     "feet": [
+      14,
+      8.4
+     ],
+     "detail": "Thread anchor with clear sightline",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ANCHOR_2",
+     "kind": "anchor",
+     "feet": [
+      21,
+      8.4
+     ],
+     "detail": "Thread anchor with clear sightline",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ANCHOR_3",
+     "kind": "anchor",
+     "feet": [
+      28,
+      8.4
+     ],
+     "detail": "Thread anchor with clear sightline",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ANCHOR_4",
+     "kind": "anchor",
+     "feet": [
+      35,
+      8.4
+     ],
+     "detail": "Thread anchor with clear sightline",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "RETURN_LIFT",
+     "kind": "control",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Always-callable safe lift to reward level after first arrival; latch never blocks escape",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "SKILL",
+     "kind": "skill",
+     "feet": [
+      8,
+      2
+     ],
+     "detail": "Grant living-thread; preserve separate existing reward",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "ENT_MR02_C03",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      2
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "REWARD",
+     "kind": "reward",
+     "feet": [
+      36.5,
+      6
+     ],
+     "detail": "Existing reward ID retained; collect only in this room",
+     "target": "",
+     "requires": [
+      "ug:MR02_C03:lesson_complete"
+     ]
+    }
+   ],
+   "rewardId": "mra:MR02_C03:reward",
+   "reward": "song-shell",
+   "existingScene": "MRAtlas_MR02_C03",
+   "existingReturnId": "mra:MR02_C03:return",
+   "notes": [
+    "Living Thread at accessible echo bowl, grapple lesson opens song niche",
+    "Landmark: Twin resonance bowls",
+    "Reward: song-shell; retain mra:MR02_C03:reward",
+    "Keep song reward; no self-gate"
+   ],
+   "routeRequires": []
+  },
+  {
+   "id": "MR03_C02",
+   "name": "Grain Store",
+   "region": "MR03",
+   "theme": "Mill undercroft",
+   "size": [
+    36,
+    18
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      36,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      17,
+      36,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      16
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      35,
+      1,
+      1,
+      16
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      34,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "deck_0",
+     "rect": [
+      5,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "deck_1",
+     "rect": [
+      12,
+      5.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "deck_2",
+     "rect": [
+      19,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "deck_3",
+     "rect": [
+      26,
+      5.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "reward_shelf",
+     "rect": [
+      30,
+      5.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [],
+   "markers": [
+    {
+     "id": "POD_0",
+     "kind": "pod",
+     "feet": [
+      7,
+      4
+     ],
+     "detail": "Bloomfall pogo surface; no enemy on landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "POD_1",
+     "kind": "pod",
+     "feet": [
+      14,
+      6
+     ],
+     "detail": "Bloomfall pogo surface; no enemy on landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "POD_2",
+     "kind": "pod",
+     "feet": [
+      21,
+      4
+     ],
+     "detail": "Bloomfall pogo surface; no enemy on landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "POD_3",
+     "kind": "pod",
+     "feet": [
+      28,
+      6
+     ],
+     "detail": "Bloomfall pogo surface; no enemy on landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "RETURN_LIFT",
+     "kind": "control",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Always-callable safe lift to reward level after first arrival; latch never blocks escape",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "SKILL",
+     "kind": "skill",
+     "feet": [
+      8,
+      2
+     ],
+     "detail": "Grant bloomfall; preserve separate existing reward",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "ENT_MR03_C02",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      2
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "REWARD",
+     "kind": "reward",
+     "feet": [
+      32.5,
+      6
+     ],
+     "detail": "Existing reward ID retained; collect only in this room",
+     "target": "",
+     "requires": [
+      "ug:MR03_C02:lesson_complete"
+     ]
+    }
+   ],
+   "rewardId": "mra:MR03_C02:reward",
+   "reward": "amber",
+   "existingScene": "MRAtlas_MR03_C02",
+   "existingReturnId": "mra:MR03_C02:return",
+   "notes": [
+    "Bloomfall in grain cradle, practise on marked spring seed bed",
+    "Landmark: Round grain silo",
+    "Reward: amber; retain mra:MR03_C02:reward",
+    "Keep amber; baseline access to relic"
+   ],
+   "routeRequires": []
+  },
+  {
+   "id": "MR05_C04",
+   "name": "Seed Choir",
+   "region": "MR05",
+   "theme": "Root loom",
+   "size": [
+    40,
+    14
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      40,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      13,
+      40,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      12
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      39,
+      1,
+      1,
+      12
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      38,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    }
+   ],
+   "hazards": [
+    {
+     "id": "gust_0",
+     "rect": [
+      10,
+      2,
+      2,
+      3
+     ],
+     "clingable": false,
+     "activeWhen": "telegraphed gust on; 1.2s tell, 1.0s pulse, 2.0s calm (tune)"
+    },
+    {
+     "id": "gust_1",
+     "rect": [
+      18,
+      2,
+      2,
+      3
+     ],
+     "clingable": false,
+     "activeWhen": "telegraphed gust on; 1.2s tell, 1.0s pulse, 2.0s calm (tune)"
+    },
+    {
+     "id": "gust_2",
+     "rect": [
+      26,
+      2,
+      2,
+      3
+     ],
+     "clingable": false,
+     "activeWhen": "telegraphed gust on; 1.2s tell, 1.0s pulse, 2.0s calm (tune)"
+    }
+   ],
+   "gates": [],
+   "markers": [
+    {
+     "id": "SHELTER_0",
+     "kind": "look",
+     "feet": [
+      7,
+      2
+     ],
+     "detail": "Safe pocket before gust; dash is useful, no blind landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "SHELTER_1",
+     "kind": "look",
+     "feet": [
+      15,
+      2
+     ],
+     "detail": "Safe pocket before gust; dash is useful, no blind landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "SHELTER_2",
+     "kind": "look",
+     "feet": [
+      23,
+      2
+     ],
+     "detail": "Safe pocket before gust; dash is useful, no blind landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "SHELTER_3",
+     "kind": "look",
+     "feet": [
+      31,
+      2
+     ],
+     "detail": "Safe pocket before gust; dash is useful, no blind landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "SKILL",
+     "kind": "skill",
+     "feet": [
+      8,
+      2
+     ],
+     "detail": "Grant wind-leaf; preserve separate existing reward",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "ENT_MR05_C04",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      2
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "REWARD",
+     "kind": "reward",
+     "feet": [
+      36,
+      2
+     ],
+     "detail": "Existing reward ID retained; collect only in this room",
+     "target": "",
+     "requires": [
+      "ug:MR05_C04:lesson_complete"
+     ]
+    }
+   ],
+   "rewardId": "mra:MR05_C04:reward",
+   "reward": "song-shell",
+   "existingScene": "MRAtlas_MR05_C04",
+   "existingReturnId": "mra:MR05_C04:return",
+   "notes": [
+    "Wind Leaf on accessible choir dais, dash lesson afterward",
+    "Landmark: Three singing pods",
+    "Reward: song-shell; retain mra:MR05_C04:reward",
+    "Keep song shell and visual rhythm cues"
+   ],
+   "routeRequires": []
+  },
+  {
+   "id": "MR06_C01",
+   "name": "Sheltered Nest",
+   "region": "MR06",
+   "theme": "Wind chimney",
+   "size": [
+    44,
+    22
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      44,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      21,
+      44,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      20
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      43,
+      1,
+      1,
+      20
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      42,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "launch",
+     "rect": [
+      1,
+      16.5,
+      7,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "landing",
+     "rect": [
+      36,
+      3.5,
+      7,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    }
+   ],
+   "hazards": [
+    {
+     "id": "soft_catch",
+     "rect": [
+      12,
+      2,
+      24,
+      0.25
+     ],
+     "clingable": false,
+     "activeWhen": "touch after failed crossing; return to launch safely, no health penalty"
+    }
+   ],
+   "gates": [],
+   "markers": [
+    {
+     "id": "RETURN",
+     "kind": "control",
+     "feet": [
+      4,
+      2
+     ],
+     "detail": "Always-callable lift to launch; safe catch floor covers entire gap",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "SKILL",
+     "kind": "skill",
+     "feet": [
+      8,
+      2
+     ],
+     "detail": "Grant glidecap; preserve separate existing reward",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "LESSON_LIFT",
+     "kind": "control",
+     "feet": [
+      10,
+      2
+     ],
+     "detail": "Always-callable lift to launch, available before or after grant",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "ENT_MR06_C01",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      2
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "REWARD",
+     "kind": "reward",
+     "feet": [
+      40,
+      4
+     ],
+     "detail": "Existing reward ID retained; collect only in this room",
+     "target": "",
+     "requires": [
+      "ug:MR06_C01:lesson_complete"
+     ]
+    }
+   ],
+   "rewardId": "mra:MR06_C01:reward",
+   "reward": "heart-seed",
+   "existingScene": "MRAtlas_MR06_C01",
+   "existingReturnId": "mra:MR06_C01:return",
+   "notes": [
+    "Glidecap in sheltered nest, glide to broad catch shelf",
+    "Landmark: Huge empty stone nest",
+    "Reward: heart-seed; retain mra:MR06_C01:reward",
+    "Keep heart seed; baseline relic access"
+   ],
+   "routeRequires": []
+  },
+  {
+   "id": "C1",
+   "name": "Anchor Hollow",
+   "region": "MR05",
+   "theme": "Root loom",
+   "size": [
+    30,
+    16
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      30,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      15,
+      30,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      14
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      29,
+      1,
+      1,
+      14
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      28,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "deck_0",
+     "rect": [
+      5,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "deck_1",
+     "rect": [
+      12,
+      5.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "deck_2",
+     "rect": [
+      19,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "reward_shelf",
+     "rect": [
+      24,
+      5.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [],
+   "markers": [
+    {
+     "id": "ANCHOR_0",
+     "kind": "anchor",
+     "feet": [
+      7,
+      8.4
+     ],
+     "detail": "Thread anchor with clear sightline",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ANCHOR_1",
+     "kind": "anchor",
+     "feet": [
+      14,
+      8.4
+     ],
+     "detail": "Thread anchor with clear sightline",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ANCHOR_2",
+     "kind": "anchor",
+     "feet": [
+      21,
+      8.4
+     ],
+     "detail": "Thread anchor with clear sightline",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "RETURN_LIFT",
+     "kind": "control",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Always-callable safe lift to reward level after first arrival; latch never blocks escape",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "ENT_C",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      2
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "PRACTICE_POD",
+     "kind": "pod",
+     "feet": [
+      21,
+      4
+     ],
+     "detail": "Bloomfall practice; no enemies",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "OUT",
+     "kind": "portal",
+     "feet": [
+      27,
+      2
+     ],
+     "detail": "Next room / exact heart port",
+     "target": "C2",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Thread crossing and one marked pogo pod over a safe catch",
+    "Every exit retains its own arrival key.",
+    "No enemy on the required landing."
+   ],
+   "routeRequires": [
+    "living-thread",
+    "bloomfall"
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "Seed Cradle",
+   "region": "MR05",
+   "theme": "Root loom",
+   "size": [
+    32,
+    18
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      32,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      17,
+      32,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      16
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      31,
+      1,
+      1,
+      16
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      30,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [
+    {
+     "id": "reward_grate",
+     "rect": [
+      25,
+      2,
+      0.7,
+      15
+     ],
+     "clingable": false,
+     "opensWhenAll": [
+      "ug:C2:solved"
+     ]
+    }
+   ],
+   "markers": [
+    {
+     "id": "WEIGHT_0",
+     "kind": "anchor",
+     "feet": [
+      8,
+      6.4
+     ],
+     "detail": "Pull from dry floor; cradle locks at safe detent",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "WEIGHT_1",
+     "kind": "anchor",
+     "feet": [
+      15,
+      6.4
+     ],
+     "detail": "Pull from dry floor; cradle locks at safe detent",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "CRADLE",
+     "kind": "prop",
+     "feet": [
+      18,
+      2
+     ],
+     "detail": "Counterweight state (left,right)=(down,up) releases gate",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "C1",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      2
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "POGO_LATCH",
+     "kind": "pod",
+     "feet": [
+      20,
+      2
+     ],
+     "detail": "Pogo after cradle detent sets ug:C2:solved; no unrelated new ability",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "OUT",
+     "kind": "portal",
+     "feet": [
+      29,
+      2
+     ],
+     "detail": "Next room / exact heart port",
+     "target": "C3",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Two thread weights release the cradle; marked pogo pod reaches the latch",
+    "Every exit retains its own arrival key.",
+    "No enemy on the required landing."
+   ],
+   "routeRequires": [
+    "living-thread",
+    "bloomfall"
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "Root Traverse",
+   "region": "MR05",
+   "theme": "Root loom",
+   "size": [
+    36,
+    18
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      36,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      17,
+      36,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      16
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      35,
+      1,
+      1,
+      16
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      34,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "deck_0",
+     "rect": [
+      5,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "deck_1",
+     "rect": [
+      12,
+      5.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "deck_2",
+     "rect": [
+      19,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "deck_3",
+     "rect": [
+      26,
+      5.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "reward_shelf",
+     "rect": [
+      30,
+      5.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [],
+   "markers": [
+    {
+     "id": "POD_0",
+     "kind": "pod",
+     "feet": [
+      7,
+      4
+     ],
+     "detail": "Bloomfall pogo surface; no enemy on landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "POD_1",
+     "kind": "pod",
+     "feet": [
+      14,
+      6
+     ],
+     "detail": "Bloomfall pogo surface; no enemy on landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "POD_2",
+     "kind": "pod",
+     "feet": [
+      21,
+      4
+     ],
+     "detail": "Bloomfall pogo surface; no enemy on landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "POD_3",
+     "kind": "pod",
+     "feet": [
+      28,
+      6
+     ],
+     "detail": "Bloomfall pogo surface; no enemy on landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "RETURN_LIFT",
+     "kind": "control",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Always-callable safe lift to reward level after first arrival; latch never blocks escape",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "C2",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      2
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "BOSS_C",
+     "kind": "portal",
+     "feet": [
+      30,
+      2
+     ],
+     "detail": "Optional Knucklebramble annex",
+     "target": "BOSS_C:ENTRY",
+     "requires": []
+    },
+    {
+     "id": "OUT",
+     "kind": "portal",
+     "feet": [
+      33,
+      2
+     ],
+     "detail": "Next room / exact heart port",
+     "target": "HEART:C",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Grapple then pogo with broad recovery; optional boss junction",
+    "Every exit retains its own arrival key.",
+    "No enemy on the required landing."
+   ],
+   "routeRequires": [
+    "living-thread",
+    "bloomfall"
+   ]
+  },
+  {
+   "id": "BOSS_C",
+   "name": "Knucklebramble",
+   "region": "MR05",
+   "theme": "Root loom",
+   "size": [
+    40,
+    20
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      40,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      19,
+      40,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      18
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      39,
+      1,
+      1,
+      18
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      38,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "shelter_0",
+     "rect": [
+      7,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "shelter_1",
+     "rect": [
+      29,
+      3.5,
+      4,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [],
+   "markers": [
+    {
+     "id": "WAVE_START",
+     "kind": "control",
+     "feet": [
+      7,
+      2
+     ],
+     "detail": "Opt-in combat; retreat remains possible",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      2
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "REWARD",
+     "kind": "reward",
+     "feet": [
+      36,
+      2
+     ],
+     "detail": "Existing reward ID retained; collect only in this room",
+     "target": "",
+     "requires": [
+      "ug:BOSS_C:solved"
+     ]
+    },
+    {
+     "id": "BOSS_START",
+     "kind": "enemy",
+     "feet": [
+      24.0,
+      2
+     ],
+     "detail": "Boss spawn; aggro after opt-in; no spawn damage",
+     "target": "",
+     "requires": []
+    }
+   ],
+   "rewardId": "ug:BOSS_C:reward",
+   "reward": "optional guardian reward; registry assignment pending",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Optional guardian arena: broad floor, two root shelters, telegraphed ground strikes; no required traversal through fight",
+    "No mandatory skill or ending progress requires this boss."
+   ],
+   "routeRequires": []
+  },
+  {
+   "id": "D1",
+   "name": "Windbreak",
+   "region": "MR06",
+   "theme": "Wind chimney",
+   "size": [
+    28,
+    14
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      28,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      13,
+      28,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      12
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      27,
+      1,
+      1,
+      12
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      26,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    }
+   ],
+   "hazards": [
+    {
+     "id": "gust_0",
+     "rect": [
+      10,
+      2,
+      2,
+      3
+     ],
+     "clingable": false,
+     "activeWhen": "telegraphed gust on; 1.2s tell, 1.0s pulse, 2.0s calm (tune)"
+    },
+    {
+     "id": "gust_1",
+     "rect": [
+      18,
+      2,
+      2,
+      3
+     ],
+     "clingable": false,
+     "activeWhen": "telegraphed gust on; 1.2s tell, 1.0s pulse, 2.0s calm (tune)"
+    }
+   ],
+   "gates": [],
+   "markers": [
+    {
+     "id": "SHELTER_0",
+     "kind": "look",
+     "feet": [
+      7,
+      2
+     ],
+     "detail": "Safe pocket before gust; dash is useful, no blind landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "SHELTER_1",
+     "kind": "look",
+     "feet": [
+      15,
+      2
+     ],
+     "detail": "Safe pocket before gust; dash is useful, no blind landing",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "ENT_D",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      2
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "OUT",
+     "kind": "portal",
+     "feet": [
+      25,
+      2
+     ],
+     "detail": "Next room / exact heart port",
+     "target": "D2",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Three sheltered beats introduce the neck winds",
+    "Every exit retains its own arrival key.",
+    "No enemy on the required landing."
+   ],
+   "routeRequires": [
+    "climbing-moss",
+    "wind-leaf",
+    "glidecap"
+   ]
+  },
+  {
+   "id": "D2",
+   "name": "Pulse Chimney",
+   "region": "MR06",
+   "theme": "Wind chimney",
+   "size": [
+    22,
+    32
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      22,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      31,
+      22,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      30
+     ],
+     "clingable": true
+    },
+    {
+     "id": "right",
+     "rect": [
+      21,
+      1,
+      1,
+      30
+     ],
+     "clingable": true
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      20,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "ledge_0",
+     "rect": [
+      2,
+      3.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_1",
+     "rect": [
+      15,
+      5.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_2",
+     "rect": [
+      2,
+      7.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_3",
+     "rect": [
+      15,
+      9.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_4",
+     "rect": [
+      2,
+      11.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_5",
+     "rect": [
+      15,
+      13.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_6",
+     "rect": [
+      2,
+      15.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_7",
+     "rect": [
+      15,
+      17.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_8",
+     "rect": [
+      2,
+      19.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_9",
+     "rect": [
+      15,
+      21.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_10",
+     "rect": [
+      2,
+      23.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "ledge_11",
+     "rect": [
+      15,
+      25.5,
+      5,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "top_reward",
+     "rect": [
+      15,
+      26.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    }
+   ],
+   "hazards": [
+    {
+     "id": "wind_0",
+     "rect": [
+      9,
+      8,
+      4,
+      2
+     ],
+     "clingable": false,
+     "activeWhen": "telegraphed pulse; rests outside centre shaft"
+    },
+    {
+     "id": "wind_1",
+     "rect": [
+      9,
+      14,
+      4,
+      2
+     ],
+     "clingable": false,
+     "activeWhen": "telegraphed pulse; rests outside centre shaft"
+    },
+    {
+     "id": "wind_2",
+     "rect": [
+      9,
+      20,
+      4,
+      2
+     ],
+     "clingable": false,
+     "activeWhen": "telegraphed pulse; rests outside centre shaft"
+    },
+    {
+     "id": "wind_3",
+     "rect": [
+      9,
+      26,
+      4,
+      2
+     ],
+     "clingable": false,
+     "activeWhen": "telegraphed pulse; rests outside centre shaft"
+    }
+   ],
+   "gates": [],
+   "markers": [
+    {
+     "id": "RETURN",
+     "kind": "control",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Always-open return lift from top to entry; climbing faces are outer walls",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "D1",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      2
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "OUT",
+     "kind": "portal",
+     "feet": [
+      19,
+      27
+     ],
+     "detail": "Next room / exact heart port",
+     "target": "D3",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Vertical climb with four rest shelves and pulsing vents",
+    "Every exit retains its own arrival key.",
+    "No enemy on the required landing."
+   ],
+   "routeRequires": [
+    "climbing-moss",
+    "wind-leaf",
+    "glidecap"
+   ]
+  },
+  {
+   "id": "D3",
+   "name": "Glide Window",
+   "region": "MR06",
+   "theme": "Wind chimney",
+   "size": [
+    40,
+    22
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      40,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      21,
+      40,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      20
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      39,
+      1,
+      1,
+      20
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      38,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "launch",
+     "rect": [
+      1,
+      16.5,
+      7,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "landing",
+     "rect": [
+      32,
+      3.5,
+      7,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    }
+   ],
+   "hazards": [
+    {
+     "id": "soft_catch",
+     "rect": [
+      8,
+      2,
+      24,
+      0.25
+     ],
+     "clingable": false,
+     "activeWhen": "touch after failed crossing; return to launch safely, no health penalty"
+    }
+   ],
+   "gates": [],
+   "markers": [
+    {
+     "id": "RETURN",
+     "kind": "control",
+     "feet": [
+      4,
+      2
+     ],
+     "detail": "Always-callable lift to launch; safe catch floor covers entire gap",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      17
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "D2",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      17
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "OUT",
+     "kind": "portal",
+     "feet": [
+      37,
+      4
+     ],
+     "detail": "Next room / exact heart port",
+     "target": "HEART:D",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Controlled glide from high launch to broad right landing",
+    "Every exit retains its own arrival key.",
+    "No enemy on the required landing."
+   ],
+   "routeRequires": [
+    "climbing-moss",
+    "wind-leaf",
+    "glidecap"
+   ]
+  },
+  {
+   "id": "E1",
+   "name": "Summit Threshold",
+   "region": "MR08",
+   "theme": "Deep sanctuary",
+   "size": [
+    24,
+    14
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      24,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      13,
+      24,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      12
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      23,
+      1,
+      1,
+      12
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      22,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [],
+   "markers": [
+    {
+     "id": "LANDMARK",
+     "kind": "clue",
+     "feet": [
+      12.0,
+      2
+     ],
+     "detail": "Readable local landmark; no mandatory hidden ability",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      2
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "ENT_E",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      2
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "OUT",
+     "kind": "portal",
+     "feet": [
+      21,
+      2
+     ],
+     "detail": "Next room / exact heart port",
+     "target": "E2",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Reveal-gated entrance; quiet orientation and descent preview",
+    "Every exit retains its own arrival key.",
+    "No enemy on the required landing."
+   ],
+   "routeRequires": [
+    "mra:reveal-complete"
+   ]
+  },
+  {
+   "id": "E2",
+   "name": "Quiet Descent",
+   "region": "MR08",
+   "theme": "Deep sanctuary",
+   "size": [
+    28,
+    26
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      28,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      25,
+      28,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      24
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      27,
+      1,
+      1,
+      24
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      26,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "descent_0",
+     "rect": [
+      2,
+      20.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "descent_1",
+     "rect": [
+      20,
+      17.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "descent_2",
+     "rect": [
+      2,
+      14.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "descent_3",
+     "rect": [
+      20,
+      11.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "descent_4",
+     "rect": [
+      2,
+      8.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "descent_5",
+     "rect": [
+      20,
+      5.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [],
+   "markers": [
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      21
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "E1",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      21
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "RETURN_LIFT",
+     "kind": "control",
+     "feet": [
+      6,
+      2
+     ],
+     "detail": "Always-callable return to top entry; no forward shortcut",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "SIDE_C01",
+     "kind": "portal",
+     "feet": [
+      23,
+      2
+     ],
+     "detail": "Existing MR08 cave, no duplicate reward",
+     "target": "MR08_C01:ENTRY",
+     "requires": []
+    },
+    {
+     "id": "OUT",
+     "kind": "portal",
+     "feet": [
+      25,
+      2
+     ],
+     "detail": "Next room / exact heart port",
+     "target": "E3",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Alternating safe descending shelves and Quiet Alcove side branch",
+    "Every exit retains its own arrival key.",
+    "No enemy on the required landing."
+   ],
+   "routeRequires": [
+    "mra:reveal-complete"
+   ]
+  },
+  {
+   "id": "E3",
+   "name": "Core Threshold",
+   "region": "MR08",
+   "theme": "Deep sanctuary",
+   "size": [
+    26,
+    18
+   ],
+   "solids": [
+    {
+     "id": "floor",
+     "rect": [
+      0,
+      0,
+      26,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "ceiling",
+     "rect": [
+      0,
+      17,
+      26,
+      1
+     ],
+     "clingable": false
+    },
+    {
+     "id": "left",
+     "rect": [
+      0,
+      1,
+      1,
+      16
+     ],
+     "clingable": false
+    },
+    {
+     "id": "right",
+     "rect": [
+      25,
+      1,
+      1,
+      16
+     ],
+     "clingable": false
+    }
+   ],
+   "platforms": [
+    {
+     "id": "walk",
+     "rect": [
+      1,
+      1.5,
+      24,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "solid",
+     "condition": ""
+    },
+    {
+     "id": "descent_0",
+     "rect": [
+      2,
+      12.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "descent_1",
+     "rect": [
+      18,
+      9.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "descent_2",
+     "rect": [
+      2,
+      6.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    },
+    {
+     "id": "descent_3",
+     "rect": [
+      18,
+      3.5,
+      6,
+      0.5
+     ],
+     "clingable": false,
+     "kind": "oneWay",
+     "condition": ""
+    }
+   ],
+   "hazards": [],
+   "gates": [],
+   "markers": [
+    {
+     "id": "ENTRY",
+     "kind": "portal",
+     "feet": [
+      3,
+      13
+     ],
+     "detail": "Return to exact entrance anchor; explicit interact",
+     "target": "E2",
+     "requires": []
+    },
+    {
+     "id": "SAFE",
+     "kind": "checkpoint",
+     "feet": [
+      4.2,
+      13
+     ],
+     "detail": "Local retry; reset hazards to stable state",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "RETURN_LIFT",
+     "kind": "control",
+     "feet": [
+      6,
+      2
+     ],
+     "detail": "Always-callable return to top entry; no forward shortcut",
+     "target": "",
+     "requires": []
+    },
+    {
+     "id": "SIDE_C02",
+     "kind": "portal",
+     "feet": [
+      21,
+      2
+     ],
+     "detail": "Existing MR08 cave, no duplicate reward",
+     "target": "MR08_C02:ENTRY",
+     "requires": []
+    },
+    {
+     "id": "OUT",
+     "kind": "portal",
+     "feet": [
+      23,
+      2
+     ],
+     "detail": "Next room / exact heart port",
+     "target": "HEART:E",
+     "requires": []
+    }
+   ],
+   "rewardId": "",
+   "reward": "",
+   "existingScene": "",
+   "existingReturnId": "",
+   "notes": [
+    "Final descent, Root Rest branch and core entrance; no new ability gate",
+    "Every exit retains its own arrival key.",
+    "No enemy on the required landing."
+   ],
+   "routeRequires": [
+    "mra:reveal-complete"
+   ]
+  }
+ ],
+ "entrances": [
+  {
+   "id": "ENT_MR01_C02",
+   "scene": "MRAtlas_MR01_Cradle",
+   "node": "MR01_N06",
+   "room": "MR01_C02",
+   "feet": [
+    165.0,
+    12.0
+   ],
+   "returnFeet": [
+    166.2,
+    12.0
+   ],
+   "requires": [],
+   "note": "",
+   "returnId": "mra:MR01_C02:return"
+  },
+  {
+   "id": "ENT_MR02_C03",
+   "scene": "MRAtlas_MR02_Causeway",
+   "node": "MR02_N06",
+   "room": "MR02_C03",
+   "feet": [
+    208.0,
+    91.0
+   ],
+   "returnFeet": [
+    209.2,
+    91.0
+   ],
+   "requires": [],
+   "note": "",
+   "returnId": "mra:MR02_C03:return"
+  },
+  {
+   "id": "ENT_MR03_C02",
+   "scene": "MRAtlas_MR03_Terraces",
+   "node": "MR03_N06",
+   "room": "MR03_C02",
+   "feet": [
+    200.0,
+    125.0
+   ],
+   "returnFeet": [
+    201.2,
+    125.0
+   ],
+   "requires": [],
+   "note": "",
+   "returnId": "mra:MR03_C02:return"
+  },
+  {
+   "id": "ENT_MR05_C04",
+   "scene": "MRAtlas_MR05_Ribwood",
+   "node": "MR05_N06",
+   "room": "MR05_C04",
+   "feet": [
+    222.0,
+    121.0
+   ],
+   "returnFeet": [
+    223.2,
+    121.0
+   ],
+   "requires": [],
+   "note": "",
+   "returnId": "mra:MR05_C04:return"
+  },
+  {
+   "id": "ENT_MR06_C01",
+   "scene": "MRAtlas_MR06_Heights",
+   "node": "MR06_N06",
+   "room": "MR06_C01",
+   "feet": [
+    247.0,
+    166.0
+   ],
+   "returnFeet": [
+    248.2,
+    166.0
+   ],
+   "requires": [],
+   "note": "",
+   "returnId": "mra:MR06_C01:return"
+  },
+  {
+   "id": "ENT_A",
+   "scene": "MRAtlas_MR04_Qvale",
+   "node": "MR04_N06",
+   "room": "A1",
+   "feet": [
+    145.0,
+    8.0
+   ],
+   "returnFeet": [
+    146.2,
+    8.0
+   ],
+   "requires": [],
+   "note": "Public Qvale drain: use a separate interaction target from atlas stall",
+   "returnId": ""
+  },
+  {
+   "id": "ENT_B",
+   "scene": "MRAtlas_MR03_Terraces",
+   "node": "MR03_N09",
+   "room": "B1",
+   "feet": [
+    297.0,
+    140.0
+   ],
+   "returnFeet": [
+    298.2,
+    140.0
+   ],
+   "requires": [
+    "living-thread"
+   ],
+   "note": "Terraces east mill service arch, after the Bloomfall cave",
+   "returnId": ""
+  },
+  {
+   "id": "ENT_C",
+   "scene": "MRAtlas_MR05_Ribwood",
+   "node": "MR05_N07",
+   "room": "C1",
+   "feet": [
+    253.0,
+    140.0
+   ],
+   "returnFeet": [
+    254.2,
+    140.0
+   ],
+   "requires": [
+    "living-thread",
+    "bloomfall"
+   ],
+   "note": "Ribwood root cleft on the main descent from Seed Choir",
+   "returnId": ""
+  },
+  {
+   "id": "ENT_D",
+   "scene": "MRAtlas_MR06_Heights",
+   "node": "MR06_N09",
+   "room": "D1",
+   "feet": [
+    347.0,
+    232.0
+   ],
+   "returnFeet": [
+    348.2,
+    232.0
+   ],
+   "requires": [
+    "climbing-moss",
+    "wind-leaf",
+    "glidecap"
+   ],
+   "note": "Sheltered neck-climb ledge beyond the Glidecap lesson",
+   "returnId": ""
+  },
+  {
+   "id": "ENT_E",
+   "scene": "MRAtlas_MR07_Summit",
+   "node": "MR07_N11",
+   "room": "E1",
+   "feet": [
+    355.0,
+    148.0
+   ],
+   "returnFeet": [
+    356.2,
+    148.0
+   ],
+   "requires": [
+    "mra:reveal-complete"
+   ],
+   "note": "Same existing MR08 entrance; do not create a second finale",
+   "returnId": ""
+  }
+ ],
+ "edges": [
+  {
+   "source": "ENT_MR01_C02",
+   "target": "MR01_C02",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "MR01_C02",
+   "target": "ENT_MR01_C02",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "ENT_MR02_C03",
+   "target": "MR02_C03",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "MR02_C03",
+   "target": "ENT_MR02_C03",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "ENT_MR03_C02",
+   "target": "MR03_C02",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "MR03_C02",
+   "target": "ENT_MR03_C02",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "ENT_MR05_C04",
+   "target": "MR05_C04",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "MR05_C04",
+   "target": "ENT_MR05_C04",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "ENT_MR06_C01",
+   "target": "MR06_C01",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "MR06_C01",
+   "target": "ENT_MR06_C01",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "E2",
+   "target": "MR08_C01",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "MR08_C01",
+   "target": "E2",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "E3",
+   "target": "MR08_C02",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "MR08_C02",
+   "target": "E3",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "ENT_A",
+   "target": "A1",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "A1",
+   "target": "ENT_A",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "A1",
+   "target": "A2",
+   "requires": [
+    "cw:A:drain"
+   ],
+   "kind": "portal"
+  },
+  {
+   "source": "A2",
+   "target": "A1",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "A2",
+   "target": "A3",
+   "requires": [
+    "cw:A:sluice_solved"
+   ],
+   "kind": "portal"
+  },
+  {
+   "source": "A3",
+   "target": "A2",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "A3",
+   "target": "HEART_A",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "HEART_A",
+   "target": "A3",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "A3",
+   "target": "ENT_A",
+   "requires": [
+    "cw:return:A"
+   ],
+   "kind": "return-shortcut"
+  },
+  {
+   "source": "ENT_B",
+   "target": "B1",
+   "requires": [
+    "living-thread"
+   ],
+   "kind": "portal"
+  },
+  {
+   "source": "B1",
+   "target": "ENT_B",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "B1",
+   "target": "B2",
+   "requires": [
+    "cw:B:thread_latch"
+   ],
+   "kind": "portal"
+  },
+  {
+   "source": "B2",
+   "target": "B1",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "B2",
+   "target": "B3",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "B3",
+   "target": "B2",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "B3",
+   "target": "HEART_B",
+   "requires": [
+    "cw:B:bowls_solved"
+   ],
+   "kind": "portal"
+  },
+  {
+   "source": "HEART_B",
+   "target": "B3",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "B3",
+   "target": "ENT_B",
+   "requires": [
+    "cw:return:B"
+   ],
+   "kind": "return-shortcut"
+  },
+  {
+   "source": "ENT_C",
+   "target": "C1",
+   "requires": [
+    "living-thread",
+    "bloomfall"
+   ],
+   "kind": "portal"
+  },
+  {
+   "source": "C1",
+   "target": "ENT_C",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "C1",
+   "target": "C2",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "C2",
+   "target": "C1",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "C2",
+   "target": "C3",
+   "requires": [
+    "ug:C2:solved"
+   ],
+   "kind": "portal"
+  },
+  {
+   "source": "C3",
+   "target": "C2",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "C3",
+   "target": "HEART_C",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "HEART_C",
+   "target": "C3",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "C3",
+   "target": "ENT_C",
+   "requires": [
+    "cw:return:C"
+   ],
+   "kind": "return-shortcut"
+  },
+  {
+   "source": "ENT_D",
+   "target": "D1",
+   "requires": [
+    "climbing-moss",
+    "wind-leaf",
+    "glidecap"
+   ],
+   "kind": "portal"
+  },
+  {
+   "source": "D1",
+   "target": "ENT_D",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "D1",
+   "target": "D2",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "D2",
+   "target": "D1",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "D2",
+   "target": "D3",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "D3",
+   "target": "D2",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "D3",
+   "target": "HEART_D",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "HEART_D",
+   "target": "D3",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "D3",
+   "target": "ENT_D",
+   "requires": [
+    "cw:return:D"
+   ],
+   "kind": "return-shortcut"
+  },
+  {
+   "source": "ENT_E",
+   "target": "E1",
+   "requires": [
+    "mra:reveal-complete"
+   ],
+   "kind": "portal"
+  },
+  {
+   "source": "E1",
+   "target": "ENT_E",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "E1",
+   "target": "E2",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "E2",
+   "target": "E1",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "E2",
+   "target": "E3",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "E3",
+   "target": "E2",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "E3",
+   "target": "HEART_E",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "HEART_E",
+   "target": "E3",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "E3",
+   "target": "ENT_E",
+   "requires": [
+    "cw:return:E"
+   ],
+   "kind": "return-shortcut"
+  },
+  {
+   "source": "A3",
+   "target": "BOSS_A",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "BOSS_A",
+   "target": "A3",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "C3",
+   "target": "BOSS_C",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "BOSS_C",
+   "target": "C3",
+   "requires": [],
+   "kind": "portal"
+  },
+  {
+   "source": "HEART_A",
+   "target": "HEART_B",
+   "requires": [
+    "cw:heart:visited:A",
+    "cw:heart:visited:B",
+    "cw:heart:link:AB"
+   ],
+   "kind": "heart-lift"
+  },
+  {
+   "source": "HEART_B",
+   "target": "HEART_A",
+   "requires": [
+    "cw:heart:visited:A",
+    "cw:heart:visited:B",
+    "cw:heart:link:AB"
+   ],
+   "kind": "heart-lift"
+  },
+  {
+   "source": "HEART_C",
+   "target": "HEART_D",
+   "requires": [
+    "cw:heart:visited:C",
+    "cw:heart:visited:D",
+    "cw:heart:link:CD"
+   ],
+   "kind": "heart-lift"
+  },
+  {
+   "source": "HEART_D",
+   "target": "HEART_C",
+   "requires": [
+    "cw:heart:visited:C",
+    "cw:heart:visited:D",
+    "cw:heart:link:CD"
+   ],
+   "kind": "heart-lift"
+  }
+ ],
+ "flags": [
+  {
+   "id": "cw:A:drain",
+   "producer": "A1:VALVE",
+   "requires": []
+  },
+  {
+   "id": "cw:A:basin_drained",
+   "producer": "A2:V1",
+   "requires": []
+  },
+  {
+   "id": "cw:A:sluice_solved",
+   "producer": "A2:V2",
+   "requires": [
+    "cw:A:basin_drained"
+   ]
+  },
+  {
+   "id": "cw:B:thread_latch",
+   "producer": "B1:PULL",
+   "requires": [
+    "living-thread"
+   ]
+  },
+  {
+   "id": "cw:B:maze_return",
+   "producer": "B2:ROOT",
+   "requires": []
+  },
+  {
+   "id": "cw:B:bowls_solved",
+   "producer": "B3:BOWL3",
+   "requires": []
+  },
+  {
+   "id": "cw:return:A",
+   "producer": "A3:RETURN",
+   "requires": []
+  },
+  {
+   "id": "cw:return:B",
+   "producer": "B3:RETURN",
+   "requires": []
+  },
+  {
+   "id": "cw:heart:visited:A",
+   "producer": "HEART:SPAWN_A",
+   "requires": []
+  },
+  {
+   "id": "cw:heart:visited:B",
+   "producer": "HEART:SPAWN_B",
+   "requires": []
+  },
+  {
+   "id": "cw:heart:visited:C",
+   "producer": "HEART:SPAWN_C",
+   "requires": []
+  },
+  {
+   "id": "cw:heart:visited:D",
+   "producer": "HEART:SPAWN_D",
+   "requires": []
+  },
+  {
+   "id": "cw:heart:visited:E",
+   "producer": "HEART:SPAWN_E",
+   "requires": []
+  },
+  {
+   "id": "cw:heart:link:AB",
+   "producer": "HEART:LATCH_AB",
+   "requires": [
+    "cw:heart:visited:A",
+    "cw:heart:visited:B"
+   ]
+  },
+  {
+   "id": "cw:heart:link:CD",
+   "producer": "HEART:LATCH_CD",
+   "requires": [
+    "cw:heart:visited:C",
+    "cw:heart:visited:D"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "cave": "MR01_C02",
+   "ability": "climbing-moss",
+   "oldSurfaceGrant": "MR01_N06",
+   "newGrant": "MR01_C02:SKILL",
+   "entrance": "MR01_N06",
+   "requiresBeforeGrant": [],
+   "rule": "Remove duplicate surface grant only during approved integration; retain ability ID and existing save ownership; old reward claim must not suppress new grant; exit always works without new skill"
+  },
+  {
+   "cave": "MR02_C03",
+   "ability": "living-thread",
+   "oldSurfaceGrant": "MR02_N06",
+   "newGrant": "MR02_C03:SKILL",
+   "entrance": "MR02_N06",
+   "requiresBeforeGrant": [
+    "climbing-moss"
+   ],
+   "rule": "Remove duplicate surface grant only during approved integration; retain ability ID and existing save ownership; old reward claim must not suppress new grant; exit always works without new skill"
+  },
+  {
+   "cave": "MR03_C02",
+   "ability": "bloomfall",
+   "oldSurfaceGrant": "MR03_N06",
+   "newGrant": "MR03_C02:SKILL",
+   "entrance": "MR03_N06",
+   "requiresBeforeGrant": [
+    "climbing-moss",
+    "living-thread"
+   ],
+   "rule": "Remove duplicate surface grant only during approved integration; retain ability ID and existing save ownership; old reward claim must not suppress new grant; exit always works without new skill"
+  },
+  {
+   "cave": "MR05_C04",
+   "ability": "wind-leaf",
+   "oldSurfaceGrant": "MR05_N06",
+   "newGrant": "MR05_C04:SKILL",
+   "entrance": "MR05_N06",
+   "requiresBeforeGrant": [
+    "climbing-moss",
+    "living-thread",
+    "bloomfall"
+   ],
+   "rule": "Remove duplicate surface grant only during approved integration; retain ability ID and existing save ownership; old reward claim must not suppress new grant; exit always works without new skill"
+  },
+  {
+   "cave": "MR06_C01",
+   "ability": "glidecap",
+   "oldSurfaceGrant": "MR06_N06",
+   "newGrant": "MR06_C01:SKILL",
+   "entrance": "MR06_N06",
+   "requiresBeforeGrant": [
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf"
+   ],
+   "rule": "Remove duplicate surface grant only during approved integration; retain ability ID and existing save ownership; old reward claim must not suppress new grant; exit always works without new skill"
+  }
+ ],
+ "heartRewards": {
+  "A": "heart-seed",
+  "B": "song-shell",
+  "C": "rare-find",
+  "D": "song-shell",
+  "E": "existing ending interaction"
+ },
+ "storyGate": "mra:reveal-complete"
+}

@@ -1,0 +1,124 @@
+{
+ "schema": "qolossal-retreat-terrace/3",
+ "view_canvas": [
+  3840,
+  2160
+ ],
+ "coordinates": "top-left pixels",
+ "alpha": "straight",
+ "source": "Art/Codex_v2_full/Retreat_Fixes_v02b/RibwoodGlade/Registration_v02b.json",
+ "layers": [
+  {
+   "name": "Sky",
+   "file": "Layers/Retreat_RibwoodGlade_Sky.png",
+   "canvas": [
+    3840,
+    2160
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "import_max_px": 2048
+  },
+  {
+   "name": "Mid",
+   "file": "Layers/Retreat_RibwoodGlade_Mid.png",
+   "canvas": [
+    3968,
+    1100
+   ],
+   "offset": [
+    -64,
+    650
+   ],
+   "parallax_x_range_px": [
+    -64,
+    64
+   ],
+   "import_max_px": 2048
+  },
+  {
+   "name": "Ground",
+   "file": "Layers/Retreat_RibwoodGlade_Ground.png",
+   "canvas": [
+    3840,
+    800
+   ],
+   "offset": [
+    0,
+    1360
+   ],
+   "import_max_px": 2048
+  },
+  {
+   "name": "Tree",
+   "file": "Layers/Retreat_RibwoodGlade_Tree.png",
+   "canvas": [
+    2400,
+    1800
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "import_max_px": 2048
+  },
+  {
+   "name": "BenchBack",
+   "file": "Layers/Retreat_RibwoodGlade_BenchBack.png",
+   "canvas": [
+    747,
+    225
+   ],
+   "offset": [
+    789.6,
+    1591.6
+   ]
+  },
+  {
+   "name": "BenchFront",
+   "file": "Layers/Retreat_RibwoodGlade_BenchFront.png",
+   "canvas": [
+    760,
+    392
+   ],
+   "offset": [
+    760.3,
+    1449.9
+   ]
+  },
+  {
+   "name": "Foreground_01",
+   "file": "Layers/Retreat_RibwoodGlade_Foreground_01.png",
+   "canvas": [
+    1057,
+    565
+   ],
+   "offset": [
+    0,
+    1595
+   ],
+   "base_pivot_canvas_px": [
+    0,
+    2160
+   ],
+   "motion_degrees": [
+    -3,
+    3
+   ]
+  }
+ ],
+ "qori_seat": {
+  "anchor_px": [
+   1250.8,
+   1709.8
+  ],
+  "figure_height_px": 468.0,
+  "insert_before": "BenchFront"
+ },
+ "bench_move_px": [
+  399.1875,
+  526.25
+ ]
+}

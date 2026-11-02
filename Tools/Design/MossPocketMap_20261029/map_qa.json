@@ -1,0 +1,100 @@
+{
+  "sourceGeometry": "Verified unchanged underground scene and extracted collider paths; eight original ledges retained",
+  "sceneUnchanged": true,
+  "previewResolutions": [
+    [
+      1920,
+      1080
+    ],
+    [
+      1280,
+      720
+    ]
+  ],
+  "rendering": "Deterministic SVG/native-vector chart; rasterized with Sharp, no existing paintings edited",
+  "assets": [
+    {
+      "path": "Assets/Art/Prototypes/MossPocketMap_20261029/Icon_cave.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "75984aeb2f0d076e16ac3310a816e7f2f8916b4abb54e806b3650545a270b6b4"
+    },
+    {
+      "path": "Assets/Art/Prototypes/MossPocketMap_20261029/Icon_clue.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "4199c15c09c0f44922954fd6e6c41b8493da775ed82697791953d9261b39b3c6"
+    },
+    {
+      "path": "Assets/Art/Prototypes/MossPocketMap_20261029/Icon_heart.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "89bdd2db2f88f1442d8d6ed80b4103ead290f357cf14231553c85440ae457ebb"
+    },
+    {
+      "path": "Assets/Art/Prototypes/MossPocketMap_20261029/Icon_inlet.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "03e6a48aa19cfd3368f65632934574eb7b87a22d8241df9479aaa08d21b8263f"
+    },
+    {
+      "path": "Assets/Art/Prototypes/MossPocketMap_20261029/Icon_shrine.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "6128ada53651b40611c9ec17b0471e05525f54b56d3bb85e62c0eab7dadae743"
+    },
+    {
+      "path": "Assets/Art/Prototypes/MossPocketMap_20261029/Icon_spillway.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "af348d834746fc1485084d250c58ed5a15cd7ff67954c46ec1566356f8fbffe1"
+    },
+    {
+      "path": "Assets/Art/Prototypes/MossPocketMap_20261029/MR01_C02_MapGeometry.png",
+      "size": [
+        1536,
+        896
+      ],
+      "sha256": "4026f921893a654f19386cf38d65ef2d4a5a7496b7ff7f2878a9b358015b6b99"
+    },
+    {
+      "path": "Assets/Art/Prototypes/MossPocketMap_20261029/MR01_C02_WaterFill.png",
+      "size": [
+        256,
+        96
+      ],
+      "sha256": "7ed9d51764d2173777b11987c0e2b28df8f491e92b2abd859c8dac2997efad7c"
+    }
+  ],
+  "textureEditorReportedBytes": 6069248,
+  "runtimeNotes": "Geometry and individual icons imported as RGBA32 sprites, Clamp, Bilinear, no mipmaps, read/write disabled. Editor-reported texture memory is not peak runtime memory. Runtime Chart not connected. Preview includes all discovered markers and restored pool. Labels remain separate from geometry for localization. The current player marker must use live world position. Surface inset is a connection label, not a surveyed upper-ground silhouette.",
+  "supportedTargets": [
+    "Windows PC",
+    "PS5",
+    "Xbox Series X",
+    "Xbox Series S",
+    "Nintendo Switch 2 handheld",
+    "Nintendo Switch 2 docked"
+  ],
+  "tested": "Windows source rendering and Unity Editor import only",
+  "notTested": [
+    "Runtime chart integration",
+    "Physical controllers",
+    "Standalone builds",
+    "Console builds and hardware",
+    "CPU/GPU frame time",
+    "Peak memory"
+  ]
+}

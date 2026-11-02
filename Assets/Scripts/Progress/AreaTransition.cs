@@ -41,7 +41,7 @@ public sealed class AreaTransition : MonoBehaviour
 
     // Starts the trip; ignored while one is already under way. `arrivalId` names a portal or a
     // checkpoint (Waymark) in the destination scene.
-    public static void Travel(string scene, string arrivalId, PlayerMovement player, string arrivalNote = "")
+    public static void Travel(string scene, string arrivalId, PlayerMovement player, string arrivalNote = "", CaveThresholdPresentation cave = null)
     {
         if (IsTransitioning || !CanTravelTo(scene)) return;
         if (instance == null)
@@ -52,7 +52,7 @@ public sealed class AreaTransition : MonoBehaviour
         }
         var health = player.GetComponent<PlayerHealth>();
         var combat = player.GetComponent<PlayerCombat>();
-        instance.StartCoroutine(instance.Run(scene, arrivalId, arrivalNote ?? "", health != null ? health.Health : -1, combat != null ? combat.EquippedWeapon : null));
+        instance.StartCoroutine(instance.Run(scene, arrivalId, arrivalNote ?? "", health != null ? health.Health : -1, combat != null ? combat.EquippedWeapon : null, cave, player));
     }
 
     void Build()
@@ -92,9 +92,10 @@ public sealed class AreaTransition : MonoBehaviour
 
     void SetCurtain(float a) { Color c = curtain.color; c.a = a; curtain.color = c; }
 
-    IEnumerator Run(string scene, string arrivalId, string arrivalNote, int hearts, WeaponDefinition weapon)
+    IEnumerator Run(string scene, string arrivalId, string arrivalNote, int hearts, WeaponDefinition weapon, CaveThresholdPresentation departure, PlayerMovement departingPlayer)
     {
         IsTransitioning = true;
+        if (departure != null) yield return departure.StepIn(departingPlayer);
         yield return Fade(0f, 1f);
         yield return SceneManager.LoadSceneAsync(scene);
         yield return null;   // let the new scene's Start methods run (checkpoint restore) first
@@ -130,7 +131,12 @@ public sealed class AreaTransition : MonoBehaviour
             ((RectTransform)namePlate.transform).sizeDelta = new Vector2(Mathf.Max(areaName.preferredWidth, note.preferredWidth) + 120f, string.IsNullOrEmpty(arrivalNote) ? 96f : 150f);
         note.text = arrivalNote;
         nameShownAt = Time.unscaledTime + FadeSeconds * .5f;
+        var caveArrival = CaveThresholdPresentation.AtArrival(point);
+        Coroutine emergence = null;
+        if (player != null && caveArrival != null && caveArrival.PrepareEmergence(player, point.ArrivalPosition))
+            emergence = StartCoroutine(caveArrival.Emerge(player, point.ArrivalPosition));
         yield return Fade(1f, 0f);
+        if (emergence != null) yield return emergence;
         IsTransitioning = false;
     }
 

@@ -1,0 +1,160 @@
+{
+  "approved": "2026-10-30",
+  "authority": "Actual Qolossal_Underground scene geometry and world positions",
+  "reference": "C:/Users/Qasim/OneDrive/Documents/ChatGPT/Qolossal/DesignReview/ActualUndergroundComparison_20261030/index.html",
+  "supersedes": "Per-network underground rearrangement in MainWorldLayout_20261030",
+  "review": "C:/Users/Qasim/OneDrive/Documents/ChatGPT/Qolossal/DesignReview/UndergroundLayoutAudit_20261030/audit.json",
+  "appliedRelocations": [
+    {
+      "id": "MR06_C01",
+      "delta": [
+        -205.0,
+        -110.0
+      ],
+      "oldBounds": [
+        1915.0,
+        556.0,
+        44.0,
+        22.0
+      ],
+      "newBounds": [
+        1710.0,
+        446.0,
+        44.0,
+        22.0
+      ],
+      "sharedObjects": [
+        "Rim_015",
+        "Natural_Rim_015",
+        "Natural_Platforms_MR06_C01",
+        "Continuous_Collision_15 | preserved segment 0",
+        "Continuous_Collision_15 | preserved segment 1"
+      ],
+      "checkpoints": [
+        {
+          "CheckpointId": "regional:MR06_C01",
+          "position": {
+            "x": 1931.72009,
+            "y": 556.459961,
+            "z": 0.0,
+            "normalized": {
+              "x": 0.960925162,
+              "y": 0.2768084,
+              "z": 0.0,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.00000012
+            },
+            "magnitude": 2010.27112,
+            "sqrMagnitude": 4041190.25
+          }
+        }
+      ]
+    },
+    {
+      "id": "PC11",
+      "delta": [
+        -91.0,
+        -62.481
+      ],
+      "oldBounds": [
+        1856.0,
+        530.481,
+        14.0,
+        9.0
+      ],
+      "newBounds": [
+        1765.0,
+        468.000031,
+        14.0,
+        9.0
+      ],
+      "sharedObjects": [
+        "Rim_017",
+        "Natural_Rim_017",
+        "Natural_Platforms_PC11",
+        "Continuous_Collision_17 | preserved segment 0",
+        "Continuous_Collision_17 | preserved segment 1"
+      ],
+      "checkpoints": [
+        {
+          "CheckpointId": "regional:PC11",
+          "position": {
+            "x": 1861.31982,
+            "y": 530.9409,
+            "z": 0.0,
+            "normalized": {
+              "x": 0.961641848,
+              "y": 0.274308056,
+              "z": 0.0,
+              "magnitude": 1.0,
+              "sqrMagnitude": 0.99999994
+            },
+            "magnitude": 1935.56445,
+            "sqrMagnitude": 3746409.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "PC12",
+      "delta": [
+        -75.0,
+        -36.304
+      ],
+      "oldBounds": [
+        2283.0,
+        696.304,
+        12.0,
+        8.0
+      ],
+      "newBounds": [
+        2208.0,
+        660.0,
+        12.0,
+        8.0
+      ],
+      "sharedObjects": [
+        "Rim_003",
+        "Natural_Rim_003",
+        "Natural_Platforms_PC12",
+        "Continuous_Collision_3 | preserved segment 0",
+        "Continuous_Collision_3 | preserved segment 1"
+      ],
+      "checkpoints": [
+        {
+          "CheckpointId": "regional:PC12",
+          "position": {
+            "x": 2287.56,
+            "y": 696.764,
+            "z": 0.0,
+            "normalized": {
+              "x": 0.956609845,
+              "y": 0.29137215,
+              "z": 0.0,
+              "normalized": {
+                "x": 0.9566097,
+                "y": 0.29137212,
+                "z": 0.0,
+                "normalized": {
+                  "x": 0.9566098,
+                  "y": 0.29137215,
+                  "z": 0.0,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 1.0
+                },
+                "magnitude": 0.99999994,
+                "sqrMagnitude": 0.9999999
+              },
+              "magnitude": 1.00000012,
+              "sqrMagnitude": 1.00000012
+            },
+            "magnitude": 2391.31982,
+            "sqrMagnitude": 5718411.0
+          }
+        }
+      ]
+    }
+  ],
+  "nextIntegration": "Implemented: one uniform underground transform in canonical review and Unity atlas. Future terrain changes must re-extract and republish both maps.",
+  "evidence": "C:\\Users\\Qasim\\OneDrive\\Documents\\ChatGPT\\Qolossal\\Tools\\UndergroundRelocation_20261030\\index.html"
+}

@@ -75,7 +75,7 @@ public sealed class SfxEmitter : MonoBehaviour
     {
         if (entry == null || source == null) return;
         Rank();
-        bool on = Playing && allowed && reach > .02f;
+        bool on = Playing && allowed && reach > .02f && !Sfx.EffectsRemoved;
         gain = Mathf.MoveTowards(gain, on ? 1f : 0f, Time.unscaledDeltaTime / fadeSeconds);
         if (gain > 0f && !source.isPlaying)
         {

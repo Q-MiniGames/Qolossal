@@ -25,7 +25,7 @@ public static class PlayModeSmokeTest
 
     public static void Run()
     {
-        EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A0_TestRoom.unity");
         SessionState.SetBool(Key, true);
         EditorApplication.EnterPlaymode();
     }

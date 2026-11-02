@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-// Builds Assets/Scenes/A2_Grove.unity, the Ancient Grove, from the A2 terrain kit. West to east:
+// Builds Assets/Development/LegacyScenes/A2_Grove.unity, the Ancient Grove, from the A2 terrain kit. West to east:
 // the portal from A1 and the grove floor, where a Bark Sentinel holds the way (the spear pierces
 // its shield; a strike from above or behind lands too); a slope up to the root terrace; a resin
 // thorn pit crossed on a floating hollow log, with a Thornwing to pogo off; the east terrace and
@@ -15,7 +15,7 @@ using UnityEngine;
 public static class A2RoomBuilder
 {
     public const string SceneName = "A2_Grove";
-    const string ScenePath = "Assets/Scenes/" + SceneName + ".unity";
+    const string ScenePath = "Assets/Development/LegacyScenes/" + SceneName + ".unity";
     const float StartX = 3f, StartY = 1.5f;
 
     [MenuItem("Qolossal/Scenes/Build A2 Grove")]

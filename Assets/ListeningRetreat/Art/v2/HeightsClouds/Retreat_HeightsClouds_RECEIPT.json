@@ -1,0 +1,53 @@
+{
+ "scene": "HeightsClouds",
+ "registration": "Art/Codex_v2_full/Retreat_Fixes_v02/HeightsClouds/Registration_v02.json",
+ "reviews": [
+  "CLAUDE_REVIEW_79",
+  "CLAUDE_REVIEW_81",
+  "CLAUDE_REVIEW_83"
+ ],
+ "files": [
+  {
+   "layer": "Sky",
+   "codexName": "01_Backdrop",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/HeightsClouds/Layers/01_Backdrop.png",
+   "sha256": "13b0e46659cd1a6ed4692925d2b9ab1724b7640a9667fd8a0a9ce8e3aa470bfa"
+  },
+  {
+   "layer": "Mid",
+   "codexName": "02_MiddleDistance",
+   "from": "Art/Codex_v2_full/Retreat_Fixes_v02/HeightsClouds/Layers/02_MiddleDistance.png",
+   "sha256": "da2bbf825bf2c9c136e44803610f6d737eea2a60960b49a5eff63b689b4aaa24"
+  },
+  {
+   "layer": "Ground",
+   "codexName": "03_Ground",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/HeightsClouds/Layers/03_Ground.png",
+   "sha256": "7f7de5ac524c12371087fe512a4f0e6b4b85ff796444a56f016728aa21b4bd58"
+  },
+  {
+   "layer": "LeftRock",
+   "codexName": "04_LeftRock",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/HeightsClouds/Layers/04_LeftRock.png",
+   "sha256": "708da1dd554985d4e8d5ea05088fe2b8eaa1edc8c827fed0deb248e86b560085"
+  },
+  {
+   "layer": "BenchBack",
+   "from": "Assets/ListeningRetreat/Art/HeightsClouds/Retreat_HeightsClouds_BenchBack.png",
+   "sha256": "4acd4755470863d4065b748ae4442fb1411f63be2b4bec51c7070abec49f331f",
+   "derived": "enlarged 1.12x"
+  },
+  {
+   "layer": "BenchFront",
+   "from": "Assets/ListeningRetreat/Art/HeightsClouds/Retreat_HeightsClouds_BenchFront.png",
+   "sha256": "698af1f0144d5f36e0b14a13c12dde54465d26d42995451c3553ebd1b653293b",
+   "derived": "enlarged 1.12x"
+  },
+  {
+   "layer": "Foreground_01",
+   "codexName": "06_ForegroundPlants",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/HeightsClouds/Layers/06_ForegroundPlants.png",
+   "sha256": "5862851547da3ad96ab18e219cc7dd90409221fc64d4750a20e9e8522fdbece5"
+  }
+ ]
+}

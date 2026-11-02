@@ -14,7 +14,7 @@ public static class CrawlerCapture
         int index = Array.IndexOf(args, "-captureDir");
         string folder = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Temp/CrawlerCaptures";
         Directory.CreateDirectory(folder);
-        EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A0_TestRoom.unity");
         foreach (TerrainBlock block in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
         var all = UnityEngine.Object.FindObjectsByType<CrawlerAnimator>(FindObjectsSortMode.InstanceID);
         var crawler = all[0];

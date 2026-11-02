@@ -18,7 +18,18 @@ public sealed class QoriArmory:MonoBehaviour
     PlayerCombat combat;PlayerMovement movement;
     bool menuOpen;int closeFrame=-1,pending=-1;float nextNavigation;
     readonly List<Object> owned=new List<Object>();
+    static readonly Key[] SelectionKeys={Key.Digit1,Key.Digit2,Key.Digit3,Key.Digit4};
+    static string WeaponStyle(string id)=>id switch
+    {
+        "forest-0"=>"Balanced sweeping cuts",
+        "forest-2"=>"Heavy overhead impact",
+        "forest-3"=>"Long precise thrust",
+        QoriArmoryFactory.StaffId=>"Charged sweeping cuts",
+        _=>""
+    };
     AttackDefinition sling;
+    readonly InputAction toggleMenu=new InputAction("Armory",InputActionType.Button);
+    void Awake(){toggleMenu.AddBinding("<Keyboard>/tab");toggleMenu.AddBinding("<Gamepad>/rightStickPress");}
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]static void ResetStatics()=>active=null;
     void Start()
     {
@@ -82,12 +93,11 @@ public sealed class QoriArmory:MonoBehaviour
         if(Time.timeScale<=0){CancelAim();return;}
         if(pending>=0&&!combat.IsAttackPoseActive)Select(pending);
         var key=Keyboard.current;var pad=Gamepad.current;
-        if(key!=null&&key.tabKey.wasPressedThisFrame||pad!=null&&pad.selectButton.wasPressedThisFrame)
+        if(toggleMenu.WasPressedThisFrame())
         {CancelAim();menuOpen=!menuOpen;closeFrame=Time.frameCount;}
         if(key!=null)
         {
-            Key[] keys={Key.Digit1,Key.Digit2,Key.Digit3};
-            for(int i=0;i<keys.Length;i++)if(key[keys[i]].wasPressedThisFrame){Select(i);menuOpen=false;closeFrame=Time.frameCount;}
+            for(int i=0;i<SelectionKeys.Length&&i<Weapons.Length;i++)if(key[SelectionKeys[i]].wasPressedThisFrame){Select(i);menuOpen=false;closeFrame=Time.frameCount;}
         }
         if(menuOpen&&pad!=null&&Time.unscaledTime>nextNavigation&&Mathf.Abs(pad.rightStick.x.ReadValue())>.6f)
         {Select((Selected+(pad.rightStick.x.ReadValue()>0?1:Weapons.Length-1))%Weapons.Length);nextNavigation=Time.unscaledTime+.25f;}
@@ -108,20 +118,29 @@ public sealed class QoriArmory:MonoBehaviour
 
     void OnGUI()
     {
-        if(Weapons==null||GamePauseMenu.IsPaused||ListeningSpot.IsSitting)return;   // the listening retreat shows only its track list
+        if(Weapons==null||GamePauseMenu.IsPaused||ModalUi.IsOpen||ListeningSpot.IsSitting)return;   // the listening retreat shows only its track list
         var prior=GUI.matrix;float scale=Mathf.Min(Screen.width/1000f,Screen.height/650f);GUI.matrix=Matrix4x4.Scale(Vector3.one*scale);
         float width=Screen.width/scale;
-        GUI.Box(new Rect(width-328,18,310,58),Weapons[Selected].displayName+(pending>=0?" → "+Weapons[pending].displayName:"")+"\nTab / View: armory     Hold Q / X: aim; release: fire");
+        var safe = Screen.safeArea;
+        var hint = new Rect(safe.xMax / scale - 328f, (Screen.height - safe.yMax) / scale + 18f, 310f, 58f);
+        var route = MraRouteBar.Current;
+        if (route != null && route.Showing)
+        {
+            Rect routePixels = route.ScreenBounds;
+            var hintPixels = new Rect(hint.x * scale, hint.y * scale, hint.width * scale, hint.height * scale);
+            if (hintPixels.Overlaps(routePixels)) hint.y = routePixels.yMax / scale + 12f;
+        }
+        if (!menuOpen) GUI.Box(hint,Weapons[Selected].displayName+(pending>=0?" → "+Weapons[pending].displayName:"")+"\nTab / RS click: armory     Hold Q / X: aim; release: fire");
         if(menuOpen)
         {
-            float x=(width-510)/2,y=96;
-            GUI.Box(new Rect(x-12,y-42,534,218),"FOREST ARMORY - 1-3 or click - right stick cycles - Tab / View closes");
-            string[] styles={"Balanced sweeping cuts","Heavy overhead impact","Long precise thrust"};
+            float menuWidth=Weapons.Length*170f;float x=(width-menuWidth)/2,y=96;
+            if(route!=null&&route.Showing)y=Mathf.Max(y,route.ScreenBounds.yMax/scale+54f);
+            GUI.Box(new Rect(x-12,y-42,menuWidth+24,218),"FOREST ARMORY - 1-4 or click - right stick cycles - Tab / RS click closes");
             for(int i=0;i<Weapons.Length;i++)
             {
                 var rect=new Rect(x+i*170,y,160,125);var old=GUI.backgroundColor;
                 GUI.backgroundColor=i==Selected?new Color(.6f,.8f,.35f):Color.white;
-                if(GUI.Button(rect,(i+1)+"  "+Weapons[i].displayName+"\n\n"+styles[i])){Select(i);menuOpen=false;closeFrame=Time.frameCount;}
+                if(GUI.Button(rect,(i+1)+"  "+Weapons[i].displayName+"\n\n"+WeaponStyle(Weapons[i].weaponId))){Select(i);menuOpen=false;closeFrame=Time.frameCount;}
                 GUI.backgroundColor=old;
             }
             GUI.Label(new Rect(x,y+132,830,32),"Resin sling is always equipped • unlimited seeds • 0.35 damage • mouse / right stick aims");
@@ -129,9 +148,9 @@ public sealed class QoriArmory:MonoBehaviour
         GUI.matrix=prior;
     }
     void OnApplicationFocus(bool focused){if(!focused)CancelAim();}
-    void OnDisable(){CancelAim();menuOpen=false;if(active==this)active=null;WeaponTuning.Changed-=Retune;}
-    void OnEnable(){active=this;WeaponTuning.Changed+=Retune;}
+    void OnDisable(){toggleMenu.Disable();CancelAim();menuOpen=false;if(active==this)active=null;WeaponTuning.Changed-=Retune;}
+    void OnEnable(){toggleMenu.Enable();active=this;WeaponTuning.Changed+=Retune;}
     // The tuning asset was edited (Inspector, Play mode): the weapons in hand take the new numbers.
     void Retune()=>QoriArmoryFactory.ApplyTuning(Weapons,sling);
-    void OnDestroy(){if(active==this)active=null;foreach(var item in owned)if(item!=null)Destroy(item);}
+    void OnDestroy(){toggleMenu.Dispose();if(active==this)active=null;foreach(var item in owned)if(item!=null)Destroy(item);}
 }

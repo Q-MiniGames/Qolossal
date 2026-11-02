@@ -270,12 +270,17 @@ def batch12_registration(name):
         # Batch 16d (Review 41): the Qvale step kit and the darker-kerb Qvale_Top_Strip_v2 (120 PPU).
         # Batch 16e/16f (Reviews 42-43): the Qvale step set (pivot on the riser line and walk line);
         # Batch 16g (Review 44): its slope-top pieces; Batch 16i (Review 46): Qvale_Top_Strip_v5.
-        for batch in ("Batch14", "Batch15", "Batch15c", "Batch16", "Batch16c", "Batch16d", "Batch16e", "Batch16f", "Batch16g", "Batch16i"):
+        # Batch 23a-2/23a-3 (Reviews 48-49): the Cradle (Body) step set, same registration as Qvale's;
+        # Batch 23b (Review 50): the Causeway's. Batch29UG (Reviews 82, 84, 87): the underground's Great Hollow
+        # and route A (Cistern) 4K kit, 216 PPU (Underground/Cistern, /Hollow, /Shared).
+        for batch in ("Batch14", "Batch15", "Batch15c", "Batch16", "Batch16c", "Batch16d", "Batch16e", "Batch16f", "Batch16g", "Batch16i", "Batch23a2", "Batch23a3", "Batch23b", "Batch29UG"):
             path = os.path.join(SOURCE, batch, "MANIFEST.json")
             if os.path.exists(path):
                 for e in json.load(open(path, encoding="utf-8"))["assets"]:
                     ws = e.get("workstream") or os.path.dirname(os.path.dirname(e["path"]))
                     _batch12[e["name"]] = {"ppu": e["ppu"], "pivot": e["pivot"], "wrapU": e["wrapU"], "wrapV": e["wrapV"], "src": batch + "/" + ws}
+                    if e.get("sprites"):   # Batch 29 (Reviews 82/84/87): the underground dressing sheet's slices
+                        _batch12[e["name"]]["sprites"] = e["sprites"]
     return _batch12.get(name)
 
 
@@ -540,6 +545,17 @@ def piece_sprites(category, name):
 
 
 def build_entry(category, name, reviewed_sha):
+    # Versioned review receipts retain explicit registration on manifest rebuilds.
+    for receipt_name in ("batch43b_accepted.json", "batch44_summit_accepted.json"):
+        receipt_path = os.path.join(PROJECT, "Tools", "ArtImport", receipt_name)
+        if os.path.exists(receipt_path):
+            with open(receipt_path, encoding="utf-8") as receipt_file:
+                entries = json.load(receipt_file).get("import_entries", [])
+            for entry in entries:
+                if entry["name"] == name:
+                    if entry["sha256"] != reviewed_sha or entry["category"] != category:
+                        raise SystemExit(f"{receipt_name} review mismatch: {name}")
+                    return dict(entry)
     entry = {"name": name, "category": category, "sha256": reviewed_sha,
              "dest": f"{DEST_ROOT}/{category}/{name}.png"}
     entry.update(settings_for(category, name))
@@ -549,7 +565,9 @@ def build_entry(category, name, reviewed_sha):
         longest = max(im.size)
     if longest > DEFAULT_MAX_SIZE:
         entry["maxSize"] = 1 << (longest - 1).bit_length()
-    if (batch10_registration(name) or {}).get("sprites"):
+    if (batch12_registration(name) or {}).get("sprites"):
+        entry["sprites"] = batch12_registration(name)["sprites"]
+    elif (batch10_registration(name) or {}).get("sprites"):
         entry["sprites"] = batch10_registration(name)["sprites"]
     elif category == "Decor" and name.endswith("_Sheet"):
         entry["sprites"] = decor_sprites(name)

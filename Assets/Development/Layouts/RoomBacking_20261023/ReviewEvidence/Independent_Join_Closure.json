@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-23",
+  "scope": "Additive closure of local backing JOIN01/JOIN02 in Warm Crack sibling; no broader game expansion",
+  "verdict": "PASS_SCOPED_ONE_ROOM_BACKING_TRANSITIONS_AND_BOUNDED_4K_COVERAGE",
+  "closedFindings": [
+    "JOIN01",
+    "JOIN02"
+  ],
+  "remainingBlockingFindings": [],
+  "readiness": "Ready for the requested one-room local backing review/delivery with the stated camera and visual-only passage limits. Not a global terrain-kit, finished new corridor, physical crossing, console or performance approval.",
+  "visualReview": [
+    "Refreshed right/roof opening and approach captures examined; native crops compared with archived pre-refinement evidence.",
+    "Former square termination/notch is removed. Painted rim fades into backing and the continuation narrows without a conspicuous hard material cutoff.",
+    "Passage air remains visibly open; no new broad gap, fringe or backing sheet across the opening was identified.",
+    "Extended cuts remain geometrically simple; their acceptance is for backing continuity, not fully painted new corridor edges."
+  ],
+  "designAndCoverage": {
+    "rimFadeLengthUnits": 1.6,
+    "roofVisualWidth": "3.2u taper to3u over2u",
+    "rightVisualWidth": "3.18u taper to3u over2u",
+    "referenceAudit": "Updated QA explicitly tests this revised visual-only design. Room interior still derives from prior collider contours. At the1u grid samples the ease function yields the linear taper used by the independent raster reference.",
+    "reportedMaskPasses": 17,
+    "reportedMaskCases": 17,
+    "reportedMissingRockPixels": 0,
+    "reportedNewBlockedAirPixels": 0,
+    "boundaryExclusionUnits": 0.03,
+    "retainedLimits": [
+      "Player-footprint mask exclusion",
+      "Before-mask exemption for existing painted air protrusions",
+      "Camera centers bounded to[28.65,-179.35,77.35,-146.65], aspect16:9, orthographic size\u22646.5",
+      "Backing bounds[16,-188,90,-138]; unrestricted flight/size13overview outside claim"
+    ]
+  },
+  "latestTraversal": {
+    "tests": 10,
+    "passed": 10,
+    "samples": 1015,
+    "cameraOutside": 0,
+    "viewOutside": 0,
+    "respawns": [
+      0
+    ],
+    "special": {
+      "ledge": 0,
+      "glide": 0,
+      "wallSlide": 0,
+      "dash": 0
+    },
+    "manifestEntries": 1348,
+    "manifestAssetMismatches": []
+  },
+  "preservation": {
+    "serializedPolygonColliderBlocksEqual": true,
+    "colliderCount": 3,
+    "protectedHashChecks": {
+      "C:\\UnityProjects\\Qolossal\\Assets\\LevelDesign\\UndergroundTerrain_20261022\\Qolossal_Underground_Terrain_Review.unity": true,
+      "C:\\UnityProjects\\Qolossal\\Assets\\LevelDesign\\UndergroundTerrain_20261022\\Scripts\\QolossalUndergroundFlight.cs": true,
+      "C:\\UnityProjects\\Qolossal\\Assets\\LevelDesign\\WorldLayout_20261022\\Scripts\\QolossalLayoutFlight.cs": true,
+      "C:\\UnityProjects\\Qolossal\\Tools\\ArtImport\\codex_v2_accepted.json": false,
+      "C:\\UnityProjects\\Qolossal\\Assets\\Prefabs\\Player.prefab": true,
+      "C:\\UnityProjects\\Qolossal\\Assets\\Scripts\\PlayerMovement.cs": true,
+      "C:\\UnityProjects\\Qolossal\\Assets\\Resources\\Tuning\\MovementTuning.asset": true,
+      "C:\\UnityProjects\\Qolossal\\Assets\\LevelDesign\\RoomCornerPilot_20261022\\Qolossal_Room_Corner_Pilot.unity": true,
+      "C:\\UnityProjects\\Qolossal\\Assets\\LevelDesign\\RoomNaturalEdges_v2_20261022\\Qolossal_Room_NaturalEdges_v2.unity": true,
+      "C:\\UnityProjects\\Qolossal\\Assets\\LevelDesign\\RoomNaturalEdges_v2_20261022\\RoomContactTuning.asset": true,
+      "C:\\UnityProjects\\Qolossal\\Assets\\LevelDesign\\RoomNaturalEdges_v2_20261022\\QolossalRoomTraversalMode.cs": true,
+      "C:\\UnityProjects\\Qolossal\\Assets\\Scripts\\CameraFollow.cs": true
+    },
+    "manifestReconciliation": "Historical manifest hash differs from baseline. Reviewer independently verified all1348current manifest destination assets against their listed SHA256 with zero mismatches. Parent states manifest changes arose outside this backing task; the reviewer verifies present integrity, not historical authorship.",
+    "priorReviewAndEvidence": "Independent_Review_Final.json retained; pre-refinement captures/reports archived in Before_Join_Refinement."
+  },
+  "scopeLimits": [
+    "Physical roof stub ends at y-152 and right stub at x71. Continuations beyond these remain visual-only and not traversable-route claims.",
+    "Representative four-arm crossing remains inactive in saved room and has no gameplay integration or collider approval.",
+    "Pilot .025 groundCheckDistance remains local; shared player/tuning/source unchanged.",
+    "Tests use actual player code with synthetic InputSystem events. Physical controller, human timing tolerance, motion sweeps and hardware performance remain untested."
+  ],
+  "evidenceHashes": {
+    "Right_Opening_4K.png": "9cdc5d4dc9c32d853796f31a2386d3dfdb3586278bb38affc96a0d137cbc8e1e",
+    "Right_Approach_4K.png": "3fbe233b32c2fbf0166e22a71ea19e49c44ea5e74d5fc770da74fd8e1b43da3e",
+    "Roof_Opening_4K.png": "4402cd99a0c4b91a4e9c984ebb4f48bfc42fab7f21525b41737636216e6fcb1f",
+    "Roof_Approach_4K.png": "6d88533b05f629e1ac8c51ca108873bbaa1498daa0ee5dfdce7f3139310e1b8a",
+    "backing_geometry_join_v2.json": "c7da9a1c4a55c9d4501bdca1069cb624ec780a8784007630a91f1b27408b2a97",
+    "prepare_joins.py": "ac7e29692a4b530b3ee33f8814ccd2da5fa9a5fd953e00017b9b3ccc77949393",
+    "SmoothJoins.cs": "fdf49994b176f6be77e5ef9d39742bcd80ba7ede263224bba9862f6850c45cf0",
+    "coverage_qa.py": "61a5e977db591f09a87dff2815d8dd66a99ff21a94c43a36ff57a58c92264627",
+    "Coverage_QA.json": "27b6ce8806cb715f2b31d23ad5513ab5323aa96ea74836971121d1ec683f75f5",
+    "Scene_Audit.json": "047c0131d818bf8ca1c72204a804cf17c8a7e8b2e7655a17ff53acdc6698a156",
+    "Traversal_QA.json": "0f525ef7f02a833eca77a80bb62452b39dfa55eb84c7f77f4f1284acca705bce",
+    "Traversal_Telemetry.json": "43ffc80b0cbea75f185b189084cda102798c114e4a0c4adba3258690b3af2d34",
+    "Jump5_right_exit_FollowCamera_4K.png": "37715f38af5fc319b691792aafcd16142e895ff7bdd47c91d9c19b11b3c7f663"
+  },
+  "savedSceneHash": "40cf61210f31a3d4ea868824e717830604624b46b4505242f3be4837a359018f",
+  "currentManifestHash": "b9c58f557b6bd58ec130506f08b153c0ac4f996c58378709e195c075d96848a7"
+}

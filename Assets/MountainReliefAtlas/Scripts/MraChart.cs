@@ -4,16 +4,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-// The regional Chart (Mountain Relief Atlas): one unlocked region's relief drawing at a time, with
-// its own navigation layer on top: the paths Qori has walked (or a bought page's), his position
-// (updated as he moves, projected along the route), the lit Waymark, shrines whose relic he holds,
-// and side chambers only once discovered. There is no whole-world view before the reveal; after
-// it, the final assembly joins the list.
-// Keyboard and mouse: M opens and closes (Esc too); WASD / arrows or drag pan; the wheel or Z / X
-// zoom; Q / E or PageUp / PageDown switch region; R centres on Qori; Enter travels. Gamepad: View
-// opens and closes (B too); left stick pans; triggers zoom; shoulders switch region; Y centres;
-// A travels. Hints show the active device's buttons. The game is paused while it's open; zoom and
-// position are kept per region across closing, reopening and Waymark travel.
+// Owns pause/modal lifetime for the connected world atlas (M / View) and the legacy Waymarks chart.
+// The atlas exposes the full numbered topology and both layers of each region. Waymarks retains
+// discovery, skill and travel restrictions; viewing or selecting an atlas room never travels.
+// The following regional drawing/navigation implementation is retained for Waymarks.
 [DisallowMultipleComponent]
 public sealed class MraChart : MonoBehaviour
 {
@@ -38,6 +32,8 @@ public sealed class MraChart : MonoBehaviour
     public const string WholeClimb = "ALL";
     Canvas canvas; RectTransform viewport, content, overlay; Image mapImage; Text title, list, hints, legend;
     float previousTimeScale = 1f;
+    Qolossal.Atlas.ConnectedAtlas atlas;
+    public Qolossal.Atlas.ConnectedAtlas Atlas => atlas;
     readonly List<string> choices = new List<string>();
     public string Viewing => viewing;
     public float Zoom => zoomOf.TryGetValue(viewing ?? "", out float z) ? z : MinZoom;
@@ -80,8 +76,10 @@ public sealed class MraChart : MonoBehaviour
             if (TogglePressed() && Time.frameCount > closedFrame + 1 && !MraState.Busy && !MraKnot.IsPlaying && MraSession.Current != null && !MraSession.Current.Blocked) Show();
             return;
         }
+        if (atlas != null && atlas.IsShowing) return;
         if (TogglePressed() || BackPressed()) { Hide(); return; }
 
+        if (Key != null && Key.tabKey.wasPressedThisFrame || Pad != null && Pad.buttonWest.wasPressedThisFrame) { ShowWorldAtlas(); return; }
         float dt = Time.unscaledDeltaTime;
         Vector2 move = Vector2.zero;
         if (Pad != null) move += Pad.leftStick.ReadValue();
@@ -131,6 +129,7 @@ public sealed class MraChart : MonoBehaviour
         viewing = here != null && choices.Contains(here) ? here : choices.Count > 0 ? choices[0] : null;
         Rebuild();
         if (viewing == here) CentreOnQori();
+        ShowWorldAtlas();
     }
 
     public void Hide()
@@ -140,7 +139,26 @@ public sealed class MraChart : MonoBehaviour
         Sfx.Play("Chart_Close");
         Time.timeScale = previousTimeScale <= 0f ? 1f : previousTimeScale;
         canvas.enabled = false;
+        if (atlas != null) atlas.Hide();
         ModalUi.Close();
+    }
+
+    public void ShowWorldAtlas()
+    {
+        if (atlas == null)
+        {
+            atlas = gameObject.AddComponent<Qolossal.Atlas.ConnectedAtlas>();
+            if (!atlas.Initialize(this)) { Destroy(atlas); atlas = null; return; }
+        }
+        canvas.enabled = false;
+        atlas.Show();
+    }
+
+    public void ShowRegionalChart()
+    {
+        if (atlas != null) { if (atlas.FocusedRegion != null) SelectRegion(atlas.FocusedRegion); atlas.Hide(); }
+        canvas.enabled = true;
+        Rebuild();
     }
 
     // The regions the Chart can show: visited ones (the descent only after the reveal), then the
@@ -232,6 +250,13 @@ public sealed class MraChart : MonoBehaviour
         list = TownUi.Label(canvas.transform, "Regions", new Vector2(.5f, .5f), new Vector2(ListX, 160f), new Vector2(300f, 520f), 24, TextAnchor.UpperLeft, TownUi.Ink);
         legend = TownUi.Label(canvas.transform, "Legend", new Vector2(.5f, .5f), new Vector2(ListX, -300f), new Vector2(300f, 300f), 24, TextAnchor.UpperLeft, TownUi.Dim);
         hints = TownUi.Label(canvas.transform, "Actions", new Vector2(.5f, 0f), new Vector2(0f, 34f), new Vector2(1840f, 44f), 24, TextAnchor.MiddleCenter, TownUi.Ink);
+        var atlasButtonImage = GameHud.AddImage(canvas.transform, "World atlas button", null, new Vector2(1,1), new Vector2(-165,-48), new Vector2(270,48));
+        atlasButtonImage.color = new Color(.12f,.21f,.2f,1);
+        var atlasButton = atlasButtonImage.gameObject.AddComponent<UnityEngine.UI.Button>();
+        atlasButton.targetGraphic = atlasButtonImage;
+        atlasButton.onClick.AddListener(ShowWorldAtlas);
+        var atlasLabel = TownUi.Label(atlasButtonImage.transform, "Label", new Vector2(.5f,.5f), Vector2.zero, new Vector2(260,44), 22, TextAnchor.MiddleCenter, TownUi.Ink);
+        atlasLabel.text = "World atlas (Tab / X)"; atlasLabel.raycastTarget = false;
     }
 
     readonly List<RectTransform> lines = new List<RectTransform>(), markers = new List<RectTransform>();
@@ -276,7 +301,7 @@ public sealed class MraChart : MonoBehaviour
         }
         // Side chambers: only once discovered; pinned to their entrance.
         foreach (var c in world.ChambersOf(region.id))
-            if (GameSave.HasFlag("mra:" + c.id + ":discovered")) { Marker(art?.cave, c.chartUv, GameSave.HasFlag(c.rewardId) ? Ink * .7f : Ink, c.name); CavesShown++; }
+            if (!CaveAccessPolicy.IsRetiredEntrance(c.id) && GameSave.HasFlag("mra:" + c.id + ":discovered")) { Marker(art?.cave, c.chartUv, GameSave.HasFlag(c.rewardId) ? Ink * .7f : Ink, c.name); CavesShown++; }
         if (MraSession.Current != null && MraSession.Current.regionId == region.id)
         {
             QoriMarker = Marker(art?.qori, Vector2.one * .5f, Amber, "Qori");

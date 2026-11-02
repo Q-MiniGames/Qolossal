@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b5f7a8560aac04e93953a2879a9f74, type: 3}
+  m_Name: Leapseed
+  m_EditorClassIdentifier: Assembly-CSharp::RelicAbilityDefinition
+  abilityId: double-jump
+  resourceCost: 0
+  cooldown: 0
+  requirements: []
+  displayName: Leapseed
+  hint: Press Jump again in mid-air to leap a second time.
+  icon: {fileID: -6933774870549918989, guid: 77029baaf6151fb49a2beb44a7c461d7, type: 3}
+  relic: {fileID: -5749042818709011930, guid: 4801153830712b7489afc92bf5c29eda, type: 3}

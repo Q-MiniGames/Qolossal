@@ -53,10 +53,20 @@ public static class CodexArtImporter
     private static string ProjectRoot => Path.GetDirectoryName(Application.dataPath);
 
     [MenuItem("Qolossal/Art/Import Accepted Codex Art")]
-    public static void ImportAll()
+    public static void ImportAll() => ImportSelected(null);
+
+    // Narrow imports avoid reprocessing unrelated reviewed assets and their runtime settings.
+    public static void ImportSelected(string[] names)
     {
         cache = null;
         Manifest manifest = Load();
+        if (names != null)
+        {
+            var requested = new HashSet<string>(names, StringComparer.Ordinal);
+            var missing = requested.Except(manifest.assets.Select(e => e.name)).ToArray();
+            if (missing.Length > 0) throw new InvalidOperationException("Unaccepted art requested: " + string.Join(", ", missing));
+            manifest.assets = manifest.assets.Where(e => requested.Contains(e.name)).ToArray();
+        }
         string sourceRoot = Path.Combine(ProjectRoot, manifest.source);
         int copied = 0, unchanged = 0;
         var rejected = new List<string>();

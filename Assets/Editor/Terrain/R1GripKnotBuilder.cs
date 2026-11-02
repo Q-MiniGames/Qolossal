@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-// Builds Assets/Scenes/R1_GripKnot.unity, a placeholder Grip Knot chamber (the Palm's Knot
+// Builds Assets/Development/LegacyScenes/R1_GripKnot.unity, a placeholder Grip Knot chamber (the Palm's Knot
 // Chamber, world design 3.3) from the A0 kit, to try out the knot flow before the titan art and
 // the real R1 levels exist. West to east: the Vein Gate from A0 and a Waymark; the guardian's
 // floor, where the Knucklebramble is rooted (KnucklebrambleRigBuilder); the knot on its dais, sealed in thorns while the guardian lives; and a dormant arch where, once
@@ -12,7 +12,7 @@ using UnityEngine;
 public static class R1GripKnotBuilder
 {
     public const string SceneName = "R1_GripKnot";
-    const string ScenePath = "Assets/Scenes/" + SceneName + ".unity";
+    const string ScenePath = "Assets/Development/LegacyScenes/" + SceneName + ".unity";
     const float StartX = 3f, StartY = 1.5f;
 
     [MenuItem("Qolossal/Scenes/Build R1 Grip Knot")]

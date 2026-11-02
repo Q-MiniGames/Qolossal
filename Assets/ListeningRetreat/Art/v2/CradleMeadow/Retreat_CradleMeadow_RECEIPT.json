@@ -1,0 +1,53 @@
+{
+ "scene": "CradleMeadow",
+ "registration": "Art/Codex_v2_full/Retreat_Fixes_v02b/CradleMeadow/Registration_v02b.json",
+ "reviews": [
+  "CLAUDE_REVIEW_79",
+  "CLAUDE_REVIEW_81",
+  "CLAUDE_REVIEW_83"
+ ],
+ "files": [
+  {
+   "layer": "Sky",
+   "codexName": "01_Backdrop",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/CradleMeadow/Layers/01_Backdrop.png",
+   "sha256": "962487f2e791286f70ba25a28c06382f1b74ba2dd02dbccdd6343ee77024dd1f"
+  },
+  {
+   "layer": "Mid",
+   "codexName": "02_MiddleDistance",
+   "from": "Art/Codex_v2_full/Retreat_Fixes_v02b/CradleMeadow/Layers/02_MiddleDistance.png",
+   "sha256": "e7b014d2087b0fd9438dd18c16f41ad182c8d2d25a588e27b33d2c236c6206c4"
+  },
+  {
+   "layer": "Ground",
+   "codexName": "03_Ground",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/CradleMeadow/Layers/03_Ground.png",
+   "sha256": "6aaf020756024d61d2fd26e3a0ee185c312cec6398cf3b7538e550a2a2273ab1"
+  },
+  {
+   "layer": "BlossomTree",
+   "codexName": "04_BlossomTree",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/CradleMeadow/Layers/04_BlossomTree.png",
+   "sha256": "dc47bb33fddd96b22e5c1e748bad3261199cb1a22e94cd7659c4202e95a83507"
+  },
+  {
+   "layer": "BenchBack",
+   "from": "Assets/ListeningRetreat/Art/CradleMeadow/Retreat_CradleMeadow_BenchBack.png",
+   "sha256": "4acd4755470863d4065b748ae4442fb1411f63be2b4bec51c7070abec49f331f",
+   "derived": "enlarged 1.12x"
+  },
+  {
+   "layer": "BenchFront",
+   "from": "Assets/ListeningRetreat/Art/CradleMeadow/Retreat_CradleMeadow_BenchFront.png",
+   "sha256": "698af1f0144d5f36e0b14a13c12dde54465d26d42995451c3553ebd1b653293b",
+   "derived": "enlarged 1.12x"
+  },
+  {
+   "layer": "Foreground_01",
+   "codexName": "06_ForegroundPlants",
+   "from": "Art/Codex_v2_full/Retreat_OtherScenes_Repaint_v01/CradleMeadow/Layers/06_ForegroundPlants.png",
+   "sha256": "35377627e103999b9d710bc6b18fd8186ea5ad13eaa22ab1d4e5890e5d5f2d93"
+  }
+ ]
+}

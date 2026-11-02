@@ -8,7 +8,9 @@ public sealed class ControlsGuide : MonoBehaviour
     private static readonly string[] keyboardRows =
     {
         "Move: A / D or arrow keys",
-        "Run: Hold Shift while moving",
+        "Run: Move (running is the normal pace)",
+        "Sprint: Hold Shift while running",
+        "Evade: Ctrl",
         "Jump / flower boost: Space",
         "Wall: Space climbs; away + Space jumps off",
         "Ledge: Space / Up climbs; Down / away drops",
@@ -25,14 +27,16 @@ public sealed class ControlsGuide : MonoBehaviour
     private static readonly string[] controllerRows =
     {
         "Move: Left stick",
-        "Run: Hold left-stick click (L3)",
+        "Run: Move (running is the normal pace)",
+        "Sprint: Hold left-stick click (L3)",
+        "Evade: Top face button",
         "Jump / flower boost: Bottom face button",
         "Wall: Jump climbs; away + Jump pushes off",
         "Ledge: Jump / Up climbs; Down / away drops",
         "Dash (Wind Leaf): Right face button",
         "Glide (Glidecap): hold Jump while falling",
         "Attack: Left shoulder; Up aims overhead",
-        "Armory: View + right stick | Hold X: aim; release: fire",
+        "Armory: RS click, tilt to choose | Hold X: aim",
         "Hook target: Nearest highlighted anchor",
         "Hook / release: Press right trigger",
         "Shorten: Left trigger | Extend: D-pad down",

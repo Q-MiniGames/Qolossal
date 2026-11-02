@@ -1,0 +1,167 @@
+{
+  "method": "Independent air reference: flood original collider silhouettes with temporarily sealed portals, reopen3.2u roof/3.18u right visual continuations tapered to3u over2u. Native4K white occupancy renders preserve original edge alpha. Before/after masks isolate NEW backing in air from existing painted protrusions. Crossing union independently specified4u arms.",
+  "cases": [
+    {
+      "name": "Lower_Left_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 5786460,
+      "testedAirPixels": 2457906,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Upper_Left_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 6201238,
+      "testedAirPixels": 2043810,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Upper_Right_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 6199242,
+      "testedAirPixels": 2045703,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Lower_Right_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 6916191,
+      "testedAirPixels": 1309771,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Roof_Opening_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 4074064,
+      "testedAirPixels": 4115065,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Roof_Approach_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 6335899,
+      "testedAirPixels": 1871210,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Right_Opening_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 3260081,
+      "testedAirPixels": 4904101,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Right_Approach_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 4942699,
+      "testedAirPixels": 3252575,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Stress_28.65_-179.35_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 8124518,
+      "testedAirPixels": 158403,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Stress_28.65_-146.65_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 8294400,
+      "testedAirPixels": 0,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Stress_77.35_-179.35_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 8294400,
+      "testedAirPixels": 0,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Stress_77.35_-146.65_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 8294400,
+      "testedAirPixels": 0,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Cross_Centre_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 3797284,
+      "testedAirPixels": 4377500,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Cross_Left_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 4703190,
+      "testedAirPixels": 3497790,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Cross_Right_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 4703190,
+      "testedAirPixels": 3497790,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Cross_Above_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 4980118,
+      "testedAirPixels": 3250962,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Cross_Below_4K",
+      "missingRockPixels": 0,
+      "blockedAirPixels": 0,
+      "testedRockPixels": 4980118,
+      "testedAirPixels": 3250962,
+      "boundaryExclusionWorldUnits": 0.03,
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "envelopeContainmentMargins": [
+    1.0944444444444414,
+    2.1500000000000057,
+    1.0944444444444503,
+    2.1500000000000057
+  ],
+  "envelopeContained": true,
+  "excluded": "Unbounded flight/size13overview; .03u boundary band; player sprite footprint. Portal continuations are visual-only beyond existing physical room stubs."
+}

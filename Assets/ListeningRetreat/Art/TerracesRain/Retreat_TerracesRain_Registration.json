@@ -1,0 +1,356 @@
+{
+  "schema": "qolossal-retreat-terrace/2",
+  "view_canvas": [
+    2560,
+    1440
+  ],
+  "coordinates": "top-left pixels",
+  "alpha": "straight",
+  "camera": {
+    "benchFrontTurnDegrees": 18,
+    "lookDownDegrees": 7,
+    "focalPx": 1966.7,
+    "eyeHeight_u": 2.3,
+    "behindQori_u": 9.6,
+    "rightOfQori_u": 0.35,
+    "horizonY": 660.0,
+    "pinhole": true
+  },
+  "pixels_per_unit_at_qori": 202.6353234894612,
+  "qori_scale_vs_game": 1.35,
+  "layers": [
+    {
+      "name": "Sky",
+      "file": "Layers/Retreat_TerracesRain_Sky.png",
+      "canvas": [
+        2560,
+        1440
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Clouds",
+      "file": "Layers/Retreat_TerracesRain_Clouds.png",
+      "canvas": [
+        2560,
+        652
+      ],
+      "offset": [
+        0,
+        68
+      ],
+      "wrap": "horizontal",
+      "period_px": 2560
+    },
+    {
+      "name": "Far",
+      "file": "Layers/Retreat_TerracesRain_Far.png",
+      "canvas": [
+        2624,
+        1440
+      ],
+      "offset": [
+        -32,
+        0
+      ],
+      "drift_range_px": [
+        -32,
+        32
+      ]
+    },
+    {
+      "name": "Mid",
+      "file": "Layers/Retreat_TerracesRain_Mid.png",
+      "canvas": [
+        2624,
+        1144
+      ],
+      "offset": [
+        -32,
+        296
+      ],
+      "drift_range_px": [
+        -32,
+        32
+      ]
+    },
+    {
+      "name": "Mist",
+      "file": "Layers/Retreat_TerracesRain_Mist.png",
+      "canvas": [
+        2560,
+        184
+      ],
+      "offset": [
+        0,
+        818
+      ],
+      "wrap": "horizontal",
+      "period_px": 2560
+    },
+    {
+      "name": "Ground",
+      "file": "Layers/Retreat_TerracesRain_Ground.png",
+      "canvas": [
+        2560,
+        452
+      ],
+      "offset": [
+        0,
+        988
+      ],
+      "opaque_under_actor_feet": true
+    },
+    {
+      "name": "Prop_01",
+      "file": "Layers/Retreat_TerracesRain_Prop_01.png",
+      "canvas": [
+        720,
+        1252
+      ],
+      "offset": [
+        -120,
+        -40
+      ],
+      "pivot_px": [
+        155,
+        1235
+      ],
+      "motion_degrees": [
+        -0.3,
+        0.3
+      ]
+    },
+    {
+      "name": "BenchShadow",
+      "file": "Layers/Retreat_TerracesRain_BenchShadow.png",
+      "canvas": [
+        756,
+        136
+      ],
+      "offset": [
+        288,
+        1068
+      ]
+    },
+    {
+      "name": "BenchBack",
+      "file": "Layers/Retreat_TerracesRain_BenchBack.png",
+      "canvas": [
+        664,
+        200
+      ],
+      "offset": [
+        347,
+        947
+      ],
+      "painted_whole": true
+    },
+    {
+      "name": "Qori_Body",
+      "file": "Layers/Retreat_TerracesRain_Qori_Body.png",
+      "canvas": [
+        132,
+        276
+      ],
+      "offset": [
+        691,
+        776
+      ],
+      "painted_whole": true
+    },
+    {
+      "name": "Qori_Head",
+      "file": "Layers/Retreat_TerracesRain_Qori_Head.png",
+      "canvas": [
+        100,
+        92
+      ],
+      "offset": [
+        717,
+        706
+      ],
+      "pivot_px": [
+        766,
+        794
+      ],
+      "motion_degrees": [
+        -3,
+        3
+      ]
+    },
+    {
+      "name": "Qori_Blink",
+      "file": "Layers/Retreat_TerracesRain_Qori_Blink.png",
+      "canvas": [
+        12,
+        32
+      ],
+      "offset": [
+        798,
+        740
+      ],
+      "parent": "Qori_Head",
+      "pivot_px": [
+        766,
+        794
+      ],
+      "visible_by_default": false
+    },
+    {
+      "name": "Qori_EarFar",
+      "file": "Layers/Retreat_TerracesRain_Qori_EarFar.png",
+      "canvas": [
+        92,
+        100
+      ],
+      "offset": [
+        685,
+        636
+      ],
+      "pivot_px": [
+        764.4,
+        724.5
+      ],
+      "parent": "Qori_Head",
+      "motion_degrees": [
+        -8,
+        8
+      ]
+    },
+    {
+      "name": "Qori_EarNear",
+      "file": "Layers/Retreat_TerracesRain_Qori_EarNear.png",
+      "canvas": [
+        132,
+        100
+      ],
+      "offset": [
+        622,
+        637
+      ],
+      "pivot_px": [
+        740.5,
+        723.5
+      ],
+      "parent": "Qori_Head",
+      "motion_degrees": [
+        -8,
+        8
+      ]
+    },
+    {
+      "name": "BenchFront",
+      "file": "Layers/Retreat_TerracesRain_BenchFront.png",
+      "canvas": [
+        676,
+        348
+      ],
+      "offset": [
+        321,
+        821
+      ],
+      "painted_whole": true
+    },
+    {
+      "name": "Foreground_01",
+      "file": "Layers/Retreat_TerracesRain_Foreground_01.png",
+      "canvas": [
+        220,
+        200
+      ],
+      "offset": [
+        0,
+        1080
+      ],
+      "base_pivot_px": [
+        110,
+        192
+      ],
+      "base_pivot_canvas_px": [
+        110,
+        1272
+      ],
+      "motion_degrees": [
+        -3,
+        3
+      ]
+    },
+    {
+      "name": "Foreground_02",
+      "file": "Layers/Retreat_TerracesRain_Foreground_02.png",
+      "canvas": [
+        152,
+        148
+      ],
+      "offset": [
+        1570,
+        1130
+      ],
+      "base_pivot_px": [
+        75,
+        137
+      ],
+      "base_pivot_canvas_px": [
+        1645,
+        1267
+      ],
+      "motion_degrees": [
+        -3,
+        3
+      ]
+    },
+    {
+      "name": "Weather",
+      "file": "Layers/Retreat_TerracesRain_Weather.png",
+      "canvas": [
+        2472,
+        480
+      ],
+      "offset": [
+        37,
+        0
+      ],
+      "wrap": "vertical",
+      "period_px": 480,
+      "clip_rect": [
+        0,
+        0,
+        1920,
+        1296
+      ],
+      "exclude_rects": [
+        [
+          300,
+          620,
+          1030,
+          1190
+        ]
+      ]
+    }
+  ],
+  "ui_zones": {
+    "right": [
+      1920,
+      0,
+      2560,
+      1440
+    ],
+    "bottom": [
+      0,
+      1296,
+      2560,
+      1440
+    ]
+  },
+  "notes": [
+    "Batch26b; Review65 framing and scene-light notes applied.",
+    "Actor alpha, shapes, parents, pivots and order preserved; RGB relit for rain.",
+    "New prefix, fixed camera, ground plane projected from supplied guide.",
+    "Foreground base pivots allow small sway; Weather is clipped to UI and actor exclusion."
+  ],
+  "scene": "TerracesRain"
+}

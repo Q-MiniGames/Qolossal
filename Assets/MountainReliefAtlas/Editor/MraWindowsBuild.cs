@@ -14,10 +14,7 @@ public static class MraWindowsBuild
         string[] args = System.Environment.GetCommandLineArgs();
         int at = System.Array.IndexOf(args, "-buildPath");
         string path = at >= 0 && at + 1 < args.Length ? args[at + 1] : "Builds/MRA/Qolossal_MRA.exe";
-        var scenes = world.regions.Select(r => MraWorldBuilder.ScenePath(r.scene))
-            .Concat(world.chambers.Where(c => !c.InPlace).Select(c => MraWorldBuilder.ScenePath(c.scene)))
-            .Append("Assets/Scenes/A0_TestRoom.unity")   // a baseline: an existing, approved scene measured the same way
-            .ToArray();
+        var scenes = RegionalSceneCatalog.BuildPaths;
         // A measurement build keeps running without window focus (the profile runs unattended); the
         // project's own setting is restored afterwards.
         bool background = PlayerSettings.runInBackground;

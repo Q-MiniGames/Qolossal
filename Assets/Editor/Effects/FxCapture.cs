@@ -13,7 +13,7 @@ public static class FxCapture
         int index = Array.IndexOf(args, "-captureDir");
         string folder = index >= 0 && index + 1 < args.Length ? args[index + 1] : "Temp/FxCaptures";
         Directory.CreateDirectory(folder);
-        EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A0_TestRoom.unity");
         foreach (var b in UnityEngine.Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) b.Rebuild();
         var lib = Fx.Library;
         void Put(Sprite s, float x, float y, float size, float rot = 0f)

@@ -31,7 +31,7 @@ public static class MechanicsCheck
 
     public static void Run()
     {
-        EditorSceneManager.OpenScene("Assets/Scenes/A0_TestRoom.unity");
+        EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A0_TestRoom.unity");
         foreach (var b in Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) b.Rebuild();
         foreach (var p in Object.FindObjectsByType<TerrainPiece>(FindObjectsSortMode.None)) p.Rebuild();
         failures = 0;

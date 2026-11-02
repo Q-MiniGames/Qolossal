@@ -10,9 +10,9 @@ public static class WorldCapture
     // Usage: -executeMethod WorldCapture.Details -captureDir <folder>
     public static void Details()
     {
-        A0TestRoomBuilder.RenderShots("Assets/Scenes/R1_GripKnot.unity", new (string, Vector2, float)[]
+        A0TestRoomBuilder.RenderShots("Assets/Development/LegacyScenes/R1_GripKnot.unity", new (string, Vector2, float)[]
             { ("detail_knot", new Vector2(50f, 3f), 3.2f), ("detail_chamber_east", new Vector2(54f, 3f), 4.5f) });
-        A0TestRoomBuilder.RenderShots("Assets/Scenes/A0_TestRoom.unity", new (string, Vector2, float)[]
+        A0TestRoomBuilder.RenderShots("Assets/Development/LegacyScenes/A0_TestRoom.unity", new (string, Vector2, float)[]
             { ("detail_a0_gates", new Vector2(166f, 12f), 4.5f) });
     }
 
@@ -28,16 +28,16 @@ public static class WorldCapture
                 foreach (var block in Object.FindObjectsByType<TerrainBlock>(FindObjectsSortMode.None)) block.Rebuild();
             });
         }
-        Both("Assets/Scenes/A0_TestRoom.unity", new (string, Vector2, float)[]
+        Both("Assets/Development/LegacyScenes/A0_TestRoom.unity", new (string, Vector2, float)[]
         {
             ("a0_reach", new Vector2(177f, 12f), 12f), ("a0_gates", new Vector2(164f, 11f), 5f), ("a0_crease", new Vector2(183f, 9f), 6f),
         });
-        Both("Assets/Scenes/R1_GripKnot.unity", new (string, Vector2, float)[]
+        Both("Assets/Development/LegacyScenes/R1_GripKnot.unity", new (string, Vector2, float)[]
         {
             ("r1k_overview", new Vector2(29f, 5f), 20f), ("r1k_entry", new Vector2(4f, 2.5f), 4.5f),
             ("r1k_guardian", new Vector2(28f, 2.5f), 5f), ("r1k_knot", new Vector2(53f, 3f), 5f),
         });
-        Both("Assets/Scenes/A1_Aqueduct.unity", new (string, Vector2, float)[] { ("a1_palm_vein", new Vector2(47f, 9f), 5f), ("a1_waymark", new Vector2(128f, -4.5f), 3.5f) });
-        A0TestRoomBuilder.RenderShots("Assets/Scenes/A2_Grove.unity", new (string, Vector2, float)[] { ("a2_waymark", new Vector2(117f, 1.5f), 3.5f) });
+        Both("Assets/Development/LegacyScenes/A1_Aqueduct.unity", new (string, Vector2, float)[] { ("a1_palm_vein", new Vector2(47f, 9f), 5f), ("a1_waymark", new Vector2(128f, -4.5f), 3.5f) });
+        A0TestRoomBuilder.RenderShots("Assets/Development/LegacyScenes/A2_Grove.unity", new (string, Vector2, float)[] { ("a2_waymark", new Vector2(117f, 1.5f), 3.5f) });
     }
 }

@@ -27,7 +27,7 @@ public static class A1PlayTest
 
     public static void Run()
     {
-        EditorSceneManager.OpenScene("Assets/Scenes/A1_Aqueduct.unity");
+        EditorSceneManager.OpenScene("Assets/Development/LegacyScenes/A1_Aqueduct.unity");
         if (File.Exists(GameSave.FilePath)) File.Copy(GameSave.FilePath, Backup, true);
         GameSave.Clear();
         SessionState.SetBool(Key, true);

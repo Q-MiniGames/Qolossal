@@ -15,7 +15,7 @@ using UnityEngine.SceneManagement;
 public static class A0TestRoomBuilder
 {
     const string KitPath = "Assets/Art/Codex/Terrain/A0_TerrainKit.asset";
-    const string ScenePath = "Assets/Scenes/A0_TestRoom.unity";
+    const string ScenePath = "Assets/Development/LegacyScenes/A0_TestRoom.unity";
     const string TerrainArt = "Assets/Art/Codex/Terrain/";
 
     [MenuItem("Qolossal/Scenes/Build A0 Test Room")]

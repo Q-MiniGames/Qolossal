@@ -1,0 +1,1 @@
+const fs=require('fs'),vm=require('vm');const p='C:/Users/Qasim/OneDrive/Documents/ChatGPT/Qolossal/DesignReview/ConnectedWorldMap_20261030/';const h=fs.readFileSync(p+'index.html','utf8');const js=h.match(/<script>([\s\S]*?)<\/script>/)[1];new vm.Script(js);console.log('Viewer JavaScript parses successfully.');

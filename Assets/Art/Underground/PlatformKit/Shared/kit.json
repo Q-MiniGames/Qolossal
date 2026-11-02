@@ -1,0 +1,88 @@
+{
+  "set": "Shared",
+  "pixelsPerUnit": 216,
+  "pieces": [
+    {
+      "kind": "anchor",
+      "files": [
+        "Anchor_01.png"
+      ],
+      "simple": true,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "overhang": 0
+    },
+    {
+      "kind": "pod",
+      "files": [
+        "Pod_01.png"
+      ],
+      "simple": true,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "overhang": 0
+    },
+    {
+      "kind": "valve",
+      "files": [
+        "Valve_01.png"
+      ],
+      "simple": true,
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "overhang": 0
+    },
+    {
+      "kind": "spill",
+      "files": [
+        "Spill_01.png"
+      ],
+      "border": [
+        64,
+        0,
+        64,
+        0
+      ],
+      "overhang": 0
+    },
+    {
+      "kind": "gust",
+      "files": [
+        "Gust_01.png"
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "overhang": 0
+    },
+    {
+      "kind": "shelter",
+      "files": [
+        "Shelter_01.png"
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        160
+      ],
+      "overhang": 0,
+      "order": 3
+    }
+  ]
+}

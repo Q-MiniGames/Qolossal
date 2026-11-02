@@ -1,0 +1,21 @@
+{
+  "id": "actual-terrain-upper-layout-20261030",
+  "approvedBy": "User, 30 October 2026",
+  "authority": "Playable terrain geometry; the illustrated reclining contour is superseded for map geometry.",
+  "upperScale": 3.0,
+  "sceneSeamUnits": 16,
+  "sceneAssembly": "Translate scene-local entry/exit route anchors; 16-unit display gaps mark scene transitions. Local slopes have equal X/Y scale.",
+  "undergroundAssembly": "User-approved forward cave placement, 30 October 2026: rigid translation per physically connected underground component. Early networks shift right; isolated caves shift right/up. Equal X/Y scale preserves every internal slope and passage. Continuous deep galleries retain registration. Illustrated tunnels depict scene transitions, not newly built corridors.",
+  "futureChangeRule": "A terrain or topology edit must refresh extraction, regenerate this canonical layout, then update and verify the Unity map before the edit is complete.",
+  "currentStage": "Canonical scene-derived layout exported to Unity; prior unregistered terrain painting hidden until replacement artwork follows this geometry.",
+  "sceneHashes": {
+    "MRAtlas_MR01_Cradle": "184acf73398a02cec29d0b5f2ce71ce1011ef00871cc087553bcd5ae56c03fc0",
+    "MRAtlas_MR02_Causeway": "f90e280cd80ae43b658c401e7e0204f0f495f8dc82c85be262911520cf437958",
+    "MRAtlas_MR03_Terraces": "540bbed4027930089d727158b479bba4d99f023d178cc6fb3d3c49b1d9b6fb8b",
+    "MRAtlas_MR04_Qvale": "fa9330ecd6f6dbdc95e8277fa32da5ac33355096ebfd523156b2efed1e52b944",
+    "MRAtlas_MR05_Ribwood": "662746ad3979593c732a74be6233f932e050341652a6abb298457a5f85f5727e",
+    "MRAtlas_MR06_Heights": "27d22a12d9c6b59e45107dfd883e0169c3759d423ad66ed1397bbac71e2266a4",
+    "MRAtlas_MR07_Summit": "45e25d6ad0ac3235f2dea2342f3f3bcf08f4ebd0e83202c160b778f8d556a2e0",
+    "Qolossal_Underground": "d3d5b4def0f550fab43925e54a49ea93cef424468cea4e216a319ea89aa0f7f4"
+  }
+}

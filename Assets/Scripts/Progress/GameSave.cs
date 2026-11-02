@@ -35,10 +35,17 @@ public static class GameSave
     static Data data;
     // Play tests run with "-saveFile <name>" so they never touch the player's own save.
     static string fileName;
+#if UNITY_EDITOR
+    // Set by Scene Finder's Play button: that session plays on its own throwaway save, never the player's.
+    public const string PlayHereKey = "Qolossal.PlayHereSave";
+#endif
     static string FileName
     {
         get
         {
+#if UNITY_EDITOR
+            if (UnityEditor.SessionState.GetBool(PlayHereKey, false)) return "play_here_save.json";
+#endif
             if (fileName != null) return fileName;
             string[] args = Environment.GetCommandLineArgs();
             int at = Array.IndexOf(args, "-saveFile");
@@ -207,8 +214,8 @@ public static class GameSave
     // ---------------------------------------------------------------- checkpoints
 
     // The checkpoint last touched in `scenePath`, or "" if none.
-    public static string CheckpointIn(string scenePath) => Current.checkpoints.Find(c => c.scene == scenePath)?.id ?? "";
-    public static string LastScene => Current.lastScene;
+    public static string CheckpointIn(string scenePath) => Current.checkpoints.Find(c => c.scene == scenePath || (System.IO.Path.GetFileName(c.scene) == System.IO.Path.GetFileName(scenePath) && RegionalSceneCatalog.ResolveSavedScene(c.scene) == scenePath))?.id ?? "";
+    public static string LastScene => RegionalSceneCatalog.ResolveSavedScene(Current.lastScene);
     public static void SetCheckpoint(string scenePath, string id)
     {
         var entry = Current.checkpoints.Find(c => c.scene == scenePath);

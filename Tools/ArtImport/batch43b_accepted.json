@@ -1,0 +1,863 @@
+{
+  "batch": "43b",
+  "date": "2026-10-21",
+  "review": "CODEX_REVIEW_96.md",
+  "reviewer_sha256": "a859d9b072772329f4ff95885f6d0347fb441a436ad53b67258e5fdbd2ba66f3",
+  "accepted_manifest_before": "7fa085b81ea5b0d929baf0089b6c33d07aeda3016b38b70e9a9da25ec56ac3b2",
+  "replacements": [
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Fill.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Fill_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "bef204425ba2ba72d194cf93a39baa7fe6fc381a3404d51a5f20a61e79d43b8b"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Cliff_Face.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Cliff_Face_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "54857ad615285d70fb9e5b3e99a8b3fee7b9925b04bb902f7b938635d1b916ce"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Cliff_Ledge_A.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Cliff_Ledge_A_4K.png",
+      "scale": [
+        0.9988439306358382,
+        0.9988439306358382
+      ],
+      "source_sha256": "26c0633c5dae77d30f8aa47e9e0f4eda88a671942b6038658ee89dc45c5bd56c"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Cliff_Ledge_B.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Cliff_Ledge_B_4K.png",
+      "scale": [
+        0.9988439306358382,
+        0.9988439306358382
+      ],
+      "source_sha256": "688c84f795aa5fa294916973dc6c6415d896295e765d552c3003e0158658a7be"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Cliff_Side_L.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Cliff_Side_L_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "750ee87982fdba21a13f138942f0b8926c597334c6cdec97ee5386828a67f74d"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Cliff_Side_R.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Cliff_Side_R_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "83e46d7a559a63489f23200967424379d51a76788916dfea0db3432be85b04d0"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Corner_Top_L.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Corner_Top_L_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "85e7cf479261b2d40ec4bdaf646454310155e0089f5a227443da2a0833b0491b"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Corner_Top_R.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Corner_Top_R_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "ac3a089187d8f983b462c1fe5302ed3481c00fdf2cc960b198db3c63869d1255"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Inner_L_v2.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Inner_L_v2_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "3b742b0588888895a64db12ceab6591dc39fac3169e5b7461859c9752318c8f2"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Inner_R_v2.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Inner_R_v2_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "1265d6950463c26617548710027368e471c1f4b534a6077cb2f4048196fb15b2"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Medium_L_v3.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Medium_L_v3_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "50a0025ca205c3344b8234c81246576322a2cde44e7c6b3341b37cd2f2077f1d"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Medium_R_v3.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Medium_R_v3_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "602522cd6018447ce14b57673a9de7c5a34284eaa9765a24a99a41a978316569"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Medium_SlopeTop_L_v3.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Medium_SlopeTop_L_v3_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "5478c237c7bdd003007777d7cc19ce3bd727bd7e68faaef815b73547160204a1"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Medium_SlopeTop_R_v3.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Medium_SlopeTop_R_v3_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "2feace220fcc99467a8d830fc2008d2ed0bb10b34fab17286cf5d130eca8f5a2"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Short_SlopeTop_L_v3.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Short_SlopeTop_L_v3_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "3391d1e7c59a9a65f076610666010fd8e2f1bd087c396c812bba2dd30f440f2a"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Short_SlopeTop_R_v3.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Short_SlopeTop_R_v3_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "6879c9d6da5e38a1a5f5b26510d6a3a68174172b35f56ebc7c092b3cf8e29efe"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Wall_A_v2.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Wall_A_v2_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "1d5500e05a9a5561d975707246e36953fd229af5fab3bc04d1b51d03ac950de2"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Wall_B_v2.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Wall_B_v2_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "7097d71e50edefa56a5c788f88db9cbaaa5e28b675e567300f1d6ca708c979d4"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Wall_C_v2.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Wall_C_v2_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "3b17783484757795ae7bbe2108bc0e810169aaa8b0000b98b967c990e87b6256"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Top_Strip.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Top_Strip_4K.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "d203c2c71446667ba0d92931723fb6b60c39d8d3bd709e63ed04b14cca5a34d1"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Corner_Foot_L.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Corner_Foot_L_4K_R1.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "82a65efaa848a4f7f21fa7a8a37ac49890d2e068ffa2387ebdf023d5acffbf89"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Corner_Foot_R.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Corner_Foot_R_4K_R1.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "795a41b274c21aa4174a3bd4d584eb1e1d197704ef1f7e4ec6b66c35440aeaa4"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Fill_Shadow.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Fill_Shadow_4K_R1.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "7ad103f8e6589995570220eeca4ba001d9b5c92a20f82917b9bb516544a187ef"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Pale_Cliff.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Pale_Cliff_4K_R1.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "83472f1e1fe7919ee94f565fa4cbb4266cdb6b85c32bc26262ff37de71bf2dff"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Outer_L_v3.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Outer_L_v3_4K_R1.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "563a872d0b7870c0ae9dd8796b15afc55636a4f1126fef3019c2712c9026d25e"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Outer_R_v3.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Outer_R_v3_4K_R2.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "7dc41bdf7a0fc0dfd8318d3b0993062fd4aef3722c9ab4248fae3d06d1e602a4"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Outer_SlopeTop_L_v3.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Outer_SlopeTop_L_v3_4K_R1.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "2fdfe5f9443e41f6fdca7ac8990a300f0e09530d7a2340956f81ad4468e05fe7"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Outer_SlopeTop_R_v3.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Outer_SlopeTop_R_v3_4K_R1.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "be5442cc6d45839e869f4eda36df753aff89bf62d40a15c7d66f235dd71f65df"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Short_L_v3.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Short_L_v3_4K_R1.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "9ef72c7291c2fb87e0fd949dd7efb2b31cf68062736644d3c9ef63426576d3d4"
+    },
+    {
+      "original": "Assets/Art/Codex/Terrain/Body/Body_Step_Short_R_v3.png",
+      "replacement": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Short_R_v3_4K_R1.png",
+      "scale": [
+        1,
+        1
+      ],
+      "source_sha256": "0e7c92de501fa49dcaf07bb632342bfca0e7f1c47fc09549a3199bc16f483d01"
+    }
+  ],
+  "import_entries": [
+    {
+      "name": "Body_Fill_4K",
+      "sha256": "bef204425ba2ba72d194cf93a39baa7fe6fc381a3404d51a5f20a61e79d43b8b",
+      "ppu": 240,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "wrapU": "Repeat",
+      "wrapV": "Repeat",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Fill_4K.png",
+      "maxSize": 2048,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Cliff_Face_4K",
+      "sha256": "54857ad615285d70fb9e5b3e99a8b3fee7b9925b04bb902f7b938635d1b916ce",
+      "ppu": 240,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Repeat",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Cliff_Face_4K.png",
+      "maxSize": 2048,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Cliff_Ledge_A_4K",
+      "sha256": "26c0633c5dae77d30f8aa47e9e0f4eda88a671942b6038658ee89dc45c5bd56c",
+      "ppu": 216,
+      "pivot": [
+        0.75,
+        0.5
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Cliff_Ledge_A_4K.png",
+      "maxSize": 1024,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Cliff_Ledge_B_4K",
+      "sha256": "688c84f795aa5fa294916973dc6c6415d896295e765d552c3003e0158658a7be",
+      "ppu": 216,
+      "pivot": [
+        0.75,
+        0.5
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Cliff_Ledge_B_4K.png",
+      "maxSize": 1024,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Cliff_Side_L_4K",
+      "sha256": "750ee87982fdba21a13f138942f0b8926c597334c6cdec97ee5386828a67f74d",
+      "ppu": 240,
+      "pivot": [
+        0.125,
+        0.5
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Repeat",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Cliff_Side_L_4K.png",
+      "maxSize": 2048,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Cliff_Side_R_4K",
+      "sha256": "83e46d7a559a63489f23200967424379d51a76788916dfea0db3432be85b04d0",
+      "ppu": 240,
+      "pivot": [
+        0.875,
+        0.5
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Repeat",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Cliff_Side_R_4K.png",
+      "maxSize": 2048,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Corner_Top_L_4K",
+      "sha256": "85e7cf479261b2d40ec4bdaf646454310155e0089f5a227443da2a0833b0491b",
+      "ppu": 240,
+      "pivot": [
+        0.125,
+        0.8125
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Corner_Top_L_4K.png",
+      "maxSize": 1024,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Corner_Top_R_4K",
+      "sha256": "ac3a089187d8f983b462c1fe5302ed3481c00fdf2cc960b198db3c63869d1255",
+      "ppu": 240,
+      "pivot": [
+        0.875,
+        0.8125
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Corner_Top_R_4K.png",
+      "maxSize": 1024,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Step_Inner_L_v2_4K",
+      "sha256": "3b742b0588888895a64db12ceab6591dc39fac3169e5b7461859c9752318c8f2",
+      "ppu": 240,
+      "pivot": [
+        0.33333,
+        0.3125
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Inner_L_v2_4K.png",
+      "maxSize": 2048,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Step_Inner_R_v2_4K",
+      "sha256": "1265d6950463c26617548710027368e471c1f4b534a6077cb2f4048196fb15b2",
+      "ppu": 240,
+      "pivot": [
+        0.66667,
+        0.3125
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Inner_R_v2_4K.png",
+      "maxSize": 2048,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Step_Medium_L_v3_4K",
+      "sha256": "50a0025ca205c3344b8234c81246576322a2cde44e7c6b3341b37cd2f2077f1d",
+      "ppu": 240,
+      "pivot": [
+        0.33333,
+        0.75
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Medium_L_v3_4K.png",
+      "maxSize": 2048,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Step_Medium_R_v3_4K",
+      "sha256": "602522cd6018447ce14b57673a9de7c5a34284eaa9765a24a99a41a978316569",
+      "ppu": 240,
+      "pivot": [
+        0.66667,
+        0.75
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Medium_R_v3_4K.png",
+      "maxSize": 2048,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Step_Medium_SlopeTop_L_v3_4K",
+      "sha256": "5478c237c7bdd003007777d7cc19ce3bd727bd7e68faaef815b73547160204a1",
+      "ppu": 240,
+      "pivot": [
+        0.33333,
+        0.6125
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Medium_SlopeTop_L_v3_4K.png",
+      "maxSize": 2048,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Step_Medium_SlopeTop_R_v3_4K",
+      "sha256": "2feace220fcc99467a8d830fc2008d2ed0bb10b34fab17286cf5d130eca8f5a2",
+      "ppu": 240,
+      "pivot": [
+        0.66667,
+        0.6125
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Medium_SlopeTop_R_v3_4K.png",
+      "maxSize": 2048,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Step_Short_SlopeTop_L_v3_4K",
+      "sha256": "3391d1e7c59a9a65f076610666010fd8e2f1bd087c396c812bba2dd30f440f2a",
+      "ppu": 240,
+      "pivot": [
+        0.33333,
+        0.45833
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Short_SlopeTop_L_v3_4K.png",
+      "maxSize": 2048,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Step_Short_SlopeTop_R_v3_4K",
+      "sha256": "6879c9d6da5e38a1a5f5b26510d6a3a68174172b35f56ebc7c092b3cf8e29efe",
+      "ppu": 240,
+      "pivot": [
+        0.66667,
+        0.45833
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Short_SlopeTop_R_v3_4K.png",
+      "maxSize": 2048,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Step_Wall_A_v2_4K",
+      "sha256": "1d5500e05a9a5561d975707246e36953fd229af5fab3bc04d1b51d03ac950de2",
+      "ppu": 240,
+      "pivot": [
+        0.33333,
+        1.0
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Repeat",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Wall_A_v2_4K.png",
+      "maxSize": 1024,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Step_Wall_B_v2_4K",
+      "sha256": "7097d71e50edefa56a5c788f88db9cbaaa5e28b675e567300f1d6ca708c979d4",
+      "ppu": 240,
+      "pivot": [
+        0.33333,
+        1.0
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Repeat",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Wall_B_v2_4K.png",
+      "maxSize": 1024,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Step_Wall_C_v2_4K",
+      "sha256": "3b17783484757795ae7bbe2108bc0e810169aaa8b0000b98b967c990e87b6256",
+      "ppu": 240,
+      "pivot": [
+        0.33333,
+        1.0
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Repeat",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Wall_C_v2_4K.png",
+      "maxSize": 1024,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "name": "Body_Top_Strip_4K",
+      "sha256": "d203c2c71446667ba0d92931723fb6b60c39d8d3bd709e63ed04b14cca5a34d1",
+      "ppu": 240,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "wrapU": "Repeat",
+      "wrapV": "Clamp",
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Top_Strip_4K.png",
+      "maxSize": 2048,
+      "basis": "Batch43b independent review 96; original retained; MR01 only"
+    },
+    {
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "name": "Body_Corner_Foot_L_4K_R1",
+      "sha256": "82a65efaa848a4f7f21fa7a8a37ac49890d2e068ffa2387ebdf023d5acffbf89",
+      "ppu": 240,
+      "pivot": [
+        0.125,
+        0.10938
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "maxSize": 1024,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Corner_Foot_L_4K_R1.png",
+      "basis": "Batch43b repair review97; independently accepted at3840x2160 in Windows Editor; original retained; MR01 only"
+    },
+    {
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "name": "Body_Corner_Foot_R_4K_R1",
+      "sha256": "795a41b274c21aa4174a3bd4d584eb1e1d197704ef1f7e4ec6b66c35440aeaa4",
+      "ppu": 240,
+      "pivot": [
+        0.875,
+        0.10938
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "maxSize": 1024,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Corner_Foot_R_4K_R1.png",
+      "basis": "Batch43b repair review97; independently accepted at3840x2160 in Windows Editor; original retained; MR01 only"
+    },
+    {
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "name": "Body_Fill_Shadow_4K_R1",
+      "sha256": "7ad103f8e6589995570220eeca4ba001d9b5c92a20f82917b9bb516544a187ef",
+      "ppu": 240,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "wrapU": "Repeat",
+      "wrapV": "Repeat",
+      "maxSize": 2048,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Fill_Shadow_4K_R1.png",
+      "basis": "Batch43b repair review97; independently accepted at3840x2160 in Windows Editor; original retained; MR01 only"
+    },
+    {
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "name": "Body_Pale_Cliff_4K_R1",
+      "sha256": "83472f1e1fe7919ee94f565fa4cbb4266cdb6b85c32bc26262ff37de71bf2dff",
+      "ppu": 240,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "wrapU": "Repeat",
+      "wrapV": "Repeat",
+      "maxSize": 2048,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Pale_Cliff_4K_R1.png",
+      "basis": "Batch43b repair review97; independently accepted at3840x2160 in Windows Editor; original retained; MR01 only"
+    },
+    {
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "name": "Body_Step_Outer_L_v3_4K_R1",
+      "sha256": "563a872d0b7870c0ae9dd8796b15afc55636a4f1126fef3019c2712c9026d25e",
+      "ppu": 240,
+      "pivot": [
+        0.33333,
+        0.6875
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "maxSize": 2048,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Outer_L_v3_4K_R1.png",
+      "basis": "Batch43b repair review97; independently accepted at3840x2160 in Windows Editor; original retained; MR01 only"
+    },
+    {
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "name": "Body_Step_Outer_R_v3_4K_R2",
+      "sha256": "7dc41bdf7a0fc0dfd8318d3b0993062fd4aef3722c9ab4248fae3d06d1e602a4",
+      "ppu": 240,
+      "pivot": [
+        0.66667,
+        0.6875
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "maxSize": 2048,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Outer_R_v3_4K_R2.png",
+      "basis": "Batch43b repair review97; independently accepted at3840x2160 in Windows Editor; original retained; MR01 only"
+    },
+    {
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "name": "Body_Step_Outer_SlopeTop_L_v3_4K_R1",
+      "sha256": "2fdfe5f9443e41f6fdca7ac8990a300f0e09530d7a2340956f81ad4468e05fe7",
+      "ppu": 240,
+      "pivot": [
+        0.33333,
+        0.4987
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "maxSize": 2048,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Outer_SlopeTop_L_v3_4K_R1.png",
+      "basis": "Batch43b repair review97; independently accepted at3840x2160 in Windows Editor; original retained; MR01 only"
+    },
+    {
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "name": "Body_Step_Outer_SlopeTop_R_v3_4K_R1",
+      "sha256": "be5442cc6d45839e869f4eda36df753aff89bf62d40a15c7d66f235dd71f65df",
+      "ppu": 240,
+      "pivot": [
+        0.66667,
+        0.4987
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "maxSize": 2048,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Outer_SlopeTop_R_v3_4K_R1.png",
+      "basis": "Batch43b repair review97; independently accepted at3840x2160 in Windows Editor; original retained; MR01 only"
+    },
+    {
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "name": "Body_Step_Short_L_v3_4K_R1",
+      "sha256": "9ef72c7291c2fb87e0fd949dd7efb2b31cf68062736644d3c9ef63426576d3d4",
+      "ppu": 240,
+      "pivot": [
+        0.33333,
+        0.6875
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "maxSize": 2048,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Short_L_v3_4K_R1.png",
+      "basis": "Batch43b repair review97; independently accepted at3840x2160 in Windows Editor; original retained; MR01 only"
+    },
+    {
+      "mesh": "FullRect",
+      "mipmaps": false,
+      "border": null,
+      "sprites": null,
+      "name": "Body_Step_Short_R_v3_4K_R1",
+      "sha256": "0e7c92de501fa49dcaf07bb632342bfca0e7f1c47fc09549a3199bc16f483d01",
+      "ppu": 240,
+      "pivot": [
+        0.66667,
+        0.6875
+      ],
+      "wrapU": "Clamp",
+      "wrapV": "Clamp",
+      "maxSize": 2048,
+      "category": "Terrain/Body/Cradle4K",
+      "dest": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Step_Short_R_v3_4K_R1.png",
+      "basis": "Batch43b repair review97; independently accepted at3840x2160 in Windows Editor; original retained; MR01 only"
+    }
+  ],
+  "platform_targets": [
+    "Windows PC",
+    "PS5",
+    "Xbox Series X",
+    "Xbox Series S",
+    "Nintendo Switch 2 handheld",
+    "Nintendo Switch 2 docked"
+  ],
+  "original_switch": "excluded",
+  "console_validation": "not tested",
+  "repair_review": "CODEX_REVIEW_97.md",
+  "repair_reviewer_sha256": "795d9fe868354c3b353cdbb5e663e935b9953d25051aea52aac4660ed24994c6"
+}

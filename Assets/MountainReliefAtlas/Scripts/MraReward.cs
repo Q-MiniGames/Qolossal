@@ -15,6 +15,8 @@ public sealed class MraReward : MonoBehaviour
     [TextArea] public string text = "";
     public int amber = 25;
     public SpriteRenderer image;
+    [Tooltip("Visual bob height; zero for grounded stone artwork. Does not move the reward trigger.")]
+    [Min(0f)] public float imageBobHeight = .08f;
 
     Vector3 rest; float takenAt = -1f;
     public bool Taken => GameSave.HasFlag(rewardId);
@@ -37,7 +39,7 @@ public sealed class MraReward : MonoBehaviour
         Sfx.Play(kind == Kind.SongShell ? "SongShell_Get" : kind == Kind.HeartSeed ? "HeartSeed_Get" : kind == Kind.Amber ? "Amber_PickupBig" : "LoreStone_Read");
         switch (kind)
         {
-            case Kind.SongShell: TownState.Set("shell:" + rewardId); TownHud.Toast($"Found a song shell: ‚Äú{title}‚Äù.\nThe listening tree in Qvale can play it now.", 5f); break;
+            case Kind.SongShell: TownState.Set("shell:" + rewardId); TownHud.Toast($"Found a song shell: ì{title}î.\nThe listening tree in Qvale can play it now.", 5f); break;
             case Kind.HeartSeed:
                 GameSave.AddPickup(rewardId + ":heartseed");
                 if (health != null) health.AddMaximum(1);
@@ -53,6 +55,6 @@ public sealed class MraReward : MonoBehaviour
 
     void Update()
     {
-        if (takenAt < 0f && image != null) image.transform.localPosition = rest + Vector3.up * (.08f * Mathf.Sin(Time.time * 2.4f));
+        if (takenAt < 0f && image != null) image.transform.localPosition = rest + Vector3.up * (imageBobHeight * Mathf.Sin(Time.time * 2.4f));
     }
 }

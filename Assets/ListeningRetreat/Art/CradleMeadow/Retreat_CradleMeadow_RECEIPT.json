@@ -1,0 +1,291 @@
+{
+  "source": "Codex_v2_full/Batch26h/CradleMeadow",
+  "review": "Tools/IncomingArt/Codex_v2/CLAUDE_REVIEW_69.md",
+  "files": [
+    {
+      "source": "Layers/Retreat_CradleMeadow_Sky.png",
+      "asset": "Retreat_CradleMeadow_Sky.png",
+      "sha256": "9cc031c687aacba35b312da342ec001da71b4bc8230504d5559e29e1fa44e280"
+    },
+    {
+      "source": "Layers/Retreat_CradleMeadow_Clouds.png",
+      "asset": "Retreat_CradleMeadow_Clouds.png",
+      "sha256": "546d6330c6563d4467c7439e1b22defba0f000d56780f5a0e76d0469dc75cb66"
+    },
+    {
+      "source": "Layers/Retreat_CradleMeadow_Far.png",
+      "asset": "Retreat_CradleMeadow_Far.png",
+      "sha256": "410ad7f053872a935952cee07d506c635c684e4b8019395965b5eae693c78789"
+    },
+    {
+      "source": "Layers/Retreat_CradleMeadow_Mid.png",
+      "asset": "Retreat_CradleMeadow_Mid.png",
+      "sha256": "832190b4c9521cd91aeac93f0173dc35a10a874952d34c7936060b64bb663b5c"
+    },
+    {
+      "source": "Layers/Retreat_CradleMeadow_Mist.png",
+      "asset": "Retreat_CradleMeadow_Mist.png",
+      "sha256": "e2f6034c72cfd3ff05f7239be8a0b714984ed2d3fe0af602b100da23139b9ea7"
+    },
+    {
+      "source": "Layers/Retreat_CradleMeadow_Ground.png",
+      "asset": "Retreat_CradleMeadow_Ground.png",
+      "sha256": "f23b8b194fcd361a8e80f8951e2446e97e78e5ab0bc8e082cc22ada76cc3ae1c"
+    },
+    {
+      "source": "Layers/Retreat_CradleMeadow_BenchShadow.png",
+      "asset": "Retreat_CradleMeadow_BenchShadow.png",
+      "sha256": "f7c4f2dbcb7ab30414a2804a609c56769a458ec2a7e8fcae3a270f1b3f46e8d1"
+    },
+    {
+      "source": "Layers/Retreat_CradleMeadow_BenchBack.png",
+      "asset": "Retreat_CradleMeadow_BenchBack.png",
+      "sha256": "4a9b8fe54bbbeecd4f42f191ea1d566b06e44afad4655d6dd267a910f17ddad2"
+    },
+    {
+      "source": "Layers/Retreat_CradleMeadow_Qori_Body.png",
+      "asset": "Retreat_CradleMeadow_Qori_Body.png",
+      "sha256": "df851f95404386e3fc41963bd30575f00401f4fb764bc4433d870eda01f68cc2"
+    },
+    {
+      "source": "Batch26g/CradleMeadow/Layers/Retreat_CradleMeadow_Qori_Head.png",
+      "asset": "Retreat_CradleMeadow_Qori_Head.png",
+      "sha256": "630d12a2b6c560b9e965ddaf78eba217ab98af4833ac4ccc9b3c0aa74a19df64",
+      "note": "restored: no eye until 26h's eye is repainted"
+    },
+    {
+      "source": "Layers/Retreat_CradleMeadow_Qori_Blink.png",
+      "asset": "Retreat_CradleMeadow_Qori_Blink.png",
+      "sha256": "d391b87f0cd2f723bc974b1fbc309d050b23bfd4377e5a152604e76918462a0a"
+    },
+    {
+      "source": "Layers/Retreat_CradleMeadow_Qori_EarFar.png",
+      "asset": "Retreat_CradleMeadow_Qori_EarFar.png",
+      "sha256": "295d026af58623168abf711096cd815cdc6058a6fdf7e749120f9fd8030fbdef"
+    },
+    {
+      "source": "Layers/Retreat_CradleMeadow_Qori_EarNear.png",
+      "asset": "Retreat_CradleMeadow_Qori_EarNear.png",
+      "sha256": "c2367c9a5915d3307fdbc1d3fed40083518617095400cdc999e0779a5ea06ed6"
+    },
+    {
+      "source": "Layers/Retreat_CradleMeadow_BenchFront.png",
+      "asset": "Retreat_CradleMeadow_BenchFront.png",
+      "sha256": "cbeef8a34d7e4f7446a13cfaef9152e15aaee834a97ecab556b9be11d7e6e531"
+    },
+    {
+      "source": "Layers/Retreat_CradleMeadow_Weather.png",
+      "asset": "Retreat_CradleMeadow_Weather.png",
+      "sha256": "7c3dd9aab60e0514a082e3091456dfea9a043344547cd76017f884c9ce373595"
+    },
+    {
+      "source": "Retreat_CradleMeadow_Registration.json",
+      "asset": "Retreat_CradleMeadow_Registration.json",
+      "sha256": "8835d43e8145d25ea5fa3f07a42cbf72c40c127be976cac0a348664d44ea6d1c"
+    }
+  ],
+  "derived": [
+    {
+      "asset": "Retreat_CradleMeadow_WeatherMask.png",
+      "from": "Weather clip_rect and exclude_rects"
+    }
+  ],
+  "trimmed": [
+    {
+      "asset": "Retreat_CradleMeadow_Clouds.png",
+      "crop": [
+        0,
+        0,
+        2560,
+        1408
+      ],
+      "from": [
+        2560,
+        1440
+      ],
+      "sha256": "5356ca7aea32b170513857f61ff776993748923f15b8af14db097b987037a74e"
+    },
+    {
+      "asset": "Retreat_CradleMeadow_Far.png",
+      "crop": [
+        0,
+        28,
+        2624,
+        1440
+      ],
+      "from": [
+        2624,
+        1440
+      ],
+      "sha256": "f4e84b9b2ceca9cf5608d79f5bc90e9a17dec353eb47bac91aab922107226361"
+    },
+    {
+      "asset": "Retreat_CradleMeadow_Mid.png",
+      "crop": [
+        0,
+        679,
+        2624,
+        1263
+      ],
+      "from": [
+        2624,
+        1440
+      ],
+      "sha256": "46f303ab133da1e75d87f6d9809e4356a6b70cdb1e57f591a6ab25b1fe046faf"
+    },
+    {
+      "asset": "Retreat_CradleMeadow_Mist.png",
+      "crop": [
+        0,
+        818,
+        2560,
+        1002
+      ],
+      "from": [
+        2560,
+        1440
+      ],
+      "sha256": "17922b56c933b956b3757d992e6a8c232a2a166e75aa28e95b2fd536621a6a1e"
+    },
+    {
+      "asset": "Retreat_CradleMeadow_Ground.png",
+      "crop": [
+        0,
+        24,
+        2560,
+        1440
+      ],
+      "from": [
+        2560,
+        1440
+      ],
+      "sha256": "69387549591c8683ea44cd816a1d46a152513da3f832fa35f6494d81feeaa1a9"
+    },
+    {
+      "asset": "Retreat_CradleMeadow_BenchShadow.png",
+      "crop": [
+        288,
+        1068,
+        1044,
+        1204
+      ],
+      "from": [
+        2560,
+        1440
+      ],
+      "sha256": "01edb25c27d3532fdf8145ab74ec9c4b264f0ece3b7398f5e74bece1ed252967"
+    },
+    {
+      "asset": "Retreat_CradleMeadow_BenchBack.png",
+      "crop": [
+        347,
+        947,
+        1011,
+        1147
+      ],
+      "from": [
+        2560,
+        1440
+      ],
+      "sha256": "4acd4755470863d4065b748ae4442fb1411f63be2b4bec51c7070abec49f331f"
+    },
+    {
+      "asset": "Retreat_CradleMeadow_Qori_Body.png",
+      "crop": [
+        691,
+        776,
+        823,
+        1052
+      ],
+      "from": [
+        2560,
+        1440
+      ],
+      "sha256": "2f043b8eb4ec7a916f7eece125953333c964554d8b0d883b686898eaadcc768b"
+    },
+    {
+      "asset": "Retreat_CradleMeadow_Qori_Head.png",
+      "crop": [
+        717,
+        706,
+        817,
+        798
+      ],
+      "from": [
+        2560,
+        1440
+      ],
+      "sha256": "f0367a5d4bf3769038b0db779571104e4e2f54ef1197490f5bbc98f76135a807"
+    },
+    {
+      "asset": "Retreat_CradleMeadow_Qori_Blink.png",
+      "crop": [
+        798,
+        740,
+        810,
+        772
+      ],
+      "from": [
+        2560,
+        1440
+      ],
+      "sha256": "5bdf6e119730e13b304e2e956be8875870f62cc212314a1623d6b7b64eb877f0"
+    },
+    {
+      "asset": "Retreat_CradleMeadow_Qori_EarFar.png",
+      "crop": [
+        685,
+        636,
+        777,
+        736
+      ],
+      "from": [
+        2560,
+        1440
+      ],
+      "sha256": "afae84f3f25b019f6aafb2659b320dc94ab16fbfe984da6d2b36d345ae470a92"
+    },
+    {
+      "asset": "Retreat_CradleMeadow_Qori_EarNear.png",
+      "crop": [
+        622,
+        637,
+        754,
+        737
+      ],
+      "from": [
+        2560,
+        1440
+      ],
+      "sha256": "950e212a9a9c9231967ae720e6c3619426c68722429c5325be9cf15ca54ebf65"
+    },
+    {
+      "asset": "Retreat_CradleMeadow_BenchFront.png",
+      "crop": [
+        321,
+        821,
+        997,
+        1169
+      ],
+      "from": [
+        2560,
+        1440
+      ],
+      "sha256": "698af1f0144d5f36e0b14a13c12dde54465d26d42995451c3553ebd1b653293b"
+    },
+    {
+      "asset": "Retreat_CradleMeadow_Weather.png",
+      "crop": [
+        210,
+        0,
+        2362,
+        480
+      ],
+      "from": [
+        2560,
+        480
+      ],
+      "sha256": "1e935a75a9a38abf7e6a91f9c94255ca279b8254b810da996773aed194894532"
+    }
+  ]
+}

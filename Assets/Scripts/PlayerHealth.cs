@@ -9,6 +9,7 @@ public sealed class PlayerHealth : MonoBehaviour
     [SerializeField] private Vector2 knockback = new Vector2(7f, 5f);
     private int health;
     private float protectedUntil;
+    private float caveExitProtectedUntil;
     public float LastHitTime { get; private set; } = float.NegativeInfinity;
     public int Health => health;
     public int MaximumHealth => maximumHealth;
@@ -49,6 +50,10 @@ public sealed class PlayerHealth : MonoBehaviour
     // Ignored while invulnerable after a previous hit.
     public void TakeDamage(Vector2 source, Vector2 push)
     {
+        // Cave presentation owns movement briefly; avoid an unavoidable hit or knockback
+        // during that walk and give control a moment to resume at the mouth.
+        if (Time.time < caveExitProtectedUntil ||
+            (AreaTransition.IsTransitioning && movement != null && movement.TransitionWalkInput.HasValue)) return;
         if (!isActiveAndEnabled || !movement.isActiveAndEnabled || Time.time < protectedUntil || movement.Untouchable) return;
         health--;
         protectedUntil = Time.time + invulnerabilityTime;
@@ -68,6 +73,8 @@ public sealed class PlayerHealth : MonoBehaviour
 
     // Restores hearts (sap orbs), up to the maximum.
     public void Heal(int amount) => health = Mathf.Min(maximumHealth, health + Mathf.Max(0, amount));
+
+    public void ProtectCaveExit() => caveExitProtectedUntil = Mathf.Max(caveExitProtectedUntil, Time.time + .6f);
 
     // Hearts carried in from another area.
     public void SetHealth(int hearts) => health = Mathf.Clamp(hearts, 1, maximumHealth);
@@ -91,3 +98,4 @@ public sealed class PlayerHealth : MonoBehaviour
         if (visual != null) visual.color = restingColor;
     }
 }
+

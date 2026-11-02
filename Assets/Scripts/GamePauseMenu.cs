@@ -77,7 +77,7 @@ public sealed class GamePauseMenu : MonoBehaviour
     private void OnDisable() => Resume();
 
     // The first area of a new game: the Cradle, by path rather than build position.
-    const string FirstArea = "Assets/MountainReliefAtlas/Scenes/MRAtlas_MR01_Cradle.unity";
+    const string FirstArea = "Assets/Scenes/Game/MRAtlas_MR01_Cradle.unity";
 
     // Forgets the saved game. In an area, the game restarts in the first area (MR01 Cradle);
     // a sandbox scene just restarts itself.

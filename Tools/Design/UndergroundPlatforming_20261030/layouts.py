@@ -58,7 +58,7 @@ room('A01', note='Teach: single jump, running gap over water, double jump to the
 solid(16, 19, 2)            # first step: a single jump
 water(19, 24)               # first water: running gap (5 u at the same height)
 solid(24, 29, 2)
-solid(29, 36, 5)            # double jump up, then again into the door (sill 8)
+deck(29, 36, 5)            # double jump up, then again into the door (sill 8)
 safe(17.5, 2); safe(26.5, 2)
 
 room('A02', note='Drain Well: shortcut ledges at the top, a one-way zigzag descent to the floor hole into A03.')
@@ -99,11 +99,11 @@ for i, y in enumerate([49, 52.5, 56, 59.5, 63, 66.5]):   # the 4 u shaft above t
 safe(2.5, 14); safe(8, 31.5); safe(8, 45.5)
 
 room('A06', note='Pump Gallery: pistons over the flood going left, a climb, then the high line back right; a wheel opens the A02 shortcut.')
-solid(54, 60, 6)            # arrival shelf (door sill 6)
+deck(54, 60, 6)            # arrival shelf (door sill 6)
 water(30, 54)
 mover(47, 50, 4, 0, 6, 2.6); mover(40, 43, 10, 0, -5, 2.6, .8); mover(33, 36, 4, 0, 6, 2.2)
 zigzag(10, 6, 0, 14.4, step=3.6)               # floor to the left shelf
-solid(0, 5, 18)             # A02 shortcut shelf (sill 18)
+deck(0, 5, 18)             # A02 shortcut shelf (sill 18)
 gate(0, 1, 18, 22, ['cw:A:pump_shortcut'])
 valve(3, 18, 'cw:A:pump_shortcut', 'Open the shortcut', 'The way back to the Drain Well is open.')
 deck(9, 12, 20); crumble(16, 19, 21); deck(23, 26, 22)
@@ -113,13 +113,13 @@ solid(56, 60, 22, 20)       # A07 door shelf (sill 22)
 safe(57, 6); safe(20, 0); safe(3, 18)
 
 room('A07', note='Keeper Refuge: rest. Steps down from both doors, flat floor.')
-solid(0, 5, 6); solid(5, 8, 3); solid(37, 42, 6); solid(34, 37, 3)
+deck(0, 5, 6); solid(5, 8, 3); deck(37, 42, 6); solid(34, 37, 3)
 
 room('A08', note='Sluice Guardian Arena: flat floor, two fight ledges, a zigzag to the Heart door; floor hole to A10.')
-solid(0, 4, 8); solid(4, 7, 5); solid(7, 10, 2.5)
+deck(0, 4, 8); deck(4, 7, 5); solid(7, 10, 2.5)
 deck(10, 16, 4); deck(30, 36, 4)
 deck(41, 44, 3.5); deck(36, 39, 7); deck(41, 44, 10.5)
-solid(46, 52, 14)
+deck(46, 52, 14)
 safe(3, 8)
 
 room('A09', note='Settling Cache (optional): a zigzag climb back up through the 16 u shaft to A04.')
@@ -162,7 +162,7 @@ thorns(0, .5, 2, 7)         # no wall climb from the floor: use the ledges
 deck(0, 8, 22.5)            # C09 door shelf
 valve(4, 22.5, 'cw:C:cradle_gate', 'Release the cradle latch', 'Far below, the root gate drops open.')
 thorns(46, 56, 0, .5)
-deck(46, 49, 9.5); anchor(51, 12.5); solid(56, 64, 14)
+deck(46, 49, 9.5); anchor(51, 12.5); deck(56, 64, 14)
 gate(63, 64, 14, 18, ['cw:C:cradle_gate'])
 safe(24, 0); safe(4, 22.5); safe(60, 14)
 
@@ -175,13 +175,13 @@ safe(2.5, 36); safe(13.5, 10)
 room('C06', note='Bloom Court: a three-anchor swing chain over thorns to the C07 door; a latch opens the C03 shortcut.')
 thorns(30, 48, 0, .5)
 deck(29, 32, 3.8); anchor(34, 7.2); anchor(40, 8.5); anchor(45.5, 9.5)
-solid(48, 54, 12)
+deck(48, 54, 12)
 deck(0, 5, 20); gate(0, 1, 20, 24, ['cw:C:root_shortcut'])
 valve(3, 20, 'cw:C:root_shortcut', 'Open the shortcut', 'The way back to the Root Ladder is open.')
 safe(20, 0); safe(51, 12)
 
 room('C07', note='Gardener Rest: steps down from the door; the floor shaft drops into the arena.')
-solid(0, 4, 6); solid(4, 7, 3)
+deck(0, 4, 6); solid(4, 7, 3)
 
 room('C08', note='Root Guardian Arena: flat floor, fight ledges, a ledge ladder back up to the C07 shaft; floor hole to the Heart.')
 deck(4, 10, 5); deck(20, 26, 5)
@@ -189,15 +189,15 @@ for x, y in [(17, 3.5), (10, 7), (17, 10.5), (10, 14), (17, 17.5), (10, 21)]: de
 deck(12, 16, 24.5)
 
 room('C09', note='Hidden Nursery (optional): a four-anchor swing over thorns with one island to rest on.')
-solid(38, 44, 6.5); thorns(8, 14, 0, .5); thorns(19.5, 38, 0, .5)
+deck(38, 44, 6.5); thorns(8, 14, 0, .5); thorns(19.5, 38, 0, .5)
 anchor(34.5, 9.5); anchor(28, 10); anchor(21.5, 10); anchor(15, 9.5); anchor(8.5, 9)
 deck(14.5, 19, 2); deck(14, 17, 5.5)   # rest island, and a step up to the chain
-solid(0, 8, 5)
+deck(0, 8, 5)
 safe(41, 6.5); safe(16.5, 2); safe(3, 5)
 
 room('C10', note='Hanging Garden (optional): crumbling roots and a pod over thorns to the high ledge.')
-solid(0, 5, 6.5); thorns(5, 10.5, 0, .5); thorns(14, 26, 0, .5)   # checkpoint floor stays dry
-crumble(8, 11, 7); crumble(14, 17, 8.5); pod(20, 8); crumble(23, 26, 10); solid(26, 32, 12)
+deck(0, 5, 6.5); thorns(5, 10.5, 0, .5); thorns(14, 26, 0, .5)   # checkpoint floor stays dry
+crumble(8, 11, 7); crumble(14, 17, 8.5); pod(20, 8); crumble(23, 26, 10); deck(26, 32, 12)
 safe(2.5, 6.5)
 
 # ---------------------------------------------------------------- Route D: the Wind (all of the above + Wind Leaf, Glidecap)
@@ -219,8 +219,8 @@ deck(9, 14, 10)
 safe(13.5, 54)
 
 room('D03', note='Vane Court: glide from the door down to the floor shaft; the optional D09 lies beyond three timed gusts.')
-solid(0, 6, 16); thorns(6, 18, 0, .5); thorns(34, 56, 0, .5)
-deck(13, 17, 15.5); deck(25, 29, 16); deck(37, 41, 16.5); solid(50, 56, 16.5)
+deck(0, 6, 16); thorns(6, 18, 0, .5); thorns(34, 56, 0, .5)
+deck(13, 17, 15.5); deck(25, 29, 16); deck(37, 41, 16.5); deck(50, 56, 16.5)
 gust(18, 24, 15, 22, 0); gust(30, 36, 15, 22, 1.4); gust(42, 49, 15, 22, 2.8)
 shelter(13, 17, 15.5, 18, 15, 15.5); shelter(25, 29, 16, 18.5, 27, 16); shelter(37, 41, 16.5, 19, 39, 16.5)
 safe(3, 16); safe(21, 0)
@@ -233,8 +233,8 @@ deck(21, 24, 5); deck(18, 21, 8.5)          # up into the shortcut shaft
 safe(42, 4); safe(2, 4)
 
 room('D05', note='Updraft Hall: glide left across the hall to the D06 door; a lift and ledges rise to the D10 shaft.')
-solid(66, 72, 14); thorns(8, 24, 0, .5); thorns(30, 64, 0, .5)
-deck(48, 52, 11); deck(23, 26, 3.8); deck(25, 33, 7.5); deck(14, 18, 8); solid(0, 6, 6)
+deck(66, 72, 14); thorns(8, 24, 0, .5); thorns(30, 64, 0, .5)
+deck(48, 52, 11); deck(23, 26, 3.8); deck(25, 33, 7.5); deck(14, 18, 8); deck(0, 6, 6)
 mover(36, 39, 8, 0, 18, 3.); deck(28, 32, 29.5); deck(22.5, 25.5, 33); deck(22.5, 25.5, 36.5)
 deck(0, 5, 18)              # D08 shortcut shelf
 safe(69, 14); safe(27, 0); safe(3, 6)
@@ -242,29 +242,29 @@ safe(69, 14); safe(27, 0); safe(3, 6)
 room('D06', note='Baffled Drop: glide down past alternating rock baffles to the low D07 door.')
 deck(11, 16, 60)
 for i, y in enumerate([52, 42, 32, 22, 12]): solid(*((0, 10) if i % 2 == 0 else (6, 16)), y + 1, y, cling=False)
-solid(10, 16, 6); solid(3, 9, 2.8)
+deck(10, 16, 6); solid(3, 9, 2.8)
 safe(13.5, 60); safe(13, 6)
 
 room('D07', note='Still-Air Rest.')
 deck(0, 5, 12); deck(5, 9, 8.5); deck(9, 13, 5)
 
 room('D08', note='Wind Guardian Arena: flat floor, fight ledges, a ledge ladder to the D05 shortcut shaft; floor hole to the Heart.')
-solid(34, 40, 12); deck(30, 34, 8.5); deck(26, 30, 5); deck(4, 10, 5)
+deck(34, 40, 12); deck(30, 34, 8.5); deck(26, 30, 5); deck(4, 10, 5)
 for x, y in [(20, 3.5), (24, 7), (20, 10.5), (15, 14), (20, 17.5), (15, 21)]: deck(x, x + 3, y)
 deck(14, 18, 24.5)
 
 room('D09', note='Glider Roost (optional): glide and dash over thorns with one crumbling perch.')
-solid(0, 6, 10.5); thorns(6, 12, 0, .5); thorns(15.5, 30, 0, .5); crumble(16, 19, 8); deck(19, 24, 8)   # checkpoint floor stays dry; solid(30, 36, 6)
+deck(0, 6, 10.5); thorns(6, 12, 0, .5); thorns(15.5, 30, 0, .5); crumble(16, 19, 8); deck(19, 24, 8)   # checkpoint floor stays dry; solid(30, 36, 6)
 safe(3, 10.5); safe(33, 6)
 
 room('D10', note='Cloud Archive (optional): a lift, then a gust lane to the far ledge.')
-mover(4, 7, 3, 0, 9, 3.); deck(8, 12, 14); gust(12, 24, 12, 18); shelter(8, 12, 14, 16.5, 10, 14); solid(26, 32, 15)
+mover(4, 7, 3, 0, 9, 3.); deck(8, 12, 14); gust(12, 24, 12, 18); shelter(8, 12, 14, 16.5, 10, 14); deck(26, 32, 15)
 safe(13, 0)
 
 # ---------------------------------------------------------------- Route E: the Descent (every skill, gently, downward)
 
 room('E01', note='Quiet Arrival: steps up to both doors.')
-deck(6, 9, 4); deck(0, 5, 8); solid(29, 32, 4); solid(32, 36, 8)
+deck(6, 9, 4); deck(0, 5, 8); solid(29, 32, 4); deck(32, 36, 8)
 
 room('E02', note='Memory Well: down the well, a thread catch on the way; moss walls back up.')
 deck(0, 5, 58); anchor(8, 50); deck(10, 16, 46); deck(3, 10, 39.2)
@@ -273,7 +273,7 @@ safe(6.5, 39.2)
 
 room('E03', note='First Memory: caught under the shaft, then glide (or pod-bounce) across the thorns to the E04 door.')
 deck(16, 24, 17); thorns(4, 12, 0, .5); thorns(28, 56, 0, .5)
-pod(9, 6); solid(0, 4, 14)
+pod(9, 6); deck(0, 4, 14)
 safe(20, 17); safe(2, 14); safe(14, 0)
 
 room('E04', note='Processional Walk: a slow, flat walk.')
@@ -298,7 +298,7 @@ solid(20, 25, 1.2); deck(21, 25, 4.5); deck(25, 30, 8)
 deck(9, 12, 5); deck(5, 8, 8.5); deck(0, 5, 12)
 
 room('E08', note='Final Threshold: three steps up to the Heart.')
-solid(24, 32, 8); deck(14, 20, 10); solid(0, 8, 12)
+deck(24, 32, 8); deck(14, 20, 10); deck(0, 8, 12)
 
 room('E09', note='Lost Seed Archive (optional): crumbles over thorns up to the shaft.')
 thorns(0, 8, 0, .5); thorns(16, 32, 0, .5)
