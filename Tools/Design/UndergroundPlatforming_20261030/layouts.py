@@ -626,6 +626,23 @@ def seals(r, spec):
         if any(rect[0] < g[0] + g[2] and g[0] < rect[0] + rect[2] and rect[1] < g[1] + g[3] and g[1] < rect[1] + rect[3] for g in gates): continue
         spec['shapes'].append(dict(kind='seal', rect=rect))
 
+def door_rect(r, d):
+    """A door's opening in world units."""
+    if d['side'] in 'LR': return [r['x'] + (0 if d['side'] == 'L' else r['w']), r['y'] + d['sill'], 0, d['width']]
+    return [r['x'] + d['x0'], r['y'] + (0 if d['side'] == 'B' else r['h']), d['x1'] - d['x0'], 0]
+
+def passages(rooms, margin=8.):
+    """One box per link around its two doors, generous enough for a winding passage. Terrain hides what falls outside
+    the opening, and room backdrops draw over what falls inside a room, so a box can't show anywhere it shouldn't."""
+    ends, out = {}, []
+    for rid, r in rooms.items():
+        for d in r['doors']: ends.setdefault(d['link'], []).append((rid, door_rect(r, d)))
+    for link, pair in sorted(ends.items()):
+        x0 = min(e[1][0] for e in pair) - margin; y0 = min(e[1][1] for e in pair) - margin
+        x1 = max(e[1][0] + e[1][2] for e in pair) + margin; y1 = max(e[1][1] + e[1][3] for e in pair) + margin
+        out.append(dict(room=pair[0][0], rect=[round(x0, 3), round(y0, 3), round(x1 - x0, 3), round(y1 - y0, 3)]))
+    return out
+
 def write(rooms_path, out_path):
     rooms = json.load(open(rooms_path))['rooms']
     out = dict(schema='qolossal.underground.platforming/1', rooms={})
@@ -639,6 +656,7 @@ def write(rooms_path, out_path):
             shapes.append(s)
         out['rooms'][rid] = dict(replace=spec['replace'], note=spec['note'], origin=[ox, oy], shapes=shapes, skills=spec['skills'])
     out['roomList'] = [dict(id=k, **v) for k, v in out['rooms'].items()]   # for Unity's JsonUtility
+    out['passages'] = passages(rooms)
     json.dump(out, open(out_path, 'w'), indent=1)
     print(len(out['rooms']), 'rooms,', sum(len(v['shapes']) for v in out['rooms'].values()), 'shapes')
 

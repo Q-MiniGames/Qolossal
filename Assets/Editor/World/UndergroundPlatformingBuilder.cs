@@ -27,7 +27,8 @@ public static class UndergroundPlatformingBuilder
         public string[] requires;
     }
     [Serializable] public sealed class RoomSpec { public string id, note; public bool replace; public Shape[] shapes; }
-    [Serializable] sealed class Layout { public RoomSpec[] roomList; }
+    [Serializable] sealed class PassageSpec { public string room; public float[] rect; }
+    [Serializable] sealed class Layout { public RoomSpec[] roomList; public PassageSpec[] passages; }
 
     static readonly Dictionary<string, Color> Colors = new Dictionary<string, Color>
     {
@@ -236,6 +237,19 @@ public static class UndergroundPlatformingBuilder
             foreach (var keeper in group.GetComponentsInChildren<MraArenaGuardian>(true))
                 if (keeper.flag.StartsWith("ug:MINI:")) keeper.rewards = room.GetComponentsInChildren<MraReward>(true);
             built++;
+        }
+        // Each passage's backdrop lives with one of its rooms, so a rebuild replaces it.
+        foreach (var passage in layout.passages ?? new PassageSpec[0])
+            if (rooms.TryGetValue(passage.room, out var owner) && owner.GetComponentInChildren<UndergroundPlatformingGroup>(true) is { } ownerGroup)
+                UndergroundArtKit.DressPassage(owner.roomId, new Rect(passage.rect[0], passage.rect[1], passage.rect[2], passage.rect[3]), ownerGroup.transform);
+        // Behind all of that, one sheet per set around its rooms, for the openings no door link describes: the cave approaches and returns.
+        foreach (var set in rooms.Values.GroupBy(r => UndergroundArtKit.SetOf(r.roomId)))
+        {
+            var bounds = set.First().WorldBounds;
+            foreach (var r in set) bounds.Encapsulate(r.WorldBounds);
+            var first = set.First();
+            if (first.GetComponentInChildren<UndergroundPlatformingGroup>(true) is { } setGroup)
+                UndergroundArtKit.DressPassage(first.roomId, Rect.MinMaxRect(bounds.min.x - 40f, bounds.min.y - 40f, bounds.max.x + 40f, bounds.max.y + 40f), setGroup.transform, set.Key.StartsWith("MR") || set.Key == "P" ? -108 : -110);
         }
         Mark();
         if (save) EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());

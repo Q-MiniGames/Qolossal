@@ -1,3 +1,35 @@
+## Latest update - 3 November 2026: underground passages have backdrops
+
+`platforming_v1.json` now has `passages`: one box per door link, from `passages()` in `layouts.py`. The builder gives each a far backdrop (order -105), and one sheet per set (order -110, caves -108) fills the cave approaches and returns that no door link describes. Terrain and room backdrops draw over them. Scene rebuilt: `CheckBatch` 89 rooms, 0 problems; 881 colliders unchanged; `UndergroundFightAreaCheck` 36 creatures, 0 fail. Committed.
+
+**The user's test list (nothing below has been played):**
+- Scene Finder: press Play on a room during Play and in Edit mode; check where Qori lands.
+- A08, D08: the fights with the new open floor under the 27 converted platforms. D03: thorns under the right platform.
+- Routes C, D, E, then caves and pockets: verdict per set. D: can you tell which walls Qori clings to?
+- A08, E05, PC12, the Heart: gusts moving, shelters, the heart asleep and waking.
+- Walk some passages: black stretches, colour changes at far doors.
+- Later: outer terrain repaint (MR02's flat walls first), and memory on Series S and Switch 2 builds (art batch 82 MiB compressed, more with the big backing sheets' draw cost unmeasured).
+
+---
+
+## Latest update - 3 November 2026: ability access map and checker (WS3, desk stage)
+
+`Tools/Design/AbilityAccess/`: `build_access.py` writes `ABILITY_ACCESS.json` (relics, 37 doors, 89 rooms, surface edges) from the scenes, route, atlas and layouts; `check_access.py` writes `ACCESS_REPORT.md` and exits 1 on errors. No Unity, nothing in the game changed, `layouts.py` untouched. Now 2 errors (PC04 has no way in; atlas and `mra_world` put the Heights glide gate on MR06_E06, the route and scene on E10) and 65 warnings. Corrects the plan: Waymark travel already exists (`MraChart.TryTravel`). New: a sprinting double jump should clear the 18 u glide gorge without the Glidecap (carries 20.6 u); not yet tried in the engine. Room results ignore interior walls and enemies, so the grey and "key, not a skill test" lists need a Unity pass. Not committed.
+
+---
+
+## Latest update - 3 November 2026: polish plan approved; weapon menu removed
+
+The user approved `Tools/Design/QOLOSSAL_MASTER_POLISH_PLAN.md` with all its recommendations (sound comes later, as a new set). WS1 code is done: `QoriArmory` has no menu, hint box or keys 1-4, and Qori stays on the Leaf Staff. `Select` and the dormant weapons remain for tests until 90%. Hold-to-aim is kept. Sentinel guards now break to heavy hits (the charged sweep) instead of the spear. `ControlsGuide`, `QoriArmoryValidation` and `MraProductionProbe` updated. Compiled outside Unity with the project's own compile list, 0 errors; not yet run in the editor (Unity was open). Nothing on screen teaches the staff shot now that the hint is gone, until WS9. Not committed.
+
+---
+
+## Latest update - 3 November 2026: master polish plan written, awaiting approval
+
+The user started the polish phase in gates 70, 80, 90, 100. Plan: `Tools/Design/QOLOSSAL_MASTER_POLISH_PLAN.md` (workstreams, exit checks, thread order, ability access map, density and parallax tables, decisions D1-D8). Read-only audit; no scene or code changed, Unity not opened. Main findings: Qori's hits sample the hidden rig's staff; Qori and enemy frames may reach 3.7 GiB (estimate); hurt flash doesn't reach the frames; feet skate (run 49%, walk 16%); MR01-MR03 lesson caves need the Glidecap; MR05-MR07 lack the 4K background stack in the scene. Nothing starts until the user approves. Not committed.
+
+---
+
 ## Latest update - 2 November 2026: everything committed
 
 The user asked to commit all. Commit `db673e96` on local branch `claude/project-thread-6y7wyg` holds the whole folder (14,408 files), so "not committed" in the sections below no longer applies. Not pushed. The two 184 MB `Cut_*.asset` meshes are in Git LFS. Still open: the user's verdict in play on the underground art, then the outer terrain repaint and a memory measurement on console builds.

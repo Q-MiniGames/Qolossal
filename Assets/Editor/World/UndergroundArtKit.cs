@@ -99,6 +99,21 @@ public static class UndergroundArtKit
         return null;
     }
 
+    // The far backdrop behind a passage between rooms. It sits below every room's backdrop, so where the box overlaps a
+    // room only the room's own shows; the terrain hides the rest. Far only: one opaque layer is all a narrow passage needs.
+    public static void DressPassage(string roomId, Rect rect, Transform parent, int order = -105)
+    {
+        var piece = Find(roomId, "backdrop_far", 0, out var sprite);
+        if (piece == null) return;
+        var go = new GameObject("UGP passage backdrop");
+        go.transform.SetParent(parent, false);
+        go.transform.position = new Vector3(rect.center.x, rect.center.y, 0f);
+        var art = go.AddComponent<SpriteRenderer>();
+        art.sprite = sprite; art.sortingOrder = order;
+        art.drawMode = SpriteDrawMode.Tiled; art.tileMode = SpriteTileMode.Continuous;
+        art.size = rect.size;
+    }
+
     // Backdrop layers and the room's own props, all without colliders, under `parent` so a rebuild replaces them.
     public static void DressRoom(UndergroundRoom room, Transform parent)
     {
