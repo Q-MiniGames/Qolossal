@@ -1,3 +1,9 @@
+## Latest update - 2 November 2026: everything committed
+
+The user asked to commit all. Commit `db673e96` on local branch `claude/project-thread-6y7wyg` holds the whole folder (14,408 files), so "not committed" in the sections below no longer applies. Not pushed. The two 184 MB `Cut_*.asset` meshes are in Git LFS. Still open: the user's verdict in play on the underground art, then the outer terrain repaint and a memory measurement on console builds.
+
+---
+
 ## Latest update - 2 November 2026: remaining underground art, revision 01 checked
 
 Codex's five fixes are in (`Tools/IncomingArt/Codex_v2/UG_Art_03/revision_01/`): gust, shelter, backdrops for A, E, MR02 and MR03, attached props, the big heart. Its toning left those backdrops nearly black, so I lifted their brightness with `revision_01/tone_fix/tone_up.py` (originals in `tone_fix/before/`). `CheckBatch` 89 rooms, 0 problems; 881 colliders match the pre-revision scene. Awaiting the user's verdict in play. Texture payload 82.4 MiB, 178 MiB Editor allocation. Not committed.
