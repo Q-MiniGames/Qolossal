@@ -1,0 +1,74 @@
+{
+  "sameReferenceCompositionMaxDifference": 0,
+  "rows": [
+    {
+      "mode": "A",
+      "cameraDelta": [
+        2,
+        0
+      ],
+      "expected": [
+        -216,
+        0
+      ],
+      "measured": [
+        -215.99321987960707,
+        0.0033522236180942855
+      ],
+      "correlation": 0.7372581821017795,
+      "passed": true
+    },
+    {
+      "mode": "A",
+      "cameraDelta": [
+        0,
+        2
+      ],
+      "expected": [
+        0,
+        216
+      ],
+      "measured": [
+        0.006676627397041557,
+        215.9753682775003
+      ],
+      "correlation": 0.6704614111817914,
+      "passed": true
+    },
+    {
+      "mode": "B",
+      "cameraDelta": [
+        2,
+        0
+      ],
+      "expected": [
+        -151.2,
+        0
+      ],
+      "measured": [
+        -151.1619026128194,
+        0.0035149137054304447
+      ],
+      "correlation": 0.8044799687538617,
+      "passed": true
+    },
+    {
+      "mode": "B",
+      "cameraDelta": [
+        0,
+        2
+      ],
+      "expected": [
+        0.0,
+        216
+      ],
+      "measured": [
+        0.006676627397041557,
+        215.9753682775003
+      ],
+      "correlation": 0.6704614111817914,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

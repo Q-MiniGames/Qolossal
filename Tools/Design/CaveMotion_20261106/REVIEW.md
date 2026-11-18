@@ -1,0 +1,15 @@
+# Cave edge framing and airborne motion — 6 November 2026
+
+User request: disable automatic camera look-down near cave edges; fix the new background feeling screen-fixed during a glide.
+
+`CameraFollow.GroundPreview` now clears automatic landing anticipation in the canonical underground scene. Deliberate S/Down/D-pad/right-stick look-down remains available. Actual falling follow, ordinary jump framing, Qvale zoom behavior and surface anticipation are retained. No scene/collision/map changes.
+
+The continuous painting shader no longer moves its center to keep the camera inside the canvas. That viewport clamp canceled background movement near painting edges. Default mode A is now world-anchored throughout travel, including vertical gliding; B retains only the existing optional30% horizontal comparison. The shared painting remains registered identically across both rooms and passage ends.
+
+The finite draft is displayed across a larger, fixed rectangle `(1605,100,108,36)` to cover the existing walking ledge and tested glide below/left of it. This changes its displayed scale, not its source pixels, and does not introduce repeated paintings or a new dark-wall blend. It does not supply complete artwork for the entire tall A05 shaft. There is no camera-follow fallback outside this rectangle. This is a motion/composition prototype; native4K remains unaccepted. Source2172×724 at this placement provides20.11px/world-unit, versus216 required. Production at this exact placement would require23328×7776 native detail or independently painted, registered panels; the draft is not resized to manufacture detail. See `resolution.json`. Future production work should author coverage at the intended final detail scale.
+
+Verification: `playtest.cs` uses an isolated save and synthetic controller to test cave-edge idle, manual look-down and release, five seconds of actual Glidecap movement, and the existing Ribwood surface edge. Render-end measurements verify visible Qori and zero automatic cave preview. `verify_render.cs` samples252 room/passage endpoints; `measure.py` measures actual image translation below the old lower canvas boundary. ModeA shifts216px for a2-unit camera pan at1080p on each axis; B shifts151.2px horizontally and216 vertically. No scenery pinning. `QA.json` records measured results, painting coverage over the glide, preserved save hashes and unchanged13scene files.
+
+The persistent Editor preview stays enabled across Play/Stop. The isolated launcher remains `Tools/Design/CisternContinuous_20261106/start_persistent_trial.cs`; it uses the shared rectangle through the Editor controller. The cave camera fix is runtime code; the new painting itself remains an Editor-only draft.
+
+Windows Unity Editor testing at1080p and3840×2160 output; source-art native4K gate remains failed. Physical-controller, standalone, CPU/GPU timing and peak-memory, PS5, Xbox Series X/S and Switch2 handheld/docked qualification are not tested. Target60FPS is not certified. Original Switch excluded.

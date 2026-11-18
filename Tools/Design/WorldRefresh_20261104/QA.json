@@ -1,0 +1,95 @@
+{
+  "complete": true,
+  "passed": true,
+  "date": "2026-11-04",
+  "scope": "Environment refresh across seven surface regions/84 zones and 89 underground rooms; five Qvale service interiors preserved.",
+  "surface": {
+    "regions": 7,
+    "zones": 84,
+    "smoothedConnectors": 38,
+    "changedConnectorZones": 41,
+    "checks": {
+      "endpoints": 48,
+      "protectedSamples": 3991,
+      "floorSamples": 782,
+      "gradeChecks": 851
+    },
+    "liveWalkingCases": 38,
+    "liveErrors": 0,
+    "playModeCaptures": 7,
+    "editorCaptures": 21
+  },
+  "underground": {
+    "rooms": 89,
+    "pairedCaves": 37,
+    "passages": 63,
+    "liveLandingCases": 126,
+    "liveErrors": 0,
+    "editorCaptures": 15,
+    "testScope": "Placement and settling; does not exercise cave transitions or puzzle traversal"
+  },
+  "resolution": {
+    "display": [
+      3840,
+      2160
+    ],
+    "closestCameraSize": 5,
+    "pixelsPerWorldUnit": 216,
+    "assets": 224,
+    "placements": 1526,
+    "newNativePaintings": 38,
+    "nativeFailures": 0,
+    "importFailures": 0,
+    "skippedMeshes": 0,
+    "excluded": "Characters, UI, cinematics, disabled alternatives and legacy props outside the environment audit."
+  },
+  "map": {
+    "nodes": 173,
+    "caveMouths": 74,
+    "pairedCaves": 37,
+    "uiSteps": 36,
+    "assertions": 506,
+    "markerProjectionSamples": 267,
+    "sceneCount": 13,
+    "sceneHashes": {
+      "MRAtlas_MR01_Cradle": "dbe0121fc5ad4588b217c7ffc84e03d555f7cacac389bbeb49273dc90912537a",
+      "MRAtlas_MR02_Causeway": "f40f39155d1b5b24b522191f4a3c5255886df0be64cc942a39875a965001f03b",
+      "MRAtlas_MR03_Terraces": "98a849faf4b0d0d93cdcf056896614ccef166e9b1a1d11109b85bf3b89ff6caf",
+      "MRAtlas_MR04_C02": "f96e7297452fb39086bfdb2010ae7b833f82bb467fe5f407073f3f6d6aa76784",
+      "MRAtlas_MR04_C03": "7428c3a5b4c0b326ef050a9f57e91face8fcf37a0d9ff08dd51951e626750f34",
+      "MRAtlas_MR04_C04": "ef8449c75eddfc64edec21b0b1301721534d5ac78536720050ee19815dc8e39c",
+      "MRAtlas_MR04_C05": "5797d12755dedcd213c80eb8926e9bb9ea8fd6972f66a64da541018cefd5219f",
+      "MRAtlas_MR04_C06": "6e0760cb2baa06a9ff5350499d63d197aaa0383feeff9d2984489e6ee047dcd3",
+      "MRAtlas_MR04_Qvale": "544a8ed2cb5ac07a73130f1df00c437597e41a15dc22cb49791df826ef1575c2",
+      "MRAtlas_MR05_Ribwood": "06783bdd48fe143aa7386e1bc67596a84f539d9db9483fc4f94b15f891f61083",
+      "MRAtlas_MR06_Heights": "f1071882d64515607e8393e73702df97258250086f6046c9df87337f18ab36da",
+      "MRAtlas_MR07_Summit": "e4d78ee8c31ccc988c868825bf8665696f78e9f5e255d60cf202b3a95953c934",
+      "Qolossal_Underground": "a629f454c6f024098eac803d08b23ed80ec57261469d6c592a0d32b8f48c3896"
+    },
+    "runtimeMatchesCanonical": true
+  },
+  "acceptedSources": {
+    "manifest": "Tools/ArtImport/codex_v2_accepted.json",
+    "count": 1351,
+    "mismatches": []
+  },
+  "normalSavesPreserved": true,
+  "editorSettingsRestored": true,
+  "limitations": [
+    "The existing macro Titan silhouette is retained; 38 ordinary stair sections are eased into slopes.",
+    "Scenery uses modular repeating paintings, not 89 unique panoramas.",
+    "Local rightward connector smoke only. Not full traversal, cave transitions, controller hardware, performance or console certification.",
+    "Placement and settling; does not exercise cave transitions or puzzle traversal",
+    "Windows Unity Editor verification only; no standalone build, physical controller, console hardware or frame-time certification.",
+    "PS5, Xbox Series X, Xbox Series S, Switch 2 handheld and Switch 2 docked require measured platform builds. 60 FPS remains a target."
+  ],
+  "evidence": [
+    "Playtest/surface_playtest_result.json",
+    "Underground/settle_result.json",
+    "Map/ui_tests.json",
+    "RESOLUTION_4K.md",
+    "asset_resolution_requirements.csv",
+    "VISUAL_QA.md",
+    "Underground/visual_qa.json"
+  ]
+}

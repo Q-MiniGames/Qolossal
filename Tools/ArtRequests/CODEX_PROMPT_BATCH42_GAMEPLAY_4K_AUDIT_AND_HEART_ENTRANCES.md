@@ -104,7 +104,6 @@ Order, and each region's style reference:
 | 5 | MR05 Ribwood | Batch 37c, once accepted | ENT_C |
 | 6 | MR06 Heights | Batch 38, once accepted | ENT_D |
 | 7 | MR07 Summit | Batch 39, once accepted | ENT_E |
-| 8 | MR08 Descent | Batch 40, once accepted | none |
 
 - Each region batch takes the next free batch number at the time it starts. Check `Codex_v2_full\` and `Tools\ArtRequests\` on disk first. A split region uses `b` for its second part.
 - **Don't start a region whose 4K backgrounds aren't accepted yet.** Stop and say so.

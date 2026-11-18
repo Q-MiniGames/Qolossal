@@ -1,0 +1,303 @@
+{
+  "passed": true,
+  "readyForPdf": true,
+  "summary": "Terrain correction review, with retained resolution exceptions explicitly disclosed.",
+  "checks": [
+    {
+      "name": "Camera and jumps",
+      "passed": true,
+      "summary": "110 framing cases plus final captures of all 89 caves; grounded feet at 15% screen height."
+    },
+    {
+      "name": "Terrain connections",
+      "passed": true,
+      "summary": "130 changed corners traversed without snagging or respawning; all 37 entrances visually reviewed."
+    },
+    {
+      "name": "Relocated entrances",
+      "passed": true,
+      "summary": "28 travel/reload steps passed for Causeway PC04 and Qvale A01; no arrival fallbacks."
+    },
+    {
+      "name": "Cave scenery",
+      "passed": true,
+      "summary": "12 themed compositions and all 89 room views reviewed; repeated scenic panels removed."
+    },
+    {
+      "name": "Player map",
+      "passed": true,
+      "summary": "37 steps and 527 assertions passed at 1080p/4K; underground positions and all 267 marker samples preserved."
+    },
+    {
+      "name": "Sources and resolution",
+      "passed": true,
+      "summary": "1,351 accepted source hashes preserved. New art meets 4K density; three retained-source exceptions."
+    }
+  ],
+  "environmentResolutionUniversalPass": false,
+  "densityExceptions": [
+    {
+      "asset": "Assets/Art/Prototypes/CaveRollout_20261027/Causeway_Masonry.png",
+      "sha256": "9ebfe2f7fd279e2cd881fc20400ff9e5adab02682b6dbaad1723630ce86c8c1c",
+      "nativeWidth": 2172,
+      "nativeHeight": 724,
+      "importedWidth": 2172,
+      "importedHeight": 724,
+      "requiredWidth": 3022,
+      "requiredHeight": 1008,
+      "minimumPixelsPerUnit": 155.27598,
+      "placements": 5,
+      "scenes": "MRAtlas_MR01_Cradle; MRAtlas_MR02_Causeway",
+      "nativePass": false,
+      "importPass": false
+    },
+    {
+      "asset": "Assets/Art/Prototypes/CradleRockwork_20261027/MR01_C01_Rockwork.png",
+      "sha256": "07840acd4daabf5ba62290c620c4ca96049388110d069ff47221d51cdbd2cb31",
+      "nativeWidth": 1605,
+      "nativeHeight": 980,
+      "importedWidth": 1605,
+      "importedHeight": 980,
+      "requiredWidth": 2944,
+      "requiredHeight": 1798,
+      "minimumPixelsPerUnit": 117.76619,
+      "placements": 13,
+      "scenes": "MRAtlas_MR01_Cradle; MRAtlas_MR02_Causeway; MRAtlas_MR03_Terraces; MRAtlas_MR04_Qvale",
+      "nativePass": false,
+      "importPass": false
+    },
+    {
+      "asset": "Assets/Art/Prototypes/CradleUndergroundExit_20261027/MR01_C01_ReturnRim.png",
+      "sha256": "1430cdc13d6fdcaf144b04273a82ac5cd053397150e5a56bb71afe75b1c4fb64",
+      "nativeWidth": 1448,
+      "nativeHeight": 1086,
+      "importedWidth": 1448,
+      "importedHeight": 1086,
+      "requiredWidth": 1660,
+      "requiredHeight": 1245,
+      "minimumPixelsPerUnit": 188.46623,
+      "placements": 45,
+      "scenes": "MRAtlas_MR07_Summit; Qolossal_Underground",
+      "nativePass": false,
+      "importPass": false
+    }
+  ],
+  "scope": "Windows Unity Editor; focused traversal, camera, visual and map checks. No console, standalone performance or complete game traversal certification.",
+  "sceneHashes": {
+    "MRAtlas_MR01_Cradle": "0a6a058f3889935dd1961e9e008c66b4c29d9c95356270a9a4489ba1f2edfd14",
+    "MRAtlas_MR02_Causeway": "53c7a6fcd9cd1851ba0a1b7c87f79502a03da6dab00ed15393f1504f9ea5b9f7",
+    "MRAtlas_MR03_Terraces": "0189b30fc885d2df55d5fadfdb4a82ebb3ee25fd031ed2b6ea8a6a3cf99ec531",
+    "MRAtlas_MR04_Qvale": "8372478b07549140885cedacc1ddea3cd1ac0a0dff1b9e763df328dc5f03303e",
+    "MRAtlas_MR05_Ribwood": "910888a644ec39a356af22aad2df0ac28f4c477dc54f02a06bfc70ea7390e5f6",
+    "MRAtlas_MR06_Heights": "d1a5d3cc1f72389a093f5535dff038044d117586920344fa43082ee30c6092c8",
+    "MRAtlas_MR07_Summit": "c96d33379cb13822b73d1980a5c59996e64d577276090762c0f6f61f1fe3c2bf",
+    "Qolossal_Underground": "29110ef4db7804f27b8d989b7b3f6c0fb438301fc3085a28e9513111bab8d53d",
+    "MRAtlas_MR04_C02": "f96e7297452fb39086bfdb2010ae7b833f82bb467fe5f407073f3f6d6aa76784",
+    "MRAtlas_MR04_C03": "7428c3a5b4c0b326ef050a9f57e91face8fcf37a0d9ff08dd51951e626750f34",
+    "MRAtlas_MR04_C04": "ef8449c75eddfc64edec21b0b1301721534d5ac78536720050ee19815dc8e39c",
+    "MRAtlas_MR04_C05": "5797d12755dedcd213c80eb8926e9bb9ea8fd6972f66a64da541018cefd5219f",
+    "MRAtlas_MR04_C06": "6e0760cb2baa06a9ff5350499d63d197aaa0383feeff9d2984489e6ee047dcd3"
+  },
+  "visualReview": {
+    "passed": true,
+    "surfaceEntrances": 37,
+    "caveRooms": 89,
+    "caveThemes": 12,
+    "method": "Root composition review and native spot checks, plus independent hash-linked agent reviews. All cave room overviews reviewed; selected detailed native views, not complete traversal at every camera position.",
+    "surfaceReview": "VisualQA/surface_entrance_final_review.json",
+    "undergroundJoinReview": "VisualQA/underground_final_review.json",
+    "runtimeCaveReview": "CaveVista/runtime89_visual_qa.json",
+    "ceilingFlagsReviewed": 25,
+    "mapReview": "Root inspected canonical overview and live relocated Qvale connection; 37-step live UI fixture passed.",
+    "limits": "No claim of flawless visuals at every gameplay position. Retained native-source density exceptions are separate from visual attachment checks."
+  },
+  "normalSavesPreserved": true,
+  "acceptedSourceCount": 1351,
+  "evidence": {
+    "camera": {
+      "complete": true,
+      "passed": true,
+      "caseCount": 110,
+      "ceilingRiskCount": 25
+    },
+    "corners": {
+      "complete": true,
+      "passed": true,
+      "caseCount": 130
+    },
+    "portals": {
+      "complete": true,
+      "passed": true,
+      "step": 28,
+      "steps": [
+        {
+          "label": "PC04 load surface",
+          "frame": 398,
+          "passed": true
+        },
+        {
+          "label": "PC04 place on approach",
+          "frame": 759,
+          "passed": true
+        },
+        {
+          "label": "PC04 walk to upper mouth",
+          "frame": 985,
+          "passed": true
+        },
+        {
+          "label": "PC04 settle upper mouth",
+          "frame": 1866,
+          "passed": true
+        },
+        {
+          "label": "PC04 capture upper and enter",
+          "frame": 1969,
+          "passed": true
+        },
+        {
+          "label": "PC04 underground arrival",
+          "frame": 2695,
+          "passed": true
+        },
+        {
+          "label": "PC04 walk to lower mouth",
+          "frame": 2802,
+          "passed": true
+        },
+        {
+          "label": "PC04 settle lower mouth",
+          "frame": 3154,
+          "passed": true
+        },
+        {
+          "label": "PC04 capture lower and return",
+          "frame": 3205,
+          "passed": true
+        },
+        {
+          "label": "PC04 surface arrival",
+          "frame": 3616,
+          "passed": true
+        },
+        {
+          "label": "PC04 stable control restored",
+          "frame": 3854,
+          "passed": true
+        },
+        {
+          "label": "A01 load surface",
+          "frame": 3874,
+          "passed": true
+        },
+        {
+          "label": "A01 place on approach",
+          "frame": 4122,
+          "passed": true
+        },
+        {
+          "label": "A01 walk to upper mouth",
+          "frame": 4348,
+          "passed": true
+        },
+        {
+          "label": "A01 settle upper mouth",
+          "frame": 5250,
+          "passed": true
+        },
+        {
+          "label": "A01 capture upper and enter",
+          "frame": 5365,
+          "passed": true
+        },
+        {
+          "label": "A01 underground arrival",
+          "frame": 6143,
+          "passed": true
+        },
+        {
+          "label": "A01 walk to lower mouth",
+          "frame": 6259,
+          "passed": true
+        },
+        {
+          "label": "A01 settle lower mouth",
+          "frame": 6648,
+          "passed": true
+        },
+        {
+          "label": "A01 capture lower and return",
+          "frame": 6688,
+          "passed": true
+        },
+        {
+          "label": "A01 surface arrival",
+          "frame": 7286,
+          "passed": true
+        },
+        {
+          "label": "A01 stable control restored",
+          "frame": 7570,
+          "passed": true
+        },
+        {
+          "label": "PC04 load checkpoint room",
+          "frame": 7594,
+          "passed": true
+        },
+        {
+          "label": "PC04 save checkpoint ID",
+          "frame": 7680,
+          "passed": true
+        },
+        {
+          "label": "PC04 restored checkpoint",
+          "frame": 7714,
+          "passed": true
+        },
+        {
+          "label": "A01 load checkpoint room",
+          "frame": 7869,
+          "passed": true
+        },
+        {
+          "label": "A01 save checkpoint ID",
+          "frame": 7973,
+          "passed": true
+        },
+        {
+          "label": "A01 restored checkpoint",
+          "frame": 8006,
+          "passed": true
+        }
+      ]
+    },
+    "caveRuntime": {
+      "complete": true,
+      "passed": true,
+      "caseCount": 90,
+      "ceilingRiskCount": 25
+    },
+    "map": {
+      "complete": true,
+      "passed": true,
+      "step": 37,
+      "steps": 37
+    },
+    "mapStatic": {
+      "passed": true
+    },
+    "sourceIntegrity": {
+      "count": 1351,
+      "passed": true
+    },
+    "density": {
+      "placements": 2264,
+      "assetCount": 297,
+      "passed": false
+    },
+    "caveThemes": {
+      "count": 12
+    }
+  }
+}

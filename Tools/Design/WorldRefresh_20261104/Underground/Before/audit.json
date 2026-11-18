@@ -1,0 +1,5895 @@
+{
+  "rooms": 89,
+  "returnCount": 0,
+  "failures": [
+    "A01: missing native vista",
+    "A02: missing native vista",
+    "A03: missing native vista",
+    "A04: missing native vista",
+    "A05: missing native vista",
+    "A06: missing native vista",
+    "A07: missing native vista",
+    "A08: missing native vista",
+    "A09: missing native vista",
+    "A10: missing native vista",
+    "C01: missing native vista",
+    "C02: missing native vista",
+    "C03: missing native vista",
+    "C04: missing native vista",
+    "C05: missing native vista",
+    "C06: missing native vista",
+    "C07: missing native vista",
+    "C08: missing native vista",
+    "C09: missing native vista",
+    "C10: missing native vista",
+    "D01: missing native vista",
+    "D02: missing native vista",
+    "D03: missing native vista",
+    "room:D04: floor support missing",
+    "regional:D04: floor support missing",
+    "D04: missing native vista",
+    "D05: missing native vista",
+    "D06: missing native vista",
+    "D07: missing native vista",
+    "D08: missing native vista",
+    "D09: missing native vista",
+    "D10: missing native vista",
+    "E01: missing native vista",
+    "E02: missing native vista",
+    "E03: missing native vista",
+    "E04: missing native vista",
+    "room:E05: floor support missing",
+    "regional:E05: floor support missing",
+    "E05: missing native vista",
+    "E06: missing native vista",
+    "E07: missing native vista",
+    "E08: missing native vista",
+    "E09: missing native vista",
+    "E10: missing native vista",
+    "room:HEART: floor support missing",
+    "regional:HEART: floor support missing",
+    "HEART: missing native vista",
+    "MR01_C01: missing native vista",
+    "MR01_C02: missing native vista",
+    "MR01_C03: missing native vista",
+    "MR01_C04: missing native vista",
+    "regional:MR01_C05: floor support missing",
+    "MR01_C05: missing native vista",
+    "MR01_C06: missing native vista",
+    "MR02_C01: missing native vista",
+    "MR02_C02: missing native vista",
+    "MR02_C03: missing native vista",
+    "MR02_C04: missing native vista",
+    "regional:MR02_C05: floor support missing",
+    "MR02_C05: missing native vista",
+    "MR02_C06: missing native vista",
+    "MR03_C01: missing native vista",
+    "MR03_C02: missing native vista",
+    "MR03_C03: missing native vista",
+    "MR03_C04: missing native vista",
+    "MR03_C05: missing native vista",
+    "MR03_C06: missing native vista",
+    "MR05_C01: missing native vista",
+    "room:MR05_C02: body blocked ",
+    "MR05_C02: missing native vista",
+    "MR05_C03: missing native vista",
+    "MR05_C04: missing native vista",
+    "MR05_C05: missing native vista",
+    "MR05_C06: missing native vista",
+    "MR06_C01: missing native vista",
+    "room:MR06_C02: body blocked ",
+    "MR06_C02: missing native vista",
+    "MR06_C03: missing native vista",
+    "MR06_C04: missing native vista",
+    "MR06_C05: missing native vista",
+    "MR06_C06: missing native vista",
+    "MR07_C01: missing native vista",
+    "room:MR07_C02: body blocked ",
+    "MR07_C02: missing native vista",
+    "MR07_C03: missing native vista",
+    "MR07_C04: missing native vista",
+    "MR07_C05: missing native vista",
+    "MR07_C06: missing native vista",
+    "PC01: missing native vista",
+    "PC02: missing native vista",
+    "PC03: missing native vista",
+    "PC04: missing native vista",
+    "PC05: missing native vista",
+    "PC06: missing native vista",
+    "PC07: missing native vista",
+    "PC08: missing native vista",
+    "PC09: missing native vista",
+    "PC10: missing native vista",
+    "PC11: missing native vista",
+    "PC12: missing native vista"
+  ],
+  "warnings": [],
+  "report": [
+    {
+      "room": "A01",
+      "roomName": "Sluice Arrival",
+      "theme": "A",
+      "arrivals": [
+        {
+          "id": "room:A01",
+          "x": 1481.8,
+          "y": 170.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Embedded return | A01 | LEFT"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Embedded return | A01 | LEFT"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Embedded return | A01 | LEFT"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:A01",
+          "x": 1493.68,
+          "y": 170.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 0 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 0 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 0 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "A02",
+      "roomName": "Drain Well",
+      "theme": "A",
+      "arrivals": [
+        {
+          "id": "room:A02",
+          "x": 1534.08,
+          "y": 163.06,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1531,162.1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1531,162.1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1531,162.1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:A02",
+          "x": 1534.08,
+          "y": 163.06,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1531,162.1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1531,162.1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1531,162.1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "A03",
+      "roomName": "Silt Walk",
+      "theme": "A",
+      "arrivals": [
+        {
+          "id": "room:A03",
+          "x": 1512.08,
+          "y": 102.660011,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:A03",
+          "x": 1512.08,
+          "y": 102.660011,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "A04",
+      "roomName": "Cistern Court",
+      "theme": "A",
+      "arrivals": [
+        {
+          "id": "room:A04",
+          "x": 1576.32,
+          "y": 84.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:A04",
+          "x": 1576.32,
+          "y": 84.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "A05",
+      "roomName": "Spillway Rise",
+      "theme": "A",
+      "arrivals": [
+        {
+          "id": "room:A05",
+          "x": 1634.08,
+          "y": 95.46001,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "UGP solid 1631,92"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "UGP solid 1631,92"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "UGP solid 1631,92"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:A05",
+          "x": 1634.08,
+          "y": 95.46001,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "UGP solid 1631,92"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "UGP solid 1631,92"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "UGP solid 1631,92"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "A06",
+      "roomName": "Pump Gallery",
+      "theme": "A",
+      "arrivals": [
+        {
+          "id": "room:A06",
+          "x": 1576.8,
+          "y": 154.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_12"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_12"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_12"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:A06",
+          "x": 1576.8,
+          "y": 154.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_12"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_12"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_12"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "A07",
+      "roomName": "Keeper Refuge",
+      "theme": "A",
+      "arrivals": [
+        {
+          "id": "room:A07",
+          "x": 1643.96,
+          "y": 170.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:A07",
+          "x": 1643.96,
+          "y": 170.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "A08",
+      "roomName": "Sluice Guardian Arena",
+      "theme": "A",
+      "arrivals": [
+        {
+          "id": "room:A08",
+          "x": 1707.91992,
+          "y": 168.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:A08",
+          "x": 1707.91992,
+          "y": 168.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "A09",
+      "roomName": "Settling Cache",
+      "theme": "A",
+      "arrivals": [
+        {
+          "id": "room:A09",
+          "x": 1564.64,
+          "y": 48.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:A09",
+          "x": 1564.64,
+          "y": 48.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "A10",
+      "roomName": "Keeper Archive",
+      "theme": "A",
+      "arrivals": [
+        {
+          "id": "room:A10",
+          "x": 1699.4,
+          "y": 118.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:A10",
+          "x": 1699.4,
+          "y": 118.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "C01",
+      "roomName": "Garden Arrival",
+      "theme": "C",
+      "arrivals": [
+        {
+          "id": "room:C01",
+          "x": 1547.8,
+          "y": 330.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Embedded return | C01 | LEFT"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Embedded return | C01 | LEFT"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Embedded return | C01 | LEFT"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:C01",
+          "x": 1559.68,
+          "y": 330.659973,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "C02",
+      "roomName": "Canopy Walk",
+      "theme": "C",
+      "arrivals": [
+        {
+          "id": "room:C02",
+          "x": 1603.96,
+          "y": 367.860016,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1602,366"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1602,366"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1602,366"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:C02",
+          "x": 1603.96,
+          "y": 367.860016,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1602,366"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1602,366"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1602,366"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "C03",
+      "roomName": "Root Ladder",
+      "theme": "C",
+      "arrivals": [
+        {
+          "id": "room:C03",
+          "x": 1650.08,
+          "y": 357.06,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1647,356.1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1647,356.1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1647,356.1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:C03",
+          "x": 1650.08,
+          "y": 357.06,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1647,356.1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1647,356.1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1647,356.1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "C04",
+      "roomName": "Seed Cradle",
+      "theme": "C",
+      "arrivals": [
+        {
+          "id": "room:C04",
+          "x": 1588.32007,
+          "y": 270.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:C04",
+          "x": 1588.32007,
+          "y": 270.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "C05",
+      "roomName": "Rootfall Well",
+      "theme": "C",
+      "arrivals": [
+        {
+          "id": "room:C05",
+          "x": 1650.07983,
+          "y": 251.46,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP solid 1647,248"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP solid 1647,248"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP solid 1647,248"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:C05",
+          "x": 1650.07983,
+          "y": 251.46,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP solid 1647,248"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP solid 1647,248"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP solid 1647,248"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "C06",
+      "roomName": "Bloom Court",
+      "theme": "C",
+      "arrivals": [
+        {
+          "id": "room:C06",
+          "x": 1694.52,
+          "y": 272.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_11"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_11"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_11"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:C06",
+          "x": 1694.52,
+          "y": 272.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_11"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_11"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_11"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "C07",
+      "roomName": "Gardener Rest",
+      "theme": "C",
+      "arrivals": [
+        {
+          "id": "room:C07",
+          "x": 1752.63989,
+          "y": 278.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:C07",
+          "x": 1752.63989,
+          "y": 278.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "C08",
+      "roomName": "Root Guardian Arena",
+      "theme": "C",
+      "arrivals": [
+        {
+          "id": "room:C08",
+          "x": 1757.2,
+          "y": 236.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:C08",
+          "x": 1757.2,
+          "y": 236.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "C09",
+      "roomName": "Hidden Nursery",
+      "theme": "C",
+      "arrivals": [
+        {
+          "id": "room:C09",
+          "x": 1506.72,
+          "y": 286.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:C09",
+          "x": 1506.72,
+          "y": 286.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 1 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "C10",
+      "roomName": "Hanging Garden",
+      "theme": "C",
+      "arrivals": [
+        {
+          "id": "room:C10",
+          "x": 1694.16016,
+          "y": 344.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:C10",
+          "x": 1694.16016,
+          "y": 344.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "D01",
+      "roomName": "Windward Shelter",
+      "theme": "D",
+      "arrivals": [
+        {
+          "id": "room:D01",
+          "x": 2021.8,
+          "y": 438.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Embedded return | D01 | LEFT"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Embedded return | D01 | LEFT"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Embedded return | D01 | LEFT"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:D01",
+          "x": 2035.2,
+          "y": 438.659973,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "D02",
+      "roomName": "Leeward Well",
+      "theme": "D",
+      "arrivals": [
+        {
+          "id": "room:D02",
+          "x": 1994.08008,
+          "y": 431.06,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1991,430.1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1991,430.1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1991,430.1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:D02",
+          "x": 1994.08008,
+          "y": 431.06,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1991,430.1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1991,430.1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP deck 1991,430.1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "D03",
+      "roomName": "Vane Court",
+      "theme": "D",
+      "arrivals": [
+        {
+          "id": "room:D03",
+          "x": 2041.28,
+          "y": 360.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_9"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_9"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_9"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:D03",
+          "x": 2041.28,
+          "y": 360.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_9"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_9"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_9"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "D04",
+      "roomName": "Wind Bridge",
+      "theme": "D",
+      "arrivals": [
+        {
+          "id": "room:D04",
+          "x": 1974.72,
+          "y": 341.860016,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": false,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.0,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1975,340"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:D04",
+          "x": 1974.72,
+          "y": 341.860016,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": false,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.0,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1975,340"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "D05",
+      "roomName": "Updraft Hall",
+      "theme": "D",
+      "arrivals": [
+        {
+          "id": "room:D05",
+          "x": 1899.36011,
+          "y": 330.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:D05",
+          "x": 1899.36011,
+          "y": 330.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "D06",
+      "roomName": "Baffled Drop",
+      "theme": "D",
+      "arrivals": [
+        {
+          "id": "room:D06",
+          "x": 1848.08,
+          "y": 279.46,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1845,276"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1845,276"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1845,276"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:D06",
+          "x": 1848.08,
+          "y": 279.46,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1845,276"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1845,276"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "UGP solid 1845,276"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "D07",
+      "roomName": "Still-Air Rest",
+      "theme": "D",
+      "arrivals": [
+        {
+          "id": "room:D07",
+          "x": 1884.16016,
+          "y": 270.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:D07",
+          "x": 1884.16016,
+          "y": 270.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "D08",
+      "roomName": "Wind Guardian Arena",
+      "theme": "D",
+      "arrivals": [
+        {
+          "id": "room:D08",
+          "x": 1826.4,
+          "y": 236.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.9158325,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:D08",
+          "x": 1826.4,
+          "y": 236.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.9158325,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "D09",
+      "roomName": "Glider Roost",
+      "theme": "D",
+      "arrivals": [
+        {
+          "id": "room:D09",
+          "x": 2101.68,
+          "y": 366.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:D09",
+          "x": 2101.68,
+          "y": 366.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "D10",
+      "roomName": "Cloud Archive",
+      "theme": "D",
+      "arrivals": [
+        {
+          "id": "room:D10",
+          "x": 1892.16016,
+          "y": 390.660034,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100281,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100281,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100281,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:D10",
+          "x": 1892.16016,
+          "y": 390.660034,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100281,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100281,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100281,
+              "collider": "Continuous_Collision_7 | preserved segment 2 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "E01",
+      "roomName": "Quiet Arrival",
+      "theme": "E",
+      "arrivals": [
+        {
+          "id": "room:E01",
+          "x": 2001.8,
+          "y": 192.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Embedded return | E01 | LEFT"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Embedded return | E01 | LEFT"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Embedded return | E01 | LEFT"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:E01",
+          "x": 2013.68,
+          "y": 192.659988,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8099823,
+              "collider": "Continuous_Collision_8 | preserved segment 0 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8099823,
+              "collider": "Continuous_Collision_8 | preserved segment 0 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8099823,
+              "collider": "Continuous_Collision_8 | preserved segment 0 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "E02",
+      "roomName": "Memory Well",
+      "theme": "E",
+      "arrivals": [
+        {
+          "id": "room:E02",
+          "x": 2066.08,
+          "y": 181.86,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP deck 2063,180.9"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP deck 2063,180.9"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP deck 2063,180.9"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:E02",
+          "x": 2066.08,
+          "y": 181.86,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP deck 2063,180.9"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP deck 2063,180.9"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP deck 2063,180.9"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "E03",
+      "roomName": "First Memory",
+      "theme": "E",
+      "arrivals": [
+        {
+          "id": "room:E03",
+          "x": 2069.28,
+          "y": 88.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:E03",
+          "x": 2069.28,
+          "y": 88.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "E04",
+      "roomName": "Processional Walk",
+      "theme": "E",
+      "arrivals": [
+        {
+          "id": "room:E04",
+          "x": 2004.72009,
+          "y": 99.86001,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP solid 1995,98"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP solid 1995,98"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP solid 1995,98"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:E04",
+          "x": 2004.72009,
+          "y": 99.86001,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP solid 1995,98"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP solid 1995,98"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100128,
+              "collider": "UGP solid 1995,98"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "E05",
+      "roomName": "The Wilted Sanctuary",
+      "theme": "E",
+      "arrivals": [
+        {
+          "id": "room:E05",
+          "x": 1927.36,
+          "y": 79.86,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": false,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.0,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:E05",
+          "x": 1927.36,
+          "y": 79.86,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": false,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.0,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "E06",
+      "roomName": "Return Stair",
+      "theme": "E",
+      "arrivals": [
+        {
+          "id": "room:E06",
+          "x": 1878.08,
+          "y": 97.46001,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "UGP solid 1875,94"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "UGP solid 1875,94"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "UGP solid 1875,94"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:E06",
+          "x": 1878.08,
+          "y": 97.46001,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "UGP solid 1875,94"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "UGP solid 1875,94"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "UGP solid 1875,94"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "E07",
+      "roomName": "Last Refuge",
+      "theme": "E",
+      "arrivals": [
+        {
+          "id": "room:E07",
+          "x": 1911.4,
+          "y": 170.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_8 | preserved segment 1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_8 | preserved segment 1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_8 | preserved segment 1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:E07",
+          "x": 1911.4,
+          "y": 170.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_8 | preserved segment 1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_8 | preserved segment 1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_8 | preserved segment 1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "E08",
+      "roomName": "Final Threshold",
+      "theme": "E",
+      "arrivals": [
+        {
+          "id": "room:E08",
+          "x": 1866.16,
+          "y": 174.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:E08",
+          "x": 1866.16,
+          "y": 174.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "E09",
+      "roomName": "Lost Seed Archive",
+      "theme": "E",
+      "arrivals": [
+        {
+          "id": "room:E09",
+          "x": 2062.16,
+          "y": 48.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:E09",
+          "x": 2062.16,
+          "y": 48.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_7 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "E10",
+      "roomName": "Sanctuary Alcove",
+      "theme": "E",
+      "arrivals": [
+        {
+          "id": "room:E10",
+          "x": 1972.16016,
+          "y": 140.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_8 | preserved segment 0 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_8 | preserved segment 0 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_8 | preserved segment 0 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:E10",
+          "x": 1972.16016,
+          "y": 140.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_8 | preserved segment 0 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_8 | preserved segment 0 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_8 | preserved segment 0 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "HEART",
+      "roomName": "The Great Heart Hall",
+      "theme": "H",
+      "arrivals": [
+        {
+          "id": "room:HEART",
+          "x": 1792.63989,
+          "y": 182.659988,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": false,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.0,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:HEART",
+          "x": 1792.63989,
+          "y": 182.659988,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": false,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.0,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR01_C01",
+      "roomName": "Warm Crack",
+      "theme": "MR01",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR01_C01",
+          "x": 47.16,
+          "y": -173.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_38 | preserved segment 4"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_38 | preserved segment 4"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.7943115,
+              "collider": "Continuous_Collision_38 | preserved segment 4"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR01_C02",
+      "roomName": "Moss Pocket",
+      "theme": "MR01",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR01_C02",
+          "x": 130.2,
+          "y": -185.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_38 | preserved segment 4"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_38 | preserved segment 4"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_38 | preserved segment 4"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR01_C03",
+      "roomName": "Pale Alcove",
+      "theme": "MR01",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR01_C03",
+          "x": 204.12,
+          "y": -185.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_38 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_38 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_38 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR01_C04",
+      "roomName": "Root Gallery",
+      "theme": "MR01",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR01_C04",
+          "x": 211.72,
+          "y": -119.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_39 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_39 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_39 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR01_C05",
+      "roomName": "High Crevice",
+      "theme": "MR01",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR01_C05",
+          "x": 144.32,
+          "y": -74.54,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": false,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.0,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR01_C06",
+      "roomName": "Hanging Garden",
+      "theme": "MR01",
+      "arrivals": [
+        {
+          "id": "room:MR01_C06",
+          "x": 36.8,
+          "y": -77.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_38 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_38 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_38 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR01_C06",
+          "x": 53.2399979,
+          "y": -77.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_38 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_38 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_38 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR02_C01",
+      "roomName": "Underarch Workshop",
+      "theme": "MR02",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR02_C01",
+          "x": 562.68,
+          "y": -119.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_32 | preserved segment 1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_32 | preserved segment 1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_32 | preserved segment 1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR02_C02",
+      "roomName": "Silt Cistern",
+      "theme": "MR02",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR02_C02",
+          "x": 472.76,
+          "y": -131.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_32 | preserved segment 2"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_32 | preserved segment 2"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_32 | preserved segment 2"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR02_C03",
+      "roomName": "Echo Vault",
+      "theme": "MR02",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR02_C03",
+          "x": 402.680023,
+          "y": -131.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_32 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_32 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_32 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR02_C04",
+      "roomName": "Ring Gallery",
+      "theme": "MR02",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR02_C04",
+          "x": 393.999969,
+          "y": -65.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_32 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_32 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_32 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR02_C05",
+      "roomName": "Moss Tower",
+      "theme": "MR02",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR02_C05",
+          "x": 471.08,
+          "y": -20.54,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": false,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.0,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            },
+            {
+              "dx": 0.3,
+              "okay": false,
+              "distance": -1.0,
+              "collider": ""
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR02_C06",
+      "roomName": "High Arch",
+      "theme": "MR02",
+      "arrivals": [
+        {
+          "id": "room:MR02_C06",
+          "x": 526.8,
+          "y": -23.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_33 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_33 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_33 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR02_C06",
+          "x": 547.8,
+          "y": -23.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_33 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_33 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_33 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR03_C01",
+      "roomName": "Sluice Cellar",
+      "theme": "MR03",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR03_C01",
+          "x": 771.72,
+          "y": 48.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_28 | preserved segment 3"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_28 | preserved segment 3"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_28 | preserved segment 3"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR03_C02",
+      "roomName": "Grain Store",
+      "theme": "MR03",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR03_C02",
+          "x": 850.2,
+          "y": 36.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_28 | preserved segment 2"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_28 | preserved segment 2"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_28 | preserved segment 2"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR03_C03",
+      "roomName": "Farmer Shelter",
+      "theme": "MR03",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR03_C03",
+          "x": 927.160034,
+          "y": 36.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_28 | preserved segment 1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_28 | preserved segment 1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_28 | preserved segment 1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR03_C04",
+      "roomName": "Mill Undercroft",
+      "theme": "MR03",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR03_C04",
+          "x": 933.24,
+          "y": 102.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_29 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_29 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_29 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR03_C05",
+      "roomName": "Wind Shelf",
+      "theme": "MR03",
+      "arrivals": [],
+      "checkpoints": [
+        {
+          "id": "regional:MR03_C05",
+          "x": 874.96,
+          "y": 144.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_29 | preserved segment 1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_29 | preserved segment 1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_29 | preserved segment 1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR03_C06",
+      "roomName": "Root Hanger",
+      "theme": "MR03",
+      "arrivals": [
+        {
+          "id": "room:MR03_C06",
+          "x": 756.8,
+          "y": 144.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_28 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_28 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_28 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR03_C06",
+          "x": 777.8,
+          "y": 144.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_28 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_28 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_28 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR05_C01",
+      "roomName": "Lost Lantern",
+      "theme": "MR05",
+      "arrivals": [
+        {
+          "id": "room:MR05_C01",
+          "x": 1327.8,
+          "y": 248.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_26 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_26 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_26 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR05_C01",
+          "x": 1338.16,
+          "y": 248.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_26 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_26 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_26 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR05_C02",
+      "roomName": "Root Loom",
+      "theme": "MR05",
+      "arrivals": [
+        {
+          "id": "room:MR05_C02",
+          "x": 1432.8,
+          "y": 296.66,
+          "bodyClear": false,
+          "blocked": [
+            "UGP solid 1433,296"
+          ],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_23 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_23 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.0,
+              "collider": "UGP solid 1433,296"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR05_C02",
+          "x": 1443.16016,
+          "y": 296.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_23 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_23 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_23 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR05_C03",
+      "roomName": "Moss Well",
+      "theme": "MR05",
+      "arrivals": [
+        {
+          "id": "room:MR05_C03",
+          "x": 1397.8,
+          "y": 270.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_24 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_24 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_24 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR05_C03",
+          "x": 1405.88,
+          "y": 270.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_24 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_24 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_24 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR05_C04",
+      "roomName": "Seed Choir",
+      "theme": "MR05",
+      "arrivals": [
+        {
+          "id": "room:MR05_C04",
+          "x": 1501.8,
+          "y": 341.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_22 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_22 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_22 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR05_C04",
+          "x": 1515.2,
+          "y": 341.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_22 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_22 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_22 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR05_C05",
+      "roomName": "Stone Drum",
+      "theme": "MR05",
+      "arrivals": [
+        {
+          "id": "room:MR05_C05",
+          "x": 1535.8,
+          "y": 359.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_21 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_21 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_21 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR05_C05",
+          "x": 1545.4,
+          "y": 359.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_21 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_21 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_21 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR05_C06",
+      "roomName": "Canopy Pocket",
+      "theme": "MR05",
+      "arrivals": [
+        {
+          "id": "room:MR05_C06",
+          "x": 1641.8,
+          "y": 404.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_20 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_20 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_20 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR05_C06",
+          "x": 1653.68,
+          "y": 404.659973,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_20 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_20 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_20 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR06_C01",
+      "roomName": "Sheltered Nest",
+      "theme": "MR06",
+      "arrivals": [
+        {
+          "id": "room:MR06_C01",
+          "x": 1711.8,
+          "y": 446.659973,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_15 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_15 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_15 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR06_C01",
+          "x": 1726.72009,
+          "y": 446.659973,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_15 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_15 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_15 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR06_C02",
+      "roomName": "Clasp Hollow",
+      "theme": "MR06",
+      "arrivals": [
+        {
+          "id": "room:MR06_C02",
+          "x": 1795.8,
+          "y": 484.66,
+          "bodyClear": false,
+          "blocked": [
+            "UGP solid 1796,484"
+          ],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_19 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_19 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.0,
+              "collider": "UGP solid 1796,484"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR06_C02",
+          "x": 1806.16016,
+          "y": 484.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_19 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_19 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_19 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR06_C03",
+      "roomName": "Wind Window",
+      "theme": "MR06",
+      "arrivals": [
+        {
+          "id": "room:MR06_C03",
+          "x": 1835.8,
+          "y": 512.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_18 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_18 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_18 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR06_C03",
+          "x": 1846.92017,
+          "y": 512.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_18 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_18 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_18 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR06_C04",
+      "roomName": "Echo Steps",
+      "theme": "MR06",
+      "arrivals": [
+        {
+          "id": "room:MR06_C04",
+          "x": 1876.8,
+          "y": 540.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_16 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_16 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_16 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR06_C04",
+          "x": 1887.16,
+          "y": 540.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_16 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_16 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_16 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR06_C05",
+      "roomName": "High Drift",
+      "theme": "MR06",
+      "arrivals": [
+        {
+          "id": "room:MR06_C05",
+          "x": 1952.8,
+          "y": 586.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_14 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_14 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_14 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR06_C05",
+          "x": 1964.68,
+          "y": 586.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_14 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_14 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_14 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR06_C06",
+      "roomName": "Weather Cave",
+      "theme": "MR06",
+      "arrivals": [
+        {
+          "id": "room:MR06_C06",
+          "x": 2019.8,
+          "y": 632.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_13 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_13 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_13 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR06_C06",
+          "x": 2030.16016,
+          "y": 632.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_13 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_13 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_13 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR07_C01",
+      "roomName": "Reed Shelter",
+      "theme": "MR07",
+      "arrivals": [
+        {
+          "id": "room:MR07_C01",
+          "x": 2228.8,
+          "y": 668.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_4 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_4 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_4 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR07_C01",
+          "x": 2236.12,
+          "y": 668.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_4 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_4 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_4 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR07_C02",
+      "roomName": "Falls Pocket",
+      "theme": "MR07",
+      "arrivals": [
+        {
+          "id": "room:MR07_C02",
+          "x": 2140.8,
+          "y": 622.66,
+          "bodyClear": false,
+          "blocked": [
+            "UGP solid 2141,622"
+          ],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_6 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_6 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.0,
+              "collider": "UGP solid 2141,622"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR07_C02",
+          "x": 2151.16,
+          "y": 622.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_6 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_6 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_6 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR07_C03",
+      "roomName": "Pale Archive",
+      "theme": "MR07",
+      "arrivals": [
+        {
+          "id": "room:MR07_C03",
+          "x": 2169.8,
+          "y": 644.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_5 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_5 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_5 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR07_C03",
+          "x": 2180.16,
+          "y": 644.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_5 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_5 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_5 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR07_C04",
+      "roomName": "Quiet Terrace",
+      "theme": "MR07",
+      "arrivals": [
+        {
+          "id": "room:MR07_C04",
+          "x": 2322.8,
+          "y": 710.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_2 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_2 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_2 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR07_C04",
+          "x": 2334.68,
+          "y": 710.6599,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8099365,
+              "collider": "Continuous_Collision_2 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8099365,
+              "collider": "Continuous_Collision_2 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8099365,
+              "collider": "Continuous_Collision_2 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR07_C05",
+      "roomName": "Watcher's Hollow",
+      "theme": "MR07",
+      "arrivals": [
+        {
+          "id": "room:MR07_C05",
+          "x": 2349.8,
+          "y": 735.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_1 | preserved segment 1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_1 | preserved segment 1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_1 | preserved segment 1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR07_C05",
+          "x": 2360.16,
+          "y": 735.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_1 | preserved segment 1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_1 | preserved segment 1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_1 | preserved segment 1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "MR07_C06",
+      "roomName": "Upper Cleft",
+      "theme": "MR07",
+      "arrivals": [
+        {
+          "id": "room:MR07_C06",
+          "x": 2406.2,
+          "y": 743.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_0 | preserved segment 0 | preserved segment 1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_0 | preserved segment 0 | preserved segment 1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_0 | preserved segment 0 | preserved segment 1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:MR07_C06",
+          "x": 2391.88,
+          "y": 743.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_0 | preserved segment 0 | preserved segment 1"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_0 | preserved segment 0 | preserved segment 1"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_0 | preserved segment 0 | preserved segment 1"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "PC01",
+      "roomName": "Firefly Nook",
+      "theme": "P",
+      "arrivals": [
+        {
+          "id": "room:PC01",
+          "x": 63.8,
+          "y": -20.451,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_42 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_42 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_42 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:PC01",
+          "x": 72.8,
+          "y": -20.4499989,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8110008,
+              "collider": "Continuous_Collision_42 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8110008,
+              "collider": "Continuous_Collision_42 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8110008,
+              "collider": "Continuous_Collision_42 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "PC02",
+      "roomName": "Old Footprints",
+      "theme": "P",
+      "arrivals": [
+        {
+          "id": "room:PC02",
+          "x": 129.8,
+          "y": -24.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_41 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_41 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_41 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:PC02",
+          "x": 131.800018,
+          "y": -24.34,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_41 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_41 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809999466,
+              "collider": "Continuous_Collision_41 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "PC03",
+      "roomName": "Fern Pocket",
+      "theme": "P",
+      "arrivals": [
+        {
+          "id": "room:PC03",
+          "x": 267.8,
+          "y": -2.839,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100002,
+              "collider": "Continuous_Collision_37 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100002,
+              "collider": "Continuous_Collision_37 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100002,
+              "collider": "Continuous_Collision_37 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:PC03",
+          "x": 271.32,
+          "y": -2.83900023,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809999943,
+              "collider": "Continuous_Collision_37 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809999943,
+              "collider": "Continuous_Collision_37 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809999943,
+              "collider": "Continuous_Collision_37 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "PC04",
+      "roomName": "Mason’s Recess",
+      "theme": "P",
+      "arrivals": [
+        {
+          "id": "room:PC04",
+          "x": 306.8,
+          "y": 2.59700036,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100004,
+              "collider": "Continuous_Collision_36 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100004,
+              "collider": "Continuous_Collision_36 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100004,
+              "collider": "Continuous_Collision_36 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:PC04",
+          "x": 309.56,
+          "y": 2.59700036,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100004,
+              "collider": "Continuous_Collision_36 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100004,
+              "collider": "Continuous_Collision_36 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100004,
+              "collider": "Continuous_Collision_36 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "PC05",
+      "roomName": "Dripstone Hollow",
+      "theme": "P",
+      "arrivals": [
+        {
+          "id": "room:PC05",
+          "x": 420.8,
+          "y": 45.235,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_35 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_35 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100014,
+              "collider": "Continuous_Collision_35 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:PC05",
+          "x": 424.319977,
+          "y": 45.2349968,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_35 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_35 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_35 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "PC06",
+      "roomName": "Forgotten Satchel",
+      "theme": "P",
+      "arrivals": [
+        {
+          "id": "room:PC06",
+          "x": 552.8,
+          "y": 121.404007,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_34 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_34 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_34 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:PC06",
+          "x": 554.8,
+          "y": 121.404007,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_34 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_34 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8100052,
+              "collider": "Continuous_Collision_34 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "PC07",
+      "roomName": "Seed Shelf",
+      "theme": "P",
+      "arrivals": [
+        {
+          "id": "room:PC07",
+          "x": 690.8,
+          "y": 170.53,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_31 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_31 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_31 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:PC07",
+          "x": 693.56,
+          "y": 170.53,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_31 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_31 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_31 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "PC08",
+      "roomName": "Millstone Pocket",
+      "theme": "P",
+      "arrivals": [
+        {
+          "id": "room:PC08",
+          "x": 823.8,
+          "y": 258.778,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_30 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_30 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_30 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:PC08",
+          "x": 828.079956,
+          "y": 258.778,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_30 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_30 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_30 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "PC09",
+      "roomName": "Lantern Rest",
+      "theme": "P",
+      "arrivals": [
+        {
+          "id": "room:PC09",
+          "x": 969.8,
+          "y": 269.494019,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_27 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_27 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_27 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:PC09",
+          "x": 973.32,
+          "y": 269.494019,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_27 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_27 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_27 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "PC10",
+      "roomName": "Rootlight Niche",
+      "theme": "P",
+      "arrivals": [
+        {
+          "id": "room:PC10",
+          "x": 1376.8,
+          "y": 269.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_25 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_25 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_25 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:PC10",
+          "x": 1379.56,
+          "y": 269.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_25 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_25 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_25 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "PC11",
+      "roomName": "Quiet Wind Pocket",
+      "theme": "P",
+      "arrivals": [
+        {
+          "id": "room:PC11",
+          "x": 1766.8,
+          "y": 468.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_17 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_17 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809967041,
+              "collider": "Continuous_Collision_17 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:PC11",
+          "x": 1770.31982,
+          "y": 468.659943,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.8098755,
+              "collider": "Continuous_Collision_17 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.8098755,
+              "collider": "Continuous_Collision_17 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.8098755,
+              "collider": "Continuous_Collision_17 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    },
+    {
+      "room": "PC12",
+      "roomName": "Last Cairn",
+      "theme": "P",
+      "arrivals": [
+        {
+          "id": "room:PC12",
+          "x": 2209.8,
+          "y": 660.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_3 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_3 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_3 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "regional:PC12",
+          "x": 2212.56,
+          "y": 660.66,
+          "bodyClear": true,
+          "blocked": [],
+          "floor": true,
+          "support": [
+            {
+              "dx": -0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_3 | preserved segment 0"
+            },
+            {
+              "dx": 0.0,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_3 | preserved segment 0"
+            },
+            {
+              "dx": 0.3,
+              "okay": true,
+              "distance": 0.809997559,
+              "collider": "Continuous_Collision_3 | preserved segment 0"
+            }
+          ],
+          "hazards": []
+        }
+      ],
+      "returns": [],
+      "greyboxes": 0,
+      "vista": null
+    }
+  ]
+}

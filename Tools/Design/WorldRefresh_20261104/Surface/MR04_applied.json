@@ -1,0 +1,1148 @@
+{
+  "scene": "Assets/Scenes/Game/MRAtlas_MR04_Qvale.unity",
+  "region": "MR04",
+  "anatomy": "lap",
+  "maxNewGrade": 1.0,
+  "sampleSpacing": 0.6,
+  "movedDecor": 1,
+  "edits": 3,
+  "zones": [
+    {
+      "id": "MR04_N00",
+      "name": "Terraces arrival",
+      "x": 12.0,
+      "left": -6.0,
+      "right": 25.0,
+      "smoothedConnectors": 2,
+      "artRefreshed": true,
+      "disposition": "Flowing connector slopes with beat/cave/challenge pads retained"
+    },
+    {
+      "id": "MR04_N01",
+      "name": "Town approach",
+      "x": 38.0,
+      "left": 25.0,
+      "right": 49.0,
+      "smoothedConnectors": 2,
+      "artRefreshed": true,
+      "disposition": "Flowing connector slopes with beat/cave/challenge pads retained"
+    },
+    {
+      "id": "MR04_N02",
+      "name": "Warm spring",
+      "x": 60.0,
+      "left": 49.0,
+      "right": 71.0,
+      "smoothedConnectors": 1,
+      "artRefreshed": true,
+      "disposition": "Flowing connector slopes with beat/cave/challenge pads retained"
+    },
+    {
+      "id": "MR04_N03",
+      "name": "Lantern square",
+      "x": 82.0,
+      "left": 71.0,
+      "right": 93.5,
+      "smoothedConnectors": 0,
+      "artRefreshed": true,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR04_N04",
+      "name": "Smithy",
+      "x": 105.0,
+      "left": 93.5,
+      "right": 116.5,
+      "smoothedConnectors": 0,
+      "artRefreshed": true,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR04_N05",
+      "name": "Herbalist",
+      "x": 128.0,
+      "left": 116.5,
+      "right": 139.5,
+      "smoothedConnectors": 0,
+      "artRefreshed": true,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR04_N06",
+      "name": "Scribble's atlas stall",
+      "x": 151.0,
+      "left": 139.5,
+      "right": 162.0,
+      "smoothedConnectors": 0,
+      "artRefreshed": true,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR04_N07",
+      "name": "Residents' lane",
+      "x": 173.0,
+      "left": 162.0,
+      "right": 184.0,
+      "smoothedConnectors": 0,
+      "artRefreshed": true,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR04_N08",
+      "name": "Old man's home",
+      "x": 195.0,
+      "left": 184.0,
+      "right": 206.0,
+      "smoothedConnectors": 0,
+      "artRefreshed": true,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR04_N09",
+      "name": "Listening tree",
+      "x": 217.0,
+      "left": 206.0,
+      "right": 228.5,
+      "smoothedConnectors": 0,
+      "artRefreshed": true,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR04_N10",
+      "name": "Upper town stair",
+      "x": 240.0,
+      "left": 228.5,
+      "right": 250.0,
+      "smoothedConnectors": 0,
+      "artRefreshed": true,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR04_N11",
+      "name": "Ribwood exit",
+      "x": 260.0,
+      "left": 250.0,
+      "right": 292.0,
+      "smoothedConnectors": 0,
+      "artRefreshed": true,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    }
+  ],
+  "terrains": [
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Native hill | A01",
+      "changedSpans": [],
+      "before": [
+        [
+          133.1,
+          8.0
+        ],
+        [
+          134.6,
+          8.35
+        ],
+        [
+          135.8,
+          9.2
+        ],
+        [
+          137.0,
+          10.35
+        ],
+        [
+          138.200012,
+          11.15
+        ],
+        [
+          139.6,
+          11.5
+        ],
+        [
+          140.900009,
+          11.3
+        ],
+        [
+          142.1,
+          11.1
+        ],
+        [
+          142.6,
+          11.0
+        ],
+        [
+          142.6,
+          8.0
+        ]
+      ],
+      "after": [
+        [
+          133.1,
+          8.0
+        ],
+        [
+          134.6,
+          8.35
+        ],
+        [
+          135.8,
+          9.2
+        ],
+        [
+          137.0,
+          10.35
+        ],
+        [
+          138.200012,
+          11.15
+        ],
+        [
+          139.6,
+          11.5
+        ],
+        [
+          140.900009,
+          11.3
+        ],
+        [
+          142.1,
+          11.1
+        ],
+        [
+          142.6,
+          11.0
+        ],
+        [
+          142.6,
+          8.0
+        ]
+      ],
+      "protectedIntervals": [],
+      "top": "Assets/Art/Prototypes/WorldRefresh_20261104/MR04/Top.png",
+      "fill": "Assets/Art/Prototypes/WorldRefresh_20261104/MR04/Fill.png",
+      "transformScale": [
+        1.0,
+        1.0
+      ],
+      "topPPU": 360.0,
+      "fillPPU": 360.0,
+      "minimumTopDensityAtMaximumGrade": 222.492249,
+      "topWorldTile": [
+        6.0333333,
+        2.011111
+      ],
+      "fillWorldTile": [
+        3.48333335,
+        3.48333335
+      ]
+    },
+    {
+      "path": "Generated (MRA builder)/Terrain/Route MR04 piece 00",
+      "changedSpans": [
+        {
+          "a": 14.95,
+          "b": 19.678,
+          "y0": 28.0,
+          "y1": 26.365,
+          "maxGrade": 0.421722263,
+          "maxDelta": 0.817499161
+        },
+        {
+          "a": 22.708,
+          "b": 35.05,
+          "y0": 20.1762886,
+          "y1": 15.0,
+          "maxGrade": 0.48187387,
+          "maxDelta": 0.8876829
+        },
+        {
+          "a": 40.95,
+          "b": 57.05,
+          "y0": 15.0,
+          "y1": 8.0,
+          "maxGrade": 0.482758671,
+          "maxDelta": 2.02419949
+        }
+      ],
+      "before": [
+        [
+          -6.0,
+          28.0
+        ],
+        [
+          16.931,
+          28.0
+        ],
+        [
+          16.931,
+          26.365
+        ],
+        [
+          21.178,
+          26.365
+        ],
+        [
+          21.178,
+          20.625
+        ],
+        [
+          29.208,
+          18.27
+        ],
+        [
+          29.208,
+          16.635
+        ],
+        [
+          33.069,
+          16.635
+        ],
+        [
+          33.069,
+          15.0
+        ],
+        [
+          43.484,
+          15.0
+        ],
+        [
+          43.484,
+          13.12
+        ],
+        [
+          49.547,
+          10.089
+        ],
+        [
+          49.547,
+          9.044
+        ],
+        [
+          54.516,
+          9.044
+        ],
+        [
+          54.516,
+          8.0
+        ],
+        [
+          198.0,
+          8.0
+        ],
+        [
+          199.0,
+          8.013
+        ],
+        [
+          200.0,
+          8.049
+        ],
+        [
+          201.0,
+          8.104
+        ],
+        [
+          202.0,
+          8.175
+        ],
+        [
+          203.0,
+          8.259
+        ],
+        [
+          204.0,
+          8.352
+        ],
+        [
+          205.0,
+          8.45
+        ],
+        [
+          206.0,
+          8.55
+        ],
+        [
+          207.0,
+          8.648
+        ],
+        [
+          208.0,
+          8.741
+        ],
+        [
+          209.0,
+          8.825
+        ],
+        [
+          210.0,
+          8.896
+        ],
+        [
+          211.0,
+          8.951
+        ],
+        [
+          212.0,
+          8.987
+        ],
+        [
+          213.0,
+          9.0
+        ],
+        [
+          230.9,
+          9.0
+        ],
+        [
+          231.331,
+          9.026
+        ],
+        [
+          231.745,
+          9.106
+        ],
+        [
+          232.141,
+          9.238
+        ],
+        [
+          232.519,
+          9.422
+        ],
+        [
+          232.88,
+          9.66
+        ],
+        [
+          234.5,
+          10.875
+        ],
+        [
+          234.5,
+          17.125
+        ],
+        [
+          236.12,
+          18.34
+        ],
+        [
+          236.481,
+          18.578
+        ],
+        [
+          236.859,
+          18.762
+        ],
+        [
+          237.255,
+          18.894
+        ],
+        [
+          237.669,
+          18.974
+        ],
+        [
+          238.1,
+          19.0
+        ],
+        [
+          241.9,
+          19.0
+        ],
+        [
+          242.331,
+          19.027
+        ],
+        [
+          242.742,
+          19.109
+        ],
+        [
+          243.135,
+          19.245
+        ],
+        [
+          243.51,
+          19.435
+        ],
+        [
+          243.865,
+          19.68
+        ],
+        [
+          256.135,
+          29.32
+        ],
+        [
+          256.49,
+          29.565
+        ],
+        [
+          256.865,
+          29.755
+        ],
+        [
+          257.258,
+          29.891
+        ],
+        [
+          257.669,
+          29.973
+        ],
+        [
+          258.1,
+          30.0
+        ],
+        [
+          292.0,
+          30.0
+        ]
+      ],
+      "after": [
+        [
+          -6.0,
+          28.0
+        ],
+        [
+          14.95,
+          28.0
+        ],
+        [
+          15.5409994,
+          27.9221725
+        ],
+        [
+          16.132,
+          27.680975
+        ],
+        [
+          16.723,
+          27.4317379
+        ],
+        [
+          17.314,
+          27.1824989
+        ],
+        [
+          17.9049988,
+          26.9332619
+        ],
+        [
+          18.496,
+          26.6840248
+        ],
+        [
+          19.087,
+          26.4428272
+        ],
+        [
+          19.678,
+          26.365
+        ],
+        [
+          21.178,
+          26.365
+        ],
+        [
+          21.178,
+          20.625
+        ],
+        [
+          22.708,
+          20.1762886
+        ],
+        [
+          23.2957153,
+          20.1468887
+        ],
+        [
+          23.8834286,
+          19.9839363
+        ],
+        [
+          24.4711437,
+          19.7121754
+        ],
+        [
+          25.058857,
+          19.42897
+        ],
+        [
+          25.6465721,
+          19.1457672
+        ],
+        [
+          26.2342854,
+          18.8625622
+        ],
+        [
+          26.822,
+          18.57936
+        ],
+        [
+          27.4097137,
+          18.296154
+        ],
+        [
+          27.9974289,
+          18.01295
+        ],
+        [
+          28.5851421,
+          17.7297459
+        ],
+        [
+          29.1728573,
+          17.4465427
+        ],
+        [
+          29.76057,
+          17.1633377
+        ],
+        [
+          30.3482857,
+          16.8801346
+        ],
+        [
+          30.936,
+          16.59693
+        ],
+        [
+          31.5237141,
+          16.3137245
+        ],
+        [
+          32.1114273,
+          16.0305214
+        ],
+        [
+          32.6991425,
+          15.7473173
+        ],
+        [
+          33.2868576,
+          15.4641132
+        ],
+        [
+          33.8745728,
+          15.1923523
+        ],
+        [
+          34.4622841,
+          15.0294
+        ],
+        [
+          35.05,
+          15.0
+        ],
+        [
+          40.95,
+          15.0
+        ],
+        [
+          41.5462952,
+          14.9692974
+        ],
+        [
+          42.1425934,
+          14.8003149
+        ],
+        [
+          42.7388878,
+          14.5226059
+        ],
+        [
+          43.335186,
+          14.2347383
+        ],
+        [
+          43.93148,
+          13.9468708
+        ],
+        [
+          44.52778,
+          13.6590042
+        ],
+        [
+          45.124073,
+          13.3711367
+        ],
+        [
+          45.72037,
+          13.0832691
+        ],
+        [
+          46.3166656,
+          12.7954025
+        ],
+        [
+          46.9129639,
+          12.507535
+        ],
+        [
+          47.50926,
+          12.2196684
+        ],
+        [
+          48.1055565,
+          11.9318008
+        ],
+        [
+          48.70185,
+          11.6439333
+        ],
+        [
+          49.29815,
+          11.3560667
+        ],
+        [
+          49.8944435,
+          11.0681992
+        ],
+        [
+          50.49074,
+          10.7803326
+        ],
+        [
+          51.0870361,
+          10.4924641
+        ],
+        [
+          51.6833344,
+          10.2045975
+        ],
+        [
+          52.27963,
+          9.916731
+        ],
+        [
+          52.875927,
+          9.628863
+        ],
+        [
+          53.47222,
+          9.340996
+        ],
+        [
+          54.06852,
+          9.053129
+        ],
+        [
+          54.664814,
+          8.765263
+        ],
+        [
+          55.26111,
+          8.477394
+        ],
+        [
+          55.8574066,
+          8.199685
+        ],
+        [
+          56.4537048,
+          8.030703
+        ],
+        [
+          57.05,
+          8.0
+        ],
+        [
+          198.0,
+          8.0
+        ],
+        [
+          199.0,
+          8.013
+        ],
+        [
+          200.0,
+          8.049
+        ],
+        [
+          201.0,
+          8.104
+        ],
+        [
+          202.0,
+          8.175
+        ],
+        [
+          203.0,
+          8.259
+        ],
+        [
+          204.0,
+          8.352
+        ],
+        [
+          205.0,
+          8.45
+        ],
+        [
+          206.0,
+          8.55
+        ],
+        [
+          207.0,
+          8.648
+        ],
+        [
+          208.0,
+          8.741
+        ],
+        [
+          209.0,
+          8.825
+        ],
+        [
+          210.0,
+          8.896
+        ],
+        [
+          211.0,
+          8.951
+        ],
+        [
+          212.0,
+          8.987
+        ],
+        [
+          213.0,
+          9.0
+        ],
+        [
+          230.9,
+          9.0
+        ],
+        [
+          231.331,
+          9.026
+        ],
+        [
+          231.745,
+          9.106
+        ],
+        [
+          232.141,
+          9.238
+        ],
+        [
+          232.519,
+          9.422
+        ],
+        [
+          232.88,
+          9.66
+        ],
+        [
+          234.5,
+          10.875
+        ],
+        [
+          234.5,
+          17.125
+        ],
+        [
+          236.12,
+          18.34
+        ],
+        [
+          236.481,
+          18.578
+        ],
+        [
+          236.859,
+          18.762
+        ],
+        [
+          237.255,
+          18.894
+        ],
+        [
+          237.669,
+          18.974
+        ],
+        [
+          238.1,
+          19.0
+        ],
+        [
+          241.9,
+          19.0
+        ],
+        [
+          242.331,
+          19.027
+        ],
+        [
+          242.742,
+          19.109
+        ],
+        [
+          243.135,
+          19.245
+        ],
+        [
+          243.51,
+          19.435
+        ],
+        [
+          243.865,
+          19.68
+        ],
+        [
+          256.135,
+          29.32
+        ],
+        [
+          256.49,
+          29.565
+        ],
+        [
+          256.865,
+          29.755
+        ],
+        [
+          257.258,
+          29.891
+        ],
+        [
+          257.669,
+          29.973
+        ],
+        [
+          258.1,
+          30.0
+        ],
+        [
+          292.0,
+          30.0
+        ]
+      ],
+      "protectedIntervals": [
+        {
+          "a": 9.2,
+          "b": 14.8,
+          "reason": "beat pad MR04_N00"
+        },
+        {
+          "a": 35.2,
+          "b": 40.8,
+          "reason": "beat pad MR04_N01"
+        },
+        {
+          "a": 57.2,
+          "b": 62.8,
+          "reason": "beat pad MR04_N02"
+        },
+        {
+          "a": 79.2,
+          "b": 84.8,
+          "reason": "beat pad MR04_N03"
+        },
+        {
+          "a": 102.2,
+          "b": 107.8,
+          "reason": "beat pad MR04_N04"
+        },
+        {
+          "a": 125.2,
+          "b": 130.8,
+          "reason": "beat pad MR04_N05"
+        },
+        {
+          "a": 148.2,
+          "b": 153.8,
+          "reason": "beat pad MR04_N06"
+        },
+        {
+          "a": 170.2,
+          "b": 175.8,
+          "reason": "beat pad MR04_N07"
+        },
+        {
+          "a": 192.2,
+          "b": 197.8,
+          "reason": "beat pad MR04_N08"
+        },
+        {
+          "a": 214.2,
+          "b": 219.8,
+          "reason": "beat pad MR04_N09"
+        },
+        {
+          "a": 237.2,
+          "b": 242.8,
+          "reason": "beat pad MR04_N10"
+        },
+        {
+          "a": 257.2,
+          "b": 262.8,
+          "reason": "beat pad MR04_N11"
+        },
+        {
+          "a": 133.25,
+          "b": 145.25,
+          "reason": "cave CAVE_A01"
+        },
+        {
+          "a": 141.7,
+          "b": 146.7,
+          "reason": "arrival CAVE_A01"
+        },
+        {
+          "a": 19.828,
+          "b": 22.528,
+          "reason": "climb challenge"
+        },
+        {
+          "a": 233.15,
+          "b": 235.85,
+          "reason": "climb challenge"
+        },
+        {
+          "a": 10.6,
+          "b": 13.4,
+          "reason": "prop or encounter Player"
+        },
+        {
+          "a": 36.5,
+          "b": 39.5,
+          "reason": "prop or encounter Checkpoint mra:MR04:cp:01"
+        },
+        {
+          "a": 80.50416,
+          "b": 83.50416,
+          "reason": "prop or encounter Waymark mra:MR04:cp:03"
+        },
+        {
+          "a": 102.0,
+          "b": 108.0,
+          "reason": "prop or encounter Door MR04_C01"
+        },
+        {
+          "a": 111.3,
+          "b": 116.7,
+          "reason": "prop or encounter NPC The cold forge"
+        },
+        {
+          "a": 112.3,
+          "b": 117.7,
+          "reason": "prop or encounter NPC Brannick"
+        },
+        {
+          "a": 126.5,
+          "b": 129.5,
+          "reason": "prop or encounter Checkpoint mra:MR04:cp:05"
+        },
+        {
+          "a": 125.0,
+          "b": 131.0,
+          "reason": "prop or encounter Door MR04_C02"
+        },
+        {
+          "a": 127.130005,
+          "b": 130.93,
+          "reason": "prop or encounter Door MR04_C02 Herbalist Home"
+        },
+        {
+          "a": 137.45,
+          "b": 141.05,
+          "reason": "prop or encounter Sluice Arrival"
+        },
+        {
+          "a": 148.0,
+          "b": 154.0,
+          "reason": "prop or encounter Door MR04_C03"
+        },
+        {
+          "a": 149.720016,
+          "b": 153.52,
+          "reason": "prop or encounter Door MR04_C03 Mapmaker Room"
+        },
+        {
+          "a": 170.0,
+          "b": 176.0,
+          "reason": "prop or encounter Door MR04_C04"
+        },
+        {
+          "a": 174.650009,
+          "b": 178.45,
+          "reason": "prop or encounter Door MR04_C04 Residents' Home A"
+        },
+        {
+          "a": 192.0,
+          "b": 198.0,
+          "reason": "prop or encounter Door MR04_C05"
+        },
+        {
+          "a": 195.340012,
+          "b": 199.14,
+          "reason": "prop or encounter Door MR04_C05 Old Man's Home"
+        },
+        {
+          "a": 214.0,
+          "b": 220.0,
+          "reason": "prop or encounter Door MR04_C06"
+        },
+        {
+          "a": 214.900009,
+          "b": 218.7,
+          "reason": "prop or encounter Door MR04_C06 Musician Loft"
+        },
+        {
+          "a": 216.6,
+          "b": 220.0,
+          "reason": "prop or encounter Reward song-shell (Musician Loft)"
+        },
+        {
+          "a": 238.5,
+          "b": 241.5,
+          "reason": "prop or encounter Checkpoint mra:MR04:cp:10"
+        },
+        {
+          "a": 61.3000031,
+          "b": 66.7,
+          "reason": "prop or encounter NPC Wick"
+        },
+        {
+          "a": 179.3,
+          "b": 184.7,
+          "reason": "prop or encounter NPC A traveller"
+        },
+        {
+          "a": 184.3,
+          "b": 189.7,
+          "reason": "prop or encounter NPC The last climber"
+        },
+        {
+          "a": 221.0,
+          "b": 227.0,
+          "reason": "prop or encounter Listening Spot"
+        },
+        {
+          "a": 226.8,
+          "b": 232.2,
+          "reason": "prop or encounter NPC Fennel"
+        }
+      ],
+      "top": "Assets/Art/Prototypes/WorldRefresh_20261104/MR04/Top.png",
+      "fill": "Assets/Art/Prototypes/WorldRefresh_20261104/MR04/Fill.png",
+      "transformScale": [
+        1.0,
+        1.0
+      ],
+      "topPPU": 360.0,
+      "fillPPU": 360.0,
+      "minimumTopDensityAtMaximumGrade": 222.492249,
+      "topWorldTile": [
+        6.0333333,
+        2.011111
+      ],
+      "fillWorldTile": [
+        3.48333335,
+        3.48333335
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "Final A04 safety correction only; all other six live-repair target anchors retained",
+  "a04Checkpoint": [
+    1564,
+    84.66
+  ],
+  "a04Arrival": [
+    1564,
+    84.66
+  ],
+  "cause": "PumpBloaterEnemy jet direct knockback could push previous1580.5 anchor into water; home1574, range9, detect8. Newanchor10unitsleft.",
+  "compileErrors": 0,
+  "compileWarnings": 0,
+  "staticAudit": {
+    "rooms": 89,
+    "returnCount": 37,
+    "failures": [],
+    "warnings": []
+  },
+  "saved": true,
+  "runtimeFinal": "Pending root full126 rerun"
+}

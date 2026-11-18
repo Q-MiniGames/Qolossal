@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "layer": "far",
+      "cameraDelta": [
+        2,
+        0
+      ],
+      "expected": [
+        -97.2,
+        0.0
+      ],
+      "measured": [
+        -97.18860737541058,
+        0.011245218933254364
+      ],
+      "correlation": 0.9177880882775342,
+      "passed": true
+    },
+    {
+      "layer": "far",
+      "cameraDelta": [
+        0,
+        2
+      ],
+      "expected": [
+        0.0,
+        118.80000000000001
+      ],
+      "measured": [
+        0.0028859098983957665,
+        118.80511460691787
+      ],
+      "correlation": 0.8530268402158478,
+      "passed": true
+    },
+    {
+      "layer": "middle",
+      "cameraDelta": [
+        2,
+        0
+      ],
+      "expected": [
+        -190.08,
+        0.0
+      ],
+      "measured": [
+        -190.05381401988598,
+        0.0023599060538117556
+      ],
+      "correlation": 0.9969931066109811,
+      "passed": true
+    },
+    {
+      "layer": "middle",
+      "cameraDelta": [
+        0,
+        2
+      ],
+      "expected": [
+        0.0,
+        203.04
+      ],
+      "measured": [
+        0.001374850314618925,
+        203.0351392268252
+      ],
+      "correlation": 0.9982296569847766,
+      "passed": true
+    }
+  ]
+}

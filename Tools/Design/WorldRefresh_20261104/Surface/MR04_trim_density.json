@@ -1,0 +1,164 @@
+{
+  "scene": "MRAtlas_MR04_Qvale",
+  "minCameraSize": 5.0,
+  "requiredPixelsPerUnit": 216.0,
+  "replaceAlphaTrim": false,
+  "secondaryMaskLimitation": "Original aperture-mask UV channels and texture are retained. Surface Rim also samples its RGB; those secondary samples need separate review and are not certified by MainTex density.",
+  "records": [
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Registered native outer rock",
+      "disposition": "Solid wall world-tiled; secondary aperture channels preserved",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Registered native outer rock.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Fill.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR04/Fill.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR04/9A32BFE1D9C336895153.asset",
+      "secondaryMask": "Assets/Art/Prototypes/CradleRockwork_20261027/MR01_C01_Rockwork.png",
+      "beforeDensity": 119.97972817316821,
+      "afterDensity": 359.93642017948866,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 1024,
+      "textureWidth": 1254,
+      "textureHeight": 1254,
+      "requiredWidth": 753,
+      "requiredHeight": 753,
+      "worldBoundsCenter": [
+        140.050018,
+        9.325,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.300003,
+        3.25,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Native walking surface",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Native walking surface.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Top_Strip_v5.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR04/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR04/7BC7E5165F82F49708F3.asset",
+      "secondaryMask": null,
+      "beforeDensity": 119.89992641647535,
+      "afterDensity": 359.98050514899194,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1304,
+      "requiredHeight": 435,
+      "worldBoundsCenter": [
+        140.6,
+        7.7,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.600006,
+        2.20000029,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Native roof trim/Native roof 0",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Native roof 0.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Top_Strip_v5.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR04/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR04/50194EC29A77C44900BE.asset",
+      "secondaryMask": null,
+      "beforeDensity": 75.550142702736679,
+      "afterDensity": 226.59623217135689,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 2071,
+      "requiredHeight": 691,
+      "worldBoundsCenter": [
+        139.71,
+        11.505,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.220001,
+        1.59000015,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Native roof trim/Native roof 1",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Native roof 1.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Outer_SlopeTop_R.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 89.782475994881764,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 768,
+      "sourceHeight": 768,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        141.829163,
+        12.4591665,
+        -0.002
+      ],
+      "worldBoundsSize": [
+        2.741684,
+        3.498333,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Native roof trim/Native roof 2",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Native roof 2.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Step_Inner_R.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 117.2648045560737,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 768,
+      "sourceHeight": 512,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        140.766678,
+        10.8279171,
+        -0.00250000018
+      ],
+      "worldBoundsSize": [
+        4.8666687,
+        0.235833168,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    }
+  ]
+}

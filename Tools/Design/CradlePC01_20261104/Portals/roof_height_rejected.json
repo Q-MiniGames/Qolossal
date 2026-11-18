@@ -1,0 +1,84 @@
+{
+  "complete": false,
+  "passed": false,
+  "startIndex": 0,
+  "take": 1,
+  "step": 13,
+  "steps": [
+    {
+      "label": "PC01 load surface",
+      "frame": 522,
+      "passed": true
+    },
+    {
+      "label": "PC01 place on approach",
+      "frame": 903,
+      "passed": true
+    },
+    {
+      "label": "PC01 walk to upper mouth",
+      "frame": 1169,
+      "passed": true
+    },
+    {
+      "label": "PC01 settle upper mouth",
+      "frame": 2136,
+      "passed": true
+    },
+    {
+      "label": "PC01 capture upper and enter",
+      "frame": 2252,
+      "passed": true
+    },
+    {
+      "label": "PC01 underground arrival",
+      "frame": 2991,
+      "passed": true
+    },
+    {
+      "label": "PC01 walk to lower mouth",
+      "frame": 3116,
+      "passed": true
+    },
+    {
+      "label": "PC01 settle lower mouth",
+      "frame": 3551,
+      "passed": true
+    },
+    {
+      "label": "PC01 capture lower and return",
+      "frame": 3613,
+      "passed": true
+    },
+    {
+      "label": "PC01 surface arrival",
+      "frame": 4222,
+      "passed": true
+    },
+    {
+      "label": "PC01 stable control restored",
+      "frame": 4507,
+      "passed": true
+    },
+    {
+      "label": "PC01 place on outer approach",
+      "frame": 4530,
+      "passed": true
+    },
+    {
+      "label": "PC01 jump onto rounded roof",
+      "frame": 4773,
+      "passed": true
+    }
+  ],
+  "errors": [
+    "System.Exception: Roof jump blocked: (61.15, 24.62, 0.00)\r\n  at PipelineEvaluation.PipelineEval_fdd4ba5c+<>c.<Execute>b__0_2 (System.Boolean yes, System.String message) [0x00009] in <3e5a43365a30486589c949da15456ecd>:0 \r\n  at PipelineEvaluation.PipelineEval_fdd4ba5c+<>c__DisplayClass0_0.<Execute>b__13 () [0x00097] in <3e5a43365a30486589c949da15456ecd>:0 \r\n  at PipelineEvaluation.PipelineEval_fdd4ba5c+<>c__DisplayClass0_0.<Execute>b__17 () [0x005b1] in <3e5a43365a30486589c949da15456ecd>:0 "
+  ],
+  "testSave": "C:/UnityProjects/Qolossal/Tools/Design/CradlePC01_20261104/Portals/traversal_save_082daf9c9ae0410981574953e6ca73ef.json",
+  "normalSavesPreserved": true,
+  "settingsRestored": true,
+  "enemyDamageSuppressedForGeometryTest": true,
+  "departures": 2,
+  "emergences": 2,
+  "fallbacks": 0
+}

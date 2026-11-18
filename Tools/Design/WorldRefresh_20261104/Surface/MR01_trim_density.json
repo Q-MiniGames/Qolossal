@@ -1,0 +1,133 @@
+{
+  "scene": "MRAtlas_MR01_Cradle",
+  "minCameraSize": 5.0,
+  "requiredPixelsPerUnit": 216.0,
+  "replaceAlphaTrim": false,
+  "secondaryMaskLimitation": "Original aperture-mask UV channels and texture are retained. Surface Rim also samples its RGB; those secondary samples need separate review and are not certified by MainTex density.",
+  "records": [
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Regional fitted passage/Continuous themed inner wall",
+      "disposition": "Solid wall world-tiled; secondary aperture channels preserved",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC01/Continuous themed inner wall.asset",
+      "sourceTexture": "Assets/Art/Prototypes/CaveRollout_20261027/Causeway_Masonry.png",
+      "texture": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Fill_4K.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR01/AAAAAC2D5979FF4B4119.asset",
+      "secondaryMask": "Assets/Art/Prototypes/CradleTerrainJoin_20261027/MR01_C01_CleanLeftEdge.png",
+      "beforeDensity": 155.27598014962885,
+      "afterDensity": 239.99335311857487,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 240.0,
+      "sourceWidth": 2172,
+      "sourceHeight": 724,
+      "textureWidth": 2048,
+      "textureHeight": 2048,
+      "requiredWidth": 1844,
+      "requiredHeight": 1844,
+      "worldBoundsCenter": [
+        63.425,
+        24.039999,
+        0.0
+      ],
+      "worldBoundsSize": [
+        8.049995,
+        5.67610168,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Regional fitted passage/Native walking surface",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC01/Native walking surface.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+      "texture": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR01/62A4829D322C0D3D1775.asset",
+      "secondaryMask": null,
+      "beforeDensity": 214.74926533819115,
+      "afterDensity": 218.15773777212706,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 365.751526,
+      "sourceWidth": 3072,
+      "sourceHeight": 1536,
+      "textureWidth": 3072,
+      "textureHeight": 1536,
+      "requiredWidth": 3042,
+      "requiredHeight": 1521,
+      "worldBoundsCenter": [
+        63.1,
+        22.3649979,
+        0.0
+      ],
+      "worldBoundsSize": [
+        8.799999,
+        4.9261,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N08] Ravine approach/Cave access | paired underground rooms/[CAVE PC03] MR01_N08 <-> Underground - Fern Pocket/Regional fitted passage/Native roof trim/Native roof 3",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC03/Native roof 3.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Corner_Top_R_4K.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 143.99726788613123,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 1024,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        219.0,
+        17.4849968,
+        0.0
+      ],
+      "worldBoundsSize": [
+        0.800003052,
+        1.54999352,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N10] High lookout/Cave access | paired underground rooms/[CAVE MR01_C06] MR01_N10 <-> Underground - Hanging Garden/Regional fitted passage/Native roof trim/Native roof 0",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR01_C06/Native roof 0.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+      "texture": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR01/2CAF8C6A2C4149C54D59.asset",
+      "secondaryMask": null,
+      "beforeDensity": 133.17414551870803,
+      "afterDensity": 255.89277590046237,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 507.421661,
+      "sourceWidth": 3072,
+      "sourceHeight": 1536,
+      "textureWidth": 3072,
+      "textureHeight": 1536,
+      "requiredWidth": 2594,
+      "requiredHeight": 1297,
+      "worldBoundsCenter": [
+        267.09,
+        41.7549973,
+        0.0
+      ],
+      "worldBoundsSize": [
+        10.6199951,
+        2.09000015,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    }
+  ]
+}

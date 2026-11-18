@@ -1,0 +1,97 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "scene": "MRAtlas_MR01_Cradle",
+      "passed": true,
+      "renderedFrames": 121,
+      "frameAdvance": 121,
+      "simulationSeconds": 2.01678419,
+      "feetViewport": 0.149999857,
+      "cameraSize": 5.0,
+      "gradedMeshes": 38,
+      "allCaveMasksPresent": true,
+      "expectedProtectedMouths": 4
+    },
+    {
+      "scene": "MRAtlas_MR02_Causeway",
+      "passed": true,
+      "renderedFrames": 120,
+      "frameAdvance": 120,
+      "simulationSeconds": 2.01009226,
+      "feetViewport": 0.1500001,
+      "cameraSize": 5.0,
+      "gradedMeshes": 6,
+      "allCaveMasksPresent": true,
+      "expectedProtectedMouths": 4
+    },
+    {
+      "scene": "MRAtlas_MR03_Terraces",
+      "passed": true,
+      "renderedFrames": 120,
+      "frameAdvance": 120,
+      "simulationSeconds": 2.00801659,
+      "feetViewport": 0.152145386,
+      "cameraSize": 5.0,
+      "gradedMeshes": 4,
+      "allCaveMasksPresent": true,
+      "expectedProtectedMouths": 4
+    },
+    {
+      "scene": "MRAtlas_MR04_Qvale",
+      "passed": true,
+      "renderedFrames": 49,
+      "frameAdvance": 49,
+      "simulationSeconds": 2.07085419,
+      "feetViewport": 0.150231659,
+      "cameraSize": 7.6,
+      "gradedMeshes": 2,
+      "allCaveMasksPresent": true,
+      "expectedProtectedMouths": 1
+    },
+    {
+      "scene": "MRAtlas_MR05_Ribwood",
+      "passed": true,
+      "renderedFrames": 104,
+      "frameAdvance": 104,
+      "simulationSeconds": 2.01718521,
+      "feetViewport": 0.149999619,
+      "cameraSize": 5.0,
+      "gradedMeshes": 2,
+      "allCaveMasksPresent": true,
+      "expectedProtectedMouths": 8
+    },
+    {
+      "scene": "MRAtlas_MR06_Heights",
+      "passed": true,
+      "renderedFrames": 82,
+      "frameAdvance": 82,
+      "simulationSeconds": 2.008812,
+      "feetViewport": 0.151024461,
+      "cameraSize": 5.0,
+      "gradedMeshes": 8,
+      "allCaveMasksPresent": true,
+      "expectedProtectedMouths": 8
+    },
+    {
+      "scene": "MRAtlas_MR07_Summit",
+      "passed": true,
+      "renderedFrames": 104,
+      "frameAdvance": 104,
+      "simulationSeconds": 2.00388718,
+      "feetViewport": 0.150512815,
+      "cameraSize": 5.0,
+      "gradedMeshes": 2,
+      "allCaveMasksPresent": true,
+      "expectedProtectedMouths": 8
+    }
+  ],
+  "errors": [
+    "ArgumentException: The scene is not loaded.",
+    "ArgumentException: The scene is not loaded.",
+    "ArgumentException: The scene is not loaded.",
+    "ArgumentException: The scene is not loaded."
+  ],
+  "normalSavesPreserved": true,
+  "settingsRestored": true
+}

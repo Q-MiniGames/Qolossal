@@ -1,0 +1,1690 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.19f1 (7689f4515d75) revision 7768564'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26300) Professional' Language: 'en' Physical Memory: 32563 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Qasim" at "2026-11-09T09:22:00.8587825Z"
+Process architecture: x64
+Date: 2026-11-09T09:22:00Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Unity.exe
+-batchmode
+-projectPath
+C:/UnityProjects/Qolossal
+-executeMethod
+KeepersCisternInstall.InstallBatch
+-logFile
+Tools/Design/KeepersCistern_Integration_20261109/install.log
+Successfully changed project path to: C:/UnityProjects/Qolossal
+C:/UnityProjects/Qolossal
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [36868]  Target information:
+
+Player connection [36868]  * "[IP] 192.168.1.20 [Port] 55504 [Flags] 2 [Guid] 1753726918 [EditorId] 1753726918 [Version] 1048832 [Id] WindowsEditor(7,Qasim) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 20248, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+Player connection [36868] Host joined multi-casting on [225.0.0.222:54997]...
+[Licensing::Module] LicensingClient has failed validation; ignoring
+Player connection [36868] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              e52108d2c8b249119972175459819cdb
+  Correlation Id:          4eca27328df3f00c6cfb90af23566ea0
+  External correlation Id: 200225971449003929
+  Machine Id:              AzXGSbR+H2Zbc8vGaEIYShEfD98=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Qasim" (connect: 0.00s, validation: 0.00s, handshake: 0.15s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Qasim-notifications" at "2026-11-09T09:22:01.0143193Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-C54R-DKYT-9KTC-GBQ2-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967689494527-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Input System module state changed to: Initialized.
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-C54R-DKYT-9KTC-GBQ2-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967689494527-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Module] Licensing Background thread has ended after 0.16s
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-39140" after 0.3 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-C54R-DKYT-9KTC-GBQ2-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967689494527-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Artifact Garbage Collection - Removed 43 unused hashed content files
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.19f1 (7689f4515d75)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/UnityProjects/Qolossal/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 3070 Ti (ID=0x2482)
+    Vendor:          NVIDIA
+    VRAM:            8017 MB
+    App VRAM Budget: 7249 MB
+    Driver:          32.0.16.2101
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56140
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002999 seconds.
+- Loaded All Assemblies, in  0.593 seconds
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.440 seconds
+Domain Reload Profiling: 1029ms
+	BeginReloadAssembly (240ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (66ms)
+	LoadAllAssembliesAndSetupDomain (218ms)
+		LoadAssemblies (212ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (213ms)
+			TypeCache.Refresh (210ms)
+				TypeCache.ScanAssembly (187ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (441ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (397ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (64ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (79ms)
+			ProcessInitializeOnLoadAttributes (145ms)
+			ProcessInitializeOnLoadMethodAttributes (104ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-C54R-DKYT-9KTC-GBQ2-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967689494527-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 67 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.2d.animation@13.0.5 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.animation@5d1ab6c077e2)
+    com.unity.2d.aseprite@3.0.2 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.aseprite@20edb5643ab5)
+    com.unity.2d.psdimporter@12.0.2 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.psdimporter@f207d91d598d)
+    com.unity.2d.spriteshape@13.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.spriteshape@0738bab11647)
+    com.unity.2d.tilemap.extras@6.0.2 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.tilemap.extras@4c5cdf9da5f3)
+    com.unity.2d.tooling@1.0.3 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.tooling@127d960d4dc1)
+    com.unity.collab-proxy@2.12.4 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.collab-proxy@0b1559bcd34e)
+    com.unity.ide.rider@3.0.40 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.ide.rider@e4950c6d131b)
+    com.unity.ide.visualstudio@2.0.26 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@1.19.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.inputsystem@21a28c3a6c83)
+    com.unity.timeline@1.8.12 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.timeline@8cd8509afae5)
+    com.unity.visualscripting@1.9.11 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.visualscripting@8bed5ad90189)
+    com.unity.pipeline@0.7.0-exp.1 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.pipeline@ab05e9cd7f74)
+    com.unity.nuget.mono-cecil@1.11.6 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.nuget.newtonsoft-json@3.2.2 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64)
+    com.unity.2d.common@12.0.3 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.common@2af7c9b44b5c)
+    com.unity.mathematics@1.3.3 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.mathematics@19a9377c4ffa)
+    com.unity.collections@2.6.6 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.collections@9796e5ee0d9e)
+    com.unity.searcher@4.9.4 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.searcher@d45a78918735)
+    com.unity.burst@1.8.29 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.burst@6bb9aca3ef38)
+    com.unity.test-framework.performance@3.5.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.test-framework.performance@8b56083ec0f0)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.sprite@d8bb22511404)
+    com.unity.2d.tilemap@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.tilemap@06f4a9532942)
+    com.unity.multiplayer.center@1.0.1 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a)
+    com.unity.render-pipelines.universal@17.3.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.render-pipelines.universal@8a9b4021522a)
+    com.unity.test-framework@1.6.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.test-framework@bd7f943e9647)
+    com.unity.ugui@2.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.ugui@b95364aab964)
+    com.unity.modules.accessibility@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.0.5 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.ext.nunit@d8c07649098d)
+    com.unity.render-pipelines.core@17.3.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.render-pipelines.core@c3bbbae46ff1)
+    com.unity.shadergraph@17.3.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.shadergraph@0a17040bdbb7)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.03 seconds
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:80
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\UnityProjects\Qolossal\
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 45.7663ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/UnityProjects/Qolossal
+DisplayProgressbar: Compiling Scripts
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.WindowsRuntime.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ComponentModel.Composition.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.ComponentModel.Composition.dll"
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Mono.Cecil, Version=0.11.5.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff\Mono.Cecil.dll
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Burst.Cecil, Version=0.11.6.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.burst@6bb9aca3ef38\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 681.3813ms
+ExitCode: 4 Duration: 1s34ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+[ 855/1099  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra requires additional run (0.98 seconds), 1 items updated, 854 evaluated
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\netcorerun\netcorerun.exe "C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/UnityProjects/Qolossal
+ExitCode: 0 Duration: 0s921ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: C:/UnityProjects/Qolossal
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Current configuration matches the requested one, skipping
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 3.4163ms
+ExitCode: 0 Duration: 0s668ms
+Finished compiling graph: 1103 nodes, 21607 flattened edges (17637 ToBuild, 176 ToUse), maximum node priority 1223
+[ 855/1099  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra build success (0.64 seconds), 1 items updated, 1099 evaluated
+AssetDatabase: script compilation time: 3.302810s
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.520 seconds
+Refreshing native plugins compatible for Editor in 4.99 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 4.24 ms, found 5 plugins.
+Start HTTP server: port:7800
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  6.205 seconds
+Domain Reload Profiling: 7713ms
+	BeginReloadAssembly (328ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (25ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (150ms)
+	RebuildCommonClasses (63ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (98ms)
+	LoadAllAssembliesAndSetupDomain (998ms)
+		LoadAssemblies (578ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (537ms)
+			TypeCache.Refresh (418ms)
+				TypeCache.ScanAssembly (387ms)
+			BuildScriptInfoCaches (94ms)
+			ResolveRequiredComponents (20ms)
+	FinalizeReload (6206ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (5634ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (23ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (275ms)
+			ProcessInitializeOnLoadAttributes (4670ms)
+			ProcessInitializeOnLoadMethodAttributes (650ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (36ms)
+Asset Pipeline Refresh (id=89fa47ea5c4fa774581e5e8d36a70ca9): Total: 12.880 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=7885 ms
+		Asset DB Callback time: managed=30 ms, native=48 ms
+		Scripting: domain reloads=1, domain reload time=1521 ms, compile time=3306 ms, other=88 ms
+		Project Asset Count: scripts=2360, non-scripts=14954
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.002ms
+	InvokePackagesCallback: 52.041ms
+	ApplyChangesToAssetFolders: 1.125ms
+	Scan: 750.923ms
+	OnSourceAssetsModified: 0.002ms
+	CategorizeAssetsWithTransientArtifact: 287.402ms
+	ProcessAssetsWithTransientArtifactChanges: 140.335ms
+	CategorizeAssets: 211.220ms
+	ImportOutOfDateAssets: 6230.419ms (2917.892ms without children)
+		CompileScripts: 3305.728ms
+		ReloadNativeAssets: 0.036ms
+		UnloadImportedAssets: 0.728ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 3.729ms
+		InitializingProgressBar: 0.001ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 2.303ms
+	PostProcessAllAssets: 30.433ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.006ms
+	UnloadStreamsBegin: 7.000ms
+	PersistCurrentRevisions: 0.781ms
+	UnloadStreamsEnd: 0.002ms
+	GenerateScriptTypeHashes: 5.789ms
+	Untracked: 5168.361ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Scanning for USB devices : 36.600ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Qolossal
+Unloading 44 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7973 unused Assets / (4.9 MB). Loaded Objects now: 8895.
+Memory consumption went from 273.0 MB to 268.2 MB.
+Total: 14.102700 ms (FindLiveObjects: 0.957200 ms CreateObjectMapping: 2.004400 ms MarkObjects: 7.379600 ms  DeleteObjects: 3.759200 ms)
+
+Start importing Assets/Art/Underground/Backgrounds using Guid(654cb2c16e036414d91a4370e160082f) (DefaultImporter) -> (artifact id: 'a4a9a8208dd7fccb7bf711d033d092cf') in 0.0229512 seconds
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern using Guid(a675db568118cb947accbd7b594a03ef) (DefaultImporter) -> (artifact id: '741c48fed0a7266bd28160161074f6e8') in 0.0146401 seconds
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Band_Silt.png using Guid(817f2dd20f0903546a910a8e60bce2ab) (TextureImporter) -> (artifact id: '69355b80dc9b18cf99108f20e0366430') in 0.0745759 seconds
+Refreshing native plugins compatible for Editor in 3.05 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=717e06231d26ee346a2a80917a7c7438): Total: 0.730 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=3 (actual=3, local cache=0, cache server=0)
+		Asset DB Process Time: managed=11 ms, native=329 ms
+		Asset DB Callback time: managed=377 ms, native=11 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14955
+		Asset File Changes: new=3, changed=3, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.000ms
+	ApplyChangesToAssetFolders: 0.146ms
+	Scan: 39.159ms
+	OnSourceAssetsModified: 1.582ms
+	CategorizeAssetsWithTransientArtifact: 0.032ms
+	ProcessAssetsWithTransientArtifactChanges: 0.233ms
+	CategorizeAssets: 143.232ms
+	ImportOutOfDateAssets: 137.929ms (1.554ms without children)
+		ImportManagerImport: 130.733ms (16.353ms without children)
+			ImportInProcess: 114.288ms
+			UpdateCategorizedAssets: 0.092ms
+		ReloadNativeAssets: 0.042ms
+		UnloadImportedAssets: 0.272ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 3.277ms
+		InitializingProgressBar: 0.006ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 2.042ms
+	PostProcessAllAssets: 380.670ms
+	Hotreload: 6.964ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.115ms
+	UnloadStreamsBegin: 0.068ms
+	PersistCurrentRevisions: 0.713ms
+	UnloadStreamsEnd: 0.001ms
+	Untracked: 18.148ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Band_Tide.png using Guid(5d1a2b87364b50948b566c30b55941c1) (TextureImporter) -> (artifact id: '1a3e34020b9dd8693198c45c907fea0c') in 0.0283305 seconds
+Refreshing native plugins compatible for Editor in 2.77 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3e4ff0611a129b24faa371293cd023dc): Total: 0.100 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Basin_Coping.png using Guid(da23db8dc03f83847a06e2483315268d) (TextureImporter) -> (artifact id: '2e1b395dd2b9b48dd43b40f2a1951e42') in 0.0123381 seconds
+Refreshing native plugins compatible for Editor in 3.67 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=6d5a1c6e572c71643bfe145a732c31d0): Total: 0.088 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Basin_Submerged.png using Guid(d52493b0d8ebbb04d8b8c94097d7346b) (TextureImporter) -> (artifact id: 'a9b90e797a0e9db9bacb4987073f2f36') in 0.0402912 seconds
+Refreshing native plugins compatible for Editor in 2.76 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=1d2a1bd8310421d4f8d35c6d7f5da080): Total: 0.110 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Chain_V.png using Guid(d873aac17c074f940ab38e74eb9f5b23) (TextureImporter) -> (artifact id: 'ec7b0674a44fd9c69966655c34f49e91') in 0.0136749 seconds
+Refreshing native plugins compatible for Editor in 3.37 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8dad439d47410344f9608791ac66fff6): Total: 0.082 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Column_01.png using Guid(f62f12983f2e4b44f9d1ad3eb175db8e) (TextureImporter) -> (artifact id: '07183f7ab8ac4378c9e5112d293fa8ea') in 0.0328869 seconds
+Refreshing native plugins compatible for Editor in 3.90 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c30f4e14fd3ee204ab572ee545015384): Total: 0.102 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Column_02.png using Guid(55f9359204e0be541a25e4e3fa1922ab) (TextureImporter) -> (artifact id: 'de1e9e763fe7031ac78994bb3bf3ad45') in 0.0336592 seconds
+Refreshing native plugins compatible for Editor in 4.33 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=1a433e87d327fd9459364adc79dc16bb): Total: 0.103 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Light_Beam.png using Guid(a113b761f2881bb4ba0fadb5dd01a1f2) (TextureImporter) -> (artifact id: 'f037ae0a369025ad91ec5ca5ae65b154') in 0.0610704 seconds
+Refreshing native plugins compatible for Editor in 3.71 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=b30069ca029bc32419dcc5bfbf76626d): Total: 0.135 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Mound_01.png using Guid(f490da6358c80dc438f1502c1e477177) (TextureImporter) -> (artifact id: '66e620cf94eda7fa9dd8ae64d5f56fb0') in 0.0211735 seconds
+Refreshing native plugins compatible for Editor in 4.97 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=1825515e520c7694d9636db327a3802d): Total: 0.100 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Mound_02.png using Guid(2a1cfa32c7fef9d429dda93f2f3dde3c) (TextureImporter) -> (artifact id: '79c53d6b4c02b83fb87f6d4727d9180e') in 0.0212682 seconds
+Refreshing native plugins compatible for Editor in 3.40 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=bbd54e8ab21cf6e41bc4eec531e738a9): Total: 0.100 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Mouth_Arch_01.png using Guid(4ef07c40db1597043ab39a467afd4f63) (TextureImporter) -> (artifact id: '8892b4c218203857f0a3d6158e929515') in 0.0332347 seconds
+Refreshing native plugins compatible for Editor in 4.21 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=b52eafe6d07847347b27f16e98d0c3c1): Total: 0.111 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Mouth_Arch_02.png using Guid(3a56b6767eac53649a79eee64daeada0) (TextureImporter) -> (artifact id: '080f941ce2def53fc9976597868f5727') in 0.0343291 seconds
+Refreshing native plugins compatible for Editor in 3.17 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=1c5247edf82598d4eb0ed9b9f8ace4a9): Total: 0.110 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Niche_Lantern_01.png using Guid(d7b1c432b82e0bd40816a67a372922a4) (TextureImporter) -> (artifact id: '9823b10f922c97cb69266ff34661924c') in 0.01337 seconds
+Refreshing native plugins compatible for Editor in 3.05 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=13eea5f05a919d54d9539e64436aff6c): Total: 0.090 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Niche_Lantern_02.png using Guid(b25968ec0366d2349b588da3e30a30db) (TextureImporter) -> (artifact id: 'f2edd90160e92f054195267b64bb05a4') in 0.0131638 seconds
+Refreshing native plugins compatible for Editor in 3.55 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=29d51b17510d1c54f8e202a6c7b74a43): Total: 0.076 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Niche_Lantern_03.png using Guid(680464e57c905a349b794fb876bac261) (TextureImporter) -> (artifact id: '2ec07d71c94d21b2305c74f0951ff7a2') in 0.0153349 seconds
+Refreshing native plugins compatible for Editor in 3.25 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=27cca9be0208ef740ba714eb9228fc9c): Total: 0.094 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Pipe_Elbow.png using Guid(5f573ab3ba270af41b04ae6080582ce2) (TextureImporter) -> (artifact id: 'b8f1f4c2045e53ba50fd3a4930241e99') in 0.010009 seconds
+Refreshing native plugins compatible for Editor in 2.88 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c2b3171e38860974b959c5e12a392aed): Total: 0.078 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Pipe_H.png using Guid(b770612a01b48154ab7da7f2600d841f) (TextureImporter) -> (artifact id: 'e27b94312a58c534a29a37f674c05313') in 0.0209001 seconds
+Refreshing native plugins compatible for Editor in 2.87 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8428f837c220ac54085bda10754f6155): Total: 0.096 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Pipe_V.png using Guid(2a341710095427c40a5d6b09df269124) (TextureImporter) -> (artifact id: '84116ef3a24dc5662262a25c1083e020') in 0.0205733 seconds
+Refreshing native plugins compatible for Editor in 2.94 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c92fa1231b739f44fa5691455b211c99): Total: 0.087 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Pipe_Valve.png using Guid(3eba45e125c7f02459723abb4835a20f) (TextureImporter) -> (artifact id: 'f3d59339d77d6115e8d95b6a48001a3b') in 0.0096646 seconds
+Refreshing native plugins compatible for Editor in 3.32 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a693d8f72bfd3514aa90b8b68b43521a): Total: 0.083 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Recess_Arch.png using Guid(35099be2b3fa2814bac233dd2b1c165c) (TextureImporter) -> (artifact id: 'e6745ffe65d2c7b3fe166edb44c637f2') in 0.0374532 seconds
+Refreshing native plugins compatible for Editor in 5.14 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d736f455cd933ba408f03541a51ff263): Total: 0.112 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Rib_Shaft_01.png using Guid(0f71e64129cca17479074e174bd7e34a) (TextureImporter) -> (artifact id: 'ef5fe13c22dd0bee4005d514eff90bb8') in 0.0152353 seconds
+Refreshing native plugins compatible for Editor in 4.27 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=354cef19e6788974eab5e530dd2fd805): Total: 0.115 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Rib_Shaft_02.png using Guid(ad226a3295b01474496ce086d585a3bd) (TextureImporter) -> (artifact id: 'd58473a3e04c8271d4f8ebae5302f4ed') in 0.017623 seconds
+Refreshing native plugins compatible for Editor in 4.75 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=fa758ff9db465184ca8b6538420eb875): Total: 0.115 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Rib_Tunnel_01.png using Guid(0d08a996120e99149a8db30458c86283) (TextureImporter) -> (artifact id: 'f3509101a520d2fc21e1d417de833ba9') in 0.0152376 seconds
+Refreshing native plugins compatible for Editor in 4.32 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=01dbc992da319814b916575a295ea017): Total: 0.111 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Rib_Tunnel_02.png using Guid(68292ec4bb0d7cb4cae1ec9c55a84573) (TextureImporter) -> (artifact id: '808aebc12c2aa890bd44da88a2e20f73') in 0.0135704 seconds
+Refreshing native plugins compatible for Editor in 5.14 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c2823c9559f6b2d49819e9fcec3a505f): Total: 0.123 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Rib_Tunnel_03.png using Guid(11e62285f9566d24ca21f52db3705bd3) (TextureImporter) -> (artifact id: '09b5aaa82a11568b085d74a59d4be44f') in 0.0114875 seconds
+Refreshing native plugins compatible for Editor in 4.23 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3057a92ef88513a4ca827b8b33084971): Total: 0.093 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Roots_Curtain_01.png using Guid(dddd4d613ea9d5747988f55fe0593842) (TextureImporter) -> (artifact id: '079a204d1e94ddf082470470912a2c19') in 0.0439901 seconds
+Refreshing native plugins compatible for Editor in 5.23 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3e6892c4f2f179d4790935f75915e237): Total: 0.138 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Roots_Curtain_02.png using Guid(2931ed0b5d1498a4f86b18f8da2a1cd3) (TextureImporter) -> (artifact id: '37bce78de121b25b6265a607c5540a12') in 0.0444338 seconds
+Refreshing native plugins compatible for Editor in 7.34 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=42fadb4d0ca053a46bd6b8f0fcd4f4f5): Total: 0.147 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Roots_Curtain_03.png using Guid(62d8383962d374f459d5f8fe6cd7e128) (TextureImporter) -> (artifact id: '3be10474749b1b7e46e9c5ced6d4edf5') in 0.0411484 seconds
+Refreshing native plugins compatible for Editor in 3.19 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=cec142f05d0b8fa49b07839e6cfdb4cc): Total: 0.120 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Vault_Span.png using Guid(d5e53649dcfd88144aeddac21e86bacb) (TextureImporter) -> (artifact id: '25f66e1f37d780b9d97a8c8d4a0d40d3') in 0.1190575 seconds
+Refreshing native plugins compatible for Editor in 4.41 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9a4c44bb10175644ea73904c9354949d): Total: 0.209 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Wall_Masonry.png using Guid(d17c48e9368c1074e81d4ef8cb69c65c) (TextureImporter) -> (artifact id: 'fbd341c42d26b31ea33daf7f076c1126') in 0.2365315 seconds
+Refreshing native plugins compatible for Editor in 4.53 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=7cabf397ca576c14395f7e938c7b4619): Total: 0.345 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=336 ms
+		Asset DB Callback time: managed=1 ms, native=6 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14984
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.175ms
+	Scan: 27.199ms
+	OnSourceAssetsModified: 0.190ms
+	CategorizeAssetsWithTransientArtifact: 0.014ms
+	ProcessAssetsWithTransientArtifactChanges: 0.173ms
+	CategorizeAssets: 46.486ms
+	ImportOutOfDateAssets: 248.015ms (2.290ms without children)
+		ImportManagerImport: 238.865ms (1.587ms without children)
+			ImportInProcess: 237.236ms
+			UpdateCategorizedAssets: 0.042ms
+		ReloadNativeAssets: 0.059ms
+		UnloadImportedAssets: 0.498ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 4.069ms
+		InitializingProgressBar: 0.012ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 2.221ms
+	PostProcessAllAssets: 2.274ms
+	Hotreload: 5.853ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.308ms
+	UnloadStreamsBegin: 0.004ms
+	PersistCurrentRevisions: 1.146ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 12.629ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Water_Sheet_V.png using Guid(8de3a839ffddf1e47bb5ee589e57892a) (TextureImporter) -> (artifact id: '43e09fac5f5700bfdcb1f0aae9fe83d0') in 0.0360904 seconds
+Refreshing native plugins compatible for Editor in 3.80 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4b8092303ed2b86478a848447a34352d): Total: 0.126 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/CK_Window_Arch.png using Guid(4aa06f8cf5bb143468be640e8f0055f0) (TextureImporter) -> (artifact id: '87e5e5f6816c6e8fcfee98c01b75c7ad') in 0.1160907 seconds
+Refreshing native plugins compatible for Editor in 4.88 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e4d88e199e07e63418312c094b88f106): Total: 0.228 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FAR_A04_Colonnade_r0c0.png using Guid(2e28d7b5ac12de94794fc7736cf5cbaf) (TextureImporter) -> (artifact id: '07a5b63c85e41fdbdad398b39e6fad54') in 0.4260894 seconds
+Refreshing native plugins compatible for Editor in 5.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=fad709fce6733944ea26a2b7e6ff6b29): Total: 0.524 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=512 ms
+		Asset DB Callback time: managed=1 ms, native=9 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14987
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.117ms
+	Scan: 26.926ms
+	OnSourceAssetsModified: 0.091ms
+	CategorizeAssetsWithTransientArtifact: 0.013ms
+	ProcessAssetsWithTransientArtifactChanges: 0.183ms
+	CategorizeAssets: 33.696ms
+	ImportOutOfDateAssets: 438.258ms (1.778ms without children)
+		ImportManagerImport: 429.698ms (3.106ms without children)
+			ImportInProcess: 426.550ms
+			UpdateCategorizedAssets: 0.042ms
+		ReloadNativeAssets: 0.032ms
+		UnloadImportedAssets: 0.314ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 4.019ms
+		InitializingProgressBar: 0.007ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 2.409ms
+	PostProcessAllAssets: 2.633ms
+	Hotreload: 8.097ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.934ms
+	UnloadStreamsBegin: 0.002ms
+	PersistCurrentRevisions: 2.154ms
+	UnloadStreamsEnd: 0.003ms
+	Untracked: 10.756ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FAR_A04_Colonnade_r0c1.png using Guid(43041188d16197044951354ca146a250) (TextureImporter) -> (artifact id: 'a850e115c9ec2327b69d37ea32165761') in 0.4199137 seconds
+Refreshing native plugins compatible for Editor in 3.70 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=265c7d6305096e8448d055323ee009f9): Total: 0.524 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=515 ms
+		Asset DB Callback time: managed=1 ms, native=6 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14988
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.176ms
+	Scan: 28.318ms
+	OnSourceAssetsModified: 0.090ms
+	CategorizeAssetsWithTransientArtifact: 0.011ms
+	ProcessAssetsWithTransientArtifactChanges: 0.141ms
+	CategorizeAssets: 40.570ms
+	ImportOutOfDateAssets: 433.798ms (2.453ms without children)
+		ImportManagerImport: 423.318ms (2.521ms without children)
+			ImportInProcess: 420.722ms
+			UpdateCategorizedAssets: 0.075ms
+		ReloadNativeAssets: 0.074ms
+		UnloadImportedAssets: 0.365ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 5.337ms
+		InitializingProgressBar: 0.015ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 2.234ms
+	PostProcessAllAssets: 2.598ms
+	Hotreload: 4.964ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.273ms
+	UnloadStreamsBegin: 0.016ms
+	PersistCurrentRevisions: 1.119ms
+	UnloadStreamsEnd: 0.005ms
+	Untracked: 10.710ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FAR_A04_Colonnade_r0c2.png using Guid(0158e463447338445a41dcdab2afd218) (TextureImporter) -> (artifact id: 'b2d1df47de19a9558c98e75781de8713') in 0.3904697 seconds
+Refreshing native plugins compatible for Editor in 4.45 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f9c971d81368e7b40a4d1556a6b68062): Total: 0.488 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=477 ms
+		Asset DB Callback time: managed=1 ms, native=8 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14989
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.002ms
+	ApplyChangesToAssetFolders: 0.169ms
+	Scan: 21.694ms
+	OnSourceAssetsModified: 0.083ms
+	CategorizeAssetsWithTransientArtifact: 0.017ms
+	ProcessAssetsWithTransientArtifactChanges: 0.214ms
+	CategorizeAssets: 38.026ms
+	ImportOutOfDateAssets: 401.433ms (1.977ms without children)
+		ImportManagerImport: 393.790ms (2.091ms without children)
+			ImportInProcess: 391.636ms
+			UpdateCategorizedAssets: 0.063ms
+		ReloadNativeAssets: 0.066ms
+		UnloadImportedAssets: 0.411ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 3.456ms
+		InitializingProgressBar: 0.010ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 1.722ms
+	PostProcessAllAssets: 3.466ms
+	Hotreload: 7.033ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.494ms
+	UnloadStreamsBegin: 0.005ms
+	PersistCurrentRevisions: 1.498ms
+	UnloadStreamsEnd: 0.004ms
+	Untracked: 12.947ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FAR_A04_Colonnade_r1c0.png using Guid(fa81cbfe381661b44a8a3e2d9dcb9034) (TextureImporter) -> (artifact id: 'f4f2f90badf6e4af092ea984dad45223') in 0.4827203 seconds
+Refreshing native plugins compatible for Editor in 5.45 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=676076b554ca02942a69c607faf94bb6): Total: 0.585 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=573 ms
+		Asset DB Callback time: managed=1 ms, native=9 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14990
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.165ms
+	Scan: 26.172ms
+	OnSourceAssetsModified: 0.096ms
+	CategorizeAssetsWithTransientArtifact: 0.011ms
+	ProcessAssetsWithTransientArtifactChanges: 0.107ms
+	CategorizeAssets: 33.650ms
+	ImportOutOfDateAssets: 498.602ms (2.795ms without children)
+		ImportManagerImport: 487.045ms (3.419ms without children)
+			ImportInProcess: 483.575ms
+			UpdateCategorizedAssets: 0.052ms
+		ReloadNativeAssets: 0.087ms
+		UnloadImportedAssets: 0.465ms
+		ReloadImportedAssets: 0.001ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 6.184ms
+		InitializingProgressBar: 0.018ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 2.004ms
+	PostProcessAllAssets: 3.479ms
+	Hotreload: 7.362ms
+	GatherAllCurrentPrimaryArtifactRevisions: 2.006ms
+	UnloadStreamsBegin: 0.004ms
+	PersistCurrentRevisions: 1.238ms
+	UnloadStreamsEnd: 0.007ms
+	Untracked: 12.099ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FAR_A04_Colonnade_r1c1.png using Guid(fa898e0985d977c4ba482139a02d751e) (TextureImporter) -> (artifact id: '57d3cd46a73e160d5b0a94443732a7d0') in 0.4672879 seconds
+Refreshing native plugins compatible for Editor in 5.26 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4955283eaeca2354686968100aad124f): Total: 0.589 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=577 ms
+		Asset DB Callback time: managed=1 ms, native=9 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14991
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.000ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.154ms
+	Scan: 25.912ms
+	OnSourceAssetsModified: 0.079ms
+	CategorizeAssetsWithTransientArtifact: 0.014ms
+	ProcessAssetsWithTransientArtifactChanges: 0.180ms
+	CategorizeAssets: 50.537ms
+	ImportOutOfDateAssets: 484.087ms (3.354ms without children)
+		ImportManagerImport: 472.093ms (3.728ms without children)
+			ImportInProcess: 468.304ms
+			UpdateCategorizedAssets: 0.061ms
+		ReloadNativeAssets: 0.071ms
+		UnloadImportedAssets: 0.408ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 6.554ms
+		InitializingProgressBar: 0.020ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.003ms
+		OnDemandSchedulerStart: 1.584ms
+	PostProcessAllAssets: 2.450ms
+	Hotreload: 8.800ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.301ms
+	UnloadStreamsBegin: 0.004ms
+	PersistCurrentRevisions: 1.693ms
+	UnloadStreamsEnd: 0.003ms
+	Untracked: 13.898ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FAR_A04_Colonnade_r1c2.png using Guid(d3d84b75fa6c10b429b80ceafb6e36b3) (TextureImporter) -> (artifact id: '272b9d95b13870170f79a3a5418e25eb') in 0.446375 seconds
+Refreshing native plugins compatible for Editor in 5.45 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=eb66aa02b0f48304ab45113cf07f6a37): Total: 0.543 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=532 ms
+		Asset DB Callback time: managed=1 ms, native=8 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14992
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.144ms
+	Scan: 21.125ms
+	OnSourceAssetsModified: 0.069ms
+	CategorizeAssetsWithTransientArtifact: 0.005ms
+	ProcessAssetsWithTransientArtifactChanges: 0.108ms
+	CategorizeAssets: 41.654ms
+	ImportOutOfDateAssets: 456.600ms (1.651ms without children)
+		ImportManagerImport: 448.521ms (1.400ms without children)
+			ImportInProcess: 447.083ms
+			UpdateCategorizedAssets: 0.039ms
+		ReloadNativeAssets: 0.051ms
+		UnloadImportedAssets: 0.562ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 4.788ms
+		InitializingProgressBar: 0.010ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 1.015ms
+	PostProcessAllAssets: 1.898ms
+	Hotreload: 7.618ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.639ms
+	UnloadStreamsBegin: 0.006ms
+	PersistCurrentRevisions: 1.258ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 10.696ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FAR_A06_EngineDepths_r0c0.png using Guid(2e23a81d2a871a24697be38d38620b3f) (TextureImporter) -> (artifact id: 'b83ef86c140a8b8741f2459e7beefd93') in 0.3944249 seconds
+Refreshing native plugins compatible for Editor in 3.97 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3ebe513dc66fdc54abead1ae2872912d): Total: 0.490 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=478 ms
+		Asset DB Callback time: managed=1 ms, native=9 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14993
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.154ms
+	Scan: 22.413ms
+	OnSourceAssetsModified: 0.057ms
+	CategorizeAssetsWithTransientArtifact: 0.012ms
+	ProcessAssetsWithTransientArtifactChanges: 0.126ms
+	CategorizeAssets: 36.400ms
+	ImportOutOfDateAssets: 406.004ms (2.233ms without children)
+		ImportManagerImport: 397.490ms (1.974ms without children)
+			ImportInProcess: 395.463ms
+			UpdateCategorizedAssets: 0.054ms
+		ReloadNativeAssets: 0.033ms
+		UnloadImportedAssets: 0.411ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 4.105ms
+		InitializingProgressBar: 0.024ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.003ms
+		OnDemandSchedulerStart: 1.704ms
+	PostProcessAllAssets: 2.845ms
+	Hotreload: 7.769ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.286ms
+	UnloadStreamsBegin: 0.004ms
+	PersistCurrentRevisions: 2.175ms
+	UnloadStreamsEnd: 0.003ms
+	Untracked: 10.511ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FAR_A06_EngineDepths_r0c1.png using Guid(844c2f64ecf7d6344b0f687db48f76a8) (TextureImporter) -> (artifact id: 'd68968d0ca80f90098c3173f9f75a883') in 0.4015442 seconds
+Refreshing native plugins compatible for Editor in 3.97 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d99c39ffce8f63446bb2867b924910f6): Total: 0.535 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=523 ms
+		Asset DB Callback time: managed=1 ms, native=8 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14994
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.227ms
+	Scan: 33.745ms
+	OnSourceAssetsModified: 0.095ms
+	CategorizeAssetsWithTransientArtifact: 0.014ms
+	ProcessAssetsWithTransientArtifactChanges: 0.143ms
+	CategorizeAssets: 55.220ms
+	ImportOutOfDateAssets: 418.545ms (3.332ms without children)
+		ImportManagerImport: 404.628ms (2.338ms without children)
+			ImportInProcess: 402.215ms
+			UpdateCategorizedAssets: 0.075ms
+		ReloadNativeAssets: 0.108ms
+		UnloadImportedAssets: 0.640ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 6.564ms
+		InitializingProgressBar: 0.019ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.004ms
+		OnDemandSchedulerStart: 3.252ms
+	PostProcessAllAssets: 2.665ms
+	Hotreload: 7.182ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.812ms
+	UnloadStreamsBegin: 0.006ms
+	PersistCurrentRevisions: 1.698ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 13.233ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FAR_A06_EngineDepths_r0c2.png using Guid(85277b7c6aece744e9a4493f3e5d14c8) (TextureImporter) -> (artifact id: 'b1d7651ab42f4c6db2a0832baaf3a07a') in 0.3734661 seconds
+Refreshing native plugins compatible for Editor in 3.00 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=92e75d68465352f4e8cc89e30fc8a55a): Total: 0.488 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=479 ms
+		Asset DB Callback time: managed=1 ms, native=7 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14995
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.002ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.148ms
+	Scan: 27.494ms
+	OnSourceAssetsModified: 0.210ms
+	CategorizeAssetsWithTransientArtifact: 0.015ms
+	ProcessAssetsWithTransientArtifactChanges: 0.172ms
+	CategorizeAssets: 41.820ms
+	ImportOutOfDateAssets: 385.524ms (1.834ms without children)
+		ImportManagerImport: 377.183ms (2.818ms without children)
+			ImportInProcess: 374.319ms
+			UpdateCategorizedAssets: 0.047ms
+		ReloadNativeAssets: 0.048ms
+		UnloadImportedAssets: 0.301ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 4.794ms
+		InitializingProgressBar: 0.013ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 1.349ms
+	PostProcessAllAssets: 1.997ms
+	Hotreload: 6.188ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.271ms
+	UnloadStreamsBegin: 0.003ms
+	PersistCurrentRevisions: 1.556ms
+	UnloadStreamsEnd: 0.003ms
+	Untracked: 21.992ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FAR_A06_EngineDepths_r1c0.png using Guid(4a6155083df83e74d8dd11360094391e) (TextureImporter) -> (artifact id: '5a0a5abcff3c2a38d42aa481b6b77d52') in 0.4076513 seconds
+Refreshing native plugins compatible for Editor in 4.25 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=b5a28b2e64cd74549b3a7ada8e16f682): Total: 0.520 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=510 ms
+		Asset DB Callback time: managed=1 ms, native=6 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14996
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.121ms
+	Scan: 23.344ms
+	OnSourceAssetsModified: 0.108ms
+	CategorizeAssetsWithTransientArtifact: 0.029ms
+	ProcessAssetsWithTransientArtifactChanges: 0.253ms
+	CategorizeAssets: 47.342ms
+	ImportOutOfDateAssets: 419.962ms (2.206ms without children)
+		ImportManagerImport: 410.458ms (1.980ms without children)
+			ImportInProcess: 408.433ms
+			UpdateCategorizedAssets: 0.045ms
+		ReloadNativeAssets: 0.046ms
+		UnloadImportedAssets: 0.356ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 4.048ms
+		InitializingProgressBar: 0.013ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.003ms
+		OnDemandSchedulerStart: 2.833ms
+	PostProcessAllAssets: 2.717ms
+	Hotreload: 5.931ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.028ms
+	UnloadStreamsBegin: 0.003ms
+	PersistCurrentRevisions: 1.579ms
+	UnloadStreamsEnd: 0.004ms
+	Untracked: 17.241ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FAR_A06_EngineDepths_r1c1.png using Guid(7ccc5c8471ffe9f44802146269d4d3c0) (TextureImporter) -> (artifact id: '26b1fa187da78485056dc143e21904a9') in 0.4302825 seconds
+Refreshing native plugins compatible for Editor in 5.08 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c7a24ec3c32a559469e332d876fcccf5): Total: 0.542 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=530 ms
+		Asset DB Callback time: managed=1 ms, native=8 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14997
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.211ms
+	Scan: 28.244ms
+	OnSourceAssetsModified: 0.130ms
+	CategorizeAssetsWithTransientArtifact: 0.013ms
+	ProcessAssetsWithTransientArtifactChanges: 0.148ms
+	CategorizeAssets: 39.890ms
+	ImportOutOfDateAssets: 443.633ms (1.868ms without children)
+		ImportManagerImport: 434.008ms (2.986ms without children)
+			ImportInProcess: 430.963ms
+			UpdateCategorizedAssets: 0.060ms
+		ReloadNativeAssets: 0.039ms
+		UnloadImportedAssets: 0.360ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 4.932ms
+		InitializingProgressBar: 0.006ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.003ms
+		OnDemandSchedulerStart: 2.417ms
+	PostProcessAllAssets: 3.234ms
+	Hotreload: 6.736ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.930ms
+	UnloadStreamsBegin: 0.006ms
+	PersistCurrentRevisions: 1.635ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 15.698ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FAR_A06_EngineDepths_r1c2.png using Guid(fef04b18985832140a4d64ece0697906) (TextureImporter) -> (artifact id: '521978d79ce8130ead22616fc1b968b9') in 0.4164172 seconds
+Refreshing native plugins compatible for Editor in 5.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ac66bd5ec4029214da155840b9effed4): Total: 0.528 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=515 ms
+		Asset DB Callback time: managed=2 ms, native=9 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=14998
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.192ms
+	Scan: 26.989ms
+	OnSourceAssetsModified: 0.133ms
+	CategorizeAssetsWithTransientArtifact: 0.012ms
+	ProcessAssetsWithTransientArtifactChanges: 0.136ms
+	CategorizeAssets: 41.814ms
+	ImportOutOfDateAssets: 429.692ms (2.218ms without children)
+		ImportManagerImport: 420.509ms (2.823ms without children)
+			ImportInProcess: 417.630ms
+			UpdateCategorizedAssets: 0.056ms
+		ReloadNativeAssets: 0.046ms
+		UnloadImportedAssets: 0.366ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 5.135ms
+		InitializingProgressBar: 0.012ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 1.405ms
+	PostProcessAllAssets: 3.025ms
+	Hotreload: 8.741ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.771ms
+	UnloadStreamsBegin: 0.005ms
+	PersistCurrentRevisions: 1.973ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 13.758ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FG_Chain_Hook.png using Guid(4fe5fd5ba8549e249985604cd72057eb) (TextureImporter) -> (artifact id: 'e2438243e6ab2217eef23e392c38c9f8') in 0.0352557 seconds
+Refreshing native plugins compatible for Editor in 5.50 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9f68e1c344814874eb6d8e07f748caaf): Total: 0.150 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FG_Roots_01.png using Guid(30ba8a79252a9044daf6667e869ab546) (TextureImporter) -> (artifact id: '94711f1ca7b746905e561388fde2352a') in 0.0601785 seconds
+Refreshing native plugins compatible for Editor in 5.26 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=795a1ca4c79ac104f953ae53b2a0ef49): Total: 0.189 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/FG_Roots_02.png using Guid(0a8db2c54d1cf50428289fc53475be79) (TextureImporter) -> (artifact id: '50adba514aed19a51a3ea588aab4b211') in 0.0393325 seconds
+Refreshing native plugins compatible for Editor in 4.70 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=575f39909d027d541b318192aa723adc): Total: 0.145 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_A01.png using Guid(1619237243daf71408e6dfe2a2adbab5) (TextureImporter) -> (artifact id: 'aedf085e9e0a43b1bb373ed870ad59f3') in 0.0224473 seconds
+Refreshing native plugins compatible for Editor in 4.04 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d7ced432a404dd8489d2d6bbc862548b): Total: 0.133 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_A02.png using Guid(fcf179220a9cedb42a5116b435622a1d) (TextureImporter) -> (artifact id: '4e508fce7dcd086d3f5f314b7055bb86') in 0.0203264 seconds
+Refreshing native plugins compatible for Editor in 2.92 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=690dca0d335c91f43bab4db657f9674d): Total: 0.130 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_A03.png using Guid(76d826cfd3a302a42a2e8398f93cdb59) (TextureImporter) -> (artifact id: 'a73a45e87f8c3b3f1339df53cad70278') in 0.01553 seconds
+Refreshing native plugins compatible for Editor in 5.47 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=971da18ad72e7694ab85dff965316aba): Total: 0.119 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_A04.png using Guid(120c2d254f979434a92e2fb0d50b0445) (TextureImporter) -> (artifact id: 'c8d1a55b1e49cb34d253f45e1e766aab') in 0.0322044 seconds
+Refreshing native plugins compatible for Editor in 5.08 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0763fdd4b0226434f9c52608d0e6e7df): Total: 0.155 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_A05.png using Guid(b8424abb8a2495b40800e29400142885) (TextureImporter) -> (artifact id: '342eeb64273edb2e861aa271156d5a3d') in 0.0188977 seconds
+Refreshing native plugins compatible for Editor in 5.10 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8336f3b69d4a9ff47855af9a9255dfb0): Total: 0.131 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_A06.png using Guid(2035cc78266114c45bd759f8cde7402c) (TextureImporter) -> (artifact id: 'dee6aad50c59b10d3eb4881545f3399c') in 0.0272744 seconds
+Refreshing native plugins compatible for Editor in 5.01 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=140eb71e6552dd045bb808ac683545b9): Total: 0.149 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_A07.png using Guid(6e1016ac753849d48a7d4c154d13bd39) (TextureImporter) -> (artifact id: '68d8dd60b530ba557a5365f94f7b9d71') in 0.0182864 seconds
+Refreshing native plugins compatible for Editor in 5.52 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=95ec8068e7f48f545a19cf088c2dcaa5): Total: 0.132 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_A08.png using Guid(72e7efacb3e77e8458dcfa8a8777b44f) (TextureImporter) -> (artifact id: '214cf5bf6ebf5d9c6fbeeb167cc9eac0') in 0.0250635 seconds
+Refreshing native plugins compatible for Editor in 4.82 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=93e247b41d145c641ac1265007c88e4c): Total: 0.148 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_P_A01_A02.png using Guid(e62ab5b9519be4f4b8c8b5c9bbc16b68) (TextureImporter) -> (artifact id: '9a57a038a2a2ef43e4d4ce9eb1b07bf0') in 0.0052183 seconds
+Refreshing native plugins compatible for Editor in 3.61 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=bf898c4f0b2bebe4db1ec2f786d8f73a): Total: 0.085 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_P_A02_A03.png using Guid(e77f69a441bd3e144a71688b2510d3bc) (TextureImporter) -> (artifact id: 'd92ae0b65c6e0b1660a6bcb50d988c9b') in 0.0036454 seconds
+Refreshing native plugins compatible for Editor in 3.22 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=dd20c1755f304004591c3d4437cd0d14): Total: 0.078 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_P_A04_A09.png using Guid(f0c7d3d594160d04a8cfd6f216ad41ba) (TextureImporter) -> (artifact id: 'acbfeeda29f08df26d178664a3289c05') in 0.0044805 seconds
+Refreshing native plugins compatible for Editor in 3.27 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8ef407345ea32ab489a1b56c359ffba1): Total: 0.099 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_P_A05_A06_H.png using Guid(a7b6772dbdc5e974493c850693ba4cc2) (TextureImporter) -> (artifact id: '5f3e861efd7b0c9f24c3e5833b248830') in 0.0057802 seconds
+Refreshing native plugins compatible for Editor in 4.78 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e9921c6ef4720eb4faf78de55abe3e4e): Total: 0.100 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_P_A05_A06_V.png using Guid(565b85b49a90a604297dfc2d2265fd40) (TextureImporter) -> (artifact id: '785f6531f535e1201e7db38932350f18') in 0.0051805 seconds
+Refreshing native plugins compatible for Editor in 5.87 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0c2f67917b398a14bb631ed1b82fa2cf): Total: 0.119 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_P_A06_A02.png using Guid(0c84d067932596a4ab85908c34325907) (TextureImporter) -> (artifact id: '8cf8fa89aa40bec8eb17576ebfec1dab') in 0.0077034 seconds
+Refreshing native plugins compatible for Editor in 3.12 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4a4849070f6769444a9d25ae38abb146): Total: 0.102 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_P_A06_A07.png using Guid(d3b0bc901d5800b46b2c60edb0f00bad) (TextureImporter) -> (artifact id: '58a6ec101dd5572d650c1d6824dd2624') in 0.0060301 seconds
+Refreshing native plugins compatible for Editor in 4.97 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f12697ee591c26042aefc851ed32e7ab): Total: 0.111 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_P_A07_A08.png using Guid(bce053c19a495a84cbd30de21687ca4b) (TextureImporter) -> (artifact id: '45055fc61ea9ff5d9c16d4a50cfa89fa') in 0.0070934 seconds
+Refreshing native plugins compatible for Editor in 5.13 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=cb6e5f00321f98d4cb2d26d8333d72c9): Total: 0.115 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_P_A08_A10.png using Guid(6eb0cdc5ac7346e47a748ef0f9d1eb61) (TextureImporter) -> (artifact id: 'd2513e968ba75bdf19c65956d5a452c6') in 0.0070606 seconds
+Refreshing native plugins compatible for Editor in 5.09 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ad3e161f549f252489efea4ba0072e68): Total: 0.114 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_P_A08_HEART.png using Guid(2f746cd022f2f0d4eba837d7ccfe9b33) (TextureImporter) -> (artifact id: '8147b815ed83fff1a686ac4f6117e4fa') in 0.0046016 seconds
+Refreshing native plugins compatible for Editor in 6.13 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=eda53563a2d260442abb85a975ba5fb7): Total: 0.110 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_T1.png using Guid(1eb6940eb2135354fb46f9212d710813) (TextureImporter) -> (artifact id: '1dda4579301d512cfb7e022c48be1551') in 0.0058652 seconds
+Refreshing native plugins compatible for Editor in 4.15 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f0a589cb09e12d34aad2dc80c4eaa0aa): Total: 0.116 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/LM_T2.png using Guid(b464203540478f241b5bc13f95a69506) (TextureImporter) -> (artifact id: '449dfc2f9d8b92decc6ed093036b3a51') in 0.0089258 seconds
+Refreshing native plugins compatible for Editor in 4.49 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0903956712abd4e4087f4e41dc4a83ab): Total: 0.118 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/MID_A01_SluiceWinch.png using Guid(b691b720332e4614ab5247dfe588de1c) (TextureImporter) -> (artifact id: 'cc454f8b465bd6f3fcebea0840788e09') in 0.0716915 seconds
+Refreshing native plugins compatible for Editor in 4.86 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=14f27492ea0e874429f69a2cc7df0c17): Total: 0.187 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/MID_A02_DrainWinch.png using Guid(9dafb8934e4835641a0c452abe5cc36c) (TextureImporter) -> (artifact id: 'a67ef7968f6ab75542325cff427a2629') in 0.0841556 seconds
+Refreshing native plugins compatible for Editor in 4.96 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=972273bc75a258842882ddc0a66467ee): Total: 0.216 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/MID_A04_GaugeTower.png using Guid(3047783bd7bcb9545980add6bee45e91) (TextureImporter) -> (artifact id: '8d78f284c4934667f3bb53eec9783782') in 0.1388376 seconds
+Refreshing native plugins compatible for Editor in 3.74 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=714e40b6632384f4fafa0401e35985d9): Total: 0.254 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/MID_A05_WeirStair.png using Guid(1ea6033e32cf3ce4cb5b06d4a9280c87) (TextureImporter) -> (artifact id: '944b03cf709089ea17f0489f951c41ec') in 0.1120639 seconds
+Refreshing native plugins compatible for Editor in 5.27 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2645070cb5a3cb9449c58f02dd91dcf4): Total: 0.212 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/MID_A06_Flywheel.png using Guid(68689836505cfda41b67b02a1e9a9cb4) (TextureImporter) -> (artifact id: 'b136a6f580864d846aef4139a581b417') in 0.1373704 seconds
+Refreshing native plugins compatible for Editor in 5.43 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3295026f1348ac84c8d9d3a237c65b5e): Total: 0.233 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/SET_A01_InletGate.png using Guid(32e5d519336d70f498111b3a3a6abe57) (TextureImporter) -> (artifact id: 'f1b4783f616e11b1892402c7e467e7b7') in 0.4019731 seconds
+Refreshing native plugins compatible for Editor in 4.48 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=dfc4ca9cb103c4146b6e1c47ce9f288c): Total: 0.512 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=502 ms
+		Asset DB Callback time: managed=1 ms, native=7 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=15027
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.228ms
+	Scan: 32.526ms
+	OnSourceAssetsModified: 0.117ms
+	CategorizeAssetsWithTransientArtifact: 0.007ms
+	ProcessAssetsWithTransientArtifactChanges: 0.113ms
+	CategorizeAssets: 39.277ms
+	ImportOutOfDateAssets: 415.559ms (2.060ms without children)
+		ImportManagerImport: 406.148ms (3.375ms without children)
+			ImportInProcess: 402.729ms
+			UpdateCategorizedAssets: 0.043ms
+		ReloadNativeAssets: 0.047ms
+		UnloadImportedAssets: 0.439ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 5.218ms
+		InitializingProgressBar: 0.010ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 1.636ms
+	PostProcessAllAssets: 3.019ms
+	Hotreload: 6.353ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.645ms
+	UnloadStreamsBegin: 0.006ms
+	PersistCurrentRevisions: 1.318ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 12.296ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/SET_A02_AqueductSpout.png using Guid(cd1c6b222af52ca4b90f21c8e437b4ef) (TextureImporter) -> (artifact id: 'da71251b0896e4115eeea983a555209f') in 0.5260329 seconds
+Refreshing native plugins compatible for Editor in 3.38 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4962908dcc4922b458d086d83940562e): Total: 0.642 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=634 ms
+		Asset DB Callback time: managed=1 ms, native=5 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=15028
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.002ms
+	InvokePackagesCallback: 0.003ms
+	ApplyChangesToAssetFolders: 0.214ms
+	Scan: 33.608ms
+	OnSourceAssetsModified: 0.097ms
+	CategorizeAssetsWithTransientArtifact: 0.012ms
+	ProcessAssetsWithTransientArtifactChanges: 0.136ms
+	CategorizeAssets: 41.893ms
+	ImportOutOfDateAssets: 541.093ms (2.179ms without children)
+		ImportManagerImport: 531.372ms (4.674ms without children)
+			ImportInProcess: 526.618ms
+			UpdateCategorizedAssets: 0.080ms
+		ReloadNativeAssets: 0.066ms
+		UnloadImportedAssets: 0.323ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 5.471ms
+		InitializingProgressBar: 0.013ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 1.666ms
+	PostProcessAllAssets: 2.559ms
+	Hotreload: 4.673ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.508ms
+	UnloadStreamsBegin: 0.004ms
+	PersistCurrentRevisions: 2.275ms
+	UnloadStreamsEnd: 0.003ms
+	Untracked: 13.736ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/SET_A02_PlungePool.png using Guid(a1bc8e9e59f016143812e0ab72a5a79c) (TextureImporter) -> (artifact id: '7eed613b940d4afbf7627b8ea61329d1') in 0.298142 seconds
+Refreshing native plugins compatible for Editor in 3.57 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9dcbd97da2295ef4c9ac11c8188bf2e3): Total: 0.395 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=386 ms
+		Asset DB Callback time: managed=1 ms, native=7 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=15029
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.159ms
+	Scan: 21.630ms
+	OnSourceAssetsModified: 0.059ms
+	CategorizeAssetsWithTransientArtifact: 0.011ms
+	ProcessAssetsWithTransientArtifactChanges: 0.122ms
+	CategorizeAssets: 40.187ms
+	ImportOutOfDateAssets: 310.371ms (2.388ms without children)
+		ImportManagerImport: 301.687ms (2.832ms without children)
+			ImportInProcess: 298.802ms
+			UpdateCategorizedAssets: 0.053ms
+		ReloadNativeAssets: 0.105ms
+		UnloadImportedAssets: 0.433ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 4.503ms
+		InitializingProgressBar: 0.014ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 1.239ms
+	PostProcessAllAssets: 1.771ms
+	Hotreload: 6.901ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.191ms
+	UnloadStreamsBegin: 0.004ms
+	PersistCurrentRevisions: 1.203ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 11.709ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/SET_A05_SpillHead.png using Guid(63fc68dd1db9cd649a66dc919b976205) (TextureImporter) -> (artifact id: 'f45f863e4480b20abf670857128b19bf') in 0.3734868 seconds
+Refreshing native plugins compatible for Editor in 4.69 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a9e9430181eca78409e55ab8045ed622): Total: 0.492 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=480 ms
+		Asset DB Callback time: managed=1 ms, native=8 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=15030
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.000ms
+	ApplyChangesToAssetFolders: 0.163ms
+	Scan: 26.484ms
+	OnSourceAssetsModified: 0.113ms
+	CategorizeAssetsWithTransientArtifact: 0.018ms
+	ProcessAssetsWithTransientArtifactChanges: 0.187ms
+	CategorizeAssets: 39.748ms
+	ImportOutOfDateAssets: 392.916ms (2.396ms without children)
+		ImportManagerImport: 380.329ms (6.037ms without children)
+			ImportInProcess: 374.208ms
+			UpdateCategorizedAssets: 0.083ms
+		ReloadNativeAssets: 0.051ms
+		UnloadImportedAssets: 0.398ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 6.772ms
+		InitializingProgressBar: 0.009ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.003ms
+		OnDemandSchedulerStart: 2.960ms
+	PostProcessAllAssets: 3.881ms
+	Hotreload: 6.622ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.544ms
+	UnloadStreamsBegin: 0.002ms
+	PersistCurrentRevisions: 3.109ms
+	UnloadStreamsEnd: 0.005ms
+	Untracked: 16.901ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/SET_A06_BeamEngine_01.png using Guid(00a5a3e6058a05f4f9e725d5dac9eca6) (TextureImporter) -> (artifact id: '9dbbccf7f6591be4dc499c6d8ee09f14') in 0.2782316 seconds
+Refreshing native plugins compatible for Editor in 4.49 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=5d4a6c1627454e9409f7d78ae4e78c92): Total: 0.410 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=400 ms
+		Asset DB Callback time: managed=1 ms, native=7 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=15031
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.002ms
+	ApplyChangesToAssetFolders: 0.346ms
+	Scan: 34.012ms
+	OnSourceAssetsModified: 0.161ms
+	CategorizeAssetsWithTransientArtifact: 0.015ms
+	ProcessAssetsWithTransientArtifactChanges: 0.244ms
+	CategorizeAssets: 50.783ms
+	ImportOutOfDateAssets: 295.985ms (3.060ms without children)
+		ImportManagerImport: 283.555ms (4.020ms without children)
+			ImportInProcess: 279.448ms
+			UpdateCategorizedAssets: 0.087ms
+		ReloadNativeAssets: 0.049ms
+		UnloadImportedAssets: 0.299ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 6.254ms
+		InitializingProgressBar: 0.012ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 2.756ms
+	PostProcessAllAssets: 2.397ms
+	Hotreload: 6.251ms
+	GatherAllCurrentPrimaryArtifactRevisions: 2.787ms
+	UnloadStreamsBegin: 0.009ms
+	PersistCurrentRevisions: 1.420ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 15.754ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/SET_A06_BeamEngine_02.png using Guid(84d83ec102c169d40a5c392092e1757b) (TextureImporter) -> (artifact id: '5ea605c00c00a1a0898eba56ea045feb') in 0.2551637 seconds
+Refreshing native plugins compatible for Editor in 3.84 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=747ee46d7976bc345be85aa045a5b126): Total: 0.369 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=358 ms
+		Asset DB Callback time: managed=2 ms, native=7 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=15032
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.196ms
+	Scan: 24.071ms
+	OnSourceAssetsModified: 0.127ms
+	CategorizeAssetsWithTransientArtifact: 0.011ms
+	ProcessAssetsWithTransientArtifactChanges: 0.116ms
+	CategorizeAssets: 43.963ms
+	ImportOutOfDateAssets: 271.429ms (3.108ms without children)
+		ImportManagerImport: 259.326ms (3.032ms without children)
+			ImportInProcess: 256.205ms
+			UpdateCategorizedAssets: 0.089ms
+		ReloadNativeAssets: 0.042ms
+		UnloadImportedAssets: 0.450ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 6.403ms
+		InitializingProgressBar: 0.010ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 2.087ms
+	PostProcessAllAssets: 3.357ms
+	Hotreload: 6.461ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.748ms
+	UnloadStreamsBegin: 0.005ms
+	PersistCurrentRevisions: 1.712ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 15.662ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/SET_A07_KeeperQuarters_L.png using Guid(1e03e4ac3195c174eb0fe1bca8489013) (TextureImporter) -> (artifact id: '8495d095f4efb61287edda522e9c22a7') in 0.2363263 seconds
+Refreshing native plugins compatible for Editor in 5.77 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=569758ff1de101b4e93b8dd878913cef): Total: 0.377 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=364 ms
+		Asset DB Callback time: managed=2 ms, native=9 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=15033
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.002ms
+	InvokePackagesCallback: 0.002ms
+	ApplyChangesToAssetFolders: 0.374ms
+	Scan: 39.757ms
+	OnSourceAssetsModified: 0.152ms
+	CategorizeAssetsWithTransientArtifact: 0.017ms
+	ProcessAssetsWithTransientArtifactChanges: 0.198ms
+	CategorizeAssets: 49.608ms
+	ImportOutOfDateAssets: 250.474ms (2.156ms without children)
+		ImportManagerImport: 240.359ms (3.247ms without children)
+			ImportInProcess: 237.064ms
+			UpdateCategorizedAssets: 0.049ms
+		ReloadNativeAssets: 0.048ms
+		UnloadImportedAssets: 0.403ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 5.194ms
+		InitializingProgressBar: 0.012ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 2.301ms
+	PostProcessAllAssets: 4.074ms
+	Hotreload: 7.520ms
+	GatherAllCurrentPrimaryArtifactRevisions: 2.920ms
+	UnloadStreamsBegin: 0.012ms
+	PersistCurrentRevisions: 1.871ms
+	UnloadStreamsEnd: 0.004ms
+	Untracked: 19.660ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/SET_A07_KeeperQuarters_R.png using Guid(964c5b88c08cd0642ada554e2c9e7c94) (TextureImporter) -> (artifact id: 'a0b9a7af78d53df5f9727c880773fb9f') in 0.2080992 seconds
+Refreshing native plugins compatible for Editor in 4.25 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e050172f7f099f3499c0697efb2b5b56): Total: 0.326 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=317 ms
+		Asset DB Callback time: managed=1 ms, native=6 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=15034
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.177ms
+	Scan: 36.363ms
+	OnSourceAssetsModified: 0.106ms
+	CategorizeAssetsWithTransientArtifact: 0.014ms
+	ProcessAssetsWithTransientArtifactChanges: 0.124ms
+	CategorizeAssets: 43.730ms
+	ImportOutOfDateAssets: 222.064ms (2.825ms without children)
+		ImportManagerImport: 210.845ms (2.197ms without children)
+			ImportInProcess: 208.601ms
+			UpdateCategorizedAssets: 0.047ms
+		ReloadNativeAssets: 0.048ms
+		UnloadImportedAssets: 0.453ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 6.147ms
+		InitializingProgressBar: 0.010ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 1.735ms
+	PostProcessAllAssets: 2.590ms
+	Hotreload: 5.466ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.870ms
+	UnloadStreamsBegin: 0.004ms
+	PersistCurrentRevisions: 1.339ms
+	UnloadStreamsEnd: 0.003ms
+	Untracked: 12.347ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/SET_A08_GreatSluice_r0c0.png using Guid(5ec3cf992c4e83f42a2a67d6ab8d9bef) (TextureImporter) -> (artifact id: '4795b5bd1c64f2526ce3f3632b092204') in 0.1726314 seconds
+Refreshing native plugins compatible for Editor in 4.89 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=5e5e2080b6a0a66468a4208d895dbfc6): Total: 0.264 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/SET_A08_GreatSluice_r0c1.png using Guid(0560670710979eb4aa26669281ab184d) (TextureImporter) -> (artifact id: '3a5b4f1ba19e905c43e0814be7fbc499') in 0.1864449 seconds
+Refreshing native plugins compatible for Editor in 5.11 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=500d4785abead3f478f3b8151bd6166b): Total: 0.293 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/SET_A08_GreatSluice_r1c0.png using Guid(62dd3c646d6e31048b6803e4e013abb8) (TextureImporter) -> (artifact id: '9a457c900ba1684afd6bd08d51957925') in 0.1826061 seconds
+Refreshing native plugins compatible for Editor in 4.54 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=10fdb5028c550244d9d1f9f444e88578): Total: 0.309 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=298 ms
+		Asset DB Callback time: managed=2 ms, native=7 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=15037
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.000ms
+	ApplyChangesToAssetFolders: 0.141ms
+	Scan: 30.630ms
+	OnSourceAssetsModified: 0.104ms
+	CategorizeAssetsWithTransientArtifact: 0.017ms
+	ProcessAssetsWithTransientArtifactChanges: 0.260ms
+	CategorizeAssets: 54.782ms
+	ImportOutOfDateAssets: 198.134ms (2.794ms without children)
+		ImportManagerImport: 186.620ms (3.205ms without children)
+			ImportInProcess: 183.344ms
+			UpdateCategorizedAssets: 0.071ms
+		ReloadNativeAssets: 0.053ms
+		UnloadImportedAssets: 0.479ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 6.091ms
+		InitializingProgressBar: 0.012ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 2.083ms
+	PostProcessAllAssets: 3.704ms
+	Hotreload: 6.211ms
+	GatherAllCurrentPrimaryArtifactRevisions: 1.451ms
+	UnloadStreamsBegin: 0.004ms
+	PersistCurrentRevisions: 1.200ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 12.225ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/SET_A08_GreatSluice_r1c1.png using Guid(7afcbb712c7fdfb42b071eb2d23510eb) (TextureImporter) -> (artifact id: '77e532c1ad6a4c21d0de8a813df1bdf4') in 0.1884916 seconds
+Refreshing native plugins compatible for Editor in 3.20 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=16e47d731dcdc8e4492625cc4dabe7f5): Total: 0.335 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=327 ms
+		Asset DB Callback time: managed=1 ms, native=6 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=15038
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.242ms
+	Scan: 32.171ms
+	OnSourceAssetsModified: 0.148ms
+	CategorizeAssetsWithTransientArtifact: 0.012ms
+	ProcessAssetsWithTransientArtifactChanges: 0.128ms
+	CategorizeAssets: 54.333ms
+	ImportOutOfDateAssets: 220.517ms (19.137ms without children)
+		ImportManagerImport: 192.004ms (2.668ms without children)
+			ImportInProcess: 189.287ms
+			UpdateCategorizedAssets: 0.048ms
+		ReloadNativeAssets: 0.042ms
+		UnloadImportedAssets: 0.669ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 6.707ms
+		InitializingProgressBar: 0.015ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 1.941ms
+	PostProcessAllAssets: 2.606ms
+	Hotreload: 4.818ms
+	GatherAllCurrentPrimaryArtifactRevisions: 2.023ms
+	UnloadStreamsBegin: 0.006ms
+	PersistCurrentRevisions: 1.233ms
+	UnloadStreamsEnd: 0.004ms
+	Untracked: 17.019ms
+
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/KeepersCistern.shader using Guid(23c8dbb2ceb60de4a9f7714565ddc5f1) (ShaderImporter) -> (artifact id: 'e4da5c5624d39e521abc44258bb0605b') in 0.0320052 seconds
+Refreshing native plugins compatible for Editor in 3.59 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ecd88ae25b6a8d24eabf3ae7ef04f64c): Total: 0.256 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Start importing Assets/Art/Underground/Backgrounds/KeepersCistern/KeepersCistern.shader using Guid(23c8dbb2ceb60de4a9f7714565ddc5f1) (ShaderImporter) -> (artifact id: 'e4da5c5624d39e521abc44258bb0605b') in 0.0099953 seconds
+Refreshing native plugins compatible for Editor in 6.32 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2d3676034f287e94487b2ab0c6980443): Total: 0.464 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=316 ms
+		Asset DB Callback time: managed=2 ms, native=144 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2362, non-scripts=15039
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.002ms
+	ApplyChangesToAssetFolders: 0.316ms
+	Scan: 26.125ms
+	OnSourceAssetsModified: 0.002ms
+	CategorizeAssetsWithTransientArtifact: 0.034ms
+	ProcessAssetsWithTransientArtifactChanges: 0.401ms
+	CategorizeAssets: 33.829ms
+	ImportOutOfDateAssets: 230.932ms (1.710ms without children)
+		ImportManagerImport: 14.838ms (4.140ms without children)
+			ImportInProcess: 10.615ms
+			UpdateCategorizedAssets: 0.083ms
+		ReloadNativeAssets: 0.057ms
+		UnloadImportedAssets: 204.926ms
+		ReloadImportedAssets: 0.810ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 6.892ms
+		InitializingProgressBar: 0.019ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 1.679ms
+	PostProcessAllAssets: 137.396ms
+	Hotreload: 9.314ms
+	GatherAllCurrentPrimaryArtifactRevisions: 2.633ms
+	UnloadStreamsBegin: 0.085ms
+	PersistCurrentRevisions: 1.809ms
+	UnloadStreamsEnd: 0.004ms
+	Untracked: 20.854ms
+
+d3d12: upload buffer was too small for the requested resource! Size: 16777216. Requested: 35831808.
+d3d12: upload buffer was too small for the requested resource! Size: 36700160. Requested: 37933056.
+Opening scene 'Assets/Scenes/Game/Qolossal_Underground.unity'
+Unloading 170 Unused Serialized files (Serialized files now loaded: 0)
+d3d12: upload buffer was too small for the requested resource! Size: 38797312. Requested: 87400380.
+Loaded scene 'Assets/Scenes/Game/Qolossal_Underground.unity'
+	Deserialize:            1188.976 ms
+	Integration:            4216.811 ms
+	Integration of assets:  316.379 ms
+	Thread Wait Time:       5.617 ms
+	Total Operation Time:   5727.783 ms
+Unloading 101 unused Assets / (51.5 KB). Loaded Objects now: 24273.
+Memory consumption went from 2.28 GB to 2.28 GB.
+Total: 31.271500 ms (FindLiveObjects: 1.986300 ms CreateObjectMapping: 0.753800 ms MarkObjects: 8.146000 ms  DeleteObjects: 20.383900 ms)
+
+Start importing Assets/Scenes/Game/Qolossal_Underground.unity using Guid(08a5f7415dc5fe643baf312d00a88c7c) (DefaultImporter) -> (artifact id: 'b78c848891fe6dd35c7bfa707d690b67') in 0.0106048 seconds
+Refreshing native plugins compatible for Editor in 2.90 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e0bbc7475c0dd3543b3635c1515241a9): Total: 0.105 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Keepers' Cistern installed: 84 textures, root created, active=True.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+KeepersCisternInstall:Install (bool) (at Assets/Editor/World/KeepersCisternInstall.cs:92)
+KeepersCisternInstall:InstallBatch () (at Assets/Editor/World/KeepersCisternInstall.cs:27)
+
+(Filename: Assets/Editor/World/KeepersCisternInstall.cs Line: 92)
+
+Pipeline Server stopped
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-Qasim-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-Qasim channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+abort_threads: Failed aborting id: 0000000000008A5C, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 00000000000086AC, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000008A5C, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 00000000000086AC, mono_thread_manage will ignore it
+
+debugger-agent: Unable to listen on 4556
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1794216172711,"processId":39140,"allocatedMemory":28694411,"memoryLabels":[{"Default":29313},{"Permanent":15236},{"NewDelete":68315},{"Thread":4237960},{"Manager":34493},{"VertexData":8},{"Geometry":816},{"Texture":160},{"Shader":81173},{"Material":24},{"GfxDevice":57912},{"Animation":392},{"Audio":3040},{"FreeType":8},{"FontEngine":736},{"Physics":2146},{"Physics2D":16},{"Serialization":656},{"Input":14984},{"JobScheduler":33024},{"TextLib":216},{"Mono":32},{"MonoCode":64},{"ScriptingNativeRuntime":155060},{"BaseObject":1619568},{"Resource":1336},{"Renderer":3000},{"Transform":4685},{"File":15645},{"WebCam":616},{"Culling":32},{"Terrain":11394},{"Wind":24},{"STL":40},{"String":126118},{"DynamicArray":126408},{"HashMap":139845},{"Utility":2660822},{"Curl":2559},{"PoolAlloc":2152},{"AI":80},{"TypeTree":5341},{"ScriptManager":512},{"RuntimeInitializeOnLoadManager":64},{"SpriteAtlas":112},{"GI":7792},{"Director":8240},{"CloudService":44352},{"WebRequest":9962},{"VR":47994},{"SceneManager":504},{"Video":64},{"LazyScriptCache":32},{"Camera":17},{"Secure":2377},{"SerializationCache":1576},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":464},{"Hierarchy":608},{"CoreStats":13112},{"Identifiers":6480},{"Gui":96},{"EditorUtility":135875},{"VersionControl":4},{"Undo":947},{"AssetDatabase":18565690},{"EditorGi":328},{"UnityConnect":29208},{"Upm":1896},{"AssetCompliance":64},{"DrivenProperties":72},{"LocalIPC":211},{"ProfilerEditor":9746},{"CoreBusinessMetrics":2867},{"Licensing":664},{"AssetReference":32},{"IPCStream":32}]}
+~StackAllocator(ALLOC_TEMP_MAIN) m_LastAlloc not NULL. Did you forget to call FreeAllStackAllocations()? To get more information, run app with -diag-temp-memory-leak-validation cmd line argument

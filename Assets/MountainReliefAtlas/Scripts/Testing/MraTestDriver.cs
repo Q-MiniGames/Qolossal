@@ -77,6 +77,16 @@ public sealed partial class MraTestDriver : MonoBehaviour
             yield return Run("audio", AudioChecks());
             Finish(); yield break;
         }
+        if (System.Environment.GetCommandLineArgs().Contains("-mraPc04Only"))
+        {
+            yield return Run("Mason's Recess", MasonsRecess());
+            Finish(); yield break;
+        }
+        if (System.Environment.GetCommandLineArgs().Contains("-mraGorgeOnly"))
+        {
+            yield return Run("Heights gorge", GorgeLeaps());
+            Finish(); yield break;
+        }
         if (System.Environment.GetCommandLineArgs().Contains("-mraEncountersOnly"))
         {
             yield return Run("encounters", EncounterChecks());
@@ -367,7 +377,7 @@ public sealed partial class MraTestDriver : MonoBehaviour
     IEnumerator GlideSpan(Region r)
     {
         Vector2 n10 = Pos(r.NodeById("MR06_N10"));
-        float launch = n10.x + 4f, landing = launch + 18f;
+        float launch = n10.x + 4f, landing = launch + GorgeWidth;
         float run = launch - 6f;
         Expect(GameSave.HasRelic(Relics.Glidecap), "MR06: the Glidecap shrine (before the span) was collected on the way");
         Abilities.Lock(Relics.Glidecap);

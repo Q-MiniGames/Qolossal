@@ -1,0 +1,1693 @@
+[
+  {
+    "scene": "Assets/Scenes/Game\\MRAtlas_MR01_Cradle.unity",
+    "objects": [
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N07] Cradle knot",
+        "active": true,
+        "pos": [
+          0.0,
+          0.0
+        ],
+        "components": [
+          "Transform",
+          "SurfaceArea"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N07] Cradle knot/Landmark and progression/Beat MR01_N07 Cradle knot",
+        "active": true,
+        "pos": [
+          0.0,
+          0.0
+        ],
+        "components": [
+          "Transform"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N07] Cradle knot/Landmark and progression/Beat MR01_N07 Cradle knot/Knot grip",
+        "active": true,
+        "pos": [
+          191.5,
+          12.29
+        ],
+        "components": [
+          "Transform",
+          "BoxCollider2D",
+          "MraKnot"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N07] Cradle knot/Landmark and progression/Beat MR01_N07 Cradle knot/Knot grip/Knot",
+        "active": true,
+        "pos": [
+          191.5,
+          13.99
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Wakeknot_Dormant",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N08] Ravine approach/Traversal mechanics/Module MR01_E08 quake crossing/Root Gate (knot:grip)",
+        "active": true,
+        "pos": [
+          220.0,
+          17.65
+        ],
+        "components": [
+          "Transform",
+          "BoxCollider2D",
+          "WallSurface",
+          "RootGate",
+          "MraGate"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N08] Ravine approach/Traversal mechanics/Module MR01_E08 quake crossing/After the quake (knot:grip)",
+        "active": true,
+        "pos": [
+          0.0,
+          0.0
+        ],
+        "components": [
+          "Transform",
+          "MraVariant"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Body_Cliff_Ledge_A",
+        "active": true,
+        "pos": [
+          253.55,
+          31.4790478
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Body_Cliff_Ledge_A_4K",
+        "checkpoint": null
+      }
+    ],
+    "dependencies": [
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N07] Cradle knot/Landmark and progression/Beat MR01_N07 Cradle knot/Knot grip",
+        "type": "MraKnot",
+        "active": true,
+        "property": "m_EditorClassIdentifier",
+        "value": "Assembly-CSharp::MraKnot"
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N07] Cradle knot/Landmark and progression/Beat MR01_N07 Cradle knot/Knot grip",
+        "type": "MraKnot",
+        "active": true,
+        "property": "knot",
+        "value": "grip"
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N07] Cradle knot/Landmark and progression/Beat MR01_N07 Cradle knot/Knot grip",
+        "type": "MraKnot",
+        "active": true,
+        "property": "caption",
+        "value": "The ground shifts."
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N07] Cradle knot/Landmark and progression/Beat MR01_N07 Cradle knot/Knot grip",
+        "type": "MraKnot",
+        "active": true,
+        "property": "subCaption",
+        "value": "Something nearby has moved."
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N08] Ravine approach/Traversal mechanics/Module MR01_E08 quake crossing/Root Gate (knot:grip)",
+        "type": "MraGate",
+        "active": true,
+        "property": "requires.Array.data[0]",
+        "value": "knot:grip"
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N08] Ravine approach/Traversal mechanics/Module MR01_E08 quake crossing/After the quake (knot:grip)",
+        "type": "MraVariant",
+        "active": true,
+        "property": "requires.Array.data[0]",
+        "value": "knot:grip"
+      }
+    ]
+  },
+  {
+    "scene": "Assets/Scenes/Game\\MRAtlas_MR02_Causeway.unity",
+    "objects": [
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot",
+        "active": true,
+        "pos": [
+          0.0,
+          0.0
+        ],
+        "components": [
+          "Transform",
+          "SurfaceArea"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot/Landmark and progression/Beat MR02_N08 Causeway knot",
+        "active": true,
+        "pos": [
+          0.0,
+          0.0
+        ],
+        "components": [
+          "Transform"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot/Landmark and progression/Beat MR02_N08 Causeway knot/Knot reach",
+        "active": true,
+        "pos": [
+          277.5,
+          133.290009
+        ],
+        "components": [
+          "Transform",
+          "BoxCollider2D",
+          "MraKnot"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot/Landmark and progression/Beat MR02_N08 Causeway knot/Knot reach/Knot",
+        "active": true,
+        "pos": [
+          277.5,
+          134.99
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Wakeknot_Dormant",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Causeway_Cliff_Ledge_A",
+        "active": true,
+        "pos": [
+          158.75,
+          68.21661
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Causeway_Cliff_Ledge_A",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Causeway_Cliff_Ledge_B",
+        "active": true,
+        "pos": [
+          213.592,
+          93.5963745
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Causeway_Cliff_Ledge_B",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Causeway_Cliff_Ledge_A",
+        "active": true,
+        "pos": [
+          225.1,
+          102.688927
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Causeway_Cliff_Ledge_A",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Causeway_Cliff_Ledge_B",
+        "active": true,
+        "pos": [
+          235.261,
+          110.1575
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Causeway_Cliff_Ledge_B",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Causeway_Cliff_Ledge_A",
+        "active": true,
+        "pos": [
+          270.0,
+          127.432045
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Causeway_Cliff_Ledge_A",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Causeway_Cliff_Ledge_B",
+        "active": true,
+        "pos": [
+          293.059,
+          140.985138
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Causeway_Cliff_Ledge_B",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Causeway_Cliff_Ledge_A",
+        "active": true,
+        "pos": [
+          300.52,
+          144.984177
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Causeway_Cliff_Ledge_A",
+        "checkpoint": null
+      }
+    ],
+    "dependencies": [
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot/Landmark and progression/Beat MR02_N08 Causeway knot/Knot reach",
+        "type": "MraKnot",
+        "active": true,
+        "property": "m_EditorClassIdentifier",
+        "value": "Assembly-CSharp::MraKnot"
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot/Landmark and progression/Beat MR02_N08 Causeway knot/Knot reach",
+        "type": "MraKnot",
+        "active": true,
+        "property": "knot",
+        "value": "reach"
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot/Landmark and progression/Beat MR02_N08 Causeway knot/Knot reach",
+        "type": "MraKnot",
+        "active": true,
+        "property": "caption",
+        "value": "The ground shifts."
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot/Landmark and progression/Beat MR02_N08 Causeway knot/Knot reach",
+        "type": "MraKnot",
+        "active": true,
+        "property": "subCaption",
+        "value": "Something nearby has moved."
+      }
+    ]
+  },
+  {
+    "scene": "Assets/Scenes/Game\\MRAtlas_MR03_Terraces.unity",
+    "objects": [
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N08] Terraces knot",
+        "active": true,
+        "pos": [
+          0.0,
+          0.0
+        ],
+        "components": [
+          "Transform",
+          "SurfaceArea"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N08] Terraces knot/Landmark and progression/Beat MR03_N08 Terraces knot",
+        "active": true,
+        "pos": [
+          0.0,
+          0.0
+        ],
+        "components": [
+          "Transform"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N08] Terraces knot/Landmark and progression/Beat MR03_N08 Terraces knot/Knot spring",
+        "active": true,
+        "pos": [
+          259.5,
+          158.290009
+        ],
+        "components": [
+          "Transform",
+          "BoxCollider2D",
+          "MraKnot"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N08] Terraces knot/Landmark and progression/Beat MR03_N08 Terraces knot/Knot spring/Knot",
+        "active": true,
+        "pos": [
+          259.5,
+          159.99
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Wakeknot_Dormant",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Terraces_Cliff_Ledge_A",
+        "active": true,
+        "pos": [
+          85.0,
+          45.04273
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Terraces_Cliff_Ledge_A",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Terraces_Cliff_Ledge_B",
+        "active": true,
+        "pos": [
+          126.05,
+          68.90369
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Terraces_Cliff_Ledge_B",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Terraces_Cliff_Ledge_A",
+        "active": true,
+        "pos": [
+          150.5,
+          89.71691
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Terraces_Cliff_Ledge_A",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Terraces_Cliff_Ledge_B",
+        "active": true,
+        "pos": [
+          173.174,
+          102.562668
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Terraces_Cliff_Ledge_B",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Terraces_Cliff_Ledge_A",
+        "active": true,
+        "pos": [
+          182.826,
+          111.971962
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Terraces_Cliff_Ledge_A",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Terraces_Cliff_Ledge_B",
+        "active": true,
+        "pos": [
+          194.826,
+          121.610611
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Terraces_Cliff_Ledge_B",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Terraces_Cliff_Ledge_A",
+        "active": true,
+        "pos": [
+          209.95,
+          130.936142
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Terraces_Cliff_Ledge_A",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Terraces_Cliff_Ledge_B",
+        "active": true,
+        "pos": [
+          251.5,
+          152.548035
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Terraces_Cliff_Ledge_B",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Terraces_Cliff_Ledge_A",
+        "active": true,
+        "pos": [
+          317.41,
+          136.223328
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Terraces_Cliff_Ledge_A",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Cliff dressing/Ledge Terraces_Cliff_Ledge_B",
+        "active": true,
+        "pos": [
+          338.9,
+          117.298889
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Terraces_Cliff_Ledge_B",
+        "checkpoint": null
+      }
+    ],
+    "dependencies": [
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N08] Terraces knot/Landmark and progression/Beat MR03_N08 Terraces knot/Knot spring",
+        "type": "MraKnot",
+        "active": true,
+        "property": "m_EditorClassIdentifier",
+        "value": "Assembly-CSharp::MraKnot"
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N08] Terraces knot/Landmark and progression/Beat MR03_N08 Terraces knot/Knot spring",
+        "type": "MraKnot",
+        "active": true,
+        "property": "knot",
+        "value": "spring"
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N08] Terraces knot/Landmark and progression/Beat MR03_N08 Terraces knot/Knot spring",
+        "type": "MraKnot",
+        "active": true,
+        "property": "caption",
+        "value": "The ground shifts."
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N08] Terraces knot/Landmark and progression/Beat MR03_N08 Terraces knot/Knot spring",
+        "type": "MraKnot",
+        "active": true,
+        "property": "subCaption",
+        "value": "Something nearby has moved."
+      }
+    ]
+  },
+  {
+    "scene": "Assets/Scenes/Game\\MRAtlas_MR04_C02.unity",
+    "objects": [],
+    "dependencies": []
+  },
+  {
+    "scene": "Assets/Scenes/Game\\MRAtlas_MR04_C03.unity",
+    "objects": [],
+    "dependencies": []
+  },
+  {
+    "scene": "Assets/Scenes/Game\\MRAtlas_MR04_C04.unity",
+    "objects": [],
+    "dependencies": []
+  },
+  {
+    "scene": "Assets/Scenes/Game\\MRAtlas_MR04_C05.unity",
+    "objects": [],
+    "dependencies": []
+  },
+  {
+    "scene": "Assets/Scenes/Game\\MRAtlas_MR04_C06.unity",
+    "objects": [],
+    "dependencies": []
+  },
+  {
+    "scene": "Assets/Scenes/Game\\MRAtlas_MR04_Qvale.unity",
+    "objects": [],
+    "dependencies": []
+  },
+  {
+    "scene": "Assets/Scenes/Game\\MRAtlas_MR05_Ribwood.unity",
+    "objects": [
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N08] Swell knot",
+        "active": true,
+        "pos": [
+          0.0,
+          0.0
+        ],
+        "components": [
+          "Transform",
+          "SurfaceArea"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N08] Swell knot/Landmark and progression/Beat MR05_N08 Swell knot",
+        "active": true,
+        "pos": [
+          0.0,
+          0.0
+        ],
+        "components": [
+          "Transform"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N08] Swell knot/Landmark and progression/Beat MR05_N08 Swell knot/Knot breath",
+        "active": true,
+        "pos": [
+          289.5,
+          152.290009
+        ],
+        "components": [
+          "Transform",
+          "BoxCollider2D",
+          "MraKnot"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N08] Swell knot/Landmark and progression/Beat MR05_N08 Swell knot/Knot breath/Knot",
+        "active": true,
+        "pos": [
+          289.5,
+          153.99
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Wakeknot_Dormant",
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Encounters/Encounter MR05_Encounter_01 (Knucklebramble01)/Rig/Facing/Body/KnotGlow",
+        "active": true,
+        "pos": [
+          100.01429,
+          46.90765
+        ],
+        "components": [
+          "Transform"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      }
+    ],
+    "dependencies": [
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N08] Swell knot/Landmark and progression/Beat MR05_N08 Swell knot/Knot breath",
+        "type": "MraKnot",
+        "active": true,
+        "property": "m_EditorClassIdentifier",
+        "value": "Assembly-CSharp::MraKnot"
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N08] Swell knot/Landmark and progression/Beat MR05_N08 Swell knot/Knot breath",
+        "type": "MraKnot",
+        "active": true,
+        "property": "knot",
+        "value": "breath"
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N08] Swell knot/Landmark and progression/Beat MR05_N08 Swell knot/Knot breath",
+        "type": "MraKnot",
+        "active": true,
+        "property": "caption",
+        "value": "The ground shifts."
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N08] Swell knot/Landmark and progression/Beat MR05_N08 Swell knot/Knot breath",
+        "type": "MraKnot",
+        "active": true,
+        "property": "subCaption",
+        "value": "Something nearby has moved."
+      }
+    ]
+  },
+  {
+    "scene": "Assets/Scenes/Game\\MRAtlas_MR06_Heights.unity",
+    "objects": [
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR06 - The Windward Heights/[MR06_N08] Heights knot",
+        "active": true,
+        "pos": [
+          0.0,
+          0.0
+        ],
+        "components": [
+          "Transform",
+          "SurfaceArea"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR06 - The Windward Heights/[MR06_N08] Heights knot/Landmark and progression/Beat MR06_N08 Heights knot",
+        "active": true,
+        "pos": [
+          0.0,
+          0.0
+        ],
+        "components": [
+          "Transform"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR06 - The Windward Heights/[MR06_N08] Heights knot/Landmark and progression/Beat MR06_N08 Heights knot/Knot bloom",
+        "active": true,
+        "pos": [
+          316.5,
+          216.290009
+        ],
+        "components": [
+          "Transform",
+          "BoxCollider2D",
+          "MraKnot"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR06 - The Windward Heights/[MR06_N08] Heights knot/Landmark and progression/Beat MR06_N08 Heights knot/Knot bloom/Knot",
+        "active": true,
+        "pos": [
+          316.5,
+          217.99
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Wakeknot_Dormant",
+        "checkpoint": null
+      }
+    ],
+    "dependencies": [
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR06 - The Windward Heights/[MR06_N08] Heights knot/Landmark and progression/Beat MR06_N08 Heights knot/Knot bloom",
+        "type": "MraKnot",
+        "active": true,
+        "property": "m_EditorClassIdentifier",
+        "value": "Assembly-CSharp::MraKnot"
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR06 - The Windward Heights/[MR06_N08] Heights knot/Landmark and progression/Beat MR06_N08 Heights knot/Knot bloom",
+        "type": "MraKnot",
+        "active": true,
+        "property": "knot",
+        "value": "bloom"
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR06 - The Windward Heights/[MR06_N08] Heights knot/Landmark and progression/Beat MR06_N08 Heights knot/Knot bloom",
+        "type": "MraKnot",
+        "active": true,
+        "property": "caption",
+        "value": "The ground shifts."
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR06 - The Windward Heights/[MR06_N08] Heights knot/Landmark and progression/Beat MR06_N08 Heights knot/Knot bloom",
+        "type": "MraKnot",
+        "active": true,
+        "property": "subCaption",
+        "value": "Something nearby has moved."
+      }
+    ]
+  },
+  {
+    "scene": "Assets/Scenes/Game\\MRAtlas_MR07_Summit.unity",
+    "objects": [
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR07 - The Summit/[MR07_N08] Summit knot",
+        "active": true,
+        "pos": [
+          0.0,
+          0.0
+        ],
+        "components": [
+          "Transform",
+          "SurfaceArea"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR07 - The Summit/[MR07_N08] Summit knot/Landmark and progression/Beat MR07_N08 Summit knot",
+        "active": true,
+        "pos": [
+          0.0,
+          0.0
+        ],
+        "components": [
+          "Transform"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR07 - The Summit/[MR07_N08] Summit knot/Landmark and progression/Beat MR07_N08 Summit knot/Knot sight",
+        "active": true,
+        "pos": [
+          279.5,
+          163.290009
+        ],
+        "components": [
+          "Transform",
+          "BoxCollider2D",
+          "MraKnot"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR07 - The Summit/[MR07_N08] Summit knot/Landmark and progression/Beat MR07_N08 Summit knot/Knot sight/Knot",
+        "active": true,
+        "pos": [
+          279.5,
+          164.99
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Wakeknot_Dormant",
+        "checkpoint": null
+      }
+    ],
+    "dependencies": [
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR07 - The Summit/[MR07_N08] Summit knot/Landmark and progression/Beat MR07_N08 Summit knot/Knot sight",
+        "type": "MraKnot",
+        "active": true,
+        "property": "m_EditorClassIdentifier",
+        "value": "Assembly-CSharp::MraKnot"
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR07 - The Summit/[MR07_N08] Summit knot/Landmark and progression/Beat MR07_N08 Summit knot/Knot sight",
+        "type": "MraKnot",
+        "active": true,
+        "property": "knot",
+        "value": "sight"
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR07 - The Summit/[MR07_N08] Summit knot/Landmark and progression/Beat MR07_N08 Summit knot/Knot sight",
+        "type": "MraKnot",
+        "active": true,
+        "property": "caption",
+        "value": "The ground shifts."
+      },
+      {
+        "path": "Generated (MRA builder)/Upper Areas | MR07 - The Summit/[MR07_N08] Summit knot/Landmark and progression/Beat MR07_N08 Summit knot/Knot sight",
+        "type": "MraKnot",
+        "active": true,
+        "property": "subCaption",
+        "value": "Something nearby has moved."
+      }
+    ]
+  },
+  {
+    "scene": "Assets/Scenes/Game\\Qolossal_Underground.unity",
+    "objects": [
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP grille 1782,170/Art",
+        "active": true,
+        "pos": [
+          1782.5,
+          194.0
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Grille_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP grille 1809,170/Art",
+        "active": true,
+        "pos": [
+          1809.5,
+          194.0
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Grille_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP grille 1754,193/Art",
+        "active": true,
+        "pos": [
+          1768.0,
+          193.5
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Grille_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP grille 1810,193/Art",
+        "active": true,
+        "pos": [
+          1824.0,
+          193.5
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Grille_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1754,181.7/Art",
+        "active": true,
+        "pos": [
+          1766.0,
+          181.763885
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1773,173.3/Art",
+        "active": true,
+        "pos": [
+          1774.5,
+          173.363892
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1768,176.9/Art",
+        "active": true,
+        "pos": [
+          1769.5,
+          176.963882
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1773,180.5/Art",
+        "active": true,
+        "pos": [
+          1774.5,
+          180.563889
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1754,205.7/Art",
+        "active": true,
+        "pos": [
+          1767.0,
+          205.763885
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_02",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1769.5,209.2/Art",
+        "active": true,
+        "pos": [
+          1771.0,
+          209.263885
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_02",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1773,212.7/Art",
+        "active": true,
+        "pos": [
+          1774.5,
+          212.763885
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_02",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1774,216.2/Art",
+        "active": true,
+        "pos": [
+          1776.0,
+          216.263885
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_02",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1812,205.7/Art",
+        "active": true,
+        "pos": [
+          1825.0,
+          205.763885
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_02",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1818.5,209.2/Art",
+        "active": true,
+        "pos": [
+          1820.0,
+          209.263885
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1822,212.7/Art",
+        "active": true,
+        "pos": [
+          1823.5,
+          212.763885
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1822,216.2/Art",
+        "active": true,
+        "pos": [
+          1824.0,
+          216.263885
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_02",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1810,181.7/Art",
+        "active": true,
+        "pos": [
+          1824.0,
+          181.763885
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP deck 1834,183.7/Art",
+        "active": true,
+        "pos": [
+          1836.0,
+          183.763885
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Deck_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP look 1768,182/Art",
+        "active": true,
+        "pos": [
+          1770.5,
+          183.25
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "UGP_White_0",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP look 1770,206/Art",
+        "active": true,
+        "pos": [
+          1772.5,
+          207.25
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "UGP_White_0",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP look 1818,206/Art",
+        "active": true,
+        "pos": [
+          1820.5,
+          207.25
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "UGP_White_0",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP look 1820,182/Art",
+        "active": true,
+        "pos": [
+          1822.5,
+          183.25
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "UGP_White_0",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1775.8,182",
+        "active": true,
+        "pos": [
+          1776.5,
+          183.1
+        ],
+        "components": [
+          "Transform",
+          "BoxCollider2D",
+          "MraHeartQuarter"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1775.8,182/Art",
+        "active": true,
+        "pos": [
+          1776.5,
+          183.1
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Quarter_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1777.8,206",
+        "active": true,
+        "pos": [
+          1778.5,
+          207.1
+        ],
+        "components": [
+          "Transform",
+          "BoxCollider2D",
+          "MraHeartQuarter"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1777.8,206/Art",
+        "active": true,
+        "pos": [
+          1778.5,
+          207.1
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Quarter_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1812.8,206",
+        "active": true,
+        "pos": [
+          1813.5,
+          207.1
+        ],
+        "components": [
+          "Transform",
+          "BoxCollider2D",
+          "MraHeartQuarter"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1812.8,206/Art",
+        "active": true,
+        "pos": [
+          1813.5,
+          207.1
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Quarter_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1811.8,182",
+        "active": true,
+        "pos": [
+          1812.5,
+          183.1
+        ],
+        "components": [
+          "Transform",
+          "BoxCollider2D",
+          "MraHeartQuarter"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1811.8,182/Art",
+        "active": true,
+        "pos": [
+          1812.5,
+          183.1
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Quarter_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP heart quarter A/Art",
+        "active": true,
+        "pos": [
+          1789.75,
+          182.5
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer",
+          "WorldRefreshHeartSurface"
+        ],
+        "sprite": "Quarterlight_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP heart quarter C/Art",
+        "active": true,
+        "pos": [
+          1789.75,
+          205.5
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer",
+          "WorldRefreshHeartSurface"
+        ],
+        "sprite": "Quarterlight_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP heart quarter D/Art",
+        "active": true,
+        "pos": [
+          1802.25,
+          205.5
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer",
+          "WorldRefreshHeartSurface"
+        ],
+        "sprite": "Quarterlight_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP heart quarter E/Art",
+        "active": true,
+        "pos": [
+          1802.25,
+          182.5
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer",
+          "WorldRefreshHeartSurface"
+        ],
+        "sprite": "Quarterlight_01",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP safe 1762.5,182/Art",
+        "active": true,
+        "pos": [
+          1764.0,
+          183.25
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "UGP_White_0",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP safe 1768.5,206/Art",
+        "active": true,
+        "pos": [
+          1770.0,
+          207.25
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "UGP_White_0",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP safe 1822.5,206/Art",
+        "active": true,
+        "pos": [
+          1824.0,
+          207.25
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "UGP_White_0",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP safe 1826.5,182/Art",
+        "active": true,
+        "pos": [
+          1828.0,
+          183.25
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "UGP_White_0",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP backdrop_far",
+        "active": true,
+        "pos": [
+          1796.0,
+          194.0
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer",
+          "WorldRefreshCaveVista"
+        ],
+        "sprite": "Backdrop_Far",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP backdrop_near",
+        "active": true,
+        "pos": [
+          1796.0,
+          194.0
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer",
+          "WorldRefreshCaveRockField"
+        ],
+        "sprite": "Backdrop_Near",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP prop HEART_Sector_A.png",
+        "active": true,
+        "pos": [
+          1754.01025,
+          175.0
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "HEART_Sector_A",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP prop HEART_Sector_C.png",
+        "active": true,
+        "pos": [
+          1762.0,
+          217.0231
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "HEART_Sector_C",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP prop HEART_Sector_D.png",
+        "active": true,
+        "pos": [
+          1838.12866,
+          212.0
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "HEART_Sector_D",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP prop HEART_Sector_E.png",
+        "active": true,
+        "pos": [
+          1837.8324,
+          175.0
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "HEART_Sector_E",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP passage backdrop",
+        "active": true,
+        "pos": [
+          1796.0,
+          194.0
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer",
+          "WorldRefreshCaveRockField"
+        ],
+        "sprite": "Backdrop_Far",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Gameplay | arrivals, rest, exits and discoveries/Rest The Great Heart Hall",
+        "active": true,
+        "pos": [
+          1774.0,
+          182.459991
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer",
+          "BoxCollider2D",
+          "Checkpoint"
+        ],
+        "sprite": null,
+        "checkpoint": "regional:HEART"
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Gameplay | arrivals, rest, exits and discoveries/Rest The Great Heart Hall/4K Shrine Art",
+        "active": true,
+        "pos": [
+          1774.0,
+          182.459991
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Checkpoint_Shrine_A1_MR01_216_B45",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Gameplay | arrivals, rest, exits and discoveries/Careful ending (moved from the Descent)",
+        "active": true,
+        "pos": [
+          1796.0,
+          182.0
+        ],
+        "components": [
+          "Transform",
+          "BoxCollider2D",
+          "MraEnding"
+        ],
+        "sprite": null,
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Gameplay | arrivals, rest, exits and discoveries/Careful ending (moved from the Descent)/Final knot",
+        "active": true,
+        "pos": [
+          1796.0,
+          183.7
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Wakeknot_Dormant",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Gameplay | arrivals, rest, exits and discoveries/Careful ending (moved from the Descent)/After the ending (healed)/Knot (healed)",
+        "active": false,
+        "pos": [
+          1796.0,
+          183.7
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "Wakeknot_Awake",
+        "checkpoint": null
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/MR01 - Cradle/[MR01_C02] Moss Pocket/Moss Pocket | playable cave/Heart Seed | pool restored glow",
+        "active": true,
+        "pos": [
+          149.7,
+          -173.8
+        ],
+        "components": [
+          "Transform",
+          "SpriteRenderer"
+        ],
+        "sprite": "FX_Lantern_Light",
+        "checkpoint": null
+      }
+    ],
+    "dependencies": [
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1775.8,182",
+        "type": "MraHeartQuarter",
+        "active": true,
+        "property": "m_EditorClassIdentifier",
+        "value": "Assembly-CSharp::MraHeartQuarter"
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1775.8,182",
+        "type": "MraHeartQuarter",
+        "active": true,
+        "property": "sector",
+        "value": "A"
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1777.8,206",
+        "type": "MraHeartQuarter",
+        "active": true,
+        "property": "m_EditorClassIdentifier",
+        "value": "Assembly-CSharp::MraHeartQuarter"
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1777.8,206",
+        "type": "MraHeartQuarter",
+        "active": true,
+        "property": "sector",
+        "value": "C"
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1812.8,206",
+        "type": "MraHeartQuarter",
+        "active": true,
+        "property": "m_EditorClassIdentifier",
+        "value": "Assembly-CSharp::MraHeartQuarter"
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1812.8,206",
+        "type": "MraHeartQuarter",
+        "active": true,
+        "property": "sector",
+        "value": "D"
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1811.8,182",
+        "type": "MraHeartQuarter",
+        "active": true,
+        "property": "m_EditorClassIdentifier",
+        "value": "Assembly-CSharp::MraHeartQuarter"
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Platforms/UGP Platforming/UGP quarter 1811.8,182",
+        "type": "MraHeartQuarter",
+        "active": true,
+        "property": "sector",
+        "value": "E"
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Gameplay | arrivals, rest, exits and discoveries/Careful ending (moved from the Descent)",
+        "type": "MraEnding",
+        "active": true,
+        "property": "m_EditorClassIdentifier",
+        "value": "Assembly-CSharp::MraEnding"
+      },
+      {
+        "path": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/H - Great Heart Hall/[HEART] The Great Heart Hall/Gameplay | arrivals, rest, exits and discoveries/Careful ending (moved from the Descent)",
+        "type": "MraEnding",
+        "active": true,
+        "property": "knot",
+        "value": "heart"
+      }
+    ]
+  }
+]

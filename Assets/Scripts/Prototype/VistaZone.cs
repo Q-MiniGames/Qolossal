@@ -2,7 +2,8 @@ using UnityEngine;
 
 // Palm prototype: while Qori stands in this trigger the camera eases out to `size`, so the hand
 // (and the titan above it) comes into view; leaving it eases the camera back to its normal size.
-// The lift is an offset added after CameraFollow and taken off again before the next follow.
+// CameraFollow owns player framing at the enlarged zoom. Without an active follow,
+// the authored lift is added for rendering and removed before the next follow.
 [DefaultExecutionOrder(1000), DisallowMultipleComponent, RequireComponent(typeof(BoxCollider2D))]
 public sealed class VistaZone : MonoBehaviour
 {
@@ -15,15 +16,16 @@ public sealed class VistaZone : MonoBehaviour
     static VistaZone zone;
     static Vector3 lifted;
     static Camera view;
+    static float renderedLift;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-    static void ResetState() { inside = 0; drivenFrame = -1; normalSize = -1f; current = 0f; zone = null; lifted = Vector3.zero; view = null; Suspended = false; }
+    static void ResetState() { inside = 0; drivenFrame = -1; normalSize = -1f; current = 0f; zone = null; lifted = Vector3.zero; renderedLift = 0f; view = null; Suspended = false; }
 
     // Set while a stir moves the camera itself: the zones let go (and drop their lift).
     public static bool Suspended;
     public static float NormalSize => normalSize > 0f ? normalSize : 5f;
     /// <summary>The lift the active zone adds for rendering (it is off the camera between LateUpdate and the next Update; tests read it).</summary>
-    public static float CurrentLift => zone != null && !Suspended ? zone.lift * Mathf.SmoothStep(0f, 1f, current) : 0f;
+    public static float CurrentLift => zone != null && !Suspended ? renderedLift : 0f;
 
     void Awake() { GetComponent<BoxCollider2D>().isTrigger = true; }
 
@@ -48,7 +50,13 @@ public sealed class VistaZone : MonoBehaviour
         if (zone == null) return;
         float k = Mathf.SmoothStep(0f, 1f, current);
         view.orthographicSize = Mathf.Lerp(normalSize, zone.size, k);
-        lifted = new Vector3(0f, zone.lift * k, 0f);
+        renderedLift = zone.lift * k;
+        // Let CameraFollow retain the takeoff anchor through normal jumps. It
+        // returns only a safety correction for the newly applied zoom; cameras
+        // without an active follow retain their authored presentation lift.
+        var follow = view.GetComponent<CameraFollow>();
+        if (k > 0f && follow != null) renderedLift = follow.ConstrainVistaLift(renderedLift);
+        lifted = new Vector3(0f, renderedLift, 0f);
         view.transform.position += lifted;
     }
 }

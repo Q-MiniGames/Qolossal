@@ -55,6 +55,20 @@ public sealed class AreaTransition : MonoBehaviour
         instance.StartCoroutine(instance.Run(scene, arrivalId, arrivalNote ?? "", health != null ? health.Health : -1, combat != null ? combat.EquippedWeapon : null, cave, player));
     }
 
+    // A fade outside a trip (Qori's death beat); left alone while a trip owns the curtain.
+    public static void SetCurtainAlpha(float alpha)
+    {
+        if (IsTransitioning) return;
+        if (instance == null)
+        {
+            if (alpha <= 0f) return;
+            instance = new GameObject("Area Transition").AddComponent<AreaTransition>();
+            DontDestroyOnLoad(instance.gameObject);
+            instance.Build();
+        }
+        instance.SetCurtain(alpha);
+    }
+
     void Build()
     {
         var canvas = GameHud.CreateCanvas("Area Transition Canvas", 100);

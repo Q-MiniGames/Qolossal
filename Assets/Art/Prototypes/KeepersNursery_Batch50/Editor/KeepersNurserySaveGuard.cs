@@ -1,0 +1,9 @@
+using System; using System.IO; using System.Linq; using System.Collections.Generic; using UnityEditor; using UnityEngine; using Newtonsoft.Json;
+// Byte snapshots survive domain reload. Only prior disposable/normal save paths are protected.
+[InitializeOnLoad] public static class KeepersNurserySaveGuard {
+ const string Pending="Qolossal.NurseryR5C.ProtectedSavePending";
+ static KeepersNurserySaveGuard(){EditorApplication.playModeStateChanged+=state=>{if(state==PlayModeStateChange.ExitingEditMode&&KeepersNurseryPreview.Enabled){Snapshot();SessionState.SetBool(Pending,true);}};EditorApplication.update+=()=>{if(!EditorApplication.isPlayingOrWillChangePlaymode&&SessionState.GetBool(Pending,false)){Restore();SessionState.SetBool(Pending,false);}};}
+ const string Receipt=KeepersNurseryPreview.Data+"protected_save_snapshot.json";
+ public static void Snapshot(){var pre=Newtonsoft.Json.Linq.JObject.Parse(File.ReadAllText(KeepersNurseryPreview.Data+"preflight.json"));var paths=((Newtonsoft.Json.Linq.JObject)pre["protectedSaves"]).Properties().Select(p=>p.Name).ToArray();File.WriteAllText(Receipt,JsonConvert.SerializeObject(paths.ToDictionary(p=>p,p=>File.Exists(p)?Convert.ToBase64String(File.ReadAllBytes(p)):null),Formatting.Indented));}
+ public static void Restore(){if(!File.Exists(Receipt))return;var data=JsonConvert.DeserializeObject<Dictionary<string,string>>(File.ReadAllText(Receipt));foreach(var pair in data){if(pair.Value!=null){var bytes=Convert.FromBase64String(pair.Value);if(!File.Exists(pair.Key)||!File.ReadAllBytes(pair.Key).SequenceEqual(bytes))File.WriteAllBytes(pair.Key,bytes);}else if(File.Exists(pair.Key))File.Delete(pair.Key);}File.WriteAllText(KeepersNurseryPreview.Data+"QA/save_guard_result.json",JsonConvert.SerializeObject(new {restoredAt=DateTime.UtcNow,pass=data.All(x=>x.Value==null?!File.Exists(x.Key):File.Exists(x.Key)&&Convert.ToBase64String(File.ReadAllBytes(x.Key))==x.Value),paths=data.Keys},Formatting.Indented));}
+}

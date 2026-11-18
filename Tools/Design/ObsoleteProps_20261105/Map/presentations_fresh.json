@@ -1,0 +1,1499 @@
+{
+  "sceneHashes": {
+    "MRAtlas_MR01_Cradle": "4ea22383dc957187d89e55ed668d1630e1fa64270af9c2fa1437e12bd1faf47a",
+    "MRAtlas_MR02_Causeway": "7b049c305090b6f404067ed90da7b8ceb416a28f69b9548b8a40d26d911a41c2",
+    "MRAtlas_MR03_Terraces": "1bb6d15f3c1637e2d6273820219503f8922aee873f5f2a9811b2f8792eaa727c",
+    "MRAtlas_MR04_Qvale": "8372478b07549140885cedacc1ddea3cd1ac0a0dff1b9e763df328dc5f03303e",
+    "MRAtlas_MR05_Ribwood": "7a1101e4ee3b4bdc4c2457c48549c173b06b62a81be517e6d9f6b8e32ce7c228",
+    "MRAtlas_MR06_Heights": "a4e9e339c87692be462e8ea3fbe68432fc800b081baa04cc4d22ac4a1eef1b02",
+    "MRAtlas_MR07_Summit": "44440ca6868615c509f349297e7c0276cd9e3b6c5abfa64728d23750e538df8c",
+    "Qolossal_Underground": "a448a21af056caf9087ba8ff97885dcadfaf8efeecd8a57b647292d283370fc8",
+    "MRAtlas_MR04_C02": "f96e7297452fb39086bfdb2010ae7b833f82bb467fe5f407073f3f6d6aa76784",
+    "MRAtlas_MR04_C03": "7428c3a5b4c0b326ef050a9f57e91face8fcf37a0d9ff08dd51951e626750f34",
+    "MRAtlas_MR04_C04": "ef8449c75eddfc64edec21b0b1301721534d5ac78536720050ee19815dc8e39c",
+    "MRAtlas_MR04_C05": "5797d12755dedcd213c80eb8926e9bb9ea8fd6972f66a64da541018cefd5219f",
+    "MRAtlas_MR04_C06": "6e0760cb2baa06a9ff5350499d63d197aaa0383feeff9d2984489e6ee047dcd3"
+  },
+  "presentations": [
+    {
+      "connectionId": "CAVE_PC01",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR01_Cradle",
+      "mouth": [
+        60.0,
+        24.7
+      ],
+      "inward": 1.0,
+      "entrance": [
+        62.9,
+        24.7
+      ],
+      "arrival": [
+        58.4,
+        25.36
+      ],
+      "arrivalId": "regional:PC01:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC02",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR01_Cradle",
+      "mouth": [
+        145.0,
+        16.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        151.0,
+        16.0
+      ],
+      "arrival": [
+        145.0,
+        16.66
+      ],
+      "arrivalId": "regional:PC02:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC03",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR01_Cradle",
+      "mouth": [
+        210.5,
+        14.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        216.0,
+        14.0
+      ],
+      "arrival": [
+        211.0,
+        14.66
+      ],
+      "arrivalId": "regional:PC03:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR01_C06",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR01_Cradle",
+      "mouth": [
+        262.0,
+        38.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        269.0,
+        38.0
+      ],
+      "arrival": [
+        262.2,
+        38.66
+      ],
+      "arrivalId": "mra:MR01_C06:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC04",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR02_Causeway",
+      "mouth": [
+        88.5,
+        30.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        91.85,
+        30.0
+      ],
+      "arrival": [
+        86.9,
+        30.66
+      ],
+      "arrivalId": "regional:PC04:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC05",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR02_Causeway",
+      "mouth": [
+        202.376,
+        88.023
+      ],
+      "inward": 1.0,
+      "entrance": [
+        205.726,
+        88.023
+      ],
+      "arrival": [
+        200.776,
+        88.683
+      ],
+      "arrivalId": "regional:PC05:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC06",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR02_Causeway",
+      "mouth": [
+        293.059,
+        138.108
+      ],
+      "inward": 1.0,
+      "entrance": [
+        296.409,
+        138.108
+      ],
+      "arrival": [
+        291.459,
+        138.768
+      ],
+      "arrivalId": "regional:PC06:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR02_C06",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR02_Causeway",
+      "mouth": [
+        358.5,
+        164.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        361.85,
+        164.0
+      ],
+      "arrival": [
+        356.9,
+        164.66
+      ],
+      "arrivalId": "mra:MR02_C06:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC07",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR03_Terraces",
+      "mouth": [
+        52.529,
+        25.87
+      ],
+      "inward": 1.0,
+      "entrance": [
+        55.879,
+        25.87
+      ],
+      "arrival": [
+        50.929,
+        26.53
+      ],
+      "arrivalId": "regional:PC07:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC08",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR03_Terraces",
+      "mouth": [
+        173.174,
+        100.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        176.524,
+        100.0
+      ],
+      "arrival": [
+        171.574,
+        100.66
+      ],
+      "arrivalId": "regional:PC08:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC09",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR03_Terraces",
+      "mouth": [
+        283.127,
+        147.204
+      ],
+      "inward": -1.0,
+      "entrance": [
+        279.777,
+        147.204
+      ],
+      "arrival": [
+        284.727,
+        147.864
+      ],
+      "arrivalId": "regional:PC09:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR03_C06",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR03_Terraces",
+      "mouth": [
+        294.45,
+        140.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        291.1,
+        140.0
+      ],
+      "arrival": [
+        296.05,
+        140.66
+      ],
+      "arrivalId": "mra:MR03_C06:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_A01",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR04_Qvale",
+      "mouth": [
+        21.178,
+        20.625
+      ],
+      "inward": -1.0,
+      "entrance": [
+        17.8280029,
+        20.625
+      ],
+      "arrival": [
+        22.778,
+        20.8327866
+      ],
+      "arrivalId": "ug:ENT_A:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR05_C01",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR05_Ribwood",
+      "mouth": [
+        56.5,
+        26.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        59.85,
+        26.0
+      ],
+      "arrival": [
+        54.9,
+        26.66
+      ],
+      "arrivalId": "mra:MR05_C01:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC10",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR05_Ribwood",
+      "mouth": [
+        87.375,
+        38.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        90.725,
+        38.0
+      ],
+      "arrival": [
+        85.775,
+        38.66
+      ],
+      "arrivalId": "regional:PC10:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR05_C03",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR05_Ribwood",
+      "mouth": [
+        126.5,
+        52.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        129.85,
+        52.0
+      ],
+      "arrival": [
+        124.9,
+        52.66
+      ],
+      "arrivalId": "mra:MR05_C03:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR05_C02",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR05_Ribwood",
+      "mouth": [
+        161.5,
+        76.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        164.85,
+        76.0
+      ],
+      "arrival": [
+        159.9,
+        76.66
+      ],
+      "arrivalId": "mra:MR05_C02:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR05_C04",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR05_Ribwood",
+      "mouth": [
+        195.5,
+        98.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        198.85,
+        98.0
+      ],
+      "arrival": [
+        193.9,
+        98.66
+      ],
+      "arrivalId": "mra:MR05_C04:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR05_C05",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR05_Ribwood",
+      "mouth": [
+        264.5,
+        140.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        267.85,
+        140.0
+      ],
+      "arrival": [
+        262.9,
+        140.66
+      ],
+      "arrivalId": "mra:MR05_C05:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_C01",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR05_Ribwood",
+      "mouth": [
+        246.913,
+        135.044
+      ],
+      "inward": 1.0,
+      "entrance": [
+        250.263,
+        135.044
+      ],
+      "arrival": [
+        245.313,
+        135.704
+      ],
+      "arrivalId": "ug:ENT_C:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR05_C06",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR05_Ribwood",
+      "mouth": [
+        370.5,
+        190.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        373.85,
+        190.0
+      ],
+      "arrival": [
+        368.9,
+        190.66
+      ],
+      "arrivalId": "mra:MR05_C06:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR06_C01",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR06_Heights",
+      "mouth": [
+        58.5,
+        35.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        61.85,
+        35.0
+      ],
+      "arrival": [
+        56.9,
+        35.66
+      ],
+      "arrivalId": "mra:MR06_C01:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC11",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR06_Heights",
+      "mouth": [
+        82.886,
+        55.902
+      ],
+      "inward": 1.0,
+      "entrance": [
+        86.236,
+        55.902
+      ],
+      "arrival": [
+        81.286,
+        56.562
+      ],
+      "arrivalId": "regional:PC11:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR06_C02",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR06_Heights",
+      "mouth": [
+        134.5,
+        86.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        137.85,
+        86.0
+      ],
+      "arrival": [
+        132.9,
+        86.66
+      ],
+      "arrivalId": "mra:MR06_C02:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR06_C03",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR06_Heights",
+      "mouth": [
+        174.5,
+        112.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        177.85,
+        112.0
+      ],
+      "arrival": [
+        172.9,
+        112.66
+      ],
+      "arrivalId": "mra:MR06_C03:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR06_C04",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR06_Heights",
+      "mouth": [
+        215.5,
+        140.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        218.85,
+        140.0
+      ],
+      "arrival": [
+        213.9,
+        140.66
+      ],
+      "arrivalId": "mra:MR06_C04:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR06_C05",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR06_Heights",
+      "mouth": [
+        291.5,
+        194.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        294.85,
+        194.0
+      ],
+      "arrival": [
+        289.9,
+        194.66
+      ],
+      "arrivalId": "mra:MR06_C05:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR06_C06",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR06_Heights",
+      "mouth": [
+        344.201,
+        228.853
+      ],
+      "inward": 1.0,
+      "entrance": [
+        347.551,
+        228.853
+      ],
+      "arrival": [
+        342.601,
+        229.513
+      ],
+      "arrivalId": "mra:MR06_C06:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_D01",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR06_Heights",
+      "mouth": [
+        333.228,
+        223.234
+      ],
+      "inward": 1.0,
+      "entrance": [
+        336.578,
+        223.234
+      ],
+      "arrival": [
+        331.628,
+        223.894
+      ],
+      "arrivalId": "ug:ENT_D:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR07_C02",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR07_Summit",
+      "mouth": [
+        51.5,
+        40.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        54.85,
+        40.0
+      ],
+      "arrival": [
+        49.9,
+        40.66
+      ],
+      "arrivalId": "mra:MR07_C02:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR07_C03",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR07_Summit",
+      "mouth": [
+        80.5,
+        60.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        83.85,
+        60.0
+      ],
+      "arrival": [
+        78.9,
+        60.66
+      ],
+      "arrivalId": "mra:MR07_C03:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC12",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR07_Summit",
+      "mouth": [
+        93.275,
+        66.102
+      ],
+      "inward": 1.0,
+      "entrance": [
+        96.625,
+        66.102
+      ],
+      "arrival": [
+        91.675,
+        66.762
+      ],
+      "arrivalId": "regional:PC12:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR07_C01",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR07_Summit",
+      "mouth": [
+        139.5,
+        82.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        142.85,
+        82.0
+      ],
+      "arrival": [
+        137.9,
+        82.66
+      ],
+      "arrivalId": "mra:MR07_C01:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR07_C04",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR07_Summit",
+      "mouth": [
+        233.5,
+        134.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        236.85,
+        134.0
+      ],
+      "arrival": [
+        231.9,
+        134.66
+      ],
+      "arrivalId": "mra:MR07_C04:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR07_C05",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR07_Summit",
+      "mouth": [
+        260.5,
+        151.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        263.85,
+        151.0
+      ],
+      "arrival": [
+        258.9,
+        151.66
+      ],
+      "arrivalId": "mra:MR07_C05:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR07_C06",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR07_Summit",
+      "mouth": [
+        286.5,
+        163.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        289.85,
+        163.0
+      ],
+      "arrival": [
+        284.9,
+        163.66
+      ],
+      "arrivalId": "mra:MR07_C06:return",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_E01",
+      "undergroundSide": false,
+      "scene": "MRAtlas_MR07_Summit",
+      "mouth": [
+        347.485,
+        148.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        344.135,
+        148.0
+      ],
+      "arrival": [
+        349.085,
+        148.66
+      ],
+      "arrivalId": "cave-return:E01",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_A01",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1480.0,
+        170.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1477.70007,
+        170.0
+      ],
+      "arrival": [
+        1481.8,
+        170.66
+      ],
+      "arrivalId": "room:A01",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_C01",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1546.0,
+        330.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1543.70007,
+        330.0
+      ],
+      "arrival": [
+        1547.8,
+        330.66
+      ],
+      "arrivalId": "room:C01",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_D01",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        2020.0,
+        438.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        2017.70007,
+        438.0
+      ],
+      "arrival": [
+        2021.8,
+        438.66
+      ],
+      "arrivalId": "room:D01",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_E01",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        2000.0,
+        192.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1997.70007,
+        192.0
+      ],
+      "arrival": [
+        2001.8,
+        192.66
+      ],
+      "arrivalId": "room:E01",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR01_C06",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        35.0,
+        -78.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        32.7,
+        -78.0
+      ],
+      "arrival": [
+        36.8,
+        -77.34
+      ],
+      "arrivalId": "room:MR01_C06",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC01",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        62.0,
+        -21.111
+      ],
+      "inward": -1.0,
+      "entrance": [
+        59.7,
+        -19.2321014
+      ],
+      "arrival": [
+        63.8,
+        -20.451
+      ],
+      "arrivalId": "room:PC01",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC02",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        128.0,
+        -25.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        125.7,
+        -25.0
+      ],
+      "arrival": [
+        129.8,
+        -24.34
+      ],
+      "arrivalId": "room:PC02",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC03",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        266.0,
+        -3.499
+      ],
+      "inward": -1.0,
+      "entrance": [
+        263.7,
+        -3.499
+      ],
+      "arrival": [
+        267.8,
+        -2.839
+      ],
+      "arrivalId": "room:PC03",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR02_C06",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        525.0,
+        -24.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        522.7,
+        -24.0
+      ],
+      "arrival": [
+        526.8,
+        -23.34
+      ],
+      "arrivalId": "room:MR02_C06",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC04",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        305.0,
+        1.93700027
+      ],
+      "inward": -1.0,
+      "entrance": [
+        302.7,
+        1.93700027
+      ],
+      "arrival": [
+        306.8,
+        2.59700036
+      ],
+      "arrivalId": "room:PC04",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC05",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        419.0,
+        44.575
+      ],
+      "inward": -1.0,
+      "entrance": [
+        416.7,
+        44.575
+      ],
+      "arrival": [
+        420.8,
+        45.235
+      ],
+      "arrivalId": "room:PC05",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC06",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        551.0,
+        120.744
+      ],
+      "inward": -1.0,
+      "entrance": [
+        548.7,
+        120.744
+      ],
+      "arrival": [
+        552.8,
+        121.404007
+      ],
+      "arrivalId": "room:PC06",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR03_C06",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        755.0,
+        144.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        752.7,
+        144.0
+      ],
+      "arrival": [
+        756.8,
+        144.66
+      ],
+      "arrivalId": "room:MR03_C06",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC07",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        689.0,
+        169.87
+      ],
+      "inward": -1.0,
+      "entrance": [
+        686.7,
+        169.87
+      ],
+      "arrival": [
+        690.8,
+        170.53
+      ],
+      "arrivalId": "room:PC07",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC08",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        822.0,
+        258.118
+      ],
+      "inward": -1.0,
+      "entrance": [
+        819.7,
+        258.118
+      ],
+      "arrival": [
+        823.8,
+        258.778
+      ],
+      "arrivalId": "room:PC08",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC09",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        968.0,
+        268.834
+      ],
+      "inward": -1.0,
+      "entrance": [
+        965.7,
+        268.834
+      ],
+      "arrival": [
+        969.8,
+        269.494019
+      ],
+      "arrivalId": "room:PC09",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR05_C01",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1326.0,
+        248.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1323.70007,
+        248.0
+      ],
+      "arrival": [
+        1327.8,
+        248.66
+      ],
+      "arrivalId": "room:MR05_C01",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR05_C02",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1431.0,
+        296.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1428.70007,
+        296.0
+      ],
+      "arrival": [
+        1432.35,
+        296.66
+      ],
+      "arrivalId": "room:MR05_C02",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR05_C03",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1396.0,
+        270.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1393.70007,
+        270.0
+      ],
+      "arrival": [
+        1397.8,
+        270.66
+      ],
+      "arrivalId": "room:MR05_C03",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR05_C04",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1500.0,
+        341.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1497.70007,
+        341.0
+      ],
+      "arrival": [
+        1501.8,
+        341.66
+      ],
+      "arrivalId": "room:MR05_C04",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR05_C05",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1534.0,
+        359.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1531.70007,
+        359.0
+      ],
+      "arrival": [
+        1535.8,
+        359.66
+      ],
+      "arrivalId": "room:MR05_C05",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR05_C06",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1640.0,
+        404.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1637.70007,
+        404.0
+      ],
+      "arrival": [
+        1641.8,
+        404.66
+      ],
+      "arrivalId": "room:MR05_C06",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC10",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1375.0,
+        269.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1372.70007,
+        269.0
+      ],
+      "arrival": [
+        1376.8,
+        269.66
+      ],
+      "arrivalId": "room:PC10",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR06_C01",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1710.0,
+        446.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1707.70007,
+        446.0
+      ],
+      "arrival": [
+        1711.8,
+        446.659973
+      ],
+      "arrivalId": "room:MR06_C01",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR06_C02",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1794.0,
+        484.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1791.70007,
+        484.0
+      ],
+      "arrival": [
+        1795.35,
+        484.66
+      ],
+      "arrivalId": "room:MR06_C02",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR06_C03",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1834.0,
+        512.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1831.70007,
+        512.0
+      ],
+      "arrival": [
+        1835.8,
+        512.66
+      ],
+      "arrivalId": "room:MR06_C03",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR06_C04",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1875.0,
+        540.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1872.70007,
+        540.0
+      ],
+      "arrival": [
+        1876.8,
+        540.66
+      ],
+      "arrivalId": "room:MR06_C04",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR06_C05",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1951.0,
+        586.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1948.70007,
+        586.0
+      ],
+      "arrival": [
+        1952.8,
+        586.66
+      ],
+      "arrivalId": "room:MR06_C05",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR06_C06",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        2018.0,
+        632.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        2015.70007,
+        632.0
+      ],
+      "arrival": [
+        2019.8,
+        632.66
+      ],
+      "arrivalId": "room:MR06_C06",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC11",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        1765.0,
+        468.000031
+      ],
+      "inward": -1.0,
+      "entrance": [
+        1762.70007,
+        468.000031
+      ],
+      "arrival": [
+        1766.8,
+        468.66
+      ],
+      "arrivalId": "room:PC11",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR07_C01",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        2227.0,
+        668.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        2224.7,
+        668.0
+      ],
+      "arrival": [
+        2228.8,
+        668.66
+      ],
+      "arrivalId": "room:MR07_C01",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR07_C02",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        2139.0,
+        622.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        2136.7,
+        622.0
+      ],
+      "arrival": [
+        2140.35,
+        622.66
+      ],
+      "arrivalId": "room:MR07_C02",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR07_C03",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        2168.0,
+        644.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        2165.7,
+        644.0
+      ],
+      "arrival": [
+        2169.8,
+        644.66
+      ],
+      "arrivalId": "room:MR07_C03",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR07_C04",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        2321.0,
+        710.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        2318.7,
+        710.0
+      ],
+      "arrival": [
+        2322.8,
+        710.66
+      ],
+      "arrivalId": "room:MR07_C04",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR07_C05",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        2348.0,
+        735.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        2345.7,
+        735.0
+      ],
+      "arrival": [
+        2349.8,
+        735.66
+      ],
+      "arrivalId": "room:MR07_C05",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_MR07_C06",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        2408.0,
+        743.0
+      ],
+      "inward": 1.0,
+      "entrance": [
+        2410.3,
+        743.0
+      ],
+      "arrival": [
+        2406.2,
+        743.66
+      ],
+      "arrivalId": "room:MR07_C06",
+      "presentation": true
+    },
+    {
+      "connectionId": "CAVE_PC12",
+      "undergroundSide": true,
+      "scene": "Qolossal_Underground",
+      "mouth": [
+        2208.0,
+        660.0
+      ],
+      "inward": -1.0,
+      "entrance": [
+        2205.7,
+        660.0
+      ],
+      "arrival": [
+        2209.8,
+        660.66
+      ],
+      "arrivalId": "room:PC12",
+      "presentation": true
+    }
+  ]
+}

@@ -24,7 +24,7 @@ Some shared files hold other sessions' edits as well as ours, such as `PlayerMov
 2. **Hit sound:** all game sounds are off (`Sfx.EffectsRemoved`). Propose first, wire nothing without an OK. My suggestion: audition one existing hit sound and one blocked-hit sound.
 3. **Sluice Warden:** no bot has beaten it. The Skilled bot learned to avoid the sweep but doesn't climb the ledges, and one flood can cost up to 3 hearts, which may be too harsh. It needs a hands-on verdict.
 4. **Heart plinth:** raised by the coordinator; I have no decision recorded. Check with the user. Lowering E's doorway to the Heart would need a terrain re-carve.
-5. **PC04 entrance:** this room has no way in yet.
+5. **PC04 entrance:** ~~this room has no way in yet.~~ It has one: the MR02 door, arrival and return are all in the scenes. `extract_rooms.py` missed them because of the apostrophe in its name (fixed 3 Nov).
 6. **Ludo creature clips:** waiting on the user's go-ahead. The Hollow Shade (E-19) and Lantern Moth (E-21) aren't placed.
 7. **Enemy movement:** the user wants to adjust it after judging hit feel. Enemy hit-stun was left for that work.
 

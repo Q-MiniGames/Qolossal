@@ -1,0 +1,3446 @@
+{
+  "reason": "Preserve approved rigid cartographic components during authorized surface bevel and entrance revision, 2026-11-04",
+  "baseline": "C:\\UnityProjects\\Qolossal\\Tools\\Design\\WorldRevision_20261104\\Before\\Map\\world-map-data.json",
+  "baselineSha256": "fb2628cc26b18b0b3850d985e66696b76596fe46e7b079016831bcaedfd09148",
+  "nodes": [
+    {
+      "id": "A01",
+      "name": "Sluice Arrival",
+      "type": "underground",
+      "region": "MR04",
+      "group": "A",
+      "position": [
+        4579.2,
+        2527.0
+      ],
+      "worldBounds": [
+        1480.0,
+        170.0,
+        36.0,
+        22.0
+      ],
+      "mapBounds": [
+        4525.2,
+        2494.0,
+        108.0,
+        66.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4579.2,
+        "y": 2527.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "A02",
+      "name": "Drain Well",
+      "type": "underground",
+      "region": "MR04",
+      "group": "A",
+      "position": [
+        4693.2,
+        2602.0
+      ],
+      "worldBounds": [
+        1528.0,
+        126.0,
+        16.0,
+        60.0
+      ],
+      "mapBounds": [
+        4669.2,
+        2512.0,
+        48.0,
+        180.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4693.2,
+        "y": 2602.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "A03",
+      "name": "Silt Walk",
+      "type": "underground",
+      "region": "MR04",
+      "group": "A",
+      "position": [
+        4627.2,
+        2746.0
+      ],
+      "worldBounds": [
+        1490.0,
+        102.0,
+        48.0,
+        12.0
+      ],
+      "mapBounds": [
+        4555.2,
+        2728.0,
+        144.0,
+        36.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4627.2,
+        "y": 2746.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "A04",
+      "name": "Cistern Court",
+      "type": "underground",
+      "region": "MR04",
+      "group": "A",
+      "position": [
+        4837.2,
+        2764.0
+      ],
+      "worldBounds": [
+        1552.0,
+        84.0,
+        64.0,
+        36.0
+      ],
+      "mapBounds": [
+        4741.2,
+        2710.0,
+        192.0,
+        108.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4837.2,
+        "y": 2764.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "A05",
+      "name": "Spillway Rise",
+      "type": "underground",
+      "region": "MR04",
+      "group": "A",
+      "position": [
+        4993.2,
+        2722.0
+      ],
+      "worldBounds": [
+        1628.0,
+        92.0,
+        16.0,
+        48.0
+      ],
+      "mapBounds": [
+        4969.2,
+        2650.0,
+        48.0,
+        144.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4993.2,
+        "y": 2722.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "A06",
+      "name": "Pump Gallery",
+      "type": "underground",
+      "region": "MR04",
+      "group": "A",
+      "position": [
+        4837.2,
+        2560.0
+      ],
+      "worldBounds": [
+        1554.0,
+        154.0,
+        60.0,
+        32.0
+      ],
+      "mapBounds": [
+        4747.2,
+        2512.0,
+        180.0,
+        96.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4837.2,
+        "y": 2560.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "A07",
+      "name": "Keeper Refuge",
+      "type": "underground",
+      "region": "MR04",
+      "group": "A",
+      "position": [
+        5032.2,
+        2539.0
+      ],
+      "worldBounds": [
+        1628.0,
+        170.0,
+        42.0,
+        14.0
+      ],
+      "mapBounds": [
+        4969.2,
+        2518.0,
+        126.0,
+        42.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5032.2,
+        "y": 2539.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "A08",
+      "name": "Sluice Guardian Arena",
+      "type": "underground",
+      "region": "MR04",
+      "group": "A",
+      "position": [
+        5215.2,
+        2524.0
+      ],
+      "worldBounds": [
+        1684.0,
+        168.0,
+        52.0,
+        28.0
+      ],
+      "mapBounds": [
+        5137.2,
+        2482.0,
+        156.0,
+        84.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5215.2,
+        "y": 2524.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "A09",
+      "name": "Settling Cache",
+      "type": "underground",
+      "region": "MR04",
+      "group": "A",
+      "position": [
+        4789.2,
+        2896.0
+      ],
+      "worldBounds": [
+        1554.0,
+        48.0,
+        28.0,
+        20.0
+      ],
+      "mapBounds": [
+        4747.2,
+        2866.0,
+        84.0,
+        60.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4789.2,
+        "y": 2896.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "A10",
+      "name": "Keeper Archive",
+      "type": "underground",
+      "region": "MR04",
+      "group": "A",
+      "position": [
+        5194.2,
+        2686.0
+      ],
+      "worldBounds": [
+        1688.0,
+        118.0,
+        30.0,
+        20.0
+      ],
+      "mapBounds": [
+        5149.2,
+        2656.0,
+        90.0,
+        60.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5194.2,
+        "y": 2686.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "C01",
+      "name": "Garden Arrival",
+      "type": "underground",
+      "region": "MR05",
+      "group": "C",
+      "position": [
+        4777.2,
+        2044.0
+      ],
+      "worldBounds": [
+        1546.0,
+        330.0,
+        36.0,
+        24.0
+      ],
+      "mapBounds": [
+        4723.2,
+        2008.0,
+        108.0,
+        72.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4777.2,
+        "y": 2044.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "C02",
+      "name": "Canopy Walk",
+      "type": "underground",
+      "region": "MR05",
+      "group": "C",
+      "position": [
+        4912.2,
+        1954.0
+      ],
+      "worldBounds": [
+        1588.0,
+        366.0,
+        42.0,
+        12.0
+      ],
+      "mapBounds": [
+        4849.2,
+        1936.0,
+        126.0,
+        36.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4912.2,
+        "y": 1954.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "C03",
+      "name": "Root Ladder",
+      "type": "underground",
+      "region": "MR05",
+      "group": "C",
+      "position": [
+        5041.2,
+        2023.0
+      ],
+      "worldBounds": [
+        1644.0,
+        320.0,
+        16.0,
+        58.0
+      ],
+      "mapBounds": [
+        5017.2,
+        1936.0,
+        48.0,
+        174.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5041.2,
+        "y": 2023.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "C04",
+      "name": "Seed Cradle",
+      "type": "underground",
+      "region": "MR05",
+      "group": "C",
+      "position": [
+        4873.2,
+        2206.0
+      ],
+      "worldBounds": [
+        1564.0,
+        270.0,
+        64.0,
+        36.0
+      ],
+      "mapBounds": [
+        4777.2,
+        2152.0,
+        192.0,
+        108.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4873.2,
+        "y": 2206.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "C05",
+      "name": "Rootfall Well",
+      "type": "underground",
+      "region": "MR05",
+      "group": "C",
+      "position": [
+        5041.2,
+        2239.0
+      ],
+      "worldBounds": [
+        1644.0,
+        248.0,
+        16.0,
+        58.0
+      ],
+      "mapBounds": [
+        5017.2,
+        2152.0,
+        48.0,
+        174.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5041.2,
+        "y": 2239.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "C06",
+      "name": "Bloom Court",
+      "type": "underground",
+      "region": "MR05",
+      "group": "C",
+      "position": [
+        5188.2,
+        2209.0
+      ],
+      "worldBounds": [
+        1674.0,
+        272.0,
+        54.0,
+        30.0
+      ],
+      "mapBounds": [
+        5107.2,
+        2164.0,
+        162.0,
+        90.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5188.2,
+        "y": 2209.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "C07",
+      "name": "Gardener Rest",
+      "type": "underground",
+      "region": "MR05",
+      "group": "C",
+      "position": [
+        5353.2,
+        2212.0
+      ],
+      "worldBounds": [
+        1742.0,
+        278.0,
+        28.0,
+        16.0
+      ],
+      "mapBounds": [
+        5311.2,
+        2188.0,
+        84.0,
+        48.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5353.2,
+        "y": 2212.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "C08",
+      "name": "Root Guardian Arena",
+      "type": "underground",
+      "region": "MR05",
+      "group": "C",
+      "position": [
+        5371.2,
+        2320.0
+      ],
+      "worldBounds": [
+        1742.0,
+        236.0,
+        40.0,
+        28.0
+      ],
+      "mapBounds": [
+        5311.2,
+        2278.0,
+        120.0,
+        84.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5371.2,
+        "y": 2320.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "C09",
+      "name": "Hidden Nursery",
+      "type": "underground",
+      "region": "MR05",
+      "group": "C",
+      "position": [
+        4621.2,
+        2173.0
+      ],
+      "worldBounds": [
+        1490.0,
+        286.0,
+        44.0,
+        26.0
+      ],
+      "mapBounds": [
+        4555.2,
+        2134.0,
+        132.0,
+        78.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4621.2,
+        "y": 2173.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "C10",
+      "name": "Hanging Garden",
+      "type": "underground",
+      "region": "MR05",
+      "group": "C",
+      "position": [
+        5179.2,
+        2005.0
+      ],
+      "worldBounds": [
+        1682.0,
+        344.0,
+        32.0,
+        22.0
+      ],
+      "mapBounds": [
+        5131.2,
+        1972.0,
+        96.0,
+        66.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5179.2,
+        "y": 2005.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "D01",
+      "name": "Windward Shelter",
+      "type": "underground",
+      "region": "MR06",
+      "group": "D",
+      "position": [
+        6205.2,
+        1720.0
+      ],
+      "worldBounds": [
+        2020.0,
+        438.0,
+        40.0,
+        24.0
+      ],
+      "mapBounds": [
+        6145.2,
+        1684.0,
+        120.0,
+        72.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6205.2,
+        "y": 1720.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "D02",
+      "name": "Leeward Well",
+      "type": "underground",
+      "region": "MR06",
+      "group": "D",
+      "position": [
+        6073.2,
+        1801.0
+      ],
+      "worldBounds": [
+        1988.0,
+        394.0,
+        16.0,
+        58.0
+      ],
+      "mapBounds": [
+        6049.2,
+        1714.0,
+        48.0,
+        174.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6073.2,
+        "y": 1801.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "D03",
+      "name": "Vane Court",
+      "type": "underground",
+      "region": "MR06",
+      "group": "D",
+      "position": [
+        6229.2,
+        1945.0
+      ],
+      "worldBounds": [
+        2020.0,
+        360.0,
+        56.0,
+        30.0
+      ],
+      "mapBounds": [
+        6145.2,
+        1900.0,
+        168.0,
+        90.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6229.2,
+        "y": 1945.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "D04",
+      "name": "Wind Bridge",
+      "type": "underground",
+      "region": "MR06",
+      "group": "D",
+      "position": [
+        6025.2,
+        2032.0
+      ],
+      "worldBounds": [
+        1958.0,
+        340.0,
+        44.0,
+        12.0
+      ],
+      "mapBounds": [
+        5959.2,
+        2014.0,
+        132.0,
+        36.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6025.2,
+        "y": 2032.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "D05",
+      "name": "Updraft Hall",
+      "type": "underground",
+      "region": "MR06",
+      "group": "D",
+      "position": [
+        5809.2,
+        2020.0
+      ],
+      "worldBounds": [
+        1872.0,
+        330.0,
+        72.0,
+        40.0
+      ],
+      "mapBounds": [
+        5701.2,
+        1960.0,
+        216.0,
+        120.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5809.2,
+        "y": 2020.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "D06",
+      "name": "Baffled Drop",
+      "type": "underground",
+      "region": "MR06",
+      "group": "D",
+      "position": [
+        5635.2,
+        2143.0
+      ],
+      "worldBounds": [
+        1842.0,
+        276.0,
+        16.0,
+        66.0
+      ],
+      "mapBounds": [
+        5611.2,
+        2044.0,
+        48.0,
+        198.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5635.2,
+        "y": 2143.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "D07",
+      "name": "Still-Air Rest",
+      "type": "underground",
+      "region": "MR06",
+      "group": "D",
+      "position": [
+        5749.2,
+        2233.0
+      ],
+      "worldBounds": [
+        1872.0,
+        270.0,
+        32.0,
+        18.0
+      ],
+      "mapBounds": [
+        5701.2,
+        2206.0,
+        96.0,
+        54.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5749.2,
+        "y": 2233.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "D08",
+      "name": "Wind Guardian Arena",
+      "type": "underground",
+      "region": "MR06",
+      "group": "D",
+      "position": [
+        5569.2,
+        2320.0
+      ],
+      "worldBounds": [
+        1808.0,
+        236.0,
+        40.0,
+        28.0
+      ],
+      "mapBounds": [
+        5509.2,
+        2278.0,
+        120.0,
+        84.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5569.2,
+        "y": 2320.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "D09",
+      "name": "Glider Roost",
+      "type": "underground",
+      "region": "MR06",
+      "group": "D",
+      "position": [
+        6403.2,
+        1939.0
+      ],
+      "worldBounds": [
+        2088.0,
+        366.0,
+        36.0,
+        22.0
+      ],
+      "mapBounds": [
+        6349.2,
+        1906.0,
+        108.0,
+        66.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6403.2,
+        "y": 1939.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "D10",
+      "name": "Cloud Archive",
+      "type": "underground",
+      "region": "MR06",
+      "group": "D",
+      "position": [
+        5773.2,
+        1867.0
+      ],
+      "worldBounds": [
+        1880.0,
+        390.0,
+        32.0,
+        22.0
+      ],
+      "mapBounds": [
+        5725.2,
+        1834.0,
+        96.0,
+        66.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5773.2,
+        "y": 1867.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "E01",
+      "name": "Quiet Arrival",
+      "type": "underground",
+      "region": "MR07",
+      "group": "E",
+      "position": [
+        6139.2,
+        2458.0
+      ],
+      "worldBounds": [
+        2000.0,
+        192.0,
+        36.0,
+        24.0
+      ],
+      "mapBounds": [
+        6085.2,
+        2422.0,
+        108.0,
+        72.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6139.2,
+        "y": 2458.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "E02",
+      "name": "Memory Well",
+      "type": "underground",
+      "region": "MR07",
+      "group": "E",
+      "position": [
+        6289.2,
+        2548.0
+      ],
+      "worldBounds": [
+        2060.0,
+        142.0,
+        16.0,
+        64.0
+      ],
+      "mapBounds": [
+        6265.2,
+        2452.0,
+        48.0,
+        192.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6289.2,
+        "y": 2548.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "E03",
+      "name": "First Memory",
+      "type": "underground",
+      "region": "MR07",
+      "group": "E",
+      "position": [
+        6313.2,
+        2761.0
+      ],
+      "worldBounds": [
+        2048.0,
+        88.0,
+        56.0,
+        30.0
+      ],
+      "mapBounds": [
+        6229.2,
+        2716.0,
+        168.0,
+        90.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6313.2,
+        "y": 2761.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "E04",
+      "name": "Processional Walk",
+      "type": "underground",
+      "region": "MR07",
+      "group": "E",
+      "position": [
+        6115.2,
+        2758.0
+      ],
+      "worldBounds": [
+        1988.0,
+        98.0,
+        44.0,
+        12.0
+      ],
+      "mapBounds": [
+        6049.2,
+        2740.0,
+        132.0,
+        36.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6115.2,
+        "y": 2758.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "E05",
+      "name": "The Wilted Sanctuary",
+      "type": "underground",
+      "region": "MR07",
+      "group": "E",
+      "position": [
+        5893.2,
+        2776.0
+      ],
+      "worldBounds": [
+        1900.0,
+        78.0,
+        72.0,
+        40.0
+      ],
+      "mapBounds": [
+        5785.2,
+        2716.0,
+        216.0,
+        120.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5893.2,
+        "y": 2776.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "E06",
+      "name": "Return Stair",
+      "type": "underground",
+      "region": "MR07",
+      "group": "E",
+      "position": [
+        5725.2,
+        2692.0
+      ],
+      "worldBounds": [
+        1872.0,
+        94.0,
+        16.0,
+        64.0
+      ],
+      "mapBounds": [
+        5701.2,
+        2596.0,
+        48.0,
+        192.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5725.2,
+        "y": 2692.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "E07",
+      "name": "Last Refuge",
+      "type": "underground",
+      "region": "MR07",
+      "group": "E",
+      "position": [
+        5830.2,
+        2533.0
+      ],
+      "worldBounds": [
+        1900.0,
+        170.0,
+        30.0,
+        18.0
+      ],
+      "mapBounds": [
+        5785.2,
+        2506.0,
+        90.0,
+        54.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5830.2,
+        "y": 2533.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "E08",
+      "name": "Final Threshold",
+      "type": "underground",
+      "region": "MR07",
+      "group": "E",
+      "position": [
+        5695.2,
+        2506.0
+      ],
+      "worldBounds": [
+        1854.0,
+        174.0,
+        32.0,
+        28.0
+      ],
+      "mapBounds": [
+        5647.2,
+        2464.0,
+        96.0,
+        84.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5695.2,
+        "y": 2506.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "E09",
+      "name": "Lost Seed Archive",
+      "type": "underground",
+      "region": "MR07",
+      "group": "E",
+      "position": [
+        6283.2,
+        2893.0
+      ],
+      "worldBounds": [
+        2050.0,
+        48.0,
+        32.0,
+        22.0
+      ],
+      "mapBounds": [
+        6235.2,
+        2860.0,
+        96.0,
+        66.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6283.2,
+        "y": 2893.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "E10",
+      "name": "Sanctuary Alcove",
+      "type": "underground",
+      "region": "MR07",
+      "group": "E",
+      "position": [
+        6013.2,
+        2617.0
+      ],
+      "worldBounds": [
+        1960.0,
+        140.0,
+        32.0,
+        22.0
+      ],
+      "mapBounds": [
+        5965.2,
+        2584.0,
+        96.0,
+        66.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6013.2,
+        "y": 2617.0
+      },
+      "mappingId": "underground:A01"
+    },
+    {
+      "id": "MR01_C01",
+      "name": "Warm Crack",
+      "type": "underground",
+      "region": "MR01",
+      "group": "MR01",
+      "position": [
+        1089.0,
+        3565.0
+      ],
+      "worldBounds": [
+        35.0,
+        -174.0,
+        32.0,
+        18.0
+      ],
+      "mapBounds": [
+        1041.0,
+        3538.0,
+        96.0,
+        54.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 1089.0,
+        "y": 3565.0
+      },
+      "mappingId": "underground:MR01_C01"
+    },
+    {
+      "id": "MR01_C02",
+      "name": "Moss Pocket",
+      "type": "underground",
+      "region": "MR01",
+      "group": "MR01",
+      "position": [
+        1341.0,
+        3592.0
+      ],
+      "worldBounds": [
+        115.0,
+        -186.0,
+        40.0,
+        24.0
+      ],
+      "mapBounds": [
+        1281.0,
+        3556.0,
+        120.0,
+        72.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 1341.0,
+        "y": 3592.0
+      },
+      "mappingId": "underground:MR01_C01"
+    },
+    {
+      "id": "MR01_C03",
+      "name": "Pale Alcove",
+      "type": "underground",
+      "region": "MR01",
+      "group": "MR01",
+      "position": [
+        1557.0,
+        3607.0
+      ],
+      "worldBounds": [
+        195.0,
+        -186.0,
+        24.0,
+        14.0
+      ],
+      "mapBounds": [
+        1521.0,
+        3586.0,
+        72.0,
+        42.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 1557.0,
+        "y": 3607.0
+      },
+      "mappingId": "underground:MR01_C01"
+    },
+    {
+      "id": "MR01_C04",
+      "name": "Root Gallery",
+      "type": "underground",
+      "region": "MR01",
+      "group": "MR01",
+      "position": [
+        1587.0,
+        3397.0
+      ],
+      "worldBounds": [
+        195.0,
+        -120.0,
+        44.0,
+        22.0
+      ],
+      "mapBounds": [
+        1521.0,
+        3364.0,
+        132.0,
+        66.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 1587.0,
+        "y": 3397.0
+      },
+      "mappingId": "underground:MR01_C01"
+    },
+    {
+      "id": "MR01_C05",
+      "name": "High Crevice",
+      "type": "underground",
+      "region": "MR01",
+      "group": "MR01",
+      "position": [
+        1374.0,
+        3256.0
+      ],
+      "worldBounds": [
+        139.0,
+        -78.0,
+        14.0,
+        32.0
+      ],
+      "mapBounds": [
+        1353.0,
+        3208.0,
+        42.0,
+        96.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 1374.0,
+        "y": 3256.0
+      },
+      "mappingId": "underground:MR01_C01"
+    },
+    {
+      "id": "MR01_C06",
+      "name": "Hanging Garden",
+      "type": "underground",
+      "region": "MR01",
+      "group": "MR01",
+      "position": [
+        1113.0,
+        3265.0
+      ],
+      "worldBounds": [
+        35.0,
+        -78.0,
+        48.0,
+        26.0
+      ],
+      "mapBounds": [
+        1041.0,
+        3226.0,
+        144.0,
+        78.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 1113.0,
+        "y": 3265.0
+      },
+      "mappingId": "underground:MR01_C01"
+    },
+    {
+      "id": "PC01",
+      "name": "Firefly Nook",
+      "type": "underground",
+      "region": "MR01",
+      "group": "MR01",
+      "position": [
+        439.1,
+        2772.85029
+      ],
+      "worldBounds": [
+        62.0,
+        -21.111,
+        12.0,
+        8.0
+      ],
+      "mapBounds": [
+        421.1,
+        2760.85029,
+        36.0,
+        24.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 439.1,
+        "y": 2772.85029
+      },
+      "mappingId": "underground:PC01"
+    },
+    {
+      "id": "PC02",
+      "name": "Old Footprints",
+      "type": "underground",
+      "region": "MR01",
+      "group": "MR01",
+      "position": [
+        692.0,
+        2791.5
+      ],
+      "worldBounds": [
+        128.0,
+        -25.0,
+        10.0,
+        7.0
+      ],
+      "mapBounds": [
+        677.0,
+        2781.0,
+        30.0,
+        21.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 692.0,
+        "y": 2791.5
+      },
+      "mappingId": "underground:PC02"
+    },
+    {
+      "id": "PC03",
+      "name": "Fern Pocket",
+      "type": "underground",
+      "region": "MR01",
+      "group": "MR01",
+      "position": [
+        893.0,
+        2794.5
+      ],
+      "worldBounds": [
+        266.0,
+        -3.499,
+        14.0,
+        9.0
+      ],
+      "mapBounds": [
+        872.0,
+        2781.0,
+        42.0,
+        27.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 893.0,
+        "y": 2794.5
+      },
+      "mappingId": "underground:PC03"
+    },
+    {
+      "id": "MR02_C01",
+      "name": "Underarch Workshop",
+      "type": "underground",
+      "region": "MR02",
+      "group": "MR02",
+      "position": [
+        2792.55,
+        3400.0
+      ],
+      "worldBounds": [
+        549.0,
+        -120.0,
+        36.0,
+        20.0
+      ],
+      "mapBounds": [
+        2738.55,
+        3370.0,
+        108.0,
+        60.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 2792.55,
+        "y": 3400.0
+      },
+      "mappingId": "underground:MR02_C01"
+    },
+    {
+      "id": "MR02_C02",
+      "name": "Silt Cistern",
+      "type": "underground",
+      "region": "MR02",
+      "group": "MR02",
+      "position": [
+        2528.55,
+        3421.0
+      ],
+      "worldBounds": [
+        453.0,
+        -132.0,
+        52.0,
+        30.0
+      ],
+      "mapBounds": [
+        2450.55,
+        3376.0,
+        156.0,
+        90.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 2528.55,
+        "y": 3421.0
+      },
+      "mappingId": "underground:MR02_C01"
+    },
+    {
+      "id": "MR02_C03",
+      "name": "Echo Vault",
+      "type": "underground",
+      "region": "MR02",
+      "group": "MR02",
+      "position": [
+        2312.55,
+        3433.0
+      ],
+      "worldBounds": [
+        389.0,
+        -132.0,
+        36.0,
+        22.0
+      ],
+      "mapBounds": [
+        2258.55,
+        3400.0,
+        108.0,
+        66.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 2312.55,
+        "y": 3433.0
+      },
+      "mappingId": "underground:MR02_C01"
+    },
+    {
+      "id": "MR02_C04",
+      "name": "Ring Gallery",
+      "type": "underground",
+      "region": "MR02",
+      "group": "MR02",
+      "position": [
+        2291.55,
+        3232.0
+      ],
+      "worldBounds": [
+        375.0,
+        -66.0,
+        50.0,
+        24.0
+      ],
+      "mapBounds": [
+        2216.55,
+        3196.0,
+        150.0,
+        72.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 2291.55,
+        "y": 3232.0
+      },
+      "mappingId": "underground:MR02_C01"
+    },
+    {
+      "id": "MR02_C05",
+      "name": "Moss Tower",
+      "type": "underground",
+      "region": "MR02",
+      "group": "MR02",
+      "position": [
+        2510.55,
+        3076.0
+      ],
+      "worldBounds": [
+        465.0,
+        -24.0,
+        16.0,
+        44.0
+      ],
+      "mapBounds": [
+        2486.55,
+        3010.0,
+        48.0,
+        132.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 2510.55,
+        "y": 3076.0
+      },
+      "mappingId": "underground:MR02_C01"
+    },
+    {
+      "id": "MR02_C06",
+      "name": "High Arch",
+      "type": "underground",
+      "region": "MR02",
+      "group": "MR02",
+      "position": [
+        2756.55,
+        3097.0
+      ],
+      "worldBounds": [
+        525.0,
+        -24.0,
+        60.0,
+        30.0
+      ],
+      "mapBounds": [
+        2666.55,
+        3052.0,
+        180.0,
+        90.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 2756.55,
+        "y": 3097.0
+      },
+      "mappingId": "underground:MR02_C01"
+    },
+    {
+      "id": "PC04",
+      "name": "Mason\\u2019s Recess",
+      "type": "underground",
+      "region": "MR02",
+      "group": "MR02",
+      "position": [
+        1371.95,
+        2670.0
+      ],
+      "worldBounds": [
+        305.0,
+        1.93700027,
+        12.0,
+        8.0
+      ],
+      "mapBounds": [
+        1353.95,
+        2658.0,
+        36.0,
+        24.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 1371.95,
+        "y": 2670.0
+      },
+      "mappingId": "underground:PC04"
+    },
+    {
+      "id": "PC05",
+      "name": "Dripstone Hollow",
+      "type": "underground",
+      "region": "MR02",
+      "group": "MR02",
+      "position": [
+        1759.1779999999999,
+        2494.431
+      ],
+      "worldBounds": [
+        419.0,
+        44.575,
+        14.0,
+        9.0
+      ],
+      "mapBounds": [
+        1738.1779999999999,
+        2480.931,
+        42.0,
+        27.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 1759.1779999999999,
+        "y": 2494.431
+      },
+      "mappingId": "underground:PC05"
+    },
+    {
+      "id": "PC06",
+      "name": "Forgotten Satchel",
+      "type": "underground",
+      "region": "MR02",
+      "group": "MR02",
+      "position": [
+        2025.2269999999999,
+        2347.176
+      ],
+      "worldBounds": [
+        551.0,
+        120.744,
+        10.0,
+        7.0
+      ],
+      "mapBounds": [
+        2010.2269999999999,
+        2336.676,
+        30.0,
+        21.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 2025.2269999999999,
+        "y": 2347.176
+      },
+      "mappingId": "underground:PC06"
+    },
+    {
+      "id": "MR03_C01",
+      "name": "Sluice Cellar",
+      "type": "underground",
+      "region": "MR03",
+      "group": "MR03",
+      "position": [
+        3240.3,
+        2884.0
+      ],
+      "worldBounds": [
+        755.0,
+        48.0,
+        44.0,
+        28.0
+      ],
+      "mapBounds": [
+        3174.3,
+        2842.0,
+        132.0,
+        84.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 3240.3,
+        "y": 2884.0
+      },
+      "mappingId": "underground:MR03_C01"
+    },
+    {
+      "id": "MR03_C02",
+      "name": "Grain Store",
+      "type": "underground",
+      "region": "MR03",
+      "group": "MR03",
+      "position": [
+        3474.3,
+        2926.0
+      ],
+      "worldBounds": [
+        835.0,
+        36.0,
+        40.0,
+        24.0
+      ],
+      "mapBounds": [
+        3414.3,
+        2890.0,
+        120.0,
+        72.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 3474.3,
+        "y": 2926.0
+      },
+      "mappingId": "underground:MR03_C01"
+    },
+    {
+      "id": "MR03_C03",
+      "name": "Farmer Shelter",
+      "type": "underground",
+      "region": "MR03",
+      "group": "MR03",
+      "position": [
+        3702.3,
+        2935.0
+      ],
+      "worldBounds": [
+        915.0,
+        36.0,
+        32.0,
+        18.0
+      ],
+      "mapBounds": [
+        3654.3,
+        2908.0,
+        96.0,
+        54.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 3702.3,
+        "y": 2935.0
+      },
+      "mappingId": "underground:MR03_C01"
+    },
+    {
+      "id": "MR03_C04",
+      "name": "Mill Undercroft",
+      "type": "underground",
+      "region": "MR03",
+      "group": "MR03",
+      "position": [
+        3726.3,
+        2725.0
+      ],
+      "worldBounds": [
+        915.0,
+        102.0,
+        48.0,
+        26.0
+      ],
+      "mapBounds": [
+        3654.3,
+        2686.0,
+        144.0,
+        78.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 3726.3,
+        "y": 2725.0
+      },
+      "mappingId": "underground:MR03_C01"
+    },
+    {
+      "id": "MR03_C05",
+      "name": "Wind Shelf",
+      "type": "underground",
+      "region": "MR03",
+      "group": "MR03",
+      "position": [
+        3549.3,
+        2611.0
+      ],
+      "worldBounds": [
+        859.0,
+        144.0,
+        42.0,
+        18.0
+      ],
+      "mapBounds": [
+        3486.3,
+        2584.0,
+        126.0,
+        54.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 3549.3,
+        "y": 2611.0
+      },
+      "mappingId": "underground:MR03_C01"
+    },
+    {
+      "id": "MR03_C06",
+      "name": "Root Hanger",
+      "type": "underground",
+      "region": "MR03",
+      "group": "MR03",
+      "position": [
+        3264.3,
+        2590.0
+      ],
+      "worldBounds": [
+        755.0,
+        144.0,
+        60.0,
+        32.0
+      ],
+      "mapBounds": [
+        3174.3,
+        2542.0,
+        180.0,
+        96.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 3264.3,
+        "y": 2590.0
+      },
+      "mappingId": "underground:MR03_C01"
+    },
+    {
+      "id": "PC07",
+      "name": "Seed Shelf",
+      "type": "underground",
+      "region": "MR03",
+      "group": "MR03",
+      "position": [
+        2476.637,
+        2202.39
+      ],
+      "worldBounds": [
+        689.0,
+        169.87,
+        12.0,
+        8.0
+      ],
+      "mapBounds": [
+        2458.637,
+        2190.39,
+        36.0,
+        24.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 2476.637,
+        "y": 2202.39
+      },
+      "mappingId": "underground:PC07"
+    },
+    {
+      "id": "PC08",
+      "name": "Millstone Pocket",
+      "type": "underground",
+      "region": "MR03",
+      "group": "MR03",
+      "position": [
+        2844.572,
+        1978.5000000000002
+      ],
+      "worldBounds": [
+        822.0,
+        258.118,
+        16.0,
+        9.0
+      ],
+      "mapBounds": [
+        2820.572,
+        1965.0000000000002,
+        48.0,
+        27.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 2844.572,
+        "y": 1978.5000000000002
+      },
+      "mappingId": "underground:PC08"
+    },
+    {
+      "id": "PC09",
+      "name": "Lantern Rest",
+      "type": "underground",
+      "region": "MR03",
+      "group": "MR03",
+      "position": [
+        3151.331,
+        1838.388
+      ],
+      "worldBounds": [
+        968.0,
+        268.834,
+        14.0,
+        8.0
+      ],
+      "mapBounds": [
+        3130.331,
+        1826.388,
+        42.0,
+        24.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 3151.331,
+        "y": 1838.388
+      },
+      "mappingId": "underground:PC09"
+    },
+    {
+      "id": "PC10",
+      "name": "Rootlight Niche",
+      "type": "underground",
+      "region": "MR05",
+      "group": "MR05",
+      "position": [
+        4615.175,
+        1926.0
+      ],
+      "worldBounds": [
+        1375.0,
+        269.0,
+        12.0,
+        8.0
+      ],
+      "mapBounds": [
+        4597.175,
+        1914.0,
+        36.0,
+        24.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4615.175,
+        "y": 1926.0
+      },
+      "mappingId": "underground:PC10"
+    },
+    {
+      "id": "MR05_C01",
+      "name": "Lost Lantern",
+      "type": "underground",
+      "region": "MR05",
+      "group": "MR05",
+      "position": [
+        4522.55,
+        1956.0
+      ],
+      "worldBounds": [
+        1326.0,
+        248.0,
+        32.0,
+        12.0
+      ],
+      "mapBounds": [
+        4474.55,
+        1938.0,
+        96.0,
+        36.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4522.55,
+        "y": 1956.0
+      },
+      "mappingId": "underground:MR05_C01"
+    },
+    {
+      "id": "MR05_C02",
+      "name": "Root Loom",
+      "type": "underground",
+      "region": "MR05",
+      "group": "MR05",
+      "position": [
+        4837.55,
+        1803.0
+      ],
+      "worldBounds": [
+        1431.0,
+        296.0,
+        32.0,
+        14.0
+      ],
+      "mapBounds": [
+        4789.55,
+        1782.0,
+        96.0,
+        42.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4837.55,
+        "y": 1803.0
+      },
+      "mappingId": "underground:MR05_C02"
+    },
+    {
+      "id": "MR05_C03",
+      "name": "Moss Well",
+      "type": "underground",
+      "region": "MR05",
+      "group": "MR05",
+      "position": [
+        4723.55,
+        1872.0
+      ],
+      "worldBounds": [
+        1396.0,
+        270.0,
+        26.0,
+        16.0
+      ],
+      "mapBounds": [
+        4684.55,
+        1848.0,
+        78.0,
+        48.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4723.55,
+        "y": 1872.0
+      },
+      "mappingId": "underground:MR05_C03"
+    },
+    {
+      "id": "MR05_C04",
+      "name": "Seed Choir",
+      "type": "underground",
+      "region": "MR05",
+      "group": "MR05",
+      "position": [
+        4951.55,
+        1737.0
+      ],
+      "worldBounds": [
+        1500.0,
+        341.0,
+        40.0,
+        14.0
+      ],
+      "mapBounds": [
+        4891.55,
+        1716.0,
+        120.0,
+        42.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 4951.55,
+        "y": 1737.0
+      },
+      "mappingId": "underground:MR05_C04"
+    },
+    {
+      "id": "MR05_C05",
+      "name": "Stone Drum",
+      "type": "underground",
+      "region": "MR05",
+      "group": "MR05",
+      "position": [
+        5143.55,
+        1609.5
+      ],
+      "worldBounds": [
+        1534.0,
+        359.0,
+        30.0,
+        15.0
+      ],
+      "mapBounds": [
+        5098.55,
+        1587.0,
+        90.0,
+        45.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5143.55,
+        "y": 1609.5
+      },
+      "mappingId": "underground:MR05_C05"
+    },
+    {
+      "id": "MR05_C06",
+      "name": "Canopy Pocket",
+      "type": "underground",
+      "region": "MR05",
+      "group": "MR05",
+      "position": [
+        5470.55,
+        1452.0
+      ],
+      "worldBounds": [
+        1640.0,
+        404.0,
+        36.0,
+        20.0
+      ],
+      "mapBounds": [
+        5416.55,
+        1422.0,
+        108.0,
+        60.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5470.55,
+        "y": 1452.0
+      },
+      "mappingId": "underground:MR05_C06"
+    },
+    {
+      "id": "PC11",
+      "name": "Quiet Wind Pocket",
+      "type": "underground",
+      "region": "MR06",
+      "group": "MR06",
+      "position": [
+        5882.708,
+        1336.7939999999996
+      ],
+      "worldBounds": [
+        1765.0,
+        468.000031,
+        14.0,
+        9.0
+      ],
+      "mapBounds": [
+        5861.708,
+        1323.2939999999996,
+        42.0,
+        27.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5882.708,
+        "y": 1336.7939999999996
+      },
+      "mappingId": "underground:PC11"
+    },
+    {
+      "id": "MR06_C01",
+      "name": "Sheltered Nest",
+      "type": "underground",
+      "region": "MR06",
+      "group": "MR06",
+      "position": [
+        5764.55,
+        1380.0
+      ],
+      "worldBounds": [
+        1710.0,
+        446.0,
+        44.0,
+        22.0
+      ],
+      "mapBounds": [
+        5698.55,
+        1347.0,
+        132.0,
+        66.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5764.55,
+        "y": 1380.0
+      },
+      "mappingId": "underground:MR06_C01"
+    },
+    {
+      "id": "MR06_C02",
+      "name": "Clasp Hollow",
+      "type": "underground",
+      "region": "MR06",
+      "group": "MR06",
+      "position": [
+        5974.55,
+        1239.0
+      ],
+      "worldBounds": [
+        1794.0,
+        484.0,
+        32.0,
+        14.0
+      ],
+      "mapBounds": [
+        5926.55,
+        1218.0,
+        96.0,
+        42.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5974.55,
+        "y": 1239.0
+      },
+      "mappingId": "underground:MR06_C02"
+    },
+    {
+      "id": "MR06_C03",
+      "name": "Wind Window",
+      "type": "underground",
+      "region": "MR06",
+      "group": "MR06",
+      "position": [
+        6097.55,
+        1164.0
+      ],
+      "worldBounds": [
+        1834.0,
+        512.0,
+        34.0,
+        12.0
+      ],
+      "mapBounds": [
+        6046.55,
+        1146.0,
+        102.0,
+        36.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6097.55,
+        "y": 1164.0
+      },
+      "mappingId": "underground:MR06_C03"
+    },
+    {
+      "id": "MR06_C04",
+      "name": "Echo Steps",
+      "type": "underground",
+      "region": "MR06",
+      "group": "MR06",
+      "position": [
+        6217.55,
+        1080.0
+      ],
+      "worldBounds": [
+        1875.0,
+        540.0,
+        32.0,
+        12.0
+      ],
+      "mapBounds": [
+        6169.55,
+        1062.0,
+        96.0,
+        36.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6217.55,
+        "y": 1080.0
+      },
+      "mappingId": "underground:MR06_C04"
+    },
+    {
+      "id": "MR06_C05",
+      "name": "High Drift",
+      "type": "underground",
+      "region": "MR06",
+      "group": "MR06",
+      "position": [
+        6451.55,
+        906.0
+      ],
+      "worldBounds": [
+        1951.0,
+        586.0,
+        36.0,
+        20.0
+      ],
+      "mapBounds": [
+        6397.55,
+        876.0,
+        108.0,
+        60.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6451.55,
+        "y": 906.0
+      },
+      "mappingId": "underground:MR06_C05"
+    },
+    {
+      "id": "MR06_C06",
+      "name": "Weather Cave",
+      "type": "underground",
+      "region": "MR06",
+      "group": "MR06",
+      "position": [
+        6603.653,
+        813.4409999999998
+      ],
+      "worldBounds": [
+        2018.0,
+        632.0,
+        32.0,
+        12.0
+      ],
+      "mapBounds": [
+        6555.653,
+        795.4409999999998,
+        96.0,
+        36.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 6603.653,
+        "y": 813.4409999999998
+      },
+      "mappingId": "underground:MR06_C06"
+    },
+    {
+      "id": "PC12",
+      "name": "Last Cairn",
+      "type": "underground",
+      "region": "MR07",
+      "group": "MR07",
+      "position": [
+        7392.875,
+        755.694
+      ],
+      "worldBounds": [
+        2208.0,
+        660.0,
+        12.0,
+        8.0
+      ],
+      "mapBounds": [
+        7374.875,
+        743.694,
+        36.0,
+        24.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 7392.875,
+        "y": 755.694
+      },
+      "mappingId": "underground:PC12"
+    },
+    {
+      "id": "MR07_C01",
+      "name": "Reed Shelter",
+      "type": "underground",
+      "region": "MR07",
+      "group": "MR07",
+      "position": [
+        7309.55,
+        705.0
+      ],
+      "worldBounds": [
+        2227.0,
+        668.0,
+        24.0,
+        10.0
+      ],
+      "mapBounds": [
+        7273.55,
+        690.0,
+        72.0,
+        30.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 7309.55,
+        "y": 705.0
+      },
+      "mappingId": "underground:MR07_C01"
+    },
+    {
+      "id": "MR07_C02",
+      "name": "Falls Pocket",
+      "type": "underground",
+      "region": "MR07",
+      "group": "MR07",
+      "position": [
+        7057.55,
+        825.0
+      ],
+      "worldBounds": [
+        2139.0,
+        622.0,
+        32.0,
+        14.0
+      ],
+      "mapBounds": [
+        7009.55,
+        804.0,
+        96.0,
+        42.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 7057.55,
+        "y": 825.0
+      },
+      "mappingId": "underground:MR07_C02"
+    },
+    {
+      "id": "MR07_C03",
+      "name": "Pale Archive",
+      "type": "underground",
+      "region": "MR07",
+      "group": "MR07",
+      "position": [
+        7204.55,
+        768.0
+      ],
+      "worldBounds": [
+        2168.0,
+        644.0,
+        32.0,
+        12.0
+      ],
+      "mapBounds": [
+        7156.55,
+        750.0,
+        96.0,
+        36.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 7204.55,
+        "y": 768.0
+      },
+      "mappingId": "underground:MR07_C03"
+    },
+    {
+      "id": "MR07_C04",
+      "name": "Quiet Terrace",
+      "type": "underground",
+      "region": "MR07",
+      "group": "MR07",
+      "position": [
+        7609.55,
+        534.0
+      ],
+      "worldBounds": [
+        2321.0,
+        710.0,
+        36.0,
+        20.0
+      ],
+      "mapBounds": [
+        7555.55,
+        504.0,
+        108.0,
+        60.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 7609.55,
+        "y": 534.0
+      },
+      "mappingId": "underground:MR07_C04"
+    },
+    {
+      "id": "MR07_C05",
+      "name": "Watcher's Hollow",
+      "type": "underground",
+      "region": "MR07",
+      "group": "MR07",
+      "position": [
+        7744.55,
+        495.0
+      ],
+      "worldBounds": [
+        2348.0,
+        735.0,
+        32.0,
+        12.0
+      ],
+      "mapBounds": [
+        7696.55,
+        477.0,
+        96.0,
+        36.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 7744.55,
+        "y": 495.0
+      },
+      "mappingId": "underground:MR07_C05"
+    },
+    {
+      "id": "MR07_C06",
+      "name": "Upper Cleft",
+      "type": "underground",
+      "region": "MR07",
+      "group": "MR07",
+      "position": [
+        7753.55,
+        573.0
+      ],
+      "worldBounds": [
+        2382.0,
+        743.0,
+        26.0,
+        16.0
+      ],
+      "mapBounds": [
+        7714.55,
+        549.0,
+        78.0,
+        48.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 7753.55,
+        "y": 573.0
+      },
+      "mappingId": "underground:MR07_C06"
+    },
+    {
+      "id": "HEART",
+      "name": "The Great Heart Hall",
+      "type": "underground",
+      "region": "shared",
+      "group": "H",
+      "position": [
+        5473.2,
+        2488.0
+      ],
+      "mapBounds": [
+        5347.2,
+        2416.0,
+        252.0,
+        144.0
+      ],
+      "worldBounds": [
+        1754.0,
+        170.0,
+        84.0,
+        48.0
+      ],
+      "scene": "Qolossal_Underground",
+      "point": {
+        "x": 5473.2,
+        "y": 2488.0
+      },
+      "mappingId": "underground:A01"
+    }
+  ],
+  "transforms": {
+    "Qolossal_Underground": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 85.19999999999999,
+      "oy": 3070.0,
+      "yFlip": true
+    },
+    "underground:A01": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 85.19999999999999,
+      "oy": 3070.0,
+      "yFlip": true
+    },
+    "underground:MR01_C01": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 936.0,
+      "oy": 3070.0,
+      "yFlip": true
+    },
+    "underground:MR02_C01": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 1091.5500000000002,
+      "oy": 3070.0,
+      "yFlip": true
+    },
+    "underground:MR03_C01": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 909.3000000000004,
+      "oy": 3070.0,
+      "yFlip": true
+    },
+    "underground:MR05_C01": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 496.55000000000035,
+      "oy": 2718.0,
+      "yFlip": true
+    },
+    "underground:MR05_C02": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 496.55000000000035,
+      "oy": 2712.0,
+      "yFlip": true
+    },
+    "underground:MR05_C03": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 496.55000000000035,
+      "oy": 2706.0,
+      "yFlip": true
+    },
+    "underground:MR05_C04": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 391.55000000000035,
+      "oy": 2781.0,
+      "yFlip": true
+    },
+    "underground:MR05_C05": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 496.55000000000035,
+      "oy": 2709.0,
+      "yFlip": true
+    },
+    "underground:MR05_C06": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 496.55000000000035,
+      "oy": 2694.0,
+      "yFlip": true
+    },
+    "underground:MR06_C01": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 568.5500000000004,
+      "oy": 2751.0,
+      "yFlip": true
+    },
+    "underground:MR06_C02": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 544.5500000000004,
+      "oy": 2712.0,
+      "yFlip": true
+    },
+    "underground:MR06_C03": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 544.5500000000004,
+      "oy": 2718.0,
+      "yFlip": true
+    },
+    "underground:MR06_C04": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 544.5500000000004,
+      "oy": 2718.0,
+      "yFlip": true
+    },
+    "underground:MR06_C05": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 544.5500000000004,
+      "oy": 2694.0,
+      "yFlip": true
+    },
+    "underground:MR06_C06": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 501.6530000000004,
+      "oy": 2727.441,
+      "yFlip": true
+    },
+    "underground:MR07_C01": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 592.5500000000004,
+      "oy": 2724.0,
+      "yFlip": true
+    },
+    "underground:MR07_C02": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 592.5500000000004,
+      "oy": 2712.0,
+      "yFlip": true
+    },
+    "underground:MR07_C03": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 652.5500000000004,
+      "oy": 2718.0,
+      "yFlip": true
+    },
+    "underground:MR07_C04": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 592.5500000000004,
+      "oy": 2694.0,
+      "yFlip": true
+    },
+    "underground:MR07_C05": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 652.5500000000004,
+      "oy": 2718.0,
+      "yFlip": true
+    },
+    "underground:MR07_C06": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 568.5500000000004,
+      "oy": 2826.0,
+      "yFlip": true
+    },
+    "underground:PC01": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 235.10000000000002,
+      "oy": 2721.51729,
+      "yFlip": true
+    },
+    "underground:PC02": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 293.0,
+      "oy": 2727.0,
+      "yFlip": true
+    },
+    "underground:PC03": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 73.99999999999994,
+      "oy": 2797.503,
+      "yFlip": true
+    },
+    "underground:PC04": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 438.95,
+      "oy": 2687.81100081,
+      "yFlip": true
+    },
+    "underground:PC05": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 481.1779999999998,
+      "oy": 2641.656,
+      "yFlip": true
+    },
+    "underground:PC06": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 357.2269999999998,
+      "oy": 2719.908,
+      "yFlip": true
+    },
+    "underground:PC07": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 391.63700000000034,
+      "oy": 2724.0,
+      "yFlip": true
+    },
+    "underground:PC08": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 354.5720000000003,
+      "oy": 2766.3540000000003,
+      "yFlip": true
+    },
+    "underground:PC09": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 226.3310000000003,
+      "oy": 2656.89,
+      "yFlip": true
+    },
+    "underground:PC10": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 472.17500000000035,
+      "oy": 2745.0,
+      "yFlip": true
+    },
+    "underground:PC11": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 566.7079999999999,
+      "oy": 2754.2940929999995,
+      "yFlip": true
+    },
+    "underground:PC12": {
+      "sx": 3.0,
+      "sy": 3.0,
+      "ox": 750.8750000000002,
+      "oy": 2747.694,
+      "yFlip": true
+    }
+  },
+  "componentPlacements": [
+    {
+      "component": "MR01_C01",
+      "rooms": [
+        "MR01_C01",
+        "MR01_C02",
+        "MR01_C03",
+        "MR01_C04",
+        "MR01_C05",
+        "MR01_C06"
+      ],
+      "offset": [
+        850.8,
+        0.0
+      ],
+      "upper": [
+        951.0,
+        2586.0
+      ],
+      "oldEntrance": [
+        183.3,
+        3304.0
+      ]
+    },
+    {
+      "component": "MR02_C01",
+      "rooms": [
+        "MR02_C01",
+        "MR02_C02",
+        "MR02_C03",
+        "MR02_C04",
+        "MR02_C05",
+        "MR02_C06"
+      ],
+      "offset": [
+        1006.3500000000001,
+        0.0
+      ],
+      "upper": [
+        2126.55,
+        2130.0
+      ],
+      "oldEntrance": [
+        1653.3000000000002,
+        3142.0
+      ]
+    },
+    {
+      "component": "MR03_C01",
+      "rooms": [
+        "MR03_C01",
+        "MR03_C02",
+        "MR03_C03",
+        "MR03_C04",
+        "MR03_C05",
+        "MR03_C06"
+      ],
+      "offset": [
+        824.1000000000004,
+        0.0
+      ],
+      "upper": [
+        3084.3,
+        1722.0
+      ],
+      "oldEntrance": [
+        2343.3,
+        2638.0
+      ]
+    },
+    {
+      "component": "MR05_C01",
+      "rooms": [
+        "MR05_C01"
+      ],
+      "offset": [
+        411.35000000000036,
+        -352.0
+      ],
+      "upper": [
+        4394.55,
+        1824.0
+      ],
+      "oldEntrance": [
+        4056.3003,
+        2326.0
+      ]
+    },
+    {
+      "component": "MR05_C02",
+      "rooms": [
+        "MR05_C02"
+      ],
+      "offset": [
+        411.35000000000036,
+        -358.0
+      ],
+      "upper": [
+        4709.55,
+        1674.0
+      ],
+      "oldEntrance": [
+        4371.3003,
+        2182.0
+      ]
+    },
+    {
+      "component": "MR05_C03",
+      "rooms": [
+        "MR05_C03"
+      ],
+      "offset": [
+        411.35000000000036,
+        -364.0
+      ],
+      "upper": [
+        4604.55,
+        1746.0
+      ],
+      "oldEntrance": [
+        4266.3003,
+        2260.0
+      ]
+    },
+    {
+      "component": "MR05_C04",
+      "rooms": [
+        "MR05_C04"
+      ],
+      "offset": [
+        306.35000000000036,
+        -289.0
+      ],
+      "upper": [
+        4811.55,
+        1608.0
+      ],
+      "oldEntrance": [
+        4578.3003,
+        2047.0
+      ]
+    },
+    {
+      "component": "MR05_C05",
+      "rooms": [
+        "MR05_C05"
+      ],
+      "offset": [
+        411.35000000000036,
+        -361.0
+      ],
+      "upper": [
+        5018.55,
+        1482.0
+      ],
+      "oldEntrance": [
+        4680.3003,
+        1993.0
+      ]
+    },
+    {
+      "component": "MR05_C06",
+      "rooms": [
+        "MR05_C06"
+      ],
+      "offset": [
+        411.35000000000036,
+        -376.0
+      ],
+      "upper": [
+        5336.55,
+        1332.0
+      ],
+      "oldEntrance": [
+        4998.3003,
+        1858.0
+      ]
+    },
+    {
+      "component": "MR06_C01",
+      "rooms": [
+        "MR06_C01"
+      ],
+      "offset": [
+        483.35000000000036,
+        -319.0
+      ],
+      "upper": [
+        5618.55,
+        1263.0
+      ],
+      "oldEntrance": [
+        5208.3003,
+        1732.0
+      ]
+    },
+    {
+      "component": "MR06_C02",
+      "rooms": [
+        "MR06_C02"
+      ],
+      "offset": [
+        459.35000000000036,
+        -358.0
+      ],
+      "upper": [
+        5846.55,
+        1110.0
+      ],
+      "oldEntrance": [
+        5460.3003,
+        1618.0
+      ]
+    },
+    {
+      "component": "MR06_C03",
+      "rooms": [
+        "MR06_C03"
+      ],
+      "offset": [
+        459.35000000000036,
+        -352.0
+      ],
+      "upper": [
+        5966.55,
+        1032.0
+      ],
+      "oldEntrance": [
+        5580.3003,
+        1534.0
+      ]
+    },
+    {
+      "component": "MR06_C04",
+      "rooms": [
+        "MR06_C04"
+      ],
+      "offset": [
+        459.35000000000036,
+        -352.0
+      ],
+      "upper": [
+        6089.55,
+        948.0
+      ],
+      "oldEntrance": [
+        5703.3003,
+        1450.0
+      ]
+    },
+    {
+      "component": "MR06_C05",
+      "rooms": [
+        "MR06_C05"
+      ],
+      "offset": [
+        459.35000000000036,
+        -376.0
+      ],
+      "upper": [
+        6317.55,
+        786.0
+      ],
+      "oldEntrance": [
+        5931.3003,
+        1312.0
+      ]
+    },
+    {
+      "component": "MR06_C06",
+      "rooms": [
+        "MR06_C06"
+      ],
+      "offset": [
+        416.45300000000043,
+        -342.55899999999997
+      ],
+      "upper": [
+        6475.653,
+        681.441
+      ],
+      "oldEntrance": [
+        6132.3003,
+        1174.0
+      ]
+    },
+    {
+      "component": "MR07_C01",
+      "rooms": [
+        "MR07_C01"
+      ],
+      "offset": [
+        507.35000000000036,
+        -346.0
+      ],
+      "upper": [
+        7193.55,
+        570.0
+      ],
+      "oldEntrance": [
+        6759.299999999999,
+        1066.0
+      ]
+    },
+    {
+      "component": "MR07_C02",
+      "rooms": [
+        "MR07_C02"
+      ],
+      "offset": [
+        507.35000000000036,
+        -358.0
+      ],
+      "upper": [
+        6929.55,
+        696.0
+      ],
+      "oldEntrance": [
+        6495.299999999999,
+        1204.0
+      ]
+    },
+    {
+      "component": "MR07_C03",
+      "rooms": [
+        "MR07_C03"
+      ],
+      "offset": [
+        567.3500000000004,
+        -352.0
+      ],
+      "upper": [
+        7016.55,
+        636.0
+      ],
+      "oldEntrance": [
+        6582.299999999999,
+        1138.0
+      ]
+    },
+    {
+      "component": "MR07_C04",
+      "rooms": [
+        "MR07_C04"
+      ],
+      "offset": [
+        507.35000000000036,
+        -376.0
+      ],
+      "upper": [
+        7475.55,
+        414.0
+      ],
+      "oldEntrance": [
+        7041.299999999999,
+        940.0
+      ]
+    },
+    {
+      "component": "MR07_C05",
+      "rooms": [
+        "MR07_C05"
+      ],
+      "offset": [
+        567.3500000000004,
+        -352.0
+      ],
+      "upper": [
+        7556.55,
+        363.0
+      ],
+      "oldEntrance": [
+        7122.299999999999,
+        865.0
+      ]
+    },
+    {
+      "component": "MR07_C06",
+      "rooms": [
+        "MR07_C06"
+      ],
+      "offset": [
+        483.35000000000036,
+        -244.0
+      ],
+      "upper": [
+        7634.55,
+        327.0
+      ],
+      "oldEntrance": [
+        7316.1,
+        841.0
+      ]
+    },
+    {
+      "component": "PC01",
+      "rooms": [
+        "PC01"
+      ],
+      "offset": [
+        149.90000000000003,
+        -348.4827100000002
+      ],
+      "upper": [
+        341.1,
+        2634.85029
+      ],
+      "oldEntrance": [
+        264.3,
+        3127.696303
+      ]
+    },
+    {
+      "component": "PC02",
+      "rooms": [
+        "PC02"
+      ],
+      "offset": [
+        207.8,
+        -343.0
+      ],
+      "upper": [
+        597.0,
+        2652.0
+      ],
+      "oldEntrance": [
+        462.3,
+        3145.0
+      ]
+    },
+    {
+      "component": "PC03",
+      "rooms": [
+        "PC03"
+      ],
+      "offset": [
+        -11.200000000000045,
+        -272.49699999999984
+      ],
+      "upper": [
+        792.0,
+        2658.0
+      ],
+      "oldEntrance": [
+        876.3,
+        3080.497
+      ]
+    },
+    {
+      "component": "PC04",
+      "rooms": [
+        "PC04"
+      ],
+      "offset": [
+        353.75,
+        -382.1889991899998
+      ],
+      "upper": [
+        1273.95,
+        2532.0
+      ],
+      "oldEntrance": [
+        993.3,
+        3064.1889991
+      ]
+    },
+    {
+      "component": "PC05",
+      "rooms": [
+        "PC05"
+      ],
+      "offset": [
+        395.97799999999984,
+        -428.34400000000005
+      ],
+      "upper": [
+        1658.1779999999999,
+        2357.931
+      ],
+      "oldEntrance": [
+        1335.3,
+        2936.275
+      ]
+    },
+    {
+      "component": "PC06",
+      "rooms": [
+        "PC06"
+      ],
+      "offset": [
+        272.0269999999998,
+        -350.0920000000001
+      ],
+      "upper": [
+        1930.2269999999999,
+        2207.676
+      ],
+      "oldEntrance": [
+        1731.3000000000002,
+        2707.768
+      ]
+    },
+    {
+      "component": "PC07",
+      "rooms": [
+        "PC07"
+      ],
+      "offset": [
+        306.43700000000035,
+        -346.0
+      ],
+      "upper": [
+        2378.637,
+        2064.39
+      ],
+      "oldEntrance": [
+        2145.3,
+        2560.39
+      ]
+    },
+    {
+      "component": "PC08",
+      "rooms": [
+        "PC08"
+      ],
+      "offset": [
+        269.3720000000003,
+        -303.64599999999973
+      ],
+      "upper": [
+        2740.572,
+        1842.0
+      ],
+      "oldEntrance": [
+        2544.3,
+        2295.6459999999997
+      ]
+    },
+    {
+      "component": "PC09",
+      "rooms": [
+        "PC09"
+      ],
+      "offset": [
+        141.1310000000003,
+        -413.1100000000001
+      ],
+      "upper": [
+        3050.331,
+        1700.388
+      ],
+      "oldEntrance": [
+        2982.3,
+        2263.498
+      ]
+    },
+    {
+      "component": "PC10",
+      "rooms": [
+        "PC10"
+      ],
+      "offset": [
+        386.97500000000036,
+        -325.0
+      ],
+      "upper": [
+        4487.175,
+        1788.0
+      ],
+      "oldEntrance": [
+        4203.3003,
+        2263.0
+      ]
+    },
+    {
+      "component": "PC11",
+      "rooms": [
+        "PC11"
+      ],
+      "offset": [
+        481.5079999999998,
+        -315.70590700000025
+      ],
+      "upper": [
+        5691.708,
+        1200.2939999999999
+      ],
+      "oldEntrance": [
+        5373.3003,
+        1666.0
+      ]
+    },
+    {
+      "component": "PC12",
+      "rooms": [
+        "PC12"
+      ],
+      "offset": [
+        665.6750000000002,
+        -322.30600000000004
+      ],
+      "upper": [
+        7054.875,
+        617.694
+      ],
+      "oldEntrance": [
+        6702.299999999999,
+        1090.0
+      ]
+    }
+  ]
+}

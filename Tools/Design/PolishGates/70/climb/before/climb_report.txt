@@ -1,0 +1,65 @@
+Climb capture 'before'. Editor renders of imported resources; says nothing about any console.
+
+== MR01 MRAtlas_MR01_Cradle: 5 planes behind the terrain, 0 other; climb 13..41 (28 u), camera -8..98
+PASS no part of the frame is uncovered (78 places, sizes 5 and 8)
+plane | px/u | depth | rate | fit | limit | sinks | bottom in frame at 0/50/100% | fills frame % at 0/15/30/50/75/100
+4K BG_Cradle_Sky_4K (camera-locked) | 216 | 0 | follow 1 | budget 35 | auto | 0 u | -5.0/-5.0/-5.0 | 100 100 100 100 100 100
+4K BG_Cradle_Far_4K (depth 25) | 216 | 25 | 0.5 | budget 0 | 6 | 0.6 u | -4.6/-4.9/-5.2 | 84 86 85 86 85 83
+4K BG_Cradle_High_4K (depth 25) | 216 | 25 | 0.5 | budget 0 | 6 | 0.6 u | -4.6/-4.9/-5.2 | 0 0 0 0 5 68
+4K BG_Cradle_Mid_4K (depth 10) | 216 | 10 | 0.35 | budget 0 | auto | 1 u | -9.7/-10.2/-10.7 | 62 60 59 57 54 52
+4K BG_Cradle_Near_4K (depth 5) | 216 | 5 | 1 | budget 0 | auto | 5.6 u | -5.0/-7.8/-10.6 | 34 27 21 13 7 3
+
+== MR02 MRAtlas_MR02_Causeway: 5 planes behind the terrain, 0 other; climb 15..173 (158 u), camera -8..208
+PASS no part of the frame is uncovered (78 places, sizes 5 and 8)
+plane | px/u | depth | rate | fit | limit | sinks | bottom in frame at 0/50/100% | fills frame % at 0/15/30/50/75/100
+4K BG_Causeway_Sky_4K (camera-locked) | 216 | 0 | follow 1 | budget 35 | auto | 0 u | -5.0/-5.0/-5.0 | 100 100 100 100 100 100
+4K BG_Causeway_Far_4K (depth 25) | 216 | 25 | 0.5 | budget 0 | 6 | 3.2 u | -4.6/-6.2/-7.8 | 83 84 79 73 65 57
+4K BG_Causeway_High_4K (depth 25) | 216 | 25 | 0.5 | budget 0 | 6 | 3.2 u | -4.6/-6.2/-7.8 | 0 0 0 0 4 50
+4K BG_Causeway_Mid_4K (depth 10) | 216 | 10 | 0.35 | budget 0 | auto | 5.5 u | -9.7/-12.4/-15.2 | 58 50 41 30 16 4
+4K BG_Causeway_Near_4K (depth 5) | 216 | 5 | 1 | budget 0 | auto | 31.6 u | -5.0/-20.8/-36.6 | 49 49 41 25 23 2
+
+== MR03 MRAtlas_MR03_Terraces: 5 planes behind the terrain, 13 other; climb 13..159 (146 u), camera -8..228
+PASS no part of the frame is uncovered (78 places, sizes 5 and 8)
+plane | px/u | depth | rate | fit | limit | sinks | bottom in frame at 0/50/100% | fills frame % at 0/15/30/50/75/100
+4K BG_Sky_Terraces_4K (camera-locked) | 216 | 0 | follow 1 | budget 35 | auto | 0 u | -5.0/-5.0/-5.0 | 100 100 100 100 100 100
+4K BG_Terraces_Far_4K (depth 25) | 216 | 25 | 0.5 | budget 0 | 6 | 2.9 u | -4.6/-6.1/-7.5 | 84 85 81 75 68 60
+4K BG_Terraces_High_4K (depth 25) | 216 | 25 | 0.5 | budget 0 | 6 | 2.9 u | -4.6/-6.1/-7.5 | 0 0 0 0 5 59
+4K BG_Terraces_Mid_4K (depth 10) | 216 | 10 | 0.35 | budget 0 | auto | 5.1 u | -15.3/-17.8/-20.4 | 62 54 47 37 24 11
+4K BG_Terraces_Near_4K (depth 5) | 216 | 5 | 1 | budget 0 | auto | 29.2 u | -5.0/-19.6/-34.2 | 43 33 25 16 7 0
+
+== MR04 MRAtlas_MR04_Qvale: 5 planes behind the terrain, 1 other; climb 9..31 (22 u), camera -8..93
+PASS no part of the frame is uncovered (78 places, sizes 5 and 8)
+plane | px/u | depth | rate | fit | limit | sinks | bottom in frame at 0/50/100% | fills frame % at 0/15/30/50/75/100
+4K BG_Qvale_Sky_4K (camera-locked) | 216 | 0 | follow 1 | budget 35 | auto | 0 u | -5.0/-5.0/-5.0 | 100 100 100 100 100 100
+4K BG_Qvale_Far_4K (depth 25) | 216 | 25 | 0.5 | budget 0 | 6 | 0.4 u | -4.6/-4.8/-5.0 | 83 85 84 83 85 84
+4K BG_Qvale_High_4K (depth 25) | 216 | 25 | 0.5 | budget 0 | 6 | 0.4 u | -4.6/-4.8/-5.0 | 0 0 0 0 4 55
+4K BG_Qvale_Mid_4K (depth 10) | 216 | 10 | 0.35 | budget 0 | auto | 0.8 u | -9.7/-10.1/-10.4 | 62 61 60 58 56 54
+4K BG_Qvale_Near_4K (depth 5) | 216 | 5 | 1 | budget 0 | auto | 4.4 u | -5.0/-7.2/-9.4 | 39 35 31 26 20 15
+
+== MR05 MRAtlas_MR05_Ribwood: 5 planes behind the terrain, 0 other; climb 15..195 (180 u), camera -8..238
+PASS no part of the frame is uncovered (78 places, sizes 5 and 8)
+plane | px/u | depth | rate | fit | limit | sinks | bottom in frame at 0/50/100% | fills frame % at 0/15/30/50/75/100
+4K BG_Ribwood_Sky_4K (camera-locked) | 216 | 0 | follow 1 | budget 35 | auto | 0 u | -5.0/-5.0/-5.0 | 100 100 100 100 100 100
+4K BG_Ribwood_Far_4K (depth 25) | 216 | 25 | 0.5 | budget 0 | 6 | 3.6 u | -4.6/-6.4/-8.2 | 84 83 78 71 62 53
+4K BG_Ribwood_High_4K (depth 25) | 216 | 25 | 0.5 | budget 0 | 6 | 3.6 u | -4.6/-6.4/-8.2 | 0 0 0 0 3 41
+4K BG_Ribwood_Mid_4K (depth 10) | 216 | 10 | 0.35 | budget 0 | auto | 6.3 u | -9.7/-12.8/-16.0 | 62 52 43 30 15 0
+4K BG_Ribwood_Near_4K (depth 5) | 216 | 5 | 0.963 | budget 0 | auto | 34.7 u | -5.0/-22.3/-39.7 | 48 40 47 32 26 6
+
+== MR06 MRAtlas_MR06_Heights: 3 planes behind the terrain, 0 other; climb 17..233 (216 u), camera -8..303
+PASS no part of the frame is uncovered (78 places, sizes 5 and 8)
+plane | px/u | depth | rate | fit | limit | sinks | bottom in frame at 0/50/100% | fills frame % at 0/15/30/50/75/100
+Sky - BG_Sky_Terraces | 45 | 0 | follow 1 | budget 35 | auto | 0 u | -12.0/-12.0/-12.0 | 100 100 100 100 100 100
+WARN Sky - BG_Sky_Terraces: left and right edges differ by 4.3 %, a seam as it repeats
+Far - BG_Heights_Far (depth 25) | 144 | 25 | 1 | budget 35 | auto | 1.4 u | -3.8/-4.5/-5.2 | 60 61 61 61 60 59
+Near - BG_Heights_Near (depth 5) | 144 | 5 | 1 | budget 35 | auto | 7 u | -5.0/-8.5/-12.0 | 35 25 15 1 0 0
+
+== MR07 MRAtlas_MR07_Summit: 4 planes behind the terrain, 0 other; climb 19..173 (154 u), camera -8..218
+PASS no part of the frame is uncovered (78 places, sizes 5 and 8)
+plane | px/u | depth | rate | fit | limit | sinks | bottom in frame at 0/50/100% | fills frame % at 0/15/30/50/75/100
+Sky - BG_Sky_Terraces | 45 | 0 | follow 1 | budget 35 | auto | 0 u | -12.0/-12.0/-12.0 | 100 100 100 100 100 100
+WARN Sky - BG_Sky_Terraces: left and right edges differ by 4.3 %, a seam as it repeats
+Far - BG_Summit_Far (depth 25) | 144 | 25 | 1 | budget 35 | auto | 1.4 u | -3.8/-4.5/-5.2 | 59 60 60 60 59 58
+Mid - BG_Summit_Mid (depth 10) | 144 | 10 | 1 | budget 35 | auto | 3.5 u | -3.8/-5.6/-7.3 | 48 48 48 43 35 26
+Near - BG_Summit_Near_v3 (depth 5) | 144 | 5 | 1 | budget 35 | auto | 7 u | -5.0/-8.5/-12.0 | 36 25 14 3 0 0
+
+FAULTS 0

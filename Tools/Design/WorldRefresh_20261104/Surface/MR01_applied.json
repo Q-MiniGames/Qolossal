@@ -1,0 +1,2463 @@
+{
+  "scene": "Assets/Scenes/Game/MRAtlas_MR01_Cradle.unity",
+  "region": "MR01",
+  "anatomy": "feet: toe tips, top of the foot, ankle",
+  "maxNewGrade": 1.0,
+  "sampleSpacing": 0.6,
+  "movedDecor": 0,
+  "edits": 2,
+  "zones": [
+    {
+      "id": "MR01_N00",
+      "name": "Moss nest",
+      "x": 12.0,
+      "left": -6.0,
+      "right": 26.0,
+      "smoothedConnectors": 0,
+      "artRefreshed": false,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR01_N01",
+      "name": "Shelter hut",
+      "x": 40.0,
+      "left": 26.0,
+      "right": 53.0,
+      "smoothedConnectors": 1,
+      "artRefreshed": false,
+      "disposition": "Flowing connector slopes with beat/cave/challenge pads retained"
+    },
+    {
+      "id": "MR01_N02",
+      "name": "First gorge",
+      "x": 66.0,
+      "left": 53.0,
+      "right": 78.0,
+      "smoothedConnectors": 1,
+      "artRefreshed": false,
+      "disposition": "Flowing connector slopes with beat/cave/challenge pads retained"
+    },
+    {
+      "id": "MR01_N03",
+      "name": "Moss ridge",
+      "x": 90.0,
+      "left": 78.0,
+      "right": 102.5,
+      "smoothedConnectors": 0,
+      "artRefreshed": false,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR01_N04",
+      "name": "Pale bluff",
+      "x": 115.0,
+      "left": 102.5,
+      "right": 130.0,
+      "smoothedConnectors": 1,
+      "artRefreshed": false,
+      "disposition": "Flowing connector slopes with beat/cave/challenge pads retained"
+    },
+    {
+      "id": "MR01_N05",
+      "name": "Warm basin",
+      "x": 145.0,
+      "left": 130.0,
+      "right": 156.5,
+      "smoothedConnectors": 1,
+      "artRefreshed": false,
+      "disposition": "Flowing connector slopes with beat/cave/challenge pads retained"
+    },
+    {
+      "id": "MR01_N06",
+      "name": "Moss shrine",
+      "x": 168.0,
+      "left": 156.5,
+      "right": 179.0,
+      "smoothedConnectors": 0,
+      "artRefreshed": false,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR01_N07",
+      "name": "Cradle knot",
+      "x": 190.0,
+      "left": 179.0,
+      "right": 202.5,
+      "smoothedConnectors": 0,
+      "artRefreshed": false,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR01_N08",
+      "name": "Ravine approach",
+      "x": 215.0,
+      "left": 202.5,
+      "right": 225.0,
+      "smoothedConnectors": 0,
+      "artRefreshed": false,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR01_N09",
+      "name": "Fallen stone crossing",
+      "x": 235.0,
+      "left": 225.0,
+      "right": 248.5,
+      "smoothedConnectors": 0,
+      "artRefreshed": false,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR01_N10",
+      "name": "High lookout",
+      "x": 262.0,
+      "left": 248.5,
+      "right": 278.5,
+      "smoothedConnectors": 0,
+      "artRefreshed": false,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    },
+    {
+      "id": "MR01_N11",
+      "name": "Causeway exit",
+      "x": 295.0,
+      "left": 278.5,
+      "right": 332.0,
+      "smoothedConnectors": 0,
+      "artRefreshed": false,
+      "disposition": "Existing landmark, cave or challenge geometry retained; art/theme reviewed"
+    }
+  ],
+  "terrains": [
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Embedded cave | PC01 | DOWN/Limestone floor lip",
+      "changedSpans": [],
+      "before": [
+        [
+          59.5,
+          23.7
+        ],
+        [
+          67.3,
+          20.7
+        ]
+      ],
+      "after": [
+        [
+          59.5,
+          23.7
+        ],
+        [
+          67.3,
+          20.7
+        ]
+      ],
+      "protectedIntervals": [],
+      "top": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+      "fill": "",
+      "transformScale": [
+        1.0,
+        1.0
+      ],
+      "topPPU": 360.0,
+      "fillPPU": 0.0,
+      "minimumTopDensityAtMaximumGrade": 203.828537,
+      "topWorldTile": [
+        8.533334,
+        4.266667
+      ],
+      "fillWorldTile": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Route MR01 piece PC01 roof integration",
+      "changedSpans": [],
+      "before": [
+        [
+          59.5,
+          27.3
+        ],
+        [
+          60.7,
+          27.8
+        ],
+        [
+          63.1,
+          27.45
+        ],
+        [
+          65.5,
+          26.9
+        ],
+        [
+          68.2,
+          27.35
+        ]
+      ],
+      "after": [
+        [
+          59.5,
+          27.3
+        ],
+        [
+          60.7,
+          27.8
+        ],
+        [
+          63.1,
+          27.45
+        ],
+        [
+          65.5,
+          26.9
+        ],
+        [
+          68.2,
+          27.35
+        ]
+      ],
+      "protectedIntervals": [],
+      "top": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+      "fill": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Fill_4K.png",
+      "transformScale": [
+        1.0,
+        1.0
+      ],
+      "topPPU": 360.0,
+      "fillPPU": 240.0,
+      "minimumTopDensityAtMaximumGrade": 203.828537,
+      "topWorldTile": [
+        8.533334,
+        4.266667
+      ],
+      "fillWorldTile": [
+        8.533334,
+        8.533334
+      ]
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/PC01 | upper route approach",
+      "changedSpans": [],
+      "before": [
+        [
+          55.3,
+          25.2
+        ],
+        [
+          56.3,
+          25.6
+        ],
+        [
+          58.6,
+          25.6
+        ]
+      ],
+      "after": [
+        [
+          55.3,
+          25.2
+        ],
+        [
+          56.3,
+          25.6
+        ],
+        [
+          58.6,
+          25.6
+        ]
+      ],
+      "protectedIntervals": [],
+      "top": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+      "fill": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Fill_4K.png",
+      "transformScale": [
+        1.0,
+        1.0
+      ],
+      "topPPU": 360.0,
+      "fillPPU": 240.0,
+      "minimumTopDensityAtMaximumGrade": 203.828537,
+      "topWorldTile": [
+        8.533334,
+        4.266667
+      ],
+      "fillWorldTile": [
+        8.533334,
+        8.533334
+      ]
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N05] Warm basin/Cave access | paired underground rooms/[CAVE PC02] MR01_N05 <-> Underground - Old Footprints/Embedded cave | PC02 | RIGHT/Limestone floor lip",
+      "changedSpans": [],
+      "before": [
+        [
+          144.5,
+          16.0
+        ],
+        [
+          153.0,
+          16.0
+        ]
+      ],
+      "after": [
+        [
+          144.5,
+          16.0
+        ],
+        [
+          153.0,
+          16.0
+        ]
+      ],
+      "protectedIntervals": [],
+      "top": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+      "fill": "",
+      "transformScale": [
+        1.0,
+        1.0
+      ],
+      "topPPU": 360.0,
+      "fillPPU": 0.0,
+      "minimumTopDensityAtMaximumGrade": 203.828537,
+      "topWorldTile": [
+        8.533334,
+        4.266667
+      ],
+      "fillWorldTile": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N08] Ravine approach/Cave access | paired underground rooms/[CAVE PC03] MR01_N08 <-> Underground - Fern Pocket/Embedded cave | PC03 | RIGHT/Limestone floor lip",
+      "changedSpans": [],
+      "before": [
+        [
+          210.5,
+          14.0
+        ],
+        [
+          218.0,
+          14.0
+        ]
+      ],
+      "after": [
+        [
+          210.5,
+          14.0
+        ],
+        [
+          218.0,
+          14.0
+        ]
+      ],
+      "protectedIntervals": [],
+      "top": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+      "fill": "",
+      "transformScale": [
+        1.0,
+        1.0
+      ],
+      "topPPU": 360.0,
+      "fillPPU": 0.0,
+      "minimumTopDensityAtMaximumGrade": 203.828537,
+      "topWorldTile": [
+        8.533334,
+        4.266667
+      ],
+      "fillWorldTile": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N08] Ravine approach/Traversal mechanics/Module MR01_E08 quake crossing/Sealed overhang",
+      "changedSpans": [],
+      "before": [
+        [
+          218.8,
+          22.9
+        ],
+        [
+          220.9,
+          22.9
+        ]
+      ],
+      "after": [
+        [
+          218.8,
+          22.9
+        ],
+        [
+          220.9,
+          22.9
+        ]
+      ],
+      "protectedIntervals": [],
+      "top": "",
+      "fill": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Fill_4K.png",
+      "transformScale": [
+        1.0,
+        1.0
+      ],
+      "topPPU": 0.0,
+      "fillPPU": 240.0,
+      "minimumTopDensityAtMaximumGrade": 0.0,
+      "topWorldTile": null,
+      "fillWorldTile": [
+        8.533334,
+        8.533334
+      ]
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N08] Ravine approach/Traversal mechanics/Module MR01_E08 quake crossing/Ravine floor (catch floor and return steps)",
+      "changedSpans": [],
+      "before": [
+        [
+          221.0,
+          13.9
+        ],
+        [
+          222.066666,
+          13.9
+        ],
+        [
+          222.066666,
+          12.9
+        ],
+        [
+          223.133331,
+          12.9
+        ],
+        [
+          223.133331,
+          11.9
+        ],
+        [
+          224.2,
+          11.9
+        ],
+        [
+          224.2,
+          10.9
+        ],
+        [
+          229.0,
+          10.9
+        ]
+      ],
+      "after": [
+        [
+          221.0,
+          13.9
+        ],
+        [
+          222.066666,
+          13.9
+        ],
+        [
+          222.066666,
+          12.9
+        ],
+        [
+          223.133331,
+          12.9
+        ],
+        [
+          223.133331,
+          11.9
+        ],
+        [
+          224.2,
+          11.9
+        ],
+        [
+          224.2,
+          10.9
+        ],
+        [
+          229.0,
+          10.9
+        ]
+      ],
+      "protectedIntervals": [],
+      "top": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+      "fill": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Fill_4K.png",
+      "transformScale": [
+        1.0,
+        1.0
+      ],
+      "topPPU": 360.0,
+      "fillPPU": 240.0,
+      "minimumTopDensityAtMaximumGrade": 203.828537,
+      "topWorldTile": [
+        8.533334,
+        4.266667
+      ],
+      "fillWorldTile": [
+        8.533334,
+        8.533334
+      ]
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N10] High lookout/Cave access | paired underground rooms/[CAVE MR01_C06] MR01_N10 <-> Underground - Hanging Garden/Embedded cave | MR01_C06 | RIGHT/Limestone floor lip",
+      "changedSpans": [],
+      "before": [
+        [
+          262.0,
+          38.0
+        ],
+        [
+          271.0,
+          38.0
+        ]
+      ],
+      "after": [
+        [
+          262.0,
+          38.0
+        ],
+        [
+          271.0,
+          38.0
+        ]
+      ],
+      "protectedIntervals": [],
+      "top": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+      "fill": "",
+      "transformScale": [
+        1.0,
+        1.0
+      ],
+      "topPPU": 360.0,
+      "fillPPU": 0.0,
+      "minimumTopDensityAtMaximumGrade": 203.828537,
+      "topWorldTile": [
+        8.533334,
+        4.266667
+      ],
+      "fillWorldTile": null
+    },
+    {
+      "path": "Generated (MRA builder)/Terrain/Route MR01 piece 00",
+      "changedSpans": [
+        {
+          "a": 45.8500023,
+          "b": 55.0,
+          "y0": 21.0,
+          "y1": 24.2344837,
+          "maxGrade": 0.428408563,
+          "maxDelta": 2.41774559
+        },
+        {
+          "a": 119.375,
+          "b": 135.175,
+          "y0": 24.0,
+          "y1": 16.762,
+          "maxGrade": 0.509718239,
+          "maxDelta": 2.87330055
+        }
+      ],
+      "before": [
+        [
+          -6.0,
+          22.0
+        ],
+        [
+          15.0,
+          22.0
+        ],
+        [
+          16.0,
+          21.994
+        ],
+        [
+          17.0,
+          21.977
+        ],
+        [
+          18.0,
+          21.949
+        ],
+        [
+          19.0,
+          21.913
+        ],
+        [
+          20.0,
+          21.869
+        ],
+        [
+          21.0,
+          21.817
+        ],
+        [
+          22.0,
+          21.761
+        ],
+        [
+          23.0,
+          21.699
+        ],
+        [
+          24.0,
+          21.635
+        ],
+        [
+          25.0,
+          21.568
+        ],
+        [
+          27.0,
+          21.432
+        ],
+        [
+          28.0,
+          21.365
+        ],
+        [
+          29.0,
+          21.301
+        ],
+        [
+          30.0,
+          21.239
+        ],
+        [
+          31.0,
+          21.183
+        ],
+        [
+          32.0,
+          21.131
+        ],
+        [
+          33.0,
+          21.087
+        ],
+        [
+          34.0,
+          21.051
+        ],
+        [
+          35.0,
+          21.023
+        ],
+        [
+          36.0,
+          21.006
+        ],
+        [
+          37.0,
+          21.0
+        ],
+        [
+          48.5,
+          21.0
+        ],
+        [
+          48.5,
+          24.3
+        ],
+        [
+          53.1,
+          24.3
+        ],
+        [
+          56.0,
+          24.2
+        ],
+        [
+          60.03,
+          23.784
+        ],
+        [
+          61.02,
+          23.896
+        ],
+        [
+          62.01,
+          23.972
+        ],
+        [
+          63.0,
+          24.0
+        ],
+        [
+          66.5,
+          24.0
+        ],
+        [
+          70.0,
+          27.2
+        ],
+        [
+          74.2,
+          27.2
+        ],
+        [
+          81.0,
+          20.889
+        ],
+        [
+          85.398,
+          20.889
+        ],
+        [
+          85.633,
+          20.873
+        ],
+        [
+          85.855,
+          20.825
+        ],
+        [
+          86.066,
+          20.745
+        ],
+        [
+          86.264,
+          20.633
+        ],
+        [
+          86.45,
+          20.489
+        ],
+        [
+          86.55,
+          20.4
+        ],
+        [
+          86.736,
+          20.256
+        ],
+        [
+          86.934,
+          20.144
+        ],
+        [
+          87.145,
+          20.064
+        ],
+        [
+          87.367,
+          20.016
+        ],
+        [
+          87.602,
+          20.0
+        ],
+        [
+          93.0,
+          20.0
+        ],
+        [
+          93.55,
+          20.018
+        ],
+        [
+          93.73,
+          20.024
+        ],
+        [
+          93.91,
+          20.033
+        ],
+        [
+          94.089,
+          20.045
+        ],
+        [
+          94.269,
+          20.058
+        ],
+        [
+          94.448,
+          20.073
+        ],
+        [
+          95.0,
+          20.124
+        ],
+        [
+          96.0,
+          20.268
+        ],
+        [
+          97.0,
+          20.457
+        ],
+        [
+          98.0,
+          20.685
+        ],
+        [
+          99.0,
+          20.945
+        ],
+        [
+          100.0,
+          21.229
+        ],
+        [
+          101.0,
+          21.53
+        ],
+        [
+          102.0,
+          21.842
+        ],
+        [
+          103.0,
+          22.158
+        ],
+        [
+          104.0,
+          22.47
+        ],
+        [
+          105.0,
+          22.771
+        ],
+        [
+          106.0,
+          23.055
+        ],
+        [
+          107.0,
+          23.315
+        ],
+        [
+          108.0,
+          23.543
+        ],
+        [
+          109.0,
+          23.732
+        ],
+        [
+          110.0,
+          23.876
+        ],
+        [
+          110.552,
+          23.927
+        ],
+        [
+          110.731,
+          23.942
+        ],
+        [
+          110.911,
+          23.955
+        ],
+        [
+          111.09,
+          23.967
+        ],
+        [
+          111.27,
+          23.976
+        ],
+        [
+          111.45,
+          23.982
+        ],
+        [
+          112.0,
+          24.0
+        ],
+        [
+          125.875,
+          24.0
+        ],
+        [
+          125.875,
+          21.331
+        ],
+        [
+          130.625,
+          19.431
+        ],
+        [
+          130.625,
+          16.762
+        ],
+        [
+          140.434,
+          16.762
+        ],
+        [
+          140.656,
+          16.748
+        ],
+        [
+          140.868,
+          16.707
+        ],
+        [
+          141.071,
+          16.638
+        ],
+        [
+          141.265,
+          16.542
+        ],
+        [
+          141.45,
+          16.419
+        ],
+        [
+          141.55,
+          16.343
+        ],
+        [
+          141.735,
+          16.219
+        ],
+        [
+          141.929,
+          16.123
+        ],
+        [
+          142.132,
+          16.055
+        ],
+        [
+          142.344,
+          16.014
+        ],
+        [
+          142.566,
+          16.0
+        ],
+        [
+          145.0,
+          16.0
+        ],
+        [
+          145.0,
+          19.0
+        ],
+        [
+          148.0,
+          19.0
+        ],
+        [
+          150.0,
+          20.0
+        ],
+        [
+          154.0,
+          20.0
+        ],
+        [
+          161.0,
+          12.56
+        ],
+        [
+          162.0,
+          12.33
+        ],
+        [
+          162.554,
+          12.232
+        ],
+        [
+          162.733,
+          12.201
+        ],
+        [
+          162.911,
+          12.173
+        ],
+        [
+          163.091,
+          12.147
+        ],
+        [
+          163.27,
+          12.124
+        ],
+        [
+          163.45,
+          12.102
+        ],
+        [
+          163.552,
+          12.091
+        ],
+        [
+          163.732,
+          12.072
+        ],
+        [
+          163.911,
+          12.055
+        ],
+        [
+          164.09,
+          12.042
+        ],
+        [
+          164.27,
+          12.03
+        ],
+        [
+          164.45,
+          12.022
+        ],
+        [
+          165.0,
+          12.0
+        ],
+        [
+          167.0,
+          12.0
+        ],
+        [
+          173.0,
+          17.0
+        ],
+        [
+          181.0,
+          17.0
+        ],
+        [
+          188.0,
+          12.0
+        ],
+        [
+          193.0,
+          12.0
+        ],
+        [
+          194.0,
+          12.016
+        ],
+        [
+          195.0,
+          12.062
+        ],
+        [
+          196.0,
+          12.134
+        ],
+        [
+          197.0,
+          12.229
+        ],
+        [
+          198.0,
+          12.343
+        ],
+        [
+          199.0,
+          12.472
+        ],
+        [
+          200.0,
+          12.614
+        ],
+        [
+          201.0,
+          12.765
+        ],
+        [
+          202.0,
+          12.921
+        ],
+        [
+          203.0,
+          13.079
+        ],
+        [
+          204.0,
+          13.235
+        ],
+        [
+          205.0,
+          13.386
+        ],
+        [
+          206.0,
+          13.528
+        ],
+        [
+          207.0,
+          13.657
+        ],
+        [
+          208.0,
+          13.771
+        ],
+        [
+          209.0,
+          13.866
+        ],
+        [
+          210.5,
+          14.0
+        ],
+        [
+          210.5,
+          17.1
+        ],
+        [
+          213.0,
+          17.1
+        ],
+        [
+          214.0,
+          18.1
+        ],
+        [
+          218.0,
+          18.1
+        ],
+        [
+          221.0,
+          14.9
+        ]
+      ],
+      "after": [
+        [
+          -6.0,
+          22.0
+        ],
+        [
+          15.0,
+          22.0
+        ],
+        [
+          16.0,
+          21.994
+        ],
+        [
+          17.0,
+          21.977
+        ],
+        [
+          18.0,
+          21.949
+        ],
+        [
+          19.0,
+          21.913
+        ],
+        [
+          20.0,
+          21.869
+        ],
+        [
+          21.0,
+          21.817
+        ],
+        [
+          22.0,
+          21.761
+        ],
+        [
+          23.0,
+          21.699
+        ],
+        [
+          24.0,
+          21.635
+        ],
+        [
+          25.0,
+          21.568
+        ],
+        [
+          27.0,
+          21.432
+        ],
+        [
+          28.0,
+          21.365
+        ],
+        [
+          29.0,
+          21.301
+        ],
+        [
+          30.0,
+          21.239
+        ],
+        [
+          31.0,
+          21.183
+        ],
+        [
+          32.0,
+          21.131
+        ],
+        [
+          33.0,
+          21.087
+        ],
+        [
+          34.0,
+          21.051
+        ],
+        [
+          35.0,
+          21.023
+        ],
+        [
+          36.0,
+          21.006
+        ],
+        [
+          37.0,
+          21.0
+        ],
+        [
+          45.8500023,
+          21.0
+        ],
+        [
+          46.42188,
+          21.0241661
+        ],
+        [
+          46.99375,
+          21.1598225
+        ],
+        [
+          47.5656281,
+          21.3922615
+        ],
+        [
+          48.1375,
+          21.6372566
+        ],
+        [
+          48.7093773,
+          21.8822536
+        ],
+        [
+          49.28125,
+          22.12725
+        ],
+        [
+          49.8531265,
+          22.3722458
+        ],
+        [
+          50.4250031,
+          22.61724
+        ],
+        [
+          50.9968758,
+          22.8622379
+        ],
+        [
+          51.5687523,
+          23.107235
+        ],
+        [
+          52.140625,
+          23.35223
+        ],
+        [
+          52.7125,
+          23.5972252
+        ],
+        [
+          53.2843742,
+          23.8422222
+        ],
+        [
+          53.85625,
+          24.0746613
+        ],
+        [
+          54.4281235,
+          24.2103176
+        ],
+        [
+          55.0,
+          24.2344837
+        ],
+        [
+          56.0,
+          24.2
+        ],
+        [
+          60.03,
+          23.784
+        ],
+        [
+          61.02,
+          23.896
+        ],
+        [
+          62.01,
+          23.972
+        ],
+        [
+          63.0,
+          24.0
+        ],
+        [
+          66.5,
+          24.0
+        ],
+        [
+          70.0,
+          27.2
+        ],
+        [
+          74.2,
+          27.2
+        ],
+        [
+          81.0,
+          20.889
+        ],
+        [
+          85.398,
+          20.889
+        ],
+        [
+          85.633,
+          20.873
+        ],
+        [
+          85.855,
+          20.825
+        ],
+        [
+          86.066,
+          20.745
+        ],
+        [
+          86.264,
+          20.633
+        ],
+        [
+          86.45,
+          20.489
+        ],
+        [
+          86.55,
+          20.4
+        ],
+        [
+          86.736,
+          20.256
+        ],
+        [
+          86.934,
+          20.144
+        ],
+        [
+          87.145,
+          20.064
+        ],
+        [
+          87.367,
+          20.016
+        ],
+        [
+          87.602,
+          20.0
+        ],
+        [
+          93.0,
+          20.0
+        ],
+        [
+          93.55,
+          20.018
+        ],
+        [
+          93.73,
+          20.024
+        ],
+        [
+          93.91,
+          20.033
+        ],
+        [
+          94.089,
+          20.045
+        ],
+        [
+          94.269,
+          20.058
+        ],
+        [
+          94.448,
+          20.073
+        ],
+        [
+          95.0,
+          20.124
+        ],
+        [
+          96.0,
+          20.268
+        ],
+        [
+          97.0,
+          20.457
+        ],
+        [
+          98.0,
+          20.685
+        ],
+        [
+          99.0,
+          20.945
+        ],
+        [
+          100.0,
+          21.229
+        ],
+        [
+          101.0,
+          21.53
+        ],
+        [
+          102.0,
+          21.842
+        ],
+        [
+          103.0,
+          22.158
+        ],
+        [
+          104.0,
+          22.47
+        ],
+        [
+          105.0,
+          22.771
+        ],
+        [
+          106.0,
+          23.055
+        ],
+        [
+          107.0,
+          23.315
+        ],
+        [
+          108.0,
+          23.543
+        ],
+        [
+          109.0,
+          23.732
+        ],
+        [
+          110.0,
+          23.876
+        ],
+        [
+          110.552,
+          23.927
+        ],
+        [
+          110.731,
+          23.942
+        ],
+        [
+          110.911,
+          23.955
+        ],
+        [
+          111.09,
+          23.967
+        ],
+        [
+          111.27,
+          23.976
+        ],
+        [
+          111.45,
+          23.982
+        ],
+        [
+          112.0,
+          24.0
+        ],
+        [
+          119.375,
+          24.0
+        ],
+        [
+          119.960182,
+          23.9692841
+        ],
+        [
+          120.545372,
+          23.7986832
+        ],
+        [
+          121.130554,
+          23.5129356
+        ],
+        [
+          121.715744,
+          23.2146568
+        ],
+        [
+          122.300926,
+          22.9163761
+        ],
+        [
+          122.886108,
+          22.6180973
+        ],
+        [
+          123.4713,
+          22.3198166
+        ],
+        [
+          124.05648,
+          22.0215378
+        ],
+        [
+          124.64167,
+          21.723259
+        ],
+        [
+          125.226852,
+          21.4249783
+        ],
+        [
+          125.812042,
+          21.1267
+        ],
+        [
+          126.397224,
+          20.8284187
+        ],
+        [
+          126.982407,
+          20.53014
+        ],
+        [
+          127.5676,
+          20.23186
+        ],
+        [
+          128.152786,
+          19.93358
+        ],
+        [
+          128.737961,
+          19.6353
+        ],
+        [
+          129.323151,
+          19.33702
+        ],
+        [
+          129.90834,
+          19.0387421
+        ],
+        [
+          130.493515,
+          18.7404613
+        ],
+        [
+          131.0787,
+          18.4421825
+        ],
+        [
+          131.6639,
+          18.1439018
+        ],
+        [
+          132.249084,
+          17.845623
+        ],
+        [
+          132.834259,
+          17.5473442
+        ],
+        [
+          133.419449,
+          17.2490635
+        ],
+        [
+          134.004639,
+          16.963316
+        ],
+        [
+          134.589813,
+          16.792717
+        ],
+        [
+          135.175,
+          16.762
+        ],
+        [
+          140.434,
+          16.762
+        ],
+        [
+          140.656,
+          16.748
+        ],
+        [
+          140.868,
+          16.707
+        ],
+        [
+          141.071,
+          16.638
+        ],
+        [
+          141.265,
+          16.542
+        ],
+        [
+          141.45,
+          16.419
+        ],
+        [
+          141.55,
+          16.343
+        ],
+        [
+          141.735,
+          16.219
+        ],
+        [
+          141.929,
+          16.123
+        ],
+        [
+          142.132,
+          16.055
+        ],
+        [
+          142.344,
+          16.014
+        ],
+        [
+          142.566,
+          16.0
+        ],
+        [
+          145.0,
+          16.0
+        ],
+        [
+          145.0,
+          19.0
+        ],
+        [
+          148.0,
+          19.0
+        ],
+        [
+          150.0,
+          20.0
+        ],
+        [
+          154.0,
+          20.0
+        ],
+        [
+          161.0,
+          12.56
+        ],
+        [
+          162.0,
+          12.33
+        ],
+        [
+          162.554,
+          12.232
+        ],
+        [
+          162.733,
+          12.201
+        ],
+        [
+          162.911,
+          12.173
+        ],
+        [
+          163.091,
+          12.147
+        ],
+        [
+          163.27,
+          12.124
+        ],
+        [
+          163.45,
+          12.102
+        ],
+        [
+          163.552,
+          12.091
+        ],
+        [
+          163.732,
+          12.072
+        ],
+        [
+          163.911,
+          12.055
+        ],
+        [
+          164.09,
+          12.042
+        ],
+        [
+          164.27,
+          12.03
+        ],
+        [
+          164.45,
+          12.022
+        ],
+        [
+          165.0,
+          12.0
+        ],
+        [
+          167.0,
+          12.0
+        ],
+        [
+          173.0,
+          17.0
+        ],
+        [
+          181.0,
+          17.0
+        ],
+        [
+          188.0,
+          12.0
+        ],
+        [
+          193.0,
+          12.0
+        ],
+        [
+          194.0,
+          12.016
+        ],
+        [
+          195.0,
+          12.062
+        ],
+        [
+          196.0,
+          12.134
+        ],
+        [
+          197.0,
+          12.229
+        ],
+        [
+          198.0,
+          12.343
+        ],
+        [
+          199.0,
+          12.472
+        ],
+        [
+          200.0,
+          12.614
+        ],
+        [
+          201.0,
+          12.765
+        ],
+        [
+          202.0,
+          12.921
+        ],
+        [
+          203.0,
+          13.079
+        ],
+        [
+          204.0,
+          13.235
+        ],
+        [
+          205.0,
+          13.386
+        ],
+        [
+          206.0,
+          13.528
+        ],
+        [
+          207.0,
+          13.657
+        ],
+        [
+          208.0,
+          13.771
+        ],
+        [
+          209.0,
+          13.866
+        ],
+        [
+          210.5,
+          14.0
+        ],
+        [
+          210.5,
+          17.1
+        ],
+        [
+          213.0,
+          17.1
+        ],
+        [
+          214.0,
+          18.1
+        ],
+        [
+          218.0,
+          18.1
+        ],
+        [
+          221.0,
+          14.9
+        ]
+      ],
+      "protectedIntervals": [
+        {
+          "a": 9.2,
+          "b": 14.8,
+          "reason": "beat pad MR01_N00"
+        },
+        {
+          "a": 37.2,
+          "b": 42.8,
+          "reason": "beat pad MR01_N01"
+        },
+        {
+          "a": 63.2,
+          "b": 68.8,
+          "reason": "beat pad MR01_N02"
+        },
+        {
+          "a": 87.2,
+          "b": 92.8,
+          "reason": "beat pad MR01_N03"
+        },
+        {
+          "a": 112.2,
+          "b": 117.8,
+          "reason": "beat pad MR01_N04"
+        },
+        {
+          "a": 142.2,
+          "b": 147.8,
+          "reason": "beat pad MR01_N05"
+        },
+        {
+          "a": 165.2,
+          "b": 170.8,
+          "reason": "beat pad MR01_N06"
+        },
+        {
+          "a": 187.2,
+          "b": 192.8,
+          "reason": "beat pad MR01_N07"
+        },
+        {
+          "a": 212.2,
+          "b": 217.8,
+          "reason": "beat pad MR01_N08"
+        },
+        {
+          "a": 232.2,
+          "b": 237.8,
+          "reason": "beat pad MR01_N09"
+        },
+        {
+          "a": 259.2,
+          "b": 264.8,
+          "reason": "beat pad MR01_N10"
+        },
+        {
+          "a": 292.2,
+          "b": 297.8,
+          "reason": "beat pad MR01_N11"
+        },
+        {
+          "a": 59.6999969,
+          "b": 71.7,
+          "reason": "cave CAVE_PC01"
+        },
+        {
+          "a": 57.7,
+          "b": 62.7,
+          "reason": "arrival CAVE_PC01"
+        },
+        {
+          "a": 145.0,
+          "b": 157.0,
+          "reason": "cave CAVE_PC02"
+        },
+        {
+          "a": 142.5,
+          "b": 147.5,
+          "reason": "arrival CAVE_PC02"
+        },
+        {
+          "a": 210.0,
+          "b": 222.0,
+          "reason": "cave CAVE_PC03"
+        },
+        {
+          "a": 208.5,
+          "b": 213.5,
+          "reason": "arrival CAVE_PC03"
+        },
+        {
+          "a": 263.0,
+          "b": 275.0,
+          "reason": "cave CAVE_MR01_C06"
+        },
+        {
+          "a": 259.7,
+          "b": 264.7,
+          "reason": "arrival CAVE_MR01_C06"
+        },
+        {
+          "a": 57.5,
+          "b": 69.3,
+          "reason": "carved aperture PC01"
+        },
+        {
+          "a": 142.5,
+          "b": 155.0,
+          "reason": "carved aperture PC02"
+        },
+        {
+          "a": 208.5,
+          "b": 220.0,
+          "reason": "carved aperture PC03"
+        },
+        {
+          "a": 10.6,
+          "b": 13.4,
+          "reason": "prop or encounter Player"
+        },
+        {
+          "a": 38.5,
+          "b": 41.5,
+          "reason": "prop or encounter Checkpoint mra:MR01:cp:01"
+        },
+        {
+          "a": 42.3,
+          "b": 45.7,
+          "reason": "prop or encounter Shrine Leapseed"
+        },
+        {
+          "a": 63.8999939,
+          "b": 67.5,
+          "reason": "prop or encounter Firefly Nook"
+        },
+        {
+          "a": 58.5,
+          "b": 68.3,
+          "reason": "prop or encounter Firefly Nook | walkable worn steps"
+        },
+        {
+          "a": 165.3,
+          "b": 168.7,
+          "reason": "prop or encounter Shrine Climbing Moss"
+        },
+        {
+          "a": 189.3,
+          "b": 193.7,
+          "reason": "prop or encounter Knot grip"
+        },
+        {
+          "a": 218.5,
+          "b": 221.5,
+          "reason": "prop or encounter Root Gate (knot:grip)"
+        },
+        {
+          "a": 80.0,
+          "b": 83.7,
+          "reason": "prop or encounter Encounter MR01_Encounter_01 (Grub01)"
+        },
+        {
+          "a": 135.325,
+          "b": 138.675,
+          "reason": "prop or encounter Encounter MR01_Encounter_02 (Shellback01)"
+        }
+      ],
+      "top": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+      "fill": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Fill_4K.png",
+      "transformScale": [
+        1.0,
+        1.0
+      ],
+      "topPPU": 360.0,
+      "fillPPU": 240.0,
+      "minimumTopDensityAtMaximumGrade": 203.828537,
+      "topWorldTile": [
+        8.533334,
+        4.266667
+      ],
+      "fillWorldTile": [
+        8.533334,
+        8.533334
+      ]
+    },
+    {
+      "path": "Generated (MRA builder)/Terrain/Route MR01 piece 01 (past the ravine)",
+      "changedSpans": [],
+      "before": [
+        [
+          229.0,
+          18.2
+        ],
+        [
+          232.0,
+          18.2
+        ],
+        [
+          232.0,
+          20.0
+        ],
+        [
+          243.5,
+          20.0
+        ],
+        [
+          243.5,
+          24.2
+        ],
+        [
+          247.0,
+          24.2
+        ],
+        [
+          247.431,
+          24.226
+        ],
+        [
+          247.845,
+          24.306
+        ],
+        [
+          248.241,
+          24.438
+        ],
+        [
+          248.619,
+          24.622
+        ],
+        [
+          248.98,
+          24.86
+        ],
+        [
+          253.55,
+          28.288
+        ],
+        [
+          253.55,
+          33.912
+        ],
+        [
+          258.12,
+          37.34
+        ],
+        [
+          258.481,
+          37.578
+        ],
+        [
+          258.859,
+          37.762
+        ],
+        [
+          259.255,
+          37.894
+        ],
+        [
+          259.669,
+          37.974
+        ],
+        [
+          260.1,
+          38.0
+        ],
+        [
+          262.0,
+          38.0
+        ],
+        [
+          262.0,
+          41.1
+        ],
+        [
+          265.0,
+          41.1
+        ],
+        [
+          267.0,
+          42.0
+        ],
+        [
+          274.0,
+          42.0
+        ],
+        [
+          281.25,
+          39.0
+        ],
+        [
+          282.227,
+          39.136
+        ],
+        [
+          283.205,
+          39.27
+        ],
+        [
+          284.182,
+          39.399
+        ],
+        [
+          285.159,
+          39.521
+        ],
+        [
+          286.136,
+          39.635
+        ],
+        [
+          287.114,
+          39.737
+        ],
+        [
+          288.091,
+          39.826
+        ],
+        [
+          289.068,
+          39.899
+        ],
+        [
+          290.045,
+          39.953
+        ],
+        [
+          291.023,
+          39.988
+        ],
+        [
+          292.0,
+          40.0
+        ],
+        [
+          332.0,
+          40.0
+        ]
+      ],
+      "after": [
+        [
+          229.0,
+          18.2
+        ],
+        [
+          232.0,
+          18.2
+        ],
+        [
+          232.0,
+          20.0
+        ],
+        [
+          243.5,
+          20.0
+        ],
+        [
+          243.5,
+          24.2
+        ],
+        [
+          247.0,
+          24.2
+        ],
+        [
+          247.431,
+          24.226
+        ],
+        [
+          247.845,
+          24.306
+        ],
+        [
+          248.241,
+          24.438
+        ],
+        [
+          248.619,
+          24.622
+        ],
+        [
+          248.98,
+          24.86
+        ],
+        [
+          253.55,
+          28.288
+        ],
+        [
+          253.55,
+          33.912
+        ],
+        [
+          258.12,
+          37.34
+        ],
+        [
+          258.481,
+          37.578
+        ],
+        [
+          258.859,
+          37.762
+        ],
+        [
+          259.255,
+          37.894
+        ],
+        [
+          259.669,
+          37.974
+        ],
+        [
+          260.1,
+          38.0
+        ],
+        [
+          262.0,
+          38.0
+        ],
+        [
+          262.0,
+          41.1
+        ],
+        [
+          265.0,
+          41.1
+        ],
+        [
+          267.0,
+          42.0
+        ],
+        [
+          274.0,
+          42.0
+        ],
+        [
+          281.25,
+          39.0
+        ],
+        [
+          282.227,
+          39.136
+        ],
+        [
+          283.205,
+          39.27
+        ],
+        [
+          284.182,
+          39.399
+        ],
+        [
+          285.159,
+          39.521
+        ],
+        [
+          286.136,
+          39.635
+        ],
+        [
+          287.114,
+          39.737
+        ],
+        [
+          288.091,
+          39.826
+        ],
+        [
+          289.068,
+          39.899
+        ],
+        [
+          290.045,
+          39.953
+        ],
+        [
+          291.023,
+          39.988
+        ],
+        [
+          292.0,
+          40.0
+        ],
+        [
+          332.0,
+          40.0
+        ]
+      ],
+      "protectedIntervals": [
+        {
+          "a": 9.2,
+          "b": 14.8,
+          "reason": "beat pad MR01_N00"
+        },
+        {
+          "a": 37.2,
+          "b": 42.8,
+          "reason": "beat pad MR01_N01"
+        },
+        {
+          "a": 63.2,
+          "b": 68.8,
+          "reason": "beat pad MR01_N02"
+        },
+        {
+          "a": 87.2,
+          "b": 92.8,
+          "reason": "beat pad MR01_N03"
+        },
+        {
+          "a": 112.2,
+          "b": 117.8,
+          "reason": "beat pad MR01_N04"
+        },
+        {
+          "a": 142.2,
+          "b": 147.8,
+          "reason": "beat pad MR01_N05"
+        },
+        {
+          "a": 165.2,
+          "b": 170.8,
+          "reason": "beat pad MR01_N06"
+        },
+        {
+          "a": 187.2,
+          "b": 192.8,
+          "reason": "beat pad MR01_N07"
+        },
+        {
+          "a": 212.2,
+          "b": 217.8,
+          "reason": "beat pad MR01_N08"
+        },
+        {
+          "a": 232.2,
+          "b": 237.8,
+          "reason": "beat pad MR01_N09"
+        },
+        {
+          "a": 259.2,
+          "b": 264.8,
+          "reason": "beat pad MR01_N10"
+        },
+        {
+          "a": 292.2,
+          "b": 297.8,
+          "reason": "beat pad MR01_N11"
+        },
+        {
+          "a": 59.6999969,
+          "b": 71.7,
+          "reason": "cave CAVE_PC01"
+        },
+        {
+          "a": 57.7,
+          "b": 62.7,
+          "reason": "arrival CAVE_PC01"
+        },
+        {
+          "a": 145.0,
+          "b": 157.0,
+          "reason": "cave CAVE_PC02"
+        },
+        {
+          "a": 142.5,
+          "b": 147.5,
+          "reason": "arrival CAVE_PC02"
+        },
+        {
+          "a": 210.0,
+          "b": 222.0,
+          "reason": "cave CAVE_PC03"
+        },
+        {
+          "a": 208.5,
+          "b": 213.5,
+          "reason": "arrival CAVE_PC03"
+        },
+        {
+          "a": 263.0,
+          "b": 275.0,
+          "reason": "cave CAVE_MR01_C06"
+        },
+        {
+          "a": 259.7,
+          "b": 264.7,
+          "reason": "arrival CAVE_MR01_C06"
+        },
+        {
+          "a": 260.0,
+          "b": 273.0,
+          "reason": "carved aperture MR01_C06"
+        },
+        {
+          "a": 242.15,
+          "b": 244.85,
+          "reason": "climb challenge"
+        },
+        {
+          "a": 252.2,
+          "b": 254.900009,
+          "reason": "climb challenge"
+        },
+        {
+          "a": 260.5,
+          "b": 263.5,
+          "reason": "prop or encounter Checkpoint mra:MR01:cp:10"
+        },
+        {
+          "a": 258.5,
+          "b": 265.5,
+          "reason": "prop or encounter Lookout vista"
+        }
+      ],
+      "top": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+      "fill": "Assets/Art/Codex/Terrain/Body/Cradle4K/Body_Fill_4K.png",
+      "transformScale": [
+        1.0,
+        1.0
+      ],
+      "topPPU": 360.0,
+      "fillPPU": 240.0,
+      "minimumTopDensityAtMaximumGrade": 203.828537,
+      "topWorldTile": [
+        8.533334,
+        4.266667
+      ],
+      "fillWorldTile": [
+        8.533334,
+        8.533334
+      ]
+    }
+  ]
+}

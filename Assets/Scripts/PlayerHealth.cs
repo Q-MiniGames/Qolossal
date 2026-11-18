@@ -60,7 +60,7 @@ public sealed class PlayerHealth : MonoBehaviour
         Sfx.Play(health <= 0 ? "Qori_Death" : "Qori_Hurt");
         if (health <= 0)
         {
-            movement.Respawn();
+            StartCoroutine(DeathBeat());
             return;
         }
         float difference = transform.position.x - source.x;
@@ -69,6 +69,35 @@ public sealed class PlayerHealth : MonoBehaviour
         HitStop.Freeze(HitStop.QoriHurt);
         CombatCameraShake.Kick(FeedbackTuning.Current.qoriHurtShake);
         movement.ApplyKnockback(new Vector2(direction * Mathf.Max(push.x, knockback.x * .5f), push.y));
+    }
+
+    // Down, a moment, a fade, then back at the checkpoint (3 Nov): it used to be an instant teleport.
+    public bool IsDying { get; private set; }
+    public static bool AnyDying { get; private set; }
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] private static void ResetDying() => AnyDying = false;
+    private const float DownSeconds = .55f, DeathFadeSeconds = .25f;
+    private System.Collections.IEnumerator DeathBeat()
+    {
+        IsDying = AnyDying = true;
+        protectedUntil = float.PositiveInfinity;
+        var body = GetComponent<Rigidbody2D>();
+        body.linearVelocity = Vector2.zero; body.simulated = false;
+        HitStop.Freeze(HitStop.QoriHurt);
+        CombatCameraShake.Kick(FeedbackTuning.Current.qoriHurtShake);
+        yield return new WaitForSecondsRealtime(DownSeconds);
+        for (float t = 0f; t < DeathFadeSeconds; t += Time.unscaledDeltaTime) { AreaTransition.SetCurtainAlpha(t / DeathFadeSeconds); yield return null; }
+        AreaTransition.SetCurtainAlpha(1f);
+        EndDeath();
+        movement.Respawn();
+        for (float t = 0f; t < DeathFadeSeconds; t += Time.unscaledDeltaTime) { AreaTransition.SetCurtainAlpha(1f - t / DeathFadeSeconds); yield return null; }
+        AreaTransition.SetCurtainAlpha(0f);
+    }
+
+    private void EndDeath()
+    {
+        if (!IsDying) return;
+        IsDying = AnyDying = false;
+        GetComponent<Rigidbody2D>().simulated = true;
     }
 
     // Restores hearts (sap orbs), up to the maximum.
@@ -95,6 +124,7 @@ public sealed class PlayerHealth : MonoBehaviour
 
     private void OnDisable()
     {
+        if (IsDying) { EndDeath(); AreaTransition.SetCurtainAlpha(0f); }
         if (visual != null) visual.color = restingColor;
     }
 }

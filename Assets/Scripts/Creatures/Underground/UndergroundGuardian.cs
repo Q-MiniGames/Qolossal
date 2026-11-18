@@ -61,6 +61,7 @@ public abstract class UndergroundGuardian : EnemyBase
     SpriteRenderer view;
     Transform weak, zone;
     BoxCollider2D zoneBox;
+    AttackZoneTelegraph telegraph;
     int attacks, phaseSeen = 1, windowHits;
     bool hasRoared;
     Vector2 startedAt;
@@ -235,5 +236,9 @@ public abstract class UndergroundGuardian : EnemyBase
         bool live = StrikeLive && StrikeZone(Attack, out var c, out var z);
         if (live) { StrikeZone(Attack, out c, out z); zone.position = c; zoneBox.size = z; }
         zoneBox.enabled = live;
+        if (telegraph == null) telegraph = AttackZoneTelegraph.For(this, true);
+        if (Current == State.Warn && StrikeZone(Attack, out var warnAt, out var warnSize)) telegraph.Warn(warnAt, warnSize, (Time.time - since) / (warnTime / Speed));
+        else if (live) telegraph.Strike(zone.position, zoneBox.size);
+        else telegraph.Hide();
     }
 }

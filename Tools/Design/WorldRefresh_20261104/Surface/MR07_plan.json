@@ -1,0 +1,340 @@
+[
+  {
+    "terrain": "Generated (MRA builder)/Terrain/Route MR07 piece 00",
+    "points": 148,
+    "edits": [
+      {
+        "a": 14.95,
+        "b": 40.05,
+        "y0": 18.0,
+        "y1": 40.0,
+        "maxGrade": 0.9361703,
+        "maxDelta": 3.04078484
+      },
+      {
+        "a": 149.0,
+        "b": 156.031,
+        "y0": 91.3568,
+        "y1": 94.816,
+        "maxGrade": 0.599991441,
+        "maxDelta": 2.08114624
+      },
+      {
+        "a": 173.0,
+        "b": 183.900009,
+        "y0": 106.816,
+        "y1": 110.304,
+        "maxGrade": 0.3750533,
+        "maxDelta": 1.421257
+      },
+      {
+        "a": 187.099991,
+        "b": 191.05,
+        "y0": 110.304,
+        "y1": 112.0,
+        "maxGrade": 0.523616552,
+        "maxDelta": 1.29120636
+      },
+      {
+        "a": 196.95,
+        "b": 222.05,
+        "y0": 112.0,
+        "y1": 134.0,
+        "maxGrade": 0.93617,
+        "maxDelta": 3.04078674
+      }
+    ],
+    "protectedIntervals": [
+      {
+        "a": 9.2,
+        "b": 14.8,
+        "reason": "beat pad MR07_N00"
+      },
+      {
+        "a": 40.2,
+        "b": 45.8,
+        "reason": "beat pad MR07_N01"
+      },
+      {
+        "a": 69.2,
+        "b": 74.8,
+        "reason": "beat pad MR07_N02"
+      },
+      {
+        "a": 128.2,
+        "b": 133.8,
+        "reason": "beat pad MR07_N03"
+      },
+      {
+        "a": 160.2,
+        "b": 165.8,
+        "reason": "beat pad MR07_N04"
+      },
+      {
+        "a": 191.2,
+        "b": 196.8,
+        "reason": "beat pad MR07_N05"
+      },
+      {
+        "a": 222.2,
+        "b": 227.8,
+        "reason": "beat pad MR07_N06"
+      },
+      {
+        "a": 249.2,
+        "b": 254.8,
+        "reason": "beat pad MR07_N07"
+      },
+      {
+        "a": 275.2,
+        "b": 280.8,
+        "reason": "beat pad MR07_N08"
+      },
+      {
+        "a": 302.2,
+        "b": 307.8,
+        "reason": "beat pad MR07_N09"
+      },
+      {
+        "a": 328.2,
+        "b": 333.8,
+        "reason": "beat pad MR07_N10"
+      },
+      {
+        "a": 352.2,
+        "b": 357.8,
+        "reason": "beat pad MR07_N11"
+      },
+      {
+        "a": 48.85,
+        "b": 60.85,
+        "reason": "cave CAVE_MR07_C02"
+      },
+      {
+        "a": 47.4,
+        "b": 52.4,
+        "reason": "arrival CAVE_MR07_C02"
+      },
+      {
+        "a": 77.85,
+        "b": 89.85,
+        "reason": "cave CAVE_MR07_C03"
+      },
+      {
+        "a": 76.4,
+        "b": 81.4,
+        "reason": "arrival CAVE_MR07_C03"
+      },
+      {
+        "a": 90.625,
+        "b": 102.625,
+        "reason": "cave CAVE_PC12"
+      },
+      {
+        "a": 89.175,
+        "b": 94.175,
+        "reason": "arrival CAVE_PC12"
+      },
+      {
+        "a": 136.85,
+        "b": 148.85,
+        "reason": "cave CAVE_MR07_C01"
+      },
+      {
+        "a": 135.4,
+        "b": 140.4,
+        "reason": "arrival CAVE_MR07_C01"
+      },
+      {
+        "a": 230.85,
+        "b": 242.85,
+        "reason": "cave CAVE_MR07_C04"
+      },
+      {
+        "a": 229.4,
+        "b": 234.4,
+        "reason": "arrival CAVE_MR07_C04"
+      },
+      {
+        "a": 257.85,
+        "b": 269.85,
+        "reason": "cave CAVE_MR07_C05"
+      },
+      {
+        "a": 256.4,
+        "b": 261.4,
+        "reason": "arrival CAVE_MR07_C05"
+      },
+      {
+        "a": 283.85,
+        "b": 295.85,
+        "reason": "cave CAVE_MR07_C06"
+      },
+      {
+        "a": 282.4,
+        "b": 287.4,
+        "reason": "arrival CAVE_MR07_C06"
+      },
+      {
+        "a": 338.135,
+        "b": 350.135,
+        "reason": "cave CAVE_E01"
+      },
+      {
+        "a": 346.585,
+        "b": 351.585,
+        "reason": "arrival CAVE_E01"
+      },
+      {
+        "a": 137.35,
+        "b": 146.1,
+        "reason": "carved aperture MR07_C01"
+      },
+      {
+        "a": 49.35,
+        "b": 58.1,
+        "reason": "carved aperture MR07_C02"
+      },
+      {
+        "a": 78.35,
+        "b": 87.1,
+        "reason": "carved aperture MR07_C03"
+      },
+      {
+        "a": 258.35,
+        "b": 267.1,
+        "reason": "carved aperture MR07_C05"
+      },
+      {
+        "a": 231.35,
+        "b": 240.1,
+        "reason": "carved aperture MR07_C04"
+      },
+      {
+        "a": 284.35,
+        "b": 293.1,
+        "reason": "carved aperture MR07_C06"
+      },
+      {
+        "a": 91.125,
+        "b": 99.875,
+        "reason": "carved aperture PC12"
+      },
+      {
+        "a": 340.884979,
+        "b": 349.634979,
+        "reason": "carved aperture E01"
+      },
+      {
+        "a": 50.15,
+        "b": 52.85,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 61.2,
+        "b": 63.8999977,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 79.15,
+        "b": 81.85,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 138.15,
+        "b": 140.85,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 145.219,
+        "b": 147.919,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 156.181,
+        "b": 158.881012,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 170.15,
+        "b": 172.85,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 232.15,
+        "b": 234.85,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 259.15,
+        "b": 261.85,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 285.15,
+        "b": 287.85,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 334.155,
+        "b": 336.855,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 339.874,
+        "b": 342.574,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 346.134979,
+        "b": 348.835,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 10.6,
+        "b": 13.4,
+        "reason": "prop or encounter Player"
+      },
+      {
+        "a": 41.5,
+        "b": 44.5,
+        "reason": "prop or encounter Checkpoint mra:MR07:cp:01"
+      },
+      {
+        "a": 192.504166,
+        "b": 195.504166,
+        "reason": "prop or encounter Waymark mra:MR07:cp:05"
+      },
+      {
+        "a": 277.3,
+        "b": 281.7,
+        "reason": "prop or encounter Knot sight"
+      },
+      {
+        "a": 301.5,
+        "b": 308.5,
+        "reason": "prop or encounter Lookout vista"
+      },
+      {
+        "a": 328.0,
+        "b": 334.0,
+        "reason": "prop or encounter Module MR07_E09 reveal"
+      },
+      {
+        "a": 329.5,
+        "b": 332.5,
+        "reason": "prop or encounter Checkpoint mra:MR07:cp:10"
+      },
+      {
+        "a": 99.85,
+        "b": 103.15,
+        "reason": "prop or encounter Encounter MR07_Encounter_01 (Newt01)"
+      },
+      {
+        "a": 184.05,
+        "b": 186.95,
+        "reason": "prop or encounter Encounter MR07_Encounter_02 (GustMoth01)"
+      }
+    ]
+  }
+]

@@ -1,0 +1,584 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.19f1 (7689f4515d75) revision 7768564'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26300) Professional' Language: 'en' Physical Memory: 32563 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-03T12:02:41Z
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Qasim" at "2026-11-03T12:02:41.6089814Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 28536, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              f64626a7a4be437d95e2f55603816d91
+  Correlation Id:          09f51627efab65a00c0f49581bc1fc30
+  External correlation Id: 8006705776043891788
+  Machine Id:              AzXGSbR+H2Zbc8vGaEIYShEfD98=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Qasim" (connect: 0.00s, validation: 0.00s, handshake: 0.05s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Qasim-notifications" at "2026-11-03T12:02:41.6647504Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-C54R-DKYT-9KTC-GBQ2-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967689494527-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-C54R-DKYT-9KTC-GBQ2-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967689494527-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Module] Licensing Background thread has ended after 0.07s
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Unity.exe
+-batchmode
+-projectPath
+.
+-executeMethod
+ClimbCapture.Run
+-climbTag
+after
+-captureDir
+Tools/Design/PolishGates/70/climb
+-logFile
+Tools/Design/PolishGates/70/climb/after.log
+Successfully changed project path to: C:/UnityProjects/Qolossal
+C:/UnityProjects/Qolossal
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [29268]  Target information:
+
+Player connection [29268]  * "[IP] 192.168.1.20 [Port] 55504 [Flags] 2 [Guid] 4241511912 [EditorId] 4241511912 [Version] 1048832 [Id] WindowsEditor(7,Qasim) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [29268] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [29268] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-34872" after 0.6 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-C54R-DKYT-9KTC-GBQ2-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967689494527-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Artifact Garbage Collection - Removed 5 unused hashed content files
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.19f1 (7689f4515d75)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/UnityProjects/Qolossal/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 3070 Ti (ID=0x2482)
+    Vendor:          NVIDIA
+    VRAM:            8017 MB
+    App VRAM Budget: 7249 MB
+    Driver:          32.0.16.2101
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56872
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002943 seconds.
+- Loaded All Assemblies, in  0.535 seconds
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.507 seconds
+Domain Reload Profiling: 1033ms
+	BeginReloadAssembly (185ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (8ms)
+	RebuildCommonClasses (38ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (55ms)
+	LoadAllAssembliesAndSetupDomain (231ms)
+		LoadAssemblies (173ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (227ms)
+			TypeCache.Refresh (225ms)
+				TypeCache.ScanAssembly (206ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (508ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (449ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (54ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (89ms)
+			ProcessInitializeOnLoadAttributes (181ms)
+			ProcessInitializeOnLoadMethodAttributes (122ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-C54R-DKYT-9KTC-GBQ2-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967689494527-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 67 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.2d.animation@13.0.5 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.animation@5d1ab6c077e2)
+    com.unity.2d.aseprite@3.0.2 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.aseprite@20edb5643ab5)
+    com.unity.2d.psdimporter@12.0.2 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.psdimporter@f207d91d598d)
+    com.unity.2d.spriteshape@13.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.spriteshape@0738bab11647)
+    com.unity.2d.tilemap.extras@6.0.2 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.tilemap.extras@4c5cdf9da5f3)
+    com.unity.2d.tooling@1.0.3 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.tooling@127d960d4dc1)
+    com.unity.collab-proxy@2.12.4 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.collab-proxy@0b1559bcd34e)
+    com.unity.ide.rider@3.0.40 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.ide.rider@e4950c6d131b)
+    com.unity.ide.visualstudio@2.0.26 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@1.19.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.inputsystem@21a28c3a6c83)
+    com.unity.timeline@1.8.12 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.timeline@8cd8509afae5)
+    com.unity.visualscripting@1.9.11 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.visualscripting@8bed5ad90189)
+    com.unity.pipeline@0.7.0-exp.1 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.pipeline@ab05e9cd7f74)
+    com.unity.nuget.mono-cecil@1.11.6 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.nuget.newtonsoft-json@3.2.2 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64)
+    com.unity.2d.common@12.0.3 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.common@2af7c9b44b5c)
+    com.unity.mathematics@1.3.3 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.mathematics@19a9377c4ffa)
+    com.unity.collections@2.6.6 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.collections@9796e5ee0d9e)
+    com.unity.searcher@4.9.4 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.searcher@d45a78918735)
+    com.unity.burst@1.8.29 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.burst@6bb9aca3ef38)
+    com.unity.test-framework.performance@3.5.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.test-framework.performance@8b56083ec0f0)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.sprite@d8bb22511404)
+    com.unity.2d.tilemap@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.tilemap@06f4a9532942)
+    com.unity.multiplayer.center@1.0.1 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a)
+    com.unity.render-pipelines.universal@17.3.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.render-pipelines.universal@8a9b4021522a)
+    com.unity.test-framework@1.6.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.test-framework@bd7f943e9647)
+    com.unity.ugui@2.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.ugui@b95364aab964)
+    com.unity.modules.accessibility@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.0.5 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.ext.nunit@d8c07649098d)
+    com.unity.render-pipelines.core@17.3.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.render-pipelines.core@c3bbbae46ff1)
+    com.unity.shadergraph@17.3.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.shadergraph@0a17040bdbb7)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.03 seconds
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:80
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\UnityProjects\Qolossal\
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 46.0762ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/UnityProjects/Qolossal
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+DisplayProgressbar: Compiling Scripts
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.WindowsRuntime.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ComponentModel.Composition.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.ComponentModel.Composition.dll"
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Mono.Cecil, Version=0.11.5.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff\Mono.Cecil.dll
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Burst.Cecil, Version=0.11.6.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.burst@6bb9aca3ef38\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 68.6214ms
+ExitCode: 0 Duration: 0s357ms
+[ 855/1099  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra build success (0.32 seconds), 1 items updated, 1099 evaluated
+AssetDatabase: script compilation time: 1.003908s
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.331 seconds
+Refreshing native plugins compatible for Editor in 4.28 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.84 ms, found 5 plugins.
+Start HTTP server: port:7800
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  4.439 seconds
+Domain Reload Profiling: 5763ms
+	BeginReloadAssembly (359ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (25ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (153ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (60ms)
+	LoadAllAssembliesAndSetupDomain (851ms)
+		LoadAssemblies (509ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (483ms)
+			TypeCache.Refresh (356ms)
+				TypeCache.ScanAssembly (329ms)
+			BuildScriptInfoCaches (103ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (4440ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (4104ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (23ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (200ms)
+			ProcessInitializeOnLoadAttributes (3670ms)
+			ProcessInitializeOnLoadMethodAttributes (191ms)
+			AfterProcessingInitializeOnLoad (14ms)
+			EditorAssembliesLoaded (2ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (29ms)
+Asset Pipeline Refresh (id=4d6830b1448994746807b1dd3a254977): Total: 8.306 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=5802 ms
+		Asset DB Callback time: managed=40 ms, native=32 ms
+		Scripting: domain reloads=1, domain reload time=1332 ms, compile time=1012 ms, other=86 ms
+		Project Asset Count: scripts=2179, non-scripts=13509
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.002ms
+	InvokePackagesCallback: 34.846ms
+	ApplyChangesToAssetFolders: 0.905ms
+	Scan: 702.489ms
+	OnSourceAssetsModified: 0.005ms
+	CategorizeAssetsWithTransientArtifact: 116.158ms
+	ProcessAssetsWithTransientArtifactChanges: 120.571ms
+	CategorizeAssets: 177.175ms
+	ImportOutOfDateAssets: 4464.274ms (3446.350ms without children)
+		CompileScripts: 1012.091ms
+		ReloadNativeAssets: 0.037ms
+		UnloadImportedAssets: 0.748ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 2.844ms
+		InitializingProgressBar: 0.001ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 2.202ms
+	PostProcessAllAssets: 40.189ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.004ms
+	UnloadStreamsBegin: 4.552ms
+	PersistCurrentRevisions: 0.747ms
+	UnloadStreamsEnd: 0.002ms
+	GenerateScriptTypeHashes: 5.743ms
+	Untracked: 2644.145ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 36.447ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Qolossal
+Unloading 44 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7927 unused Assets / (5.8 MB). Loaded Objects now: 8837.
+Memory consumption went from 267.4 MB to 261.6 MB.
+Total: 10.462800 ms (FindLiveObjects: 0.623500 ms CreateObjectMapping: 0.670100 ms MarkObjects: 6.253500 ms  DeleteObjects: 2.914600 ms)
+
+Start importing Assets/MountainReliefAtlas/Resources/MRA/mra_world.json using Guid(4a5524ffba4e05943a1b6422ffe0990b) (TextScriptImporter) -> (artifact id: 'f667e0305f66dffcf3d7d36d614cc208') in 0.0185946 seconds
+Refreshing native plugins compatible for Editor in 4.57 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4cd4180e33bbdc242b2d2c4c9e4efd7a): Total: 0.556 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=6 ms, native=188 ms
+		Asset DB Callback time: managed=345 ms, native=15 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=2179, non-scripts=13509
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 5
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.181ms
+	Scan: 29.617ms
+	OnSourceAssetsModified: 0.002ms
+	CategorizeAssetsWithTransientArtifact: 0.033ms
+	ProcessAssetsWithTransientArtifactChanges: 0.179ms
+	CategorizeAssets: 109.349ms
+	ImportOutOfDateAssets: 32.181ms (1.967ms without children)
+		ImportManagerImport: 23.892ms (3.211ms without children)
+			ImportInProcess: 20.642ms
+			UpdateCategorizedAssets: 0.038ms
+		ReloadNativeAssets: 0.055ms
+		UnloadImportedAssets: 0.238ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 4.828ms
+		InitializingProgressBar: 0.012ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 1.188ms
+	PostProcessAllAssets: 352.788ms
+	Hotreload: 8.441ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.710ms
+	UnloadStreamsBegin: 0.077ms
+	PersistCurrentRevisions: 0.710ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 21.691ms
+
+Start importing Assets/MountainReliefAtlas/Resources/MRA/mra_route.json using Guid(8b949e46637b54e4fa244d95a7a37a85) (TextScriptImporter) -> (artifact id: 'c9e6e5540e8b30cbf1be9ec5ecdc63d9') in 0.0034947 seconds
+Refreshing native plugins compatible for Editor in 3.26 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4dd20fdc936bf134eba6c235103a9533): Total: 0.044 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[MraRouteDesign] mra_route.json was designed from another mra_world.json: rerun design_route.py.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+Mra.RouteDesign:Load () (at Assets/MountainReliefAtlas/Editor/MraRouteDesign.cs:46)
+MraWorldBuilder:Prepare () (at Assets/MountainReliefAtlas/Editor/MraWorldBuilder.cs:161)
+ClimbCapture:Run () (at Assets/Editor/World/ClimbCapture.cs:40)
+
+(Filename: Assets/MountainReliefAtlas/Editor/MraRouteDesign.cs Line: 46)
+
+Start importing Assets/MountainReliefAtlas/Resources/MRA/MraChartArt.asset using Guid(fec497452fac8634580cdcab649238fc) (NativeFormatImporter) -> (artifact id: '7f8afaea789190ed818f7a8018bd1d5a') in 0.0050072 seconds
+Refreshing native plugins compatible for Editor in 3.86 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c7362bbfc10d961498cface4d393f603): Total: 0.057 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Opening scene 'Assets/Scenes/Game/MRAtlas_MR01_Cradle.unity'
+Unloading 47 Unused Serialized files (Serialized files now loaded: 0)
+d3d12: upload buffer was too small for the requested resource! Size: 16777216. Requested: 33177600.
+d3d12: upload buffer was too small for the requested resource! Size: 33554432. Requested: 41472000.
+d3d12: upload buffer was too small for the requested resource! Size: 41943040. Requested: 49766400.
+d3d12: upload buffer was too small for the requested resource! Size: 50331648. Requested: 54774272.
+Loaded scene 'Assets/Scenes/Game/MRAtlas_MR01_Cradle.unity'
+	Deserialize:            176.634 ms
+	Integration:            1329.189 ms
+	Integration of assets:  130.899 ms
+	Thread Wait Time:       4.930 ms
+	Total Operation Time:   1641.652 ms
+Unloading 62 unused Assets / (23.4 KB). Loaded Objects now: 10844.
+Memory consumption went from 0.76 GB to 0.76 GB.
+Total: 8.284300 ms (FindLiveObjects: 0.805900 ms CreateObjectMapping: 0.374800 ms MarkObjects: 6.963400 ms  DeleteObjects: 0.138300 ms)
+
+Opening scene 'Assets/Scenes/Game/MRAtlas_MR02_Causeway.unity'
+Unloading 251 Unused Serialized files (Serialized files now loaded: 0)
+d3d12: upload buffer was too small for the requested resource! Size: 55574528. Requested: 115630080.
+Loaded scene 'Assets/Scenes/Game/MRAtlas_MR02_Causeway.unity'
+	Deserialize:            293.449 ms
+	Integration:            1205.762 ms
+	Integration of assets:  156.452 ms
+	Thread Wait Time:       10.087 ms
+	Total Operation Time:   1665.751 ms
+Unloading 319 unused Assets / (276.6 MB). Loaded Objects now: 11004.
+Memory consumption went from 1.16 GB to 0.89 GB.
+Total: 32.447400 ms (FindLiveObjects: 0.922600 ms CreateObjectMapping: 0.799700 ms MarkObjects: 10.497300 ms  DeleteObjects: 20.222200 ms)
+
+Opening scene 'Assets/Scenes/Game/MRAtlas_MR03_Terraces.unity'
+Unloading 111 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Game/MRAtlas_MR03_Terraces.unity'
+	Deserialize:            328.198 ms
+	Integration:            467.086 ms
+	Integration of assets:  166.510 ms
+	Thread Wait Time:       1.142 ms
+	Total Operation Time:   962.936 ms
+Unloading 300 unused Assets / (12.3 MB). Loaded Objects now: 10594.
+Memory consumption went from 1.21 GB to 1.20 GB.
+Total: 15.717400 ms (FindLiveObjects: 1.452000 ms CreateObjectMapping: 1.069900 ms MarkObjects: 12.335500 ms  DeleteObjects: 0.858400 ms)
+
+Opening scene 'Assets/Scenes/Game/MRAtlas_MR04_Qvale.unity'
+Unloading 104 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Game/MRAtlas_MR04_Qvale.unity'
+	Deserialize:            205.937 ms
+	Integration:            575.146 ms
+	Integration of assets:  120.957 ms
+	Thread Wait Time:       0.689 ms
+	Total Operation Time:   902.729 ms
+Unloading 227 unused Assets / (217.9 KB). Loaded Objects now: 10405.
+Memory consumption went from 1.10 GB to 1.10 GB.
+Total: 21.374800 ms (FindLiveObjects: 1.840600 ms CreateObjectMapping: 0.813200 ms MarkObjects: 18.032400 ms  DeleteObjects: 0.687100 ms)
+
+Opening scene 'Assets/Scenes/Game/MRAtlas_MR05_Ribwood.unity'
+Unloading 99 Unused Serialized files (Serialized files now loaded: 0)
+d3d12: upload buffer was too small for the requested resource! Size: 116391936. Requested: 125829120.
+Loaded scene 'Assets/Scenes/Game/MRAtlas_MR05_Ribwood.unity'
+	Deserialize:            279.580 ms
+	Integration:            624.453 ms
+	Integration of assets:  193.149 ms
+	Thread Wait Time:       6.367 ms
+	Total Operation Time:   1103.549 ms
+Unloading 193 unused Assets / (182.6 KB). Loaded Objects now: 10528.
+Memory consumption went from 1.10 GB to 1.10 GB.
+Total: 14.400900 ms (FindLiveObjects: 1.354700 ms CreateObjectMapping: 1.191200 ms MarkObjects: 10.838300 ms  DeleteObjects: 1.013800 ms)
+
+Opening scene 'Assets/Scenes/Game/MRAtlas_MR06_Heights.unity'
+Unloading 104 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Game/MRAtlas_MR06_Heights.unity'
+	Deserialize:            29.563 ms
+	Integration:            453.671 ms
+	Integration of assets:  2.157 ms
+	Thread Wait Time:       0.041 ms
+	Total Operation Time:   485.431 ms
+Unloading 249 unused Assets / (143.7 KB). Loaded Objects now: 10536.
+Memory consumption went from 0.84 GB to 0.83 GB.
+Total: 14.574400 ms (FindLiveObjects: 1.557900 ms CreateObjectMapping: 1.284300 ms MarkObjects: 10.676800 ms  DeleteObjects: 1.052100 ms)
+
+Opening scene 'Assets/Scenes/Game/MRAtlas_MR07_Summit.unity'
+Unloading 98 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/Game/MRAtlas_MR07_Summit.unity'
+	Deserialize:            16.893 ms
+	Integration:            480.194 ms
+	Integration of assets:  1.418 ms
+	Thread Wait Time:       2.437 ms
+	Total Operation Time:   500.942 ms
+Unloading 199 unused Assets / (131.9 KB). Loaded Objects now: 10391.
+Memory consumption went from 448.5 MB to 448.3 MB.
+Total: 13.304600 ms (FindLiveObjects: 0.954600 ms CreateObjectMapping: 0.527500 ms MarkObjects: 10.000500 ms  DeleteObjects: 1.820200 ms)
+
+[ClimbCapture] 0 faults -> C:\UnityProjects\Qolossal\Tools\Design\PolishGates\70\climb\after
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ClimbCapture:Run () (at Assets/Editor/World/ClimbCapture.cs:51)
+
+(Filename: Assets/Editor/World/ClimbCapture.cs Line: 51)
+
+Pipeline Server stopped
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-Qasim-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-Qasim channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+abort_threads: Failed aborting id: 0000000000008220, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 00000000000087DC, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000008220, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 00000000000087DC, mono_thread_manage will ignore it
+
+debugger-agent: Unable to listen on 4576
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1793707397839,"processId":34872,"allocatedMemory":29287740,"memoryLabels":[{"Default":29313},{"Permanent":15236},{"NewDelete":68315},{"Thread":4237960},{"Manager":820957},{"VertexData":8},{"Geometry":816},{"Texture":160},{"Shader":80533},{"Material":24},{"GfxDevice":58272},{"Animation":392},{"Audio":3040},{"FreeType":8},{"FontEngine":736},{"Physics":2146},{"Physics2D":16},{"Serialization":656},{"Input":14984},{"JobScheduler":33024},{"TextLib":216},{"Mono":32},{"MonoCode":64},{"ScriptingNativeRuntime":155060},{"BaseObject":1620208},{"Resource":1336},{"Renderer":3000},{"Transform":4685},{"File":21555},{"WebCam":616},{"Culling":32},{"Terrain":11394},{"Wind":24},{"STL":40},{"String":16760},{"DynamicArray":127925},{"HashMap":107842},{"Utility":2660822},{"Curl":2559},{"PoolAlloc":2248},{"AI":80},{"TypeTree":5341},{"ScriptManager":512},{"RuntimeInitializeOnLoadManager":64},{"SpriteAtlas":112},{"GI":7792},{"Director":8240},{"CloudService":8064},{"WebRequest":808},{"VR":47994},{"SceneManager":504},{"Video":64},{"LazyScriptCache":32},{"Camera":17},{"Secure":2377},{"SerializationCache":1576},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":640},{"Hierarchy":608},{"CoreStats":13112},{"Identifiers":6480},{"Gui":96},{"EditorUtility":121443},{"VersionControl":4},{"Undo":947},{"AssetDatabase":18565570},{"EditorGi":328},{"UnityConnect":29208},{"Upm":1896},{"AssetCompliance":64},{"DrivenProperties":72},{"LocalIPC":260},{"ProfilerEditor":9746},{"CoreBusinessMetrics":2867},{"Licensing":776},{"AssetReference":32},{"IPCStream":32}]}

@@ -1,0 +1,9580 @@
+{
+ "schema": "qolossal.ability-access/1",
+ "generatedBy": "Tools/Design/AbilityAccess/build_access.py",
+ "sources": {
+  "atlas": {
+   "path": "Assets/Resources/QolossalAtlas/AtlasData.json",
+   "sha256": "bb10d532e8f0f4e84304be86b23b8cf40422e281a06f8cec1a8e887bdd205888"
+  },
+  "world": {
+   "path": "Assets/MountainReliefAtlas/Resources/MRA/mra_world.json",
+   "sha256": "59d52a6502347f2178aabb60cff93b1e61d3b829bb557b5174a1c9556075bde2"
+  },
+  "route": {
+   "path": "Assets/MountainReliefAtlas/Resources/MRA/mra_route.json",
+   "sha256": "2e8d8a2811825f28a10d1253d6092e17f8b512fc5ff274960bfda7157fb27b8b"
+  },
+  "rooms": {
+   "path": "Tools/Design/UndergroundPlatforming_20261030/rooms.json",
+   "sha256": "2137fd4ee64e211c1add621328290a3b9e20eb0e13a696be0e41564ce82e7787"
+  },
+  "platforming": {
+   "path": "Tools/Design/UndergroundPlatforming_20261030/platforming_v1.json",
+   "sha256": "c2b66702aaf1e5504e5ebaf23bcc5c863b76f7714f37d425f874b777c7365955"
+  },
+  "tuningCode": {
+   "path": "Assets/Scripts/Tuning/MovementTuning.cs",
+   "sha256": "a11bf3f6ba7e073ad7f3e731f742a16042443d8b3196a9787794a361f77a93f6"
+  },
+  "tuningAsset": {
+   "path": "Assets/Resources/Tuning/MovementTuning.asset",
+   "sha256": "f5a8b7b0e8cbfe8dc22a15ff4edbcf81f2444b6aa33437f381af65ad0f38d47c"
+  }
+ },
+ "routeMatchesWorld": false,
+ "tuning": {
+  "runSpeed": 7.5,
+  "sprintSpeed": 12.0,
+  "jumpSpeed": 12.0,
+  "doubleJumpSpeed": 11.0,
+  "maximumFallSpeed": 22.0,
+  "fallGravityMultiplier": 1.7,
+  "apexGravityMultiplier": 0.55,
+  "apexSpeedBand": 1.5,
+  "dashSpeed": 19.0,
+  "dashSeconds": 0.16,
+  "glideFallSpeed": 1.8,
+  "glideSpeed": 7.5
+ },
+ "reachBounds": {
+  "safe": {
+   "single": 1.94,
+   "double": 3.94
+  },
+  "best": {
+   "single": 2.39,
+   "double": 4.39
+  },
+  "bestWithGrab": {
+   "single": 3.81,
+   "double": 5.81
+  },
+  "flatGap": {
+   "safeRunSingle": 5.4,
+   "safeRunDouble": 10.35,
+   "bestSprintSingle": 9.6,
+   "bestSprintDouble": 18.4,
+   "bestSprintDoubleDash": 23.44
+  }
+ },
+ "relics": [
+  {
+   "order": 1,
+   "id": "double-jump",
+   "short": "dj",
+   "name": "Leapseed",
+   "gives": "Double jump",
+   "node": "MR01_N01",
+   "nodeName": "Shelter hut",
+   "region": "MR01",
+   "sceneObject": "Shrine Leapseed",
+   "sceneAt": [
+    44.0,
+    21.0
+   ],
+   "activeInScene": true,
+   "inWorldData": false
+  },
+  {
+   "order": 2,
+   "id": "climbing-moss",
+   "short": "moss",
+   "name": "Climbing Moss",
+   "gives": "Wall slide and wall jump",
+   "node": "MR01_N06",
+   "nodeName": "Moss shrine",
+   "region": "MR01",
+   "sceneObject": "Shrine Climbing Moss",
+   "sceneAt": [
+    167.0,
+    11.93
+   ],
+   "activeInScene": true,
+   "inWorldData": true
+  },
+  {
+   "order": 3,
+   "id": "living-thread",
+   "short": "thread",
+   "name": "Living Thread",
+   "gives": "Grapple and swing, 4 u range",
+   "node": "MR02_N06",
+   "nodeName": "Thread shrine",
+   "region": "MR02",
+   "sceneObject": "Shrine Living Thread",
+   "sceneAt": [
+    207.0,
+    90.93
+   ],
+   "activeInScene": true,
+   "inWorldData": true
+  },
+  {
+   "order": 4,
+   "id": "bloomfall",
+   "short": "pod",
+   "name": "Bloomfall",
+   "gives": "Downward strike bounce (pods, enemies)",
+   "node": "MR03_N06",
+   "nodeName": "Bloomfall shrine",
+   "region": "MR03",
+   "sceneObject": "Shrine Bloomfall",
+   "sceneAt": [
+    199.0,
+    124.93
+   ],
+   "activeInScene": true,
+   "inWorldData": true
+  },
+  {
+   "order": 5,
+   "id": "wind-leaf",
+   "short": "dash",
+   "name": "Wind Leaf",
+   "gives": "Dash and air dash",
+   "node": "MR05_N06",
+   "nodeName": "Wind Leaf shrine",
+   "region": "MR05",
+   "sceneObject": "Shrine Wind Leaf",
+   "sceneAt": [
+    221.0,
+    120.93
+   ],
+   "activeInScene": true,
+   "inWorldData": true
+  },
+  {
+   "order": 6,
+   "id": "glidecap",
+   "short": "glide",
+   "name": "Glidecap",
+   "gives": "Glide",
+   "node": "MR06_N06",
+   "nodeName": "Glidecap shrine",
+   "region": "MR06",
+   "sceneObject": "Shrine Glidecap",
+   "sceneAt": [
+    246.0,
+    165.93
+   ],
+   "activeInScene": true,
+   "inWorldData": true
+  }
+ ],
+ "firstPassOrder": [
+  {
+   "relic": "double-jump",
+   "node": "MR01_N01",
+   "owned": [
+    "double-jump"
+   ]
+  },
+  {
+   "relic": "climbing-moss",
+   "node": "MR01_N06",
+   "owned": [
+    "climbing-moss",
+    "double-jump"
+   ]
+  },
+  {
+   "relic": "living-thread",
+   "node": "MR02_N06",
+   "owned": [
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ]
+  },
+  {
+   "relic": "bloomfall",
+   "node": "MR03_N06",
+   "owned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ]
+  },
+  {
+   "relic": "wind-leaf",
+   "node": "MR05_N06",
+   "owned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ]
+  },
+  {
+   "relic": "glidecap",
+   "node": "MR06_N06",
+   "owned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ]
+  }
+ ],
+ "mainRouteNeeds": {
+  "double-jump": {
+   "verdict": "grey",
+   "firstBlock": null
+  },
+  "climbing-moss": {
+   "verdict": "blocked",
+   "firstBlock": {
+    "edge": "MR02_E02",
+    "why": "wall 7.9 u at x 88.5"
+   }
+  },
+  "living-thread": {
+   "verdict": "blocked",
+   "firstBlock": {
+    "edge": "MR02_E07",
+    "why": "thread lift"
+   }
+  },
+  "bloomfall": {
+   "verdict": "pass",
+   "firstBlock": null
+  },
+  "wind-leaf": {
+   "verdict": "pass",
+   "firstBlock": null
+  },
+  "glidecap": {
+   "verdict": "grey",
+   "firstBlock": null
+  }
+ },
+ "surfaceEdges": [
+  {
+   "id": "MR01_E00",
+   "region": "MR01",
+   "source": "MR01_N00",
+   "target": "MR01_N01",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR01_E01",
+   "region": "MR01",
+   "source": "MR01_N01",
+   "target": "MR01_N02",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 2.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR01_E02",
+   "region": "MR01",
+   "source": "MR01_N02",
+   "target": "MR01_N03",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR01_E03",
+   "region": "MR01",
+   "source": "MR01_N03",
+   "target": "MR01_N04",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR01_E04",
+   "region": "MR01",
+   "source": "MR01_N04",
+   "target": "MR01_N05",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR01_E05",
+   "region": "MR01",
+   "source": "MR01_N05",
+   "target": "MR01_N06",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR01_E06",
+   "region": "MR01",
+   "source": "MR01_N06",
+   "target": "MR01_N07",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR01_E07",
+   "region": "MR01",
+   "source": "MR01_N07",
+   "target": "MR01_N08",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR01_E08",
+   "region": "MR01",
+   "source": "MR01_N08",
+   "target": "MR01_N09",
+   "kind": "quake-crossing",
+   "module": "root-gate-with-fallen-crossing",
+   "atlasRequires": [
+    "knot:grip"
+   ],
+   "worldRequires": [
+    "knot:grip"
+   ],
+   "tallestWall": 1.8,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR01_E09",
+   "region": "MR01",
+   "source": "MR01_N09",
+   "target": "MR01_N10",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 5.62,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 243.5"
+   }
+  },
+  {
+   "id": "MR01_E10",
+   "region": "MR01",
+   "source": "MR01_N10",
+   "target": "MR01_N11",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR02_E00",
+   "region": "MR02",
+   "source": "MR02_N00",
+   "target": "MR02_N01",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR02_E01",
+   "region": "MR02",
+   "source": "MR02_N01",
+   "target": "MR02_N02",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 2.14,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR02_E02",
+   "region": "MR02",
+   "source": "MR02_N02",
+   "target": "MR02_N03",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 7.86,
+   "needs": {
+    "climbing-moss": "blocked"
+   },
+   "why": {
+    "climbing-moss": "wall 7.9 u at x 88.5"
+   }
+  },
+  {
+   "id": "MR02_E03",
+   "region": "MR02",
+   "source": "MR02_N03",
+   "target": "MR02_N04",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.2,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 120.5"
+   }
+  },
+  {
+   "id": "MR02_E04",
+   "region": "MR02",
+   "source": "MR02_N04",
+   "target": "MR02_N05",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 7.32,
+   "needs": {
+    "climbing-moss": "blocked"
+   },
+   "why": {
+    "climbing-moss": "wall 7.3 u at x 158.8"
+   }
+  },
+  {
+   "id": "MR02_E05",
+   "region": "MR02",
+   "source": "MR02_N05",
+   "target": "MR02_N06",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.2,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 183.5"
+   }
+  },
+  {
+   "id": "MR02_E06",
+   "region": "MR02",
+   "source": "MR02_N06",
+   "target": "MR02_N07",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.58,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.6 u at x 213.6"
+   }
+  },
+  {
+   "id": "MR02_E07",
+   "region": "MR02",
+   "source": "MR02_N07",
+   "target": "MR02_N08",
+   "kind": "thread-span",
+   "module": "flat-thread-gap",
+   "atlasRequires": [
+    "relic:living-thread"
+   ],
+   "worldRequires": [
+    "relic:living-thread"
+   ],
+   "tallestWall": 7.5,
+   "needs": {
+    "climbing-moss": "blocked",
+    "living-thread": "blocked"
+   },
+   "why": {
+    "climbing-moss": "wall 7.5 u at x 270.0",
+    "living-thread": "thread lift"
+   }
+  },
+  {
+   "id": "MR02_E08",
+   "region": "MR02",
+   "source": "MR02_N08",
+   "target": "MR02_N09",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.98,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 5.0 u at x 293.1"
+   }
+  },
+  {
+   "id": "MR02_E09",
+   "region": "MR02",
+   "source": "MR02_N09",
+   "target": "MR02_N10",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.2,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 318.5"
+   }
+  },
+  {
+   "id": "MR02_E10",
+   "region": "MR02",
+   "source": "MR02_N10",
+   "target": "MR02_N11",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.2,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 358.5"
+   }
+  },
+  {
+   "id": "MR03_E00",
+   "region": "MR03",
+   "source": "MR03_N00",
+   "target": "MR03_N01",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 3.37,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR03_E01",
+   "region": "MR03",
+   "source": "MR03_N01",
+   "target": "MR03_N02",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 3.19,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR03_E02",
+   "region": "MR03",
+   "source": "MR03_N02",
+   "target": "MR03_N03",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 5.41,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 82.5"
+   }
+  },
+  {
+   "id": "MR03_E03",
+   "region": "MR03",
+   "source": "MR03_N03",
+   "target": "MR03_N04",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 6.87,
+   "needs": {
+    "climbing-moss": "blocked"
+   },
+   "why": {
+    "climbing-moss": "wall 6.9 u at x 126.0"
+   }
+  },
+  {
+   "id": "MR03_E04",
+   "region": "MR03",
+   "source": "MR03_N04",
+   "target": "MR03_N05",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 7.43,
+   "needs": {
+    "climbing-moss": "blocked"
+   },
+   "why": {
+    "climbing-moss": "wall 7.4 u at x 150.5"
+   }
+  },
+  {
+   "id": "MR03_E05",
+   "region": "MR03",
+   "source": "MR03_N05",
+   "target": "MR03_N06",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 7.81,
+   "needs": {
+    "climbing-moss": "blocked"
+   },
+   "why": {
+    "climbing-moss": "wall 7.8 u at x 194.8"
+   }
+  },
+  {
+   "id": "MR03_E06",
+   "region": "MR03",
+   "source": "MR03_N06",
+   "target": "MR03_N07",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 5.23,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 5.2 u at x 209.9"
+   }
+  },
+  {
+   "id": "MR03_E07",
+   "region": "MR03",
+   "source": "MR03_N07",
+   "target": "MR03_N08",
+   "kind": "sluice-crossing",
+   "module": "sluice-root-gate",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 5.46,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 5.5 u at x 251.5"
+   }
+  },
+  {
+   "id": "MR03_E08",
+   "region": "MR03",
+   "source": "MR03_N08",
+   "target": "MR03_N09",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR03_E09",
+   "region": "MR03",
+   "source": "MR03_N09",
+   "target": "MR03_N10",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR03_E10",
+   "region": "MR03",
+   "source": "MR03_N10",
+   "target": "MR03_N11",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR04_E00",
+   "region": "MR04",
+   "source": "MR04_N00",
+   "target": "MR04_N01",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR04_E01",
+   "region": "MR04",
+   "source": "MR04_N01",
+   "target": "MR04_N02",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR04_E02",
+   "region": "MR04",
+   "source": "MR04_N02",
+   "target": "MR04_N03",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR04_E03",
+   "region": "MR04",
+   "source": "MR04_N03",
+   "target": "MR04_N04",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR04_E04",
+   "region": "MR04",
+   "source": "MR04_N04",
+   "target": "MR04_N05",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR04_E05",
+   "region": "MR04",
+   "source": "MR04_N05",
+   "target": "MR04_N06",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR04_E06",
+   "region": "MR04",
+   "source": "MR04_N06",
+   "target": "MR04_N07",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR04_E07",
+   "region": "MR04",
+   "source": "MR04_N07",
+   "target": "MR04_N08",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR04_E08",
+   "region": "MR04",
+   "source": "MR04_N08",
+   "target": "MR04_N09",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR04_E09",
+   "region": "MR04",
+   "source": "MR04_N09",
+   "target": "MR04_N10",
+   "kind": "town-stair",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 6.25,
+   "needs": {
+    "climbing-moss": "blocked"
+   },
+   "why": {
+    "climbing-moss": "wall 6.2 u at x 234.5"
+   }
+  },
+  {
+   "id": "MR04_E10",
+   "region": "MR04",
+   "source": "MR04_N10",
+   "target": "MR04_N11",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR05_E00",
+   "region": "MR05",
+   "source": "MR05_N00",
+   "target": "MR05_N01",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR05_E01",
+   "region": "MR05",
+   "source": "MR05_N01",
+   "target": "MR05_N02",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.2,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 56.5"
+   }
+  },
+  {
+   "id": "MR05_E02",
+   "region": "MR05",
+   "source": "MR05_N02",
+   "target": "MR05_N03",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 3.21,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR05_E03",
+   "region": "MR05",
+   "source": "MR05_N03",
+   "target": "MR05_N04",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 5.62,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 126.5"
+   }
+  },
+  {
+   "id": "MR05_E04",
+   "region": "MR05",
+   "source": "MR05_N04",
+   "target": "MR05_N05",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 6.29,
+   "needs": {
+    "climbing-moss": "blocked"
+   },
+   "why": {
+    "climbing-moss": "wall 6.3 u at x 182.0"
+   }
+  },
+  {
+   "id": "MR05_E05",
+   "region": "MR05",
+   "source": "MR05_N05",
+   "target": "MR05_N06",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 5.41,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 195.5"
+   }
+  },
+  {
+   "id": "MR05_E06",
+   "region": "MR05",
+   "source": "MR05_N06",
+   "target": "MR05_N07",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 3.19,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR05_E07",
+   "region": "MR05",
+   "source": "MR05_N07",
+   "target": "MR05_N08",
+   "kind": "swell-ledge",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.2,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 264.5"
+   }
+  },
+  {
+   "id": "MR05_E08",
+   "region": "MR05",
+   "source": "MR05_N08",
+   "target": "MR05_N09",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 5.0,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 5.0 u at x 293.6"
+   }
+  },
+  {
+   "id": "MR05_E09",
+   "region": "MR05",
+   "source": "MR05_N09",
+   "target": "MR05_N10",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.2,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 329.5"
+   }
+  },
+  {
+   "id": "MR05_E10",
+   "region": "MR05",
+   "source": "MR05_N10",
+   "target": "MR05_N11",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 3.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR06_E00",
+   "region": "MR06",
+   "source": "MR06_N00",
+   "target": "MR06_N01",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 3.12,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR06_E01",
+   "region": "MR06",
+   "source": "MR06_N01",
+   "target": "MR06_N02",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 5.28,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 58.5"
+   }
+  },
+  {
+   "id": "MR06_E02",
+   "region": "MR06",
+   "source": "MR06_N02",
+   "target": "MR06_N03",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 5.62,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 5.6 u at x 96.2"
+   }
+  },
+  {
+   "id": "MR06_E03",
+   "region": "MR06",
+   "source": "MR06_N03",
+   "target": "MR06_N04",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.8,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 134.5"
+   }
+  },
+  {
+   "id": "MR06_E04",
+   "region": "MR06",
+   "source": "MR06_N04",
+   "target": "MR06_N05",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 8.07,
+   "needs": {
+    "climbing-moss": "blocked"
+   },
+   "why": {
+    "climbing-moss": "wall 8.1 u at x 182.6"
+   }
+  },
+  {
+   "id": "MR06_E05",
+   "region": "MR06",
+   "source": "MR06_N05",
+   "target": "MR06_N06",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.8,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 215.5"
+   }
+  },
+  {
+   "id": "MR06_E06",
+   "region": "MR06",
+   "source": "MR06_N06",
+   "target": "MR06_N07",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 6.72,
+   "needs": {
+    "climbing-moss": "blocked"
+   },
+   "why": {
+    "climbing-moss": "wall 6.7 u at x 265.1"
+   }
+  },
+  {
+   "id": "MR06_E07",
+   "region": "MR06",
+   "source": "MR06_N07",
+   "target": "MR06_N08",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 5.88,
+   "needs": {
+    "climbing-moss": "blocked"
+   },
+   "why": {
+    "climbing-moss": "wall 5.9 u at x 304.1"
+   }
+  },
+  {
+   "id": "MR06_E08",
+   "region": "MR06",
+   "source": "MR06_N08",
+   "target": "MR06_N09",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 3.15,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR06_E09",
+   "region": "MR06",
+   "source": "MR06_N09",
+   "target": "MR06_N10",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR06_E10",
+   "region": "MR06",
+   "source": "MR06_N10",
+   "target": "MR06_N11",
+   "kind": "glide-span",
+   "module": "glide-drop",
+   "atlasRequires": [
+    "relic:glidecap"
+   ],
+   "worldRequires": [
+    "relic:glidecap"
+   ],
+   "tallestWall": 0.0,
+   "needs": {
+    "glidecap": "grey"
+   },
+   "why": {
+    "glidecap": "glide gorge"
+   }
+  },
+  {
+   "id": "MR07_E00",
+   "region": "MR07",
+   "source": "MR07_N00",
+   "target": "MR07_N01",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.81,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.8 u at x 17.4"
+   }
+  },
+  {
+   "id": "MR07_E01",
+   "region": "MR07",
+   "source": "MR07_N01",
+   "target": "MR07_N02",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 6.12,
+   "needs": {
+    "climbing-moss": "blocked"
+   },
+   "why": {
+    "climbing-moss": "wall 6.1 u at x 62.5"
+   }
+  },
+  {
+   "id": "MR07_E02",
+   "region": "MR07",
+   "source": "MR07_N02",
+   "target": "MR07_N03",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.2,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 80.5"
+   }
+  },
+  {
+   "id": "MR07_E03",
+   "region": "MR07",
+   "source": "MR07_N03",
+   "target": "MR07_N04",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.2,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 139.5"
+   }
+  },
+  {
+   "id": "MR07_E04",
+   "region": "MR07",
+   "source": "MR07_N04",
+   "target": "MR07_N05",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 7.42,
+   "needs": {
+    "climbing-moss": "blocked"
+   },
+   "why": {
+    "climbing-moss": "wall 7.4 u at x 171.5"
+   }
+  },
+  {
+   "id": "MR07_E05",
+   "region": "MR07",
+   "source": "MR07_N05",
+   "target": "MR07_N06",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.81,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.8 u at x 199.4"
+   }
+  },
+  {
+   "id": "MR07_E06",
+   "region": "MR07",
+   "source": "MR07_N06",
+   "target": "MR07_N07",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.62,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 233.5"
+   }
+  },
+  {
+   "id": "MR07_E07",
+   "region": "MR07",
+   "source": "MR07_N07",
+   "target": "MR07_N08",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.92,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 260.5"
+   }
+  },
+  {
+   "id": "MR07_E08",
+   "region": "MR07",
+   "source": "MR07_N08",
+   "target": "MR07_N09",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 4.2,
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "why": {
+    "climbing-moss": "wall 4.2 u at x 286.5"
+   }
+  },
+  {
+   "id": "MR07_E09",
+   "region": "MR07",
+   "source": "MR07_N09",
+   "target": "MR07_N10",
+   "kind": "reveal-trigger",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  },
+  {
+   "id": "MR07_E10",
+   "region": "MR07",
+   "source": "MR07_N10",
+   "target": "MR07_N11",
+   "kind": "walk",
+   "module": "",
+   "atlasRequires": [],
+   "worldRequires": [],
+   "tallestWall": 0.0,
+   "needs": {},
+   "why": {}
+  }
+ ],
+ "glideGorge": {
+  "width": 18.0,
+  "drop": -3.0,
+  "bestCarryDoubleJump": 20.6,
+  "bestCarrySingleJump": 11.4,
+  "runningCarryDoubleJump": 11.59,
+  "tests": [
+   {
+    "moves": "single jump, sprint",
+    "best": false,
+    "safe": false
+   },
+   {
+    "moves": "double jump, sprint",
+    "best": true,
+    "safe": false
+   },
+   {
+    "moves": "double jump, sprint, air dash",
+    "best": true,
+    "safe": false
+   },
+   {
+    "moves": "with the Glidecap",
+    "best": true,
+    "safe": true
+   }
+  ],
+  "safeBreak": false
+ },
+ "doors": [
+  {
+   "id": "CAVE_PC01",
+   "room": "PC01",
+   "roomName": "Firefly Nook",
+   "region": "MR01",
+   "node": "MR01_N02",
+   "enforcedBy": "MraUgPortal",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    65.7,
+    21.71657
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "double-jump"
+   ],
+   "networkWhenOpen": [
+    "PC01"
+   ],
+   "networkEverything": [
+    "PC01"
+   ]
+  },
+  {
+   "id": "CAVE_MR01_C06",
+   "room": "MR01_C06",
+   "roomName": "Hanging Garden",
+   "region": "MR01",
+   "node": "MR01_N10",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [
+    "relic:glidecap"
+   ],
+   "atlasRequires": [
+    "relic:glidecap"
+   ],
+   "entrance": [
+    269.0,
+    38.0
+   ],
+   "worldPrerequisite": "glidecap",
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss"
+   ],
+   "lateRelics": [
+    "glidecap"
+   ],
+   "walkBackUnits": 2231,
+   "walkBackSeconds": 297,
+   "fromWaymarkNode": "MR01_N05",
+   "fromWaymarkSeconds": 17,
+   "proof": {
+    "glidecap": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {},
+   "opensOnFirstPass": false,
+   "ownedWhenOpen": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap"
+   ],
+   "networkWhenOpen": [
+    "MR01_C01",
+    "MR01_C02",
+    "MR01_C03",
+    "MR01_C04",
+    "MR01_C05",
+    "MR01_C06"
+   ],
+   "networkEverything": [
+    "MR01_C01",
+    "MR01_C02",
+    "MR01_C03",
+    "MR01_C04",
+    "MR01_C05",
+    "MR01_C06"
+   ]
+  },
+  {
+   "id": "CAVE_PC03",
+   "room": "PC03",
+   "roomName": "Fern Pocket",
+   "region": "MR01",
+   "node": "MR01_N08",
+   "enforcedBy": "MraUgPortal",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    216.0,
+    14.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "climbing-moss",
+    "double-jump"
+   ],
+   "networkWhenOpen": [
+    "PC03"
+   ],
+   "networkEverything": [
+    "PC03"
+   ]
+  },
+  {
+   "id": "CAVE_PC02",
+   "room": "PC02",
+   "roomName": "Old Footprints",
+   "region": "MR01",
+   "node": "MR01_N05",
+   "enforcedBy": "MraUgPortal",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    151.0,
+    16.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {
+    "double-jump": "grey"
+   },
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "double-jump"
+   ],
+   "networkWhenOpen": [
+    "PC02"
+   ],
+   "networkEverything": [
+    "PC02"
+   ]
+  },
+  {
+   "id": "CAVE_PC06",
+   "room": "PC06",
+   "roomName": "Forgotten Satchel",
+   "region": "MR02",
+   "node": "MR02_N08",
+   "enforcedBy": "MraUgPortal",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    296.409,
+    138.108
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {
+    "double-jump": "grey"
+   },
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "networkWhenOpen": [
+    "PC06"
+   ],
+   "networkEverything": [
+    "PC06"
+   ]
+  },
+  {
+   "id": "CAVE_PC04",
+   "room": "PC04",
+   "roomName": "Mason's Recess",
+   "region": "MR02",
+   "node": "MR02_N02",
+   "enforcedBy": "MraUgPortal",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    77.65,
+    30.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "climbing-moss",
+    "double-jump"
+   ],
+   "networkWhenOpen": [
+    "PC04"
+   ],
+   "networkEverything": [
+    "PC04"
+   ]
+  },
+  {
+   "id": "CAVE_MR02_C06",
+   "room": "MR02_C06",
+   "roomName": "High Arch",
+   "region": "MR02",
+   "node": "MR02_N10",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [
+    "relic:glidecap"
+   ],
+   "atlasRequires": [
+    "relic:glidecap"
+   ],
+   "entrance": [
+    361.85,
+    164.0
+   ],
+   "worldPrerequisite": "glidecap",
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread"
+   ],
+   "lateRelics": [
+    "glidecap"
+   ],
+   "walkBackUnits": 1749,
+   "walkBackSeconds": 233,
+   "fromWaymarkNode": "MR02_N05",
+   "fromWaymarkSeconds": 32,
+   "proof": {
+    "glidecap": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {},
+   "opensOnFirstPass": false,
+   "ownedWhenOpen": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "networkWhenOpen": [
+    "MR02_C01",
+    "MR02_C02",
+    "MR02_C03",
+    "MR02_C04",
+    "MR02_C05",
+    "MR02_C06"
+   ],
+   "networkEverything": [
+    "MR02_C01",
+    "MR02_C02",
+    "MR02_C03",
+    "MR02_C04",
+    "MR02_C05",
+    "MR02_C06"
+   ]
+  },
+  {
+   "id": "CAVE_PC05",
+   "room": "PC05",
+   "roomName": "Dripstone Hollow",
+   "region": "MR02",
+   "node": "MR02_N05",
+   "enforcedBy": "MraUgPortal",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    205.726,
+    88.023
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {
+    "climbing-moss": "blocked"
+   },
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "climbing-moss",
+    "double-jump"
+   ],
+   "networkWhenOpen": [
+    "PC05"
+   ],
+   "networkEverything": [
+    "PC05"
+   ]
+  },
+  {
+   "id": "CAVE_PC08",
+   "room": "PC08",
+   "roomName": "Millstone Pocket",
+   "region": "MR03",
+   "node": "MR03_N05",
+   "enforcedBy": "MraUgPortal",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    176.524,
+    100.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "networkWhenOpen": [
+    "PC08"
+   ],
+   "networkEverything": [
+    "PC08"
+   ]
+  },
+  {
+   "id": "CAVE_PC09",
+   "room": "PC09",
+   "roomName": "Lantern Rest",
+   "region": "MR03",
+   "node": "MR03_N08",
+   "enforcedBy": "MraUgPortal",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    279.777,
+    147.204
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "networkWhenOpen": [
+    "PC09"
+   ],
+   "networkEverything": [
+    "PC09"
+   ]
+  },
+  {
+   "id": "CAVE_MR03_C06",
+   "room": "MR03_C06",
+   "roomName": "Root Hanger",
+   "region": "MR03",
+   "node": "MR03_N09",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [
+    "relic:glidecap"
+   ],
+   "atlasRequires": [
+    "relic:glidecap"
+   ],
+   "entrance": [
+    291.1,
+    140.0
+   ],
+   "worldPrerequisite": "glidecap",
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall"
+   ],
+   "lateRelics": [
+    "glidecap"
+   ],
+   "walkBackUnits": 1292,
+   "walkBackSeconds": 172,
+   "fromWaymarkNode": "MR03_N05",
+   "fromWaymarkSeconds": 26,
+   "proof": {
+    "glidecap": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {
+    "double-jump": "grey"
+   },
+   "opensOnFirstPass": false,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "networkWhenOpen": [
+    "MR03_C01",
+    "MR03_C02",
+    "MR03_C03",
+    "MR03_C04",
+    "MR03_C05",
+    "MR03_C06"
+   ],
+   "networkEverything": [
+    "MR03_C01",
+    "MR03_C02",
+    "MR03_C03",
+    "MR03_C04",
+    "MR03_C05",
+    "MR03_C06"
+   ]
+  },
+  {
+   "id": "CAVE_PC07",
+   "room": "PC07",
+   "roomName": "Seed Shelf",
+   "region": "MR03",
+   "node": "MR03_N02",
+   "enforcedBy": "MraUgPortal",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    55.879,
+    25.87
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {
+    "double-jump": "grey"
+   },
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "networkWhenOpen": [
+    "PC07"
+   ],
+   "networkEverything": [
+    "PC07"
+   ]
+  },
+  {
+   "id": "CAVE_A01",
+   "room": "A01",
+   "roomName": "Sluice Arrival",
+   "region": "MR04",
+   "node": "MR04_N06",
+   "enforcedBy": "MraUgPortal",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    139.25,
+    8.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "networkWhenOpen": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A06",
+    "A07",
+    "A08",
+    "A09",
+    "A10",
+    "HEART"
+   ],
+   "networkEverything": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A06",
+    "A07",
+    "A08",
+    "A09",
+    "A10",
+    "HEART"
+   ]
+  },
+  {
+   "id": "CAVE_MR05_C03",
+   "room": "MR05_C03",
+   "roomName": "Moss Well",
+   "region": "MR05",
+   "node": "MR05_N03",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [
+    "relic:climbing-moss"
+   ],
+   "atlasRequires": [
+    "relic:climbing-moss"
+   ],
+   "entrance": [
+    129.85,
+    52.0
+   ],
+   "worldPrerequisite": "climbing-moss",
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall"
+   ],
+   "lateRelics": [],
+   "proof": {
+    "climbing-moss": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "networkWhenOpen": [
+    "MR05_C03"
+   ],
+   "networkEverything": [
+    "MR05_C03"
+   ]
+  },
+  {
+   "id": "CAVE_MR05_C06",
+   "room": "MR05_C06",
+   "roomName": "Canopy Pocket",
+   "region": "MR05",
+   "node": "MR05_N10",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [
+    "relic:glidecap"
+   ],
+   "atlasRequires": [
+    "relic:glidecap"
+   ],
+   "entrance": [
+    373.85,
+    190.0
+   ],
+   "worldPrerequisite": "glidecap",
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf"
+   ],
+   "lateRelics": [
+    "glidecap"
+   ],
+   "walkBackUnits": 396,
+   "walkBackSeconds": 53,
+   "fromWaymarkNode": "MR05_N05",
+   "fromWaymarkSeconds": 34,
+   "proof": {
+    "glidecap": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {},
+   "opensOnFirstPass": false,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR05_C06"
+   ],
+   "networkEverything": [
+    "MR05_C06"
+   ]
+  },
+  {
+   "id": "CAVE_MR05_C05",
+   "room": "MR05_C05",
+   "roomName": "Stone Drum",
+   "region": "MR05",
+   "node": "MR05_N07",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [
+    "relic:bloomfall"
+   ],
+   "atlasRequires": [
+    "relic:bloomfall"
+   ],
+   "entrance": [
+    267.85,
+    140.0
+   ],
+   "worldPrerequisite": "bloomfall",
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf"
+   ],
+   "lateRelics": [],
+   "proof": {
+    "bloomfall": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {
+    "double-jump": "grey"
+   },
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR05_C05"
+   ],
+   "networkEverything": [
+    "MR05_C05"
+   ]
+  },
+  {
+   "id": "CAVE_MR05_C02",
+   "room": "MR05_C02",
+   "roomName": "Root Loom",
+   "region": "MR05",
+   "node": "MR05_N04",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [
+    "relic:living-thread"
+   ],
+   "atlasRequires": [
+    "relic:living-thread"
+   ],
+   "entrance": [
+    164.85,
+    76.0
+   ],
+   "worldPrerequisite": "living-thread",
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall"
+   ],
+   "lateRelics": [],
+   "proof": {
+    "living-thread": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "networkWhenOpen": [
+    "MR05_C02"
+   ],
+   "networkEverything": [
+    "MR05_C02"
+   ]
+  },
+  {
+   "id": "CAVE_MR05_C04",
+   "room": "MR05_C04",
+   "roomName": "Seed Choir",
+   "region": "MR05",
+   "node": "MR05_N05",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    198.85,
+    98.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "networkWhenOpen": [
+    "MR05_C04"
+   ],
+   "networkEverything": [
+    "MR05_C04"
+   ]
+  },
+  {
+   "id": "CAVE_C01",
+   "room": "C01",
+   "roomName": "Garden Arrival",
+   "region": "MR05",
+   "node": "MR05_N07",
+   "enforcedBy": "MraUgPortal",
+   "requires": [
+    "relic:living-thread",
+    "relic:bloomfall"
+   ],
+   "atlasRequires": [
+    "relic:living-thread",
+    "relic:bloomfall"
+   ],
+   "entrance": [
+    250.263,
+    135.044
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf"
+   ],
+   "lateRelics": [],
+   "proof": {
+    "living-thread": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    },
+    "bloomfall": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {
+    "double-jump": "grey"
+   },
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10",
+    "HEART"
+   ],
+   "networkEverything": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10",
+    "HEART"
+   ]
+  },
+  {
+   "id": "CAVE_PC10",
+   "room": "PC10",
+   "roomName": "Rootlight Niche",
+   "region": "MR05",
+   "node": "MR05_N02",
+   "enforcedBy": "MraUgPortal",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    90.725,
+    38.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "networkWhenOpen": [
+    "PC10"
+   ],
+   "networkEverything": [
+    "PC10"
+   ]
+  },
+  {
+   "id": "CAVE_MR05_C01",
+   "room": "MR05_C01",
+   "roomName": "Lost Lantern",
+   "region": "MR05",
+   "node": "MR05_N01",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    59.85,
+    26.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {
+    "double-jump": "grey"
+   },
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "networkWhenOpen": [
+    "MR05_C01"
+   ],
+   "networkEverything": [
+    "MR05_C01"
+   ]
+  },
+  {
+   "id": "CAVE_MR06_C06",
+   "room": "MR06_C06",
+   "roomName": "Weather Cave",
+   "region": "MR06",
+   "node": "MR06_N09",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    347.551,
+    228.853
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf",
+    "glidecap"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {
+    "double-jump": "grey"
+   },
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR06_C06"
+   ],
+   "networkEverything": [
+    "MR06_C06"
+   ]
+  },
+  {
+   "id": "CAVE_D01",
+   "room": "D01",
+   "roomName": "Windward Shelter",
+   "region": "MR06",
+   "node": "MR06_N09",
+   "enforcedBy": "MraUgPortal",
+   "requires": [
+    "relic:climbing-moss",
+    "relic:wind-leaf",
+    "relic:glidecap"
+   ],
+   "atlasRequires": [
+    "relic:climbing-moss",
+    "relic:wind-leaf",
+    "relic:glidecap"
+   ],
+   "entrance": [
+    336.578,
+    223.234
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf",
+    "glidecap"
+   ],
+   "lateRelics": [],
+   "proof": {
+    "climbing-moss": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    },
+    "wind-leaf": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    },
+    "glidecap": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {
+    "double-jump": "grey"
+   },
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D05",
+    "D06",
+    "D07",
+    "D08",
+    "D09",
+    "D10",
+    "HEART"
+   ],
+   "networkEverything": [
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D05",
+    "D06",
+    "D07",
+    "D08",
+    "D09",
+    "D10",
+    "HEART"
+   ]
+  },
+  {
+   "id": "CAVE_MR06_C04",
+   "room": "MR06_C04",
+   "roomName": "Echo Steps",
+   "region": "MR06",
+   "node": "MR06_N05",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    218.85,
+    140.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR06_C04"
+   ],
+   "networkEverything": [
+    "MR06_C04"
+   ]
+  },
+  {
+   "id": "CAVE_MR06_C02",
+   "room": "MR06_C02",
+   "roomName": "Clasp Hollow",
+   "region": "MR06",
+   "node": "MR06_N03",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [
+    "relic:living-thread"
+   ],
+   "atlasRequires": [
+    "relic:living-thread"
+   ],
+   "entrance": [
+    137.85,
+    86.0
+   ],
+   "worldPrerequisite": "living-thread",
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf"
+   ],
+   "lateRelics": [],
+   "proof": {
+    "living-thread": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR06_C02"
+   ],
+   "networkEverything": [
+    "MR06_C02"
+   ]
+  },
+  {
+   "id": "CAVE_MR06_C05",
+   "room": "MR06_C05",
+   "roomName": "High Drift",
+   "region": "MR06",
+   "node": "MR06_N07",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [
+    "relic:glidecap"
+   ],
+   "atlasRequires": [
+    "relic:glidecap"
+   ],
+   "entrance": [
+    294.85,
+    194.0
+   ],
+   "worldPrerequisite": "glidecap",
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf",
+    "glidecap"
+   ],
+   "lateRelics": [],
+   "proof": {
+    "glidecap": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR06_C05"
+   ],
+   "networkEverything": [
+    "MR06_C05"
+   ]
+  },
+  {
+   "id": "CAVE_PC11",
+   "room": "PC11",
+   "roomName": "Quiet Wind Pocket",
+   "region": "MR06",
+   "node": "MR06_N02",
+   "enforcedBy": "MraUgPortal",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    86.236,
+    55.902
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "PC11"
+   ],
+   "networkEverything": [
+    "PC11"
+   ]
+  },
+  {
+   "id": "CAVE_MR06_C03",
+   "room": "MR06_C03",
+   "roomName": "Wind Window",
+   "region": "MR06",
+   "node": "MR06_N04",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [
+    "relic:wind-leaf"
+   ],
+   "atlasRequires": [
+    "relic:wind-leaf"
+   ],
+   "entrance": [
+    177.85,
+    112.0
+   ],
+   "worldPrerequisite": "wind-leaf",
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf"
+   ],
+   "lateRelics": [],
+   "proof": {
+    "wind-leaf": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR06_C03"
+   ],
+   "networkEverything": [
+    "MR06_C03"
+   ]
+  },
+  {
+   "id": "CAVE_MR06_C01",
+   "room": "MR06_C01",
+   "roomName": "Sheltered Nest",
+   "region": "MR06",
+   "node": "MR06_N01",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    61.85,
+    35.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR06_C01"
+   ],
+   "networkEverything": [
+    "MR06_C01"
+   ]
+  },
+  {
+   "id": "CAVE_MR07_C05",
+   "room": "MR07_C05",
+   "roomName": "Watcher's Hollow",
+   "region": "MR07",
+   "node": "MR07_N07",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    263.85,
+    151.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf",
+    "glidecap"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR07_C05"
+   ],
+   "networkEverything": [
+    "MR07_C05"
+   ]
+  },
+  {
+   "id": "CAVE_MR07_C02",
+   "room": "MR07_C02",
+   "roomName": "Falls Pocket",
+   "region": "MR07",
+   "node": "MR07_N01",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [
+    "relic:living-thread"
+   ],
+   "atlasRequires": [
+    "relic:living-thread"
+   ],
+   "entrance": [
+    54.85,
+    40.0
+   ],
+   "worldPrerequisite": "living-thread",
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf",
+    "glidecap"
+   ],
+   "lateRelics": [],
+   "proof": {
+    "living-thread": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR07_C02"
+   ],
+   "networkEverything": [
+    "MR07_C02"
+   ]
+  },
+  {
+   "id": "CAVE_MR07_C01",
+   "room": "MR07_C01",
+   "roomName": "Reed Shelter",
+   "region": "MR07",
+   "node": "MR07_N03",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    142.85,
+    82.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf",
+    "glidecap"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {
+    "double-jump": "grey"
+   },
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR07_C01"
+   ],
+   "networkEverything": [
+    "MR07_C01"
+   ]
+  },
+  {
+   "id": "CAVE_MR07_C03",
+   "room": "MR07_C03",
+   "roomName": "Pale Archive",
+   "region": "MR07",
+   "node": "MR07_N02",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    83.85,
+    60.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf",
+    "glidecap"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {
+    "double-jump": "grey"
+   },
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR07_C03"
+   ],
+   "networkEverything": [
+    "MR07_C03"
+   ]
+  },
+  {
+   "id": "CAVE_MR07_C04",
+   "room": "MR07_C04",
+   "roomName": "Quiet Terrace",
+   "region": "MR07",
+   "node": "MR07_N06",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [
+    "relic:glidecap"
+   ],
+   "atlasRequires": [
+    "relic:glidecap"
+   ],
+   "entrance": [
+    236.85,
+    134.0
+   ],
+   "worldPrerequisite": "glidecap",
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf",
+    "glidecap"
+   ],
+   "lateRelics": [],
+   "proof": {
+    "glidecap": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR07_C04"
+   ],
+   "networkEverything": [
+    "MR07_C04"
+   ]
+  },
+  {
+   "id": "CAVE_E01",
+   "room": "E01",
+   "roomName": "Quiet Arrival",
+   "region": "MR07",
+   "node": "MR07_N11",
+   "enforcedBy": "MraExit",
+   "requires": [
+    "flag:mra:reveal-complete"
+   ],
+   "atlasRequires": [
+    "flag:mra:reveal-complete"
+   ],
+   "entrance": [
+    344.135,
+    148.0
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf",
+    "glidecap"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {
+    "climbing-moss": "grey"
+   },
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10",
+    "HEART"
+   ],
+   "networkEverything": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10",
+    "HEART"
+   ]
+  },
+  {
+   "id": "CAVE_PC12",
+   "room": "PC12",
+   "roomName": "Last Cairn",
+   "region": "MR07",
+   "node": "MR07_N02",
+   "enforcedBy": "MraUgPortal",
+   "requires": [],
+   "atlasRequires": [],
+   "entrance": [
+    96.625,
+    66.102
+   ],
+   "worldPrerequisite": null,
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf",
+    "glidecap"
+   ],
+   "lateRelics": [],
+   "proof": {},
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "PC12"
+   ],
+   "networkEverything": [
+    "PC12"
+   ]
+  },
+  {
+   "id": "CAVE_MR07_C06",
+   "room": "MR07_C06",
+   "roomName": "Upper Cleft",
+   "region": "MR07",
+   "node": "MR07_N08",
+   "enforcedBy": "MraChamberDoor",
+   "requires": [
+    "relic:climbing-moss"
+   ],
+   "atlasRequires": [
+    "relic:climbing-moss"
+   ],
+   "entrance": [
+    289.85,
+    163.0
+   ],
+   "worldPrerequisite": "climbing-moss",
+   "hasArrival": true,
+   "ownedOnFirstPass": [
+    "double-jump",
+    "climbing-moss",
+    "living-thread",
+    "bloomfall",
+    "wind-leaf",
+    "glidecap"
+   ],
+   "lateRelics": [],
+   "proof": {
+    "climbing-moss": {
+     "refusedWithout": true,
+     "roomStillReachableWithout": false
+    }
+   },
+   "roomNeeds": {},
+   "opensOnFirstPass": true,
+   "ownedWhenOpen": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "networkWhenOpen": [
+    "MR07_C06"
+   ],
+   "networkEverything": [
+    "MR07_C06"
+   ]
+  }
+ ],
+ "rooms": [
+  {
+   "id": "A01",
+   "name": "Sluice Arrival",
+   "group": "A",
+   "kind": "arrival",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Teach: single jump, running gap over water, double jump to the door.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_A01",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_A01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "A02",
+   "name": "Drain Well",
+   "group": "A",
+   "kind": "shaft",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Drain Well: shortcut ledges at the top, a one-way zigzag descent to the floor hole into A03.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_A01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "A03",
+   "name": "Silt Walk",
+   "group": "A",
+   "kind": "hall",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Silt Walk: dropped in beside a shut sluice gate; run the silt channels to the wheel at the far end.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_A01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "A04",
+   "name": "Cistern Court",
+   "group": "A",
+   "kind": "landmark",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Cistern Court: cross the high line (decks, a moving barge, crumbles) over the basin; a zigzag climbs back.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_A01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "A05",
+   "name": "Spillway Rise",
+   "group": "A",
+   "kind": "shaft",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Spillway Rise: a 70 u climb (room + shaft); timed spill sheets between the columns.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_A01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "A06",
+   "name": "Pump Gallery",
+   "group": "A",
+   "kind": "trial",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Pump Gallery: pistons over the flood going left, a climb, then the high line back right; a wheel opens the A02 shortcut.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_A01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "A07",
+   "name": "Keeper Refuge",
+   "group": "A",
+   "kind": "refuge",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Keeper Refuge: rest. Steps down from both doors, flat floor.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_A01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "A08",
+   "name": "Sluice Guardian Arena",
+   "group": "A",
+   "kind": "boss",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Sluice Guardian Arena: flat floor, two fight ledges, a zigzag to the Heart door; floor hole to A10.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_A01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "A09",
+   "name": "Settling Cache",
+   "group": "A",
+   "kind": "optional",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Settling Cache (optional): a zigzag climb back up through the 16 u shaft to A04.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_A01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "A10",
+   "name": "Keeper Archive",
+   "group": "A",
+   "kind": "optional",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Keeper Archive (optional): the long climb back through the 30 u shaft, crumbles in the upper half.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_A01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "C01",
+   "name": "Garden Arrival",
+   "group": "C",
+   "kind": "arrival",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 1
+   },
+   "note": "Garden Arrival: teach the swing over a thorn bed (a running double jump also clears it), then up to the ceiling shaft.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_C01",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_C01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "C02",
+   "name": "Canopy Walk",
+   "group": "C",
+   "kind": "hall",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 2,
+    "pod": 1
+   },
+   "note": "Canopy Walk: two swings over thorns, then a Bloomfall pod bounce up to the door shelf.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_C01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "C03",
+   "name": "Root Ladder",
+   "group": "C",
+   "kind": "shaft",
+   "declaredSkills": null,
+   "uses": {
+    "pod": 1
+   },
+   "note": "Root Ladder: drop down the ladder; a thorny right wall up high keeps climbs to the left wall; C10 and the C06 shortcut open off the right.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_C01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "C04",
+   "name": "Seed Cradle",
+   "group": "C",
+   "kind": "landmark",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 1
+   },
+   "note": "Seed Cradle: the exit gate is shut; climb the left side to the latch by the C09 door, then swing across to the exit.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_C01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "C05",
+   "name": "Rootfall Well",
+   "group": "C",
+   "kind": "shaft",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Rootfall Well: crumbling roots down to the C06 door; moss walls for the way back.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_C01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "C06",
+   "name": "Bloom Court",
+   "group": "C",
+   "kind": "trial",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 3
+   },
+   "note": "Bloom Court: a three-anchor swing chain over thorns to the C07 door; a latch opens the C03 shortcut.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_C01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "C07",
+   "name": "Gardener Rest",
+   "group": "C",
+   "kind": "refuge",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Gardener Rest: steps down from the door; the floor shaft drops into the arena.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap",
+      "living-thread"
+     ]
+    ],
+    "best": [
+     [
+      "climbing-moss"
+     ],
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "glidecap",
+      "living-thread"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap",
+      "living-thread"
+     ]
+    ],
+    "best": [
+     [
+      "climbing-moss"
+     ],
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "glidecap",
+      "living-thread"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_C01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "C08",
+   "name": "Root Guardian Arena",
+   "group": "C",
+   "kind": "boss",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 2
+   },
+   "note": "Root Guardian Arena: flat floor, fight ledges, a ledge ladder back up to the C07 shaft; floor hole to the Heart.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap",
+      "living-thread"
+     ]
+    ],
+    "best": [
+     [
+      "climbing-moss"
+     ],
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "glidecap",
+      "living-thread"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap",
+      "living-thread"
+     ]
+    ],
+    "best": [
+     [
+      "climbing-moss"
+     ],
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "glidecap",
+      "living-thread"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_C01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "C09",
+   "name": "Hidden Nursery",
+   "group": "C",
+   "kind": "optional",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 5
+   },
+   "note": "Hidden Nursery (optional): a four-anchor swing over thorns with one island to rest on.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump",
+      "glidecap"
+     ],
+     [
+      "climbing-moss",
+      "double-jump",
+      "living-thread"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "glidecap"
+     ],
+     [
+      "climbing-moss",
+      "living-thread"
+     ],
+     [
+      "climbing-moss",
+      "wind-leaf"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_C01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "C10",
+   "name": "Hanging Garden",
+   "group": "C",
+   "kind": "optional",
+   "declaredSkills": null,
+   "uses": {
+    "pod": 1
+   },
+   "note": "Hanging Garden (optional): crumbling roots and a pod over thorns to the high ledge.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_C01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "D01",
+   "name": "Windward Shelter",
+   "group": "D",
+   "kind": "arrival",
+   "declaredSkills": null,
+   "uses": {
+    "gust": 1
+   },
+   "note": "Windward Shelter: rock below the door; climb on the right, then cross the gust lane in its calm.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_D01",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_D01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "D02",
+   "name": "Leeward Well",
+   "group": "D",
+   "kind": "shaft",
+   "declaredSkills": null,
+   "uses": {
+    "gust": 2
+   },
+   "note": "Leeward Well: descend through two gust bands to the floor shaft; the D04 shortcut joins low.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_D01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "D03",
+   "name": "Vane Court",
+   "group": "D",
+   "kind": "trial",
+   "declaredSkills": null,
+   "uses": {
+    "gust": 3
+   },
+   "note": "Vane Court: glide from the door down to the floor shaft; the optional D09 lies beyond three timed gusts.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_D01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "D04",
+   "name": "Wind Bridge",
+   "group": "D",
+   "kind": "hall",
+   "declaredSkills": null,
+   "uses": {
+    "gust": 1
+   },
+   "note": "Wind Bridge: 36 u over thorns: crumbles, a gust and an island; the D02 shortcut climbs from the island.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_D01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "D05",
+   "name": "Updraft Hall",
+   "group": "D",
+   "kind": "landmark",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Updraft Hall: glide left across the hall to the D06 door; a lift and ledges rise to the D10 shaft.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump",
+      "wind-leaf"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_D01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "D06",
+   "name": "Baffled Drop",
+   "group": "D",
+   "kind": "shaft",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Baffled Drop: glide down past alternating rock baffles to the low D07 door.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump",
+      "wind-leaf"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump",
+      "wind-leaf"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_D01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "D07",
+   "name": "Still-Air Rest",
+   "group": "D",
+   "kind": "refuge",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Still-Air Rest.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump",
+      "wind-leaf"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump",
+      "wind-leaf"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_D01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "D08",
+   "name": "Wind Guardian Arena",
+   "group": "D",
+   "kind": "boss",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Wind Guardian Arena: flat floor, fight ledges, a ledge ladder to the D05 shortcut shaft; floor hole to the Heart.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump",
+      "wind-leaf"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump",
+      "wind-leaf"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_D01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "D09",
+   "name": "Glider Roost",
+   "group": "D",
+   "kind": "optional",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Glider Roost (optional): glide and dash over thorns with one crumbling perch.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_D01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "D10",
+   "name": "Cloud Archive",
+   "group": "D",
+   "kind": "optional",
+   "declaredSkills": null,
+   "uses": {
+    "gust": 1
+   },
+   "note": "Cloud Archive (optional): a lift, then a gust lane to the far ledge.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump",
+      "wind-leaf"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump",
+      "wind-leaf"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_D01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "E01",
+   "name": "Quiet Arrival",
+   "group": "E",
+   "kind": "arrival",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Quiet Arrival: steps up to both doors.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_E01",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_E01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "E02",
+   "name": "Memory Well",
+   "group": "E",
+   "kind": "shaft",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 2
+   },
+   "note": "Memory Well: down the well, a thread catch on the way; moss walls back up.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_E01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "E03",
+   "name": "First Memory",
+   "group": "E",
+   "kind": "trial",
+   "declaredSkills": null,
+   "uses": {
+    "pod": 1
+   },
+   "note": "First Memory: caught under the shaft, then glide (or pod-bounce) across the thorns to the E04 door.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_E01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "E04",
+   "name": "Processional Walk",
+   "group": "E",
+   "kind": "hall",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Processional Walk: a slow, flat walk.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_E01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "E05",
+   "name": "The Wilted Sanctuary",
+   "group": "E",
+   "kind": "boss",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 1,
+    "gust": 1,
+    "pod": 1
+   },
+   "note": "The Wilted Sanctuary: right to left, one of each: glide, swing, gust in its calm, pod bounce, a long jump.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_E01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "E06",
+   "name": "Return Stair",
+   "group": "E",
+   "kind": "shaft",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Return Stair: wall-jump climb between alternating ledges to the ceiling shaft.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_E01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "E07",
+   "name": "Last Refuge",
+   "group": "E",
+   "kind": "refuge",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Last Refuge: rest, the reward on its pedestal, steps to all three doors.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_E01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "E08",
+   "name": "Final Threshold",
+   "group": "E",
+   "kind": "seal",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Final Threshold: three steps up to the Heart.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_E01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "E09",
+   "name": "Lost Seed Archive",
+   "group": "E",
+   "kind": "optional",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Lost Seed Archive (optional): crumbles over thorns up to the shaft.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_E01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "E10",
+   "name": "Sanctuary Alcove",
+   "group": "E",
+   "kind": "optional",
+   "declaredSkills": null,
+   "uses": {
+    "gust": 1
+   },
+   "note": "Sanctuary Alcove (optional): cross a gust over thorns to the reward pedestal.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "needs": {
+    "climbing-moss": "grey",
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_E01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "HEART",
+   "name": "The Great Heart Hall",
+   "group": "H",
+   "kind": "heart",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Great Heart Hall: four sealed sector balconies around the heart; none reaches it (user, 31 Oct).",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": false,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": null,
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_A01"
+  },
+  {
+   "id": "MR01_C01",
+   "name": "Warm Crack",
+   "group": "MR01",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Warm Crack: the reward on its step, a step up to the Moss Pocket door, a ladder to the ceiling shaft.",
+   "chamberType": "pressure-plate",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap"
+   ],
+   "firstDoor": "CAVE_MR01_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR01_C02",
+   "name": "Moss Pocket",
+   "group": "MR01",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Moss Pocket: crumbling roots down over thorns; the heart seed sits high on the right, up the moss wall.",
+   "chamberType": "pressure-plate",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap"
+   ],
+   "firstDoor": "CAVE_MR01_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR01_C03",
+   "name": "Pale Alcove",
+   "group": "MR01",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Pale Alcove: the lore stone below, ledges up to the ceiling shaft.",
+   "chamberType": "secret",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap"
+   ],
+   "firstDoor": "CAVE_MR01_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR01_C04",
+   "name": "Root Gallery",
+   "group": "MR01",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Root Gallery: a rock slab over the floor shaft sends the climb round the left side.",
+   "chamberType": "thread-trial",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap"
+   ],
+   "firstDoor": "CAVE_MR01_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR01_C05",
+   "name": "High Crevice",
+   "group": "MR01",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "High Crevice: the amber at the foot, thorns on the left floor; climb the right wall back up.",
+   "chamberType": "wall-trial",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "needs": {
+    "climbing-moss": "grey"
+   },
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap"
+   ],
+   "firstDoor": "CAVE_MR01_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR01_C06",
+   "name": "Hanging Garden",
+   "group": "MR01",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Hanging Garden (way in): hanging ledges over thorns, the reward floor, a moss climb to the High Crevice door.",
+   "chamberType": "glide-trial",
+   "worldPrerequisite": "glidecap",
+   "surfaceDoor": "CAVE_MR01_C06",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap"
+   ],
+   "firstDoor": "CAVE_MR01_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR02_C01",
+   "name": "Underarch Workshop",
+   "group": "MR02",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Underarch Workshop: ledges from the Silt Cistern door up to the ceiling shaft.",
+   "chamberType": "rescue",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ],
+     [
+      "climbing-moss",
+      "living-thread"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ],
+     [
+      "climbing-moss",
+      "living-thread"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR02_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR02_C02",
+   "name": "Silt Cistern",
+   "group": "MR02",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 6
+   },
+   "note": "Silt Cistern: swing the anchor line over the water; the heart seed on its island, a ledge ladder back up.",
+   "chamberType": "water-level",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ],
+     [
+      "climbing-moss",
+      "living-thread"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ],
+     [
+      "climbing-moss",
+      "living-thread"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR02_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR02_C03",
+   "name": "Echo Vault",
+   "group": "MR02",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 3
+   },
+   "note": "Echo Vault: anchors from the door shelf up to the ceiling shaft; the reward below on its pedestal.",
+   "chamberType": "sequence",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ],
+     [
+      "climbing-moss",
+      "living-thread"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "climbing-moss"
+     ],
+     [
+      "glidecap"
+     ],
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "wind-leaf"
+     ],
+     [
+      "living-thread",
+      "wind-leaf"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ],
+     [
+      "climbing-moss",
+      "living-thread"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "climbing-moss"
+     ],
+     [
+      "glidecap"
+     ],
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "wind-leaf"
+     ],
+     [
+      "living-thread",
+      "wind-leaf"
+     ]
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR02_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR02_C04",
+   "name": "Ring Gallery",
+   "group": "MR02",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Ring Gallery: a lift on the left, then ledges round a rock slab to the ceiling shaft.",
+   "chamberType": "thread-trial",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "glidecap",
+      "living-thread"
+     ]
+    ],
+    "best": [
+     [
+      "climbing-moss"
+     ],
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "living-thread",
+      "wind-leaf"
+     ],
+     [
+      "glidecap",
+      "living-thread"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "glidecap",
+      "living-thread"
+     ]
+    ],
+    "best": [
+     [
+      "climbing-moss"
+     ],
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "living-thread",
+      "wind-leaf"
+     ],
+     [
+      "glidecap",
+      "living-thread"
+     ]
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR02_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR02_C05",
+   "name": "Moss Tower",
+   "group": "MR02",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Moss Tower: the amber at the foot, a thorny low left wall; climb the right wall.",
+   "chamberType": "wall-trial",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "climbing-moss"
+     ],
+     [
+      "double-jump",
+      "glidecap",
+      "living-thread"
+     ]
+    ],
+    "best": [
+     [
+      "climbing-moss"
+     ],
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "living-thread",
+      "wind-leaf"
+     ],
+     [
+      "glidecap",
+      "living-thread"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss"
+     ],
+     [
+      "double-jump",
+      "glidecap",
+      "living-thread"
+     ]
+    ],
+    "best": [
+     [
+      "climbing-moss"
+     ],
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "living-thread",
+      "wind-leaf"
+     ],
+     [
+      "glidecap",
+      "living-thread"
+     ]
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR02_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR02_C06",
+   "name": "High Arch",
+   "group": "MR02",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 8
+   },
+   "note": "High Arch (way in): an eight-anchor arch over thorns, the reward floor, the floor shaft to the Workshop.",
+   "chamberType": "glide-trial",
+   "worldPrerequisite": "glidecap",
+   "surfaceDoor": "CAVE_MR02_C06",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss",
+      "double-jump"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ],
+     [
+      "climbing-moss",
+      "living-thread"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR02_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR03_C01",
+   "name": "Sluice Cellar",
+   "group": "MR03",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {
+    "pod": 1
+   },
+   "note": "Sluice Cellar: water floor, the heart seed on the dry floor; a pod up to the door shelf, crumbling grain to the ceiling shaft.",
+   "chamberType": "water-level",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "living-thread"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "living-thread"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR03_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR03_C02",
+   "name": "Grain Store",
+   "group": "MR03",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Grain Store: crumbling grain steps down from the left door to the right one over thorns; the amber on the dry floor.",
+   "chamberType": "pressure-plate",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "living-thread"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "living-thread"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR03_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR03_C03",
+   "name": "Farmer Shelter",
+   "group": "MR03",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Farmer Shelter: a few ledges up to the ceiling shaft.",
+   "chamberType": "rescue",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "living-thread"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "living-thread"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR03_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR03_C04",
+   "name": "Mill Undercroft",
+   "group": "MR03",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Mill Undercroft: a rock slab over the floor shaft; a piston lift and ledges up to the ceiling shaft.",
+   "chamberType": "sequence",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "living-thread"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "living-thread"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR03_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR03_C05",
+   "name": "Wind Shelf",
+   "group": "MR03",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Wind Shelf: a ledge walk through timed wind shears between the doors; the reward below the right shelf.",
+   "chamberType": "dash-trial",
+   "worldPrerequisite": null,
+   "surfaceDoor": null,
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "living-thread"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "living-thread"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR03_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR03_C06",
+   "name": "Root Hanger",
+   "group": "MR03",
+   "kind": "early_cave",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 8,
+    "pod": 2
+   },
+   "note": "Root Hanger (way in): a swing line to the floor shaft, pods to the reward, a ledge to the Wind Shelf door.",
+   "chamberType": "glide-trial",
+   "worldPrerequisite": "glidecap",
+   "surfaceDoor": "CAVE_MR03_C06",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump",
+      "living-thread"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "living-thread"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR03_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR05_C01",
+   "name": "Lost Lantern",
+   "group": "MR05",
+   "kind": "cave",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread",
+    "pod"
+   ],
+   "uses": {},
+   "note": "Lost Lantern: crumbling stones over thorns to the find.",
+   "chamberType": "rescue",
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_MR05_C01",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR05_C01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR05_C02",
+   "name": "Root Loom",
+   "group": "MR05",
+   "kind": "cave",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread",
+    "pod"
+   ],
+   "uses": {
+    "thread": 4
+   },
+   "note": "Root Loom: a four-anchor swing over thorns to the heart seed and back.",
+   "chamberType": "thread-trial",
+   "worldPrerequisite": "living-thread",
+   "surfaceDoor": "CAVE_MR05_C02",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR05_C02",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR05_C03",
+   "name": "Moss Well",
+   "group": "MR05",
+   "kind": "cave",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread",
+    "pod"
+   ],
+   "uses": {},
+   "note": "Moss Well: a non-cling rock wall splits the well; climb the moss walls up and over to the reward.",
+   "chamberType": "wall-trial",
+   "worldPrerequisite": "climbing-moss",
+   "surfaceDoor": "CAVE_MR05_C03",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR05_C03",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR05_C04",
+   "name": "Seed Choir",
+   "group": "MR05",
+   "kind": "cave",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread",
+    "pod"
+   ],
+   "uses": {
+    "pod": 3
+   },
+   "note": "Seed Choir: three pods over thorns, struck one after another, to the reward.",
+   "chamberType": "sequence",
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_MR05_C04",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_MR05_C04",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR05_C05",
+   "name": "Stone Drum",
+   "group": "MR05",
+   "kind": "cave",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread",
+    "pod"
+   ],
+   "uses": {
+    "pod": 1
+   },
+   "note": "Stone Drum: a non-cling wall too high for the double jump; bounce off the drum pod to clear it.",
+   "chamberType": "pogo-trial",
+   "worldPrerequisite": "bloomfall",
+   "surfaceDoor": "CAVE_MR05_C05",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR05_C05",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR05_C06",
+   "name": "Canopy Pocket",
+   "group": "MR05",
+   "kind": "cave",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 3
+   },
+   "note": "Canopy Pocket: up the left wall, glide over the thorns to the reward; swing back along the canopy.",
+   "chamberType": "glide-trial",
+   "worldPrerequisite": "glidecap",
+   "surfaceDoor": "CAVE_MR05_C06",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "glidecap"
+     ],
+     [
+      "climbing-moss",
+      "living-thread",
+      "wind-leaf"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR05_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR06_C01",
+   "name": "Sheltered Nest",
+   "group": "MR06",
+   "kind": "cave",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread",
+    "pod",
+    "dash"
+   ],
+   "uses": {
+    "gust": 3
+   },
+   "note": "Sheltered Nest: three timed gust lanes along the floor; dash through each calm to the heart seed.",
+   "chamberType": "secret",
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_MR06_C01",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR06_C01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR06_C02",
+   "name": "Clasp Hollow",
+   "group": "MR06",
+   "kind": "cave",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread",
+    "pod",
+    "dash"
+   ],
+   "uses": {
+    "thread": 4
+   },
+   "note": "Clasp Hollow: swing over thorns to the reward; a ledge on the right for the swing back.",
+   "chamberType": "thread-trial",
+   "worldPrerequisite": "living-thread",
+   "surfaceDoor": "CAVE_MR06_C02",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR06_C02",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR06_C03",
+   "name": "Wind Window",
+   "group": "MR06",
+   "kind": "cave",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread",
+    "pod",
+    "dash"
+   ],
+   "uses": {
+    "gust": 2
+   },
+   "note": "Wind Window: two full-height gust walls; dash through in their calm.",
+   "chamberType": "dash-trial",
+   "worldPrerequisite": "wind-leaf",
+   "surfaceDoor": "CAVE_MR06_C03",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR06_C03",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR06_C04",
+   "name": "Echo Steps",
+   "group": "MR06",
+   "kind": "cave",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread",
+    "pod",
+    "dash"
+   ],
+   "uses": {},
+   "note": "Echo Steps: crumbling steps over thorns to the reward.",
+   "chamberType": "sequence",
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_MR06_C04",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR06_C04",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR06_C05",
+   "name": "High Drift",
+   "group": "MR06",
+   "kind": "cave",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 3
+   },
+   "note": "High Drift: up the left wall and glide down to the reward; climb the right wall and swing back.",
+   "chamberType": "glide-trial",
+   "worldPrerequisite": "glidecap",
+   "surfaceDoor": "CAVE_MR06_C05",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "glidecap"
+     ],
+     [
+      "climbing-moss",
+      "living-thread"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR06_C05",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR06_C06",
+   "name": "Weather Cave",
+   "group": "MR06",
+   "kind": "cave",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread",
+    "pod",
+    "dash"
+   ],
+   "uses": {
+    "gust": 2
+   },
+   "note": "Weather Cave: crumbling steps through two gust walls over thorns.",
+   "chamberType": "rescue",
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_MR06_C06",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR06_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR07_C01",
+   "name": "Reed Shelter",
+   "group": "MR07",
+   "kind": "cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Reed Shelter: crumbling reeds over thorns to the lore stone.",
+   "chamberType": "secret",
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_MR07_C01",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR07_C01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR07_C02",
+   "name": "Falls Pocket",
+   "group": "MR07",
+   "kind": "cave",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 4
+   },
+   "note": "Falls Pocket: swing over the pool through two falling sheets to the heart seed.",
+   "chamberType": "thread-trial",
+   "worldPrerequisite": "living-thread",
+   "surfaceDoor": "CAVE_MR07_C02",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "glidecap"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR07_C02",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR07_C03",
+   "name": "Pale Archive",
+   "group": "MR07",
+   "kind": "cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Pale Archive: ride the shelf across the thorns to the reward.",
+   "chamberType": "sequence",
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_MR07_C03",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR07_C03",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR07_C04",
+   "name": "Quiet Terrace",
+   "group": "MR07",
+   "kind": "cave",
+   "declaredSkills": null,
+   "uses": {
+    "thread": 3
+   },
+   "note": "Quiet Terrace: glide over thorns to the reward; up the right wall and swing back.",
+   "chamberType": "glide-trial",
+   "worldPrerequisite": "glidecap",
+   "surfaceDoor": "CAVE_MR07_C04",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ],
+     [
+      "glidecap",
+      "wind-leaf"
+     ],
+     [
+      "climbing-moss",
+      "living-thread",
+      "wind-leaf"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR07_C04",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR07_C05",
+   "name": "Watcher's Hollow",
+   "group": "MR07",
+   "kind": "cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Watcher's Hollow: up the left wall, glide over thorns to the find; the right wall and a glide back.",
+   "chamberType": "rescue",
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_MR07_C05",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump",
+      "wind-leaf"
+     ],
+     [
+      "double-jump",
+      "glidecap"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ],
+    "best": [
+     [
+      "double-jump"
+     ],
+     [
+      "wind-leaf"
+     ],
+     [
+      "climbing-moss",
+      "glidecap"
+     ]
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR07_C05",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "MR07_C06",
+   "name": "Upper Cleft",
+   "group": "MR07",
+   "kind": "cave",
+   "declaredSkills": null,
+   "uses": {},
+   "note": "Upper Cleft (entered on the right): up the moss wall and over a non-cling rock to the amber; a ladder back.",
+   "chamberType": "wall-trial",
+   "worldPrerequisite": "climbing-moss",
+   "surfaceDoor": "CAVE_MR07_C06",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_MR07_C06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "PC01",
+   "name": "Firefly Nook",
+   "group": "MR01",
+   "kind": "single_room_pocket",
+   "declaredSkills": [
+    "dj"
+   ],
+   "uses": {},
+   "note": "Firefly Nook: a rock rise too high for one jump; the first place to use the Leapseed.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_PC01",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "double-jump"
+   ],
+   "firstDoor": "CAVE_PC01",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "PC02",
+   "name": "Old Footprints",
+   "group": "MR01",
+   "kind": "single_room_pocket",
+   "declaredSkills": [
+    "dj"
+   ],
+   "uses": {},
+   "note": "Old Footprints: a double-jump shelf.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_PC02",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "double-jump"
+   ],
+   "firstDoor": "CAVE_PC02",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "PC03",
+   "name": "Fern Pocket",
+   "group": "MR01",
+   "kind": "single_room_pocket",
+   "declaredSkills": [
+    "dj"
+   ],
+   "uses": {},
+   "note": "Fern Pocket: a rock rise too high for one jump.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_PC03",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump"
+   ],
+   "firstDoor": "CAVE_PC03",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "PC04",
+   "name": "Mason\u2019s Recess",
+   "group": "MR02",
+   "kind": "single_room_pocket",
+   "declaredSkills": [
+    "dj",
+    "moss"
+   ],
+   "uses": {},
+   "note": "Mason's Recess: a find on the floor.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_PC04",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump"
+   ],
+   "firstDoor": "CAVE_PC04",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "PC05",
+   "name": "Dripstone Hollow",
+   "group": "MR02",
+   "kind": "single_room_pocket",
+   "declaredSkills": [
+    "dj",
+    "moss"
+   ],
+   "uses": {},
+   "note": "Dripstone Hollow: up the right wall to the shelf.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_PC05",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "climbing-moss"
+     ]
+    ],
+    "best": [
+     [
+      "climbing-moss"
+     ]
+    ]
+   },
+   "needs": {
+    "climbing-moss": "blocked"
+   },
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump"
+   ],
+   "firstDoor": "CAVE_PC05",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "PC06",
+   "name": "Forgotten Satchel",
+   "group": "MR02",
+   "kind": "single_room_pocket",
+   "declaredSkills": [
+    "dj",
+    "moss"
+   ],
+   "uses": {},
+   "note": "Forgotten Satchel: a crumbling step over thorns.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_PC06",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_PC06",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "PC07",
+   "name": "Seed Shelf",
+   "group": "MR03",
+   "kind": "single_room_pocket",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread"
+   ],
+   "uses": {
+    "thread": 1
+   },
+   "note": "Seed Shelf: swing over the thorns to the find.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_PC07",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     [
+      "double-jump"
+     ]
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {
+    "double-jump": "grey"
+   },
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_PC07",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "PC08",
+   "name": "Millstone Pocket",
+   "group": "MR03",
+   "kind": "single_room_pocket",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread"
+   ],
+   "uses": {},
+   "note": "Millstone Pocket: climb the moss wall to a perch and drop over the millstone to the heart seed.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_PC08",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_PC08",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "PC09",
+   "name": "Lantern Rest",
+   "group": "MR03",
+   "kind": "single_room_pocket",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread"
+   ],
+   "uses": {},
+   "note": "Lantern Rest: through a timed drip.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_PC09",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_PC09",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "PC10",
+   "name": "Rootlight Niche",
+   "group": "MR05",
+   "kind": "single_room_pocket",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread",
+    "pod"
+   ],
+   "uses": {
+    "pod": 1
+   },
+   "note": "Rootlight Niche: bounce off the pod to clear the root wall.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_PC10",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread"
+   ],
+   "firstDoor": "CAVE_PC10",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "PC11",
+   "name": "Quiet Wind Pocket",
+   "group": "MR06",
+   "kind": "single_room_pocket",
+   "declaredSkills": [
+    "dj",
+    "moss",
+    "thread",
+    "pod",
+    "dash"
+   ],
+   "uses": {
+    "gust": 1
+   },
+   "note": "Quiet Wind Pocket: through a gust in its calm.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_PC11",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_PC11",
+   "rewardWithFirstOwned": "pass"
+  },
+  {
+   "id": "PC12",
+   "name": "Last Cairn",
+   "group": "MR07",
+   "kind": "single_room_pocket",
+   "declaredSkills": null,
+   "uses": {
+    "gust": 1
+   },
+   "note": "Last Cairn: a gust over thorns guards the lore stone; dash through the calm.",
+   "chamberType": null,
+   "worldPrerequisite": null,
+   "surfaceDoor": "CAVE_PC12",
+   "reachedSafe": true,
+   "reachedBest": true,
+   "hasReward": true,
+   "enter": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "reward": {
+    "safe": [
+     []
+    ],
+    "best": [
+     []
+    ]
+   },
+   "needs": {},
+   "firstOwned": [
+    "bloomfall",
+    "climbing-moss",
+    "double-jump",
+    "glidecap",
+    "living-thread",
+    "wind-leaf"
+   ],
+   "firstDoor": "CAVE_PC12",
+   "rewardWithFirstOwned": "pass"
+  }
+ ],
+ "passages": [
+  {
+   "id": "A01_A02_main",
+   "a": "A01",
+   "b": "A02",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "A02_A03_main",
+   "a": "A02",
+   "b": "A03",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "A03_A04_main",
+   "a": "A03",
+   "b": "A04",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "A04_A05_main",
+   "a": "A04",
+   "b": "A05",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "A05_A06_main",
+   "a": "A05",
+   "b": "A06",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "A06_A07_main",
+   "a": "A06",
+   "b": "A07",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "A07_A08_main",
+   "a": "A07",
+   "b": "A08",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "A04_A09_optional",
+   "a": "A04",
+   "b": "A09",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "A08_A10_optional",
+   "a": "A08",
+   "b": "A10",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "A06_A02_shortcut",
+   "a": "A06",
+   "b": "A02",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "C01_C02_main",
+   "a": "C01",
+   "b": "C02",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "C02_C03_main",
+   "a": "C02",
+   "b": "C03",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "C03_C04_main",
+   "a": "C03",
+   "b": "C04",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "C04_C05_main",
+   "a": "C04",
+   "b": "C05",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "C05_C06_main",
+   "a": "C05",
+   "b": "C06",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "C06_C07_main",
+   "a": "C06",
+   "b": "C07",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "C07_C08_main",
+   "a": "C07",
+   "b": "C08",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "C04_C09_optional",
+   "a": "C04",
+   "b": "C09",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "C03_C10_optional",
+   "a": "C03",
+   "b": "C10",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "C06_C03_shortcut",
+   "a": "C06",
+   "b": "C03",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "D01_D02_main",
+   "a": "D01",
+   "b": "D02",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "D02_D03_main",
+   "a": "D02",
+   "b": "D03",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "D03_D04_main",
+   "a": "D03",
+   "b": "D04",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "D04_D05_main",
+   "a": "D04",
+   "b": "D05",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "D05_D06_main",
+   "a": "D05",
+   "b": "D06",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "D06_D07_main",
+   "a": "D06",
+   "b": "D07",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "D07_D08_main",
+   "a": "D07",
+   "b": "D08",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "D03_D09_optional",
+   "a": "D03",
+   "b": "D09",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "D05_D10_optional",
+   "a": "D05",
+   "b": "D10",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "D04_D02_shortcut",
+   "a": "D04",
+   "b": "D02",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "D08_D05_shortcut",
+   "a": "D08",
+   "b": "D05",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "E01_E02_main",
+   "a": "E01",
+   "b": "E02",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "E02_E03_main",
+   "a": "E02",
+   "b": "E03",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "E03_E04_main",
+   "a": "E03",
+   "b": "E04",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "E04_E05_main",
+   "a": "E04",
+   "b": "E05",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "E05_E06_main",
+   "a": "E05",
+   "b": "E06",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "E06_E07_main",
+   "a": "E06",
+   "b": "E07",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "E07_E08_main",
+   "a": "E07",
+   "b": "E08",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "E03_E09_optional",
+   "a": "E03",
+   "b": "E09",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "E05_E10_optional",
+   "a": "E05",
+   "b": "E10",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "E07_E01_shortcut",
+   "a": "E07",
+   "b": "E01",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "A08_HEART_heart",
+   "a": "A08",
+   "b": "HEART",
+   "doorsExist": true,
+   "crossesSector": true,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "C08_HEART_heart",
+   "a": "C08",
+   "b": "HEART",
+   "doorsExist": true,
+   "crossesSector": true,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "D08_HEART_heart",
+   "a": "D08",
+   "b": "HEART",
+   "doorsExist": true,
+   "crossesSector": true,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "E08_HEART_heart",
+   "a": "E08",
+   "b": "HEART",
+   "doorsExist": true,
+   "crossesSector": true,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR01_1_2",
+   "a": "MR01_C01",
+   "b": "MR01_C02",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR01_2_3",
+   "a": "MR01_C02",
+   "b": "MR01_C03",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR01_3_4",
+   "a": "MR01_C03",
+   "b": "MR01_C04",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR01_4_5",
+   "a": "MR01_C04",
+   "b": "MR01_C05",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR01_5_6",
+   "a": "MR01_C05",
+   "b": "MR01_C06",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR01_6_1",
+   "a": "MR01_C06",
+   "b": "MR01_C01",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR02_1_2",
+   "a": "MR02_C01",
+   "b": "MR02_C02",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR02_2_3",
+   "a": "MR02_C02",
+   "b": "MR02_C03",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR02_3_4",
+   "a": "MR02_C03",
+   "b": "MR02_C04",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR02_4_5",
+   "a": "MR02_C04",
+   "b": "MR02_C05",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR02_5_6",
+   "a": "MR02_C05",
+   "b": "MR02_C06",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR02_6_1",
+   "a": "MR02_C06",
+   "b": "MR02_C01",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR03_1_2",
+   "a": "MR03_C01",
+   "b": "MR03_C02",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR03_2_3",
+   "a": "MR03_C02",
+   "b": "MR03_C03",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR03_3_4",
+   "a": "MR03_C03",
+   "b": "MR03_C04",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR03_4_5",
+   "a": "MR03_C04",
+   "b": "MR03_C05",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR03_5_6",
+   "a": "MR03_C05",
+   "b": "MR03_C06",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  },
+  {
+   "id": "MR03_6_1",
+   "a": "MR03_C06",
+   "b": "MR03_C01",
+   "doorsExist": true,
+   "crossesSector": false,
+   "fromA": true,
+   "fromB": true
+  }
+ ],
+ "heartFromEachDoor": {
+  "A08": [
+   "A08",
+   "QUARTER_A"
+  ],
+  "C08": [
+   "C08",
+   "QUARTER_C"
+  ],
+  "D08": [
+   "D08",
+   "QUARTER_D"
+  ],
+  "E08": [
+   "E08",
+   "QUARTER_E"
+  ]
+ },
+ "heartTags": [
+  "door:A08",
+  "door:C08",
+  "door:D08",
+  "door:E08",
+  "door:QUARTER_A",
+  "door:QUARTER_C",
+  "door:QUARTER_D",
+  "door:QUARTER_E"
+ ],
+ "world": {
+  "finished": {
+   "safe": true,
+   "best": true
+  },
+  "heartWakePoints": {
+   "safe": [
+    "QUARTER_A",
+    "QUARTER_C",
+    "QUARTER_D",
+    "QUARTER_E"
+   ],
+   "best": [
+    "QUARTER_A",
+    "QUARTER_C",
+    "QUARTER_D",
+    "QUARTER_E"
+   ]
+  },
+  "withoutRelic": {
+   "double-jump": {
+    "roomsLostSafe": [
+     "A01",
+     "A02",
+     "A03",
+     "A04",
+     "A05",
+     "A06",
+     "A07",
+     "A08",
+     "A09",
+     "A10",
+     "C01",
+     "C02",
+     "C03",
+     "C04",
+     "C05",
+     "C06",
+     "C07",
+     "C08",
+     "C09",
+     "C10",
+     "D01",
+     "D02",
+     "D03",
+     "D04",
+     "D05",
+     "D06",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "E01",
+     "E02",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E07",
+     "E08",
+     "E09",
+     "E10",
+     "HEART",
+     "MR01_C01",
+     "MR01_C02",
+     "MR01_C03",
+     "MR01_C04",
+     "MR01_C05",
+     "MR01_C06",
+     "MR02_C01",
+     "MR02_C02",
+     "MR02_C03",
+     "MR02_C04",
+     "MR02_C05",
+     "MR02_C06",
+     "MR03_C01",
+     "MR03_C02",
+     "MR03_C03",
+     "MR03_C04",
+     "MR03_C05",
+     "MR03_C06",
+     "MR05_C01",
+     "MR05_C02",
+     "MR05_C03",
+     "MR05_C04",
+     "MR05_C05",
+     "MR05_C06",
+     "MR06_C01",
+     "MR06_C02",
+     "MR06_C03",
+     "MR06_C04",
+     "MR06_C05",
+     "MR06_C06",
+     "MR07_C01",
+     "MR07_C02",
+     "MR07_C03",
+     "MR07_C04",
+     "MR07_C05",
+     "MR07_C06",
+     "PC01",
+     "PC02",
+     "PC03",
+     "PC04",
+     "PC05",
+     "PC06",
+     "PC07",
+     "PC08",
+     "PC09",
+     "PC10",
+     "PC11",
+     "PC12"
+    ],
+    "roomsLostBest": []
+   },
+   "climbing-moss": {
+    "roomsLostSafe": [
+     "A01",
+     "A02",
+     "A03",
+     "A04",
+     "A05",
+     "A06",
+     "A07",
+     "A08",
+     "A09",
+     "A10",
+     "C01",
+     "C02",
+     "C03",
+     "C04",
+     "C05",
+     "C06",
+     "C07",
+     "C08",
+     "C09",
+     "C10",
+     "D01",
+     "D02",
+     "D03",
+     "D04",
+     "D05",
+     "D06",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "E01",
+     "E02",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E07",
+     "E08",
+     "E09",
+     "E10",
+     "HEART",
+     "MR01_C01",
+     "MR01_C02",
+     "MR01_C03",
+     "MR01_C04",
+     "MR01_C05",
+     "MR01_C06",
+     "MR02_C01",
+     "MR02_C02",
+     "MR02_C03",
+     "MR02_C04",
+     "MR02_C05",
+     "MR02_C06",
+     "MR03_C01",
+     "MR03_C02",
+     "MR03_C03",
+     "MR03_C04",
+     "MR03_C05",
+     "MR03_C06",
+     "MR05_C01",
+     "MR05_C02",
+     "MR05_C03",
+     "MR05_C04",
+     "MR05_C05",
+     "MR05_C06",
+     "MR06_C01",
+     "MR06_C02",
+     "MR06_C03",
+     "MR06_C04",
+     "MR06_C05",
+     "MR06_C06",
+     "MR07_C01",
+     "MR07_C02",
+     "MR07_C03",
+     "MR07_C04",
+     "MR07_C05",
+     "MR07_C06",
+     "PC04",
+     "PC05",
+     "PC06",
+     "PC07",
+     "PC08",
+     "PC09",
+     "PC10",
+     "PC11",
+     "PC12"
+    ],
+    "roomsLostBest": [
+     "A01",
+     "A02",
+     "A03",
+     "A04",
+     "A05",
+     "A06",
+     "A07",
+     "A08",
+     "A09",
+     "A10",
+     "C01",
+     "C02",
+     "C03",
+     "C04",
+     "C05",
+     "C06",
+     "C07",
+     "C08",
+     "C09",
+     "C10",
+     "D01",
+     "D02",
+     "D03",
+     "D04",
+     "D05",
+     "D06",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "E01",
+     "E02",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E07",
+     "E08",
+     "E09",
+     "E10",
+     "HEART",
+     "MR01_C01",
+     "MR01_C02",
+     "MR01_C03",
+     "MR01_C04",
+     "MR01_C05",
+     "MR01_C06",
+     "MR02_C01",
+     "MR02_C02",
+     "MR02_C03",
+     "MR02_C04",
+     "MR02_C05",
+     "MR02_C06",
+     "MR03_C01",
+     "MR03_C02",
+     "MR03_C03",
+     "MR03_C04",
+     "MR03_C05",
+     "MR03_C06",
+     "MR05_C01",
+     "MR05_C02",
+     "MR05_C03",
+     "MR05_C04",
+     "MR05_C05",
+     "MR05_C06",
+     "MR06_C01",
+     "MR06_C02",
+     "MR06_C03",
+     "MR06_C04",
+     "MR06_C05",
+     "MR06_C06",
+     "MR07_C01",
+     "MR07_C02",
+     "MR07_C03",
+     "MR07_C04",
+     "MR07_C05",
+     "MR07_C06",
+     "PC05",
+     "PC06",
+     "PC07",
+     "PC08",
+     "PC09",
+     "PC10",
+     "PC11",
+     "PC12"
+    ]
+   },
+   "living-thread": {
+    "roomsLostSafe": [
+     "A01",
+     "A02",
+     "A03",
+     "A04",
+     "A05",
+     "A06",
+     "A07",
+     "A08",
+     "A09",
+     "A10",
+     "C01",
+     "C02",
+     "C03",
+     "C04",
+     "C05",
+     "C06",
+     "C07",
+     "C08",
+     "C09",
+     "C10",
+     "D01",
+     "D02",
+     "D03",
+     "D04",
+     "D05",
+     "D06",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "E01",
+     "E02",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E07",
+     "E08",
+     "E09",
+     "E10",
+     "HEART",
+     "MR01_C01",
+     "MR01_C02",
+     "MR01_C03",
+     "MR01_C04",
+     "MR01_C05",
+     "MR01_C06",
+     "MR02_C01",
+     "MR02_C02",
+     "MR02_C03",
+     "MR02_C04",
+     "MR02_C05",
+     "MR02_C06",
+     "MR03_C01",
+     "MR03_C02",
+     "MR03_C03",
+     "MR03_C04",
+     "MR03_C05",
+     "MR03_C06",
+     "MR05_C01",
+     "MR05_C02",
+     "MR05_C03",
+     "MR05_C04",
+     "MR05_C05",
+     "MR05_C06",
+     "MR06_C01",
+     "MR06_C02",
+     "MR06_C03",
+     "MR06_C04",
+     "MR06_C05",
+     "MR06_C06",
+     "MR07_C01",
+     "MR07_C02",
+     "MR07_C03",
+     "MR07_C04",
+     "MR07_C05",
+     "MR07_C06",
+     "PC06",
+     "PC07",
+     "PC08",
+     "PC09",
+     "PC10",
+     "PC11",
+     "PC12"
+    ],
+    "roomsLostBest": [
+     "A01",
+     "A02",
+     "A03",
+     "A04",
+     "A05",
+     "A06",
+     "A07",
+     "A08",
+     "A09",
+     "A10",
+     "C01",
+     "C02",
+     "C03",
+     "C04",
+     "C05",
+     "C06",
+     "C07",
+     "C08",
+     "C09",
+     "C10",
+     "D01",
+     "D02",
+     "D03",
+     "D04",
+     "D05",
+     "D06",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "E01",
+     "E02",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E07",
+     "E08",
+     "E09",
+     "E10",
+     "HEART",
+     "MR01_C01",
+     "MR01_C02",
+     "MR01_C03",
+     "MR01_C04",
+     "MR01_C05",
+     "MR01_C06",
+     "MR02_C01",
+     "MR02_C02",
+     "MR02_C03",
+     "MR02_C04",
+     "MR02_C05",
+     "MR02_C06",
+     "MR03_C01",
+     "MR03_C02",
+     "MR03_C03",
+     "MR03_C04",
+     "MR03_C05",
+     "MR03_C06",
+     "MR05_C01",
+     "MR05_C02",
+     "MR05_C03",
+     "MR05_C04",
+     "MR05_C05",
+     "MR05_C06",
+     "MR06_C01",
+     "MR06_C02",
+     "MR06_C03",
+     "MR06_C04",
+     "MR06_C05",
+     "MR06_C06",
+     "MR07_C01",
+     "MR07_C02",
+     "MR07_C03",
+     "MR07_C04",
+     "MR07_C05",
+     "MR07_C06",
+     "PC06",
+     "PC07",
+     "PC08",
+     "PC09",
+     "PC10",
+     "PC11",
+     "PC12"
+    ]
+   },
+   "bloomfall": {
+    "roomsLostSafe": [
+     "C01",
+     "C02",
+     "C03",
+     "C04",
+     "C05",
+     "C06",
+     "C07",
+     "C08",
+     "C09",
+     "C10",
+     "MR05_C05"
+    ],
+    "roomsLostBest": [
+     "C01",
+     "C02",
+     "C03",
+     "C04",
+     "C05",
+     "C06",
+     "C07",
+     "C08",
+     "C09",
+     "C10",
+     "MR05_C05"
+    ]
+   },
+   "wind-leaf": {
+    "roomsLostSafe": [
+     "D01",
+     "D02",
+     "D03",
+     "D04",
+     "D05",
+     "D06",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "MR06_C03"
+    ],
+    "roomsLostBest": [
+     "D01",
+     "D02",
+     "D03",
+     "D04",
+     "D05",
+     "D06",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "MR06_C03"
+    ]
+   },
+   "glidecap": {
+    "roomsLostSafe": [
+     "D01",
+     "D02",
+     "D03",
+     "D04",
+     "D05",
+     "D06",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "E01",
+     "E02",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E07",
+     "E08",
+     "E09",
+     "E10",
+     "MR01_C01",
+     "MR01_C02",
+     "MR01_C03",
+     "MR01_C04",
+     "MR01_C05",
+     "MR01_C06",
+     "MR02_C01",
+     "MR02_C02",
+     "MR02_C03",
+     "MR02_C04",
+     "MR02_C05",
+     "MR02_C06",
+     "MR03_C01",
+     "MR03_C02",
+     "MR03_C03",
+     "MR03_C04",
+     "MR03_C05",
+     "MR03_C06",
+     "MR05_C06",
+     "MR06_C05",
+     "MR07_C01",
+     "MR07_C02",
+     "MR07_C03",
+     "MR07_C04",
+     "MR07_C05",
+     "MR07_C06",
+     "PC12"
+    ],
+    "roomsLostBest": [
+     "D01",
+     "D02",
+     "D03",
+     "D04",
+     "D05",
+     "D06",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "MR01_C01",
+     "MR01_C02",
+     "MR01_C03",
+     "MR01_C04",
+     "MR01_C05",
+     "MR01_C06",
+     "MR02_C01",
+     "MR02_C02",
+     "MR02_C03",
+     "MR02_C04",
+     "MR02_C05",
+     "MR02_C06",
+     "MR03_C01",
+     "MR03_C02",
+     "MR03_C03",
+     "MR03_C04",
+     "MR03_C05",
+     "MR03_C06",
+     "MR05_C06",
+     "MR06_C05",
+     "MR07_C04"
+    ]
+   }
+  }
+ },
+ "travel": {
+  "waymarkTravelInCode": true,
+  "regionWaymarkCharts": {
+   "MR01": true,
+   "MR02": true,
+   "MR03": true,
+   "MR04": true,
+   "MR05": true,
+   "MR06": true,
+   "MR07": true
+  },
+  "primaryWaymarks": {
+   "MR01": "MR01_N05",
+   "MR02": "MR02_N05",
+   "MR03": "MR03_N05",
+   "MR04": "MR04_N03",
+   "MR05": "MR05_N05",
+   "MR06": "MR06_N05",
+   "MR07": "MR07_N05"
+  },
+  "callersOfAreaTransitionTravel": [
+   "MraChamberDoor",
+   "MraChamberReturn",
+   "MraChart",
+   "MraExit",
+   "MraSession",
+   "MraUgPortal",
+   "Portal"
+  ],
+  "legacyPortalsInScenes": 0
+ },
+ "undergroundArrivalsMissingFromScene": [],
+ "undergroundSceneArrivalsMissingFromRooms": [],
+ "limits": [
+  "Room checks ignore ceilings and walls between surfaces, enemies, gust push and moving-platform timing; the surface check reads the route data, not scene colliders.",
+  "A \"blocked\" result means no move in the best-case model gets there; a real-engine check in Unity stage still has to confirm it.",
+  "Scripted checks prove logic, never feel."
+ ]
+}

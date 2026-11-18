@@ -632,9 +632,7 @@
             }
           ],
           "depth": 6,
-          "requires": [
-            "knot:grip"
-          ],
+          "requires": [],
           "module": {
             "template": "root-gate-with-fallen-crossing",
             "position": {
@@ -652,7 +650,7 @@
             "catchDrop": 0.0,
             "landingDrop": 0.0,
             "returnRise": 0.0,
-            "saveFlag": "knot:grip",
+            "saveFlag": "",
             "amplitude": 0.0,
             "period": 0.0
           },
@@ -7983,7 +7981,7 @@
           "id": "MR06_E06",
           "source": "MR06_N06",
           "target": "MR06_N07",
-          "kind": "glide-span",
+          "kind": "walk",
           "surfaceKind": "stone-steps",
           "points": [
             {
@@ -8184,9 +8182,7 @@
             }
           ],
           "depth": 6,
-          "requires": [
-            "relic:glidecap"
-          ],
+          "requires": [],
           "module": {
             "template": "glide-drop",
             "position": {
@@ -8575,7 +8571,7 @@
           "id": "MR06_E10",
           "source": "MR06_N10",
           "target": "MR06_N11",
-          "kind": "walk",
+          "kind": "glide-span",
           "surfaceKind": "walk-slope",
           "points": [
             {
@@ -8588,7 +8584,9 @@
             }
           ],
           "depth": 6,
-          "requires": [],
+          "requires": [
+            "relic:glidecap"
+          ],
           "module": {
             "template": ""
           },
@@ -10723,7 +10721,7 @@
         "x": 168.0,
         "y": 12.0
       },
-      "prerequisite": "living-thread",
+      "prerequisite": "",
       "presentation": "regional-underground",
       "scene": "Qolossal_Underground",
       "playerSpawn": {
@@ -10817,7 +10815,7 @@
         "x": 235.0,
         "y": 20.0
       },
-      "prerequisite": "climbing-moss",
+      "prerequisite": "",
       "presentation": "regional-underground",
       "scene": "Qolossal_Underground",
       "playerSpawn": {
@@ -11258,7 +11256,7 @@
         "x": 146.0,
         "y": 57.0
       },
-      "prerequisite": "living-thread",
+      "prerequisite": "",
       "presentation": "regional-underground",
       "scene": "Qolossal_Underground",
       "playerSpawn": {
@@ -11351,7 +11349,7 @@
         "x": 245.0,
         "y": 115.0
       },
-      "prerequisite": "climbing-moss",
+      "prerequisite": "",
       "presentation": "regional-underground",
       "scene": "Qolossal_Underground",
       "playerSpawn": {
@@ -11875,7 +11873,7 @@
         "x": 258.0,
         "y": 158.0
       },
-      "prerequisite": "wind-leaf",
+      "prerequisite": "",
       "presentation": "regional-underground",
       "scene": "Qolossal_Underground",
       "playerSpawn": {
@@ -12105,8 +12103,8 @@
         "y": 8.0
       },
       "prerequisite": "",
-      "presentation": "in-place-cutaway",
-      "scene": "MRAtlas_MR04_Qvale",
+      "presentation": "house-instance",
+      "scene": "MRAtlas_MR04_C02",
       "playerSpawn": {
         "x": 3.0,
         "y": 2.0
@@ -12178,8 +12176,8 @@
         "y": 8.0
       },
       "prerequisite": "",
-      "presentation": "in-place-cutaway",
-      "scene": "MRAtlas_MR04_Qvale",
+      "presentation": "house-instance",
+      "scene": "MRAtlas_MR04_C03",
       "playerSpawn": {
         "x": 3.0,
         "y": 2.0
@@ -12251,8 +12249,8 @@
         "y": 8.0
       },
       "prerequisite": "",
-      "presentation": "in-place-cutaway",
-      "scene": "MRAtlas_MR04_Qvale",
+      "presentation": "house-instance",
+      "scene": "MRAtlas_MR04_C04",
       "playerSpawn": {
         "x": 3.0,
         "y": 2.0
@@ -12324,8 +12322,8 @@
         "y": 8.0
       },
       "prerequisite": "",
-      "presentation": "in-place-cutaway",
-      "scene": "MRAtlas_MR04_Qvale",
+      "presentation": "house-instance",
+      "scene": "MRAtlas_MR04_C05",
       "playerSpawn": {
         "x": 3.0,
         "y": 2.0
@@ -12397,8 +12395,8 @@
         "y": 9.0
       },
       "prerequisite": "",
-      "presentation": "in-place-cutaway",
-      "scene": "MRAtlas_MR04_Qvale",
+      "presentation": "house-instance",
+      "scene": "MRAtlas_MR04_C06",
       "playerSpawn": {
         "x": 3.0,
         "y": 2.0

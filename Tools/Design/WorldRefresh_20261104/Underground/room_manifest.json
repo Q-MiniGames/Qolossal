@@ -1,0 +1,1077 @@
+[
+  {
+    "room": "A01",
+    "name": "Sluice Arrival",
+    "set": "A",
+    "theme": "The Sluice Cisterns",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/A_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Teach: single jump, running gap over water, double jump to the door.",
+    "portalNeighbors": [
+      "A02"
+    ]
+  },
+  {
+    "room": "A02",
+    "name": "Drain Well",
+    "set": "A",
+    "theme": "The Sluice Cisterns",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/A_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Drain Well: shortcut ledges at the top, a one-way zigzag descent to the floor hole into A03.",
+    "portalNeighbors": [
+      "A01",
+      "A03",
+      "A06"
+    ]
+  },
+  {
+    "room": "A03",
+    "name": "Silt Walk",
+    "set": "A",
+    "theme": "The Sluice Cisterns",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/A_Vista.png",
+    "ordinaryCornersEligible": 3,
+    "preservedPuzzle": "Silt Walk: dropped in beside a shut sluice gate; run the silt channels to the wheel at the far end.",
+    "portalNeighbors": [
+      "A02",
+      "A04"
+    ]
+  },
+  {
+    "room": "A04",
+    "name": "Cistern Court",
+    "set": "A",
+    "theme": "The Sluice Cisterns",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/A_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Cistern Court: cross the high line (decks, a moving barge, crumbles) over the basin; a zigzag climbs back.",
+    "portalNeighbors": [
+      "A03",
+      "A05",
+      "A09"
+    ]
+  },
+  {
+    "room": "A05",
+    "name": "Spillway Rise",
+    "set": "A",
+    "theme": "The Sluice Cisterns",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/A_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Spillway Rise: a 70 u climb (room + shaft); timed spill sheets between the columns.",
+    "portalNeighbors": [
+      "A04",
+      "A06"
+    ]
+  },
+  {
+    "room": "A06",
+    "name": "Pump Gallery",
+    "set": "A",
+    "theme": "The Sluice Cisterns",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/A_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Pump Gallery: pistons over the flood going left, a climb, then the high line back right; a wheel opens the A02 shortcut.",
+    "portalNeighbors": [
+      "A05",
+      "A07",
+      "A02"
+    ]
+  },
+  {
+    "room": "A07",
+    "name": "Keeper Refuge",
+    "set": "A",
+    "theme": "The Sluice Cisterns",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/A_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Keeper Refuge: rest. Steps down from both doors, flat floor.",
+    "portalNeighbors": [
+      "A06",
+      "A08"
+    ]
+  },
+  {
+    "room": "A08",
+    "name": "Sluice Guardian Arena",
+    "set": "A",
+    "theme": "The Sluice Cisterns",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/A_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Sluice Guardian Arena: flat floor, two fight ledges, a zigzag to the Heart door; floor hole to A10.",
+    "portalNeighbors": [
+      "A07",
+      "A10",
+      "HEART"
+    ]
+  },
+  {
+    "room": "A09",
+    "name": "Settling Cache",
+    "set": "A",
+    "theme": "The Sluice Cisterns",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/A_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Settling Cache (optional): a zigzag climb back up through the 16 u shaft to A04.",
+    "portalNeighbors": [
+      "A04"
+    ]
+  },
+  {
+    "room": "A10",
+    "name": "Keeper Archive",
+    "set": "A",
+    "theme": "The Sluice Cisterns",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/A_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Keeper Archive (optional): the long climb back through the 30 u shaft, crumbles in the upper half.",
+    "portalNeighbors": [
+      "A08"
+    ]
+  },
+  {
+    "room": "C01",
+    "name": "Garden Arrival",
+    "set": "C",
+    "theme": "The Root Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/C_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Garden Arrival: teach the swing over a thorn bed (a running double jump also clears it), then up to the ceiling shaft.",
+    "portalNeighbors": [
+      "C02"
+    ]
+  },
+  {
+    "room": "C02",
+    "name": "Canopy Walk",
+    "set": "C",
+    "theme": "The Root Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/C_Vista.png",
+    "ordinaryCornersEligible": 4,
+    "preservedPuzzle": "Canopy Walk: two swings over thorns, then a Bloomfall pod bounce up to the door shelf.",
+    "portalNeighbors": [
+      "C01",
+      "C03"
+    ]
+  },
+  {
+    "room": "C03",
+    "name": "Root Ladder",
+    "set": "C",
+    "theme": "The Root Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/C_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Root Ladder: drop down the ladder; a thorny right wall up high keeps climbs to the left wall; C10 and the C06 shortcut open off the right.",
+    "portalNeighbors": [
+      "C02",
+      "C04",
+      "C10",
+      "C06"
+    ]
+  },
+  {
+    "room": "C04",
+    "name": "Seed Cradle",
+    "set": "C",
+    "theme": "The Root Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/C_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Seed Cradle: the exit gate is shut; climb the left side to the latch by the C09 door, then swing across to the exit.",
+    "portalNeighbors": [
+      "C03",
+      "C05",
+      "C09"
+    ]
+  },
+  {
+    "room": "C05",
+    "name": "Rootfall Well",
+    "set": "C",
+    "theme": "The Root Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/C_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Rootfall Well: crumbling roots down to the C06 door; moss walls for the way back.",
+    "portalNeighbors": [
+      "C04",
+      "C06"
+    ]
+  },
+  {
+    "room": "C06",
+    "name": "Bloom Court",
+    "set": "C",
+    "theme": "The Root Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/C_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Bloom Court: a three-anchor swing chain over thorns to the C07 door; a latch opens the C03 shortcut.",
+    "portalNeighbors": [
+      "C05",
+      "C07",
+      "C03"
+    ]
+  },
+  {
+    "room": "C07",
+    "name": "Gardener Rest",
+    "set": "C",
+    "theme": "The Root Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/C_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Gardener Rest: steps down from the door; the floor shaft drops into the arena.",
+    "portalNeighbors": [
+      "C06",
+      "C08"
+    ]
+  },
+  {
+    "room": "C08",
+    "name": "Root Guardian Arena",
+    "set": "C",
+    "theme": "The Root Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/C_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Root Guardian Arena: flat floor, fight ledges, a ledge ladder back up to the C07 shaft; floor hole to the Heart.",
+    "portalNeighbors": [
+      "C07",
+      "HEART"
+    ]
+  },
+  {
+    "room": "C09",
+    "name": "Hidden Nursery",
+    "set": "C",
+    "theme": "The Root Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/C_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Hidden Nursery (optional): a four-anchor swing over thorns with one island to rest on.",
+    "portalNeighbors": [
+      "C04"
+    ]
+  },
+  {
+    "room": "C10",
+    "name": "Hanging Garden",
+    "set": "C",
+    "theme": "The Root Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/C_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Hanging Garden (optional): crumbling roots and a pod over thorns to the high ledge.",
+    "portalNeighbors": [
+      "C03"
+    ]
+  },
+  {
+    "room": "D01",
+    "name": "Windward Shelter",
+    "set": "D",
+    "theme": "The Wind Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/D_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Windward Shelter: rock below the door; climb on the right, then cross the gust lane in its calm.",
+    "portalNeighbors": [
+      "D02"
+    ]
+  },
+  {
+    "room": "D02",
+    "name": "Leeward Well",
+    "set": "D",
+    "theme": "The Wind Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/D_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Leeward Well: descend through two gust bands to the floor shaft; the D04 shortcut joins low.",
+    "portalNeighbors": [
+      "D01",
+      "D03",
+      "D04"
+    ]
+  },
+  {
+    "room": "D03",
+    "name": "Vane Court",
+    "set": "D",
+    "theme": "The Wind Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/D_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Vane Court: glide from the door down to the floor shaft; the optional D09 lies beyond three timed gusts.",
+    "portalNeighbors": [
+      "D02",
+      "D04",
+      "D09"
+    ]
+  },
+  {
+    "room": "D04",
+    "name": "Wind Bridge",
+    "set": "D",
+    "theme": "The Wind Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/D_Vista.png",
+    "ordinaryCornersEligible": 3,
+    "preservedPuzzle": "Wind Bridge: 36 u over thorns: crumbles, a gust and an island; the D02 shortcut climbs from the island.",
+    "portalNeighbors": [
+      "D03",
+      "D05",
+      "D02"
+    ]
+  },
+  {
+    "room": "D05",
+    "name": "Updraft Hall",
+    "set": "D",
+    "theme": "The Wind Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/D_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Updraft Hall: glide left across the hall to the D06 door; a lift and ledges rise to the D10 shaft.",
+    "portalNeighbors": [
+      "D04",
+      "D06",
+      "D10",
+      "D08"
+    ]
+  },
+  {
+    "room": "D06",
+    "name": "Baffled Drop",
+    "set": "D",
+    "theme": "The Wind Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/D_Vista.png",
+    "ordinaryCornersEligible": 6,
+    "preservedPuzzle": "Baffled Drop: glide down past alternating rock baffles to the low D07 door.",
+    "portalNeighbors": [
+      "D05",
+      "D07"
+    ]
+  },
+  {
+    "room": "D07",
+    "name": "Still-Air Rest",
+    "set": "D",
+    "theme": "The Wind Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/D_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Still-Air Rest.",
+    "portalNeighbors": [
+      "D06",
+      "D08"
+    ]
+  },
+  {
+    "room": "D08",
+    "name": "Wind Guardian Arena",
+    "set": "D",
+    "theme": "The Wind Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/D_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Wind Guardian Arena: flat floor, fight ledges, a ledge ladder to the D05 shortcut shaft; floor hole to the Heart.",
+    "portalNeighbors": [
+      "D07",
+      "D05",
+      "HEART"
+    ]
+  },
+  {
+    "room": "D09",
+    "name": "Glider Roost",
+    "set": "D",
+    "theme": "The Wind Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/D_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Glider Roost (optional): glide and dash over thorns with one crumbling perch.",
+    "portalNeighbors": [
+      "D03"
+    ]
+  },
+  {
+    "room": "D10",
+    "name": "Cloud Archive",
+    "set": "D",
+    "theme": "The Wind Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/D_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Cloud Archive (optional): a lift, then a gust lane to the far ledge.",
+    "portalNeighbors": [
+      "D05"
+    ]
+  },
+  {
+    "room": "E01",
+    "name": "Quiet Arrival",
+    "set": "E",
+    "theme": "The Memory Sanctuary",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/E_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Quiet Arrival: steps up to both doors.",
+    "portalNeighbors": [
+      "E02",
+      "E07"
+    ]
+  },
+  {
+    "room": "E02",
+    "name": "Memory Well",
+    "set": "E",
+    "theme": "The Memory Sanctuary",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/E_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Memory Well: down the well, a thread catch on the way; moss walls back up.",
+    "portalNeighbors": [
+      "E01",
+      "E03"
+    ]
+  },
+  {
+    "room": "E03",
+    "name": "First Memory",
+    "set": "E",
+    "theme": "The Memory Sanctuary",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/E_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "First Memory: caught under the shaft, then glide (or pod-bounce) across the thorns to the E04 door.",
+    "portalNeighbors": [
+      "E02",
+      "E04",
+      "E09"
+    ]
+  },
+  {
+    "room": "E04",
+    "name": "Processional Walk",
+    "set": "E",
+    "theme": "The Memory Sanctuary",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/E_Vista.png",
+    "ordinaryCornersEligible": 5,
+    "preservedPuzzle": "Processional Walk: a slow, flat walk.",
+    "portalNeighbors": [
+      "E03",
+      "E05"
+    ]
+  },
+  {
+    "room": "E05",
+    "name": "The Wilted Sanctuary",
+    "set": "E",
+    "theme": "The Memory Sanctuary",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/E_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "The Wilted Sanctuary: right to left, one of each: glide, swing, gust in its calm, pod bounce, a long jump.",
+    "portalNeighbors": [
+      "E04",
+      "E06",
+      "E10"
+    ]
+  },
+  {
+    "room": "E06",
+    "name": "Return Stair",
+    "set": "E",
+    "theme": "The Memory Sanctuary",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/E_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Return Stair: wall-jump climb between alternating ledges to the ceiling shaft.",
+    "portalNeighbors": [
+      "E05",
+      "E07"
+    ]
+  },
+  {
+    "room": "E07",
+    "name": "Last Refuge",
+    "set": "E",
+    "theme": "The Memory Sanctuary",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/E_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Last Refuge: rest, the reward on its pedestal, steps to all three doors.",
+    "portalNeighbors": [
+      "E06",
+      "E08",
+      "E01"
+    ]
+  },
+  {
+    "room": "E08",
+    "name": "Final Threshold",
+    "set": "E",
+    "theme": "The Memory Sanctuary",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/E_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Final Threshold: three steps up to the Heart.",
+    "portalNeighbors": [
+      "E07",
+      "HEART"
+    ]
+  },
+  {
+    "room": "E09",
+    "name": "Lost Seed Archive",
+    "set": "E",
+    "theme": "The Memory Sanctuary",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/E_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Lost Seed Archive (optional): crumbles over thorns up to the shaft.",
+    "portalNeighbors": [
+      "E03"
+    ]
+  },
+  {
+    "room": "E10",
+    "name": "Sanctuary Alcove",
+    "set": "E",
+    "theme": "The Memory Sanctuary",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/E_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Sanctuary Alcove (optional): cross a gust over thorns to the reward pedestal.",
+    "portalNeighbors": [
+      "E05"
+    ]
+  },
+  {
+    "room": "MR01_C01",
+    "name": "Warm Crack",
+    "set": "MR01",
+    "theme": "The Moss Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR01_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Warm Crack: the reward on its step, a step up to the Moss Pocket door, a ladder to the ceiling shaft.",
+    "portalNeighbors": [
+      "MR01_C02",
+      "MR01_C06"
+    ]
+  },
+  {
+    "room": "MR01_C02",
+    "name": "Moss Pocket",
+    "set": "MR01",
+    "theme": "The Moss Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR01_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Moss Pocket: crumbling roots down over thorns; the heart seed sits high on the right, up the moss wall.",
+    "portalNeighbors": [
+      "MR01_C01",
+      "MR01_C03"
+    ]
+  },
+  {
+    "room": "MR01_C03",
+    "name": "Pale Alcove",
+    "set": "MR01",
+    "theme": "The Moss Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR01_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Pale Alcove: the lore stone below, ledges up to the ceiling shaft.",
+    "portalNeighbors": [
+      "MR01_C02",
+      "MR01_C04"
+    ]
+  },
+  {
+    "room": "MR01_C04",
+    "name": "Root Gallery",
+    "set": "MR01",
+    "theme": "The Moss Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR01_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Root Gallery: a rock slab over the floor shaft sends the climb round the left side.",
+    "portalNeighbors": [
+      "MR01_C03",
+      "MR01_C05"
+    ]
+  },
+  {
+    "room": "MR01_C05",
+    "name": "High Crevice",
+    "set": "MR01",
+    "theme": "The Moss Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR01_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "High Crevice: the amber at the foot, thorns on the left floor; climb the right wall back up.",
+    "portalNeighbors": [
+      "MR01_C04",
+      "MR01_C06"
+    ]
+  },
+  {
+    "room": "MR01_C06",
+    "name": "Hanging Garden",
+    "set": "MR01",
+    "theme": "The Moss Hollows",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR01_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Hanging Garden (way in): hanging ledges over thorns, the reward floor, a moss climb to the High Crevice door.",
+    "portalNeighbors": [
+      "MR01_C05",
+      "MR01_C01"
+    ]
+  },
+  {
+    "room": "MR02_C01",
+    "name": "Underarch Workshop",
+    "set": "MR02",
+    "theme": "The Resonant Underarches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR02_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Underarch Workshop: ledges from the Silt Cistern door up to the ceiling shaft.",
+    "portalNeighbors": [
+      "MR02_C02",
+      "MR02_C06"
+    ]
+  },
+  {
+    "room": "MR02_C02",
+    "name": "Silt Cistern",
+    "set": "MR02",
+    "theme": "The Resonant Underarches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR02_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Silt Cistern: swing the anchor line over the water; the heart seed on its island, a ledge ladder back up.",
+    "portalNeighbors": [
+      "MR02_C01",
+      "MR02_C03"
+    ]
+  },
+  {
+    "room": "MR02_C03",
+    "name": "Echo Vault",
+    "set": "MR02",
+    "theme": "The Resonant Underarches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR02_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Echo Vault: anchors from the door shelf up to the ceiling shaft; the reward below on its pedestal.",
+    "portalNeighbors": [
+      "MR02_C02",
+      "MR02_C04"
+    ]
+  },
+  {
+    "room": "MR02_C04",
+    "name": "Ring Gallery",
+    "set": "MR02",
+    "theme": "The Resonant Underarches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR02_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Ring Gallery: a lift on the left, then ledges round a rock slab to the ceiling shaft.",
+    "portalNeighbors": [
+      "MR02_C03",
+      "MR02_C05"
+    ]
+  },
+  {
+    "room": "MR02_C05",
+    "name": "Moss Tower",
+    "set": "MR02",
+    "theme": "The Resonant Underarches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR02_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Moss Tower: the amber at the foot, a thorny low left wall; climb the right wall.",
+    "portalNeighbors": [
+      "MR02_C04",
+      "MR02_C06"
+    ]
+  },
+  {
+    "room": "MR02_C06",
+    "name": "High Arch",
+    "set": "MR02",
+    "theme": "The Resonant Underarches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR02_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "High Arch (way in): an eight-anchor arch over thorns, the reward floor, the floor shaft to the Workshop.",
+    "portalNeighbors": [
+      "MR02_C05",
+      "MR02_C01"
+    ]
+  },
+  {
+    "room": "MR03_C01",
+    "name": "Sluice Cellar",
+    "set": "MR03",
+    "theme": "The Sluice Undercrofts",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR03_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Sluice Cellar: water floor, the heart seed on the dry floor; a pod up to the door shelf, crumbling grain to the ceiling shaft.",
+    "portalNeighbors": [
+      "MR03_C02",
+      "MR03_C06"
+    ]
+  },
+  {
+    "room": "MR03_C02",
+    "name": "Grain Store",
+    "set": "MR03",
+    "theme": "The Sluice Undercrofts",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR03_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Grain Store: crumbling grain steps down from the left door to the right one over thorns; the amber on the dry floor.",
+    "portalNeighbors": [
+      "MR03_C01",
+      "MR03_C03"
+    ]
+  },
+  {
+    "room": "MR03_C03",
+    "name": "Farmer Shelter",
+    "set": "MR03",
+    "theme": "The Sluice Undercrofts",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR03_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Farmer Shelter: a few ledges up to the ceiling shaft.",
+    "portalNeighbors": [
+      "MR03_C02",
+      "MR03_C04"
+    ]
+  },
+  {
+    "room": "MR03_C04",
+    "name": "Mill Undercroft",
+    "set": "MR03",
+    "theme": "The Sluice Undercrofts",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR03_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Mill Undercroft: a rock slab over the floor shaft; a piston lift and ledges up to the ceiling shaft.",
+    "portalNeighbors": [
+      "MR03_C03",
+      "MR03_C05"
+    ]
+  },
+  {
+    "room": "MR03_C05",
+    "name": "Wind Shelf",
+    "set": "MR03",
+    "theme": "The Sluice Undercrofts",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR03_Vista.png",
+    "ordinaryCornersEligible": 3,
+    "preservedPuzzle": "Wind Shelf: a ledge walk through timed wind shears between the doors; the reward below the right shelf.",
+    "portalNeighbors": [
+      "MR03_C04",
+      "MR03_C06"
+    ]
+  },
+  {
+    "room": "MR03_C06",
+    "name": "Root Hanger",
+    "set": "MR03",
+    "theme": "The Sluice Undercrofts",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR03_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Root Hanger (way in): a swing line to the floor shaft, pods to the reward, a ledge to the Wind Shelf door.",
+    "portalNeighbors": [
+      "MR03_C05",
+      "MR03_C01"
+    ]
+  },
+  {
+    "room": "PC01",
+    "name": "Firefly Nook",
+    "set": "P",
+    "theme": "The Secret Niches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/P_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Firefly Nook: a rock rise too high for one jump; the first place to use the Leapseed.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "PC02",
+    "name": "Old Footprints",
+    "set": "P",
+    "theme": "The Secret Niches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/P_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Old Footprints: a double-jump shelf.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "PC03",
+    "name": "Fern Pocket",
+    "set": "P",
+    "theme": "The Secret Niches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/P_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Fern Pocket: a rock rise too high for one jump.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "PC04",
+    "name": "Mason\u2019s Recess",
+    "set": "P",
+    "theme": "The Secret Niches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/P_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Mason's Recess: a find on the floor.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "PC05",
+    "name": "Dripstone Hollow",
+    "set": "P",
+    "theme": "The Secret Niches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/P_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Dripstone Hollow: up the right wall to the shelf.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "PC06",
+    "name": "Forgotten Satchel",
+    "set": "P",
+    "theme": "The Secret Niches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/P_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Forgotten Satchel: a crumbling step over thorns.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "PC07",
+    "name": "Seed Shelf",
+    "set": "P",
+    "theme": "The Secret Niches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/P_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Seed Shelf: swing over the thorns to the find.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "PC08",
+    "name": "Millstone Pocket",
+    "set": "P",
+    "theme": "The Secret Niches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/P_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Millstone Pocket: climb the moss wall to a perch and drop over the millstone to the heart seed.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "PC09",
+    "name": "Lantern Rest",
+    "set": "P",
+    "theme": "The Secret Niches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/P_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Lantern Rest: through a timed drip.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "PC10",
+    "name": "Rootlight Niche",
+    "set": "P",
+    "theme": "The Secret Niches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/P_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Rootlight Niche: bounce off the pod to clear the root wall.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "PC11",
+    "name": "Quiet Wind Pocket",
+    "set": "P",
+    "theme": "The Secret Niches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/P_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Quiet Wind Pocket: through a gust in its calm.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "PC12",
+    "name": "Last Cairn",
+    "set": "P",
+    "theme": "The Secret Niches",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/P_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Last Cairn: a gust over thorns guards the lore stone; dash through the calm.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "HEART",
+    "name": "The Great Heart Hall",
+    "set": "H",
+    "theme": "The Great Heart Hall",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/H_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Great Heart Hall: four sealed sector balconies around the heart; none reaches it (user, 31 Oct).",
+    "portalNeighbors": [
+      "A08",
+      "C08",
+      "D08",
+      "E08"
+    ]
+  },
+  {
+    "room": "MR05_C01",
+    "name": "Lost Lantern",
+    "set": "MR05",
+    "theme": "The Hidden Rib Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR05_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Lost Lantern: crumbling stones over thorns to the find.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR05_C02",
+    "name": "Root Loom",
+    "set": "MR05",
+    "theme": "The Hidden Rib Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR05_Vista.png",
+    "ordinaryCornersEligible": 3,
+    "preservedPuzzle": "Root Loom: a four-anchor swing over thorns to the heart seed and back.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR05_C03",
+    "name": "Moss Well",
+    "set": "MR05",
+    "theme": "The Hidden Rib Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR05_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Moss Well: a non-cling rock wall splits the well; climb the moss walls up and over to the reward.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR05_C04",
+    "name": "Seed Choir",
+    "set": "MR05",
+    "theme": "The Hidden Rib Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR05_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Seed Choir: three pods over thorns, struck one after another, to the reward.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR05_C05",
+    "name": "Stone Drum",
+    "set": "MR05",
+    "theme": "The Hidden Rib Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR05_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Stone Drum: a non-cling wall too high for the double jump; bounce off the drum pod to clear it.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR05_C06",
+    "name": "Canopy Pocket",
+    "set": "MR05",
+    "theme": "The Hidden Rib Gardens",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR05_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Canopy Pocket: up the left wall, glide over the thorns to the reward; swing back along the canopy.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR06_C01",
+    "name": "Sheltered Nest",
+    "set": "MR06",
+    "theme": "The Sheltered Wind Clefts",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR06_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Sheltered Nest: three timed gust lanes along the floor; dash through each calm to the heart seed.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR06_C02",
+    "name": "Clasp Hollow",
+    "set": "MR06",
+    "theme": "The Sheltered Wind Clefts",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR06_Vista.png",
+    "ordinaryCornersEligible": 3,
+    "preservedPuzzle": "Clasp Hollow: swing over thorns to the reward; a ledge on the right for the swing back.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR06_C03",
+    "name": "Wind Window",
+    "set": "MR06",
+    "theme": "The Sheltered Wind Clefts",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR06_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "Wind Window: two full-height gust walls; dash through in their calm.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR06_C04",
+    "name": "Echo Steps",
+    "set": "MR06",
+    "theme": "The Sheltered Wind Clefts",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR06_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Echo Steps: crumbling steps over thorns to the reward.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR06_C05",
+    "name": "High Drift",
+    "set": "MR06",
+    "theme": "The Sheltered Wind Clefts",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR06_Vista.png",
+    "ordinaryCornersEligible": 0,
+    "preservedPuzzle": "High Drift: up the left wall and glide down to the reward; climb the right wall and swing back.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR06_C06",
+    "name": "Weather Cave",
+    "set": "MR06",
+    "theme": "The Sheltered Wind Clefts",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR06_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Weather Cave: crumbling steps through two gust walls over thorns.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR07_C01",
+    "name": "Reed Shelter",
+    "set": "MR07",
+    "theme": "The Pale Echo Chambers",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR07_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Reed Shelter: crumbling reeds over thorns to the lore stone.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR07_C02",
+    "name": "Falls Pocket",
+    "set": "MR07",
+    "theme": "The Pale Echo Chambers",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR07_Vista.png",
+    "ordinaryCornersEligible": 3,
+    "preservedPuzzle": "Falls Pocket: swing over the pool through two falling sheets to the heart seed.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR07_C03",
+    "name": "Pale Archive",
+    "set": "MR07",
+    "theme": "The Pale Echo Chambers",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR07_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Pale Archive: ride the shelf across the thorns to the reward.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR07_C04",
+    "name": "Quiet Terrace",
+    "set": "MR07",
+    "theme": "The Pale Echo Chambers",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR07_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Quiet Terrace: glide over thorns to the reward; up the right wall and swing back.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR07_C05",
+    "name": "Watcher's Hollow",
+    "set": "MR07",
+    "theme": "The Pale Echo Chambers",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR07_Vista.png",
+    "ordinaryCornersEligible": 1,
+    "preservedPuzzle": "Watcher's Hollow: up the left wall, glide over thorns to the find; the right wall and a glide back.",
+    "portalNeighbors": []
+  },
+  {
+    "room": "MR07_C06",
+    "name": "Upper Cleft",
+    "set": "MR07",
+    "theme": "The Pale Echo Chambers",
+    "vista": "Assets/Art/Prototypes/WorldRefresh_20261104/Underground/MR07_Vista.png",
+    "ordinaryCornersEligible": 2,
+    "preservedPuzzle": "Upper Cleft (entered on the right): up the moss wall and over a non-cling rock to the amber; a ladder back.",
+    "portalNeighbors": []
+  }
+]

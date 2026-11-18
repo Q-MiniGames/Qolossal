@@ -1,0 +1,148 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "label": "Fresh save has no awakened Grip knot",
+      "passed": true,
+      "frame": 120
+    },
+    {
+      "label": "Cradle crossing exists without a knot",
+      "passed": true,
+      "frame": 120
+    },
+    {
+      "label": "Fresh-save player walks across retired gate (rendered simulation)",
+      "passed": true,
+      "frame": 301
+    },
+    {
+      "label": "Older awakened-knot saves retain the crossing",
+      "passed": true,
+      "frame": 301
+    },
+    {
+      "label": "MRAtlas_MR01_Cradle: no active old wake knots",
+      "passed": true,
+      "frame": 393
+    },
+    {
+      "label": "MRAtlas_MR01_Cradle: no decorative cliff ledges",
+      "passed": true,
+      "frame": 393
+    },
+    {
+      "label": "MRAtlas_MR02_Causeway: no active old wake knots",
+      "passed": true,
+      "frame": 477
+    },
+    {
+      "label": "MRAtlas_MR02_Causeway: no decorative cliff ledges",
+      "passed": true,
+      "frame": 477
+    },
+    {
+      "label": "MRAtlas_MR03_Terraces: no active old wake knots",
+      "passed": true,
+      "frame": 703
+    },
+    {
+      "label": "MRAtlas_MR03_Terraces: no decorative cliff ledges",
+      "passed": true,
+      "frame": 703
+    },
+    {
+      "label": "MRAtlas_MR04_Qvale: no active old wake knots",
+      "passed": true,
+      "frame": 790
+    },
+    {
+      "label": "MRAtlas_MR04_Qvale: no decorative cliff ledges",
+      "passed": true,
+      "frame": 790
+    },
+    {
+      "label": "MRAtlas_MR05_Ribwood: no active old wake knots",
+      "passed": true,
+      "frame": 869
+    },
+    {
+      "label": "MRAtlas_MR05_Ribwood: no decorative cliff ledges",
+      "passed": true,
+      "frame": 869
+    },
+    {
+      "label": "MRAtlas_MR06_Heights: no active old wake knots",
+      "passed": true,
+      "frame": 960
+    },
+    {
+      "label": "MRAtlas_MR06_Heights: no decorative cliff ledges",
+      "passed": true,
+      "frame": 960
+    },
+    {
+      "label": "MRAtlas_MR07_Summit: no active old wake knots",
+      "passed": true,
+      "frame": 1051
+    },
+    {
+      "label": "MRAtlas_MR07_Summit: no decorative cliff ledges",
+      "passed": true,
+      "frame": 1051
+    },
+    {
+      "label": "Heart checkpoint retired",
+      "passed": true,
+      "frame": 1161
+    },
+    {
+      "label": "All four Heart activation controls retired",
+      "passed": true,
+      "frame": 1161
+    },
+    {
+      "label": "Old ending retired",
+      "passed": true,
+      "frame": 1161
+    },
+    {
+      "label": "Runtime no longer enables the retired ending",
+      "passed": true,
+      "frame": 1161
+    },
+    {
+      "label": "Saved reveal and completion flags do not revive old mechanics",
+      "passed": true,
+      "frame": 1306
+    },
+    {
+      "label": "No active duplicate Heart artwork even for completed saves",
+      "passed": true,
+      "frame": 1306
+    },
+    {
+      "label": "Old Heart checkpoint resolves to existing A08 approach",
+      "passed": true,
+      "frame": 1306
+    },
+    {
+      "label": "Checkpoint migration does not rewrite a save on read",
+      "passed": true,
+      "frame": 1306
+    },
+    {
+      "label": "Migration is restricted to underground scene",
+      "passed": true,
+      "frame": 1306
+    },
+    {
+      "label": "Legacy Heart save actually resumes safely at A08",
+      "passed": true,
+      "frame": 1443
+    }
+  ],
+  "errors": [],
+  "renderedCrossingFrames": 121,
+  "normalSavesPreserved": true
+}

@@ -1,0 +1,38 @@
+{
+  "scene": "MRAtlas_MR04_Qvale",
+  "collisionPreserved": true,
+  "changes": [
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Native hill | A01",
+      "change": "Native top terminates at its supporting cliff edge",
+      "oldLipOverhang": 0.22,
+      "newLipOverhang": 0
+    },
+    {
+      "path": "Generated (MRA builder)/Terrain/Route MR04 piece 00",
+      "change": "Native top terminates at its supporting cliff edge",
+      "oldLipOverhang": 0.22,
+      "newLipOverhang": 0
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Passage shadow",
+      "change": "Tapered rectangular shadow ceiling over .35u",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Passage shadow.asset",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoins/MR04/13B523A3B5A61B1D66BA.asset",
+      "verticesUnchanged": true,
+      "trianglesUnchanged": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Native walking surface",
+      "change": "Faded static walking strip before clamped source-bottom texels",
+      "sourceMesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR04/7BC7E5165F82F49708F3.asset",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoins/MR04/7BC7E5165F82F49708F3.asset",
+      "verticesUnchanged": true,
+      "trianglesUnchanged": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Native roof trim/Native roof 0",
+      "change": "Retired duplicate pre-refresh roof-top copy; current native terrain top remains"
+    }
+  ]
+}

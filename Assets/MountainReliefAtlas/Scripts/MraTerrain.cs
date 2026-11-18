@@ -100,6 +100,7 @@ public sealed partial class MraTerrain : MonoBehaviour
         else if (HasCliffKit) CliffParts();
         else if (face != null && riserFaces) Part("Riser faces", face, FaceOrder, BlendCaveRisers(RiserMesh()));
         if (under != null) Part("Underside", under, FaceOrder, UnderMesh());
+        BuildCausewayGrass();
 
         TryGetComponent(out PolygonCollider2D collider);
         if (solid)
@@ -130,6 +131,7 @@ public sealed partial class MraTerrain : MonoBehaviour
         view.sortingOrder = ChamberPartOrder(label, order + sortingOffset + (label == "Top" && chamberBackdrop != null ? chamberTopPriority : 0));
         var block = new MaterialPropertyBlock(); block.SetTexture(MainTex, sprite.texture); view.SetPropertyBlock(block);
         owned.Add(obj); owned.Add(mesh);
+        SurfaceTerrainContrast.Apply(this, view, mesh, block);
     }
 
     Vector2 WorldSize(Sprite s) => new Vector2(s.texture.width, s.texture.height) / s.pixelsPerUnit;
@@ -319,6 +321,19 @@ public sealed partial class MraTerrain : MonoBehaviour
             // (StepSeams), lined up with the piece's own stones; the segment is split at those seams.
             bool steps = HasStepSet;
             var cuts = new List<float> { a.x, b.x };
+            NativeStripLimits(i,out float nativeStart,out float nativeEnd,out float nativeBlend,out bool nativeLeft,out bool nativeRight);
+            if(nativeBlend>0)
+            {
+                // Several fade samples keep this short optical join smooth even
+                // on a long, otherwise single-quad tread. UV density is unchanged.
+                for(int j=1;j<=4;j++)
+                {
+                    float l=nativeStart+nativeBlend*j/4f,r=nativeEnd-nativeBlend*j/4f;
+                    if(nativeLeft&&l>a.x+.00001f&&l<b.x-.00001f)cuts.Add(l);
+                    if(nativeRight&&r>a.x+.00001f&&r<b.x-.00001f)cuts.Add(r);
+                }
+                cuts.Sort();
+            }
             if (steps)
             {
                 StepSeams();
@@ -347,6 +362,8 @@ public sealed partial class MraTerrain : MonoBehaviour
                 // separately: the kerb sharply at its mortar joint, the grass over a wider blend.
                 float ap = steps ? StripAlpha(p.x, false) * Ramp(p.x) : 1f, aq = steps ? StripAlpha(q.x, false) * Ramp(q.x) : 1f;
                 float gp = steps ? StripAlpha(p.x, true) * Ramp(p.x) : 1f, gq = steps ? StripAlpha(q.x, true) * Ramp(q.x) : 1f;
+                float nativeAp=NativeStripAlpha(p.x,nativeStart,nativeEnd,nativeBlend,nativeLeft,nativeRight),nativeAq=NativeStripAlpha(q.x,nativeStart,nativeEnd,nativeBlend,nativeLeft,nativeRight);
+                ap*=nativeAp;gp*=nativeAp;aq*=nativeAq;gq*=nativeAq;
                 if (ap <= 0f && aq <= 0f && gp <= 0f && gq <= 0f) continue;
                 Color sp = solidTint, sq = solidTint, tp = solidTint, tq = solidTint; sp.a *= ap; sq.a *= aq; tp.a *= gp; tq.a *= gq;
                 int n = v.Count;

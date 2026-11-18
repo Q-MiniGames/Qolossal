@@ -43,6 +43,8 @@ public sealed class PlayerCombat : MonoBehaviour
     public float PhaseProgress=>running?execution.Progress:0;
     public float AttackElapsed=>execution.Elapsed;
     public bool IsHitStopped=>hitStopRemaining>0;
+    public Vector2 LastHitLineA=>hitDetector.LastA;
+    public Vector2 LastHitLineB=>hitDetector.LastB;
     public bool HasBufferedAttack=>queued;
     public bool ComboWindowOpen=>running&&Phase==AttackPhase.Recovery&&PhaseProgress>=CurrentAttack.comboWindowStart;
     // The plunge (a down attack with plungeSpeed): PlayerMovement holds Qori still through its wind-up, then dives.
@@ -191,6 +193,13 @@ public sealed class PlayerCombat : MonoBehaviour
         if(CurrentAttack.slingProjectile)
         {
             if(!projectileFired && PhaseProgress>=CurrentAttack.animation.contactFraction){projectileFired=true;Vector2 origin=armory.Visual!=null?armory.Visual.SlingReleasePosition:(Vector2)weaponMount.position;QoriResinShot.Launch(this,origin,CurrentAttack,armory.SlingWeapon,armory.SlingDirection);}
+            return;
+        }
+        // A swing drawn frame by frame hits along the staff as drawn (3 Nov): the rig still runs underneath, out of step with the picture.
+        var frames=QoriWalkFramesOnPlayer.Active;
+        if(frames!=null&&frames.FramesVisible&&CurrentAttack.hitShape==CombatHitShape.WeaponCapsule&&frames.DrawsStaff(CurrentAttack))
+        {
+            if(frames.TryStaffLine(CurrentAttack,out Vector2 hand,out Vector2 staffTip))hitDetector.Sample(this,hand,staffTip);
             return;
         }
         hitDetector.Sample(this,weaponMount.position,weaponTip.position);

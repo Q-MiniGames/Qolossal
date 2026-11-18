@@ -1,0 +1,691 @@
+{
+  "summary": {
+    "newAssets": 48,
+    "all48Pass": true,
+    "vistaTexturePlacements": 445,
+    "vistaRenderers": 89,
+    "distinctVistaTextures": 60,
+    "auditSkipped": [],
+    "environmentPlacements": 2264,
+    "remainingColourSourceExceptions": [
+      "Assets/Art/Prototypes/CaveRollout_20261027/Causeway_Masonry.png",
+      "Assets/Art/Prototypes/CradleRockwork_20261027/MR01_C01_Rockwork.png",
+      "Assets/Art/Prototypes/CradleUndergroundExit_20261027/MR01_C01_ReturnRim.png"
+    ],
+    "scope": "Inspection of actual final density rows plus source hashes and live shader UV formulas; not platform certification. Procedural roof-coverage rows will be supplied by the next audit run."
+  },
+  "newAssetChecks": [
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/A_Extension.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1254,
+        1254
+      ],
+      "native": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/A_Left.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/A_Right.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/A_Vault.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1774,
+        887
+      ],
+      "native": [
+        1774,
+        887
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/C_Extension.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1254,
+        1254
+      ],
+      "native": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/C_Left.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/C_Right.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/C_Vault.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1774,
+        887
+      ],
+      "native": [
+        1774,
+        887
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/D_Extension.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1254,
+        1254
+      ],
+      "native": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/D_Left.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/D_Right.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/D_Vault.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1774,
+        887
+      ],
+      "native": [
+        1774,
+        887
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/E_Extension.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1254,
+        1254
+      ],
+      "native": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/E_Left.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/E_Right.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/E_Vault.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1774,
+        887
+      ],
+      "native": [
+        1774,
+        887
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/H_Extension.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1254,
+        1254
+      ],
+      "native": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/H_Left.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/H_Right.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/H_Vault.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1774,
+        887
+      ],
+      "native": [
+        1774,
+        887
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR01_Extension.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1254,
+        1254
+      ],
+      "native": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR01_Left.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR01_Right.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR01_Vault.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1774,
+        887
+      ],
+      "native": [
+        1774,
+        887
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR02_Extension.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1254,
+        1254
+      ],
+      "native": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR02_Left.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR02_Right.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR02_Vault.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1774,
+        887
+      ],
+      "native": [
+        1774,
+        887
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR03_Extension.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1254,
+        1254
+      ],
+      "native": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR03_Left.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR03_Right.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR03_Vault.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1774,
+        887
+      ],
+      "native": [
+        1774,
+        887
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR05_Extension.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1254,
+        1254
+      ],
+      "native": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR05_Left.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR05_Right.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR05_Vault.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1774,
+        887
+      ],
+      "native": [
+        1774,
+        887
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR06_Extension.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1254,
+        1254
+      ],
+      "native": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR06_Left.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR06_Right.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR06_Vault.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1774,
+        887
+      ],
+      "native": [
+        1774,
+        887
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR07_Extension.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1254,
+        1254
+      ],
+      "native": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR07_Left.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR07_Right.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/MR07_Vault.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1774,
+        887
+      ],
+      "native": [
+        1774,
+        887
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/P_Extension.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1254,
+        1254
+      ],
+      "native": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/P_Left.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/P_Right.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1024,
+        1536
+      ],
+      "native": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "asset": "Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/P_Vault.png",
+      "sha256MatchesManifest": true,
+      "nativePass": true,
+      "importPass": true,
+      "required": [
+        1774,
+        887
+      ],
+      "native": [
+        1774,
+        887
+      ]
+    }
+  ]
+}

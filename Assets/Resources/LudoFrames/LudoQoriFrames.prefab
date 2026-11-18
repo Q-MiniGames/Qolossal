@@ -172,23 +172,7 @@ MonoBehaviour:
     contactFrame: 0
   codexWalk:
     label: Codex walk
-    frames:
-    - {fileID: 21300000, guid: 7b0679c25f70a9747820db1fe605d605, type: 3}
-    - {fileID: 21300000, guid: c0da4d815747ff046a392cb3a0aa774e, type: 3}
-    - {fileID: 21300000, guid: 0ff2565d66e97994badbbac6eeab919b, type: 3}
-    - {fileID: 21300000, guid: 46c3915360d747f4689790553fc5e128, type: 3}
-    - {fileID: 21300000, guid: 8739b7c7d10578f4d993e3dad59864d7, type: 3}
-    - {fileID: 21300000, guid: 008714290b5f85a48a6fb8c7a24ccd33, type: 3}
-    - {fileID: 21300000, guid: 6807c85b9a190f14695aa85ed7443ac9, type: 3}
-    - {fileID: 21300000, guid: 1a375aed7af325a4c9de0a27232fea5e, type: 3}
-    - {fileID: 21300000, guid: 38329af6c8275d4489a531b10e38c4d4, type: 3}
-    - {fileID: 21300000, guid: 78c3676d5eba29148976a8e639130147, type: 3}
-    - {fileID: 21300000, guid: f7d6e31a6fd7d4244b6c051aa604dd2c, type: 3}
-    - {fileID: 21300000, guid: d7678662f04c84040ba589e8218c925b, type: 3}
-    - {fileID: 21300000, guid: d8b094ceefc9adf43a85b6a24120ed3e, type: 3}
-    - {fileID: 21300000, guid: d5d6e80a597b96c40b16648b1ab9166b, type: 3}
-    - {fileID: 21300000, guid: d340d0695da1613459f153f60723c723, type: 3}
-    - {fileID: 21300000, guid: e6794f562a49e734a911732a5ce1b80c, type: 3}
+    frames: []
     strideCanvasPx: 491.8
     figureHeightPx: 1112
     cycleSeconds: 0.72
@@ -526,39 +510,7 @@ MonoBehaviour:
     contactFrame: 0
   slash:
     label: Ludo Slash
-    frames:
-    - {fileID: 21300000, guid: 04c44887f71869d418872968d0b4a84c, type: 3}
-    - {fileID: 21300000, guid: c5594cec8d766044983adae6fec2c8ea, type: 3}
-    - {fileID: 21300000, guid: 7738ebe85c1027c47bb26d3a781f8793, type: 3}
-    - {fileID: 21300000, guid: 3535d555bdd76c747a48ffb8c729bdab, type: 3}
-    - {fileID: 21300000, guid: 2d44fbd7c52d92442aeda2958a5115d0, type: 3}
-    - {fileID: 21300000, guid: 176f765e7396eb542bc9a2094f804f6b, type: 3}
-    - {fileID: 21300000, guid: d32f5ae227e9ec9408a6df554b4826a3, type: 3}
-    - {fileID: 21300000, guid: 5e567e84d6545f546b0014b5f302cc55, type: 3}
-    - {fileID: 21300000, guid: 9065dab9007d3c94d89f93c9e622fc35, type: 3}
-    - {fileID: 21300000, guid: c1a72de558ab01241aba7b9f5e5c6b61, type: 3}
-    - {fileID: 21300000, guid: c3d2654b3810fb44a95307fd49230f40, type: 3}
-    - {fileID: 21300000, guid: dc0a67c5269b4ff45933f0084f004267, type: 3}
-    - {fileID: 21300000, guid: 836c7e17dd94d1041a85599d6449f8bc, type: 3}
-    - {fileID: 21300000, guid: 03a2f503c80eb9a40a4cdcacaee32bb0, type: 3}
-    - {fileID: 21300000, guid: 6aed9d6d6fa89f748a68b96c3b4eaf48, type: 3}
-    - {fileID: 21300000, guid: be699fd48795d4648b4ee294b415c008, type: 3}
-    - {fileID: 21300000, guid: 6d7253d1c83e8834cbea0ef1ca15383a, type: 3}
-    - {fileID: 21300000, guid: 558f0b513a773f04fbbf6b81e2bfa0b7, type: 3}
-    - {fileID: 21300000, guid: f8f32960c28abba429e3644c03e7e803, type: 3}
-    - {fileID: 21300000, guid: 51f03b08d71d37345987aba86f301974, type: 3}
-    - {fileID: 21300000, guid: 39c480c833ce89f4c9c5f5b9c471dcec, type: 3}
-    - {fileID: 21300000, guid: bd74cd7439bc2214cb387f58197f726a, type: 3}
-    - {fileID: 21300000, guid: 9dd7463fdfb05424895f26584405653f, type: 3}
-    - {fileID: 21300000, guid: e50c3d7f0e7e3534abd453428127ef8c, type: 3}
-    - {fileID: 21300000, guid: 168c9c67d46846846887c08697a6de1a, type: 3}
-    - {fileID: 21300000, guid: a5efe0e3f0a834e4786f795b33d94f72, type: 3}
-    - {fileID: 21300000, guid: 23206cbead19d3f4595eb655cdd3dac9, type: 3}
-    - {fileID: 21300000, guid: c3f1b3808b4b3544bbe8faeec982ff14, type: 3}
-    - {fileID: 21300000, guid: a0696edddd8998d4fa084c50a9dadb6c, type: 3}
-    - {fileID: 21300000, guid: dee96ae2921982c4e925717a10e57aee, type: 3}
-    - {fileID: 21300000, guid: 6bd5e481aca0ce44a9c8290e4040468e, type: 3}
-    - {fileID: 21300000, guid: 4dca7519babd4424ebdf1a8d19fbdf34, type: 3}
+    frames: []
     strideCanvasPx: 1
     figureHeightPx: 465.3
     cycleSeconds: 0.8
@@ -575,22 +527,7 @@ MonoBehaviour:
     contactFrame: 0
   strike:
     label: Ludo Strike
-    frames:
-    - {fileID: 21300000, guid: 499b35957a0f3dc499b6cb9895afc7b6, type: 3}
-    - {fileID: 21300000, guid: cabcc6a4d2103f444825b3a50cc6fc0e, type: 3}
-    - {fileID: 21300000, guid: 3e290321da3721f46a0235d03580ed90, type: 3}
-    - {fileID: 21300000, guid: 08490344cb2878c459fdcb073e1cbef0, type: 3}
-    - {fileID: 21300000, guid: ec4a258abffac164cbc7360d9145fcfe, type: 3}
-    - {fileID: 21300000, guid: 419fc18bebd125142acdc5afc7d963f1, type: 3}
-    - {fileID: 21300000, guid: 5de15cda0216a484b926d6766f559f7e, type: 3}
-    - {fileID: 21300000, guid: c8cccf14a377ba54eb171307aefd758d, type: 3}
-    - {fileID: 21300000, guid: 9b15370052757b947801a554ca7a25ae, type: 3}
-    - {fileID: 21300000, guid: 761753d5549ccb1459a2ffdd1a4ddab8, type: 3}
-    - {fileID: 21300000, guid: 79c1df30011cf4e45ba4db1a76abc06c, type: 3}
-    - {fileID: 21300000, guid: 4aa9dcf4c87916c48b7385daabf55ef0, type: 3}
-    - {fileID: 21300000, guid: 8c4c20b64c511564dab6ed027acc7fd1, type: 3}
-    - {fileID: 21300000, guid: 1e930efb4169b004b9e762bf03c46fc6, type: 3}
-    - {fileID: 21300000, guid: a0ce03369e6770a41a1ad807a44ec97e, type: 3}
+    frames: []
     strideCanvasPx: 1
     figureHeightPx: 445
     cycleSeconds: 0.5
@@ -1085,3 +1022,6 @@ MonoBehaviour:
   idleActionFps: 15
   idleActionEvery: {x: 5, y: 10}
   idleBreath: 0
+  runPace: 1.28
+  hurtHold: 0.22
+  turnHoldSpeed: 1.5

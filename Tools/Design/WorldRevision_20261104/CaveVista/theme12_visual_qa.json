@@ -1,0 +1,152 @@
+{
+  "review": "Independent native3840x2160 saved-scene Editor capture inspection, cave_network",
+  "count": 12,
+  "themeCount": 12,
+  "caveCompositionFailures": [],
+  "criteria": [
+    "No black horizontal/vertical scenic grid",
+    "No mirrored waterfalls or diamond seams",
+    "No tiny central painting against flat surround",
+    "Continuous painted side/vault depth",
+    "Foreground terrain and hazards remain distinct"
+  ],
+  "limitations": [
+    "Static Editor images only; full89-room grounded runtime framing review follows separately",
+    "Physical terrain borders and existing gameplay wind effects are outside this cave-background change",
+    "No hardware performance or console readiness claim"
+  ],
+  "rows": [
+    {
+      "room": "A01",
+      "theme": "A",
+      "file": "Tools\\Design\\WorldRevision_20261104\\CaveVista\\AllThemes\\A01_theme_4K.png",
+      "sha256": "e1e358304156388a32a16dc3780cad99011ee6d53d92c9225a5edcbfa219c3b6",
+      "width": 3840,
+      "height": 2160,
+      "nativeImageViewed": true,
+      "caveCompositionPass": true,
+      "notes": "Cistern vault/side channels read as one cavern; crisp foreground block and water; no mirror seams."
+    },
+    {
+      "room": "C01",
+      "theme": "C",
+      "file": "Tools\\Design\\WorldRevision_20261104\\CaveVista\\AllThemes\\C01_theme_4K.png",
+      "sha256": "23c1160585367cf973792498cef461e1c83f3a4b509fcf90e715a92f82629a3f",
+      "width": 3840,
+      "height": 2160,
+      "nativeImageViewed": true,
+      "caveCompositionPass": true,
+      "notes": "Root shelf depths blend into central tree; foreground wall, spikes and ring remain distinct."
+    },
+    {
+      "room": "D01",
+      "theme": "D",
+      "file": "Tools\\Design\\WorldRevision_20261104\\CaveVista\\AllThemes\\D01_theme_4K.png",
+      "sha256": "2685a2fc8364e793b82de4b05163430d395f7253bfb346494dc1257a5f28bd73",
+      "width": 3840,
+      "height": 2160,
+      "nativeImageViewed": true,
+      "caveCompositionPass": true,
+      "notes": "Cool wind-carved vault has continuous painted depth; safe floor and checkpoint read clearly."
+    },
+    {
+      "room": "E05",
+      "theme": "E",
+      "file": "Tools\\Design\\WorldRevision_20261104\\CaveVista\\AllThemes\\E05_theme_4K.png",
+      "sha256": "c1063f248507e09d632908b8eed009331b906fac06b31ef3dc8a77cd558813c6",
+      "width": 3840,
+      "height": 2160,
+      "nativeImageViewed": true,
+      "caveCompositionPass": true,
+      "notes": "Rose sanctuary arches span the full view; gust lanes and golden platforms remain distinct."
+    },
+    {
+      "room": "HEART",
+      "theme": "H",
+      "file": "Tools\\Design\\WorldRevision_20261104\\CaveVista\\AllThemes\\HEART_theme_4K.png",
+      "sha256": "372ad86b11dc705faa85c5f6831d10e6abbb5e27b3c91fe6b4885ef40fd7c45b",
+      "width": 3840,
+      "height": 2160,
+      "nativeImageViewed": true,
+      "caveCompositionPass": true,
+      "notes": "Fossil/red vault fills the view; no mirrored diamonds; Heart root and ladder remain readable."
+    },
+    {
+      "room": "MR01_C06",
+      "theme": "MR01",
+      "file": "Tools\\Design\\WorldRevision_20261104\\CaveVista\\AllThemes\\MR01_C06_theme_4K.png",
+      "sha256": "111f2890031d3d4e42e335c913fe58201e86f125ba657ccb0d698e1851378aec",
+      "width": 3840,
+      "height": 2160,
+      "nativeImageViewed": true,
+      "caveCompositionPass": true,
+      "notes": "Olive root cavern fills view; original stream and adjoining depths blend without window framing."
+    },
+    {
+      "room": "MR02_C04",
+      "theme": "MR02",
+      "file": "Tools\\Design\\WorldRevision_20261104\\CaveVista\\AllThemes\\MR02_C04_theme_4K.png",
+      "sha256": "245e6f5c86696e5d3d09679f487403180e0dac8bac7cbcb6f65ce6e677aeb5dd",
+      "width": 3840,
+      "height": 2160,
+      "nativeImageViewed": true,
+      "caveCompositionPass": true,
+      "notes": "Stone gallery flows into side reaches; physical pale terrain is distinct from far cave."
+    },
+    {
+      "room": "MR03_C06",
+      "theme": "MR03",
+      "file": "Tools\\Design\\WorldRevision_20261104\\CaveVista\\AllThemes\\MR03_C06_theme_4K.png",
+      "sha256": "1a76feb775ff75b6d14a52c18207a0546b13f7925de985b3d689459ad1a3254e",
+      "width": 3840,
+      "height": 2160,
+      "nativeImageViewed": true,
+      "caveCompositionPass": true,
+      "notes": "Warm mill galleries read across viewport; rings, spikes and terrain silhouette remain distinct."
+    },
+    {
+      "room": "MR05_C01",
+      "theme": "MR05",
+      "file": "Tools\\Design\\WorldRevision_20261104\\CaveVista\\AllThemes\\MR05_C01_theme_4K.png",
+      "sha256": "74f77e6b9a9ef5a2f99fc5fc5ba154714de81551535d60db95e1c05ae94ead4f",
+      "width": 3840,
+      "height": 2160,
+      "nativeImageViewed": true,
+      "caveCompositionPass": true,
+      "notes": "Emerald root vault has broad atmospheric depth; small platforms remain foreground objects."
+    },
+    {
+      "room": "MR06_C01",
+      "theme": "MR06",
+      "file": "Tools\\Design\\WorldRevision_20261104\\CaveVista\\AllThemes\\MR06_C01_theme_4K.png",
+      "sha256": "b7895f6b756da37003e9d48b35c1b3f7c93f6be399ac43f910e669aa4b5b5f5c",
+      "width": 3840,
+      "height": 2160,
+      "nativeImageViewed": true,
+      "caveCompositionPass": true,
+      "notes": "Lavender wind chamber remains coherent; gust strokes are existing gameplay visualization."
+    },
+    {
+      "room": "MR07_C01",
+      "theme": "MR07",
+      "file": "Tools\\Design\\WorldRevision_20261104\\CaveVista\\AllThemes\\MR07_C01_theme_4K.png",
+      "sha256": "fce300338bc90821d4692203f0f5418fc299aaf5fcb19f2385e0dc0b16f4c998",
+      "width": 3840,
+      "height": 2160,
+      "nativeImageViewed": true,
+      "caveCompositionPass": true,
+      "notes": "Pale mineral cavern remains distant behind warm foreground platforms and spikes."
+    },
+    {
+      "room": "PC06",
+      "theme": "P",
+      "file": "Tools\\Design\\WorldRevision_20261104\\CaveVista\\AllThemes\\PC06_theme_4K.png",
+      "sha256": "4052b505fda80e96215be72af78b920da42d84e9fa8eafe760e4f4abe4785e23",
+      "width": 3840,
+      "height": 2160,
+      "nativeImageViewed": true,
+      "caveCompositionPass": true,
+      "notes": "Complete P-theme depth is visible within the physical room aperture; surrounding pale rock is terrain, not a repeated scenic-panel frame."
+    }
+  ]
+}

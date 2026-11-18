@@ -1,0 +1,12 @@
+using System;using System.IO;using System.Linq;using System.Collections.Generic;using UnityEngine;using UnityEditor;using Newtonsoft.Json;
+[InitializeOnLoad]public static class KeepersNurseryGrid {
+ public class Pose:KeepersNurseryQA.Pose{public string area;}
+ public class Config{public Pose[] poses;}
+ class Job{public Pose pose;public string kind;public int width;}
+ static Queue<Job> jobs=new();static List<object> records=new();static int total;static float oldTime;static bool oldNear;public static int Pending=>jobs.Count;
+ static KeepersNurseryGrid(){EditorApplication.update+=Tick;AssemblyReloadEvents.beforeAssemblyReload+=Cleanup;}
+ public static void Start(bool userOnly=false,string[] kinds=null){if(!Application.isPlaying)throw new Exception("Runtime preview required");if(jobs.Count>0)throw new Exception("Grid already running");records.Clear();oldTime=Time.timeScale;Time.timeScale=0;oldNear=KeepersNurseryPreview.Near;var poses=JsonConvert.DeserializeObject<Config>(File.ReadAllText(KeepersNurseryPreview.Data+"grid.json")).poses;foreach(var p in poses.Where(p=>!userOnly||p.area=="USER"))foreach(var k in kinds??new[]{"terrain","context","background","far","rearCoverage"})jobs.Enqueue(new Job{pose=p,kind=k,width=1920});if(kinds!=null){var prior=Newtonsoft.Json.Linq.JObject.Parse(File.ReadAllText(KeepersNurseryPreview.Data+"grid_initial_receipt.json"));foreach(var r in prior["records"].Where(r=>!kinds.Contains((string)r["kind"])))records.Add(r);}total=jobs.Count+records.Count;Write(null);}
+ static void Tick(){if(jobs.Count==0||EditorApplication.isCompiling||EditorApplication.isUpdating)return;try{var j=jobs.Dequeue();records.Add(KeepersNurseryQA.Capture(j.pose,j.width,j.kind,true));if(records.Count%10==0||jobs.Count==0)Write(null);if(jobs.Count==0)Cleanup();}catch(Exception e){jobs.Clear();Write(e.ToString());Cleanup();Debug.LogException(e);}}
+ static void Cleanup(){if(total>0){Time.timeScale=oldTime;KeepersNurseryPreview.SetNear(oldNear);total=0;}}
+ static void Write(string error){Directory.CreateDirectory(KeepersNurseryQA.Output);File.WriteAllText(KeepersNurseryPreview.Data+"grid_progress.json",JsonConvert.SerializeObject(new{total,pending=jobs.Count,completed=records.Count,error,sceneDirty=UnityEngine.SceneManagement.SceneManager.GetActiveScene().isDirty},Formatting.Indented));File.WriteAllText(KeepersNurseryPreview.Data+"grid_receipt.json",JsonConvert.SerializeObject(new{runtime=true,orthographicHalfHeight=5,records},Formatting.Indented));}
+}

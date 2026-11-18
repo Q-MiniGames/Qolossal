@@ -1,0 +1,322 @@
+{
+  "path": "Cave access | paired underground rooms",
+  "rows": [
+    {
+      "name": "[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-676477556-0",
+      "position": [
+        0.0,
+        0.0
+      ],
+      "localPosition": [
+        0.0,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "CaveConnectionPoint"
+      ]
+    },
+    {
+      "name": "Sluice Arrival",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-1273175051-0",
+      "position": [
+        139.25,
+        8.0
+      ],
+      "localPosition": [
+        139.25,
+        8.0
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "BoxCollider2D",
+        "MraUgPortal",
+        "CaveThresholdPresentation"
+      ]
+    },
+    {
+      "name": "Entrance",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-152803811-0",
+      "position": [
+        139.25,
+        7.84722233
+      ],
+      "localPosition": [
+        0.0,
+        -0.152777672
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "SpriteRenderer"
+      ]
+    },
+    {
+      "name": "Dressing (left foot)",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-152034589-0",
+      "position": [
+        137.2,
+        7.990741
+      ],
+      "localPosition": [
+        -2.050003,
+        -0.009259224
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "SpriteRenderer"
+      ]
+    },
+    {
+      "name": "Dressing (right foot)",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-794805736-0",
+      "position": [
+        141.3,
+        8.0
+      ],
+      "localPosition": [
+        2.050003,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "SpriteRenderer"
+      ]
+    },
+    {
+      "name": "Arrival ug:ENT_A:return",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-176756342-0",
+      "position": [
+        144.2,
+        8.66
+      ],
+      "localPosition": [
+        144.2,
+        8.66
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "MraArrival"
+      ]
+    },
+    {
+      "name": "Regional fitted passage",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-1577013431-0",
+      "position": [
+        0.0,
+        0.0
+      ],
+      "localPosition": [
+        0.0,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform"
+      ]
+    },
+    {
+      "name": "Continuous themed inner wall",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-687686162-0",
+      "position": [
+        0.0,
+        0.0
+      ],
+      "localPosition": [
+        0.0,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "MeshFilter",
+        "MeshRenderer"
+      ]
+    },
+    {
+      "name": "Passage shadow",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-2042308671-0",
+      "position": [
+        0.0,
+        0.0
+      ],
+      "localPosition": [
+        0.0,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "MeshFilter",
+        "MeshRenderer"
+      ]
+    },
+    {
+      "name": "Registered native outer rock",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-1726656504-0",
+      "position": [
+        0.0,
+        0.0
+      ],
+      "localPosition": [
+        0.0,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "MeshFilter",
+        "MeshRenderer"
+      ]
+    },
+    {
+      "name": "Native walking surface",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-1559568473-0",
+      "position": [
+        0.0,
+        0.0
+      ],
+      "localPosition": [
+        0.0,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "MeshFilter",
+        "MeshRenderer"
+      ]
+    },
+    {
+      "name": "Native roof trim",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-1071221605-0",
+      "position": [
+        0.0,
+        0.0
+      ],
+      "localPosition": [
+        0.0,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform"
+      ]
+    },
+    {
+      "name": "Native roof 0",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-701463392-0",
+      "position": [
+        0.0,
+        0.0
+      ],
+      "localPosition": [
+        0.0,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "MeshFilter",
+        "MeshRenderer"
+      ]
+    },
+    {
+      "name": "Native roof 1",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-719642039-0",
+      "position": [
+        0.0,
+        0.0
+      ],
+      "localPosition": [
+        0.0,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "MeshFilter",
+        "MeshRenderer"
+      ]
+    },
+    {
+      "name": "Native roof 2",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-711260212-0",
+      "position": [
+        0.0,
+        0.0
+      ],
+      "localPosition": [
+        0.0,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "MeshFilter",
+        "MeshRenderer"
+      ]
+    },
+    {
+      "name": "Native hill | A01",
+      "id": "GlobalObjectId_V1-2-5dda155224386f7459847ff1c3b2f7e4-1879319147-0",
+      "position": [
+        0.0,
+        0.0
+      ],
+      "localPosition": [
+        0.0,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "MraTerrain",
+        "PolygonCollider2D",
+        "WallSurface"
+      ]
+    },
+    {
+      "name": "Fill (generated)",
+      "id": "GlobalObjectId_V1-0-00000000000000000000000000000000-0-0",
+      "position": [
+        0.0,
+        0.0
+      ],
+      "localPosition": [
+        0.0,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "MeshFilter",
+        "MeshRenderer"
+      ]
+    },
+    {
+      "name": "Top (generated)",
+      "id": "GlobalObjectId_V1-0-00000000000000000000000000000000-0-0",
+      "position": [
+        0.0,
+        0.0
+      ],
+      "localPosition": [
+        0.0,
+        0.0
+      ],
+      "active": true,
+      "components": [
+        "Transform",
+        "MeshFilter",
+        "MeshRenderer"
+      ]
+    }
+  ]
+}

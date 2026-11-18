@@ -1,0 +1,11 @@
+# Platform-specific camera framing — 6 November 2026
+
+The user requested that standing on platforms not force the low15%-feet composition used for solid ground. `CameraFollow` now places grounded collider feet at40% on platforms (Qori's centre is approximately46% at normal zoom), while retaining15% on solid terrain. The existing vertical damping eases between those targets. The last support's framing is retained through flight, so taking off from a platform does not change the baseline back to terrain framing on the next frame.
+
+Classification uses the actual `PlayerMovement.GroundCollider`, not its dimensions, names or screen location: enabled one-way PlatformEffectors, moving platforms, crumble platforms, and explicitly marked temporary growth platforms. `CameraPlatformSurface` is a camera-only marker added when `GrowthPlatform` creates its solid runtime platform. Solid ledges/terrain remain ground. No scene components, collider geometry, maps or backgrounds are edited. Room/arena bounds and safety margins can still constrain the requested framing.
+
+The cave automatic edge look-down remains disabled; manual look-down, actual fall following, surface edge anticipation and Qvale zoom behavior remain available. The persistent distant Cistern preview is unchanged. `start_user_trial.cs` opens an isolated-save review on the deck atx1630; F6 returns to the solid-ground approach so the user can compare by walking right onto the platform.
+
+`playtest.cs` measures actual render-end camera/player positions for ground idle, walking from ground onto the platform, a real jump and landing on that platform, idle, walking back to ground, and the zoomed Qvale ground jump. It also checks existing one-way/moving/crumble support classification. `QA.json` records the final measured values and scene/save preservation. Synthetic controller input and Editor options are restored on completion. No normal save is changed.
+
+Windows Unity Editor,1080p and3840×2160 output captures. Physical controller, standalone builds, CPU/GPU frame-time/memory, PS5, Xbox SeriesX/S and Switch2handheld/docked remain not tested; no60FPS/hardware qualification claim. Original Switch excluded. The distant background remains the previously disclosed composition draft, not final native4K artwork.

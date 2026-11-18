@@ -1,0 +1,34 @@
+PASS the minimap starts by itself, with 89 rooms
+PASS every door shows the beginning of its passage (shortest 15.6 u of wall)
+PASS every cave exit opens into a passage beginning (37)
+INFO reading the map data and sorting the walls takes 147 ms, once, on entering the caves
+PASS map and scene agree on all room bounds (0 wrong)
+PASS all 126 door ends are open in the scene (0 wrong)
+PASS all 445 piece outlines have colliders (0 wrong)
+PASS all 445 solid pieces in the scene are on the map (0 wrong)
+PASS wall outlines lie on the terrain: 2196 of 2196 points (0.5% allowed)
+PASS rests, rewards, exits and gates all sit in or by a room (0 wrong)
+PASS before the reveal, Route E stays off the map even if entered
+PASS 40 rooms reveal on entry, and nothing unvisited is drawn (0 wrong)
+PASS the Chart knows exactly the rooms the minimap knows (0 wrong)
+PASS both count 40 rooms
+PASS the Chart hides undiscovered outlines (4373 shown, 6601 hidden)
+PASS every other room reveals too, Route E after the reveal (0 wrong)
+PASS all 89 rooms known (89)
+PASS a shut gate is drawn near A03 (2)
+PASS opening it removes its mark (2 to 1)
+PASS taking a reward removes its mark (8 to 7)
+PASS a beaten guardian loses its mark, in A08 (3 to 2)
+PASS with every room known, no door is marked unexplored (0)
+INFO mesh in A08: 8848 vertices, 15 rests, 0 exits drawn
+PASS from a lone room, its unexplored doors are marked (2)
+PASS starts small and shown
+PASS right-stick click: medium
+PASS Tab: large
+PASS again: off and hidden
+PASS the choice is remembered
+PASS again: back to small
+PASS hidden while a window is open
+PASS the key does nothing behind a window
+PASS back when the window closes
+== 0 failures, 0 runtime errors

@@ -27,6 +27,7 @@ public abstract class UndergroundEnemy : EnemyBase
     SpriteRenderer view;
     Transform zone;
     BoxCollider2D zoneBox;
+    AttackZoneTelegraph telegraph;
     float hurtAt = -9f, shove, safeUntil, pushAt = -9f, pushDir;
     // Stays put when hit (only its art rocks back).
     protected virtual bool Rooted => false;
@@ -128,6 +129,15 @@ public abstract class UndergroundEnemy : EnemyBase
         StrikeLive = live;
         if (live) { StrikeZone(out var c, out var z); zone.position = c; zoneBox.size = z; }
         zoneBox.enabled = live;
+        if (telegraph == null) telegraph = AttackZoneTelegraph.For(this, false);
+        if (IsAlive && phase == Phase.Warn)
+        {
+            // The zone the coming strike will use: asked for as if the strike had begun.
+            phase = Phase.Attack; bool has = StrikeZone(out var warnAt, out var warnSize); phase = Phase.Warn;
+            if (has) telegraph.Warn(warnAt, warnSize, T / .65f); else telegraph.Hide();
+        }
+        else if (live) telegraph.Strike(zone.position, zoneBox.size);
+        else telegraph.Hide();
     }
 
     // The blow shoves it back a little, stopping at walls and ledges. A hovering creature's anchor moves with it.

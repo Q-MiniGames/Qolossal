@@ -1,0 +1,101 @@
+{
+  "id": "PC04",
+  "scene": "MRAtlas_MR02_Causeway",
+  "oldParent": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N02] Lower arches/Cave access | paired underground rooms",
+  "newParent": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N02] Lower arches/Cave access | paired underground rooms",
+  "oldPortal": [
+    77.65,
+    30.0
+  ],
+  "newPortal": [
+    91.85,
+    30.0
+  ],
+  "oldArrival": [
+    82.6,
+    30.66
+  ],
+  "newArrival": [
+    86.9,
+    30.66
+  ],
+  "mouth": [
+    88.5,
+    30.0
+  ],
+  "inward": 1.0,
+  "arrivalFacing": -1.0,
+  "arrivalGround": 30.0,
+  "emergenceFloorRise": 0.0,
+  "originalAperture": [
+    [
+      81.15,
+      32.7
+    ],
+    [
+      76.4,
+      32.7
+    ],
+    [
+      76.4,
+      30.0
+    ],
+    [
+      81.15,
+      30.0
+    ]
+  ],
+  "newAperture": [
+    [
+      88.35,
+      32.7
+    ],
+    [
+      93.1,
+      32.7
+    ],
+    [
+      93.1,
+      30.0
+    ],
+    [
+      88.35,
+      30.0
+    ]
+  ],
+  "artificialHillDisabled": true,
+  "naturalSurfacePreserved": true,
+  "persistentInvariantsPreserved": true,
+  "grounded": true,
+  "meshRecords": [
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N02] Lower arches/Cave access | paired underground rooms/[CAVE PC04] MR02_N02 <-> Underground - Mason’s Recess/Regional fitted passage/Continuous themed inner wall",
+      "sourceMesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR02/PC04/Continuous themed inner wall.asset",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/RelocatedEntrances/PC04/C3F174AFFAD022F755AE.asset",
+      "movedExteriorVertices": 0,
+      "approvedRimUV1Preserved": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N02] Lower arches/Cave access | paired underground rooms/[CAVE PC04] MR02_N02 <-> Underground - Mason’s Recess/Regional fitted passage/Passage shadow",
+      "sourceMesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR02/PC04/Passage shadow.asset",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/RelocatedEntrances/PC04/AECE5E36FE14EF83E556.asset",
+      "movedExteriorVertices": 0,
+      "approvedRimUV1Preserved": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N02] Lower arches/Cave access | paired underground rooms/[CAVE PC04] MR02_N02 <-> Underground - Mason’s Recess/Regional fitted passage/Registered native outer rock",
+      "sourceMesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR02/PC04/Registered native outer rock.asset",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/RelocatedEntrances/PC04/4F081CE45EEF9079ED4E.asset",
+      "movedExteriorVertices": 0,
+      "approvedRimUV1Preserved": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N02] Lower arches/Cave access | paired underground rooms/[CAVE PC04] MR02_N02 <-> Underground - Mason’s Recess/Regional fitted passage/Native walking surface",
+      "sourceMesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoins/MR02/329C60C8B05874594059.asset",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/RelocatedEntrances/PC04/329C60C8B05874594059.asset",
+      "movedExteriorVertices": 0,
+      "approvedRimUV1Preserved": true
+    }
+  ],
+  "pending": "Refresh scene-derived map and authoring placement metadata"
+}

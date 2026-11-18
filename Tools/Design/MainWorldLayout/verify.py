@@ -15,5 +15,6 @@ page=(OUT/'index.html').read_text();links=re.findall(r'href="([^"]+)"',page);ass
 runtime=json.loads((ROOT/'Assets/Resources/QolossalAtlas/AtlasData.json').read_text(encoding='utf-8'))
 assert runtime['sceneDerived'] and runtime['nodes']==d['nodes'] and runtime['transforms']==d['transforms']
 assert runtime['caves']==d['caves']
-qa.update(all173IdsDrawn=True,all74CaveMouthsDrawn=True,all8SceneHashesMatchCurrentExtraction=True,allSourceHashesCurrent=True,runtimeDataMatchesCanonical=True,all7RegionViewsHaveBothLayers=True,svgXmlValid=True,viewerJavaScriptSyntaxChecked=True,browserInteractionTested=False,visualReview=['preview.png','MR01_detail.png','MR06_detail.png'],renderedOverviewWidth=4000,artUnderlay='Qolossal_ArtUnderlay.svg')
-(OUT/'qa.json').write_text(json.dumps(qa,indent=2),encoding='utf-8');print('Verified: 173 rendered IDs, 74 cave mouths, 7 region views with both layers, 8 unchanged scenes, current source hashes, all download links.')
+qa.pop('all8SceneHashesMatchCurrentExtraction',None)
+qa.update(all173IdsDrawn=True,all74CaveMouthsDrawn=True,currentSceneCount=len(qa['sceneHashes']),allCurrentSceneHashesMatchCurrentExtraction=True,allSourceHashesCurrent=True,runtimeDataMatchesCanonical=True,all7RegionViewsHaveBothLayers=True,svgXmlValid=True,viewerJavaScriptSyntaxChecked=True,browserInteractionTested=False,visualReview=['preview.png','MR01_detail.png','MR06_detail.png'],renderedOverviewWidth=4000,artUnderlay='Qolossal_ArtUnderlay.svg')
+(OUT/'qa.json').write_text(json.dumps(qa,indent=2),encoding='utf-8');print(f"Verified: 173 rendered IDs, 74 cave mouths, 7 region views with both layers, {len(qa['sceneHashes'])} current scene hashes, current source hashes, all download links.")

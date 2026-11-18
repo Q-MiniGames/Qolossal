@@ -14,6 +14,16 @@ namespace Qolossal.Atlas
         public AtlasData Data { get; private set; }
         readonly HashSet<string> surfaceEntrances=new HashSet<string>();
         public bool HasRoomOutline(AtlasNode n)=>n.type!="surface"||surfaceEntrances.Contains(n.id);
+        // What the save has found, read each time the atlas opens; the cave minimap shows the same (CaveDiscovery).
+        readonly HashSet<string> knownRooms=new HashSet<string>();string[][] contourOwners;bool[][] contourKnown;
+        public int KnownRoomCount=>knownRooms.Count;
+        public bool RoomKnown(string id)=>knownRooms.Contains(id);
+        public bool[] ContourKnown(int index)=>contourKnown?[index];
+        void RefreshDiscovery()
+        {
+            knownRooms.Clear();foreach(var n in Data.nodes)if(n.type=="underground"&&CaveDiscovery.Known(n))knownRooms.Add(n.id);
+            contourOwners??=CaveDiscovery.ContourOwners(Data);contourKnown=CaveDiscovery.ContourMask(contourOwners,knownRooms);
+        }
         public readonly Dictionary<string,AtlasNode> Nodes=new Dictionary<string,AtlasNode>();
         public readonly List<(Vector2 from,Vector2 to,Color color)> LabelLeaders=new List<(Vector2,Vector2,Color)>();
         public string FocusedRegion { get; private set; }
@@ -110,7 +120,7 @@ namespace Qolossal.Atlas
         public void Show()
         {
             previousSelection=EventSystem.current?EventSystem.current.currentSelectedGameObject:null;
-            EventSystem.current?.SetSelectedGameObject(null);canvas.enabled=true;controls.Enable();openedFrame=Time.frameCount;
+            RefreshDiscovery();EventSystem.current?.SetSelectedGameObject(null);canvas.enabled=true;controls.Enable();openedFrame=Time.frameCount;
             selectedTab=Mathf.Max(0,Array.FindIndex(Data.regions,r=>r.id==MraSession.Current?.regionId));
             FitBoard();ShowWorld();
         }
@@ -175,15 +185,15 @@ namespace Qolossal.Atlas
         }
         void ClampView(){view.center=new Vector2(Mathf.Clamp(view.center.x,-view.width*.1f,Data.width+view.width*.1f),Mathf.Clamp(view.center.y,-view.height*.1f,Data.height+view.height*.1f));}
         public Color RegionColor(string id){var r=Data.regions.FirstOrDefault(r=>r.id==id);return r!=null&&ColorUtility.TryParseHtmlString(r.color,out var c)?c:ink;}
-        public bool NodeVisible(AtlasNode n)=>FocusedRegion==null||n.region==FocusedRegion;
-        public bool EdgeVisible(AtlasEdge e)=>FocusedRegion==null||Nodes[e.from].region==FocusedRegion&&Nodes[e.to].region==FocusedRegion;
+        public bool NodeVisible(AtlasNode n)=>(FocusedRegion==null||n.region==FocusedRegion)&&(n.type!="underground"||RoomKnown(n.id));
+        public bool EdgeVisible(AtlasEdge e)=>(FocusedRegion==null||Nodes[e.from].region==FocusedRegion&&Nodes[e.to].region==FocusedRegion)&&(e.kind!="cave"&&e.kind!="passage"||RoomKnown(e.to));
         public bool CaveVisible(AtlasCave c)=>FocusedRegion==null||Nodes[c.upperAreaId].region==FocusedRegion;
         public bool PlayerMapPoint(out Vector2 p)
         {
             p=Vector2.zero;var player=FindAnyObjectByType<PlayerMovement>();if(!player)return false;string scene=player.gameObject.scene.name;var at=(Vector2)player.transform.position;
             var n=Data.nodes.FirstOrDefault(n=>n.scene==scene&&new Rect(n.worldBounds[0],n.worldBounds[1],n.worldBounds[2],n.worldBounds[3]).Contains(at));
             if(n==null&&scene=="Qolossal_Underground")n=Data.nodes.Where(n=>n.scene==scene).OrderBy(n=>((Vector2)new Vector2(n.worldBounds[0]+n.worldBounds[2]/2,n.worldBounds[1]+n.worldBounds[3]/2)-at).sqrMagnitude).FirstOrDefault();
-            if(n==null||!NodeVisible(n))return false;
+            if(n==null||FocusedRegion!=null&&n.region!=FocusedRegion)return false;
             var mapping=Data.mappings?.FirstOrDefault(m=>m.id==(string.IsNullOrEmpty(n.mappingId)?scene:n.mappingId));
             if(mapping!=null){p=new Vector2(at.x*mapping.sx+mapping.ox,mapping.oy-at.y*mapping.sy);return true;}
             p=new Vector2(n.Bounds.x+n.Bounds.width*(at.x-n.worldBounds[0])/n.worldBounds[2],n.Bounds.yMax-n.Bounds.height*(at.y-n.worldBounds[1])/n.worldBounds[3]);return true;

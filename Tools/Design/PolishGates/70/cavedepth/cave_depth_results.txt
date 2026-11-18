@@ -1,0 +1,6 @@
+PASS the depth layer starts by itself
+INFO 89 far, 89 near, 75 passage and sheet backdrops; 253 converted, 0 skipped, 24 materials
+PASS every backdrop uses the depth layer
+PASS each layer moves on screen at its rate, across and vertically: far 0.7, near 0.88 of the terrain (28 rooms measured, 0 wrong)
+PASS no hole in the backdrops (267 places, 0 with one)
+RESULT failures 0, runtime errors 0

@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "retiredDecorativeLedges": 18,
+  "retiredSurfaceWakeKnots": 6,
+  "heartCheckpointAndActivationMechanicsRetired": true,
+  "playAssertions": 28,
+  "renderedCrossingFrames": 121,
+  "legacyHeartSaveRespawnVerified": true,
+  "mapSteps": 37,
+  "mapAssertions": 528,
+  "sceneChanges": {
+    "MRAtlas_MR01_Cradle.unity": 18,
+    "MRAtlas_MR02_Causeway.unity": 21,
+    "MRAtlas_MR03_Terraces.unity": 27,
+    "MRAtlas_MR04_Qvale.unity": 0,
+    "MRAtlas_MR05_Ribwood.unity": 7,
+    "MRAtlas_MR06_Heights.unity": 7,
+    "MRAtlas_MR07_Summit.unity": 7,
+    "Qolossal_Underground.unity": 45
+  },
+  "sceneDiffWhitelistPassed": true,
+  "cameraUnchanged": true,
+  "normalSavesPreserved": true,
+  "errors": [],
+  "tested": "Windows Unity Editor; virtual gamepad; 3840x2160 captures and 1080p/4K map",
+  "untested": [
+    "Windows standalone",
+    "PS5",
+    "Xbox Series X",
+    "Xbox Series S",
+    "Switch 2 handheld",
+    "Switch 2 docked",
+    "Hardware performance"
+  ]
+}

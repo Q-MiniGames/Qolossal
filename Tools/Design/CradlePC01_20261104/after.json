@@ -1,0 +1,2473 @@
+{
+  "point": "{\"MonoBehaviour\":{\"m_Enabled\":true,\"m_EditorHideFlags\":0,\"m_Name\":\"\",\"m_EditorClassIdentifier\":\"Assembly-CSharp::CaveConnectionPoint\",\"connectionId\":\"CAVE_PC01\",\"upperScene\":\"MRAtlas_MR01_Cradle\",\"upperRegion\":\"The Cradle\",\"upperAreaId\":\"MR01_N02\",\"upperAreaName\":\"First gorge\",\"lowerRoomId\":\"PC01\",\"lowerRoomName\":\"Firefly Nook\",\"requirements\":\"No unlock requirement\",\"activation\":\"Walk right into the recessed cave passage\",\"undergroundSide\":false,\"entrance\":{\"instanceID\":0},\"arrival\":{\"instanceID\":0}}}",
+  "threshold": "{\"MonoBehaviour\":{\"m_Enabled\":true,\"m_EditorHideFlags\":0,\"m_Name\":\"\",\"m_EditorClassIdentifier\":\"Assembly-CSharp::CaveThresholdPresentation\",\"connection\":{\"instanceID\":0},\"mouth\":{\"x\":60.0,\"y\":24.700000762939454},\"inward\":1.0,\"emergenceInset\":3.0199999809265138,\"emergenceSeconds\":2.5,\"emergenceFloorRise\":0.0}}",
+  "entrance": [
+    62.9,
+    24.7,
+    0.0
+  ],
+  "arrival": [
+    58.4,
+    25.36,
+    0.0
+  ],
+  "hierarchy": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook",
+  "renderers": [
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Firefly Nook/Entrance",
+      "active": true,
+      "enabled": false,
+      "position": [
+        62.9,
+        24.5472221,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          62.9,
+          26.3972225,
+          0.0
+        ],
+        "size": [
+          4.44,
+          3.7,
+          0.2
+        ]
+      },
+      "material": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Firefly Nook/Dressing (left foot)",
+      "active": true,
+      "enabled": false,
+      "position": [
+        60.8500023,
+        24.69074,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          60.8500023,
+          25.2740746,
+          0.0
+        ],
+        "size": [
+          1.3,
+          1.16666663,
+          0.2
+        ]
+      },
+      "material": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Firefly Nook/Dressing (right foot)",
+      "active": true,
+      "enabled": false,
+      "position": [
+        64.95,
+        24.7,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          64.95,
+          25.2416668,
+          0.0
+        ],
+        "size": [
+          1.2,
+          1.08333337,
+          0.2
+        ]
+      },
+      "material": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Entrance prototype | PC01",
+      "active": false,
+      "enabled": false,
+      "position": [
+        63.0,
+        25.651001,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.0,
+          25.651001,
+          0.0
+        ],
+        "size": [
+          7.60000038,
+          3.80000019,
+          0.205636978
+        ]
+      },
+      "material": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Embedded cave | PC01 | DOWN/PC01_InteriorRock",
+      "active": true,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.4,
+          22.35,
+          0.0
+        ],
+        "size": [
+          7.800003,
+          3.29999924,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/EmbeddedCradleCaves_20261026/PC01_InteriorRock.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": "Assets/Development/Layouts/EmbeddedCradleCaves_20261026/PC01_InteriorRock.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Embedded cave | PC01 | DOWN/PC01_FloorEdge",
+      "active": true,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          62.65,
+          22.0600014,
+          0.0
+        ],
+        "size": [
+          6.300003,
+          3.28000069,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/EmbeddedCradleCaves_20261026/PC01_FloorEdge.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": "Assets/Development/Layouts/EmbeddedCradleCaves_20261026/PC01_FloorEdge.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Embedded cave | PC01 | DOWN/PC01_RoofEdge",
+      "active": true,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          62.65,
+          25.0100021,
+          0.0
+        ],
+        "size": [
+          6.300003,
+          3.21999931,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/EmbeddedCradleCaves_20261026/PC01_RoofEdge.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": "Assets/Development/Layouts/EmbeddedCradleCaves_20261026/PC01_RoofEdge.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Embedded cave | PC01 | DOWN/Firefly marker 0",
+      "active": true,
+      "enabled": false,
+      "position": [
+        60.0,
+        24.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          60.0,
+          24.0,
+          0.0
+        ],
+        "size": [
+          0.120000005,
+          0.120000005,
+          0.0281250011
+        ]
+      },
+      "material": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Embedded cave | PC01 | DOWN/Firefly marker 1",
+      "active": true,
+      "enabled": false,
+      "position": [
+        60.7,
+        23.667,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          60.7,
+          23.667,
+          0.0
+        ],
+        "size": [
+          0.120000005,
+          0.120000005,
+          0.0281250011
+        ]
+      },
+      "material": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Embedded cave | PC01 | DOWN/Firefly marker 2",
+      "active": true,
+      "enabled": false,
+      "position": [
+        61.4,
+        23.334,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          61.4,
+          23.334,
+          0.0
+        ],
+        "size": [
+          0.120000005,
+          0.120000005,
+          0.0281250011
+        ]
+      },
+      "material": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Embedded cave | PC01 | DOWN/Firefly marker 3",
+      "active": true,
+      "enabled": false,
+      "position": [
+        62.1,
+        23.001,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          62.1,
+          23.001,
+          0.0
+        ],
+        "size": [
+          0.120000005,
+          0.120000005,
+          0.0281250011
+        ]
+      },
+      "material": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Embedded cave | PC01 | DOWN/Firefly marker 4",
+      "active": true,
+      "enabled": false,
+      "position": [
+        62.8,
+        22.668,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          62.8,
+          22.668,
+          0.0
+        ],
+        "size": [
+          0.120000005,
+          0.120000005,
+          0.0281250011
+        ]
+      },
+      "material": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Embedded cave | PC01 | DOWN/Firefly marker 5",
+      "active": true,
+      "enabled": false,
+      "position": [
+        63.5,
+        22.335,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.5,
+          22.335,
+          0.0
+        ],
+        "size": [
+          0.120000005,
+          0.120000005,
+          0.0281250011
+        ]
+      },
+      "material": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Embedded cave | PC01 | DOWN/Firefly marker 6",
+      "active": true,
+      "enabled": false,
+      "position": [
+        64.2,
+        22.002,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          64.2,
+          22.002,
+          0.0
+        ],
+        "size": [
+          0.120000005,
+          0.120000005,
+          0.0281250011
+        ]
+      },
+      "material": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Embedded cave | PC01 | DOWN/Firefly marker 7",
+      "active": true,
+      "enabled": false,
+      "position": [
+        64.9,
+        21.669,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          64.9,
+          21.669,
+          0.0
+        ],
+        "size": [
+          0.120000005,
+          0.120000005,
+          0.0281250011
+        ]
+      },
+      "material": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": null
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Cave threshold artwork/Painted limestone and roots | foreground",
+      "active": true,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          66.1839,
+          22.532711,
+          0.0
+        ],
+        "size": [
+          4.088211,
+          3.66541862,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/CradleCaveArt_20261026/Limestone_Lip.mat",
+      "shader": "Sprites/Default",
+      "mesh": "Assets/Development/Layouts/CradleCaveArt_20261026/Upper_PC01_RockLip.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Cave threshold artwork/Recessed shadow | foreground depth",
+      "active": true,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.4,
+          22.36,
+          0.0
+        ],
+        "size": [
+          7.800003,
+          3.31999969,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/CradleCaveArt_20261026/Threshold_Shadow.mat",
+      "shader": "Sprites/Default",
+      "mesh": "Assets/Development/Layouts/CradleCaveArt_20261026/Upper_PC01_Depth.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Firefly Nook | continuous rock backing",
+      "active": true,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.4,
+          23.388,
+          0.0
+        ],
+        "size": [
+          7.800003,
+          5.37599945,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/CradleApprovedArt_20261026/PC01_Backing.mat",
+      "shader": "Sprites/Default",
+      "mesh": "Assets/Development/Layouts/CradleApprovedArt_20261026/Upper_PC01_CompleteBacking.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Approved passage composition/Painted passage | original concept composition",
+      "active": false,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.4,
+          23.585001,
+          0.0
+        ],
+        "size": [
+          8.600006,
+          7.037693,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/CradleApprovedArt_20261026/PC01.mat",
+      "shader": "Sprites/Default",
+      "mesh": "Assets/Development/Layouts/CradleApprovedArt_20261026/Upper_PC01_Interior.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Approved passage composition/Painted overhang | foreground overlap",
+      "active": false,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.4,
+          23.585001,
+          0.0
+        ],
+        "size": [
+          8.600006,
+          7.037693,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/CradleApprovedArt_20261026/PC01.mat",
+      "shader": "Sprites/Default",
+      "mesh": "Assets/Development/Layouts/CradleApprovedArt_20261026/Upper_PC01_Overhang.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Tailored passage | Upper_PC01/Individual interior | Upper_PC01",
+      "active": true,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.4,
+          23.55,
+          0.0
+        ],
+        "size": [
+          8.300003,
+          6.60000038,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/CradleTailored_20261027/Upper_PC01.mat",
+      "shader": "Sprites/Default",
+      "mesh": "Assets/Development/Layouts/CradleTailored_20261027/Upper_PC01_Interior.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Tailored passage | Upper_PC01/Foreground roof | Upper_PC01",
+      "active": true,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.4,
+          23.55,
+          0.0
+        ],
+        "size": [
+          8.300003,
+          6.60000038,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/CradleTailored_20261027/Upper_PC01.mat",
+      "shader": "Sprites/Default",
+      "mesh": "Assets/Development/Layouts/CradleTailored_20261027/Upper_PC01_Overhang.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Regional fitted passage/Continuous themed inner wall",
+      "active": false,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.425,
+          24.039999,
+          0.0
+        ],
+        "size": [
+          8.049995,
+          5.67610168,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR01/PC01/Inner wall.mat",
+      "shader": "Qolossal/Prototypes/Cave Rollout Inner Wall",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR01/PC01/Continuous themed inner wall.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Regional fitted passage/Passage shadow",
+      "active": false,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.4,
+          24.015,
+          0.0
+        ],
+        "size": [
+          7.800003,
+          5.42610168,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR01/PC01/Passage shadow.mat",
+      "shader": "Sprites/Default",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR01/PC01/Passage shadow.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Regional fitted passage/Registered native outer rock",
+      "active": false,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.65,
+          23.99,
+          0.0
+        ],
+        "size": [
+          8.5,
+          5.976101,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR01/PC01/Native outer rock.mat",
+      "shader": "Qolossal/WorldRevision/Approved Rim Native Attachment",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR01/PC01/Registered native outer rock.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Regional fitted passage/Native walking surface",
+      "active": false,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.1,
+          22.3649979,
+          0.0
+        ],
+        "size": [
+          8.799999,
+          4.9261,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/WalkingJoins/MR01/PC01.mat",
+      "shader": "Qolossal/WorldRevision/Native Walking Join",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR01/62A4829D322C0D3D1775.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Regional fitted passage/Native roof trim/Native roof 0",
+      "active": false,
+      "enabled": false,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          63.85,
+          27.3429985,
+          0.0
+        ],
+        "size": [
+          9.139999,
+          2.513998,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC01/Native roof 0.mat",
+      "shader": "Universal Render Pipeline/2D/Sprite-Lit-Default",
+      "mesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC01/Native roof 0.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/PC01 compact limestone cave/Continuous themed inner wall",
+      "active": true,
+      "enabled": true,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          61.9750023,
+          25.825,
+          0.0
+        ],
+        "size": [
+          4.15000153,
+          2.45000076,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/CradlePC01_20261104/Inner wall.mat",
+      "shader": "Qolossal/Prototypes/Cave Rollout Inner Wall",
+      "mesh": "Assets/Development/Layouts/CradlePC01_20261104/Continuous themed inner wall.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/PC01 compact limestone cave/Passage shadow",
+      "active": true,
+      "enabled": true,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          61.95,
+          25.8000011,
+          0.0
+        ],
+        "size": [
+          3.90000153,
+          2.20000076,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/CradlePC01_20261104/Passage shadow.mat",
+      "shader": "Sprites/Default",
+      "mesh": "Assets/Development/Layouts/CradlePC01_20261104/Passage shadow.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/PC01 compact limestone cave/Rounded limestone mouth",
+      "active": true,
+      "enabled": true,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          62.2,
+          25.7750015,
+          0.0
+        ],
+        "size": [
+          4.59999847,
+          2.749998,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/CradlePC01_20261104/Native rim.mat",
+      "shader": "Qolossal/WorldRevision/Approved Rim Native Attachment",
+      "mesh": "Assets/Development/Layouts/CradlePC01_20261104/Rounded limestone mouth.asset"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/PC01 compact limestone cave/Level native walking surface",
+      "active": true,
+      "enabled": true,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds": {
+        "center": [
+          61.65,
+          24.6500015,
+          0.0
+        ],
+        "size": [
+          5.700001,
+          1.69999886,
+          0.0
+        ]
+      },
+      "material": "Assets/Development/Layouts/CradlePC01_20261104/Native floor.mat",
+      "shader": "Sprites/Default",
+      "mesh": "Assets/Development/Layouts/CradlePC01_20261104/Level native walking surface.asset"
+    }
+  ],
+  "terrains": [
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N05] Warm basin/Cave access | paired underground rooms/[CAVE PC02] MR01_N05 <-> Underground - Old Footprints/Embedded cave | PC02 | RIGHT/Limestone floor lip",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface": [
+        [
+          144.5,
+          16.0,
+          0.0
+        ],
+        [
+          153.0,
+          16.0,
+          0.0
+        ]
+      ],
+      "style": "{\"MonoBehaviour\":{\"m_Enabled\":true,\"m_EditorHideFlags\":0,\"m_Name\":\"\",\"m_EditorClassIdentifier\":\"Assembly-CSharp::MraTerrain\",\"caveOpenings\":[],\"caveFringeTrims\":[],\"chamberBackdrop\":{\"instanceID\":0},\"chamberTopPriority\":0,\"chamberPartLabels\":[],\"chamberPartOrders\":[],\"chamberSolidColumn\":false,\"chamberBlendLeft\":true,\"chamberBlendRight\":true,\"nativeStripEndBlend\":0.0,\"registeredTopJoinRole\":0,\"registeredTopJoinPeer\":{\"instanceID\":0},\"registeredTopJoinSource\":{\"instanceID\":0},\"surface\":[{\"x\":144.5,\"y\":16.0},{\"x\":153.0,\"y\":16.0}],\"bottom\":15.649999618530274,\"fill\":{\"instanceID\":0},\"top\":{\"fileID\":21300000,\"guid\":\"67ec13b28e8ce8a4fb6fa4fd94ad385a\",\"type\":3},\"face\":{\"instanceID\":0},\"under\":{\"instanceID\":0},\"fullUnderSilhouette\":false,\"underTint\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"walkLinePx\":96.0,\"maxStripSlope\":1.2000000476837159,\"solid\":false,\"leftFace\":false,\"rightFace\":false,\"riserFaces\":false,\"faceEdgeU\":0.0,\"faceDepth\":1.2999999523162842,\"lipOverhang\":0.2199999988079071,\"shadeDepth\":7.0,\"shadeFloor\":0.800000011920929,\"roughContour\":true,\"contourReach\":0.30000001192092898,\"cliffSideL\":{\"instanceID\":0},\"cliffSideR\":{\"instanceID\":0},\"cornerTopL\":{\"instanceID\":0},\"cornerTopR\":{\"instanceID\":0},\"cornerFootL\":{\"instanceID\":0},\"cornerFootR\":{\"instanceID\":0},\"cornersFollowTread\":false,\"townCourseL\":{\"x\":0.0,\"y\":0.0},\"townCourseR\":{\"x\":0.0,\"y\":0.0},\"stepShortL\":{\"instanceID\":0},\"stepShortR\":{\"instanceID\":0},\"stepMediumL\":{\"instanceID\":0},\"stepMediumR\":{\"instanceID\":0},\"stepOuterL\":{\"instanceID\":0},\"stepOuterR\":{\"instanceID\":0},\"stepInnerL\":{\"instanceID\":0},\"stepInnerR\":{\"instanceID\":0},\"stepWalls\":[],\"stepShortSlopeL\":{\"instanceID\":0},\"stepShortSlopeR\":{\"instanceID\":0},\"stepMediumSlopeL\":{\"instanceID\":0},\"stepMediumSlopeR\":{\"instanceID\":0},\"stepOuterSlopeL\":{\"instanceID\":0},\"stepOuterSlopeR\":{\"instanceID\":0},\"shortSlopeRise\":[],\"mediumSlopeRise\":[],\"outerSlopeRise\":[],\"slopeTopRows\":{\"x\":416.0,\"y\":310.0,\"z\":385.0},\"stripDerivedRuns\":false,\"shadeLikeFill\":false,\"innerUnderKerb\":false,\"bodyFade\":false,\"tidyOuterJoint\":false,\"clingable\":true,\"tint\":{\"r\":0.6800000071525574,\"g\":0.6800000071525574,\"b\":0.6399999856948853,\"a\":1.0},\"sortingOffset\":14,\"replacedPaintedParts\":[\"Top\"],\"stripDepth\":1.399999976158142,\"shortNaturalSoilTail\":false,\"stripJointsPx\":[]}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N08] Ravine approach/Cave access | paired underground rooms/[CAVE PC03] MR01_N08 <-> Underground - Fern Pocket/Embedded cave | PC03 | RIGHT/Limestone floor lip",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface": [
+        [
+          210.5,
+          14.0,
+          0.0
+        ],
+        [
+          218.0,
+          14.0,
+          0.0
+        ]
+      ],
+      "style": "{\"MonoBehaviour\":{\"m_Enabled\":true,\"m_EditorHideFlags\":0,\"m_Name\":\"\",\"m_EditorClassIdentifier\":\"Assembly-CSharp::MraTerrain\",\"caveOpenings\":[],\"caveFringeTrims\":[],\"chamberBackdrop\":{\"instanceID\":0},\"chamberTopPriority\":0,\"chamberPartLabels\":[],\"chamberPartOrders\":[],\"chamberSolidColumn\":false,\"chamberBlendLeft\":true,\"chamberBlendRight\":true,\"nativeStripEndBlend\":0.0,\"registeredTopJoinRole\":0,\"registeredTopJoinPeer\":{\"instanceID\":0},\"registeredTopJoinSource\":{\"instanceID\":0},\"surface\":[{\"x\":210.5,\"y\":14.0},{\"x\":218.0,\"y\":14.0}],\"bottom\":13.649999618530274,\"fill\":{\"instanceID\":0},\"top\":{\"fileID\":21300000,\"guid\":\"67ec13b28e8ce8a4fb6fa4fd94ad385a\",\"type\":3},\"face\":{\"instanceID\":0},\"under\":{\"instanceID\":0},\"fullUnderSilhouette\":false,\"underTint\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"walkLinePx\":96.0,\"maxStripSlope\":1.2000000476837159,\"solid\":false,\"leftFace\":false,\"rightFace\":false,\"riserFaces\":false,\"faceEdgeU\":0.0,\"faceDepth\":1.2999999523162842,\"lipOverhang\":0.2199999988079071,\"shadeDepth\":7.0,\"shadeFloor\":0.800000011920929,\"roughContour\":true,\"contourReach\":0.30000001192092898,\"cliffSideL\":{\"instanceID\":0},\"cliffSideR\":{\"instanceID\":0},\"cornerTopL\":{\"instanceID\":0},\"cornerTopR\":{\"instanceID\":0},\"cornerFootL\":{\"instanceID\":0},\"cornerFootR\":{\"instanceID\":0},\"cornersFollowTread\":false,\"townCourseL\":{\"x\":0.0,\"y\":0.0},\"townCourseR\":{\"x\":0.0,\"y\":0.0},\"stepShortL\":{\"instanceID\":0},\"stepShortR\":{\"instanceID\":0},\"stepMediumL\":{\"instanceID\":0},\"stepMediumR\":{\"instanceID\":0},\"stepOuterL\":{\"instanceID\":0},\"stepOuterR\":{\"instanceID\":0},\"stepInnerL\":{\"instanceID\":0},\"stepInnerR\":{\"instanceID\":0},\"stepWalls\":[],\"stepShortSlopeL\":{\"instanceID\":0},\"stepShortSlopeR\":{\"instanceID\":0},\"stepMediumSlopeL\":{\"instanceID\":0},\"stepMediumSlopeR\":{\"instanceID\":0},\"stepOuterSlopeL\":{\"instanceID\":0},\"stepOuterSlopeR\":{\"instanceID\":0},\"shortSlopeRise\":[],\"mediumSlopeRise\":[],\"outerSlopeRise\":[],\"slopeTopRows\":{\"x\":416.0,\"y\":310.0,\"z\":385.0},\"stripDerivedRuns\":false,\"shadeLikeFill\":false,\"innerUnderKerb\":false,\"bodyFade\":false,\"tidyOuterJoint\":false,\"clingable\":true,\"tint\":{\"r\":0.6800000071525574,\"g\":0.6800000071525574,\"b\":0.6399999856948853,\"a\":1.0},\"sortingOffset\":14,\"replacedPaintedParts\":[\"Top\"],\"stripDepth\":1.399999976158142,\"shortNaturalSoilTail\":false,\"stripJointsPx\":[]}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N08] Ravine approach/Traversal mechanics/Module MR01_E08 quake crossing/Sealed overhang",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface": [
+        [
+          218.8,
+          22.9,
+          0.0
+        ],
+        [
+          220.9,
+          22.9,
+          0.0
+        ]
+      ],
+      "style": "{\"MonoBehaviour\":{\"m_Enabled\":true,\"m_EditorHideFlags\":0,\"m_Name\":\"\",\"m_EditorClassIdentifier\":\"Assembly-CSharp::MraTerrain\",\"caveOpenings\":[],\"caveFringeTrims\":[],\"chamberBackdrop\":{\"instanceID\":0},\"chamberTopPriority\":0,\"chamberPartLabels\":[],\"chamberPartOrders\":[],\"chamberSolidColumn\":false,\"chamberBlendLeft\":true,\"chamberBlendRight\":true,\"nativeStripEndBlend\":0.0,\"registeredTopJoinRole\":0,\"registeredTopJoinPeer\":{\"instanceID\":0},\"registeredTopJoinSource\":{\"instanceID\":0},\"surface\":[{\"x\":218.8000030517578,\"y\":22.899999618530275},{\"x\":220.89999389648438,\"y\":22.899999618530275}],\"bottom\":20.350000381469728,\"fill\":{\"fileID\":21300000,\"guid\":\"59b8dac12ceb5c14bb30e0df0c9be1e8\",\"type\":3},\"top\":{\"instanceID\":0},\"face\":{\"fileID\":21300000,\"guid\":\"398f08ad172fc3a4b816b0a8829511ac\",\"type\":3},\"under\":{\"instanceID\":0},\"fullUnderSilhouette\":false,\"underTint\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"walkLinePx\":96.0,\"maxStripSlope\":1.2000000476837159,\"solid\":true,\"leftFace\":false,\"rightFace\":false,\"riserFaces\":true,\"faceEdgeU\":0.0,\"faceDepth\":1.2999999523162842,\"lipOverhang\":0.2199999988079071,\"shadeDepth\":7.0,\"shadeFloor\":0.800000011920929,\"roughContour\":true,\"contourReach\":0.4000000059604645,\"cliffSideL\":{\"instanceID\":0},\"cliffSideR\":{\"instanceID\":0},\"cornerTopL\":{\"instanceID\":0},\"cornerTopR\":{\"instanceID\":0},\"cornerFootL\":{\"instanceID\":0},\"cornerFootR\":{\"instanceID\":0},\"cornersFollowTread\":false,\"townCourseL\":{\"x\":0.0,\"y\":0.0},\"townCourseR\":{\"x\":0.0,\"y\":0.0},\"stepShortL\":{\"fileID\":21300000,\"guid\":\"19b96742b222c6f4fbc0e30cb83bc1f7\",\"type\":3},\"stepShortR\":{\"fileID\":21300000,\"guid\":\"797f20a3db583684494e9a6982fb14c7\",\"type\":3},\"stepMediumL\":{\"fileID\":21300000,\"guid\":\"c64179bde4704e641baa9ebfc94a07fa\",\"type\":3},\"stepMediumR\":{\"fileID\":21300000,\"guid\":\"f15bf76460bfba84da83e0d01228e6ce\",\"type\":3},\"stepOuterL\":{\"fileID\":21300000,\"guid\":\"ca7e02611f8b65c41b7f01e53a19cd4a\",\"type\":3},\"stepOuterR\":{\"fileID\":21300000,\"guid\":\"70669172fe403f7458ec96f171b43c19\",\"type\":3},\"stepInnerL\":{\"fileID\":21300000,\"guid\":\"160c1735669150b4a8d8d9aff2bfb51a\",\"type\":3},\"stepInnerR\":{\"fileID\":21300000,\"guid\":\"740a7bc556db8474c9d9835ff9691293\",\"type\":3},\"stepWalls\":[],\"stepShortSlopeL\":{\"fileID\":21300000,\"guid\":\"5c36feab7ee9dda4eb477a3b83db5d79\",\"type\":3},\"stepShortSlopeR\":{\"fileID\":21300000,\"guid\":\"e5c9c28b37605d14a84ae1385b2e2efb\",\"type\":3},\"stepMediumSlopeL\":{\"fileID\":21300000,\"guid\":\"c77acb6ffec79494ba317d2d68698ab3\",\"type\":3},\"stepMediumSlopeR\":{\"fileID\":21300000,\"guid\":\"dcec56c09a0226847bb91d621a5e710e\",\"type\":3},\"stepOuterSlopeL\":{\"fileID\":21300000,\"guid\":\"64911e357a0588f43bff85f7f66f906a\",\"type\":3},\"stepOuterSlopeR\":{\"fileID\":21300000,\"guid\":\"a21d45cd34a53684d85c2cbd27e8af06\",\"type\":3},\"shortSlopeRise\":[{\"x\":0.0,\"y\":0.0},{\"x\":512.0,\"y\":204.8000030517578}],\"mediumSlopeRise\":[{\"x\":0.0,\"y\":0.0},{\"x\":512.0,\"y\":204.8000030517578}],\"outerSlopeRise\":[{\"x\":0.0,\"y\":0.0},{\"x\":512.0,\"y\":204.8000030517578}],\"slopeTopRows\":{\"x\":416.0,\"y\":310.0,\"z\":385.0},\"stripDerivedRuns\":true,\"shadeLikeFill\":false,\"innerUnderKerb\":false,\"bodyFade\":false,\"tidyOuterJoint\":false,\"clingable\":false,\"tint\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"sortingOffset\":2,\"replacedPaintedParts\":[],\"stripDepth\":1.399999976158142,\"shortNaturalSoilTail\":false,\"stripJointsPx\":[28.0,112.0,204.0,293.0,384.0,477.0,568.0,660.0,752.0,848.0,944.0,1018.0]}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N08] Ravine approach/Traversal mechanics/Module MR01_E08 quake crossing/Ravine floor (catch floor and return steps)",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface": [
+        [
+          221.0,
+          13.9,
+          0.0
+        ],
+        [
+          222.066666,
+          13.9,
+          0.0
+        ],
+        [
+          222.066666,
+          12.9,
+          0.0
+        ],
+        [
+          223.133331,
+          12.9,
+          0.0
+        ],
+        [
+          223.133331,
+          11.9,
+          0.0
+        ],
+        [
+          224.2,
+          11.9,
+          0.0
+        ],
+        [
+          224.2,
+          10.9,
+          0.0
+        ],
+        [
+          229.0,
+          10.9,
+          0.0
+        ]
+      ],
+      "style": "{\"MonoBehaviour\":{\"m_Enabled\":true,\"m_EditorHideFlags\":0,\"m_Name\":\"\",\"m_EditorClassIdentifier\":\"Assembly-CSharp::MraTerrain\",\"caveOpenings\":[],\"caveFringeTrims\":[],\"chamberBackdrop\":{\"instanceID\":0},\"chamberTopPriority\":0,\"chamberPartLabels\":[],\"chamberPartOrders\":[],\"chamberSolidColumn\":false,\"chamberBlendLeft\":true,\"chamberBlendRight\":true,\"nativeStripEndBlend\":0.0,\"registeredTopJoinRole\":0,\"registeredTopJoinPeer\":{\"instanceID\":0},\"registeredTopJoinSource\":{\"instanceID\":0},\"surface\":[{\"x\":221.0,\"y\":13.899999618530274},{\"x\":222.06666564941407,\"y\":13.899999618530274},{\"x\":222.06666564941407,\"y\":12.899999618530274},{\"x\":223.13333129882813,\"y\":12.899999618530274},{\"x\":223.13333129882813,\"y\":11.899999618530274},{\"x\":224.1999969482422,\"y\":11.899999618530274},{\"x\":224.1999969482422,\"y\":10.899999618530274},{\"x\":229.0,\"y\":10.899999618530274}],\"bottom\":-14.0,\"fill\":{\"fileID\":21300000,\"guid\":\"59b8dac12ceb5c14bb30e0df0c9be1e8\",\"type\":3},\"top\":{\"fileID\":21300000,\"guid\":\"67ec13b28e8ce8a4fb6fa4fd94ad385a\",\"type\":3},\"face\":{\"fileID\":21300000,\"guid\":\"398f08ad172fc3a4b816b0a8829511ac\",\"type\":3},\"under\":{\"instanceID\":0},\"fullUnderSilhouette\":false,\"underTint\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"walkLinePx\":96.0,\"maxStripSlope\":1.2000000476837159,\"solid\":true,\"leftFace\":false,\"rightFace\":false,\"riserFaces\":true,\"faceEdgeU\":0.0,\"faceDepth\":1.2999999523162842,\"lipOverhang\":0.2199999988079071,\"shadeDepth\":7.0,\"shadeFloor\":0.800000011920929,\"roughContour\":true,\"contourReach\":0.4000000059604645,\"cliffSideL\":{\"fileID\":21300000,\"guid\":\"0bbd0759fca09ab4ba42005024019e66\",\"type\":3},\"cliffSideR\":{\"fileID\":21300000,\"guid\":\"b64a6706d44396b438928f71e903a2ad\",\"type\":3},\"cornerTopL\":{\"fileID\":21300000,\"guid\":\"d6790e88232a16245abc3923471b8661\",\"type\":3},\"cornerTopR\":{\"fileID\":21300000,\"guid\":\"2b4dc25964af9a54396400d8d80b5768\",\"type\":3},\"cornerFootL\":{\"fileID\":21300000,\"guid\":\"bf0fe6f195aa9e14b834ee8a5741da6b\",\"type\":3},\"cornerFootR\":{\"fileID\":21300000,\"guid\":\"c7cea044a2058ad4b9c00f47b5692798\",\"type\":3},\"cornersFollowTread\":false,\"townCourseL\":{\"x\":0.0,\"y\":0.0},\"townCourseR\":{\"x\":0.0,\"y\":0.0},\"stepShortL\":{\"fileID\":21300000,\"guid\":\"19b96742b222c6f4fbc0e30cb83bc1f7\",\"type\":3},\"stepShortR\":{\"fileID\":21300000,\"guid\":\"797f20a3db583684494e9a6982fb14c7\",\"type\":3},\"stepMediumL\":{\"fileID\":21300000,\"guid\":\"c64179bde4704e641baa9ebfc94a07fa\",\"type\":3},\"stepMediumR\":{\"fileID\":21300000,\"guid\":\"f15bf76460bfba84da83e0d01228e6ce\",\"type\":3},\"stepOuterL\":{\"fileID\":21300000,\"guid\":\"ca7e02611f8b65c41b7f01e53a19cd4a\",\"type\":3},\"stepOuterR\":{\"fileID\":21300000,\"guid\":\"70669172fe403f7458ec96f171b43c19\",\"type\":3},\"stepInnerL\":{\"fileID\":21300000,\"guid\":\"160c1735669150b4a8d8d9aff2bfb51a\",\"type\":3},\"stepInnerR\":{\"fileID\":21300000,\"guid\":\"740a7bc556db8474c9d9835ff9691293\",\"type\":3},\"stepWalls\":[{\"fileID\":21300000,\"guid\":\"cccfe4180a0373d4aa3e437d9ab95636\",\"type\":3},{\"fileID\":21300000,\"guid\":\"a2903ebf17aec5243aebfd27e03bc588\",\"type\":3},{\"fileID\":21300000,\"guid\":\"774d97efdbfdf064a95d3bc8b6272817\",\"type\":3}],\"stepShortSlopeL\":{\"fileID\":21300000,\"guid\":\"5c36feab7ee9dda4eb477a3b83db5d79\",\"type\":3},\"stepShortSlopeR\":{\"fileID\":21300000,\"guid\":\"e5c9c28b37605d14a84ae1385b2e2efb\",\"type\":3},\"stepMediumSlopeL\":{\"fileID\":21300000,\"guid\":\"c77acb6ffec79494ba317d2d68698ab3\",\"type\":3},\"stepMediumSlopeR\":{\"fileID\":21300000,\"guid\":\"dcec56c09a0226847bb91d621a5e710e\",\"type\":3},\"stepOuterSlopeL\":{\"fileID\":21300000,\"guid\":\"64911e357a0588f43bff85f7f66f906a\",\"type\":3},\"stepOuterSlopeR\":{\"fileID\":21300000,\"guid\":\"a21d45cd34a53684d85c2cbd27e8af06\",\"type\":3},\"shortSlopeRise\":[{\"x\":0.0,\"y\":0.0},{\"x\":512.0,\"y\":204.8000030517578}],\"mediumSlopeRise\":[{\"x\":0.0,\"y\":0.0},{\"x\":512.0,\"y\":204.8000030517578}],\"outerSlopeRise\":[{\"x\":0.0,\"y\":0.0},{\"x\":512.0,\"y\":204.8000030517578}],\"slopeTopRows\":{\"x\":416.0,\"y\":310.0,\"z\":385.0},\"stripDerivedRuns\":true,\"shadeLikeFill\":false,\"innerUnderKerb\":false,\"bodyFade\":false,\"tidyOuterJoint\":false,\"clingable\":true,\"tint\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"sortingOffset\":0,\"replacedPaintedParts\":[],\"stripDepth\":1.399999976158142,\"shortNaturalSoilTail\":true,\"stripJointsPx\":[28.0,112.0,204.0,293.0,384.0,477.0,568.0,660.0,752.0,848.0,944.0,1018.0]}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N10] High lookout/Cave access | paired underground rooms/[CAVE MR01_C06] MR01_N10 <-> Underground - Hanging Garden/Embedded cave | MR01_C06 | RIGHT/Limestone floor lip",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface": [
+        [
+          262.0,
+          38.0,
+          0.0
+        ],
+        [
+          271.0,
+          38.0,
+          0.0
+        ]
+      ],
+      "style": "{\"MonoBehaviour\":{\"m_Enabled\":true,\"m_EditorHideFlags\":0,\"m_Name\":\"\",\"m_EditorClassIdentifier\":\"Assembly-CSharp::MraTerrain\",\"caveOpenings\":[],\"caveFringeTrims\":[],\"chamberBackdrop\":{\"instanceID\":0},\"chamberTopPriority\":0,\"chamberPartLabels\":[],\"chamberPartOrders\":[],\"chamberSolidColumn\":false,\"chamberBlendLeft\":true,\"chamberBlendRight\":true,\"nativeStripEndBlend\":0.0,\"registeredTopJoinRole\":0,\"registeredTopJoinPeer\":{\"instanceID\":0},\"registeredTopJoinSource\":{\"instanceID\":0},\"surface\":[{\"x\":262.0,\"y\":38.0},{\"x\":271.0,\"y\":38.0}],\"bottom\":37.650001525878909,\"fill\":{\"instanceID\":0},\"top\":{\"fileID\":21300000,\"guid\":\"67ec13b28e8ce8a4fb6fa4fd94ad385a\",\"type\":3},\"face\":{\"instanceID\":0},\"under\":{\"instanceID\":0},\"fullUnderSilhouette\":false,\"underTint\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"walkLinePx\":96.0,\"maxStripSlope\":1.2000000476837159,\"solid\":false,\"leftFace\":false,\"rightFace\":false,\"riserFaces\":false,\"faceEdgeU\":0.0,\"faceDepth\":1.2999999523162842,\"lipOverhang\":0.2199999988079071,\"shadeDepth\":7.0,\"shadeFloor\":0.800000011920929,\"roughContour\":true,\"contourReach\":0.30000001192092898,\"cliffSideL\":{\"instanceID\":0},\"cliffSideR\":{\"instanceID\":0},\"cornerTopL\":{\"instanceID\":0},\"cornerTopR\":{\"instanceID\":0},\"cornerFootL\":{\"instanceID\":0},\"cornerFootR\":{\"instanceID\":0},\"cornersFollowTread\":false,\"townCourseL\":{\"x\":0.0,\"y\":0.0},\"townCourseR\":{\"x\":0.0,\"y\":0.0},\"stepShortL\":{\"instanceID\":0},\"stepShortR\":{\"instanceID\":0},\"stepMediumL\":{\"instanceID\":0},\"stepMediumR\":{\"instanceID\":0},\"stepOuterL\":{\"instanceID\":0},\"stepOuterR\":{\"instanceID\":0},\"stepInnerL\":{\"instanceID\":0},\"stepInnerR\":{\"instanceID\":0},\"stepWalls\":[],\"stepShortSlopeL\":{\"instanceID\":0},\"stepShortSlopeR\":{\"instanceID\":0},\"stepMediumSlopeL\":{\"instanceID\":0},\"stepMediumSlopeR\":{\"instanceID\":0},\"stepOuterSlopeL\":{\"instanceID\":0},\"stepOuterSlopeR\":{\"instanceID\":0},\"shortSlopeRise\":[],\"mediumSlopeRise\":[],\"outerSlopeRise\":[],\"slopeTopRows\":{\"x\":416.0,\"y\":310.0,\"z\":385.0},\"stripDerivedRuns\":false,\"shadeLikeFill\":false,\"innerUnderKerb\":false,\"bodyFade\":false,\"tidyOuterJoint\":false,\"clingable\":true,\"tint\":{\"r\":0.6800000071525574,\"g\":0.6800000071525574,\"b\":0.6399999856948853,\"a\":1.0},\"sortingOffset\":14,\"replacedPaintedParts\":[\"Top\"],\"stripDepth\":1.399999976158142,\"shortNaturalSoilTail\":false,\"stripJointsPx\":[]}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Terrain/Route MR01 piece 00",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface": [
+        [
+          -6.0,
+          22.0,
+          0.0
+        ],
+        [
+          15.0,
+          22.0,
+          0.0
+        ],
+        [
+          16.0,
+          21.994,
+          0.0
+        ],
+        [
+          17.0,
+          21.977,
+          0.0
+        ],
+        [
+          18.0,
+          21.949,
+          0.0
+        ],
+        [
+          19.0,
+          21.913,
+          0.0
+        ],
+        [
+          20.0,
+          21.869,
+          0.0
+        ],
+        [
+          21.0,
+          21.817,
+          0.0
+        ],
+        [
+          22.0,
+          21.761,
+          0.0
+        ],
+        [
+          23.0,
+          21.699,
+          0.0
+        ],
+        [
+          24.0,
+          21.635,
+          0.0
+        ],
+        [
+          25.0,
+          21.568,
+          0.0
+        ],
+        [
+          27.0,
+          21.432,
+          0.0
+        ],
+        [
+          28.0,
+          21.365,
+          0.0
+        ],
+        [
+          29.0,
+          21.301,
+          0.0
+        ],
+        [
+          30.0,
+          21.239,
+          0.0
+        ],
+        [
+          31.0,
+          21.183,
+          0.0
+        ],
+        [
+          32.0,
+          21.131,
+          0.0
+        ],
+        [
+          33.0,
+          21.087,
+          0.0
+        ],
+        [
+          34.0,
+          21.051,
+          0.0
+        ],
+        [
+          35.0,
+          21.023,
+          0.0
+        ],
+        [
+          36.0,
+          21.006,
+          0.0
+        ],
+        [
+          37.0,
+          21.0,
+          0.0
+        ],
+        [
+          45.8500023,
+          21.0,
+          0.0
+        ],
+        [
+          46.42188,
+          21.0241661,
+          0.0
+        ],
+        [
+          46.99375,
+          21.1598225,
+          0.0
+        ],
+        [
+          47.5656281,
+          21.3922615,
+          0.0
+        ],
+        [
+          48.1375,
+          21.6372566,
+          0.0
+        ],
+        [
+          48.7093773,
+          21.8822536,
+          0.0
+        ],
+        [
+          49.28125,
+          22.12725,
+          0.0
+        ],
+        [
+          49.8531265,
+          22.3722458,
+          0.0
+        ],
+        [
+          50.4250031,
+          22.61724,
+          0.0
+        ],
+        [
+          50.9968758,
+          22.8622379,
+          0.0
+        ],
+        [
+          51.5687523,
+          23.107235,
+          0.0
+        ],
+        [
+          52.140625,
+          23.35223,
+          0.0
+        ],
+        [
+          52.7125,
+          23.5972252,
+          0.0
+        ],
+        [
+          53.2843742,
+          23.8422222,
+          0.0
+        ],
+        [
+          53.85625,
+          24.0746613,
+          0.0
+        ],
+        [
+          54.4281235,
+          24.2103176,
+          0.0
+        ],
+        [
+          55.0,
+          24.2344837,
+          0.0
+        ],
+        [
+          55.25,
+          24.2436428,
+          0.0
+        ],
+        [
+          55.5,
+          24.2689667,
+          0.0
+        ],
+        [
+          55.75,
+          24.30722,
+          0.0
+        ],
+        [
+          56.0,
+          24.3551731,
+          0.0
+        ],
+        [
+          56.25,
+          24.4095917,
+          0.0
+        ],
+        [
+          56.5,
+          24.4672432,
+          0.0
+        ],
+        [
+          56.75,
+          24.5248928,
+          0.0
+        ],
+        [
+          57.0,
+          24.5793114,
+          0.0
+        ],
+        [
+          57.25,
+          24.627264,
+          0.0
+        ],
+        [
+          57.5,
+          24.6655178,
+          0.0
+        ],
+        [
+          57.75,
+          24.6908417,
+          0.0
+        ],
+        [
+          58.0,
+          24.7,
+          0.0
+        ],
+        [
+          59.9,
+          24.7,
+          0.0
+        ],
+        [
+          59.9,
+          26.5,
+          0.0
+        ],
+        [
+          59.9042778,
+          26.5652637,
+          0.0
+        ],
+        [
+          59.917038,
+          26.62941,
+          0.0
+        ],
+        [
+          59.93806,
+          26.6913414,
+          0.0
+        ],
+        [
+          59.9669876,
+          26.75,
+          0.0
+        ],
+        [
+          60.0033264,
+          26.80438,
+          0.0
+        ],
+        [
+          60.0464478,
+          26.8535538,
+          0.0
+        ],
+        [
+          60.09562,
+          26.896677,
+          0.0
+        ],
+        [
+          60.15,
+          26.933012,
+          0.0
+        ],
+        [
+          60.20866,
+          26.9619389,
+          0.0
+        ],
+        [
+          60.27059,
+          26.9829636,
+          0.0
+        ],
+        [
+          60.33474,
+          26.9957218,
+          0.0
+        ],
+        [
+          60.4,
+          27.0,
+          0.0
+        ],
+        [
+          60.6583366,
+          27.00295,
+          0.0
+        ],
+        [
+          60.9166679,
+          27.01111,
+          0.0
+        ],
+        [
+          61.1750031,
+          27.0234375,
+          0.0
+        ],
+        [
+          61.4333344,
+          27.0388889,
+          0.0
+        ],
+        [
+          61.6916656,
+          27.0564232,
+          0.0
+        ],
+        [
+          61.95,
+          27.075,
+          0.0
+        ],
+        [
+          62.2083321,
+          27.0935764,
+          0.0
+        ],
+        [
+          62.4666672,
+          27.11111,
+          0.0
+        ],
+        [
+          62.725,
+          27.1265621,
+          0.0
+        ],
+        [
+          62.9833336,
+          27.13889,
+          0.0
+        ],
+        [
+          63.24167,
+          27.147049,
+          0.0
+        ],
+        [
+          63.5,
+          27.15,
+          0.0
+        ],
+        [
+          63.825,
+          27.150362,
+          0.0
+        ],
+        [
+          64.15,
+          27.1514,
+          0.0
+        ],
+        [
+          64.475,
+          27.153038,
+          0.0
+        ],
+        [
+          64.8,
+          27.1552,
+          0.0
+        ],
+        [
+          65.125,
+          27.1578121,
+          0.0
+        ],
+        [
+          65.45,
+          27.160799,
+          0.0
+        ],
+        [
+          65.775,
+          27.1640873,
+          0.0
+        ],
+        [
+          66.1,
+          27.1676,
+          0.0
+        ],
+        [
+          66.425,
+          27.1712627,
+          0.0
+        ],
+        [
+          66.75,
+          27.175,
+          0.0
+        ],
+        [
+          67.075,
+          27.1787376,
+          0.0
+        ],
+        [
+          67.4,
+          27.1824,
+          0.0
+        ],
+        [
+          67.725,
+          27.1859131,
+          0.0
+        ],
+        [
+          68.05,
+          27.1892014,
+          0.0
+        ],
+        [
+          68.375,
+          27.1921883,
+          0.0
+        ],
+        [
+          68.7,
+          27.1948013,
+          0.0
+        ],
+        [
+          69.025,
+          27.1969624,
+          0.0
+        ],
+        [
+          69.35,
+          27.1986,
+          0.0
+        ],
+        [
+          69.675,
+          27.1996384,
+          0.0
+        ],
+        [
+          70.0,
+          27.2,
+          0.0
+        ],
+        [
+          74.2,
+          27.2,
+          0.0
+        ],
+        [
+          74.4428558,
+          27.1764259,
+          0.0
+        ],
+        [
+          74.6857147,
+          27.1080036,
+          0.0
+        ],
+        [
+          74.928566,
+          26.9981823,
+          0.0
+        ],
+        [
+          75.1714249,
+          26.8504124,
+          0.0
+        ],
+        [
+          75.41428,
+          26.6681423,
+          0.0
+        ],
+        [
+          75.65714,
+          26.4548244,
+          0.0
+        ],
+        [
+          75.8999939,
+          26.2139072,
+          0.0
+        ],
+        [
+          76.14285,
+          25.9488411,
+          0.0
+        ],
+        [
+          76.38571,
+          25.6630745,
+          0.0
+        ],
+        [
+          76.62857,
+          25.3600578,
+          0.0
+        ],
+        [
+          76.87143,
+          25.0432434,
+          0.0
+        ],
+        [
+          77.11428,
+          24.71608,
+          0.0
+        ],
+        [
+          77.35714,
+          24.3820152,
+          0.0
+        ],
+        [
+          77.6,
+          24.0445,
+          0.0
+        ],
+        [
+          77.84286,
+          23.7069855,
+          0.0
+        ],
+        [
+          78.08572,
+          23.372921,
+          0.0
+        ],
+        [
+          78.32857,
+          23.0457573,
+          0.0
+        ],
+        [
+          78.57143,
+          22.7289429,
+          0.0
+        ],
+        [
+          78.8142853,
+          22.4259262,
+          0.0
+        ],
+        [
+          79.0571442,
+          22.14016,
+          0.0
+        ],
+        [
+          79.3,
+          21.8750935,
+          0.0
+        ],
+        [
+          79.5428543,
+          21.6341763,
+          0.0
+        ],
+        [
+          79.78571,
+          21.4208584,
+          0.0
+        ],
+        [
+          80.02857,
+          21.2385883,
+          0.0
+        ],
+        [
+          80.27143,
+          21.0908184,
+          0.0
+        ],
+        [
+          80.51428,
+          20.9809971,
+          0.0
+        ],
+        [
+          80.75714,
+          20.9125748,
+          0.0
+        ],
+        [
+          81.0,
+          20.889,
+          0.0
+        ],
+        [
+          85.398,
+          20.889,
+          0.0
+        ],
+        [
+          85.633,
+          20.873,
+          0.0
+        ],
+        [
+          85.855,
+          20.825,
+          0.0
+        ],
+        [
+          86.066,
+          20.745,
+          0.0
+        ],
+        [
+          86.264,
+          20.633,
+          0.0
+        ],
+        [
+          86.45,
+          20.489,
+          0.0
+        ],
+        [
+          86.55,
+          20.4,
+          0.0
+        ],
+        [
+          86.736,
+          20.256,
+          0.0
+        ],
+        [
+          86.934,
+          20.144,
+          0.0
+        ],
+        [
+          87.145,
+          20.064,
+          0.0
+        ],
+        [
+          87.367,
+          20.016,
+          0.0
+        ],
+        [
+          87.602,
+          20.0,
+          0.0
+        ],
+        [
+          93.0,
+          20.0,
+          0.0
+        ],
+        [
+          93.55,
+          20.018,
+          0.0
+        ],
+        [
+          93.73,
+          20.024,
+          0.0
+        ],
+        [
+          93.91,
+          20.033,
+          0.0
+        ],
+        [
+          94.089,
+          20.045,
+          0.0
+        ],
+        [
+          94.269,
+          20.058,
+          0.0
+        ],
+        [
+          94.448,
+          20.073,
+          0.0
+        ],
+        [
+          95.0,
+          20.124,
+          0.0
+        ],
+        [
+          96.0,
+          20.268,
+          0.0
+        ],
+        [
+          97.0,
+          20.457,
+          0.0
+        ],
+        [
+          98.0,
+          20.685,
+          0.0
+        ],
+        [
+          99.0,
+          20.945,
+          0.0
+        ],
+        [
+          100.0,
+          21.229,
+          0.0
+        ],
+        [
+          101.0,
+          21.53,
+          0.0
+        ],
+        [
+          102.0,
+          21.842,
+          0.0
+        ],
+        [
+          103.0,
+          22.158,
+          0.0
+        ],
+        [
+          104.0,
+          22.47,
+          0.0
+        ],
+        [
+          105.0,
+          22.771,
+          0.0
+        ],
+        [
+          106.0,
+          23.055,
+          0.0
+        ],
+        [
+          107.0,
+          23.315,
+          0.0
+        ],
+        [
+          108.0,
+          23.543,
+          0.0
+        ],
+        [
+          109.0,
+          23.732,
+          0.0
+        ],
+        [
+          110.0,
+          23.876,
+          0.0
+        ],
+        [
+          110.552,
+          23.927,
+          0.0
+        ],
+        [
+          110.731,
+          23.942,
+          0.0
+        ],
+        [
+          110.911,
+          23.955,
+          0.0
+        ],
+        [
+          111.09,
+          23.967,
+          0.0
+        ],
+        [
+          111.27,
+          23.976,
+          0.0
+        ],
+        [
+          111.45,
+          23.982,
+          0.0
+        ],
+        [
+          112.0,
+          24.0,
+          0.0
+        ],
+        [
+          119.375,
+          24.0,
+          0.0
+        ],
+        [
+          119.960182,
+          23.9692841,
+          0.0
+        ],
+        [
+          120.545372,
+          23.7986832,
+          0.0
+        ],
+        [
+          121.130554,
+          23.5129356,
+          0.0
+        ],
+        [
+          121.715744,
+          23.2146568,
+          0.0
+        ],
+        [
+          122.300926,
+          22.9163761,
+          0.0
+        ],
+        [
+          122.886108,
+          22.6180973,
+          0.0
+        ],
+        [
+          123.4713,
+          22.3198166,
+          0.0
+        ],
+        [
+          124.05648,
+          22.0215378,
+          0.0
+        ],
+        [
+          124.64167,
+          21.723259,
+          0.0
+        ],
+        [
+          125.226852,
+          21.4249783,
+          0.0
+        ],
+        [
+          125.812042,
+          21.1267,
+          0.0
+        ],
+        [
+          126.397224,
+          20.8284187,
+          0.0
+        ],
+        [
+          126.982407,
+          20.53014,
+          0.0
+        ],
+        [
+          127.5676,
+          20.23186,
+          0.0
+        ],
+        [
+          128.152786,
+          19.93358,
+          0.0
+        ],
+        [
+          128.737961,
+          19.6353,
+          0.0
+        ],
+        [
+          129.323151,
+          19.33702,
+          0.0
+        ],
+        [
+          129.90834,
+          19.0387421,
+          0.0
+        ],
+        [
+          130.493515,
+          18.7404613,
+          0.0
+        ],
+        [
+          131.0787,
+          18.4421825,
+          0.0
+        ],
+        [
+          131.6639,
+          18.1439018,
+          0.0
+        ],
+        [
+          132.249084,
+          17.845623,
+          0.0
+        ],
+        [
+          132.834259,
+          17.5473442,
+          0.0
+        ],
+        [
+          133.419449,
+          17.2490635,
+          0.0
+        ],
+        [
+          134.004639,
+          16.963316,
+          0.0
+        ],
+        [
+          134.589813,
+          16.792717,
+          0.0
+        ],
+        [
+          135.175,
+          16.762,
+          0.0
+        ],
+        [
+          140.434,
+          16.762,
+          0.0
+        ],
+        [
+          140.656,
+          16.748,
+          0.0
+        ],
+        [
+          140.868,
+          16.707,
+          0.0
+        ],
+        [
+          141.071,
+          16.638,
+          0.0
+        ],
+        [
+          141.265,
+          16.542,
+          0.0
+        ],
+        [
+          141.45,
+          16.419,
+          0.0
+        ],
+        [
+          141.55,
+          16.343,
+          0.0
+        ],
+        [
+          141.735,
+          16.219,
+          0.0
+        ],
+        [
+          141.929,
+          16.123,
+          0.0
+        ],
+        [
+          142.132,
+          16.055,
+          0.0
+        ],
+        [
+          142.344,
+          16.014,
+          0.0
+        ],
+        [
+          142.566,
+          16.0,
+          0.0
+        ],
+        [
+          145.0,
+          16.0,
+          0.0
+        ],
+        [
+          145.0,
+          19.0,
+          0.0
+        ],
+        [
+          148.0,
+          19.0,
+          0.0
+        ],
+        [
+          150.0,
+          20.0,
+          0.0
+        ],
+        [
+          154.0,
+          20.0,
+          0.0
+        ],
+        [
+          161.0,
+          12.56,
+          0.0
+        ],
+        [
+          162.0,
+          12.33,
+          0.0
+        ],
+        [
+          162.554,
+          12.232,
+          0.0
+        ],
+        [
+          162.733,
+          12.201,
+          0.0
+        ],
+        [
+          162.911,
+          12.173,
+          0.0
+        ],
+        [
+          163.091,
+          12.147,
+          0.0
+        ],
+        [
+          163.27,
+          12.124,
+          0.0
+        ],
+        [
+          163.45,
+          12.102,
+          0.0
+        ],
+        [
+          163.552,
+          12.091,
+          0.0
+        ],
+        [
+          163.732,
+          12.072,
+          0.0
+        ],
+        [
+          163.911,
+          12.055,
+          0.0
+        ],
+        [
+          164.09,
+          12.042,
+          0.0
+        ],
+        [
+          164.27,
+          12.03,
+          0.0
+        ],
+        [
+          164.45,
+          12.022,
+          0.0
+        ],
+        [
+          165.0,
+          12.0,
+          0.0
+        ],
+        [
+          167.0,
+          12.0,
+          0.0
+        ],
+        [
+          173.0,
+          17.0,
+          0.0
+        ],
+        [
+          181.0,
+          17.0,
+          0.0
+        ],
+        [
+          188.0,
+          12.0,
+          0.0
+        ],
+        [
+          193.0,
+          12.0,
+          0.0
+        ],
+        [
+          194.0,
+          12.016,
+          0.0
+        ],
+        [
+          195.0,
+          12.062,
+          0.0
+        ],
+        [
+          196.0,
+          12.134,
+          0.0
+        ],
+        [
+          197.0,
+          12.229,
+          0.0
+        ],
+        [
+          198.0,
+          12.343,
+          0.0
+        ],
+        [
+          199.0,
+          12.472,
+          0.0
+        ],
+        [
+          200.0,
+          12.614,
+          0.0
+        ],
+        [
+          201.0,
+          12.765,
+          0.0
+        ],
+        [
+          202.0,
+          12.921,
+          0.0
+        ],
+        [
+          203.0,
+          13.079,
+          0.0
+        ],
+        [
+          204.0,
+          13.235,
+          0.0
+        ],
+        [
+          205.0,
+          13.386,
+          0.0
+        ],
+        [
+          206.0,
+          13.528,
+          0.0
+        ],
+        [
+          207.0,
+          13.657,
+          0.0
+        ],
+        [
+          208.0,
+          13.771,
+          0.0
+        ],
+        [
+          209.0,
+          13.866,
+          0.0
+        ],
+        [
+          210.5,
+          14.0,
+          0.0
+        ],
+        [
+          210.5,
+          17.1,
+          0.0
+        ],
+        [
+          213.0,
+          17.1,
+          0.0
+        ],
+        [
+          214.0,
+          18.1,
+          0.0
+        ],
+        [
+          218.0,
+          18.1,
+          0.0
+        ],
+        [
+          221.0,
+          14.9,
+          0.0
+        ]
+      ],
+      "style": "{\"MonoBehaviour\":{\"m_Enabled\":true,\"m_EditorHideFlags\":0,\"m_Name\":\"\",\"m_EditorClassIdentifier\":\"Assembly-CSharp::MraTerrain\",\"caveOpenings\":[{\"roomId\":\"PC02\",\"outline\":[{\"x\":144.5,\"y\":16.0},{\"x\":153.0,\"y\":16.0},{\"x\":153.0,\"y\":17.43000030517578},{\"x\":152.5749969482422,\"y\":18.131999969482423},{\"x\":151.72500610351563,\"y\":18.54800033569336},{\"x\":145.77499389648438,\"y\":18.600000381469728},{\"x\":144.5,\"y\":18.288000106811525}]},{\"roomId\":\"PC03\",\"outline\":[{\"x\":210.5,\"y\":14.0},{\"x\":218.0,\"y\":14.0},{\"x\":218.0,\"y\":15.484999656677246},{\"x\":217.625,\"y\":16.214000701904298},{\"x\":216.875,\"y\":16.645999908447267},{\"x\":211.625,\"y\":16.700000762939454},{\"x\":210.5,\"y\":16.375999450683595}]},{\"roomId\":\"PC01\",\"outline\":[{\"x\":59.70000076293945,\"y\":24.700000762939454},{\"x\":64.1500015258789,\"y\":24.700000762939454},{\"x\":64.1500015258789,\"y\":26.899999618530275},{\"x\":59.70000076293945,\"y\":27.0}]}],\"caveFringeTrims\":[{\"roomId\":\"PC03\",\"outline\":[{\"x\":209.89999389648438,\"y\":13.949999809265137},{\"x\":210.8000030517578,\"y\":13.949999809265137},{\"x\":210.8000030517578,\"y\":16.719999313354493},{\"x\":209.89999389648438,\"y\":16.719999313354493}]},{\"roomId\":\"PC02\",\"outline\":[{\"x\":144.39999389648438,\"y\":15.949999809265137},{\"x\":145.3000030517578,\"y\":15.949999809265137},{\"x\":145.3000030517578,\"y\":18.719999313354493},{\"x\":144.39999389648438,\"y\":18.719999313354493}]},{\"roomId\":\"PC01\",\"outline\":[{\"x\":59.20000076293945,\"y\":23.950000762939454},{\"x\":60.29999923706055,\"y\":23.950000762939454},{\"x\":60.29999923706055,\"y\":26.670000076293947},{\"x\":59.20000076293945,\"y\":26.670000076293947}]}],\"chamberBackdrop\":{\"instanceID\":0},\"chamberTopPriority\":0,\"chamberPartLabels\":[],\"chamberPartOrders\":[],\"chamberSolidColumn\":false,\"chamberBlendLeft\":true,\"chamberBlendRight\":true,\"nativeStripEndBlend\":0.0,\"registeredTopJoinRole\":0,\"registeredTopJoinPeer\":{\"instanceID\":0},\"registeredTopJoinSource\":{\"instanceID\":0},\"surface\":[{\"x\":-6.0,\"y\":22.0},{\"x\":15.0,\"y\":22.0},{\"x\":16.0,\"y\":21.993999481201173},{\"x\":17.0,\"y\":21.976999282836915},{\"x\":18.0,\"y\":21.948999404907228},{\"x\":19.0,\"y\":21.913000106811525},{\"x\":20.0,\"y\":21.868999481201173},{\"x\":21.0,\"y\":21.816999435424806},{\"x\":22.0,\"y\":21.76099967956543},{\"x\":23.0,\"y\":21.698999404907228},{\"x\":24.0,\"y\":21.635000228881837},{\"x\":25.0,\"y\":21.56800079345703},{\"x\":27.0,\"y\":21.43199920654297},{\"x\":28.0,\"y\":21.364999771118165},{\"x\":29.0,\"y\":21.301000595092775},{\"x\":30.0,\"y\":21.23900032043457},{\"x\":31.0,\"y\":21.183000564575197},{\"x\":32.0,\"y\":21.131000518798829},{\"x\":33.0,\"y\":21.086999893188478},{\"x\":34.0,\"y\":21.051000595092775},{\"x\":35.0,\"y\":21.023000717163087},{\"x\":36.0,\"y\":21.006000518798829},{\"x\":37.0,\"y\":21.0},{\"x\":45.85000228881836,\"y\":21.0},{\"x\":46.421878814697269,\"y\":21.024166107177736},{\"x\":46.993751525878909,\"y\":21.159822463989259},{\"x\":47.56562805175781,\"y\":21.392261505126954},{\"x\":48.13750076293945,\"y\":21.637256622314454},{\"x\":48.70937728881836,\"y\":21.882253646850587},{\"x\":49.28125,\"y\":22.12725067138672},{\"x\":49.853126525878909,\"y\":22.37224578857422},{\"x\":50.42500305175781,\"y\":22.61724090576172},{\"x\":50.99687576293945,\"y\":22.86223793029785},{\"x\":51.56875228881836,\"y\":23.107234954833986},{\"x\":52.140625,\"y\":23.352230072021486},{\"x\":52.712501525878909,\"y\":23.597225189208986},{\"x\":53.28437423706055,\"y\":23.842222213745118},{\"x\":53.85625076293945,\"y\":24.074661254882814},{\"x\":54.428123474121097,\"y\":24.210317611694337},{\"x\":55.0,\"y\":24.23448371887207},{\"x\":55.25,\"y\":24.243642807006837},{\"x\":55.5,\"y\":24.268966674804689},{\"x\":55.75,\"y\":24.307220458984376},{\"x\":56.0,\"y\":24.355173110961915},{\"x\":56.25,\"y\":24.409591674804689},{\"x\":56.5,\"y\":24.467243194580079},{\"x\":56.75,\"y\":24.524892807006837},{\"x\":57.0,\"y\":24.57931137084961},{\"x\":57.25,\"y\":24.62726402282715},{\"x\":57.5,\"y\":24.665517807006837},{\"x\":57.75,\"y\":24.690841674804689},{\"x\":58.0,\"y\":24.700000762939454},{\"x\":59.900001525878909,\"y\":24.700000762939454},{\"x\":59.900001525878909,\"y\":26.5},{\"x\":59.90427780151367,\"y\":26.565263748168947},{\"x\":59.91703796386719,\"y\":26.629409790039064},{\"x\":59.93806076049805,\"y\":26.691341400146486},{\"x\":59.96698760986328,\"y\":26.75},{\"x\":60.003326416015628,\"y\":26.804380416870118},{\"x\":60.04644775390625,\"y\":26.853553771972658},{\"x\":60.095619201660159,\"y\":26.896677017211915},{\"x\":60.150001525878909,\"y\":26.933012008666993},{\"x\":60.20866012573242,\"y\":26.961938858032228},{\"x\":60.270591735839847,\"y\":26.98296356201172},{\"x\":60.334739685058597,\"y\":26.9957218170166},{\"x\":60.400001525878909,\"y\":27.0},{\"x\":60.6583366394043,\"y\":27.00295066833496},{\"x\":60.91666793823242,\"y\":27.011110305786134},{\"x\":61.17500305175781,\"y\":27.0234375},{\"x\":61.43333435058594,\"y\":27.038888931274415},{\"x\":61.69166564941406,\"y\":27.05642318725586},{\"x\":61.95000076293945,\"y\":27.075000762939454},{\"x\":62.20833206176758,\"y\":27.093576431274415},{\"x\":62.46666717529297,\"y\":27.11111068725586},{\"x\":62.724998474121097,\"y\":27.126562118530275},{\"x\":62.983333587646487,\"y\":27.13888931274414},{\"x\":63.241668701171878,\"y\":27.147048950195314},{\"x\":63.5,\"y\":27.149999618530275},{\"x\":63.82500076293945,\"y\":27.150362014770509},{\"x\":64.1500015258789,\"y\":27.151399612426759},{\"x\":64.4749984741211,\"y\":27.153038024902345},{\"x\":64.80000305175781,\"y\":27.15519905090332},{\"x\":65.125,\"y\":27.157812118530275},{\"x\":65.44999694824219,\"y\":27.160799026489259},{\"x\":65.7750015258789,\"y\":27.164087295532228},{\"x\":66.0999984741211,\"y\":27.167600631713868},{\"x\":66.42500305175781,\"y\":27.171262741088868},{\"x\":66.75,\"y\":27.174999237060548},{\"x\":67.07499694824219,\"y\":27.17873764038086},{\"x\":67.4000015258789,\"y\":27.18239974975586},{\"x\":67.7249984741211,\"y\":27.1859130859375},{\"x\":68.05000305175781,\"y\":27.18920135498047},{\"x\":68.375,\"y\":27.192188262939454},{\"x\":68.69999694824219,\"y\":27.194801330566408},{\"x\":69.0250015258789,\"y\":27.196962356567384},{\"x\":69.3499984741211,\"y\":27.19860076904297},{\"x\":69.67500305175781,\"y\":27.19963836669922},{\"x\":70.0,\"y\":27.200000762939454},{\"x\":74.19999694824219,\"y\":27.200000762939454},{\"x\":74.44285583496094,\"y\":27.17642593383789},{\"x\":74.68571472167969,\"y\":27.108003616333009},{\"x\":74.9285659790039,\"y\":26.99818229675293},{\"x\":75.17142486572266,\"y\":26.850412368774415},{\"x\":75.4142837524414,\"y\":26.668142318725587},{\"x\":75.65714263916016,\"y\":26.454824447631837},{\"x\":75.89999389648438,\"y\":26.21390724182129},{\"x\":76.14285278320313,\"y\":25.948841094970704},{\"x\":76.38571166992188,\"y\":25.663074493408204},{\"x\":76.62857055664063,\"y\":25.360057830810548},{\"x\":76.87142944335938,\"y\":25.043243408203126},{\"x\":77.1142807006836,\"y\":24.716079711914064},{\"x\":77.35713958740235,\"y\":24.382015228271486},{\"x\":77.5999984741211,\"y\":24.04450035095215},{\"x\":77.84285736083985,\"y\":23.706985473632814},{\"x\":78.0857162475586,\"y\":23.372920989990236},{\"x\":78.32856750488281,\"y\":23.045757293701173},{\"x\":78.57142639160156,\"y\":22.72894287109375},{\"x\":78.81428527832031,\"y\":22.425926208496095},{\"x\":79.05714416503906,\"y\":22.140159606933595},{\"x\":79.30000305175781,\"y\":21.875093460083009},{\"x\":79.54285430908203,\"y\":21.63417625427246},{\"x\":79.78571319580078,\"y\":21.42085838317871},{\"x\":80.02857208251953,\"y\":21.238588333129884},{\"x\":80.27143096923828,\"y\":21.090818405151368},{\"x\":80.5142822265625,\"y\":20.98099708557129},{\"x\":80.75714111328125,\"y\":20.912574768066408},{\"x\":81.0,\"y\":20.888999938964845},{\"x\":85.39800262451172,\"y\":20.888999938964845},{\"x\":85.63300323486328,\"y\":20.87299919128418},{\"x\":85.8550033569336,\"y\":20.825000762939454},{\"x\":86.06600189208985,\"y\":20.7450008392334},{\"x\":86.26399993896485,\"y\":20.632999420166017},{\"x\":86.44999694824219,\"y\":20.48900032043457},{\"x\":86.55000305175781,\"y\":20.399999618530275},{\"x\":86.73600006103516,\"y\":20.256000518798829},{\"x\":86.93399810791016,\"y\":20.143999099731447},{\"x\":87.1449966430664,\"y\":20.06399917602539},{\"x\":87.36699676513672,\"y\":20.016000747680665},{\"x\":87.60199737548828,\"y\":20.0},{\"x\":93.0,\"y\":20.0},{\"x\":93.55000305175781,\"y\":20.01799964904785},{\"x\":93.7300033569336,\"y\":20.02400016784668},{\"x\":93.91000366210938,\"y\":20.033000946044923},{\"x\":94.08899688720703,\"y\":20.045000076293947},{\"x\":94.26899719238281,\"y\":20.058000564575197},{\"x\":94.447998046875,\"y\":20.072999954223634},{\"x\":95.0,\"y\":20.124000549316408},{\"x\":96.0,\"y\":20.26799964904785},{\"x\":97.0,\"y\":20.457000732421876},{\"x\":98.0,\"y\":20.684999465942384},{\"x\":99.0,\"y\":20.94499969482422},{\"x\":100.0,\"y\":21.229000091552736},{\"x\":101.0,\"y\":21.530000686645509},{\"x\":102.0,\"y\":21.841999053955079},{\"x\":103.0,\"y\":22.158000946044923},{\"x\":104.0,\"y\":22.469999313354493},{\"x\":105.0,\"y\":22.770999908447267},{\"x\":106.0,\"y\":23.05500030517578},{\"x\":107.0,\"y\":23.315000534057618},{\"x\":108.0,\"y\":23.542999267578126},{\"x\":109.0,\"y\":23.73200035095215},{\"x\":110.0,\"y\":23.875999450683595},{\"x\":110.552001953125,\"y\":23.927000045776368},{\"x\":110.73100280761719,\"y\":23.941999435424806},{\"x\":110.91100311279297,\"y\":23.954999923706056},{\"x\":111.08999633789063,\"y\":23.966999053955079},{\"x\":111.2699966430664,\"y\":23.97599983215332},{\"x\":111.44999694824219,\"y\":23.98200035095215},{\"x\":112.0,\"y\":24.0},{\"x\":119.375,\"y\":24.0},{\"x\":119.9601821899414,\"y\":23.969284057617189},{\"x\":120.54537200927735,\"y\":23.798683166503908},{\"x\":121.13055419921875,\"y\":23.512935638427736},{\"x\":121.71574401855469,\"y\":23.214656829833986},{\"x\":122.3009262084961,\"y\":22.9163761138916},{\"x\":122.8861083984375,\"y\":22.61809730529785},{\"x\":123.47129821777344,\"y\":22.31981658935547},{\"x\":124.05648040771485,\"y\":22.02153778076172},{\"x\":124.64167022705078,\"y\":21.72325897216797},{\"x\":125.22685241699219,\"y\":21.424978256225587},{\"x\":125.81204223632813,\"y\":21.126699447631837},{\"x\":126.39722442626953,\"y\":20.828418731689454},{\"x\":126.98240661621094,\"y\":20.530139923095704},{\"x\":127.56759643554688,\"y\":20.23185920715332},{\"x\":128.1527862548828,\"y\":19.93358039855957},{\"x\":128.7379608154297,\"y\":19.635299682617189},{\"x\":129.32315063476563,\"y\":19.337020874023439},{\"x\":129.90834045410157,\"y\":19.038742065429689},{\"x\":130.49351501464845,\"y\":18.740461349487306},{\"x\":131.07870483398438,\"y\":18.442182540893556},{\"x\":131.6638946533203,\"y\":18.143901824951173},{\"x\":132.24908447265626,\"y\":17.845623016357423},{\"x\":132.83425903320313,\"y\":17.547344207763673},{\"x\":133.41944885253907,\"y\":17.24906349182129},{\"x\":134.004638671875,\"y\":16.963315963745118},{\"x\":134.58981323242188,\"y\":16.79271697998047},{\"x\":135.1750030517578,\"y\":16.761999130249025},{\"x\":140.4340057373047,\"y\":16.761999130249025},{\"x\":140.656005859375,\"y\":16.74799919128418},{\"x\":140.8679962158203,\"y\":16.707000732421876},{\"x\":141.0709991455078,\"y\":16.63800048828125},{\"x\":141.26499938964845,\"y\":16.54199981689453},{\"x\":141.4499969482422,\"y\":16.41900062561035},{\"x\":141.5500030517578,\"y\":16.343000411987306},{\"x\":141.73500061035157,\"y\":16.2189998626709},{\"x\":141.9290008544922,\"y\":16.12299919128418},{\"x\":142.1320037841797,\"y\":16.05500030517578},{\"x\":142.343994140625,\"y\":16.013999938964845},{\"x\":142.5659942626953,\"y\":16.0},{\"x\":145.0,\"y\":16.0},{\"x\":145.0,\"y\":19.0},{\"x\":148.0,\"y\":19.0},{\"x\":150.0,\"y\":20.0},{\"x\":154.0,\"y\":20.0},{\"x\":161.0,\"y\":12.5600004196167},{\"x\":162.0,\"y\":12.329999923706055},{\"x\":162.5540008544922,\"y\":12.232000350952149},{\"x\":162.73300170898438,\"y\":12.201000213623047},{\"x\":162.91099548339845,\"y\":12.17300033569336},{\"x\":163.09100341796876,\"y\":12.147000312805176},{\"x\":163.27000427246095,\"y\":12.12399959564209},{\"x\":163.4499969482422,\"y\":12.10200023651123},{\"x\":163.552001953125,\"y\":12.090999603271485},{\"x\":163.73199462890626,\"y\":12.071999549865723},{\"x\":163.91099548339845,\"y\":12.055000305175782},{\"x\":164.08999633789063,\"y\":12.041999816894532},{\"x\":164.27000427246095,\"y\":12.029999732971192},{\"x\":164.4499969482422,\"y\":12.022000312805176},{\"x\":165.0,\"y\":12.0},{\"x\":167.0,\"y\":12.0},{\"x\":173.0,\"y\":17.0},{\"x\":181.0,\"y\":17.0},{\"x\":188.0,\"y\":12.0},{\"x\":193.0,\"y\":12.0},{\"x\":194.0,\"y\":12.015999794006348},{\"x\":195.0,\"y\":12.062000274658204},{\"x\":196.0,\"y\":12.133999824523926},{\"x\":197.0,\"y\":12.229000091552735},{\"x\":198.0,\"y\":12.343000411987305},{\"x\":199.0,\"y\":12.472000122070313},{\"x\":200.0,\"y\":12.61400032043457},{\"x\":201.0,\"y\":12.765000343322754},{\"x\":202.0,\"y\":12.920999526977539},{\"x\":203.0,\"y\":13.079000473022461},{\"x\":204.0,\"y\":13.234999656677246},{\"x\":205.0,\"y\":13.38599967956543},{\"x\":206.0,\"y\":13.527999877929688},{\"x\":207.0,\"y\":13.656999588012696},{\"x\":208.0,\"y\":13.770999908447266},{\"x\":209.0,\"y\":13.866000175476075},{\"x\":210.5,\"y\":14.0},{\"x\":210.5,\"y\":17.100000381469728},{\"x\":213.0,\"y\":17.100000381469728},{\"x\":214.0,\"y\":18.100000381469728},{\"x\":218.0,\"y\":18.100000381469728},{\"x\":221.0,\"y\":14.899999618530274}],\"bottom\":-14.0,\"fill\":{\"fileID\":21300000,\"guid\":\"59b8dac12ceb5c14bb30e0df0c9be1e8\",\"type\":3},\"top\":{\"fileID\":21300000,\"guid\":\"67ec13b28e8ce8a4fb6fa4fd94ad385a\",\"type\":3},\"face\":{\"fileID\":21300000,\"guid\":\"398f08ad172fc3a4b816b0a8829511ac\",\"type\":3},\"under\":{\"instanceID\":0},\"fullUnderSilhouette\":false,\"underTint\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"walkLinePx\":96.0,\"maxStripSlope\":1.2000000476837159,\"solid\":true,\"leftFace\":false,\"rightFace\":false,\"riserFaces\":true,\"faceEdgeU\":0.0,\"faceDepth\":1.2999999523162842,\"lipOverhang\":0.2199999988079071,\"shadeDepth\":7.0,\"shadeFloor\":0.800000011920929,\"roughContour\":true,\"contourReach\":0.4000000059604645,\"cliffSideL\":{\"fileID\":21300000,\"guid\":\"0bbd0759fca09ab4ba42005024019e66\",\"type\":3},\"cliffSideR\":{\"fileID\":21300000,\"guid\":\"b64a6706d44396b438928f71e903a2ad\",\"type\":3},\"cornerTopL\":{\"fileID\":21300000,\"guid\":\"d6790e88232a16245abc3923471b8661\",\"type\":3},\"cornerTopR\":{\"fileID\":21300000,\"guid\":\"2b4dc25964af9a54396400d8d80b5768\",\"type\":3},\"cornerFootL\":{\"fileID\":21300000,\"guid\":\"bf0fe6f195aa9e14b834ee8a5741da6b\",\"type\":3},\"cornerFootR\":{\"fileID\":21300000,\"guid\":\"c7cea044a2058ad4b9c00f47b5692798\",\"type\":3},\"cornersFollowTread\":false,\"townCourseL\":{\"x\":0.0,\"y\":0.0},\"townCourseR\":{\"x\":0.0,\"y\":0.0},\"stepShortL\":{\"fileID\":21300000,\"guid\":\"19b96742b222c6f4fbc0e30cb83bc1f7\",\"type\":3},\"stepShortR\":{\"fileID\":21300000,\"guid\":\"797f20a3db583684494e9a6982fb14c7\",\"type\":3},\"stepMediumL\":{\"fileID\":21300000,\"guid\":\"c64179bde4704e641baa9ebfc94a07fa\",\"type\":3},\"stepMediumR\":{\"fileID\":21300000,\"guid\":\"f15bf76460bfba84da83e0d01228e6ce\",\"type\":3},\"stepOuterL\":{\"fileID\":21300000,\"guid\":\"ca7e02611f8b65c41b7f01e53a19cd4a\",\"type\":3},\"stepOuterR\":{\"fileID\":21300000,\"guid\":\"70669172fe403f7458ec96f171b43c19\",\"type\":3},\"stepInnerL\":{\"fileID\":21300000,\"guid\":\"160c1735669150b4a8d8d9aff2bfb51a\",\"type\":3},\"stepInnerR\":{\"fileID\":21300000,\"guid\":\"740a7bc556db8474c9d9835ff9691293\",\"type\":3},\"stepWalls\":[{\"fileID\":21300000,\"guid\":\"cccfe4180a0373d4aa3e437d9ab95636\",\"type\":3},{\"fileID\":21300000,\"guid\":\"a2903ebf17aec5243aebfd27e03bc588\",\"type\":3},{\"fileID\":21300000,\"guid\":\"774d97efdbfdf064a95d3bc8b6272817\",\"type\":3}],\"stepShortSlopeL\":{\"fileID\":21300000,\"guid\":\"5c36feab7ee9dda4eb477a3b83db5d79\",\"type\":3},\"stepShortSlopeR\":{\"fileID\":21300000,\"guid\":\"e5c9c28b37605d14a84ae1385b2e2efb\",\"type\":3},\"stepMediumSlopeL\":{\"fileID\":21300000,\"guid\":\"c77acb6ffec79494ba317d2d68698ab3\",\"type\":3},\"stepMediumSlopeR\":{\"fileID\":21300000,\"guid\":\"dcec56c09a0226847bb91d621a5e710e\",\"type\":3},\"stepOuterSlopeL\":{\"fileID\":21300000,\"guid\":\"64911e357a0588f43bff85f7f66f906a\",\"type\":3},\"stepOuterSlopeR\":{\"fileID\":21300000,\"guid\":\"a21d45cd34a53684d85c2cbd27e8af06\",\"type\":3},\"shortSlopeRise\":[{\"x\":0.0,\"y\":0.0},{\"x\":512.0,\"y\":204.8000030517578}],\"mediumSlopeRise\":[{\"x\":0.0,\"y\":0.0},{\"x\":512.0,\"y\":204.8000030517578}],\"outerSlopeRise\":[{\"x\":0.0,\"y\":0.0},{\"x\":512.0,\"y\":204.8000030517578}],\"slopeTopRows\":{\"x\":416.0,\"y\":310.0,\"z\":385.0},\"stripDerivedRuns\":true,\"shadeLikeFill\":false,\"innerUnderKerb\":false,\"bodyFade\":false,\"tidyOuterJoint\":false,\"clingable\":true,\"tint\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"sortingOffset\":0,\"replacedPaintedParts\":[\"Cliff corners (R)\",\"Step 59.9 medium (slope top)\"],\"stripDepth\":1.399999976158142,\"shortNaturalSoilTail\":true,\"stripJointsPx\":[28.0,112.0,204.0,293.0,384.0,477.0,568.0,660.0,752.0,848.0,944.0,1018.0]}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Terrain/Route MR01 piece 01 (past the ravine)",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface": [
+        [
+          229.0,
+          18.2,
+          0.0
+        ],
+        [
+          232.0,
+          18.2,
+          0.0
+        ],
+        [
+          232.0,
+          20.0,
+          0.0
+        ],
+        [
+          243.5,
+          20.0,
+          0.0
+        ],
+        [
+          243.5,
+          24.2,
+          0.0
+        ],
+        [
+          247.0,
+          24.2,
+          0.0
+        ],
+        [
+          247.431,
+          24.226,
+          0.0
+        ],
+        [
+          247.845,
+          24.306,
+          0.0
+        ],
+        [
+          248.241,
+          24.438,
+          0.0
+        ],
+        [
+          248.619,
+          24.622,
+          0.0
+        ],
+        [
+          248.98,
+          24.86,
+          0.0
+        ],
+        [
+          253.55,
+          28.288,
+          0.0
+        ],
+        [
+          253.55,
+          33.912,
+          0.0
+        ],
+        [
+          258.12,
+          37.34,
+          0.0
+        ],
+        [
+          258.481,
+          37.578,
+          0.0
+        ],
+        [
+          258.859,
+          37.762,
+          0.0
+        ],
+        [
+          259.255,
+          37.894,
+          0.0
+        ],
+        [
+          259.669,
+          37.974,
+          0.0
+        ],
+        [
+          260.1,
+          38.0,
+          0.0
+        ],
+        [
+          262.0,
+          38.0,
+          0.0
+        ],
+        [
+          262.0,
+          41.1,
+          0.0
+        ],
+        [
+          265.0,
+          41.1,
+          0.0
+        ],
+        [
+          267.0,
+          42.0,
+          0.0
+        ],
+        [
+          274.0,
+          42.0,
+          0.0
+        ],
+        [
+          281.25,
+          39.0,
+          0.0
+        ],
+        [
+          282.227,
+          39.136,
+          0.0
+        ],
+        [
+          283.205,
+          39.27,
+          0.0
+        ],
+        [
+          284.182,
+          39.399,
+          0.0
+        ],
+        [
+          285.159,
+          39.521,
+          0.0
+        ],
+        [
+          286.136,
+          39.635,
+          0.0
+        ],
+        [
+          287.114,
+          39.737,
+          0.0
+        ],
+        [
+          288.091,
+          39.826,
+          0.0
+        ],
+        [
+          289.068,
+          39.899,
+          0.0
+        ],
+        [
+          290.045,
+          39.953,
+          0.0
+        ],
+        [
+          291.023,
+          39.988,
+          0.0
+        ],
+        [
+          292.0,
+          40.0,
+          0.0
+        ],
+        [
+          332.0,
+          40.0,
+          0.0
+        ]
+      ],
+      "style": "{\"MonoBehaviour\":{\"m_Enabled\":true,\"m_EditorHideFlags\":0,\"m_Name\":\"\",\"m_EditorClassIdentifier\":\"Assembly-CSharp::MraTerrain\",\"caveOpenings\":[{\"roomId\":\"MR01_C06\",\"outline\":[{\"x\":262.0,\"y\":38.0},{\"x\":271.0,\"y\":38.0},{\"x\":271.0,\"y\":39.48500061035156},{\"x\":270.54998779296877,\"y\":40.2140007019043},{\"x\":269.6499938964844,\"y\":40.645999908447269},{\"x\":263.3500061035156,\"y\":40.70000076293945},{\"x\":262.0,\"y\":40.375999450683597}]}],\"caveFringeTrims\":[{\"roomId\":\"MR01_C06\",\"outline\":[{\"x\":261.3999938964844,\"y\":37.95000076293945},{\"x\":262.29998779296877,\"y\":37.95000076293945},{\"x\":262.29998779296877,\"y\":40.720001220703128},{\"x\":261.3999938964844,\"y\":40.720001220703128}]}],\"chamberBackdrop\":{\"instanceID\":0},\"chamberTopPriority\":0,\"chamberPartLabels\":[],\"chamberPartOrders\":[],\"chamberSolidColumn\":false,\"chamberBlendLeft\":true,\"chamberBlendRight\":true,\"nativeStripEndBlend\":0.0,\"registeredTopJoinRole\":0,\"registeredTopJoinPeer\":{\"instanceID\":0},\"registeredTopJoinSource\":{\"instanceID\":0},\"surface\":[{\"x\":229.0,\"y\":18.200000762939454},{\"x\":232.0,\"y\":18.200000762939454},{\"x\":232.0,\"y\":20.0},{\"x\":243.5,\"y\":20.0},{\"x\":243.5,\"y\":24.200000762939454},{\"x\":247.0,\"y\":24.200000762939454},{\"x\":247.43099975585938,\"y\":24.22599983215332},{\"x\":247.84500122070313,\"y\":24.305999755859376},{\"x\":248.24099731445313,\"y\":24.437999725341798},{\"x\":248.61900329589845,\"y\":24.621999740600587},{\"x\":248.97999572753907,\"y\":24.860000610351564},{\"x\":253.5500030517578,\"y\":28.288000106811525},{\"x\":253.5500030517578,\"y\":33.9119987487793},{\"x\":258.1199951171875,\"y\":37.34000015258789},{\"x\":258.4809875488281,\"y\":37.577999114990237},{\"x\":258.8590087890625,\"y\":37.762001037597659},{\"x\":259.2550048828125,\"y\":37.89400100708008},{\"x\":259.66900634765627,\"y\":37.9739990234375},{\"x\":260.1000061035156,\"y\":38.0},{\"x\":262.0,\"y\":38.0},{\"x\":262.0,\"y\":41.099998474121097},{\"x\":265.0,\"y\":41.099998474121097},{\"x\":267.0,\"y\":42.0},{\"x\":274.0,\"y\":42.0},{\"x\":281.25,\"y\":39.0},{\"x\":282.22698974609377,\"y\":39.13600158691406},{\"x\":283.2049865722656,\"y\":39.27000045776367},{\"x\":284.1820068359375,\"y\":39.39899826049805},{\"x\":285.15899658203127,\"y\":39.520999908447269},{\"x\":286.135986328125,\"y\":39.6349983215332},{\"x\":287.114013671875,\"y\":39.73699951171875},{\"x\":288.09100341796877,\"y\":39.82600021362305},{\"x\":289.0679931640625,\"y\":39.89899826049805},{\"x\":290.0450134277344,\"y\":39.952999114990237},{\"x\":291.02301025390627,\"y\":39.987998962402347},{\"x\":292.0,\"y\":40.0},{\"x\":332.0,\"y\":40.0}],\"bottom\":-14.0,\"fill\":{\"fileID\":21300000,\"guid\":\"59b8dac12ceb5c14bb30e0df0c9be1e8\",\"type\":3},\"top\":{\"fileID\":21300000,\"guid\":\"67ec13b28e8ce8a4fb6fa4fd94ad385a\",\"type\":3},\"face\":{\"fileID\":21300000,\"guid\":\"398f08ad172fc3a4b816b0a8829511ac\",\"type\":3},\"under\":{\"instanceID\":0},\"fullUnderSilhouette\":false,\"underTint\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"walkLinePx\":96.0,\"maxStripSlope\":1.2000000476837159,\"solid\":true,\"leftFace\":false,\"rightFace\":false,\"riserFaces\":true,\"faceEdgeU\":0.0,\"faceDepth\":1.2999999523162842,\"lipOverhang\":0.2199999988079071,\"shadeDepth\":7.0,\"shadeFloor\":0.800000011920929,\"roughContour\":true,\"contourReach\":0.4000000059604645,\"cliffSideL\":{\"fileID\":21300000,\"guid\":\"0bbd0759fca09ab4ba42005024019e66\",\"type\":3},\"cliffSideR\":{\"fileID\":21300000,\"guid\":\"b64a6706d44396b438928f71e903a2ad\",\"type\":3},\"cornerTopL\":{\"fileID\":21300000,\"guid\":\"d6790e88232a16245abc3923471b8661\",\"type\":3},\"cornerTopR\":{\"fileID\":21300000,\"guid\":\"2b4dc25964af9a54396400d8d80b5768\",\"type\":3},\"cornerFootL\":{\"fileID\":21300000,\"guid\":\"bf0fe6f195aa9e14b834ee8a5741da6b\",\"type\":3},\"cornerFootR\":{\"fileID\":21300000,\"guid\":\"c7cea044a2058ad4b9c00f47b5692798\",\"type\":3},\"cornersFollowTread\":false,\"townCourseL\":{\"x\":0.0,\"y\":0.0},\"townCourseR\":{\"x\":0.0,\"y\":0.0},\"stepShortL\":{\"fileID\":21300000,\"guid\":\"19b96742b222c6f4fbc0e30cb83bc1f7\",\"type\":3},\"stepShortR\":{\"fileID\":21300000,\"guid\":\"797f20a3db583684494e9a6982fb14c7\",\"type\":3},\"stepMediumL\":{\"fileID\":21300000,\"guid\":\"c64179bde4704e641baa9ebfc94a07fa\",\"type\":3},\"stepMediumR\":{\"fileID\":21300000,\"guid\":\"f15bf76460bfba84da83e0d01228e6ce\",\"type\":3},\"stepOuterL\":{\"fileID\":21300000,\"guid\":\"ca7e02611f8b65c41b7f01e53a19cd4a\",\"type\":3},\"stepOuterR\":{\"fileID\":21300000,\"guid\":\"70669172fe403f7458ec96f171b43c19\",\"type\":3},\"stepInnerL\":{\"fileID\":21300000,\"guid\":\"160c1735669150b4a8d8d9aff2bfb51a\",\"type\":3},\"stepInnerR\":{\"fileID\":21300000,\"guid\":\"740a7bc556db8474c9d9835ff9691293\",\"type\":3},\"stepWalls\":[{\"fileID\":21300000,\"guid\":\"cccfe4180a0373d4aa3e437d9ab95636\",\"type\":3},{\"fileID\":21300000,\"guid\":\"a2903ebf17aec5243aebfd27e03bc588\",\"type\":3},{\"fileID\":21300000,\"guid\":\"774d97efdbfdf064a95d3bc8b6272817\",\"type\":3}],\"stepShortSlopeL\":{\"fileID\":21300000,\"guid\":\"5c36feab7ee9dda4eb477a3b83db5d79\",\"type\":3},\"stepShortSlopeR\":{\"fileID\":21300000,\"guid\":\"e5c9c28b37605d14a84ae1385b2e2efb\",\"type\":3},\"stepMediumSlopeL\":{\"fileID\":21300000,\"guid\":\"c77acb6ffec79494ba317d2d68698ab3\",\"type\":3},\"stepMediumSlopeR\":{\"fileID\":21300000,\"guid\":\"dcec56c09a0226847bb91d621a5e710e\",\"type\":3},\"stepOuterSlopeL\":{\"fileID\":21300000,\"guid\":\"64911e357a0588f43bff85f7f66f906a\",\"type\":3},\"stepOuterSlopeR\":{\"fileID\":21300000,\"guid\":\"a21d45cd34a53684d85c2cbd27e8af06\",\"type\":3},\"shortSlopeRise\":[{\"x\":0.0,\"y\":0.0},{\"x\":512.0,\"y\":204.8000030517578}],\"mediumSlopeRise\":[{\"x\":0.0,\"y\":0.0},{\"x\":512.0,\"y\":204.8000030517578}],\"outerSlopeRise\":[{\"x\":0.0,\"y\":0.0},{\"x\":512.0,\"y\":204.8000030517578}],\"slopeTopRows\":{\"x\":416.0,\"y\":310.0,\"z\":385.0},\"stripDerivedRuns\":true,\"shadeLikeFill\":false,\"innerUnderKerb\":false,\"bodyFade\":false,\"tidyOuterJoint\":false,\"clingable\":true,\"tint\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":1.0},\"sortingOffset\":0,\"replacedPaintedParts\":[\"Step 253.6 inner\"],\"stripDepth\":1.399999976158142,\"shortNaturalSoilTail\":true,\"stripJointsPx\":[28.0,112.0,204.0,293.0,384.0,477.0,568.0,660.0,752.0,848.0,944.0,1018.0]}}"
+    }
+  ],
+  "colliders": [
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Firefly Nook",
+      "active": true,
+      "data": "{\"BoxCollider2D\":{\"m_Enabled\":true,\"serializedVersion\":\"3\",\"m_Density\":1.0,\"m_Material\":{\"instanceID\":0},\"m_IncludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_ExcludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_LayerOverridePriority\":0,\"m_ForceSendLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ForceReceiveLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ContactCaptureLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_CallbackLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_IsTrigger\":true,\"m_UsedByEffector\":false,\"m_CompositeOperation\":0,\"m_CompositeOrder\":0,\"m_Offset\":{\"x\":0.0,\"y\":0.800000011920929},\"m_SpriteTilingProperty\":{\"border\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":0.0},\"pivot\":{\"x\":0.0,\"y\":0.0},\"oldSize\":{\"x\":0.0,\"y\":0.0},\"newSize\":{\"x\":0.0,\"y\":0.0},\"adaptiveTilingThreshold\":0.0,\"drawMode\":0,\"adaptiveTiling\":false},\"m_AutoTiling\":false,\"m_Size\":{\"x\":1.100000023841858,\"y\":1.7000000476837159},\"m_EdgeRadius\":0.0}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Painted stair tread 0",
+      "active": false,
+      "data": "{\"BoxCollider2D\":{\"m_Enabled\":false,\"serializedVersion\":\"3\",\"m_Density\":1.0,\"m_Material\":{\"instanceID\":0},\"m_IncludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_ExcludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_LayerOverridePriority\":0,\"m_ForceSendLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ForceReceiveLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ContactCaptureLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_CallbackLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_IsTrigger\":false,\"m_UsedByEffector\":false,\"m_CompositeOperation\":0,\"m_CompositeOrder\":0,\"m_Offset\":{\"x\":0.0,\"y\":0.0},\"m_SpriteTilingProperty\":{\"border\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":0.0},\"pivot\":{\"x\":0.0,\"y\":0.0},\"oldSize\":{\"x\":0.0,\"y\":0.0},\"newSize\":{\"x\":0.0,\"y\":0.0},\"adaptiveTilingThreshold\":0.0,\"drawMode\":0,\"adaptiveTiling\":false},\"m_AutoTiling\":false,\"m_Size\":{\"x\":2.0139999389648439,\"y\":0.11999999731779099},\"m_EdgeRadius\":0.0}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Painted stair tread 1",
+      "active": false,
+      "data": "{\"BoxCollider2D\":{\"m_Enabled\":false,\"serializedVersion\":\"3\",\"m_Density\":1.0,\"m_Material\":{\"instanceID\":0},\"m_IncludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_ExcludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_LayerOverridePriority\":0,\"m_ForceSendLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ForceReceiveLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ContactCaptureLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_CallbackLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_IsTrigger\":false,\"m_UsedByEffector\":false,\"m_CompositeOperation\":0,\"m_CompositeOrder\":0,\"m_Offset\":{\"x\":0.0,\"y\":0.0},\"m_SpriteTilingProperty\":{\"border\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":0.0},\"pivot\":{\"x\":0.0,\"y\":0.0},\"oldSize\":{\"x\":0.0,\"y\":0.0},\"newSize\":{\"x\":0.0,\"y\":0.0},\"adaptiveTilingThreshold\":0.0,\"drawMode\":0,\"adaptiveTiling\":false},\"m_AutoTiling\":false,\"m_Size\":{\"x\":0.6460000276565552,\"y\":0.11999999731779099},\"m_EdgeRadius\":0.0}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Painted stair tread 2",
+      "active": false,
+      "data": "{\"BoxCollider2D\":{\"m_Enabled\":false,\"serializedVersion\":\"3\",\"m_Density\":1.0,\"m_Material\":{\"instanceID\":0},\"m_IncludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_ExcludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_LayerOverridePriority\":0,\"m_ForceSendLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ForceReceiveLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ContactCaptureLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_CallbackLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_IsTrigger\":false,\"m_UsedByEffector\":false,\"m_CompositeOperation\":0,\"m_CompositeOrder\":0,\"m_Offset\":{\"x\":0.0,\"y\":0.0},\"m_SpriteTilingProperty\":{\"border\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":0.0},\"pivot\":{\"x\":0.0,\"y\":0.0},\"oldSize\":{\"x\":0.0,\"y\":0.0},\"newSize\":{\"x\":0.0,\"y\":0.0},\"adaptiveTilingThreshold\":0.0,\"drawMode\":0,\"adaptiveTiling\":false},\"m_AutoTiling\":false,\"m_Size\":{\"x\":0.6080000996589661,\"y\":0.11999999731779099},\"m_EdgeRadius\":0.0}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Painted stair tread 3",
+      "active": false,
+      "data": "{\"BoxCollider2D\":{\"m_Enabled\":false,\"serializedVersion\":\"3\",\"m_Density\":1.0,\"m_Material\":{\"instanceID\":0},\"m_IncludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_ExcludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_LayerOverridePriority\":0,\"m_ForceSendLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ForceReceiveLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ContactCaptureLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_CallbackLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_IsTrigger\":false,\"m_UsedByEffector\":false,\"m_CompositeOperation\":0,\"m_CompositeOrder\":0,\"m_Offset\":{\"x\":0.0,\"y\":0.0},\"m_SpriteTilingProperty\":{\"border\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":0.0},\"pivot\":{\"x\":0.0,\"y\":0.0},\"oldSize\":{\"x\":0.0,\"y\":0.0},\"newSize\":{\"x\":0.0,\"y\":0.0},\"adaptiveTilingThreshold\":0.0,\"drawMode\":0,\"adaptiveTiling\":false},\"m_AutoTiling\":false,\"m_Size\":{\"x\":0.531999945640564,\"y\":0.11999999731779099},\"m_EdgeRadius\":0.0}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Painted stair tread 4",
+      "active": false,
+      "data": "{\"BoxCollider2D\":{\"m_Enabled\":false,\"serializedVersion\":\"3\",\"m_Density\":1.0,\"m_Material\":{\"instanceID\":0},\"m_IncludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_ExcludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_LayerOverridePriority\":0,\"m_ForceSendLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ForceReceiveLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ContactCaptureLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_CallbackLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_IsTrigger\":false,\"m_UsedByEffector\":false,\"m_CompositeOperation\":0,\"m_CompositeOrder\":0,\"m_Offset\":{\"x\":0.0,\"y\":0.0},\"m_SpriteTilingProperty\":{\"border\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":0.0},\"pivot\":{\"x\":0.0,\"y\":0.0},\"oldSize\":{\"x\":0.0,\"y\":0.0},\"newSize\":{\"x\":0.0,\"y\":0.0},\"adaptiveTilingThreshold\":0.0,\"drawMode\":0,\"adaptiveTiling\":false},\"m_AutoTiling\":false,\"m_Size\":{\"x\":0.5699998736381531,\"y\":0.11999999731779099},\"m_EdgeRadius\":0.0}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Painted stair tread 5",
+      "active": false,
+      "data": "{\"BoxCollider2D\":{\"m_Enabled\":false,\"serializedVersion\":\"3\",\"m_Density\":1.0,\"m_Material\":{\"instanceID\":0},\"m_IncludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_ExcludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_LayerOverridePriority\":0,\"m_ForceSendLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ForceReceiveLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ContactCaptureLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_CallbackLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_IsTrigger\":false,\"m_UsedByEffector\":false,\"m_CompositeOperation\":0,\"m_CompositeOrder\":0,\"m_Offset\":{\"x\":0.0,\"y\":0.0},\"m_SpriteTilingProperty\":{\"border\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":0.0},\"pivot\":{\"x\":0.0,\"y\":0.0},\"oldSize\":{\"x\":0.0,\"y\":0.0},\"newSize\":{\"x\":0.0,\"y\":0.0},\"adaptiveTilingThreshold\":0.0,\"drawMode\":0,\"adaptiveTiling\":false},\"m_AutoTiling\":false,\"m_Size\":{\"x\":0.6840002536773682,\"y\":0.11999999731779099},\"m_EdgeRadius\":0.0}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Painted stair tread 6",
+      "active": false,
+      "data": "{\"BoxCollider2D\":{\"m_Enabled\":false,\"serializedVersion\":\"3\",\"m_Density\":1.0,\"m_Material\":{\"instanceID\":0},\"m_IncludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_ExcludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_LayerOverridePriority\":0,\"m_ForceSendLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ForceReceiveLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ContactCaptureLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_CallbackLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_IsTrigger\":false,\"m_UsedByEffector\":false,\"m_CompositeOperation\":0,\"m_CompositeOrder\":0,\"m_Offset\":{\"x\":0.0,\"y\":0.0},\"m_SpriteTilingProperty\":{\"border\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":0.0},\"pivot\":{\"x\":0.0,\"y\":0.0},\"oldSize\":{\"x\":0.0,\"y\":0.0},\"newSize\":{\"x\":0.0,\"y\":0.0},\"adaptiveTilingThreshold\":0.0,\"drawMode\":0,\"adaptiveTiling\":false},\"m_AutoTiling\":false,\"m_Size\":{\"x\":2.545999765396118,\"y\":0.11999999731779099},\"m_EdgeRadius\":0.0}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Route MR01 piece PC01 roof integration",
+      "active": false,
+      "data": "{\"PolygonCollider2D\":{\"m_Enabled\":false,\"serializedVersion\":\"3\",\"m_Density\":1.0,\"m_Material\":{\"instanceID\":0},\"m_IncludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_ExcludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_LayerOverridePriority\":0,\"m_ForceSendLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ForceReceiveLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ContactCaptureLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_CallbackLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_IsTrigger\":false,\"m_UsedByEffector\":false,\"m_CompositeOperation\":0,\"m_CompositeOrder\":0,\"m_Offset\":{\"x\":0.0,\"y\":0.0},\"m_SpriteTilingProperty\":{\"border\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":0.0},\"pivot\":{\"x\":0.0,\"y\":0.0},\"oldSize\":{\"x\":0.0,\"y\":0.0},\"newSize\":{\"x\":0.0,\"y\":0.0},\"adaptiveTilingThreshold\":0.0,\"drawMode\":0,\"adaptiveTiling\":false},\"m_AutoTiling\":false,\"m_Points\":{\"m_Paths\":[[{\"x\":59.5,\"y\":23.700000762939454},{\"x\":59.5,\"y\":19.899999618530275},{\"x\":60.70000076293945,\"y\":19.899999618530275},{\"x\":60.70000076293945,\"y\":23.238462448120118}],[{\"x\":59.5,\"y\":26.41157341003418},{\"x\":60.70000076293945,\"y\":25.93816566467285},{\"x\":60.70000076293945,\"y\":27.799999237060548},{\"x\":59.5,\"y\":27.299999237060548}],[{\"x\":60.67000198364258,\"y\":25.950000762939454},{\"x\":59.5,\"y\":26.41157341003418},{\"x\":59.5,\"y\":26.076000213623048}],[{\"x\":60.70000076293945,\"y\":23.238462448120118},{\"x\":60.70000076293945,\"y\":19.899999618530275},{\"x\":63.099998474121097,\"y\":19.899999618530275},{\"x\":63.099998474121097,\"y\":22.315385818481447}],[{\"x\":63.099998474121097,\"y\":26.639551162719728},{\"x\":63.099998474121097,\"y\":27.450000762939454},{\"x\":62.077518463134769,\"y\":27.599111557006837}],[{\"x\":60.70000076293945,\"y\":25.93816566467285},{\"x\":63.099998474121097,\"y\":24.99135398864746},{\"x\":63.099998474121097,\"y\":26.639551162719728},{\"x\":62.077518463134769,\"y\":27.599111557006837},{\"x\":60.70000076293945,\"y\":27.799999237060548}],[{\"x\":63.099998474121097,\"y\":22.315385818481447},{\"x\":63.099998474121097,\"y\":19.899999618530275},{\"x\":65.5,\"y\":19.899999618530275},{\"x\":65.5,\"y\":21.392309188842775}],[{\"x\":65.5,\"y\":26.24193572998047},{\"x\":65.5,\"y\":26.899999618530275},{\"x\":65.17498016357422,\"y\":26.974483489990236}],[{\"x\":63.099998474121097,\"y\":26.639551162719728},{\"x\":65.5,\"y\":24.387237548828126},{\"x\":65.5,\"y\":26.24193572998047},{\"x\":65.17498016357422,\"y\":26.974483489990236},{\"x\":63.099998474121097,\"y\":27.450000762939454}],[{\"x\":63.099998474121097,\"y\":26.639551162719728},{\"x\":63.099998474121097,\"y\":24.99135398864746},{\"x\":65.5,\"y\":24.04454231262207},{\"x\":65.5,\"y\":24.387237548828126}],[{\"x\":65.5,\"y\":21.392309188842775},{\"x\":65.5,\"y\":19.899999618530275},{\"x\":68.19999694824219,\"y\":19.899999618530275},{\"x\":68.19999694824219,\"y\":20.353849411010743}],[{\"x\":67.30000305175781,\"y\":20.700000762939454},{\"x\":68.19999694824219,\"y\":20.353849411010743},{\"x\":68.19999694824219,\"y\":27.350000381469728},{\"x\":67.30000305175781,\"y\":27.200000762939454}],[{\"x\":65.5,\"y\":26.24193572998047},{\"x\":67.30000305175781,\"y\":22.185001373291017},{\"x\":67.30000305175781,\"y\":27.200000762939454},{\"x\":65.5,\"y\":26.899999618530275}],[{\"x\":66.91000366210938,\"y\":23.064001083374025},{\"x\":65.5,\"y\":26.24193572998047},{\"x\":65.5,\"y\":24.387237548828126}],[{\"x\":66.1300048828125,\"y\":23.796001434326173},{\"x\":65.5,\"y\":24.387237548828126},{\"x\":65.5,\"y\":24.04454231262207}]]},\"m_UseDelaunayMesh\":true}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/Firefly Nook | walkable worn steps",
+      "active": true,
+      "data": "{\"EdgeCollider2D\":{\"m_Enabled\":false,\"serializedVersion\":\"3\",\"m_Density\":1.0,\"m_Material\":{\"instanceID\":0},\"m_IncludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_ExcludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_LayerOverridePriority\":0,\"m_ForceSendLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ForceReceiveLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ContactCaptureLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_CallbackLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_IsTrigger\":false,\"m_UsedByEffector\":false,\"m_CompositeOperation\":0,\"m_CompositeOrder\":0,\"m_Offset\":{\"x\":0.0,\"y\":0.0},\"m_EdgeRadius\":0.0,\"m_Points\":[{\"x\":59.5,\"y\":24.02804946899414},{\"x\":59.52492141723633,\"y\":24.02652931213379},{\"x\":59.54983901977539,\"y\":24.02501106262207},{\"x\":59.57476043701172,\"y\":24.02349281311035},{\"x\":59.59968185424805,\"y\":24.021974563598634},{\"x\":59.62459945678711,\"y\":24.020456314086915},{\"x\":59.64952087402344,\"y\":24.018938064575197},{\"x\":59.674442291259769,\"y\":24.017417907714845},{\"x\":59.69935989379883,\"y\":24.015899658203126},{\"x\":59.724281311035159,\"y\":24.014381408691408},{\"x\":59.749202728271487,\"y\":24.012863159179689},{\"x\":59.77412033081055,\"y\":24.01134490966797},{\"x\":59.799041748046878,\"y\":24.00982666015625},{\"x\":59.8239631652832,\"y\":24.0083065032959},{\"x\":59.848880767822269,\"y\":24.00678825378418},{\"x\":59.873802185058597,\"y\":24.00527000427246},{\"x\":59.89872360229492,\"y\":24.003751754760743},{\"x\":59.923641204833987,\"y\":24.002233505249025},{\"x\":59.94856262207031,\"y\":24.000715255737306},{\"x\":59.97348403930664,\"y\":23.999195098876954},{\"x\":59.9984016418457,\"y\":23.997676849365236},{\"x\":60.02332305908203,\"y\":23.996158599853517},{\"x\":60.04824447631836,\"y\":23.994640350341798},{\"x\":60.07316207885742,\"y\":23.993122100830079},{\"x\":60.09808349609375,\"y\":23.99160385131836},{\"x\":60.12300491333008,\"y\":23.990083694458009},{\"x\":60.14792251586914,\"y\":23.98856544494629},{\"x\":60.17284393310547,\"y\":23.98704719543457},{\"x\":60.1977653503418,\"y\":23.98552894592285},{\"x\":60.22268295288086,\"y\":23.984010696411134},{\"x\":60.24760437011719,\"y\":23.982492446899415},{\"x\":60.272525787353519,\"y\":23.980972290039064},{\"x\":60.29744338989258,\"y\":23.979454040527345},{\"x\":60.322364807128909,\"y\":23.977935791015626},{\"x\":60.347286224365237,\"y\":23.976417541503908},{\"x\":60.3722038269043,\"y\":23.974899291992189},{\"x\":60.397125244140628,\"y\":23.97338104248047},{\"x\":60.42204666137695,\"y\":23.971860885620118},{\"x\":60.446964263916019,\"y\":23.9703426361084},{\"x\":60.471885681152347,\"y\":23.96882438659668},{\"x\":60.49680709838867,\"y\":23.96730613708496},{\"x\":60.521724700927737,\"y\":23.965787887573243},{\"x\":60.54664611816406,\"y\":23.964269638061525},{\"x\":60.57156753540039,\"y\":23.962749481201173},{\"x\":60.59648513793945,\"y\":23.961231231689454},{\"x\":60.62140655517578,\"y\":23.959712982177736},{\"x\":60.64632797241211,\"y\":23.958194732666017},{\"x\":60.67124557495117,\"y\":23.956676483154298},{\"x\":60.6961669921875,\"y\":23.955158233642579},{\"x\":60.72108840942383,\"y\":23.953638076782228},{\"x\":60.74600601196289,\"y\":23.952119827270509},{\"x\":60.77092742919922,\"y\":23.92520523071289},{\"x\":60.79584884643555,\"y\":23.898290634155275},{\"x\":60.82076644897461,\"y\":23.871376037597658},{\"x\":60.84568786621094,\"y\":23.84446144104004},{\"x\":60.870609283447269,\"y\":23.817546844482423},{\"x\":60.89552688598633,\"y\":23.790632247924806},{\"x\":60.920448303222659,\"y\":23.763717651367189},{\"x\":60.945369720458987,\"y\":23.73680305480957},{\"x\":60.97028732299805,\"y\":23.709888458251954},{\"x\":60.995208740234378,\"y\":23.682973861694337},{\"x\":61.0201301574707,\"y\":23.65605926513672},{\"x\":61.045047760009769,\"y\":23.63450813293457},{\"x\":61.069969177246097,\"y\":23.63233184814453},{\"x\":61.09489059448242,\"y\":23.63015365600586},{\"x\":61.119808197021487,\"y\":23.627975463867189},{\"x\":61.14472961425781,\"y\":23.62579917907715},{\"x\":61.16965103149414,\"y\":23.623620986938478},{\"x\":61.1945686340332,\"y\":23.621442794799806},{\"x\":61.21949005126953,\"y\":23.619266510009767},{\"x\":61.24441146850586,\"y\":23.617088317871095},{\"x\":61.26932907104492,\"y\":23.614912033081056},{\"x\":61.29425048828125,\"y\":23.612733840942384},{\"x\":61.31917190551758,\"y\":23.61055564880371},{\"x\":61.34408950805664,\"y\":23.608379364013673},{\"x\":61.36901092529297,\"y\":23.606201171875},{\"x\":61.3939323425293,\"y\":23.604022979736329},{\"x\":61.41884994506836,\"y\":23.60184669494629},{\"x\":61.44377136230469,\"y\":23.599668502807618},{\"x\":61.46868896484375,\"y\":23.597492218017579},{\"x\":61.49361038208008,\"y\":23.595314025878908},{\"x\":61.518531799316409,\"y\":23.593135833740236},{\"x\":61.54344940185547,\"y\":23.590959548950197},{\"x\":61.5683708190918,\"y\":23.588781356811525},{\"x\":61.593292236328128,\"y\":23.58660316467285},{\"x\":61.61820983886719,\"y\":23.584426879882814},{\"x\":61.643131256103519,\"y\":23.557512283325197},{\"x\":61.668052673339847,\"y\":23.530597686767579},{\"x\":61.692970275878909,\"y\":23.50368309020996},{\"x\":61.717891693115237,\"y\":23.476768493652345},{\"x\":61.74281311035156,\"y\":23.449853897094728},{\"x\":61.767730712890628,\"y\":23.42293930053711},{\"x\":61.79265213012695,\"y\":23.396024703979493},{\"x\":61.81757354736328,\"y\":23.369110107421876},{\"x\":61.842491149902347,\"y\":23.342195510864259},{\"x\":61.86741256713867,\"y\":23.31528091430664},{\"x\":61.892333984375,\"y\":23.288366317749025},{\"x\":61.91725158691406,\"y\":23.275806427001954},{\"x\":61.94217300415039,\"y\":23.273563385009767},{\"x\":61.96709442138672,\"y\":23.271320343017579},{\"x\":61.99201202392578,\"y\":23.26907730102539},{\"x\":62.01693344116211,\"y\":23.266834259033204},{\"x\":62.04185485839844,\"y\":23.264591217041017},{\"x\":62.0667724609375,\"y\":23.262348175048829},{\"x\":62.09169387817383,\"y\":23.26010513305664},{\"x\":62.116615295410159,\"y\":23.257863998413087},{\"x\":62.14153289794922,\"y\":23.2556209564209},{\"x\":62.16645431518555,\"y\":23.25337791442871},{\"x\":62.191375732421878,\"y\":23.251134872436525},{\"x\":62.21629333496094,\"y\":23.248891830444337},{\"x\":62.241214752197269,\"y\":23.24664878845215},{\"x\":62.266136169433597,\"y\":23.24440574645996},{\"x\":62.291053771972659,\"y\":23.242162704467775},{\"x\":62.315975189208987,\"y\":23.23992156982422},{\"x\":62.34089660644531,\"y\":23.23767852783203},{\"x\":62.365814208984378,\"y\":23.235435485839845},{\"x\":62.3907356262207,\"y\":23.233192443847658},{\"x\":62.41565704345703,\"y\":23.23094940185547},{\"x\":62.440574645996097,\"y\":23.22870635986328},{\"x\":62.46549606323242,\"y\":23.222026824951173},{\"x\":62.49041748046875,\"y\":23.195112228393556},{\"x\":62.51533508300781,\"y\":23.168197631835939},{\"x\":62.54025650024414,\"y\":23.14128303527832},{\"x\":62.56517791748047,\"y\":23.114368438720704},{\"x\":62.59009552001953,\"y\":23.087453842163087},{\"x\":62.61501693725586,\"y\":23.06053924560547},{\"x\":62.63993835449219,\"y\":23.03362464904785},{\"x\":62.66485595703125,\"y\":23.006710052490236},{\"x\":62.68977737426758,\"y\":22.979795455932618},{\"x\":62.714698791503909,\"y\":22.952880859375},{\"x\":62.73961639404297,\"y\":22.925966262817384},{\"x\":62.7645378112793,\"y\":22.901151657104493},{\"x\":62.789459228515628,\"y\":22.89922523498535},{\"x\":62.81437683105469,\"y\":22.897296905517579},{\"x\":62.839298248291019,\"y\":22.895370483398439},{\"x\":62.864219665527347,\"y\":22.893444061279298},{\"x\":62.889137268066409,\"y\":22.891517639160158},{\"x\":62.914058685302737,\"y\":22.889591217041017},{\"x\":62.93898010253906,\"y\":22.887662887573243},{\"x\":62.963897705078128,\"y\":22.8857364654541},{\"x\":62.98881912231445,\"y\":22.88381004333496},{\"x\":63.01374053955078,\"y\":22.88188362121582},{\"x\":63.038658142089847,\"y\":22.87995719909668},{\"x\":63.06357955932617,\"y\":22.878028869628908},{\"x\":63.0885009765625,\"y\":22.876102447509767},{\"x\":63.11341857910156,\"y\":22.874176025390626},{\"x\":63.13833999633789,\"y\":22.872249603271486},{\"x\":63.16326141357422,\"y\":22.870323181152345},{\"x\":63.18817901611328,\"y\":22.86839485168457},{\"x\":63.21310043334961,\"y\":22.86646842956543},{\"x\":63.23802185058594,\"y\":22.86454200744629},{\"x\":63.262939453125,\"y\":22.86261558532715},{\"x\":63.28786087036133,\"y\":22.860689163208009},{\"x\":63.312782287597659,\"y\":22.858760833740236},{\"x\":63.33769989013672,\"y\":22.831846237182618},{\"x\":63.36262130737305,\"y\":22.804931640625},{\"x\":63.387542724609378,\"y\":22.778017044067384},{\"x\":63.41246032714844,\"y\":22.751102447509767},{\"x\":63.437381744384769,\"y\":22.72418785095215},{\"x\":63.462303161621097,\"y\":22.69727325439453},{\"x\":63.487220764160159,\"y\":22.670358657836915},{\"x\":63.512142181396487,\"y\":22.643444061279298},{\"x\":63.53706359863281,\"y\":22.61652946472168},{\"x\":63.561981201171878,\"y\":22.589614868164064},{\"x\":63.5869026184082,\"y\":22.562700271606447},{\"x\":63.61182403564453,\"y\":22.535785675048829},{\"x\":63.636741638183597,\"y\":22.519460678100587},{\"x\":63.66166305541992,\"y\":22.517688751220704},{\"x\":63.68658447265625,\"y\":22.51591682434082},{\"x\":63.71150207519531,\"y\":22.514144897460939},{\"x\":63.73642349243164,\"y\":22.512371063232423},{\"x\":63.76134490966797,\"y\":22.51059913635254},{\"x\":63.78626251220703,\"y\":22.508827209472658},{\"x\":63.81118392944336,\"y\":22.507055282592775},{\"x\":63.83610534667969,\"y\":22.505281448364259},{\"x\":63.86102294921875,\"y\":22.503509521484376},{\"x\":63.88594436645508,\"y\":22.501737594604493},{\"x\":63.910865783691409,\"y\":22.49996566772461},{\"x\":63.93578338623047,\"y\":22.498193740844728},{\"x\":63.9607048034668,\"y\":22.49641990661621},{\"x\":63.985626220703128,\"y\":22.494647979736329},{\"x\":64.01054382324219,\"y\":22.492876052856447},{\"x\":64.03546142578125,\"y\":22.491104125976564},{\"x\":64.06038665771485,\"y\":22.489330291748048},{\"x\":64.0853042602539,\"y\":22.487558364868165},{\"x\":64.11022186279297,\"y\":22.48578643798828},{\"x\":64.13514709472656,\"y\":22.4840145111084},{\"x\":64.16006469726563,\"y\":22.482242584228517},{\"x\":64.18498229980469,\"y\":22.48046875},{\"x\":64.20990753173828,\"y\":22.478696823120118},{\"x\":64.23482513427735,\"y\":22.476924896240236},{\"x\":64.2597427368164,\"y\":22.47515296936035},{\"x\":64.28466796875,\"y\":22.47338104248047},{\"x\":64.30958557128906,\"y\":22.446826934814454},{\"x\":64.33450317382813,\"y\":22.419912338256837},{\"x\":64.35942840576172,\"y\":22.39299774169922},{\"x\":64.38434600830078,\"y\":22.3660831451416},{\"x\":64.40926361083985,\"y\":22.339168548583986},{\"x\":64.43418884277344,\"y\":22.312253952026368},{\"x\":64.4591064453125,\"y\":22.28533935546875},{\"x\":64.48402404785156,\"y\":22.258424758911134},{\"x\":64.50894927978516,\"y\":22.231510162353517},{\"x\":64.53386688232422,\"y\":22.2045955657959},{\"x\":64.55878448486328,\"y\":22.17768096923828},{\"x\":64.58370971679688,\"y\":22.150766372680665},{\"x\":64.60862731933594,\"y\":22.123851776123048},{\"x\":64.633544921875,\"y\":22.119585037231447},{\"x\":64.6584701538086,\"y\":22.117267608642579},{\"x\":64.68338775634766,\"y\":22.11495018005371},{\"x\":64.70830535888672,\"y\":22.112632751464845},{\"x\":64.73323059082031,\"y\":22.11031723022461},{\"x\":64.75814819335938,\"y\":22.107999801635743},{\"x\":64.78306579589844,\"y\":22.105682373046876},{\"x\":64.80799102783203,\"y\":22.103364944458009},{\"x\":64.8329086303711,\"y\":22.101049423217775},{\"x\":64.85782623291016,\"y\":22.098731994628908},{\"x\":64.88275146484375,\"y\":22.09641456604004},{\"x\":64.90766906738281,\"y\":22.094097137451173},{\"x\":64.93258666992188,\"y\":22.091781616210939},{\"x\":64.95751190185547,\"y\":22.08946418762207},{\"x\":64.98242950439453,\"y\":22.087146759033204},{\"x\":65.0073471069336,\"y\":22.084829330444337},{\"x\":65.03227233886719,\"y\":22.0825138092041},{\"x\":65.05718994140625,\"y\":22.080196380615236},{\"x\":65.08210754394531,\"y\":22.077878952026368},{\"x\":65.1070327758789,\"y\":22.0755615234375},{\"x\":65.13195037841797,\"y\":22.073246002197267},{\"x\":65.15686798095703,\"y\":22.0709285736084},{\"x\":65.18179321289063,\"y\":22.06861114501953},{\"x\":65.20671081542969,\"y\":22.066293716430665},{\"x\":65.23162841796875,\"y\":22.06397819519043},{\"x\":65.25655364990235,\"y\":22.061660766601564},{\"x\":65.2814712524414,\"y\":22.059343338012697},{\"x\":65.30638885498047,\"y\":22.057025909423829},{\"x\":65.33131408691406,\"y\":22.03011131286621},{\"x\":65.35623168945313,\"y\":22.003196716308595},{\"x\":65.38114929199219,\"y\":21.976282119750978},{\"x\":65.40607452392578,\"y\":21.94936752319336},{\"x\":65.43099212646485,\"y\":21.922452926635743},{\"x\":65.4559097290039,\"y\":21.895538330078126},{\"x\":65.4808349609375,\"y\":21.868623733520509},{\"x\":65.50575256347656,\"y\":21.84170913696289},{\"x\":65.53067016601563,\"y\":21.814794540405275},{\"x\":65.55559539794922,\"y\":21.787879943847658},{\"x\":65.58051300048828,\"y\":21.76096534729004},{\"x\":65.60543060302735,\"y\":21.734050750732423},{\"x\":65.63035583496094,\"y\":21.724031448364259},{\"x\":65.6552734375,\"y\":21.72136116027832},{\"x\":65.68019104003906,\"y\":21.718690872192384},{\"x\":65.70511627197266,\"y\":21.716020584106447},{\"x\":65.73003387451172,\"y\":21.71335220336914},{\"x\":65.75495147705078,\"y\":21.710681915283204},{\"x\":65.77987670898438,\"y\":21.708011627197267},{\"x\":65.80479431152344,\"y\":21.705341339111329},{\"x\":65.8297119140625,\"y\":21.70267105102539},{\"x\":65.8546371459961,\"y\":21.700000762939454},{\"x\":65.87955474853516,\"y\":21.69733238220215},{\"x\":65.90447235107422,\"y\":21.69466209411621},{\"x\":65.92939758300781,\"y\":21.691991806030275},{\"x\":65.95431518554688,\"y\":21.689321517944337},{\"x\":65.97923278808594,\"y\":21.6866512298584},{\"x\":66.00415802001953,\"y\":21.68398094177246},{\"x\":66.0290756225586,\"y\":21.681310653686525},{\"x\":66.05399322509766,\"y\":21.678640365600587},{\"x\":66.07891845703125,\"y\":21.67597198486328},{\"x\":66.10383605957031,\"y\":21.673301696777345},{\"x\":66.12875366210938,\"y\":21.670631408691408},{\"x\":66.15367889404297,\"y\":21.66796112060547},{\"x\":66.17859649658203,\"y\":21.66529083251953},{\"x\":66.2035140991211,\"y\":21.662620544433595},{\"x\":66.22843933105469,\"y\":21.65995216369629},{\"x\":66.25335693359375,\"y\":21.633037567138673},{\"x\":66.27827453613281,\"y\":21.606122970581056},{\"x\":66.3031997680664,\"y\":21.579208374023439},{\"x\":66.32811737060547,\"y\":21.55229377746582},{\"x\":66.35303497314453,\"y\":21.525379180908204},{\"x\":66.37796020507813,\"y\":21.498464584350587},{\"x\":66.40287780761719,\"y\":21.47154998779297},{\"x\":66.42779541015625,\"y\":21.44463539123535},{\"x\":66.45272064208985,\"y\":21.417720794677736},{\"x\":66.4776382446289,\"y\":21.390806198120118},{\"x\":66.50255584716797,\"y\":21.375558853149415},{\"x\":66.52748107910156,\"y\":21.373258590698243},{\"x\":66.55239868164063,\"y\":21.37095832824707},{\"x\":66.57731628417969,\"y\":21.3686580657959},{\"x\":66.60224151611328,\"y\":21.366357803344728},{\"x\":66.62715911865235,\"y\":21.364055633544923},{\"x\":66.6520767211914,\"y\":21.36175537109375},{\"x\":66.677001953125,\"y\":21.359455108642579},{\"x\":66.70191955566406,\"y\":21.357154846191408},{\"x\":66.72683715820313,\"y\":21.354854583740236},{\"x\":66.75176239013672,\"y\":21.352554321289064},{\"x\":66.77667999267578,\"y\":21.35025405883789},{\"x\":66.80159759521485,\"y\":21.34795379638672},{\"x\":66.82652282714844,\"y\":21.345653533935548},{\"x\":66.8514404296875,\"y\":21.343353271484376},{\"x\":66.87635803222656,\"y\":21.341053009033204},{\"x\":66.90128326416016,\"y\":21.33875274658203},{\"x\":66.92620086669922,\"y\":21.33645248413086},{\"x\":66.95111846923828,\"y\":21.334152221679689},{\"x\":66.97604370117188,\"y\":21.331851959228517},{\"x\":67.00096130371094,\"y\":21.329551696777345},{\"x\":67.02587890625,\"y\":21.327251434326173},{\"x\":67.0508041381836,\"y\":21.324951171875},{\"x\":67.07572174072266,\"y\":21.322650909423829},{\"x\":67.10063934326172,\"y\":21.320350646972658},{\"x\":67.12556457519531,\"y\":21.318050384521486},{\"x\":67.15048217773438,\"y\":21.315750122070314},{\"x\":67.17539978027344,\"y\":21.31344985961914},{\"x\":67.20032501220703,\"y\":21.31114959716797},{\"x\":67.2252426147461,\"y\":21.308849334716798},{\"x\":67.25016021728516,\"y\":21.306549072265626},{\"x\":67.27508544921875,\"y\":21.304248809814454},{\"x\":67.30000305175781,\"y\":21.30194854736328}],\"m_AdjacentStartPoint\":{\"x\":0.0,\"y\":0.0},\"m_AdjacentEndPoint\":{\"x\":0.0,\"y\":0.0},\"m_UseAdjacentStartPoint\":false,\"m_UseAdjacentEndPoint\":false}}"
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR01 - The Cradle/[MR01_N02] First gorge/Cave access | paired underground rooms/[CAVE PC01] MR01_N02 <-> Underground - Firefly Nook/PC01 | upper route approach",
+      "active": false,
+      "data": "{\"PolygonCollider2D\":{\"m_Enabled\":false,\"serializedVersion\":\"3\",\"m_Density\":1.0,\"m_Material\":{\"instanceID\":0},\"m_IncludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_ExcludeLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":0},\"m_LayerOverridePriority\":0,\"m_ForceSendLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ForceReceiveLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_ContactCaptureLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_CallbackLayers\":{\"serializedVersion\":\"2\",\"m_Bits\":4294967295},\"m_IsTrigger\":false,\"m_UsedByEffector\":false,\"m_CompositeOperation\":0,\"m_CompositeOrder\":0,\"m_Offset\":{\"x\":0.0,\"y\":0.0},\"m_SpriteTilingProperty\":{\"border\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":0.0},\"pivot\":{\"x\":0.0,\"y\":0.0},\"oldSize\":{\"x\":0.0,\"y\":0.0},\"newSize\":{\"x\":0.0,\"y\":0.0},\"adaptiveTilingThreshold\":0.0,\"drawMode\":0,\"adaptiveTiling\":false},\"m_AutoTiling\":false,\"m_Points\":{\"m_Paths\":[[{\"x\":55.29999923706055,\"y\":25.200000762939454},{\"x\":56.29999923706055,\"y\":25.600000381469728},{\"x\":58.599998474121097,\"y\":25.600000381469728},{\"x\":58.599998474121097,\"y\":23.600000381469728},{\"x\":55.29999923706055,\"y\":23.600000381469728}]]},\"m_UseDelaunayMesh\":true}}"
+    }
+  ]
+}

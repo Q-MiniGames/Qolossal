@@ -1,0 +1,105 @@
+{
+  "complete": false,
+  "rows": [
+    {
+      "label": "Fresh save has no awakened Grip knot",
+      "passed": true,
+      "frame": 119
+    },
+    {
+      "label": "Cradle crossing exists without a knot",
+      "passed": true,
+      "frame": 119
+    },
+    {
+      "label": "Fresh-save player walks across retired gate (rendered simulation)",
+      "passed": true,
+      "frame": 300
+    },
+    {
+      "label": "Older awakened-knot saves retain the crossing",
+      "passed": true,
+      "frame": 300
+    },
+    {
+      "label": "MRAtlas_MR01_Cradle: no active old wake knots",
+      "passed": true,
+      "frame": 391
+    },
+    {
+      "label": "MRAtlas_MR01_Cradle: no decorative cliff ledges",
+      "passed": true,
+      "frame": 391
+    },
+    {
+      "label": "MRAtlas_MR02_Causeway: no active old wake knots",
+      "passed": true,
+      "frame": 469
+    },
+    {
+      "label": "MRAtlas_MR02_Causeway: no decorative cliff ledges",
+      "passed": true,
+      "frame": 469
+    },
+    {
+      "label": "MRAtlas_MR03_Terraces: no active old wake knots",
+      "passed": true,
+      "frame": 695
+    },
+    {
+      "label": "MRAtlas_MR03_Terraces: no decorative cliff ledges",
+      "passed": true,
+      "frame": 695
+    },
+    {
+      "label": "MRAtlas_MR04_Qvale: no active old wake knots",
+      "passed": true,
+      "frame": 782
+    },
+    {
+      "label": "MRAtlas_MR04_Qvale: no decorative cliff ledges",
+      "passed": true,
+      "frame": 782
+    },
+    {
+      "label": "MRAtlas_MR05_Ribwood: no active old wake knots",
+      "passed": true,
+      "frame": 860
+    },
+    {
+      "label": "MRAtlas_MR05_Ribwood: no decorative cliff ledges",
+      "passed": true,
+      "frame": 860
+    },
+    {
+      "label": "MRAtlas_MR06_Heights: no active old wake knots",
+      "passed": true,
+      "frame": 949
+    },
+    {
+      "label": "MRAtlas_MR06_Heights: no decorative cliff ledges",
+      "passed": true,
+      "frame": 949
+    },
+    {
+      "label": "MRAtlas_MR07_Summit: no active old wake knots",
+      "passed": true,
+      "frame": 1039
+    },
+    {
+      "label": "MRAtlas_MR07_Summit: no decorative cliff ledges",
+      "passed": true,
+      "frame": 1039
+    },
+    {
+      "label": "Heart respawn retained without shrine art",
+      "passed": false,
+      "frame": 1148
+    }
+  ],
+  "errors": [
+    "System.Exception: Heart respawn retained without shrine art\r\n  at PipelineEvaluation.PipelineEval_0762e10f+<>c__DisplayClass0_0.<Execute>g__Check|2 (System.Boolean ok, System.String label) [0x00021] in <472cf785d23348a3a2b76bf3c68c6415>:0 \r\n  at PipelineEvaluation.PipelineEval_0762e10f+<>c__DisplayClass0_0.<Execute>b__12 () [0x00060] in <472cf785d23348a3a2b76bf3c68c6415>:0 \r\n  at PipelineEvaluation.PipelineEval_0762e10f+<>c__DisplayClass0_0.<Execute>b__18 () [0x0028e] in <472cf785d23348a3a2b76bf3c68c6415>:0 "
+  ],
+  "renderedCrossingFrames": 120,
+  "normalSavesPreserved": true
+}

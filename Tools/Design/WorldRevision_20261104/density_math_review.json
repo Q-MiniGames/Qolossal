@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "scope": "Independent analytical sanity checks, not execution of the Unity audit",
+  "checks": [
+    {
+      "name": "full panorama",
+      "actual": [
+        2160,
+        720
+      ],
+      "expected": [
+        2160,
+        720
+      ],
+      "passed": true
+    },
+    {
+      "name": "half-height crop requires twice source canvas",
+      "actual": [
+        4320,
+        1440
+      ],
+      "expected": [
+        4320,
+        1440
+      ],
+      "passed": true
+    },
+    {
+      "name": "natural sprite height fallback at 216 PPU",
+      "actual": [
+        2172,
+        724
+      ],
+      "expected": [
+        2172,
+        724
+      ],
+      "passed": true
+    },
+    {
+      "name": "unit shear largest singular value",
+      "actual": 1.618033988749895,
+      "expected": 1.618033988749895,
+      "passed": true
+    },
+    {
+      "name": "mirror preserves density",
+      "actual": 0.004629629629629629,
+      "expected": 0.004629629629629629,
+      "passed": true
+    },
+    {
+      "name": "rotation preserves density",
+      "actual": 0.00462962962962963,
+      "expected": 0.004629629629629629,
+      "passed": true
+    },
+    {
+      "name": "one-pixel shortage is rejected",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "sub-millipixel arithmetic noise tolerated",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "regional Causeway old repeat",
+      "actual": [
+        256.0,
+        864
+      ],
+      "expected": [
+        256,
+        864
+      ],
+      "passed": true
+    },
+    {
+      "name": "regional Cradle literal shader repeat",
+      "actual": [
+        256.0,
+        3456
+      ],
+      "expected": [
+        256,
+        3456
+      ],
+      "passed": true
+    },
+    {
+      "name": "regional Causeway replacement preserves4u mapping",
+      "actual": [
+        313.5,
+        864
+      ],
+      "expected": [
+        313.5,
+        864
+      ],
+      "passed": true
+    },
+    {
+      "name": "large world origin does not contaminate local double edge",
+      "worldOrigin": 2200,
+      "oldFloatWorldDifference": 0.5927734375,
+      "newDoubleLocalDifference": 0.592592588160187,
+      "sourceTexels": 128,
+      "newPPU": 216.00000161561184,
+      "passed": true
+    }
+  ],
+  "auditSha256": "3d394408f4fa85e0ade7da9d927f0fd01582e19b01f2020709a4ff2257cc7bc7",
+  "newPieceMapping": "Staged component/shader inspected: vista/leftDepth/rightDepth/upperVault/extension use imported canvas dimensions divided by max(216,pixelsPerUnit), translated without coordinate magnification.",
+  "regionalShaderCoverage": "RegionalUndergroundRock and Cave Rollout Regional Rim: used UV0/UV1 weight channels, _T0 literal16, _T1..7 material _RepeatA/B, registered _Rim UV2 affine density. RegionalPaintedEdge: _E0..7 UV2 with edge-repeat divisor and fixed shader cap repeats. No Unity execution by reviewer.",
+  "precision": "Double local-coordinate subtraction and double linear matrix application; UV differences promoted before subtraction; stable closed-form2x2SVD. Fits tolerance remains .001 source pixel."
+}

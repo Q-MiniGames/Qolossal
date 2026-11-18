@@ -1,0 +1,89 @@
+{
+  "set": "H",
+  "pixelsPerUnit": 216,
+  "pieces": [
+    {
+      "kind": "quarterlight",
+      "files": [
+        "Quarterlight_01.png"
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "overhang": 0,
+      "fit": true
+    },
+    {
+      "kind": "grille",
+      "files": [
+        "Grille_01.png"
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "overhang": 0
+    },
+    {
+      "kind": "quarter",
+      "files": [
+        "Quarter_01.png"
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "overhang": 0,
+      "simple": true
+    },
+    {
+      "kind": "backdrop_far",
+      "files": [
+        "Backdrop_Far.png"
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "overhang": 0,
+      "ppu": 108
+    },
+    {
+      "kind": "backdrop_near",
+      "files": [
+        "Backdrop_Near.png"
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "overhang": 0,
+      "ppu": 144
+    },
+    {
+      "kind": "deck",
+      "files": [
+        "Deck_01.png",
+        "Deck_02.png"
+      ],
+      "border": [
+        54,
+        0,
+        54,
+        0
+      ],
+      "overhang": 0.125
+    }
+  ]
+}

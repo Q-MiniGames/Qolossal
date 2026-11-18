@@ -10,6 +10,7 @@ public sealed class UgArenaSeal : MonoBehaviour
     UndergroundGuardian boss;
     PlayerMovement qori;
     bool closed;
+    public bool IsShut => closed;
 
     void Awake()
     {

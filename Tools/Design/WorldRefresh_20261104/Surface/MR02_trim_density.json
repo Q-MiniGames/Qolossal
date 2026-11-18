@@ -1,0 +1,660 @@
+{
+  "scene": "MRAtlas_MR02_Causeway",
+  "minCameraSize": 5.0,
+  "requiredPixelsPerUnit": 216.0,
+  "replaceAlphaTrim": false,
+  "secondaryMaskLimitation": "Original aperture-mask UV channels and texture are retained. Surface Rim also samples its RGB; those secondary samples need separate review and are not certified by MainTex density.",
+  "records": [
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N02] Lower arches/Cave access | paired underground rooms/[CAVE PC04] MR02_N02 <-> Underground - Mason’s Recess/Regional fitted passage/Registered native outer rock",
+      "disposition": "Solid wall world-tiled; secondary aperture channels preserved",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC04/Registered native outer rock.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Fill.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR02/Fill.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR02/4F081CE45EEF9079ED4E.asset",
+      "secondaryMask": "Assets/Art/Prototypes/CradleRockwork_20261027/MR01_C01_Rockwork.png",
+      "beforeDensity": 119.99539329703576,
+      "afterDensity": 359.96717724263164,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 1024,
+      "textureWidth": 1254,
+      "textureHeight": 1254,
+      "requiredWidth": 753,
+      "requiredHeight": 753,
+      "worldBoundsCenter": [
+        78.45,
+        31.325,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.29999542,
+        3.25,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N02] Lower arches/Cave access | paired underground rooms/[CAVE PC04] MR02_N02 <-> Underground - Mason’s Recess/Regional fitted passage/Native walking surface",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC04/Native walking surface.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR02/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR02/329C60C8B05874594059.asset",
+      "secondaryMask": null,
+      "beforeDensity": 119.99980580162745,
+      "afterDensity": 359.98050514899194,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1304,
+      "requiredHeight": 435,
+      "worldBoundsCenter": [
+        79.0,
+        29.7,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.600006,
+        2.19999886,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N02] Lower arches/Cave access | paired underground rooms/[CAVE PC04] MR02_N02 <-> Underground - Mason’s Recess/Regional fitted passage/Native roof trim/Native roof 0",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC04/Native roof 0.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR02/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR02/AF39FED18987AB42FF0D.asset",
+      "secondaryMask": null,
+      "beforeDensity": 68.232862356703592,
+      "afterDensity": 247.81985662224011,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 440.9903,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1894,
+      "requiredHeight": 632,
+      "worldBoundsCenter": [
+        78.11,
+        33.5049973,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.220001,
+        1.59000015,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N02] Lower arches/Cave access | paired underground rooms/[CAVE PC04] MR02_N02 <-> Underground - Mason’s Recess/Regional fitted passage/Native roof trim/Native roof 1",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC04/Native roof 1.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Step_Outer_SlopeTop_R.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 106.35324204220636,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 768,
+      "sourceHeight": 768,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        80.47499,
+        34.4591675,
+        -0.002
+      ],
+      "worldBoundsSize": [
+        2.25000763,
+        3.498333,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N02] Lower arches/Cave access | paired underground rooms/[CAVE PC04] MR02_N02 <-> Underground - Mason’s Recess/Regional fitted passage/Native roof trim/Native roof 2",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC04/Native roof 2.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Step_Inner_R.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 118.26306484400493,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 768,
+      "sourceHeight": 512,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        78.96167,
+        32.8216667,
+        -0.00250000018
+      ],
+      "worldBoundsSize": [
+        4.45667267,
+        0.223335266,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N05] Waystation/Cave access | paired underground rooms/[CAVE PC05] MR02_N05 <-> Underground - Dripstone Hollow/Regional fitted passage/Registered native outer rock",
+      "disposition": "Solid wall world-tiled; secondary aperture channels preserved",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC05/Registered native outer rock.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Fill.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR02/Fill.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR02/A04042A6C7EBD319D329.asset",
+      "secondaryMask": "Assets/Art/Prototypes/CradleRockwork_20261027/MR01_C01_Rockwork.png",
+      "beforeDensity": 119.97972817318043,
+      "afterDensity": 359.97851860538935,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 1024,
+      "textureWidth": 1254,
+      "textureHeight": 1254,
+      "requiredWidth": 753,
+      "requiredHeight": 753,
+      "worldBoundsCenter": [
+        204.926,
+        89.348,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.300003,
+        3.25,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N05] Waystation/Cave access | paired underground rooms/[CAVE PC05] MR02_N05 <-> Underground - Dripstone Hollow/Regional fitted passage/Native walking surface",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC05/Native walking surface.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR02/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR02/E03AF9C7E6903768A329.asset",
+      "secondaryMask": null,
+      "beforeDensity": 119.93330063755432,
+      "afterDensity": 359.91392839610779,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1304,
+      "requiredHeight": 435,
+      "worldBoundsCenter": [
+        204.376,
+        87.72301,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.600006,
+        2.20000458,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N05] Waystation/Cave access | paired underground rooms/[CAVE PC05] MR02_N05 <-> Underground - Dripstone Hollow/Regional fitted passage/Native roof trim/Native roof 0",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC05/Native roof 0.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR02/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR02/AD675B05F029511CF3A6.asset",
+      "secondaryMask": null,
+      "beforeDensity": 119.42294520548052,
+      "afterDensity": 357.04109589041241,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1314,
+      "requiredHeight": 438,
+      "worldBoundsCenter": [
+        205.266,
+        91.2665,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.220001,
+        1.06700134,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N05] Waystation/Cave access | paired underground rooms/[CAVE PC05] MR02_N05 <-> Underground - Dripstone Hollow/Regional fitted passage/Native roof trim/Native roof 1",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC05/Native roof 1.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Step_Outer_L.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 118.4999214176093,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 768,
+      "sourceHeight": 512,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        202.901,
+        91.53317,
+        -0.0380000025
+      ],
+      "worldBoundsSize": [
+        2.25001526,
+        1.60033417,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N05] Waystation/Cave access | paired underground rooms/[CAVE PC05] MR02_N05 <-> Underground - Dripstone Hollow/Regional fitted passage/Native roof trim/Native roof 2",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC05/Native roof 2.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Step_Inner_L.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 119.55319743072795,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 768,
+      "sourceHeight": 512,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        204.209335,
+        90.8446655,
+        -0.0385000035
+      ],
+      "worldBoundsSize": [
+        4.8666687,
+        0.223335266,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot/Cave access | paired underground rooms/[CAVE PC06] MR02_N08 <-> Underground - Forgotten Satchel/Regional fitted passage/Registered native outer rock",
+      "disposition": "Solid wall world-tiled; secondary aperture channels preserved",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC06/Registered native outer rock.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Fill.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR02/Fill.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR02/898F9C4D479E15ABA5AB.asset",
+      "secondaryMask": "Assets/Art/Prototypes/CradleRockwork_20261027/MR01_C01_Rockwork.png",
+      "beforeDensity": 119.97558112208063,
+      "afterDensity": 359.93626760557783,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 1024,
+      "textureWidth": 1254,
+      "textureHeight": 1254,
+      "requiredWidth": 753,
+      "requiredHeight": 753,
+      "worldBoundsCenter": [
+        295.609,
+        139.433,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.30001831,
+        3.25,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot/Cave access | paired underground rooms/[CAVE PC06] MR02_N08 <-> Underground - Forgotten Satchel/Regional fitted passage/Native walking surface",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC06/Native walking surface.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR02/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR02/D830F0451AE6D39303C3.asset",
+      "secondaryMask": null,
+      "beforeDensity": 119.9998057875224,
+      "afterDensity": 359.91392839614014,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1304,
+      "requiredHeight": 435,
+      "worldBoundsCenter": [
+        295.059,
+        137.808014,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.59997559,
+        2.199997,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot/Cave access | paired underground rooms/[CAVE PC06] MR02_N08 <-> Underground - Forgotten Satchel/Regional fitted passage/Native roof trim/Native roof 0",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC06/Native roof 0.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR02/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR02/F3DBF841428D219E8A6E.asset",
+      "secondaryMask": null,
+      "beforeDensity": 119.97852376598962,
+      "afterDensity": 357.88636363635919,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1311,
+      "requiredHeight": 437,
+      "worldBoundsCenter": [
+        295.948975,
+        142.787018,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.220001,
+        2.199997,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot/Cave access | paired underground rooms/[CAVE PC06] MR02_N08 <-> Underground - Forgotten Satchel/Regional fitted passage/Native roof trim/Native roof 1",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC06/Native roof 1.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Step_Outer_L.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 77.999966244731311,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 768,
+      "sourceHeight": 512,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        293.583984,
+        142.619171,
+        -0.008
+      ],
+      "worldBoundsSize": [
+        2.25,
+        3.6023407,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot/Cave access | paired underground rooms/[CAVE PC06] MR02_N08 <-> Underground - Forgotten Satchel/Regional fitted passage/Native roof trim/Native roof 2",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC06/Native roof 2.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Step_Inner_L.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 103.56329115287409,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 768,
+      "sourceHeight": 512,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        294.892334,
+        140.929657,
+        -0.0085
+      ],
+      "worldBoundsSize": [
+        4.8666687,
+        0.2233429,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N08] Causeway knot/Cave access | paired underground rooms/[CAVE PC06] MR02_N08 <-> Underground - Forgotten Satchel/Regional fitted passage/Native roof trim/Native roof 3",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC06/Native roof 3.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Step_Outer_SlopeTop_L.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 119.99429077665144,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 768,
+      "sourceHeight": 768,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        298.722839,
+        147.535324,
+        -0.0100000007
+      ],
+      "worldBoundsSize": [
+        0.672332764,
+        6.399994,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N10] Upper aqueduct/Cave access | paired underground rooms/[CAVE MR02_C06] MR02_N10 <-> Underground - High Arch/Regional fitted passage/Registered native outer rock",
+      "disposition": "Solid wall world-tiled; secondary aperture channels preserved",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR02_C06/Registered native outer rock.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Fill.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR02/Fill.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR02/BDAC98344D947BDD5BEE.asset",
+      "secondaryMask": "Assets/Art/Prototypes/CradleRockwork_20261027/MR01_C01_Rockwork.png",
+      "beforeDensity": 119.977464788694,
+      "afterDensity": 359.87488479253091,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 1024,
+      "textureWidth": 1254,
+      "textureHeight": 1254,
+      "requiredWidth": 753,
+      "requiredHeight": 753,
+      "worldBoundsCenter": [
+        361.05,
+        165.325,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.30001831,
+        3.25,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N10] Upper aqueduct/Cave access | paired underground rooms/[CAVE MR02_C06] MR02_N10 <-> Underground - High Arch/Regional fitted passage/Native walking surface",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR02_C06/Native walking surface.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR02/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR02/3710B68A2A56B80E6933.asset",
+      "secondaryMask": null,
+      "beforeDensity": 119.9998057875224,
+      "afterDensity": 359.91392839614014,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1304,
+      "requiredHeight": 435,
+      "worldBoundsCenter": [
+        360.5,
+        163.700012,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.59997559,
+        2.199997,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N10] Upper aqueduct/Cave access | paired underground rooms/[CAVE MR02_C06] MR02_N10 <-> Underground - High Arch/Regional fitted passage/Native roof trim/Native roof 0",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR02_C06/Native roof 0.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR02/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR02/65EA5E90895E18C98078.asset",
+      "secondaryMask": null,
+      "beforeDensity": 115.37579701208824,
+      "afterDensity": 346.12387697534717,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1356,
+      "requiredHeight": 452,
+      "worldBoundsCenter": [
+        361.39,
+        167.929871,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.220001,
+        2.25975037,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N10] Upper aqueduct/Cave access | paired underground rooms/[CAVE MR02_C06] MR02_N10 <-> Underground - High Arch/Regional fitted passage/Native roof trim/Native roof 1",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR02_C06/Native roof 1.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Step_Outer_L.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 117.71420299042349,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 768,
+      "sourceHeight": 512,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        359.025,
+        168.121658,
+        -0.016
+      ],
+      "worldBoundsSize": [
+        2.25,
+        2.82333374,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR02 - The Long Causeway/[MR02_N10] Upper aqueduct/Cave access | paired underground rooms/[CAVE MR02_C06] MR02_N10 <-> Underground - High Arch/Regional fitted passage/Native roof trim/Native roof 2",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR02_C06/Native roof 2.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Step_Inner_L.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 110.83333333333339,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 768,
+      "sourceHeight": 512,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        360.3333,
+        166.821655,
+        -0.0165
+      ],
+      "worldBoundsSize": [
+        4.8666687,
+        0.2233429,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    }
+  ]
+}

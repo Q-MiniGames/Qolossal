@@ -60,7 +60,7 @@ public static class QoriWalkTestBuilder
             var settings = new TextureImporterSettings();
             imp.ReadTextureSettings(settings);
             settings.spriteAlignment = (int)SpriteAlignment.Custom;
-            settings.spriteMeshType = SpriteMeshType.FullRect;
+            settings.spriteMeshType = SpriteMeshType.Tight;   // QoriFrameAtlasBuilder packs these close
             imp.SetTextureSettings(settings);
             imp.spritePivot = new Vector2(info.pivotColumn / (float)info.canvas[0], (info.canvas[1] - info.groundRow) / (float)info.canvas[1]);
             imp.alphaIsTransparency = true; imp.mipmapEnabled = false; imp.filterMode = FilterMode.Bilinear;

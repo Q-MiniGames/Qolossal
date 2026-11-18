@@ -63,8 +63,15 @@ public sealed class QoriWalkFramesOnPlayer : MonoBehaviour
     public Vector2 idleActionEvery = new Vector2(5f, 10f);
     [Tooltip("Play the full breath (the yawn) now and then. Off: the idle only rests.")]
     public bool idleBreath;
+    [Tooltip("The run clip plays this much faster than drawn (3 Nov): at 1 its feet cover 49% of the ground Qori crosses, at 1.28 about 63%.")]
+    public float runPace = 1.28f;
+    [Tooltip("How long a hit holds Qori's hurt pose (seconds), until a real hurt clip exists.")]
+    public float hurtHold = .22f;
+    [Tooltip("Reversing faster than this (u/s) on the ground, Qori keeps facing his old way until he has slowed through zero: no running backward.")]
+    public float turnHoldSpeed = 1.5f;
     public const int OldLayer = 30, NewLayer = 31;
 
+    public static QoriWalkFramesOnPlayer Active { get; private set; }
     public PlayerMovement Player { get; private set; }
     public float CurrentQoriHeight { get; private set; }
     public Clip Current { get; private set; }
@@ -79,14 +86,16 @@ public sealed class QoriWalkFramesOnPlayer : MonoBehaviour
     AudioSource voice;
     Clip sounding;
     PlayerCombat combat;
+    PlayerHealth health;
     SpriteRenderer view;
     Vector2 feetOffset;      // from the Player's position to the current Qori's pelvis column on the feet line
-    float lastX, sizeTweak = 1f;
+    float lastX, sizeTweak = 1f, shownFacing = 1f;
     float idleT, nextBreath; int idleFrame, idleDir = 1; bool breathing;
     // one-shot timers and the previous frame's state
     float takeoffAt = -9f, landAt = -9f, wallJumpAt = -9f, glideAt = -9f, slashAt = -9f, climbAt = -9f, chargeAt = -9f, flipAt = -9f, airborneSince;
     int launchSeen, evadeSeen; float evadeAt = -9f;
     bool wasGrounded = true, wasWall, wasGliding, wasAttacking, wasClimbing, wasCharging;
+    public Clip[] PlayedClips => All;
     Clip[] All => new[] { idle, walk, run, codexWalk, jumpTakeoff, jumpRise, jumpFall, jumpLand, dash, glideOpen, glide, wallSlide, wallJump, ledgeHang, ledgeClimb, slash, strike,
                           combo1, combo2, combo3, upAttack, doubleJump, plungeStart, plungeDive, plungeLand, evade, ropeHang, staffShot, sprintAttack, chargeStart, chargeHold, chargeRelease };
     int attacks;   // attacks alternate: the strike, then the slash
@@ -142,6 +151,7 @@ public sealed class QoriWalkFramesOnPlayer : MonoBehaviour
     void LateUpdate()
     {
         if (view == null && !Attach()) return;
+        Active = this;
         Keys();
         var p = Player;
         bool attacking = combat != null && combat.IsAttackPoseActive && combat.CurrentAttack != null;
@@ -181,15 +191,18 @@ public sealed class QoriWalkFramesOnPlayer : MonoBehaviour
         {
         if (!onGround || speed < .25f) c.phase = c.standFrame / (float)n;
         else if (distanceLocked) c.phase += dx / (c.strideCanvasPx * c.scale * sizeTweak);
-        else c.phase += Time.deltaTime / c.cycleSeconds * Mathf.Clamp(speed / c.refSpeed, .6f, 1.85f);   // up to the sprint's pace
+        else c.phase += Time.deltaTime / c.cycleSeconds * Mathf.Clamp(speed / c.refSpeed, .6f, 1.85f) * (c == run ? runPace : 1f);   // up to the sprint's pace
         c.phase -= Mathf.Floor(c.phase);
         Frame = Mathf.Min(n - 1, Mathf.FloorToInt(c.phase * n));
         }
 
         float s = c.scale * sizeTweak * c.frames[Frame].pixelsPerUnit;   // world units per frame px x px per sprite unit
         view.sprite = c.frames[Frame];
-        view.flipX = (p.FacingDirection < 0f) != c.facesLeft;
-        view.transform.position = new Vector3(x + feetOffset.x * (p.FacingDirection < 0f ? -1f : 1f), p.transform.position.y + feetOffset.y, p.transform.position.z);
+        // Reversing on the ground: keep the old facing until the speed has come through zero.
+        float vx = p.ObservedVelocity.x;
+        if (!(onGround && !p.IsEvading && Mathf.Abs(vx) > turnHoldSpeed && Mathf.Sign(vx) != p.FacingDirection && Mathf.Sign(vx) == shownFacing)) shownFacing = p.FacingDirection;
+        view.flipX = (shownFacing < 0f) != c.facesLeft;
+        view.transform.position = new Vector3(x + feetOffset.x * (shownFacing < 0f ? -1f : 1f), p.transform.position.y + feetOffset.y, p.transform.position.z);
         view.transform.localScale = new Vector3(s, s, 1f);   // a scene root object: follows the Player, not parented to it
         // On the thread: the pose leans along the thread toward its anchor, its hands where the thread starts.
         view.transform.rotation = Quaternion.identity;
@@ -206,6 +219,8 @@ public sealed class QoriWalkFramesOnPlayer : MonoBehaviour
         }
         if (c.holdSway > 0f) view.transform.position += Vector3.up * Mathf.Sin(Time.time * Mathf.PI * 1.2f) * c.holdSway * CurrentQoriHeight;
         view.enabled = true;
+        if (health == null) health = p.GetComponent<PlayerHealth>();
+        view.color = health != null && health.IsDamageFlashVisible ? new Color(1f, 1f, 1f, .3f) : Color.white;   // the hurt flash, as the rig had it
         Sound(FramesVisible ? c : null);
 
         // The current Qori goes to OldLayer, and with it everything else drawn under the Player (the weapon's slash arc,
@@ -226,6 +241,9 @@ public sealed class QoriWalkFramesOnPlayer : MonoBehaviour
     Clip PickSpecial(PlayerMovement p, bool attacking, float t, float vy, out int frame)
     {
         frame = 0;
+        // Until real clips exist: down on the ground (the evade's curl) as he dies, the fall's first frame as he's hit.
+        if (health != null && health.IsDying && Has(evade)) { frame = evade.frames.Length / 2; return evade; }
+        if (health != null && t - health.LastHitTime < hurtHold && Has(jumpFall)) return jumpFall;
         if (combat != null && combat.IsCharging && Has(chargeHold))
             return Has(chargeStart) && t - chargeAt < chargeStart.frames.Length / chargeStart.fps ? Once(chargeStart, chargeAt, t, out frame) : Loop(chargeHold, t, out frame);
         if (attacking && combat.CurrentAttack.slingProjectile && Has(staffShot)) return Phased(staffShot, combat, out frame);
@@ -282,6 +300,38 @@ public sealed class QoriWalkFramesOnPlayer : MonoBehaviour
             if (want.soundLoop) { voice.time = want.soundStart; if (!voice.isPlaying) voice.Play(); }
             else voice.Stop();
         }
+    }
+
+    // Does this attack's clip have its staff marked (QoriFrameHitShapes)?
+    public bool DrawsStaff(AttackDefinition a)
+    {
+        var c = AttackClip(a);
+        return c != null && (c == combo1 || c == combo2 || c == upAttack);
+    }
+
+    // The staff as drawn at this moment, in the world: false while the frame on screen comes before the hit.
+    public bool TryStaffLine(AttackDefinition a, out Vector2 hand, out Vector2 tip)
+    {
+        hand = tip = default;
+        var c = AttackClip(a);
+        QoriFrameHitShapes.Line[] rows = c == combo1 ? QoriFrameHitShapes.Combo1 : c == combo2 ? QoriFrameHitShapes.Combo2 : c == upAttack ? QoriFrameHitShapes.UpAttack : null;
+        if (rows == null || view == null) return false;
+        int first = c == combo1 ? QoriFrameHitShapes.Combo1First : c == combo2 ? QoriFrameHitShapes.Combo2First : QoriFrameHitShapes.UpAttackFirst;
+        Phased(c, combat, out int frame);
+        if (frame < first) return false;
+        var row = rows[Mathf.Min(frame - first, rows.Length - 1)];
+        hand = StaffPoint(c, frame, row.Hand); tip = StaffPoint(c, frame, row.Tip);
+        return true;
+    }
+
+    // Combat runs before this script each frame, so this places the frame from the Player, not from last frame's picture.
+    Vector2 StaffPoint(Clip c, int frame, Vector2 px)
+    {
+        var sp = c.frames[frame];
+        float dir = Player.FacingDirection < 0f ? -1f : 1f;
+        float drawn = (dir < 0f) != c.facesLeft ? -1f : 1f;
+        Vector2 local = new Vector2((px.x - sp.pivot.x) * drawn, (sp.rect.height - px.y) - sp.pivot.y) * (c.scale * sizeTweak);
+        return (Vector2)Player.transform.position + new Vector2(feetOffset.x * dir, feetOffset.y) + local;
     }
 
     // The Leaf Staff's moves (QoriArmoryFactory.BuildStaffMoves names them); others keep the strike and slash.

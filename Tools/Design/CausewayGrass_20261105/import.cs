@@ -1,0 +1,14 @@
+if(EditorApplication.isPlaying)throw new Exception("Edit mode required");
+string path="Assets/Resources/Terrain/CausewayGrass/GrassEdge.png";
+AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
+var importer=(TextureImporter)AssetImporter.GetAtPath(path);
+importer.textureType=TextureImporterType.Default;importer.alphaSource=TextureImporterAlphaSource.FromInput;importer.alphaIsTransparency=true;
+importer.npotScale=TextureImporterNPOTScale.None;importer.maxTextureSize=4096;importer.textureCompression=TextureImporterCompression.Uncompressed;
+importer.mipmapEnabled=true;importer.isReadable=false;importer.sRGBTexture=true;importer.filterMode=FilterMode.Bilinear;
+importer.wrapModeU=TextureWrapMode.Mirror;importer.wrapModeV=TextureWrapMode.Clamp;importer.anisoLevel=4;importer.SaveAndReimport();
+var tex=AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+if(tex.width!=2172||tex.height!=724)throw new Exception("Native size lost");
+float slope=1.2f;float magnification=Mathf.Sqrt(1+slope/Mathf.Sqrt(1+slope*slope));
+float minimumPPU=(tex.width/6f)/magnification;
+var report=new{asset=path,native=new[]{2172,724},imported=new[]{tex.width,tex.height},worldRepeatLength=6,screenPixelsPerUnitAt4K=216,minimumPixelsPerUnitOnMaxSlope=minimumPPU,requiredNativeWidth=Mathf.CeilToInt(216*6*magnification),requiredNativeHeight=Mathf.CeilToInt(216*(724f/(2172f/6f))*magnification),native4K=minimumPPU>=216,alphaPreserved=true,acceptedArtModified=false};
+System.IO.File.WriteAllText("Tools/Design/CausewayGrass_20261105/resolution.json",Newtonsoft.Json.JsonConvert.SerializeObject(report,Newtonsoft.Json.Formatting.Indented));return report;

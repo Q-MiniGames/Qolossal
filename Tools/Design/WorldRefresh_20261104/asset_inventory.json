@@ -1,0 +1,871 @@
+[
+  {
+    "scene": "MRAtlas_MR01_Cradle",
+    "cameras": [
+      {
+        "name": "Main Camera",
+        "orthographicSize": 5.0
+      }
+    ],
+    "tops": [
+      {
+        "asset": "Assets/Art/Codex/Terrain/CradleCompletion4K/Body_Top_Strip_MR01_360_B45.png",
+        "ppu": 360.0,
+        "rect": [
+          3072.0,
+          1536.0
+        ],
+        "placements": 9
+      }
+    ],
+    "skies": [
+      {
+        "name": "4K BG_Cradle_Sky_4K (camera-locked)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Cradle4K/BG_Cradle_Sky_4K.png",
+        "height": 15.0,
+        "depth": 0.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -5.0,
+        "sortingOrder": -110
+      },
+      {
+        "name": "4K BG_Cradle_Far_4K (depth 25)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Cradle4K/BG_Cradle_Far_4K.png",
+        "height": 10.0,
+        "depth": 25.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -4.6,
+        "sortingOrder": -105
+      },
+      {
+        "name": "4K BG_Cradle_High_4K (depth 25)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Cradle4K/BG_Cradle_High_4K.png",
+        "height": 10.0,
+        "depth": 25.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -4.6,
+        "sortingOrder": -104
+      },
+      {
+        "name": "4K BG_Cradle_Mid_4K (depth 10)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Cradle4K/BG_Cradle_Mid_4K.png",
+        "height": 12.5,
+        "depth": 10.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -9.693519,
+        "sortingOrder": -90
+      },
+      {
+        "name": "4K BG_Cradle_Near_4K (depth 5)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Cradle4K/BG_Cradle_Near_4K.png",
+        "height": 10.0,
+        "depth": 5.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -5.0,
+        "sortingOrder": -80
+      }
+    ]
+  },
+  {
+    "scene": "MRAtlas_MR02_Causeway",
+    "cameras": [
+      {
+        "name": "Main Camera",
+        "orthographicSize": 5.0
+      }
+    ],
+    "tops": [
+      {
+        "asset": "Assets/Art/Codex/Terrain/Body/Causeway/Causeway_Top_Strip.png",
+        "ppu": 120.0,
+        "rect": [
+          1024.0,
+          512.0
+        ],
+        "placements": 4
+      }
+    ],
+    "skies": [
+      {
+        "name": "4K BG_Causeway_Sky_4K (camera-locked)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Causeway4K/BG_Causeway_Sky_4K.png",
+        "height": 15.0,
+        "depth": 0.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -5.0,
+        "sortingOrder": -110
+      },
+      {
+        "name": "4K BG_Causeway_Far_4K (depth 25)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Causeway4K/BG_Causeway_Far_4K.png",
+        "height": 10.0,
+        "depth": 25.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -4.6,
+        "sortingOrder": -105
+      },
+      {
+        "name": "4K BG_Causeway_High_4K (depth 25)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Causeway4K/BG_Causeway_High_4K.png",
+        "height": 10.0,
+        "depth": 25.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -4.6,
+        "sortingOrder": -104
+      },
+      {
+        "name": "4K BG_Causeway_Mid_4K (depth 10)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Causeway4K/BG_Causeway_Mid_4K.png",
+        "height": 12.5,
+        "depth": 10.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -9.679629,
+        "sortingOrder": -90
+      },
+      {
+        "name": "4K BG_Causeway_Near_4K (depth 5)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Causeway4K/BG_Causeway_Near_4K.png",
+        "height": 34.8518524,
+        "depth": 5.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -5.0,
+        "sortingOrder": -80
+      }
+    ]
+  },
+  {
+    "scene": "MRAtlas_MR03_Terraces",
+    "cameras": [
+      {
+        "name": "Main Camera",
+        "orthographicSize": 5.0
+      }
+    ],
+    "tops": [
+      {
+        "asset": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Top_Strip.png",
+        "ppu": 120.0,
+        "rect": [
+          1024.0,
+          512.0
+        ],
+        "placements": 1
+      }
+    ],
+    "skies": [
+      {
+        "name": "Foreground - Decor_A5_hay_tuft 0",
+        "active": true,
+        "asset": "Assets/Art/Codex/Decor/Decor_A5_Sheet.png",
+        "height": 3.5634234,
+        "depth": 0.75,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -6.60354042,
+        "sortingOrder": 60
+      },
+      {
+        "name": "Foreground - Decor_Terraces_dry_grass 1",
+        "active": true,
+        "asset": "Assets/Art/Codex/Decor/Decor_Terraces_Sheet.png",
+        "height": 3.74907827,
+        "depth": 0.75,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -6.687085,
+        "sortingOrder": 60
+      },
+      {
+        "name": "Foreground - Decor_A5_hay_tuft 2",
+        "active": true,
+        "asset": "Assets/Art/Codex/Decor/Decor_A5_Sheet.png",
+        "height": 3.11520147,
+        "depth": 0.75,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -6.40184069,
+        "sortingOrder": 60
+      },
+      {
+        "name": "Foreground - Decor_A5_hay_tuft 3",
+        "active": true,
+        "asset": "Assets/Art/Codex/Decor/Decor_A5_Sheet.png",
+        "height": 3.40746427,
+        "depth": 0.75,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -6.533359,
+        "sortingOrder": 60
+      },
+      {
+        "name": "Foreground - Decor_A5_fern 4",
+        "active": true,
+        "asset": "Assets/Art/Codex/Decor/Decor_A5_Sheet.png",
+        "height": 3.33279943,
+        "depth": 0.75,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -6.49975967,
+        "sortingOrder": 60
+      },
+      {
+        "name": "Foreground - Decor_A5_fern 5",
+        "active": true,
+        "asset": "Assets/Art/Codex/Decor/Decor_A5_Sheet.png",
+        "height": 3.140983,
+        "depth": 0.75,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -6.413442,
+        "sortingOrder": 60
+      },
+      {
+        "name": "Foreground - Decor_Terraces_dry_grass 6",
+        "active": true,
+        "asset": "Assets/Art/Codex/Decor/Decor_Terraces_Sheet.png",
+        "height": 3.62506366,
+        "depth": 0.75,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -6.63127851,
+        "sortingOrder": 60
+      },
+      {
+        "name": "Foreground - Decor_A5_dry_grass 7",
+        "active": true,
+        "asset": "Assets/Art/Codex/Decor/Decor_A5_Sheet.png",
+        "height": 3.00890636,
+        "depth": 0.75,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -6.35400772,
+        "sortingOrder": 60
+      },
+      {
+        "name": "Foreground - Decor_Terraces_olive_fern 8",
+        "active": true,
+        "asset": "Assets/Art/Codex/Decor/Decor_Terraces_Sheet.png",
+        "height": 3.5562427,
+        "depth": 0.75,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -6.60030937,
+        "sortingOrder": 60
+      },
+      {
+        "name": "Foreground - Decor_Terraces_dry_grass 9",
+        "active": true,
+        "asset": "Assets/Art/Codex/Decor/Decor_Terraces_Sheet.png",
+        "height": 3.74842262,
+        "depth": 0.75,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -6.68679,
+        "sortingOrder": 60
+      },
+      {
+        "name": "Foreground - Decor_Terraces_olive_fern 10",
+        "active": true,
+        "asset": "Assets/Art/Codex/Decor/Decor_Terraces_Sheet.png",
+        "height": 3.65770841,
+        "depth": 0.75,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -6.645969,
+        "sortingOrder": 60
+      },
+      {
+        "name": "Foreground - Decor_A5_fern 11",
+        "active": true,
+        "asset": "Assets/Art/Codex/Decor/Decor_A5_Sheet.png",
+        "height": 3.71061683,
+        "depth": 0.75,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -6.66977739,
+        "sortingOrder": 60
+      },
+      {
+        "name": "Foreground - Decor_Terraces_dry_grass 12",
+        "active": true,
+        "asset": "Assets/Art/Codex/Decor/Decor_Terraces_Sheet.png",
+        "height": 3.97540188,
+        "depth": 0.75,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -6.788931,
+        "sortingOrder": 60
+      },
+      {
+        "name": "4K BG_Sky_Terraces_4K (camera-locked)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Terraces4K/BG_Sky_Terraces_4K.png",
+        "height": 15.0,
+        "depth": 0.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -5.0,
+        "sortingOrder": -110
+      },
+      {
+        "name": "4K BG_Terraces_Far_4K (depth 25)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Terraces4K/BG_Terraces_Far_4K.png",
+        "height": 10.0,
+        "depth": 25.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -4.6,
+        "sortingOrder": -105
+      },
+      {
+        "name": "4K BG_Terraces_High_4K (depth 25)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Terraces4K/BG_Terraces_High_4K.png",
+        "height": 10.0,
+        "depth": 25.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -4.6,
+        "sortingOrder": -104
+      },
+      {
+        "name": "4K BG_Terraces_Mid_4K (depth 10)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Terraces4K/BG_Terraces_Mid_4K.png",
+        "height": 18.0555553,
+        "depth": 10.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -15.2537031,
+        "sortingOrder": -90
+      },
+      {
+        "name": "4K BG_Terraces_Near_4K (depth 5)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Terraces4K/BG_Terraces_Near_4K.png",
+        "height": 32.4074059,
+        "depth": 5.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -5.0,
+        "sortingOrder": -80
+      }
+    ]
+  },
+  {
+    "scene": "MRAtlas_MR04_Qvale",
+    "cameras": [
+      {
+        "name": "Main Camera",
+        "orthographicSize": 5.0
+      }
+    ],
+    "tops": [
+      {
+        "asset": "Assets/Art/Codex/Terrain/Body/Qvale/Qvale_Top_Strip_v5.png",
+        "ppu": 120.0,
+        "rect": [
+          1024.0,
+          512.0
+        ],
+        "placements": 2
+      }
+    ],
+    "skies": [
+      {
+        "name": "Overlook vista - BG_Qvale_Overlook_Vista (seated)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/BG_Qvale_Overlook_Vista.png",
+        "height": 10.0,
+        "depth": 0.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -5.0,
+        "sortingOrder": -78
+      },
+      {
+        "name": "4K BG_Qvale_Sky_4K (camera-locked)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Qvale4K/BG_Qvale_Sky_4K.png",
+        "height": 15.0,
+        "depth": 0.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -5.0,
+        "sortingOrder": -110
+      },
+      {
+        "name": "4K BG_Qvale_Far_4K (depth 25)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Qvale4K/BG_Qvale_Far_4K.png",
+        "height": 10.0,
+        "depth": 25.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -4.6,
+        "sortingOrder": -105
+      },
+      {
+        "name": "4K BG_Qvale_High_4K (depth 25)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Qvale4K/BG_Qvale_High_4K.png",
+        "height": 10.0,
+        "depth": 25.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -4.6,
+        "sortingOrder": -104
+      },
+      {
+        "name": "4K BG_Qvale_Mid_4K (depth 10)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Qvale4K/BG_Qvale_Mid_4K.png",
+        "height": 12.5,
+        "depth": 10.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -9.679629,
+        "sortingOrder": -90
+      },
+      {
+        "name": "4K BG_Qvale_Near_4K (depth 5)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Qvale4K/BG_Qvale_Near_4K.png",
+        "height": 10.0,
+        "depth": 5.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -5.0,
+        "sortingOrder": -80
+      }
+    ]
+  },
+  {
+    "scene": "MRAtlas_MR05_Ribwood",
+    "cameras": [
+      {
+        "name": "Main Camera",
+        "orthographicSize": 5.0
+      }
+    ],
+    "tops": [
+      {
+        "asset": "Assets/Art/Codex/Terrain/A2_Ground_Top.png",
+        "ppu": 120.0,
+        "rect": [
+          2048.0,
+          512.0
+        ],
+        "placements": 1
+      }
+    ],
+    "skies": [
+      {
+        "name": "4K BG_Ribwood_Sky_4K (camera-locked)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Ribwood4K/BG_Ribwood_Sky_4K.png",
+        "height": 15.0,
+        "depth": 0.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -5.0,
+        "sortingOrder": -110
+      },
+      {
+        "name": "4K BG_Ribwood_Far_4K (depth 25)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Ribwood4K/BG_Ribwood_Far_4K.png",
+        "height": 10.0,
+        "depth": 25.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -4.6,
+        "sortingOrder": -105
+      },
+      {
+        "name": "4K BG_Ribwood_High_4K (depth 25)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Ribwood4K/BG_Ribwood_High_4K.png",
+        "height": 10.0,
+        "depth": 25.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -4.6,
+        "sortingOrder": -104
+      },
+      {
+        "name": "4K BG_Ribwood_Mid_4K (depth 10)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Ribwood4K/BG_Ribwood_Mid_4K.png",
+        "height": 12.5,
+        "depth": 10.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -9.679629,
+        "sortingOrder": -90
+      },
+      {
+        "name": "4K BG_Ribwood_Near_4K (depth 5)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/Ribwood4K/BG_Ribwood_Near_4K.png",
+        "height": 37.9259262,
+        "depth": 5.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 216.0,
+        "baseY": -5.0,
+        "sortingOrder": -80
+      }
+    ]
+  },
+  {
+    "scene": "MRAtlas_MR06_Heights",
+    "cameras": [
+      {
+        "name": "Main Camera",
+        "orthographicSize": 5.0
+      }
+    ],
+    "tops": [
+      {
+        "asset": "Assets/Art/Codex/Terrain/A3_Ground_Top.png",
+        "ppu": 120.0,
+        "rect": [
+          2048.0,
+          512.0
+        ],
+        "placements": 4
+      }
+    ],
+    "skies": [
+      {
+        "name": "Sky - BG_Sky_Terraces",
+        "active": false,
+        "asset": "Assets/Art/Codex/Backgrounds/BG_Sky_Terraces.png",
+        "height": 24.0,
+        "depth": 0.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -12.0,
+        "sortingOrder": -110
+      },
+      {
+        "name": "Far - BG_Heights_Far (depth 25)",
+        "active": false,
+        "asset": "Assets/Art/Codex/Backgrounds/BG_Heights_Far.png",
+        "height": 10.0,
+        "depth": 25.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -3.8,
+        "sortingOrder": -105
+      },
+      {
+        "name": "Near - BG_Heights_Near (depth 5)",
+        "active": false,
+        "asset": "Assets/Art/Codex/Backgrounds/BG_Heights_Near.png",
+        "height": 10.0,
+        "depth": 5.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -5.0,
+        "sortingOrder": -80
+      },
+      {
+        "name": "A | warm sky",
+        "active": true,
+        "asset": "Assets/Art/Prototypes/HeightsParallaxA_20261103/Sky.png",
+        "height": 10.4555559,
+        "depth": 0.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 90.0,
+        "baseY": -5.233333,
+        "sortingOrder": -110
+      },
+      {
+        "name": "A | continuous valley",
+        "active": false,
+        "asset": "Assets/Art/Prototypes/HeightsParallaxA_20261103/Valley.png",
+        "height": 10.4555559,
+        "depth": 125.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 90.0,
+        "baseY": -5.233333,
+        "sortingOrder": -105
+      },
+      {
+        "name": "A | weather 01",
+        "active": true,
+        "asset": "Assets/Art/Prototypes/HeightsCloudsNeutral_20261103/Cloud_0.png",
+        "height": 2.251101,
+        "depth": 6.25,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 322.064636,
+        "baseY": 6.151956,
+        "sortingOrder": -95
+      },
+      {
+        "name": "A | weather 02",
+        "active": true,
+        "asset": "Assets/Art/Prototypes/HeightsCloudsNeutral_20261103/Cloud_2.png",
+        "height": 2.16,
+        "depth": 6.25,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 335.18515,
+        "baseY": 12.1788893,
+        "sortingOrder": -94
+      },
+      {
+        "name": "A | weather 03",
+        "active": true,
+        "asset": "Assets/Art/Prototypes/HeightsCloudsNeutral_20261103/Cloud_1.png",
+        "height": 2.397037,
+        "depth": 6.25,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 302.039551,
+        "baseY": 15.8855553,
+        "sortingOrder": -93
+      },
+      {
+        "name": "A | weather 04",
+        "active": true,
+        "asset": "Assets/Art/Prototypes/HeightsCloudsNeutral_20261103/Cloud_3.png",
+        "height": 2.37583232,
+        "depth": 6.25,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 305.156219,
+        "baseY": 20.1894112,
+        "sortingOrder": -92
+      },
+      {
+        "name": "A | weather 05",
+        "active": true,
+        "asset": "Assets/Art/Prototypes/HeightsCloudsNeutral_20261103/Cloud_0.png",
+        "height": 2.251101,
+        "depth": 6.25,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 322.064636,
+        "baseY": 26.6497345,
+        "sortingOrder": -91
+      },
+      {
+        "name": "A | weather 06",
+        "active": true,
+        "asset": "Assets/Art/Prototypes/HeightsCloudsNeutral_20261103/Cloud_2.png",
+        "height": 2.16,
+        "depth": 6.25,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 335.18515,
+        "baseY": 29.2944431,
+        "sortingOrder": -90
+      },
+      {
+        "name": "A | weather 07",
+        "active": true,
+        "asset": "Assets/Art/Prototypes/HeightsCloudsNeutral_20261103/Cloud_1.png",
+        "height": 2.397037,
+        "depth": 6.25,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 302.039551,
+        "baseY": 32.89,
+        "sortingOrder": -89
+      },
+      {
+        "name": "A | weather 08",
+        "active": true,
+        "asset": "Assets/Art/Prototypes/HeightsCloudsNeutral_20261103/Cloud_3.png",
+        "height": 2.37583232,
+        "depth": 6.25,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 305.156219,
+        "baseY": 39.01163,
+        "sortingOrder": -88
+      },
+      {
+        "name": "Valley | Far",
+        "active": true,
+        "asset": "Assets/Art/Prototypes/HeightsRiverDetail_20261104/Far_River.png",
+        "height": 3.33333349,
+        "depth": 125.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 217.2,
+        "baseY": -2.5,
+        "sortingOrder": -108
+      },
+      {
+        "name": "Valley | Mid",
+        "active": true,
+        "asset": "Assets/Art/Prototypes/HeightsThreeLayers_20261104/Mid.png",
+        "height": 3.33333349,
+        "depth": 41.6666679,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 217.2,
+        "baseY": -3.7,
+        "sortingOrder": -105
+      },
+      {
+        "name": "Valley | Near",
+        "active": true,
+        "asset": "Assets/Art/Prototypes/HeightsThreeLayers_20261104/Near.png",
+        "height": 3.33333349,
+        "depth": 20.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 217.2,
+        "baseY": -5.3,
+        "sortingOrder": -102
+      }
+    ]
+  },
+  {
+    "scene": "MRAtlas_MR07_Summit",
+    "cameras": [
+      {
+        "name": "Main Camera",
+        "orthographicSize": 5.0
+      }
+    ],
+    "tops": [
+      {
+        "asset": "Assets/Art/Codex/Terrain/A6_Ground_Top.png",
+        "ppu": 120.0,
+        "rect": [
+          2048.0,
+          512.0
+        ],
+        "placements": 1
+      }
+    ],
+    "skies": [
+      {
+        "name": "Sky - BG_Sky_Terraces",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/BG_Sky_Terraces.png",
+        "height": 24.0,
+        "depth": 0.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -12.0,
+        "sortingOrder": -110
+      },
+      {
+        "name": "Far - BG_Summit_Far (depth 25)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/BG_Summit_Far.png",
+        "height": 10.0,
+        "depth": 25.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -3.8,
+        "sortingOrder": -105
+      },
+      {
+        "name": "Mid - BG_Summit_Mid (depth 10)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/BG_Summit_Mid.png",
+        "height": 10.0,
+        "depth": 10.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -3.8,
+        "sortingOrder": -90
+      },
+      {
+        "name": "Near - BG_Summit_Near_v3 (depth 5)",
+        "active": true,
+        "asset": "Assets/Art/Codex/Backgrounds/BG_Summit_Near_v3.png",
+        "height": 10.0,
+        "depth": 5.0,
+        "composedForSize": 5.0,
+        "texturePixelsPerUnit": 100.0,
+        "baseY": -5.0,
+        "sortingOrder": -80
+      }
+    ]
+  },
+  {
+    "scene": "Qolossal_Underground",
+    "cameras": [
+      {
+        "name": "Main Camera",
+        "orthographicSize": 5.0
+      }
+    ],
+    "tops": [],
+    "skies": []
+  },
+  {
+    "scene": "MRAtlas_MR04_C02",
+    "cameras": [
+      {
+        "name": "Main Camera",
+        "orthographicSize": 5.0
+      }
+    ],
+    "tops": [],
+    "skies": []
+  },
+  {
+    "scene": "MRAtlas_MR04_C03",
+    "cameras": [
+      {
+        "name": "Main Camera",
+        "orthographicSize": 5.0
+      }
+    ],
+    "tops": [],
+    "skies": []
+  },
+  {
+    "scene": "MRAtlas_MR04_C04",
+    "cameras": [
+      {
+        "name": "Main Camera",
+        "orthographicSize": 5.0
+      }
+    ],
+    "tops": [],
+    "skies": []
+  },
+  {
+    "scene": "MRAtlas_MR04_C05",
+    "cameras": [
+      {
+        "name": "Main Camera",
+        "orthographicSize": 5.0
+      }
+    ],
+    "tops": [],
+    "skies": []
+  },
+  {
+    "scene": "MRAtlas_MR04_C06",
+    "cameras": [
+      {
+        "name": "Main Camera",
+        "orthographicSize": 5.0
+      }
+    ],
+    "tops": [],
+    "skies": []
+  }
+]

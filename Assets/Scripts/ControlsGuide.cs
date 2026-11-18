@@ -17,11 +17,12 @@ public sealed class ControlsGuide : MonoBehaviour
         "Dash (Wind Leaf): C",
         "Glide (Glidecap): hold Space while falling",
         "Attack: Left mouse; W / Up aims overhead",
-        "Armory: Tab / 1-4 | Hold Q: aim; release: fire",
+        "Staff shot: Hold Q to aim; release to fire",
         "Hook target: Nearest highlighted anchor",
         "Hook / release: F or right mouse",
         "Shorten / extend thread: W / S",
         "Grow temporary platform: E",
+        "Cave map size: Tab",
         "Pause: Escape"
     };
     private static readonly string[] controllerRows =
@@ -36,11 +37,12 @@ public sealed class ControlsGuide : MonoBehaviour
         "Dash (Wind Leaf): Right face button",
         "Glide (Glidecap): hold Jump while falling",
         "Attack: Left shoulder; Up aims overhead",
-        "Armory: RS click, tilt to choose | Hold X: aim",
+        "Staff shot: Hold left face button to aim; release to fire",
         "Hook target: Nearest highlighted anchor",
         "Hook / release: Press right trigger",
         "Shorten: Left trigger | Extend: D-pad down",
         "Grow temporary platform: Right shoulder",
+        "Cave map size: Right-stick click (R3)",
         "Pause: Menu / Start"
     };
 

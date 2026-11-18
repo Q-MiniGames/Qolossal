@@ -1,0 +1,27 @@
+--- before/MRAtlas_MR07_Summit.unity
+
++++ MRAtlas_MR07_Summit.unity
+
+@@ -2194,7 +2194,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &294788979
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -7816,6 +7816,11 @@
+
+   groundedFootViewport: 0.15
+   airborneCentreViewport: 0.55
+   groundVerticalSmoothTime: 0.24
++  downhillProbeDistance: 6
++  downhillMinimumDrop: 0.9
++  maximumDownhillPreview: 0.58
++  manualLookDown: 0.58
++  previewSmoothTime: 0.28
+ --- !u!114 &911618168
+ MonoBehaviour:
+   m_ObjectHideFlags: 0

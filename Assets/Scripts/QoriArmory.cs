@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 [DefaultExecutionOrder(-100)]
 public sealed class QoriArmory:MonoBehaviour
 {
-    public static bool BlocksAttackInput=>active!=null&&(active.menuOpen||active.IsAiming||Time.frameCount<=active.closeFrame);
+    public static bool BlocksAttackInput=>active!=null&&(active.IsAiming||Time.frameCount<=active.closeFrame);
     static QoriArmory active;
     public WeaponDefinition[] Weapons {get;private set;}
     public WeaponDefinition SlingWeapon {get;private set;}
@@ -14,22 +14,10 @@ public sealed class QoriArmory:MonoBehaviour
     public bool IsAiming {get;private set;}
     bool controllerAim;int aimReset;
     public int Selected {get;private set;}
-    public bool MenuOpen=>menuOpen;
     PlayerCombat combat;PlayerMovement movement;
-    bool menuOpen;int closeFrame=-1,pending=-1;float nextNavigation;
+    int closeFrame=-1,pending=-1;
     readonly List<Object> owned=new List<Object>();
-    static readonly Key[] SelectionKeys={Key.Digit1,Key.Digit2,Key.Digit3,Key.Digit4};
-    static string WeaponStyle(string id)=>id switch
-    {
-        "forest-0"=>"Balanced sweeping cuts",
-        "forest-2"=>"Heavy overhead impact",
-        "forest-3"=>"Long precise thrust",
-        QoriArmoryFactory.StaffId=>"Charged sweeping cuts",
-        _=>""
-    };
     AttackDefinition sling;
-    readonly InputAction toggleMenu=new InputAction("Armory",InputActionType.Button);
-    void Awake(){toggleMenu.AddBinding("<Keyboard>/tab");toggleMenu.AddBinding("<Gamepad>/rightStickPress");}
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]static void ResetStatics()=>active=null;
     void Start()
     {
@@ -41,6 +29,7 @@ public sealed class QoriArmory:MonoBehaviour
         Selected=Mathf.Max(0,staff);combat.EquipWeapon(Weapons[Selected]);
         Visual=gameObject.AddComponent<QoriArmoryVisual>();Visual.Initialize(this,combat);
     }
+    // Qori carries only the staff in the game (the weapon menu was removed, 3 Nov); the other weapons stay as data for tests.
     public bool Select(int index)
     {
         if(Weapons==null||index<0||index>=Weapons.Length)return false;
@@ -50,13 +39,13 @@ public sealed class QoriArmory:MonoBehaviour
     }
     public bool Fire(Vector2 direction)
     {
-        if(sling==null||menuOpen||GamePauseMenu.BlocksGameplayInput||Time.timeScale<=0||!movement.isActiveAndEnabled||combat.IsAttackPoseActive)return false;
+        if(sling==null||GamePauseMenu.BlocksGameplayInput||Time.timeScale<=0||!movement.isActiveAndEnabled||combat.IsAttackPoseActive)return false;
         SlingDirection=direction.sqrMagnitude>.01f?direction.normalized:Vector2.right*movement.FacingDirection;
         return combat.RequestAttack(new AttackRequest(AttackAim.Front,Mathf.Abs(SlingDirection.x)>.05f?SlingDirection.x:movement.FacingDirection,CombatMoveSlot.Special),sling);
     }
     public bool BeginAim(Vector2 direction)
     {
-        if(sling==null||menuOpen||Time.timeScale<=0||IsAiming)return false;
+        if(sling==null||Time.timeScale<=0||IsAiming)return false;
         SlingDirection=direction.sqrMagnitude>.01f?direction.normalized:Vector2.right*movement.FacingDirection;
         if(!combat.BeginSlingAim(sling,SlingDirection))return false;
         IsAiming=true;aimReset=movement.ResetVersion;return true;
@@ -89,18 +78,10 @@ public sealed class QoriArmory:MonoBehaviour
     void Update()
     {
         if(Weapons==null)return;
-        if(GamePauseMenu.BlocksGameplayInput||!movement.isActiveAndEnabled){CancelAim();menuOpen=false;return;}
+        if(GamePauseMenu.BlocksGameplayInput||!movement.isActiveAndEnabled){CancelAim();return;}
         if(Time.timeScale<=0){CancelAim();return;}
         if(pending>=0&&!combat.IsAttackPoseActive)Select(pending);
         var key=Keyboard.current;var pad=Gamepad.current;
-        if(toggleMenu.WasPressedThisFrame())
-        {CancelAim();menuOpen=!menuOpen;closeFrame=Time.frameCount;}
-        if(key!=null)
-        {
-            for(int i=0;i<SelectionKeys.Length&&i<Weapons.Length;i++)if(key[SelectionKeys[i]].wasPressedThisFrame){Select(i);menuOpen=false;closeFrame=Time.frameCount;}
-        }
-        if(menuOpen&&pad!=null&&Time.unscaledTime>nextNavigation&&Mathf.Abs(pad.rightStick.x.ReadValue())>.6f)
-        {Select((Selected+(pad.rightStick.x.ReadValue()>0?1:Weapons.Length-1))%Weapons.Length);nextNavigation=Time.unscaledTime+.25f;}
         if(IsAiming)
         {
             if(aimReset!=movement.ResetVersion||combat.CurrentAttack!=sling||!combat.CanUse(sling)){CancelAim();return;}
@@ -116,41 +97,10 @@ public sealed class QoriArmory:MonoBehaviour
         }
     }
 
-    void OnGUI()
-    {
-        if(Weapons==null||GamePauseMenu.IsPaused||ModalUi.IsOpen||ListeningSpot.IsSitting)return;   // the listening retreat shows only its track list
-        var prior=GUI.matrix;float scale=Mathf.Min(Screen.width/1000f,Screen.height/650f);GUI.matrix=Matrix4x4.Scale(Vector3.one*scale);
-        float width=Screen.width/scale;
-        var safe = Screen.safeArea;
-        var hint = new Rect(safe.xMax / scale - 328f, (Screen.height - safe.yMax) / scale + 18f, 310f, 58f);
-        var route = MraRouteBar.Current;
-        if (route != null && route.Showing)
-        {
-            Rect routePixels = route.ScreenBounds;
-            var hintPixels = new Rect(hint.x * scale, hint.y * scale, hint.width * scale, hint.height * scale);
-            if (hintPixels.Overlaps(routePixels)) hint.y = routePixels.yMax / scale + 12f;
-        }
-        if (!menuOpen) GUI.Box(hint,Weapons[Selected].displayName+(pending>=0?" → "+Weapons[pending].displayName:"")+"\nTab / RS click: armory     Hold Q / X: aim; release: fire");
-        if(menuOpen)
-        {
-            float menuWidth=Weapons.Length*170f;float x=(width-menuWidth)/2,y=96;
-            if(route!=null&&route.Showing)y=Mathf.Max(y,route.ScreenBounds.yMax/scale+54f);
-            GUI.Box(new Rect(x-12,y-42,menuWidth+24,218),"FOREST ARMORY - 1-4 or click - right stick cycles - Tab / RS click closes");
-            for(int i=0;i<Weapons.Length;i++)
-            {
-                var rect=new Rect(x+i*170,y,160,125);var old=GUI.backgroundColor;
-                GUI.backgroundColor=i==Selected?new Color(.6f,.8f,.35f):Color.white;
-                if(GUI.Button(rect,(i+1)+"  "+Weapons[i].displayName+"\n\n"+WeaponStyle(Weapons[i].weaponId))){Select(i);menuOpen=false;closeFrame=Time.frameCount;}
-                GUI.backgroundColor=old;
-            }
-            GUI.Label(new Rect(x,y+132,830,32),"Resin sling is always equipped • unlimited seeds • 0.35 damage • mouse / right stick aims");
-        }
-        GUI.matrix=prior;
-    }
     void OnApplicationFocus(bool focused){if(!focused)CancelAim();}
-    void OnDisable(){toggleMenu.Disable();CancelAim();menuOpen=false;if(active==this)active=null;WeaponTuning.Changed-=Retune;}
-    void OnEnable(){toggleMenu.Enable();active=this;WeaponTuning.Changed+=Retune;}
+    void OnDisable(){CancelAim();if(active==this)active=null;WeaponTuning.Changed-=Retune;}
+    void OnEnable(){active=this;WeaponTuning.Changed+=Retune;}
     // The tuning asset was edited (Inspector, Play mode): the weapons in hand take the new numbers.
     void Retune()=>QoriArmoryFactory.ApplyTuning(Weapons,sling);
-    void OnDestroy(){toggleMenu.Dispose();if(active==this)active=null;foreach(var item in owned)if(item!=null)Destroy(item);}
+    void OnDestroy(){if(active==this)active=null;foreach(var item in owned)if(item!=null)Destroy(item);}
 }

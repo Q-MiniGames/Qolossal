@@ -1,6 +1,6 @@
 if(UnityEditor.EditorApplication.isPlaying)throw new System.Exception("Read-only extraction requires Edit mode.");
 var output="C:/Users/Qasim/OneDrive/Documents/ChatGPT/Qolossal/DesignReview/ActualSlopeComparison_20261030/";
-var paths=UnityEditor.EditorBuildSettings.scenes.Where(s=>s.enabled&&s.path.Contains("MRAtlas_MR")).Select(s=>s.path).ToArray();
+var paths=RegionalSceneCatalog.Surface.Select(n=>RegionalSceneCatalog.Folder+n+".unity").ToArray();
 var result=new System.Collections.Generic.List<object>();
 System.Func<Transform,string> hierarchy=t=>{var names=new System.Collections.Generic.List<string>();while(t!=null){names.Add(t.name);t=t.parent;}names.Reverse();return string.Join("/",names);};
 System.Func<Vector3,float[]> xy=p=>new[]{p.x,p.y};

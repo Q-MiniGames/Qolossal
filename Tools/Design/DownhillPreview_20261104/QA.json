@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "date": "2026-11-04",
+  "cases": 14,
+  "renderedFrames": 2065,
+  "landingBeforeDeparture": 0.09529686,
+  "landingBeforeMovingEdge": {
+    "running_approach": 0.08898163,
+    "sprint_approach": 0.06942654
+  },
+  "ordinaryJumpMaxCameraStep": 0.00163078308,
+  "manualInputs": [
+    "Keyboard S (Down Arrow also bound)",
+    "Right stick down",
+    "D-pad down"
+  ],
+  "inputOwnershipChecked": [
+    "Modal UI",
+    "Held staff-shot aim",
+    "Movement cancels manual peek"
+  ],
+  "normalSavesPreserved": true,
+  "editorSettingsRestored": true,
+  "unchangedSceneHashes": 13,
+  "codeSHA256": "7554c7d29147d72e4fc26903d4d718f90874e5e9a814da0621c8958155f80c25",
+  "platformReadiness": {
+    "tested": "Windows Unity Editor; virtual keyboard and gamepad; full-stick running, sprint and jump trials; 1920x1080 and native 3840x2160 captures",
+    "notTested": [
+      "Windows player build",
+      "PS5",
+      "Xbox Series X",
+      "Xbox Series S",
+      "Switch 2 handheld",
+      "Switch 2 docked",
+      "Physical controllers",
+      "CPU/GPU frame time",
+      "Peak memory"
+    ],
+    "textureImportProfile": "Unchanged; camera zoom, artwork and source resolution unchanged"
+  },
+  "limitation": "Preview is bounded to keep Qori visible. Arbitrarily deep drops can still extend beyond it."
+}

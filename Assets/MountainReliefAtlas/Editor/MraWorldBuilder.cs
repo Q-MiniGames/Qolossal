@@ -1706,6 +1706,8 @@ public static partial class MraWorldBuilder
 
         DepthLayer(root, camera, climb, $"Near - {set.near} (depth 5)", Art($"Backgrounds/{set.near}"), null, 10f, NearDepth, -5f, -80, Color.white, 16f, true, ClimbSink(NearDepth));
 
+        if (r.id == "MR06" || r.id == "MR07") MraRegion4K.TuneOldPlanes(root);
+
     }
 
 

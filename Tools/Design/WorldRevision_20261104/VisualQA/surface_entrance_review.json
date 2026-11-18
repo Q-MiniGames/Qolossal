@@ -1,0 +1,268 @@
+{
+  "review": "Surface entrance visible attachment review",
+  "method": "All 37 full-composition contact views plus native-pixel roof and floor-end details. PC04/A01 full native views; A01/MR06_C06/MR07_C04 1200x800 native crops. No screenshot source pixels edited.",
+  "status": "corrections_required",
+  "issues": [
+    {
+      "id": "summit-roof-gap",
+      "severity": "major",
+      "affected": [
+        "MR07_C05",
+        "MR07_C04",
+        "PC12",
+        "MR07_C01",
+        "MR07_C02",
+        "E01",
+        "MR07_C03",
+        "MR07_C06"
+      ],
+      "finding": "Pale physical Fill appears between approved painted soffit and horizontal top boundary of interior artwork. Strong straight seam visible across upper aperture.",
+      "action": "Extend interior coverage to painted soffit silhouette without altering approved rim RGB or collision."
+    },
+    {
+      "id": "deep-floor-tail",
+      "severity": "minor-visible",
+      "affectedCount": 33,
+      "regions": [
+        "MR02",
+        "MR03",
+        "MR04",
+        "MR05",
+        "MR06",
+        "MR07"
+      ],
+      "finding": "Walking strip ends inside solid cave wall with a small dark rectangular tail. Native approximately 20-30 pixels high.",
+      "action": "Fade or clip the deep strip endpoint into wall while preserving walkable floor surface."
+    }
+  ],
+  "placementNotes": [
+    "PC04 relocated mouth attaches to right cliff and has readable interior.",
+    "A01 relocated west mouth attaches to left mountain; no additional substantial placement error seen.",
+    "MR01 four retained original assemblies show neither confirmed issue.",
+    "Physical vertical cliffs and limited overhead gallery spaces are not treated as attachment defects."
+  ],
+  "sources": [
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR01_cave_PC02_4K.png",
+      "sha256": "4efb38b2f843a2d386d8fa6836eb855497fa28e73a424a86cb41a78d23022814",
+      "region": "MR01",
+      "entrance": "PC02"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR01_cave_PC01_4K.png",
+      "sha256": "3129e2e563d901a2bc477ad962245316d2b458a0d0757c0b0804562537079bb5",
+      "region": "MR01",
+      "entrance": "PC01"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR01_cave_MR01_C06_4K.png",
+      "sha256": "86bc0b40c4981577c11403a2e1d90ee54ed55f6ac70c5cf76bd423be717b0e8e",
+      "region": "MR01",
+      "entrance": "MR01_C06"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR01_cave_PC03_4K.png",
+      "sha256": "cca43ec50fc6dd45f42c9df90f0eb593332132e0b59b6f58a3faa5fdf4590000",
+      "region": "MR01",
+      "entrance": "PC03"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR02_cave_PC04_4K.png",
+      "sha256": "c0ab067a10a63a9c30b53bb592bc36894c5a9c85c38c54043008ffa7e55a5ca8",
+      "region": "MR02",
+      "entrance": "PC04"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR02_cave_MR02_C06_4K.png",
+      "sha256": "831fd7c7197bf1fda8a6a542d37b8818e2a499d18ad5487d4f9a8340851ef699",
+      "region": "MR02",
+      "entrance": "MR02_C06"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR02_cave_PC05_4K.png",
+      "sha256": "5aa0593874fb1e8b47ca845bc8f524d888fc387125d2be673799f8a728f6be14",
+      "region": "MR02",
+      "entrance": "PC05"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR02_cave_PC06_4K.png",
+      "sha256": "f220ae37d8ee3a44d6f9f8a614fad62e62cd9040240d769473fe3c5efecb89cf",
+      "region": "MR02",
+      "entrance": "PC06"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR03_cave_PC08_4K.png",
+      "sha256": "765016b1cb929f5548c7a1469d04861158e7639034dd51ebf37f2f19ad6f135a",
+      "region": "MR03",
+      "entrance": "PC08"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR03_cave_PC07_4K.png",
+      "sha256": "9f0875bc46285eca89dd214a421b3960355a41e02d560f190535e7d1d25c1b14",
+      "region": "MR03",
+      "entrance": "PC07"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR03_cave_PC09_4K.png",
+      "sha256": "7b1428b7d696700cb611d219f25553475697a12591e7bd2d54ba92bb3d38ee2e",
+      "region": "MR03",
+      "entrance": "PC09"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR03_cave_MR03_C06_4K.png",
+      "sha256": "f566a24a2ae91d54dd0f26b7d738f6c8a296cfcfb0117720c09433e03c9c24b8",
+      "region": "MR03",
+      "entrance": "MR03_C06"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR04_cave_A01_4K.png",
+      "sha256": "b55a2ff60d90e0fc08d33cd1690327254c84302805378634631d75ca2ace5190",
+      "region": "MR04",
+      "entrance": "A01"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR05_cave_MR05_C06_4K.png",
+      "sha256": "159ca85eb9b040ed8a5288cd287fe475f25da9ddbe2a1dfa0e022ab8bc126fcd",
+      "region": "MR05",
+      "entrance": "MR05_C06"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR05_cave_MR05_C02_4K.png",
+      "sha256": "a1282d8696675e85d45747d6475edc9613a089c12fcde287254f9cba836349d1",
+      "region": "MR05",
+      "entrance": "MR05_C02"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR05_cave_C01_4K.png",
+      "sha256": "f31b716cc1b164b8616664ebf20d7837d021e33800c2b1d40883941fa3894db9",
+      "region": "MR05",
+      "entrance": "C01"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR05_cave_MR05_C04_4K.png",
+      "sha256": "561de5ca0f76285d8929a30f877cf042e84209cd746f11d5fa44a2cd44200059",
+      "region": "MR05",
+      "entrance": "MR05_C04"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR05_cave_MR05_C01_4K.png",
+      "sha256": "f05957ca8a8930883ad04fb7f918a1e896c221ee52a90a192e77cc952a95f1e6",
+      "region": "MR05",
+      "entrance": "MR05_C01"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR05_cave_MR05_C05_4K.png",
+      "sha256": "692c54738efe422619a199d78fd723fb4de96998b220fb8a4f8a00da972166b6",
+      "region": "MR05",
+      "entrance": "MR05_C05"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR05_cave_PC10_4K.png",
+      "sha256": "924240297f93909d6b56b13ec37f81b9bf0d48004c24812a90eee1c25269ad4b",
+      "region": "MR05",
+      "entrance": "PC10"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR05_cave_MR05_C03_4K.png",
+      "sha256": "edbec2c3d5be20e7ca766e5ebcda1a46bdace22dc9f060eaf69634528990a38d",
+      "region": "MR05",
+      "entrance": "MR05_C03"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR06_cave_D01_4K.png",
+      "sha256": "e03d1358b3621e309aaf7426212bfcf8de8c9711080f0e07fa31cfa1938a05b3",
+      "region": "MR06",
+      "entrance": "D01"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR06_cave_PC11_4K.png",
+      "sha256": "70761071d22913740bfe52678e36f2629100abbbabf249e72eeb4ad34f56fdff",
+      "region": "MR06",
+      "entrance": "PC11"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR06_cave_MR06_C06_4K.png",
+      "sha256": "e1339e7bd2bf6edb3e0530c1af0a49fa0761b8d09dd8e8fb6e1da2d1bba2d473",
+      "region": "MR06",
+      "entrance": "MR06_C06"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR06_cave_MR06_C03_4K.png",
+      "sha256": "867cb77826e6675e2bd80ddb0886774153c1baeb5ddb728fd8f317297e35074e",
+      "region": "MR06",
+      "entrance": "MR06_C03"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR06_cave_MR06_C04_4K.png",
+      "sha256": "c71c89dd272863eccdaca6fc13d33c73ad6b09d78b3eb2e72fcafc6dc987fc00",
+      "region": "MR06",
+      "entrance": "MR06_C04"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR06_cave_MR06_C01_4K.png",
+      "sha256": "4777a969045a4d5e16a11b1b6f86aca58fe62068e1aef7692168e3d1b90dba10",
+      "region": "MR06",
+      "entrance": "MR06_C01"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR06_cave_MR06_C02_4K.png",
+      "sha256": "b0da13066c42e502daf1fe2ff27b209105ed68adb0a2d969139bac75ff562f3c",
+      "region": "MR06",
+      "entrance": "MR06_C02"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR06_cave_MR06_C05_4K.png",
+      "sha256": "a64d4ec9009092617c83ce57a3c6822d48aba2bd19b1626f327e6c964d1821ac",
+      "region": "MR06",
+      "entrance": "MR06_C05"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR07_cave_MR07_C05_4K.png",
+      "sha256": "c77b2d51ce4a842afa9e4578edc0a73489b934cda1e4e1984b3610053eec9b7e",
+      "region": "MR07",
+      "entrance": "MR07_C05"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR07_cave_MR07_C04_4K.png",
+      "sha256": "9eb2be4f14c92bd14012f8dc94de5ecdbe93a9998e7d591514271897661a20a0",
+      "region": "MR07",
+      "entrance": "MR07_C04"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR07_cave_PC12_4K.png",
+      "sha256": "171a830017baffb529eef9b983fa4a07509243d4794ea94149dac0ee19272ac6",
+      "region": "MR07",
+      "entrance": "PC12"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR07_cave_MR07_C01_4K.png",
+      "sha256": "8c9605daebbbb2cb53de8c5c2d56f1fc587fb9974aaca113b52147884e24cc0f",
+      "region": "MR07",
+      "entrance": "MR07_C01"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR07_cave_MR07_C02_4K.png",
+      "sha256": "92fee0abefc5f3abaacad41e4149c0cde0491749cff5e833506f89e9cd085f2a",
+      "region": "MR07",
+      "entrance": "MR07_C02"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR07_cave_E01_4K.png",
+      "sha256": "9e2349298c589715ec45827f7631c1985d4151f88d5ebb1c39d95963d59d058b",
+      "region": "MR07",
+      "entrance": "E01"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR07_cave_MR07_C03_4K.png",
+      "sha256": "4ef0026b9d0a870af20f383632c199d28ea0e9320265e04ba3550f551c72df9a",
+      "region": "MR07",
+      "entrance": "MR07_C03"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/Captures/MR07_cave_MR07_C06_4K.png",
+      "sha256": "7bd4ccc4713c228ac6cb412440db1489939df43db6e48d893cae07329b389d79",
+      "region": "MR07",
+      "entrance": "MR07_C06"
+    }
+  ]
+}

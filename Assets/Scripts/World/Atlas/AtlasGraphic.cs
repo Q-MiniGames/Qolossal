@@ -17,10 +17,12 @@ namespace Qolossal.Atlas
         public AtlasMapping[] mappings;
         public AtlasSurfaceBand[] surfaceBands;
         public AtlasContour[] contours;
+        public AtlasDoor[] caveDoors;
         public bool sceneDerived;
         public bool illustratedMap;
     }
-    [Serializable] public sealed class AtlasContour { public string region, room; public bool underground, primary; public Vector2[] path; }
+    [Serializable] public sealed class AtlasContour { public string region, room, mappingId, kind; public bool underground, primary; public Vector2[] path; }
+    [Serializable] public sealed class AtlasDoor { public string room, to, link; public float x, y, w, h; }
     [Serializable] public sealed class AtlasSurfaceBand { public string region; public bool connector; public Vector2[] path; }
     [Serializable] public sealed class AtlasNode
     {
@@ -132,16 +134,16 @@ namespace Qolossal.Atlas
                 else {Path(v,e.path,e.kind=="surface"?4:7,new Color(.03f,.06f,.065f,.9f));col.a=e.kind=="surface"?.65f:.9f;Path(v,e.path,e.kind=="surface"?1.6f:3,col);}
             }
             if(owner.Data.sceneDerived&&owner.Data.contours!=null){
-                foreach(var c in owner.Data.contours){
+                for(int index=0;index<owner.Data.contours.Length;index++){var c=owner.Data.contours[index];
                     if(owner.FocusedRegion!=null&&c.region!=owner.FocusedRegion)continue;
                     if(owner.Data.illustratedMap&&owner.FocusedRegion==null&&c.underground&&!string.IsNullOrEmpty(c.room))continue;
                     var col=owner.RegionColor(c.region);if(c.room==owner.SelectedId)col=Gold;
                     // Collapse subpixel contour segments at world zoom, retaining full slopes at close zoom.
                     var pts=c.path;if(pts==null||pts.Length<2)continue;var a=P(pts[0]);
-                    for(int i=1;i<pts.Length;i++){var b=P(pts[i]);if(i<pts.Length-1&&(b-a).sqrMagnitude<.64f)continue;Stroke(v,a,b,c.underground?1.4f:2f,col);a=b;}
+                    var known=owner.ContourKnown(index);for(int i=1;i<pts.Length;i++){var b=P(pts[i]);if(known!=null&&!known[i]){a=b;continue;}if(i<pts.Length-1&&(b-a).sqrMagnitude<.64f)continue;Stroke(v,a,b,c.underground?1.4f:2f,col);a=b;}
                 }
             }else foreach(var n in owner.Data.nodes)if(owner.NodeVisible(n)&&owner.HasRoomOutline(n))Room(v,n);
-            foreach(var c in owner.Data.caves)if(owner.CaveVisible(c)){Mouth(v,c.upperPoint);Mouth(v,c.lowerPoint);}
+            foreach(var c in owner.Data.caves)if(owner.CaveVisible(c)){bool known=owner.RoomKnown(c.lowerRoomId);if(known||GameSave.HasFlag("mra:"+c.lowerRoomId+":discovered"))Mouth(v,c.upperPoint);if(known)Mouth(v,c.lowerPoint);}
             foreach(var leader in owner.LabelLeaders)Stroke(v,leader.from,leader.to,1,leader.color);
             if(owner.PlayerMapPoint(out var player)){var p=P(player);var c=Color.white;Stroke(v,p+Vector2.up*8,p+Vector2.right*6,2,c);Stroke(v,p+Vector2.right*6,p-Vector2.up*8,2,c);Stroke(v,p-Vector2.up*8,p-Vector2.right*6,2,c);Stroke(v,p-Vector2.right*6,p+Vector2.up*8,2,c);}
         }

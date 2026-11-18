@@ -1,0 +1,14 @@
+if(EditorApplication.isPlayingOrWillChangePlaymode)throw new Exception("Edit mode required");
+CisternContinuousPreview.SetEnabled(false);
+var output="Tools/Design/CisternNetwork_20261107/Views/";System.IO.Directory.CreateDirectory(output);
+var bridge=CavePassagePresentation.Create();
+var go=new GameObject("Network composition review"){hideFlags=HideFlags.DontSave};var review=go.AddComponent<CisternNetworkReview>();review.Configure();
+var cameraGo=new GameObject("Review camera"){hideFlags=HideFlags.DontSave};var camera=cameraGo.AddComponent<Camera>();camera.orthographic=true;camera.orthographicSize=5;camera.aspect=16f/9;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.03f,.05f,.05f);
+var positions=new[]{("A01",1494f,174f),("A02_top",1534f,174f),("A02_middle",1534f,150f),("A02_bottom",1534f,132f),("A03",1515f,106f),("A04_bottom",1568f,88f),("A04_middle",1588f,99f),("A04_approach",1610f,107.5f),("A05_bottom",1636f,101f),("A05_middle",1636f,122f),("A05_top",1636f,137f),("A06_left",1576f,158f),("A06_right",1604f,176f),("A07",1644f,174f),("A08",1708f,172f),("passage_open",1622f,108f),("passage_closed",1544f,108f),("passage_bent",1636f,154f)};
+var rt=new RenderTexture(1920,1080,24);camera.targetTexture=rt;var tex=new Texture2D(1920,1080,TextureFormat.RGB24,false);var active=RenderTexture.active;
+try {
+ foreach(var p in positions){camera.transform.position=new Vector3(p.Item2,p.Item3,-50);CaveDepth.Apply(camera);camera.Render();RenderTexture.active=rt;tex.ReadPixels(new Rect(0,0,1920,1080),0,0);tex.Apply();System.IO.File.WriteAllBytes(output+p.Item1+".png",tex.EncodeToPNG());}
+ var rooms=UnityEngine.Object.FindObjectsByType<UndergroundRoom>(FindObjectsSortMode.None).Where(r=>CisternNetworkReview.Includes(r.roomId)).Select(r=>new{id=r.roomId,name=r.roomName,bounds=new[]{r.WorldBounds.min.x,r.WorldBounds.min.y,r.WorldBounds.max.x,r.WorldBounds.max.y}}).OrderBy(r=>r.id).ToArray();
+ var result=new{bindings=review.BindingCount,healthy=review.Healthy,arrayBytes=review.ArrayBytes,rooms,positions=positions.Select(p=>new{name=p.Item1,x=p.Item2,y=p.Item3}),farRects=CisternNetworkReview.FarRects.Select(r=>new[]{r.x,r.y,r.z,r.w}),middleRects=CisternNetworkReview.MiddleRects.Select(r=>new[]{r.x,r.y,r.z,r.w}),enclosures=review.Enclosures.Select(r=>new[]{r.x,r.y,r.z,r.w})};
+ System.IO.File.WriteAllText(output+"layout.json",Newtonsoft.Json.JsonConvert.SerializeObject(result,Newtonsoft.Json.Formatting.Indented));return new{review.BindingCount,review.Healthy,review.ArrayBytes,captures=positions.Length};
+} finally {RenderTexture.active=active;camera.targetTexture=null;UnityEngine.Object.DestroyImmediate(cameraGo);UnityEngine.Object.DestroyImmediate(go);UnityEngine.Object.DestroyImmediate(tex);rt.Release();UnityEngine.Object.DestroyImmediate(rt);}

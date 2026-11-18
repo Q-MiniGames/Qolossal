@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "newPaintingReverted": true,
+  "bodyMatchesOriginalRGBMax": 0,
+  "caveChecks": [
+    {
+      "mouth": "PC04",
+      "protectedRGBDifference": 0
+    },
+    {
+      "mouth": "PC05",
+      "protectedRGBDifference": 0
+    },
+    {
+      "mouth": "PC06",
+      "protectedRGBDifference": 0
+    },
+    {
+      "mouth": "MR02_C06",
+      "protectedRGBDifference": 0
+    }
+  ],
+  "protectedHashes": {
+    "Assets\\Scenes\\Game\\MRAtlas_MR01_Cradle.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR02_Causeway.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR03_Terraces.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR04_C02.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR04_C03.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR04_C04.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR04_C05.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR04_C06.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR04_Qvale.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR05_Ribwood.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR06_Heights.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR07_Summit.unity": true,
+    "Assets\\Scenes\\Game\\Qolossal_Underground.unity": true,
+    "Assets\\Scripts\\CameraFollow.cs": true,
+    "Assets\\Resources\\FX\\SurfaceTerrainContrast.shader": true
+  },
+  "edgeFadeWorldDepth": 0.26,
+  "maximum4KPixelDepth": 56.160000000000004,
+  "play": {
+    "complete": true,
+    "rows": [
+      {
+        "scene": "MRAtlas_MR02_Causeway",
+        "passed": true,
+        "renderedFrames": 120,
+        "frameAdvance": 120,
+        "simulationSeconds": 2.0001626,
+        "feetViewport": 0.187711,
+        "cameraSize": 5.0,
+        "travel": 14.3519478,
+        "gradedMeshes": 6,
+        "allCaveMasksPresent": true,
+        "expectedProtectedMouths": 4
+      }
+    ],
+    "errors": [],
+    "normalSavesPreserved": true,
+    "settingsRestored": true
+  },
+  "sourceArtImportsAndGeometryUnchanged": true,
+  "platform": "Windows Editor; consoles, builds and hardware performance not tested"
+}

@@ -1,0 +1,46 @@
+{
+    "version": 3,
+    "relics": [
+        "double-jump"
+    ],
+    "knots": [],
+    "charted": [],
+    "veins": [],
+    "sproutlings": [],
+    "loreStones": [],
+    "pickups": [],
+    "checkpoints": [
+        {
+            "scene": "Assets/Scenes/Game/MRAtlas_MR02_Causeway.unity",
+            "id": "mra:MR02:cp:01"
+        },
+        {
+            "scene": "Assets/Scenes/Game/Qolossal_Underground.unity",
+            "id": "regional:PC04"
+        }
+    ],
+    "lastScene": "Assets/Scenes/Game/MRAtlas_MR02_Causeway.unity",
+    "flags": [
+        "mra:MR02:visited",
+        "town:visited:MR02",
+        "mra:MR02_E00:seen",
+        "mra:MR02_E01:seen",
+        "mra:MR02_E02:seen",
+        "regional:room:MR01_C01",
+        "mra:MR01_C01:discovered",
+        "regional:room:PC04",
+        "ugp:PC04:reward",
+        "mra:MR02_P1:reward",
+        "town:shell:mra:MR02_P1:reward"
+    ],
+    "counters": [
+        {
+            "key": "amber",
+            "value": 10
+        },
+        {
+            "key": "town-quakes",
+            "value": 0
+        }
+    ]
+}

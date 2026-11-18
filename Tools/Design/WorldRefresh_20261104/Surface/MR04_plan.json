@@ -1,0 +1,239 @@
+[
+  {
+    "terrain": "Generated (MRA builder)/Terrain/Route MR04 piece 00",
+    "points": 58,
+    "edits": [
+      {
+        "a": 14.95,
+        "b": 19.678,
+        "y0": 28.0,
+        "y1": 26.365,
+        "maxGrade": 0.421722263,
+        "maxDelta": 0.817499161
+      },
+      {
+        "a": 22.708,
+        "b": 35.05,
+        "y0": 20.1762886,
+        "y1": 15.0,
+        "maxGrade": 0.48187387,
+        "maxDelta": 0.8876829
+      },
+      {
+        "a": 40.95,
+        "b": 57.05,
+        "y0": 15.0,
+        "y1": 8.0,
+        "maxGrade": 0.482758671,
+        "maxDelta": 2.02419949
+      }
+    ],
+    "protectedIntervals": [
+      {
+        "a": 9.2,
+        "b": 14.8,
+        "reason": "beat pad MR04_N00"
+      },
+      {
+        "a": 35.2,
+        "b": 40.8,
+        "reason": "beat pad MR04_N01"
+      },
+      {
+        "a": 57.2,
+        "b": 62.8,
+        "reason": "beat pad MR04_N02"
+      },
+      {
+        "a": 79.2,
+        "b": 84.8,
+        "reason": "beat pad MR04_N03"
+      },
+      {
+        "a": 102.2,
+        "b": 107.8,
+        "reason": "beat pad MR04_N04"
+      },
+      {
+        "a": 125.2,
+        "b": 130.8,
+        "reason": "beat pad MR04_N05"
+      },
+      {
+        "a": 148.2,
+        "b": 153.8,
+        "reason": "beat pad MR04_N06"
+      },
+      {
+        "a": 170.2,
+        "b": 175.8,
+        "reason": "beat pad MR04_N07"
+      },
+      {
+        "a": 192.2,
+        "b": 197.8,
+        "reason": "beat pad MR04_N08"
+      },
+      {
+        "a": 214.2,
+        "b": 219.8,
+        "reason": "beat pad MR04_N09"
+      },
+      {
+        "a": 237.2,
+        "b": 242.8,
+        "reason": "beat pad MR04_N10"
+      },
+      {
+        "a": 257.2,
+        "b": 262.8,
+        "reason": "beat pad MR04_N11"
+      },
+      {
+        "a": 133.25,
+        "b": 145.25,
+        "reason": "cave CAVE_A01"
+      },
+      {
+        "a": 141.7,
+        "b": 146.7,
+        "reason": "arrival CAVE_A01"
+      },
+      {
+        "a": 19.828,
+        "b": 22.528,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 233.15,
+        "b": 235.85,
+        "reason": "climb challenge"
+      },
+      {
+        "a": 10.6,
+        "b": 13.4,
+        "reason": "prop or encounter Player"
+      },
+      {
+        "a": 36.5,
+        "b": 39.5,
+        "reason": "prop or encounter Checkpoint mra:MR04:cp:01"
+      },
+      {
+        "a": 80.50416,
+        "b": 83.50416,
+        "reason": "prop or encounter Waymark mra:MR04:cp:03"
+      },
+      {
+        "a": 102.0,
+        "b": 108.0,
+        "reason": "prop or encounter Door MR04_C01"
+      },
+      {
+        "a": 111.3,
+        "b": 116.7,
+        "reason": "prop or encounter NPC The cold forge"
+      },
+      {
+        "a": 112.3,
+        "b": 117.7,
+        "reason": "prop or encounter NPC Brannick"
+      },
+      {
+        "a": 126.5,
+        "b": 129.5,
+        "reason": "prop or encounter Checkpoint mra:MR04:cp:05"
+      },
+      {
+        "a": 125.0,
+        "b": 131.0,
+        "reason": "prop or encounter Door MR04_C02"
+      },
+      {
+        "a": 127.130005,
+        "b": 130.93,
+        "reason": "prop or encounter Door MR04_C02 Herbalist Home"
+      },
+      {
+        "a": 137.45,
+        "b": 141.05,
+        "reason": "prop or encounter Sluice Arrival"
+      },
+      {
+        "a": 148.0,
+        "b": 154.0,
+        "reason": "prop or encounter Door MR04_C03"
+      },
+      {
+        "a": 149.720016,
+        "b": 153.52,
+        "reason": "prop or encounter Door MR04_C03 Mapmaker Room"
+      },
+      {
+        "a": 170.0,
+        "b": 176.0,
+        "reason": "prop or encounter Door MR04_C04"
+      },
+      {
+        "a": 174.650009,
+        "b": 178.45,
+        "reason": "prop or encounter Door MR04_C04 Residents' Home A"
+      },
+      {
+        "a": 192.0,
+        "b": 198.0,
+        "reason": "prop or encounter Door MR04_C05"
+      },
+      {
+        "a": 195.340012,
+        "b": 199.14,
+        "reason": "prop or encounter Door MR04_C05 Old Man's Home"
+      },
+      {
+        "a": 214.0,
+        "b": 220.0,
+        "reason": "prop or encounter Door MR04_C06"
+      },
+      {
+        "a": 214.900009,
+        "b": 218.7,
+        "reason": "prop or encounter Door MR04_C06 Musician Loft"
+      },
+      {
+        "a": 216.6,
+        "b": 220.0,
+        "reason": "prop or encounter Reward song-shell (Musician Loft)"
+      },
+      {
+        "a": 238.5,
+        "b": 241.5,
+        "reason": "prop or encounter Checkpoint mra:MR04:cp:10"
+      },
+      {
+        "a": 61.3000031,
+        "b": 66.7,
+        "reason": "prop or encounter NPC Wick"
+      },
+      {
+        "a": 179.3,
+        "b": 184.7,
+        "reason": "prop or encounter NPC A traveller"
+      },
+      {
+        "a": 184.3,
+        "b": 189.7,
+        "reason": "prop or encounter NPC The last climber"
+      },
+      {
+        "a": 221.0,
+        "b": 227.0,
+        "reason": "prop or encounter Listening Spot"
+      },
+      {
+        "a": 226.8,
+        "b": 232.2,
+        "reason": "prop or encounter NPC Fennel"
+      }
+    ]
+  }
+]

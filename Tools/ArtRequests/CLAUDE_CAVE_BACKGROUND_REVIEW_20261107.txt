@@ -1,0 +1,130 @@
+Claude — independent review of Qolossal's cave backgrounds
+Prepared 7 November 2026
+
+I want your honest opinion about the cave-background direction we have been developing with Codex. Please inspect the actual drawings AND in-game captures before judging it. Challenge the approach where necessary; successful technical tests do not establish good art direction. Give your assessment and recommendations first, without modifying the project.
+
+PROJECT AND INTENT
+
+Qolossal is a hand-painted 2D exploration/platforming game starring Qori. The Unity project is C:/UnityProjects/Qolossal. We are designing for a 3840×2160 presentation, with resolution calculated from each asset's actual displayed size—not requiring every individual image to be 4K and not treating upscaling as new detail.
+
+Read these project constraints before proposing implementation changes:
+C:/UnityProjects/Qolossal/PROJECT_GUIDE.md
+C:/UnityProjects/Qolossal/Tools/Design/QOLOSSAL_PLATFORM_DIRECTION.md
+C:/UnityProjects/Qolossal/Tools/IncomingArt/Codex_v2/CLAUDE_PLATFORM_HANDOFF.md
+
+Preserve approved source art, actual underground room positions/slopes, gameplay geometry, IDs and saves. The current request concerns background art and presentation. Targets are Windows PC, PS5, Xbox Series X|S and Switch 2, with a 60 FPS target; console readiness has not been demonstrated.
+
+WHAT FELT WRONG TO ME
+
+1. The old cave scenery repeated like wallpaper, including recognizable features. Multiple backgrounds could be seen meeting awkwardly.
+2. Open cavern scenery ended at passages in a darker, flatter rock treatment. The sudden change in color AND apparent depth felt wrong, even when a blend softened the join. Passages should either continue the same environment or have purpose-designed connecting artwork.
+3. One replacement followed the camera so strongly that it felt stationary while the platforms moved. During a glide, Qori seemed to fly in place. Movement through the environment needs to remain readable.
+4. Enlarging a painting to cover more space made it feel too close. I want convincing distant scenery, with appropriately small landmarks and coherent scale.
+5. I initially could not feel the subtle parallax test. I am open to parallax, but I do not want motion added everywhere just because it is possible.
+
+The related camera decisions are already separate from this art review: automatic edge look-down is disabled in caves; deliberate manual look-down remains. Main ground uses approximately 15%-from-bottom foot framing. Platforms and solid terrain ledges use approximately 40%, retaining their takeoff framing through jumps. Do not solve background problems by undoing these camera decisions.
+
+DIRECTION WE AGREED TO TRY
+
+After discussing Hollow Knight/Silksong, Ori, Dead Cells and Celeste as references, we agreed to test:
+- Enclosed single rooms with believable rear walls and recesses.
+- Open connected chambers that read as different views of one environment.
+- Narrow passages that physically enclose the view and then reveal the next chamber, rather than abruptly switching depth or tint.
+- Near walls attached to the terrain, a middle layer with distinctive landmarks, and quieter distant scenery.
+- Coordinated separate artwork sections, not one enormous stretched painting and not identical pictures repeated in every room.
+- Vertical shafts composed as continuous vertical spaces, with different upper/lower features rather than stacked copies of the same scene.
+
+These are design intentions, not verified claims about the exact rendering implementations of those reference games. If you compare them, distinguish visible observations from sourced technical facts.
+
+CURRENT TRIAL — NOT FINAL ART APPROVAL
+
+I explicitly confirmed the scope as ALL eight main A rooms, A01–A08:
+A01 Sluice Arrival → A02 Drain Well → A03 Silt Walk → A04 Cistern Court → A05 Spillway Rise → A06 Pump Gallery → A07 Keeper Refuge → A08 Sluice Guardian Arena.
+There is also an A06–A02 shortcut. A04 connects to optional A09; A08 connects to optional A10 and Heart. Actual room bounds and passage geometry matter: this is not eight rooms in a straight horizontal line.
+
+The current Editor trial uses eight unique distant sections, four separate middle landmarks, and a plain stone treatment for enclosed passages. All selected room and passage materials use shared world registration. Domain masks restrict which compositions contribute around each room. Open connectors retain scenery; five enclosed connectors receive attached rear-wall stone. Optional A09/A10 and Heart interiors retain their previous artwork.
+
+Current camera-follow fractions are far layer 55% horizontal / 45% vertical, and middle layer 12% / 6%. Equivalently, scenery moves on screen at about 45% / 55% of terrain motion for the far layer, and 88% / 94% for the middle. There is no viewport-edge clamp or per-room reset. These values are trial settings, not rules you must endorse.
+
+Codex corrected an initial overly enlarged placement, floating landmark placement, and a data-upload problem during its own review. Please independently judge the final captures: do not assume those visual issues are completely solved because the report says they were adjusted. In particular, look for floating cutouts, ghosted overlapping paintings, mismatched water levels, flat wall patches, conspicuous panel boundaries and excessive blur.
+
+WHERE THE DRAWINGS ARE SAVED
+
+Current new source drawings:
+C:/UnityProjects/Qolossal/Assets/Art/Prototypes/CisternNetwork_20261107/
+
+Far sections:
+  SluiceArrival_Far.png
+  DrainWell_Far.png
+  SiltWalk_Far.png
+  Spillway_Far.png
+  PumpVault_Far.png
+  KeeperGallery_Far.png
+  GuardianSluice_Far.png
+
+Separate middle landmarks:
+  DrainMechanism_Middle.png
+  PumpWheel_Middle.png
+  KeeperRefuge_Middle.png
+
+Plain passage material:
+  PassageStone.png
+
+Two reused pilot drawings, still active:
+C:/UnityProjects/Qolossal/Assets/Art/Prototypes/CisternLayers_20261107/Reservoir_Far.png
+C:/UnityProjects/Qolossal/Assets/Art/Prototypes/CisternLayers_20261107/Waterworks_Middle_v2.png
+
+Earlier, superseded background experiments for comparison only:
+C:/UnityProjects/Qolossal/Assets/Art/Prototypes/CisternContinuous_20261106/
+C:/UnityProjects/Qolossal/Assets/Art/Prototypes/WorldRevision_20261104/CaveVista/
+Do not mistake these older experiments or Waterworks_Middle.png (without v2) for the active selection.
+
+START YOUR VISUAL REVIEW HERE
+
+Runtime screenshots:
+C:/UnityProjects/Qolossal/Tools/Design/CisternNetwork_20261107/Play/
+This contains A01_4K.png through A08_4K.png, plus cave_glide_4K.png, passage_walk_4K.png and solid_ledge_4K.png. Each has a corresponding _1080p.png version.
+
+Additional Editor compositions, including upper/middle/lower shaft views and open/closed/bent passage views:
+C:/UnityProjects/Qolossal/Tools/Design/CisternNetwork_20261107/Views/
+The actual room bounds and capture coordinates are recorded in Views/layout.json.
+
+Review, exact density calculations, tests and generation provenance:
+C:/UnityProjects/Qolossal/Tools/Design/CisternNetwork_20261107/REVIEW.md
+C:/UnityProjects/Qolossal/Tools/Design/CisternNetwork_20261107/resolution.json
+C:/UnityProjects/Qolossal/Tools/Design/CisternNetwork_20261107/QA.json
+C:/UnityProjects/Qolossal/Tools/Design/CisternNetwork_20261107/PROVENANCE.json
+C:/UnityProjects/Qolossal/Tools/Design/CisternNetwork_20261107/EXTRA_PROVENANCE.json
+The paintings were generated using the built-in image tool. The provenance files contain exact prompts and original generated-file locations; the project copies above are the working assets.
+
+If you have access to the running Editor, the persistent preview is under Qolossal > Art Review > Continuous Cistern Preview. F6 returns to the A04 approach, F7 visits the next main A room, and F8 / left-stick click compares layered scenery with far scenery only. Both modes retain far parallax; this is not a parallax-on/off comparison. The isolated-save launcher is:
+C:/UnityProjects/Qolossal/Tools/Design/CisternNetwork_20261107/start_user_trial.cs
+
+TECHNICAL EVIDENCE AND UNRESOLVED LIMITS
+
+Recorded checks passed for room/passage sampling at 126 mouths in two modes, walking, gliding, all eight arrivals, comparison input, restoration and normal-save preservation. All thirteen playable scene hashes stayed unchanged. These checks do NOT prove every transition looks natural or that the art direction is approved.
+
+The distant paintings are composition drafts, not final native-4K assets. At orthographic half-height 5, the presentation requires 216 pixels per world unit. The largest far placement requires 15552×5184, while its source is 2172×724. The four middle assets require 1469×980 and have 1536×1024 sources; the stone requires 1210×1210 and has a 1254×1254 source. Those smaller placements pass. Evaluate how to make final 4K production practical without inflating or stretching the paintings.
+
+The uncompressed preview arrays alone report about 208 MiB, excluding the source textures and the rest of the game. There are no console performance results. A shader warning about potentially uninitialized CavePainting sampling remains recorded despite passing render checks.
+
+Implementation, if useful to your assessment:
+C:/UnityProjects/Qolossal/Assets/Scripts/Environment/CisternNetworkReview.cs
+C:/UnityProjects/Qolossal/Assets/Editor/CisternContinuousPreview.cs
+C:/UnityProjects/Qolossal/Assets/Resources/FX/CisternNetworkSampling.cginc
+C:/UnityProjects/Qolossal/Assets/Resources/FX/CaveVistaSampling.cginc
+C:/UnityProjects/Qolossal/Assets/Resources/FX/CavePassageVista.shader
+C:/UnityProjects/Qolossal/Assets/Resources/CavePassageConnections.json
+
+WHAT I WANT BACK FROM YOU
+
+Give a candid verdict: keep, revise, or replace this direction, with reasons tied to specific screenshots/rooms.
+
+1. Should single enclosed rooms, open connected rooms and vertical shafts use different depth/parallax policies? Recommend one for each.
+2. Does the current A network look like one believable place? Identify its strongest and weakest joins, compositions and scale relationships.
+3. Would you use shared painted sections, modular layers, separate room art with physical occlusion, or a hybrid? Explain how it handles the actual A layout horizontally and vertically.
+4. How would you avoid wallpaper repetition, stationary-background glide sensation, enlarged scenery, color/depth jumps and floating landmarks together?
+5. Propose a practical 4K asset breakdown and memory-conscious production approach. Use actual placement measurements; distinguish source resolution, imported texture size and screen coverage.
+6. Give a short prioritized plan and the smallest useful in-game comparison to settle the remaining visual decisions before repainting everything.
+
+Lead with a plain-language opinion I can understand, then supporting art/technical detail. Separate what you inspected, what you infer, and what still needs a moving-game test. If you cannot access these local files or Unity, say so rather than claiming to have reviewed them. Do not change the game yet.

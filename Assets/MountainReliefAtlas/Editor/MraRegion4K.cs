@@ -26,13 +26,14 @@ public static class MraRegion4K
         public string region, scene, folder, sky, far, high, mid, near;
         public int midSkylineRow;   // the Mid's median skyline, in pixels from its top
         public float nearRate = 1f;
+        public float midSkylineY = 1.2f;   // where that skyline starts, from the frame's centre (1.2: 62% of its height)
     }
 
-    static Stack Set(string region, string scene, string name, int midSkylineRow, float nearRate, string sky = null) => new Stack
+    static Stack Set(string region, string scene, string name, int midSkylineRow, float nearRate, string sky = null, float midSkylineY = 1.2f) => new Stack
     {
         region = region, scene = scene, folder = $"Assets/Art/Codex/Backgrounds/{name}4K/",
         sky = sky ?? $"BG_{name}_Sky_4K", far = $"BG_{name}_Far_4K", high = $"BG_{name}_High_4K", mid = $"BG_{name}_Mid_4K", near = $"BG_{name}_Near_4K",
-        midSkylineRow = midSkylineRow, nearRate = nearRate,
+        midSkylineRow = midSkylineRow, nearRate = nearRate, midSkylineY = midSkylineY,
     };
 
     public static readonly Dictionary<string, Stack> Stacks = new Dictionary<string, Stack>
@@ -42,6 +43,10 @@ public static class MraRegion4K
         { "MR04", Set("MR04", "MRAtlas_MR04_Qvale", "Qvale", 350, 1f) },         // Batch 36 Sky/Far/High + 36b Mid/Near, Review 93
         { "MR03", Set("MR03", "MRAtlas_MR03_Terraces", "Terraces", 346, 1f, "BG_Sky_Terraces_4K") },
         { "MR05", Set("MR05", "MRAtlas_MR05_Ribwood", "Ribwood", 350, .963f) },  // Batch 37 Far + 37d Near/Mid/High/Sky, Review 96
+        // No accepted art (the user rejected Batch 38, 3 Nov 2026): these wait for files, and stay unused until any are in.
+        // The Heights keep flying enemies readable against the upper frame: the Mid's skyline starts at 40% of the frame's height.
+        { "MR06", Set("MR06", "MRAtlas_MR06_Heights", "Heights", 350, .803f, null, -1f) },
+        { "MR07", Set("MR07", "MRAtlas_MR07_Summit", "Summit", 350, 1f) },
     };
 
     static IEnumerable<string> Files(Stack s) => new[] { s.sky, s.far, s.high, s.mid, s.near };
@@ -110,7 +115,7 @@ public static class MraRegion4K
         high.sinkLimit = 6f; high.verticalRate = .5f; high.tint = new Color(1f, 1f, 1f, 0f);
         high.gameObject.AddComponent<MraClimbFade>();
         var midTex = AssetDatabase.LoadAssetAtPath<Texture2D>(s.folder + s.mid + ".png");
-        var mid = Plane(s, background, camera, climb, s.mid, 10f, 1.2f - (midTex.height - s.midSkylineRow) / Ppu, -90, 0f);
+        var mid = Plane(s, background, camera, climb, s.mid, 10f, s.midSkylineY - (midTex.height - s.midSkylineRow) / Ppu, -90, 0f);
         mid.verticalRate = .35f;
         var near = Plane(s, background, camera, climb, s.near, 5f, -5f, -80, 0f);
         near.verticalRate = s.nearRate; near.tint = new Color(.86f, .87f, .9f, 1f);
@@ -141,6 +146,44 @@ public static class MraRegion4K
 
     [MenuItem("Qolossal/Mountain Relief/4K backgrounds: the Ribwood (Batch 37d)")]
     static void RibwoodMenu() => SwapIntoScene("MR05");
+
+    [MenuItem("Qolossal/Mountain Relief/4K backgrounds: the Heights (Batch 38)")]
+    static void HeightsMenu() => SwapIntoScene("MR06");
+
+    [MenuItem("Qolossal/Mountain Relief/4K backgrounds: the Summit (Batch 39)")]
+    static void SummitMenu() => SwapIntoScene("MR07");
+
+    // The Heights and the Summit keep their old planes, 10 u tall. The art comes first (the user, 3 Nov 2026): vertical
+    // parallax stays gentle so each painting stays on screen. Over the whole climb the Far sinks 3 u, so the skyline
+    // falls away a little, the Mid 3.5 u and the Near 4 u, in the frame until about 85% of the climb.
+    public const float OldFarBudget = 75f, OldMidBudget = 35f, OldNearBudget = 20f;
+
+    public static void TuneOldPlanes(Transform background)
+    {
+        foreach (var layer in background.GetComponentsInChildren<ParallaxLayer>(true))
+        {
+            float budget = layer.name.StartsWith("Far - ") ? OldFarBudget : layer.name.StartsWith("Mid - ") ? OldMidBudget : layer.name.StartsWith("Near - ") ? OldNearBudget : 0f;
+            if (budget <= 0f) continue;
+            layer.climbBudget = budget; layer.verticalRate = 1f; layer.sinkLimit = -1f;
+        }
+    }
+
+    // Usage: -executeMethod MraRegion4K.TuneOldPlanesBatch (only the climb budgets of those planes change; the scenes are saved).
+    public static void TuneOldPlanesBatch()
+    {
+        foreach (var region in new[] { "MR06", "MR07" })
+        {
+            if (Available(region)) continue;
+            var scene = EditorSceneManager.OpenScene(MraWorldBuilder.SceneFolder + Stacks[region].scene + ".unity");
+            foreach (var root in scene.GetRootGameObjects())
+            {
+                var background = root.name == "Background" ? root.transform : root.transform.Find("Background");
+                if (background != null) TuneOldPlanes(background);
+            }
+            EditorSceneManager.MarkSceneDirty(scene);
+            EditorSceneManager.SaveScene(scene);
+        }
+    }
 
     // Opens the region's scene, replaces its background planes with the 4K stack and saves it.
     // Everything else in the scene (terrain, props, other work) is left as it is.

@@ -214,7 +214,8 @@ public static class GameSave
     // ---------------------------------------------------------------- checkpoints
 
     // The checkpoint last touched in `scenePath`, or "" if none.
-    public static string CheckpointIn(string scenePath) => Current.checkpoints.Find(c => c.scene == scenePath || (System.IO.Path.GetFileName(c.scene) == System.IO.Path.GetFileName(scenePath) && RegionalSceneCatalog.ResolveSavedScene(c.scene) == scenePath))?.id ?? "";
+    public static string CheckpointIn(string scenePath) => RegionalSceneCatalog.ResolveSavedCheckpoint(scenePath,
+        Current.checkpoints.Find(c => c.scene == scenePath || (System.IO.Path.GetFileName(c.scene) == System.IO.Path.GetFileName(scenePath) && RegionalSceneCatalog.ResolveSavedScene(c.scene) == scenePath))?.id ?? "");
     public static string LastScene => RegionalSceneCatalog.ResolveSavedScene(Current.lastScene);
     public static void SetCheckpoint(string scenePath, string id)
     {

@@ -1,0 +1,15 @@
+if(EditorApplication.isPlaying)throw new Exception("Stop Play before texture import");
+const string path="Assets/Resources/Terrain/CausewayRepaintTrial/DarkBedrock.png";
+AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
+var imp=(TextureImporter)AssetImporter.GetAtPath(path);
+imp.textureType=TextureImporterType.Default;imp.sRGBTexture=true;imp.alphaSource=TextureImporterAlphaSource.None;
+imp.mipmapEnabled=true;imp.npotScale=TextureImporterNPOTScale.None;imp.maxTextureSize=2048;
+imp.textureCompression=TextureImporterCompression.Uncompressed;imp.isReadable=false;
+imp.wrapModeU=TextureWrapMode.Clamp;imp.wrapModeV=TextureWrapMode.Clamp;imp.filterMode=FilterMode.Bilinear;
+imp.SaveAndReimport();
+AssetDatabase.ImportAsset("Assets/Resources/FX/CausewayTerrainTrial.shader",ImportAssetOptions.ForceSynchronousImport);
+var texture=AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+var shader=Resources.Load<Shader>("FX/CausewayTerrainTrial");
+var report=new{width=texture.width,height=texture.height,worldWidth=texture.width/256f,worldHeight=texture.height/256f,nativePPU=256,requiredPPU=216,minimumSourceWidth=Mathf.CeilToInt(texture.width/256f*216),minimumSourceHeight=Mathf.CeilToInt(texture.height/256f*216),errors=ShaderUtil.GetShaderMessages(shader).Select(m=>m.message).ToArray()};
+System.IO.File.WriteAllText("Tools/Design/CausewayRepaintTrial_20261105/import.json",Newtonsoft.Json.JsonConvert.SerializeObject(report,Newtonsoft.Json.Formatting.Indented));
+return report;

@@ -26,8 +26,8 @@ public sealed class SceneFinder : EditorWindow
     // Underground room groups, in play order: the file's group name, then its heading here.
     static readonly (string group, string title)[] RoomGroups =
     {
-        ("A", "Underground: Route A, the Sluice"), ("C", "Underground: Route C, the Garden"),
-        ("D", "Underground: Route D, the Wind"), ("E", "Underground: Route E, the Wilted"), ("H", "Underground: the Heart"),
+        ("A", "Underground: Route A, the Sluice"), ("C", "Underground: Route B, the Garden"),
+        ("D", "Underground: Route C, the Wind"), ("E", "Underground: Route D, the Wilted"), ("H", "Underground: the Heart"),
         ("MR01", "Underground: caves under the Cradle"), ("MR02", "Underground: caves under the Causeway"),
         ("MR03", "Underground: caves under the Terraces"), ("MR05", "Underground: caves under the Ribwood"),
         ("MR06", "Underground: caves under the Heights"), ("MR07", "Underground: caves under the Summit"),
@@ -262,6 +262,14 @@ public sealed class SceneFinder : EditorWindow
 
     sealed class RoomRow { public string id, group, label, search; }
 
+    // The routes were renamed A, B, C, D on 9 Nov 2026, but room ids in the data still use C, D, E.
+    // Show the new letter; search finds either.
+    static string DisplayId(string id)
+    {
+        if (id.Length < 2 || !char.IsDigit(id[1])) return id;
+        switch (id[0]) { case 'C': return "B" + id.Substring(1); case 'D': return "C" + id.Substring(1); case 'E': return "D" + id.Substring(1); default: return id; }
+    }
+
     // rooms.json is keyed by room id, which JsonUtility can't read: this takes the fields it needs from each room's start.
     static List<RoomRow> Rooms()
     {
@@ -276,7 +284,7 @@ public sealed class SceneFinder : EditorWindow
         var pattern = new System.Text.RegularExpressions.Regex("\"id\":\\s*\"([^\"]+)\",\\s*\"name\":\\s*\"([^\"]*)\",\\s*\"kind\":\\s*\"[^\"]*\",\\s*\"group\":\\s*\"([^\"]*)\"");
         foreach (System.Text.RegularExpressions.Match m in pattern.Matches(File.ReadAllText(RoomsPath)))
         {
-            string id = m.Groups[1].Value, name = m.Groups[2].Value;
+            string id = m.Groups[1].Value, name = m.Groups[2].Value, shown = DisplayId(id);
             creatures.TryGetValue(id, out var inside);
             inside = inside ?? new PlanShape[0];
             // The room's boss on the button; all its creatures in the search.
@@ -284,8 +292,8 @@ public sealed class SceneFinder : EditorWindow
             string bossName = boss == null ? "" : "   [" + (boss.kind == "boss" ? "Guardian: " : "Mini-boss: ") + Plain(boss.design) + "]";
             rows.Add(new RoomRow
             {
-                id = id, group = m.Groups[3].Value, label = $"{id}  {name}{bossName}",
-                search = (id + " " + name + " " + string.Join(" ", inside.Select(s => s.design))).ToLowerInvariant(),
+                id = id, group = m.Groups[3].Value, label = $"{shown}  {name}{bossName}",
+                search = (shown + " " + id + " " + name + " " + string.Join(" ", inside.Select(s => s.design))).ToLowerInvariant(),
             });
         }
         return rows;

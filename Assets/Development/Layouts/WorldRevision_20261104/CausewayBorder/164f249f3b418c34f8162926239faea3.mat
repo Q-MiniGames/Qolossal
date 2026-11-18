@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 164f249f3b418c34f8162926239faea3
+  m_Shader: {fileID: 4800000, guid: f50fd5cf7e8c5804d84a2e5b46f338ea, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Rim:
+        m_Texture: {fileID: 2800000, guid: 3b737daf139eff044b10b4ea1cf997a1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T0:
+        m_Texture: {fileID: 2800000, guid: 5af04900af00a6147a9c702ec1ff9efd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T1:
+        m_Texture: {fileID: 2800000, guid: 2e9c7073e0ce0cf4bbbc3b25f7c550b4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T2:
+        m_Texture: {fileID: 2800000, guid: 94d9c7e095e67c5449f6374a465b62a9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T3:
+        m_Texture: {fileID: 2800000, guid: 19838edb6e967f345844f53affa1fc3d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T4:
+        m_Texture: {fileID: 2800000, guid: 774f245d96b6c814bb23df62861706e8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T5:
+        m_Texture: {fileID: 2800000, guid: f328b9e6ba20bc54180d54039b6be1c0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T6:
+        m_Texture: {fileID: 2800000, guid: 315fda69b95b48643966266c65a3dbb7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T7:
+        m_Texture: {fileID: 2800000, guid: 90eeb908c62d79e41b737a33f59c1afd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors:
+    - _DepthBoost: {r: 1, g: 1, b: 1, a: 1}
+    - _RepeatA: {r: 16, g: 4, b: 4.8984375, a: 4}
+    - _RepeatB: {r: 4.8984375, g: 4.8984375, b: 4.8984375, a: 8}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

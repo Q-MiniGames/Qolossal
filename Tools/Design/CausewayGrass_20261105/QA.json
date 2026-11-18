@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "rockBodyRGBDifference": 0,
+  "caveChecks": [
+    {
+      "mouth": "PC04",
+      "protectedRGBDifference": 0
+    },
+    {
+      "mouth": "PC05",
+      "protectedRGBDifference": 0
+    },
+    {
+      "mouth": "PC06",
+      "protectedRGBDifference": 0
+    },
+    {
+      "mouth": "MR02_C06",
+      "protectedRGBDifference": 0
+    }
+  ],
+  "all13SceneHashesUnchanged": true,
+  "resolution": {
+    "asset": "Assets/Resources/Terrain/CausewayGrass/GrassEdge.png",
+    "native": [
+      2172,
+      724
+    ],
+    "imported": [
+      2172,
+      724
+    ],
+    "worldRepeatLength": 6,
+    "screenPixelsPerUnitAt4K": 216,
+    "minimumPixelsPerUnitOnMaxSlope": 272.2327,
+    "requiredNativeWidth": 1724,
+    "requiredNativeHeight": 575,
+    "native4K": true,
+    "alphaPreserved": true,
+    "acceptedArtModified": false
+  },
+  "play": {
+    "complete": true,
+    "rows": [
+      {
+        "scene": "MRAtlas_MR02_Causeway",
+        "passed": true,
+        "renderedFrames": 120,
+        "frameAdvance": 120,
+        "simulationSeconds": 2.00922871,
+        "feetViewport": 0.150187016,
+        "cameraSize": 5.0,
+        "travel": 10.5709991,
+        "gradedMeshes": 3,
+        "renderOnlyUnitScale": true
+      }
+    ],
+    "errors": [],
+    "normalSavesPreserved": true,
+    "settingsRestored": true
+  },
+  "platform": "Windows Editor; standalone, consoles, physical controllers and hardware performance not tested"
+}

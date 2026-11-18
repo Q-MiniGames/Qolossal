@@ -1,0 +1,127 @@
+--- before/MRAtlas_MR03_Terraces.unity
+
++++ MRAtlas_MR03_Terraces.unity
+
+@@ -1016,7 +1016,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &131709966
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -2582,7 +2582,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &321529342
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -2830,6 +2830,11 @@
+
+   groundedFootViewport: 0.15
+   airborneCentreViewport: 0.55
+   groundVerticalSmoothTime: 0.24
++  downhillProbeDistance: 6
++  downhillMinimumDrop: 0.9
++  maximumDownhillPreview: 0.58
++  manualLookDown: 0.58
++  previewSmoothTime: 0.28
+ --- !u!114 &359189696
+ MonoBehaviour:
+   m_ObjectHideFlags: 0
+@@ -6019,7 +6024,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &692727207
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -6609,7 +6614,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &729093465
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -9262,7 +9267,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &1034568541
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -9353,7 +9358,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &1056333413
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -12818,7 +12823,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &1175792497
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -18997,7 +19002,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &1749881319
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -22038,7 +22043,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &2006670667
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -22129,7 +22134,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &2010755199
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -23014,7 +23019,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &2105805912
+ Transform:
+   m_ObjectHideFlags: 0

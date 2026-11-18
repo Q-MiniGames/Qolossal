@@ -1,3 +1,247 @@
+## Latest update - 16 November 2026: deep review and prompts (read-only)
+
+The user asked for a deep review of mechanics, visuals and feel with a prompt per action. Written: `Tools/Design/QOLOSSAL_DEEP_REVIEW_20261116.md` (9 root problems, findings with file and line, measured tables, a 4-phase action plan, 8 decisions D1-D8) and `Tools/Design/QOLOSSAL_DEEP_REVIEW_PROMPTS_20261116.md` (standing rules, Claude A00-A20, Codex Batches 51-56, Ludo L1-L6). It replaces the same day's shorter `QOLOSSAL_FULL_REVIEW_20261116.md`. Captures: `Tools/Design/PlaySession_20261116/`.
+
+Method: code read line by line, layout and route data measured by script, the jump simulated from the tuning, play in the editor and in `Builds/Polish70` on a copy of the save (`claude_feel_play.json`), response time sampled from the screen. Nothing in the game, scenes or settings changed. Main numbers: jump 2.37 u high and 6.13 u far, double 4.35 u / 11.75 u; response jump 28 ms, attack 16 ms, dash 37 ms; 70 of 77 surface edges are plain walking; all 111 underground ladder steps rise about 3.5 u; water and death both refill hearts; the run clip covers 63% of the ground; Qori and the surface backgrounds measure the same brightness, hue and detail. **No prompt has been run: all wait for the user's decisions.** The `Polish70` development build raises a Windows Firewall prompt on first run (Cancel was pressed).
+
+---
+
+## Latest update - 12 November 2026: r5c unusable; stop tuning the grade stack (Review 117)
+
+r5c's live grade starts at 430% and looks washed-out flat grey with banding. The cause is the stacked preview grade (brightness, contrast pivot, haze, highlight knee and a 0.14-0.22 highlight ceiling, multiplier, legacy clones). The walk-band ratio also misleads where the floor terrain is dark. Recommendation to the user: go back to the r4 shader and light pools, keep r5's placement fixes (buttresses, deck-edge breaks), and add one plain multiply control (F9/F10, 40-100%, F11 saves); QA by the user's eyes plus the geometric sweeps. Asked whether Claude or Codex makes the change (preview code in `Assets/Art/Prototypes/KeepersNursery_Batch50/`).
+
+---
+
+## Latest update - 12 November 2026: r5b presets unusable (Review 116); r5c live brightness control
+
+r5b's Light/Medium/Dark presets all came out nearly the same and too dark (band medians 6.4/5.7/3.9% vs targets 28/20/12%), because a legacy FAR passage backdrop breached the 35% ceiling and Codex lowered everything instead of fixing it locally. The light pools also became flat orange and green discs (poolGain 8). r5c brief: `Tools/ArtRequests/CODEX_PROMPT_BATCH50B_R5C_LIVE_GRADE.md`: fix that backdrop locally; F9/F10 adjust brightness live with an on-screen walk-band readout; F11 saves the user's pick to grade.json; multiplicative pools with no discs. B04 has now had 8 rounds; the user was asked whether to continue or pause Route B art.
+
+---
+
+## Latest update - 12 November 2026: 50b-r5 too dark (Review 115); r5b adds grade presets
+
+r5 fixed the user's two readability cases (no deck-aligned edge, void closed) and added 350-camera grid QA, but overshot: the walk-band background median is 1-4% of the terrain, so the paintings vanish into black. Partly Claude's spec (brightness, contrast and haze compounded). r5b brief: `Tools/ArtRequests/CODEX_PROMPT_BATCH50B_R5B_GRADE_PRESETS.md`: F9 cycles Light/Medium/Dark presets (walk-band median about 28/20/12% of terrain), light pools at least 3x the wall; the user picks one in play and that becomes the integration grade.
+
+---
+
+## Latest update - 11 November 2026: user play test of 50b-r4: "not that good" (Review 114)
+
+In the user's screenshots, the B04 background competes with the terrain: walls as bright and sharp as the floor, a fern-covered masonry wall whose top edge lines up with Qori's deck (the deck reads as part of a stone floor), a dark upper half against a bright lower half, and a black void strip. The four fixed QA cameras and the P99.9 gate missed it. r5 brief (value and placement, no new paintings): `Tools/ArtRequests/CODEX_PROMPT_BATCH50B_R5_OVERGROWN_NURSERY_B04.md`: per-layer grade to about half brightness with a third less contrast, a band-contrast gate (background median at most 35% of the terrain median around walk lines), no background edges within ±1 u of deck heights, blended halves, the void closed, and QA on a 4 u camera grid over the whole slice. Also: SceneFinder now displays routes as A-D (display only, `Assets/Editor/World/SceneFinder.cs`, uncommitted).
+
+---
+
+## Latest update - 11 November 2026: 50b-r4 passes for play (Review 113)
+
+B04 repainted as side elevation: no floors or stairs, cooler grade, trunk split into roots; the all-layer ledge sweep is clean; route plan 255.6/260 MiB. Waiting on the user to play B04 in the preview. Polish candidates (lighting, not repaint): darken the wall 25-35% away from light pools, open a centre recess to show the FAR, accept a lower built share instead of plain brick. Then the 50c brief.
+
+---
+
+## Latest update - 10 November 2026: 50b-r3 reviewed (Review 112): method works, r4 repaints in side elevation
+
+The room-layout method worked: in-game B04 matches the layout and is the richest underground art yet (B04 141.9 MiB; route plan 255.6/260). One cause remains: the vignettes are painted in 3/4 perspective, with floors, stair treads and lit tops at jump height that read as platforms (lower-left paved floor under Qori's deck, centre staircase). Also the grade drifted warm/sepia, and a giant curved bark trunk is a mystery-rule risk. r4 brief: `Tools/ArtRequests/CODEX_PROMPT_BATCH50B_R4_OVERGROWN_NURSERY_B04.md` (repaint layout and the 8 SET_B04_Rock vignettes as flat side elevation, cooler grade, trunk split into roots, all-layer ledge sweep). Codex disclosed that two disposable preview saves were overwritten; no normal save affected.
+
+---
+
+## Latest update - 10 November 2026: 50b-r2b rejected (Review 111); r3 composes B04 from a room layout
+
+r2b's in-game B04 looked nothing like the approved natural concepts: the FAR is a flat pale-grey cliff (P99.9 passed but the median is far too light), there are hard vertical seams, light maps wash walls pink and green, and the walls look assembled from a rock tile plus stickers. Cause: natural rock was tiled instead of composed (no room layout for the rear wall). r3 brief: `Tools/ArtRequests/CODEX_PROMPT_BATCH50B_R3_OVERGROWN_NURSERY_B04.md`: whole-room layout first; up to 8 unique rear-wall vignettes (SET_B04_Rock_01-08) cut from it; rock tile only in very dark areas; FAR median at most 6% of the walk rim; light pools at most 4 u in radius; measured seam check; archive retouch. Route B planning ceiling raised from 222 to 260 MiB (to be measured on Series S and Switch 2 at integration). Unity was left in Play mode by Codex with the Nursery preview.
+
+---
+
+## Latest update - 10 November 2026: 50b-r2a natural concepts approved with conditions (Review 110)
+
+Natural direction approved; B04 upper left is the best frame so far. Conditions for r2b, appended to the r2 brief: no outdoor read (B04 centre showed hazy ridgelines, B01/B02 bright tunnel ends), no scale-like rock texture (mystery rule), mint only at root tips, no parallel roots, natural rock tops near decks sloped >30° or unlit, flowers 0.2-0.4 u. Codex image-generated even its QA images in r2a; r2b checks must be measured from real captures. Awaiting the user's go for r2b.
+
+---
+
+## Latest update - 10 November 2026: underground art turns more natural (user-approved)
+
+The user asked whether the built look (A's waterworks, B's drawer archive) fits the titan lore. Agreed direction: the underground goes from the people's world into the titan's own. Built : natural is A mostly built (kept as is), B about 1 : 2, C traces only, D almost none. The unsent 50b-r2 brief was rewritten: `Tools/ArtRequests/CODEX_PROMPT_BATCH50B_R2_KEEPERS_NURSERY_B04.md`, with r2a concepts first (B04 centre and upper left, revised B route strip, an A-D gradient strip, kit plan), then r2b production (natural rock wall kit, rock buttresses, overgrowth, rock-niche jars, new MID_B04_SeedFall, FAR repaint, re-lit maps). The seed archive stays as B04's single half-buried drawer landmark; the granary tower and drawer banks are retired from B04 (possible reuse in B07).
+
+---
+
+## Latest update - 10 November 2026: Batch 50b-r1 reviewed (Review 109)
+
+B04 now reads as a dressed seed archive (no void, gap or floating slab; 97.7 MiB BC7). Claude Review 109 asks for a narrow 50b-r2: the new FAR has mossy ledge tops at jump height, its drawers/jars are painted larger than the near kit (scale inverted, reads as a near wall), light pools are rectangular columns, drawer grids everywhere, lilac warming to pink near lanterns. Brief: `Tools/ArtRequests/CODEX_PROMPT_BATCH50B_R2_KEEPERS_NURSERY_B04.md` (user play notes on r1 override it). The user was asked to play r1 in the preview first (Qolossal > Art Review > Keepers' Nursery, Visit Nursery in Play, F8).
+
+---
+
+## Latest update - 9 November 2026: Batch 50b reviewed (Review 108): revise
+
+Codex delivered the B04 slice (45 PNGs, BC7 92.7 MiB, preview mode Qolossal > Art Review > Keepers' Nursery). Claude Review 108: the paintings are good (seed archive, granary tower), but the assembled room is mostly bare brick and black: FAR far too dark, wall under-dressed, a vertical void gap, a floating jar slab reading as a ledge, tower shelves aligned with a deck, light maps barely visible. Revision brief: `Tools/ArtRequests/CODEX_PROMPT_BATCH50B_R1_KEEPERS_NURSERY_B04.md` (acceptance: in-game vs approved concept side by side at the four B04 cameras). Codex's automated traversal stalled; treated as a harness issue, not blocking.
+
+---
+
+## Latest update - 9 November 2026: Batch 50a-r1 passed (Review 107)
+
+Route B key frames revised with lilac bloom (`#B9A2E8`). Claude Review 107: pass, direction approved for production. Requirements for 50b/50c: B06 must regain its bloom-court identity (more lilac, fountain-planter MID), B08 gate must be the climax, B03 espalier kept dark and away from moss strips. User said go; 50b brief written: `Tools/ArtRequests/CODEX_PROMPT_BATCH50B_KEEPERS_NURSERY_B04_SLICE.md` (kit core, B04 SET/MID/FAR, passages B03-B04 and B04-B05, B05 lower section, light maps; ~92 MiB BC7 no mips; prototype folder `Assets/Art/Prototypes/KeepersNursery_Batch50/`; no scene edits). 50c brief follows after 50b review and play.
+
+---
+
+## Latest update - 9 November 2026: Batch 50a reviewed (Review 106)
+
+Codex delivered 50a (Route B key frames) in `Codex_v2_full/Batch50/`. Claude Review 106: direction works (enclosed, dark, value gate passes), but needs a targeted 50a-r1 before 50b. Main finding: the bloom rose `#E88AA6` is the same colour as enemy E-15's warning tell, so the bloom hue must change (lilac `#B9A2E8` chosen; Codex's hue gate found only a Root Matron death-halo overlap, which Claude accepted as not a tell, with lilac kept off B08's fight floor band; r1 brief has the decision appended). Other fixes: no terracotta/rose on large surfaces, B04 jars read as funerary urns, flower centres read as eyes, B06 lit stone tops in the swing path, B01 lacks garden identity. Draft r1 brief: `Tools/ArtRequests/CODEX_PROMPT_BATCH50A_R1_KEEPERS_NURSERY.md` (assumes lilac). Budget 222 MiB BC7 no mips accepted as ceiling.
+
+---
+
+## Latest update - 9 November 2026: routes renamed A-D; Batch 50a brief for Route B (Garden)
+
+The user renamed the underground routes to **A, B, C, D**: old C (Garden) = B, old D (Wind) = C, old E (Descent) = D. Design docs use the new letters (`UNDERGROUND_PLATFORMING_PLAN.md` has the lookup note). **Internal IDs in code, the scene, JSON data and art folders still say C/D/E**; renaming them is a separate refactor for when no other thread owns the scene (room IDs feed `CavePassageConnections.json`, `terrain_build_v2.json`, the atlas, ability-access data and creature/dressing files).
+
+The user agreed the Route B art direction, "The Keepers' Nursery" (an overgrown Keeper seed garden, enclosed; amber lanterns, shared mint wayfinding, new rose bloom-light; strict no-rib rule). Brief: `Tools/ArtRequests/CODEX_PROMPT_BATCH50_KEEPERS_NURSERY_ROUTE_B.md`, stage 50a only (key frames B01/B04/B06, route strip, palette, checks, texture budget), then stop. 50b/50c file lists come in a follow-up brief after the key frames are approved. Route B imports with mipmaps off and BC7 from the start. Not sent to Codex by Claude; nothing committed.
+
+---
+
+## Latest update - 9 November 2026: Route A Keepers' Cistern backgrounds are in the game
+
+On the user's "go", Claude installed the approved Batch 49 art (Reviews 97-105) into `Qolossal_Underground`: one new root object, `Route A Backdrop - Keepers' Cistern` (`KeepersCisternBackdrop`, runtime port of the Editor preview, 515 pieces), with the art in `Assets/Art/Underground/Backgrounds/KeepersCistern/`. Switch: `Qolossal > Backgrounds > Route A Keepers' Cistern > Use new art / Use old art`; the old cave art is untouched underneath. Scene backup and receipts are in `Tools/Design/KeepersCistern_Integration_20261109/` (README.md). **Found:** Unity 6.3 imports NPOT textures with mipmaps as RGBA32, even with a BC7 override. Route A paintings now have mips off and are BC7 (206.7 MiB, down from 1,092). The accepted 4K surface backgrounds have the same problem and need their own pass. Not play-tested by Claude, no player build, no console tests. Not committed.
+
+---
+
+## Latest update - 9 November 2026: Keepers' Cistern 49d-r1 targeted revision
+
+The user authorized 49d-r1 and supplied Claude Review 104. Only A02/A03 were revised in the isolated preview: A02's long spout lip is broken into uneven water-cut remnants, its residual shallow sill has a native notch, and an irregular authored alpha contour removes the painting's bottom cutoff. The pool's three brackets are repainted away and its background canvas moved down 1.5 u below the lowest real deck. Redundant A02 inner column/shadow strips and the A03 x1520 pier/shadow overlay are removed, exposing continuous masonry. No other rooms, passages, shaders, room lighting, terrain, gameplay or cameras changed.
+
+Delivery root: `C:/Users/Qasim/OneDrive/Documents/ChatGPT/Qolossal/Art/Codex_v2_full/Batch49/`. See `REVIEW_HANDOFF_49d-r1.md`, `QA_INDEX_49d-r1.html`, `B49d-r1_OVERVIEW.jpg`, `MANIFEST_49d-r1.json`; drawings, prompts, eight native generations, masks and exact assembly are in `sources/49d-r1/`. Two revised resources retain 216 native px/u: spout 3456×2592, pool 3456×1728. Independent reconstruction is byte-exact; no RGB upscaling.
+
+Exactly four requested cameras (A02 top/middle/bottom and A03) have native 3840×2160 colour/background captures and half-size greyscales. Value gate passes at P99.9 14.30–26.18% of walk-line luminance; largest bright patch 7 px / 0.000150 u². Strict preservation passes without exceptions: 1351 accepted files, canonical manifest, 13 scenes, 21 normal saves and 6073 prior delivery files (including all 1245 old 49d files) unchanged. Three authorized prototype C# changes, all 45 active resource copies exact.
+
+**Stopped for Claude review/integration as requested.** Unity is in Edit mode, scene clean, preview enabled, normal save routing restored. No new Play traversal, scene integration, accepted-manifest update, commit or push. The two revised textures still report Editor RGBA32 despite configured Standalone BC7; Claude owns the development-player memory investigation and integration switch. Windows player, PS5, Xbox Series X/Series S and Switch 2 handheld/docked remain not tested. No 60 FPS/readiness claim.
+
+---
+
+## Latest update - 9 November 2026: Keepers' Cistern 49d readability polish
+
+The user authorized “Do 49d” after Review 103. The isolated preview now includes darker, broken background ledges and furniture; A07’s painted jar shelf moved clear of the unchanged collectible; continuous A02/A03 wall shading; repaired native A06 arch; dark A08 roots with mint restricted to gate joints. All twelve passages were audited. Ceiling pipes are tucked above the ceiling, shaft-rib tops repainted, and the shared A04/A05/A06 basin coping subdued. No terrain, collision, camera, progression, map or timed-spill VFX changes. **49d is a review/play candidate, not production integration or canonical accepted art. Claude owns integration behind a switch and player profiling.**
+
+Delivery: `C:/Users/Qasim/OneDrive/Documents/ChatGPT/Qolossal/Art/Codex_v2_full/Batch49/REVIEW_HANDOFF_49d.md`, `QA_INDEX_49d.html`, `QA_SHEET_49d.md`, `MANIFEST_49d.json`, mobile-friendly `B49d_OVERVIEW.jpg`. Native drawings, prompts, generations, masks and assembly ledgers are in `sources/49d/`. Sixteen revised resource PNGs: fourteen art tiles at 216 px/u and two shared light maps at 16 px/u. Ten source families reconstruct byte-exactly from 51 contributing native edits; no RGB upscaling. Fifty-four distinct raw generations are retained, including three superseded beam attempts.
+
+Final evidence: 59 native 3840×2160 camera positions, 210 colour captures, 59 half-size greyscales, all 23 measured value views pass (P99.9 13.8–61.6% of walk-line reference; largest bright patch 0.02523 u²). A04 median0.020844 remains above A03 median0.013093. Advancing Play: 116 actions, 62 captured positions, 4310 observed frames, eight room navigation checks, 36 explicit teleported passage probes, actual A03–A04 walk and A04/A06 glides; zero captured errors. This is an Editor smoke check, not an uninterrupted traversal or hardware test.
+
+Preservation: all 1351 accepted files, canonical manifest, 13 scenes and 21 normal saves byte-identical; four authorized preview code/shader changes. **One disclosed historical-QA exception:** stopping the prior preview automatically rewrote `QA_49c/terrain_contact_edges.json` before output routing changed. Original bytes were unavailable; the baseline and before/after hashes remain intact. Strict all-files preservation is false for that receipt; source art/scenes/saves are unchanged. See `sources/49d/preservation_after.json`. No commit/push or accepted-manifest update.
+
+Preview uses `sources/49d/preview_save.json`; stopping restores normal routing. F6 returns to A04 east, F7 cycles A01–A08, F8 compares near layers. See `QA_49d/ready_preview.json` for the final launch state. Current bounded Editor texture reading: 25 listed art textures RGBA32,1273.01477 MiB; 20 light maps BC7,5.56152 MiB. This excludes older unchanged kit and is not total residency. The RGBA32/player compression issue remains for Claude. Windows development-player, PS5, Xbox Series X/Series S and Switch 2 handheld/docked testing remain pending; no60FPS/readiness claim. Original Switch excluded. Next free Claude review number checked:104; Codex did not write a Claude review.
+
+---
+
+## Latest update - 9 November 2026: Keepers' Cistern 49c ready for review and play test
+
+The user authorized “49c start” after Review 102. All main A01–A08 rooms and twelve actual passage rectangles now have the Keepers' Cistern preview treatment. Review 102's hatch continuation, pier-edge and A05 weir/recess corrections are included. New native art covers the inlet/light-well, aqueduct spout, drain winch, plunge pool, spill head, two beam engines, flywheel, distant engine hall, Keeper quarters and Great Sluice. A09/A10/Heart interiors and existing timed-spill gameplay VFX remain unchanged. **49c is a review candidate. Stop for Claude review and the user's play verdict; do not mark it accepted.**
+
+Delivery root: `C:/Users/Qasim/OneDrive/Documents/ChatGPT/Qolossal/Art/Codex_v2_full/Batch49/`. Read `REVIEW_HANDOFF_49c.md`, `QA_SHEET_49c.md`, `MANIFEST_49c.json`, `QA_INDEX_49c.html`; mobile-friendly overview: `B49c_OVERVIEW.jpg`. All drawings, prompts, raw generations, layouts, masks and section registrations are in `sources/49c/`. There are 24 art PNGs at 216 native px/u and 20 shared room/passage light maps at 16 px/u. No delivered texture side exceeds 4096 px; larger native masters are exact tiles, with no RGB enlargement. A05 water was repainted natively and its upper recess received coherent shared shade across the room/passage boundary.
+
+Final evidence: 59 camera positions, 210 colour stills, 59 half-size greyscales. All 23 measured value views pass (P99.9 13.7–69.0% of the walk line; largest bright patch 0.02523 u²). `QA_49c/PlayFinal/` contains the complete-art 116-action / 62-position run, 4981 distinct advancing frames, real A03–A04 walk and A04/A06 glides, no captured errors. It predates the final local A05 revision; `PlayA05FinalLight/` is the final focused follow-up (7 actions, 4 positions, 652 advancing frames, no errors). Passage probes use teleport and are not a complete uninterrupted route traversal. Earlier `Play/` evidence is provisional. Independent visual findings and final resolutions are retained under `QA_49c/GatesQuarters/`.
+
+Preserved: all 1351 accepted files, canonical manifest, 13 scenes, 1071 prior-delivery files and 21 normal saves. Four authorized existing prototype code/shader changes and new route helpers/resources are confined to `Assets/Art/Prototypes/KeepersCistern_Batch49/`. No terrain, collider, camera, progression or map-layout changes; no commit/push. Preview saves use `sources/49c/preview_save.json`; stopping Play restores normal routing. F6 returns to A04 east, F7 cycles eight rooms, F8 compares rear/FG while retaining MID/FAR.
+
+**Memory follow-up:** loaded Editor art is RGBA32, measured 1270.39094 MiB for the 24 new textures despite saved BC7 overrides; 20 light maps are BC7 at 5.56152 MiB. The source projection of 156.5474 MiB BC7+mips is not an achieved player result. Investigate and measure a Windows development player before production acceptance. Performance/60 FPS, PS5, Xbox Series X, **Xbox Series S**, **Switch 2 handheld and docked** remain not tested. Original Switch excluded. Next free review number checked: 103; Codex did not write a Claude review.
+
+---
+
+## Latest update - 8 November 2026: Keepers' Cistern 49b-r3 unify pass awaits review
+
+Claude Review 101 is implemented in the isolated A03/A04/A05 preview. Repainted vault, masonry and niche surrounds share teal-slate limestone. Five 16 px/u baked linear light maps cross rear/FG/MID piece boundaries; FAR stays painted. Softened cast shadows replace black seam cores. A04 niches now fit wholly on masonry supports. A05 has a recessed masonry bay, native arch, projecting piers and the nearer weir. Approved movement, terrain, cameras and scene geometry are unchanged. **49c has not started. Stop for Claude review and the user's play verdict.**
+
+Delivery: `C:/Users/Qasim/OneDrive/Documents/ChatGPT/Qolossal/Art/Codex_v2_full/Batch49/REVIEW_HANDOFF_49b-r3.md`, `QA_INDEX_49b-r3.html`, `MANIFEST_49b-r3.json`, `49b-r3/`, `QA_49b-r3/`. All native drawings/prompts/generations/masks: `sources/49b-r3/`. Evidence includes 37 Editor frames, 64 advancing Play frames, ten shared-light controls, all eight cameras at 50% greyscale and four native r2/r3 comparisons. Final live test: five true glide samples, 2369 advancing samples, zero captured errors. An undeclared shader property read was found and fixed before that final run; failed-run receipt retained.
+
+1351 accepted files, 13 scenes and canonical manifest remain unchanged. All 21 current save files are byte-identical. Historical 49b save differences remain documented; do not restore old saves. Preview uses `sources/49b-r3/preview_save.json`; stopping restores normal routing. Unity is left playing at A04's east approach: F6 returns there, walk left and glide, F8 toggles near layers. Prototype changes only under `Assets/Art/Prototypes/KeepersCistern_Batch49/`; no production acceptance or integration claim; not committed. 216 native px/u art; light data 16 px/u. Texture memory projection 126.59 MiB, not a player measurement. Windows player and PS5/Xbox Series X/Series S/Switch 2 handheld/docked hardware validation remain not tested.
+
+---
+
+## Latest update - 8 November 2026: Keepers' Cistern 49b-r2 depth pass awaits review
+
+The user's post-Review-100 depth brief is implemented in the isolated A03/A04/A05 preview. Native tall teal piers have darker return faces and silhouette shadows; actual Ground collider contours cast 0.6u contact shadows; the A04 basin has a painted coping, submerged courses, wet bands and broken pier reflections. False horizontal crawl roots were removed, A03's curled arch foot buried, and the gauge cap lowered away from the moving platform. Layer motion and gameplay geometry are unchanged. 49c has **not** started; stop for Claude review and the user's play verdict.
+
+Delivery and review: `C:/Users/Qasim/OneDrive/Documents/ChatGPT/Qolossal/Art/Codex_v2_full/Batch49/REVIEW_HANDOFF_49b-r2.md`, `QA_INDEX_49b-r2.html`, `49b-r2/`, and `QA_49b-r2/`. Includes 37 Editor frames, 64 advancing Play frames, 15 controlled depth comparisons, four native before/after join crops and all-camera greyscale. Five brightness views and eight sampled pier boundaries pass. Five actual glide samples pass with zero captured errors. All 1351 currently accepted source files, 13 scenes and the accepted manifest remain unchanged. Memory is a projection only; player and console hardware tests remain unperformed.
+
+Unity is left in the prototype preview: F6 visits A04's east approach; walk left and glide; F8 toggles near layers. Assets/code changes are confined to `Assets/Art/Prototypes/KeepersCistern_Batch49/`. Save routing now explicitly survives domain reload and is verified in every final Play sample; it uses `Batch49/sources/49b-r2/preview_save.json`, and normal routing restores on stopping Play. All currently present saves hashed before testing remain byte-identical. Historical 49b save comparisons include two pre-existing differences, documented in the review handoff; do not restore the user's newer normal save to that old snapshot. No acceptance or production-integration claim; not committed.
+
+---
+
+## Latest update - 7 November 2026: Route A cave backgrounds, new theme briefed to Codex
+
+Claude Review 97 (`Tools/IncomingArt/Codex_v2/CLAUDE_REVIEW_97.md`) found Codex's CisternNetwork_20261107 trial reads as an outdoor lake valley, with no near layer, flat tiled passage stone, the A03 vault seam and glide ghosting. The user asked for a better theme. The new theme is **The Keepers' Cistern**: an enclosed, vaulted Keeper waterworks reclaimed by mint roots that lead toward the Heart, lit by daylight (A01 only), amber lanterns and mint glow. The brief is `Tools/ArtRequests/CODEX_PROMPT_BATCH49_KEEPERS_CISTERN_ROUTE_A.md`: stages 49a (key frames), 49b (the A04 slice in the Editor preview, F8 = rear-wall kit on/off) and 49c (the rest of A01-A08), with exact px sizes at 216 px/u. Layer motion: FG 110/105, rear wall 100/100, MID 88/94, FAR 50/60 (A04 and A06 only). Projected memory is about 280 MiB BC7+mips for the whole route at full size and about 70 MiB with mip limit 1. The user sends the brief to Codex. Nothing in the game has changed; not committed.
+
+---
+
+## Latest update - 3 November 2026: minimap exits show their passage; ambient freeze fixed
+
+The user asked for every exit to show the beginning of its passage, not only an opening. `CaveMinimap.AddDoor` gives each door the real walls up to 8 u outside it (a long passage wall used to belong whole to one room, leaving the other a bare gap), plus a little floor. An unexplored door now colours those walls amber instead of a tick across the opening. `OpenExit` opens the end of each cave exit's pocket and runs its floor and roof on 6 u; those 37 stubs are drawn, not real geometry. `CaveMinimapCheck`: 31 passed, 0 failed, 0 runtime errors (shortest door stub 15.6 u of wall). Not played.
+
+**Game freeze fixed:** `AmbientLife.Due` is the test of several `while` loops and added its amount on every test, so one long frame (amount 1 or more) looped forever and hung Unity. It hung the check after the Chart closed. `Due` now adds at most 0.5 per test. `AmbientLifeCheck` not rerun.
+
+Stray walls fixed after that: `CaveDiscovery.ContourOwners` now gives a passage wall to the nearer of the two rooms its line runs into, not to whichever room it passes closest to. A prototype over all rooms found 6 with floating walls (A07, C05, D06, D07, E08, MR05_C05), then none, with no wall lost. The Chart shares this. `CaveMinimapCheck` gained "no room owns a floating wall". **Compiled outside Unity only, because the user had the editor open; the check needs a rerun.** Not committed.
+
+---
+
+## Latest update - 3 November 2026: Codex's Heights art rejected and removed
+
+The user rejected Batch 38 as very bad: art comes before vertical parallax, and **the long columns style is not acceptable any more**. Scene restored from Codex's backup; the art is in `Codex_v2_full\Batch38\removed_from_assets`, so `MraRegion4K.Available("MR06")` is false. Heights and Summit keep their old paintings with gentle movement (`TuneOldPlanes`: Far sinks 3 u, Summit Mid 3.5 u, Near 4 u; only budgets differ from the commit). `ClimbCapture`: 0 faults, with the Near-speed WARN in both regions expected. Prompts 38 and 39 are ON HOLD and the revision WITHDRAWN: don't send them. Open: does no long columns also apply to the finished regions (Causeway pillars, Cradle and Terraces spires, Ribwood trunks)? This replaces the WS7 lines below about Heights, Summit and their prompts. Not committed.
+
+---
+
+## Latest update - 3 November 2026: everything is back on C:
+
+The user freed C: (458 GB free). **Builds go to `Builds\` in the project again**; the `Library/PlayerDataCache` junction is gone, the cache a normal folder; Codex's Batch 38 delivery is in `Codex_v2_full\Batch38` with the other batches. Nothing of the project is left on E:.
+
+---
+
+## Latest update - 3 November 2026: residents get Ludo idles
+
+The user asked for Ludo animation on Qvale's residents, keeping their art. 8 clips (72 credits, 691 left). `Tools/ArtRequests/LudoRun/assemble_town_figures.py` draws each jointed figure into one image from the scene's joints; `assemble_scribble.py` joins Scribble's parts at their sockets, because the scene leaves them apart (floating head, one leg). That three-legged Scribble is my reading of the parts and awaits the user's verdict. `sheets_residents.py Rig=<hash>` fetches, `export_residents.py` cuts every second frame to `Assets/Art/Ludo/Residents/<Rig>` at 216 px/u with the feet at bottom centre (about 13 MB compressed in all, by arithmetic). **`Qolossal > FX > Build Ambient Kit` makes `Resources/LudoFrames/Residents/<Rig>.asset`**; `ResidentFigures` (Scripts/Town) then hides the parts of any `Figure <Rig>` and plays the frames at 8 per second, so a rig without an asset keeps its parts. Wick's clip turns head-on for a moment. Compile-checked with csc only; never run in Unity. Ludo tip: `performance` resource timings fill up, so call `performance.clearResourceTimings()` before reading a new sheet's URL.
+
+---
+
+## Latest update - 3 November 2026: Qvale interiors coming back; more Ludo assets
+
+**Qvale homes:** the user asked for the interiors back. `mra_world.json` marks C02-C06 `house-instance` with their own scenes again, and `RegionalSceneCatalog.Interiors` adds them to `BuildPaths`. **Not applied yet:** run `Qolossal > Qvale > Restore House Interiors` (`MraWorldBuilder.RestoreQvaleHouses`), which builds the rooms in `Assets/Scenes/Game`, adds `MraChamberDoor` to the street doors, removes the five residents at the street scene's root and sets the build list. Until then the data and the scenes disagree. Then run `QvaleHousesCheck.Run` (`-saveFile houses_check.json -captureDir <dir>`, no `-quit`). `export_runtime.py` asserts scene hashes, so re-export if it complains about Qvale. Inside a home `AmbientLife` uses its Indoors profile.
+
+**Ludo small assets (29 credits, 763 left):** `Tools/ArtRequests/LudoRun/sheets_ambient.py` then `export_ambient.py` write `Assets/Art/Ludo/{Bird,Splash,Butterfly}`; **run `Qolossal > FX > Build Ambient Kit` to load them**. The sparrow clip gives far birds and sparrows sitting by plants that fly off within 3.6 u of Qori, dropping their twig; the splash loops at the foot of falls and spills, showing only while a timed spill runs; the butterfly is a Ludo still flapped in code, because its clip barely moved. These replace the code-drawn shapes, so without the kit build there are no birds or butterflies. Shrine flame dropped: the art is a glowing leaf, and the code glow suits it. Ludo facts: mp4s have the checkerboard baked in; take the transparent 6x6 sheet by opening the card's menu, Download Sprite Sheet, then reading its URL from the page's resources.
+
+All compile-checked with csc; **none of it has run in Unity**. `AmbientLifeCheck` is owed too. Uncommitted.
+
+---
+
+## Latest update - 3 November 2026: Ludo forge fire kept
+
+The user kept the Ludo forge fire: 18 frames with a cross-fade seam in `Assets/Art/Ludo/ForgeFire`, cut by `Tools/ArtRequests/LudoRun/export_forge.py` from one clip (9 credits, 792 left), masked to the hearth mouth, loaded through `AmbientKitBuilder.Build`. `AmbientLife.UpdateForgeFire` shows it only while Brannick is home (flag `mra:MR02_C01:reward`). The user rejected forward-and-backward playback because the flames run downward. Compile-checked with csc; the final version, with the Brannick gate, hasn't run in Unity. **Rerun `AmbientLifeCheck` when Unity is free**: it is owed since the minimap thread changed `AmbientLife.Due` and has not covered the fire. Uncommitted.
+
+---
+
+## Latest update - 3 November 2026: ambient life, first pass (WS5)
+
+`Assets/Scripts/Environment/AmbientLife.cs` starts itself in every scene with an `MraSession`. No scene edits, no art bytes changed, no colliders added; it only reads physics. Uncommitted, and nobody has played it. It finds art by sprite name and swaps materials in memory: plants sway and part around Qori, water and falls run, shrine flames and Qvale lamps flicker (forge embers only once the smith is home), 76 thorns creep, shiver near Qori and spark on touch, 19 gust lanes get streaks from their real tell and pulse, blowing toward their shelter. Pooled particles add dust, leaves, mist, shafts, drips with ripples, fireflies. Butterflies and far birds are procedural stand-ins awaiting the user's verdict. Strengths live in the `Regions` table and `CaveOf`; no mint in those colours. Tiers 0, 1 and 2 are starting values, unmeasured on any console.
+
+Shaders: `Resources/FX/Ambient{Sway,Water,Caustic,Halo,Particle}.shader`. Art refs: `Resources/FX/AmbientKit.asset` (`AmbientKitBuilder.Build`). Census: `AmbientCensus.Run`, saved in `Tools/Design/PolishGates/70/ambient/census`. Check: `-executeMethod AmbientLifeCheck.Run -saveFile ambient_check.json -captureDir <dir> [-mraOnly Underground]` (no `-quit`, exits 1 on failure): all 8 scenes, 0 failures, 0 runtime errors, colliders unchanged, peak 58 of 245 particles, script under 0.05 ms a frame in the editor. That proves it runs, not feel, draw cost or console performance. **The user's test list and what isn't built:** `Tools/Design/PolishGates/70/ambient/AMBIENT_TEST_LIST.md`. The plan's WS5 gate also asks for the user to approve a target list per region, which they haven't yet.
+
+---
+
+## Latest update - 3 November 2026: backgrounds and parallax (WS7)
+
+`ClimbCapture` (`Assets/Editor/World/`): `-executeMethod ClimbCapture.Run -climbTag <tag> -captureDir Tools/Design/PolishGates/70/climb [-mraOnly MR05]` (no `-quit`), one sheet per region plus numbers per plane; exits 1 on an uncovered frame or a cut plane edge. `before/` and `after/` are saved, 0 faults both. **Rerun it after any background change.**
+
+Caves have a depth layer: `CaveDepth`, started by `RegionalUnderground`, no scene edits. It swaps the 253 builder backdrops to `Resources/FX/CaveDepthBackdrop.shader`, tiled from world position and shifted with the camera. Far and passages copy 0.3 of its motion, near 0.12; boxes unchanged, so no holes. It finds backdrops by the names `UGP backdrop_far`, `UGP backdrop_near`, `UGP passage backdrop`: keep those in the builder. Check: `-executeMethod CaveDepthCheck.Run -saveFile cavedepth_check.json -captureDir Tools/Design/PolishGates/70/cavedepth` (no `-quit`); speeds measured from renders in 24 rooms, 267 places without a hole, 0 failures.
+
+Heights and Summit: old planes tuned for vertical parallax in the scenes and the builder (`MraRegion4K.TuneOldPlanes`): Far 2% and Mid 3.5% of terrain speed, as in the 4K regions; Near 8%, too short for more, gone by about 30% of the climb, so `ClimbCapture` warns on purpose until the new art. It measures vertical speed per plane and fails if a nearer plane is slower; `CaveDepthCheck` measures both axes. `MraRegion4K` has slots and menus for MR06 and MR07 that switch on when the files arrive; the Heights' Mid skyline is at 40%. Prompts 38 and 39 are rewritten so Codex owns the job end to end (paint, install, tune, check, repair) with no Claude review; NOT sent. **Descent background dropped by the user**: Batch 40 prompt deleted. Ribwood needed no change on the numbers. `ParallaxLayer.Refresh` reuses arrays and skips unchanged meshes (PERF-01); frames match in untuned regions, allocation not measurable in batch mode. Own skies wait on the art. Nobody has played any of this; try list at the end of `MORNING_TEST_LIST.md`. Not committed.
+
+---
+
+## Latest update - 3 November 2026: cave minimap (WS4)
+
+`Assets/Scripts/World/Atlas/CaveMinimap.cs`, started by `RegionalUnderground`, no scene edits. Top right in `Qolossal_Underground`, below the Amber count: walls, floors, platforms, grilles, shut gates and seals (live), unexplored door ticks, rests (the active one bigger), exits, untaken rewards, live guardians, Qori. Drawn in world units in one mesh that only rebuilds on a change. Tab or right-stick click steps small, medium, large, off (PlayerPrefs). Hidden in windows, pause and cutscenes. Reveal on entry uses the existing `regional:room:<id>` flags, so old saves keep what they found. `CaveDiscovery` is shared: **the Chart now hides undiscovered underground rooms, tunnels and cave mouths** (it used to show them all); a surface mouth shows once its `mra:<id>:discovered` flag is set. Route E stays off both maps until the reveal, and doors into it aren't marked. Rooms have no names on it.
+
+Fixed on the way: `RegionalUnderground` read an old layout file, so PC11, PC12 and MR06_C01 never revealed or set their region; it now takes rects from the scene's rooms. `AtlasData.json` was stale by the 27 shelf conversions; `update_map.py` rerun, and it now also writes `caveDoors` and each runtime contour's `mappingId` and `kind`. **Rerun `update_map.py`, then the check, after any room, door or platform change.**
+
+Check: `-executeMethod CaveMinimapCheck.Run -saveFile cavemap_check.json -captureDir Tools/Design/PolishGates/70/minimap` (no `-quit`, exits 1 on failure). 29 passed, 0 failed, 0 runtime errors: bounds, 126 door ends, 445 pieces both ways, 2,196 wall points, reveal in all 89 rooms, Chart agrees, marks follow the save, pad and keyboard. Logic and captures only; nobody has played it. Not on a console or at 4K. Try list: end of `Tools/Design/PolishGates/70/MORNING_TEST_LIST.md`. Not committed.
+
+---
+
+## Latest update - 3 November 2026: gate 70% overnight work
+
+The user said to go on without their in-game trials, and tries it all later: `Tools/Design/PolishGates/70/MORNING_TEST_LIST.md`. Done and script-checked (`Polish70Check.Run`, 0 failures; logic, not feel): staff swings hit along the drawn staff (`QoriFrameHitShapes`, `QoriWalkFramesOnPlayer.TryStaffLine`; rows must be re-marked if a clip is redrawn); hurt flash and stand-in hurt pose on the frames; death beat (`PlayerHealth.DeathBeat`); `runPace` 1.28; turn hold; F9 hit overlay and F10 danger zones (`CombatDebugOverlay`, `AttackZoneTelegraph`). Frames now pack into atlases: `QoriFrameAtlasBuilder.Build` / `BuildCreatures`; **rerun them after adding or changing frames, and new frames must import Tight**. Underground textures 4,612 to 1,683 MiB, worst frame 19.4 s to 64 ms, build 7.3 to 4.6 GB (Windows 4K only; `MemoryBaseline` with `-memoryBaseline <file>`). Ribwood 4K stack swapped in, parallax untuned. Build at `Builds/Polish70`; `Library/PlayerDataCache` is a normal folder again. Not committed: about 3,000 `.png.meta` changes plus code.
+
+---
+
 ## Latest update - 3 November 2026: underground passages have backdrops
 
 `platforming_v1.json` now has `passages`: one box per door link, from `passages()` in `layouts.py`. The builder gives each a far backdrop (order -105), and one sheet per set (order -110, caves -108) fills the cave approaches and returns that no door link describes. Terrain and room backdrops draw over them. Scene rebuilt: `CheckBatch` 89 rooms, 0 problems; 881 colliders unchanged; `UndergroundFightAreaCheck` 36 creatures, 0 fail. Committed.
@@ -13,6 +257,8 @@
 ---
 
 ## Latest update - 3 November 2026: ability access map and checker (WS3, desk stage)
+
+**Later the same day, this replaces the numbers below:** checker now 0 errors, 59 warnings. PC04 was a false alarm: its door, arrival and return are all in the scenes, `extract_rooms.py` missed them because of the apostrophe in the name (fixed), and `-mraPc04Only` passes 6 of 6. The Heights gate is corrected to E10 in `mra_world.json` and `AtlasData.json`, and 5 retired chamber prerequisites are cleared. The engine test (`MraPlayTest.Run -mraGorgeOnly`) confirms the Glidecap skip at 18 u: double jump alone reaches 20.8 u, with an air dash 23.7 u. **Not done:** widening to 28 u, because this session's permissions refused the scene edit. To do it, with Unity closed: `MraGorgeWiden.Run`, then `Tools/Design/AbilityAccess/gorge_data_28.py`, then the build, check and `-mraGorgeOnly`. D4's required Bloomfall and Wind Leaf beats also need scene edits and are not started. Not committed.
 
 `Tools/Design/AbilityAccess/`: `build_access.py` writes `ABILITY_ACCESS.json` (relics, 37 doors, 89 rooms, surface edges) from the scenes, route, atlas and layouts; `check_access.py` writes `ACCESS_REPORT.md` and exits 1 on errors. No Unity, nothing in the game changed, `layouts.py` untouched. Now 2 errors (PC04 has no way in; atlas and `mra_world` put the Heights glide gate on MR06_E06, the route and scene on E10) and 65 warnings. Corrects the plan: Waymark travel already exists (`MraChart.TryTravel`). New: a sprinting double jump should clear the 18 u glide gorge without the Glidecap (carries 20.6 u); not yet tried in the engine. Room results ignore interior walls and enemies, so the grey and "key, not a skill test" lists need a Unity pass. Not committed.
 

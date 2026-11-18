@@ -36,6 +36,7 @@ public static class QoriArmoryFactory
                 move.animation=Copy(move.animation,owned);move.followUps=new AttackDefinition[0];
                 // Phases, damage, knockback and impact feedback come from WeaponTuning (ApplyTuning, below).
                 move.bladeRadius=i==2?.24f:i==4?.14f:.10f;move.bladeStart=i==3?.6f:i==2||i==4?.7f:.15f;   // the staff hits with its leaf blade
+                if(ids[n]==StaffId){move.bladeRadius=.17f;move.bladeStart=.3f;}   // along the drawn staff (QoriFrameHitShapes): the leaf is about .35 u wide
                 var p=move.animation;p.oneHanded=i==0||a!=0;p.straightTrail=i==3||a!=0;p.sweepThroughActive=!p.straightTrail;
                 if(a==0)
                 {

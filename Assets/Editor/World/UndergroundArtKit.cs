@@ -110,8 +110,9 @@ public static class UndergroundArtKit
         go.transform.position = new Vector3(rect.center.x, rect.center.y, 0f);
         var art = go.AddComponent<SpriteRenderer>();
         art.sprite = sprite; art.sortingOrder = order;
-        art.drawMode = SpriteDrawMode.Tiled; art.tileMode = SpriteTileMode.Continuous;
-        art.size = rect.size;
+        art.drawMode = SpriteDrawMode.Simple;
+        art.transform.localScale = new Vector3(rect.width / sprite.bounds.size.x, rect.height / sprite.bounds.size.y, 1f);
+        WorldRefreshUnderground.ConfigureRockField(art,.3f);
     }
 
     // Backdrop layers and the room's own props, all without colliders, under `parent` so a rebuild replaces them.

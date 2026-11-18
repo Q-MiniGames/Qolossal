@@ -1,3 +1,5 @@
+NOTE, 3 November 2026: this general prompt is finished with. The Descent's background is dropped, and MR06 and MR07 have their own full prompts (CODEX_PROMPT_BATCH38_HEIGHTS_4K.md, CODEX_PROMPT_BATCH39_SUMMIT_4K.md). Don't use this one for them.
+
 # Codex prompt: native 4K backgrounds for every region (Batches 34-40, one region per batch)
 
 Written 19 Oct 2026 for the user's ask: "give me a prompt for codex to start working on the 4k background for each map. no mistakes, foolproof." The method is the one that passed for the Terraces (Batch 28d, Claude Review 86), which is now in the game and was approved in play ("ok now").
@@ -12,7 +14,6 @@ Written 19 Oct 2026 for the user's ask: "give me a prompt for codex to start wor
 | 37 | `REGION: MR05 (Batch 37)` | The Ribwood |
 | 38 | `REGION: MR06 (Batch 38)` | The Windward Heights |
 | 39 | `REGION: MR07 (Batch 39)` | The Summit |
-| 40 | `REGION: MR08 (Batch 40)` | The Descent |
 
 Batches 30-33 are reserved for underground art; 34-40 were free on 19 Oct (re-check before sending). The Terraces (MR03) is done.
 
@@ -62,7 +63,6 @@ The game's frame is 3840x2160 (17.8 x 10 world units). As Qori climbs, each plan
 | MR05 | Ribwood | 180 | 3840x8192 | 0.963 | BG_Ribwood_Far / Mid / Near, BG_Sky_Terraces | A forest growing between huge stone walls. | **No parallel walls or ribs in any background plane.** Vary every wall's angle, height and spacing. Near shapes: great trees with trunks leaning at different angles (never parallel, never evenly spaced), spreading roots, broad canopies and branches crossing overhead, with broken stone between them. |
 | MR06 | Heights | 216 | 3840x8192 | 0.803 | BG_Heights_Far / Near, BG_Sky_Terraces | Bare, windy ridges, the climb toward the summit. | **Flying enemies must read against the upper frame** (Reviews 26-28 cut the Heights' Mid for hiding them). Mid: only a low ridge whose skyline stays below 40% of the frame's height at all times. Paint it so; I set the placement in game. Near shapes: low and sparse: bare rock outcrops, wind-bent pines leaning one way, and cairns, mostly in the bottom 40% of every window, with nothing in the top 40% except thin tips. No columns. |
 | MR07 | Summit | 154 | 3840x7356 | 1.0 | BG_Summit_Far / Mid / Near_v3, BG_Sky_Terraces | Cliffs and falls above everything, the final climb. | **The lake and reed beds are terrain; keep them out of the background.** No face, brow, eye, lid or lash shapes anywhere, including in the falls and cliffs. Near shapes: grounded cliff masses rising from the canvas bottom, with overhanging slabs, thin falls with spray, ledges with hardy shrubs. No columns. |
-| MR08 | Descent | 151 | 3840x7224 | 1.0 | BG_A4_Mid / Near, BG_Sky_A4 | After the reveal, the long way down toward the heart. | Before writing a line, read the region's current scene and design notes. If it is interior or underground rather than open sky, stop and say so in the handoff: it may belong to the underground batches (30-33). Near shapes: if it is open sky, descending ledges and slabs on grounded rock masses, never columns. |
 
 Mystery rule for every plane of every region: backgrounds show sky, weather and distant land only. Nothing may read as a hand, finger, knuckle, nail, knee, lap, chest, rib, shoulder, face, brow, eye, lid or lash: no five parallel rounded ridges, no rounded dome hills, no symmetric pairs. Check at full size, at 10% and blurred.
 
@@ -79,7 +79,7 @@ Mystery rule for every plane of every region: backgrounds show sky, weather and 
 1. **Far gate:** size; alpha (top row all 0; partial alpha only within 2 px of the skyline); wrap 0 at every row; haze bands; highest peak at least 120 px below the top; mystery passed.
 2. **Near gate:** size; every 2160 px window, stepped by 540 px, at least 50% fully transparent and never empty; every feature grounded (mark each feature's support in the window sheet); wrap 0; clean edges over black, white and magenta; mystery passed per window.
 3. **Mid, High, Sky:** the rules in section 2; High's mist colour matches the Far.
-4. **The stack in the climb:** the climb strip at 0, 15, 30, 50, 75 and 100% of the region's climb, placed exactly as section 2 says, with and without the region's gameplay matte (Tools\Backgrounds\proposal\mattes\<REGION>_mid_foreground_rgba.png; MR06 also MR06_encounter; MR08 has none: use MR07's and say so). Qori, the ledges and the route read clearly at every step. The sky shows at every step. Something from the Near or Mid is in view until at least 50%, and the High is seen at 100%.
+4. **The stack in the climb:** the climb strip at 0, 15, 30, 50, 75 and 100% of the region's climb, placed exactly as section 2 says, with and without the region's gameplay matte (Tools\Backgrounds\proposal\mattes\<REGION>_mid_foreground_rgba.png; MR06 also MR06_encounter). Qori, the ledges and the route read clearly at every step. The sky shows at every step. Something from the Near or Mid is in view until at least 50%, and the High is seen at 100%.
 
 ## 6. Failures from earlier batches. Each one is an automatic fail.
 - The generator's alpha used as the mask: dark or black sky blocks, translucent land (28, 28b).

@@ -135,23 +135,16 @@ public sealed class MraProductionProbe : MonoBehaviour
     IEnumerator ArmoryCoverage()
     {
         var armory=Qori.GetComponent<QoriArmory>();int selected=armory.Selected;
-        yield return Press(GamepadButton.RightStick);Check(armory.MenuOpen&&!MraChart.IsOpen,"right-stick click opens only armory");
-        yield return Measure("Armory_controller",.2f,2,e=>InputSystem.QueueStateEvent(pad,new GamepadState{rightStick=e<.12f?Vector2.right:Vector2.zero}));
-        Check(armory.Selected!=selected,"right stick cycles armory selection");
-        yield return Press(GamepadButton.RightStick);Check(!armory.MenuOpen&&!MraChart.IsOpen,"right-stick click closes armory");armory.Select(selected);
+        // The weapon menu was removed (3 Nov): none of its inputs may do anything now.
+        yield return Press(GamepadButton.RightStick);Check(armory.Selected==selected&&!MraChart.IsOpen&&!QoriArmory.BlocksAttackInput,"right-stick click opens nothing");
         var keyboard=InputSystem.AddDevice<Keyboard>("Production probe keyboard");
-        InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Tab));yield return null;yield return null;
-        InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;yield return null;
-        Check(armory.MenuOpen,"keyboard Tab still opens armory");
-        InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Tab));yield return null;yield return null;
-        InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;yield return null;
-        Check(!armory.MenuOpen,"keyboard Tab still closes armory");
-        InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Digit1));yield return null;yield return null;
-        InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;yield return null;
-        Check(armory.Selected==0,"keyboard 1 selects first weapon");
-        InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Digit4));yield return null;yield return null;
-        InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;yield return null;
-        Check(armory.Selected==3&&armory.Weapons[3].weaponId==QoriArmoryFactory.StaffId,"keyboard 4 selects Leaf Staff");InputSystem.RemoveDevice(keyboard);Queue(0);yield return null;
+        foreach(var key in new[]{Key.Tab,Key.Digit1,Key.Digit4})
+        {
+            InputSystem.QueueStateEvent(keyboard,new KeyboardState(key));yield return null;yield return null;
+            InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;yield return null;
+            Check(armory.Selected==selected&&!QoriArmory.BlocksAttackInput,"keyboard "+key+" opens and selects nothing");
+        }
+        Check(armory.Weapons[armory.Selected].weaponId==QoriArmoryFactory.StaffId,"Qori holds the Leaf Staff");InputSystem.RemoveDevice(keyboard);Queue(0);yield return null;
     }
     IEnumerator ExtendedCoverage()
     {

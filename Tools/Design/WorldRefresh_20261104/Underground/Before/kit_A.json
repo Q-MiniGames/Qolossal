@@ -1,0 +1,127 @@
+{
+  "set": "A",
+  "pixelsPerUnit": 216,
+  "pieces": [
+    {
+      "kind": "deck",
+      "files": [
+        "Deck_01.png",
+        "Deck_02.png",
+        "Deck_03.png"
+      ],
+      "border": [
+        54,
+        0,
+        54,
+        0
+      ],
+      "overhang": 0.125
+    },
+    {
+      "kind": "crumble",
+      "files": [
+        "Crumble_01.png"
+      ],
+      "border": [
+        54,
+        0,
+        54,
+        0
+      ],
+      "overhang": 0.125
+    },
+    {
+      "kind": "mover",
+      "files": [
+        "Mover_01.png"
+      ],
+      "border": [
+        54,
+        0,
+        54,
+        0
+      ],
+      "overhang": 0.125
+    },
+    {
+      "kind": "solid",
+      "files": [
+        "Solid_01.png"
+      ],
+      "border": [
+        18,
+        35,
+        18,
+        80
+      ],
+      "overhang": 0.125
+    },
+    {
+      "kind": "gate",
+      "files": [
+        "Gate_01.png"
+      ],
+      "border": [
+        18,
+        27,
+        18,
+        27
+      ],
+      "overhang": 0
+    },
+    {
+      "kind": "seal",
+      "files": [
+        "Seal_01.png"
+      ],
+      "border": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "overhang": 0
+    },
+    {
+      "kind": "water",
+      "files": [
+        "Water_01.png"
+      ],
+      "border": [
+        0,
+        12,
+        0,
+        115
+      ],
+      "overhang": 0
+    },
+    {
+      "kind": "backdrop_far",
+      "files": [
+        "Backdrop_Far.png"
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "overhang": 0,
+      "ppu": 108
+    },
+    {
+      "kind": "backdrop_near",
+      "files": [
+        "Backdrop_Near.png"
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "overhang": 0,
+      "ppu": 144
+    }
+  ]
+}

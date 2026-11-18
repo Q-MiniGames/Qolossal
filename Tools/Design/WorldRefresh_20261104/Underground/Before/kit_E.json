@@ -1,0 +1,88 @@
+{
+  "set": "E",
+  "pixelsPerUnit": 216,
+  "pieces": [
+    {
+      "kind": "crumble",
+      "files": [
+        "Crumble_01.png"
+      ],
+      "border": [
+        54,
+        0,
+        54,
+        0
+      ],
+      "overhang": 0.125
+    },
+    {
+      "kind": "deck",
+      "files": [
+        "Deck_01.png",
+        "Deck_02.png",
+        "Deck_03.png"
+      ],
+      "border": [
+        54,
+        0,
+        54,
+        0
+      ],
+      "overhang": 0.125
+    },
+    {
+      "kind": "solid",
+      "files": [
+        "Solid_01.png"
+      ],
+      "border": [
+        24,
+        24,
+        24,
+        60
+      ],
+      "overhang": 0.125
+    },
+    {
+      "kind": "thorns",
+      "files": [
+        "Thorns_01.png"
+      ],
+      "border": [
+        28,
+        24,
+        70,
+        52
+      ],
+      "overhang": 0.2407
+    },
+    {
+      "kind": "backdrop_far",
+      "files": [
+        "Backdrop_Far.png"
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "overhang": 0,
+      "ppu": 108
+    },
+    {
+      "kind": "backdrop_near",
+      "files": [
+        "Backdrop_Near.png"
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "overhang": 0,
+      "ppu": 144
+    }
+  ]
+}

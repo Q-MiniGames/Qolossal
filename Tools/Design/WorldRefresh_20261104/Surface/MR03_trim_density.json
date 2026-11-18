@@ -1,0 +1,660 @@
+{
+  "scene": "MRAtlas_MR03_Terraces",
+  "minCameraSize": 5.0,
+  "requiredPixelsPerUnit": 216.0,
+  "replaceAlphaTrim": false,
+  "secondaryMaskLimitation": "Original aperture-mask UV channels and texture are retained. Surface Rim also samples its RGB; those secondary samples need separate review and are not certified by MainTex density.",
+  "records": [
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N02] Orchard/Cave access | paired underground rooms/[CAVE PC07] MR03_N02 <-> Underground - Seed Shelf/Regional fitted passage/Registered native outer rock",
+      "disposition": "Solid wall world-tiled; secondary aperture channels preserved",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC07/Registered native outer rock.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Fill.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR03/Fill.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR03/27D296687204F13887F0.asset",
+      "secondaryMask": "Assets/Art/Prototypes/CradleRockwork_20261027/MR01_C01_Rockwork.png",
+      "beforeDensity": 119.99585420605814,
+      "afterDensity": 359.98255311776177,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 1024,
+      "textureWidth": 1254,
+      "textureHeight": 1254,
+      "requiredWidth": 753,
+      "requiredHeight": 753,
+      "worldBoundsCenter": [
+        55.0790024,
+        27.1950016,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.299999,
+        3.25,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N02] Orchard/Cave access | paired underground rooms/[CAVE PC07] MR03_N02 <-> Underground - Seed Shelf/Regional fitted passage/Native walking surface",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC07/Native walking surface.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR03/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR03/1844723375AB1AE5ADEF.asset",
+      "secondaryMask": null,
+      "beforeDensity": 119.97596713874012,
+      "afterDensity": 359.96928453157221,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1304,
+      "requiredHeight": 435,
+      "worldBoundsCenter": [
+        54.529,
+        25.57,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.59999847,
+        2.19999886,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N02] Orchard/Cave access | paired underground rooms/[CAVE PC07] MR03_N02 <-> Underground - Seed Shelf/Regional fitted passage/Native roof trim/Native roof 0",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC07/Native roof 0.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR03/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR03/8A7AF4F09D6CE10F8EDC.asset",
+      "secondaryMask": null,
+      "beforeDensity": 94.4610363798865,
+      "afterDensity": 282.58859679595054,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1661,
+      "requiredHeight": 554,
+      "worldBoundsCenter": [
+        55.419,
+        31.268,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.220001,
+        5.37599564,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N02] Orchard/Cave access | paired underground rooms/[CAVE PC07] MR03_N02 <-> Underground - Seed Shelf/Regional fitted passage/Native roof trim/Native roof 1",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC07/Native roof 1.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Corner_Top_L.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 119.99927025338694,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 512,
+      "sourceHeight": 512,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        55.2623329,
+        31.268,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.533333,
+        5.37599564,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N02] Orchard/Cave access | paired underground rooms/[CAVE PC07] MR03_N02 <-> Underground - Seed Shelf/Regional fitted passage/Native roof trim/Native roof 2",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC07/Native roof 2.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Corner_Foot_L.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 119.99588306343963,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 512,
+      "sourceHeight": 384,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        55.2623329,
+        30.643,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.533333,
+        4.12599564,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N05] High terraces/Cave access | paired underground rooms/[CAVE PC08] MR03_N05 <-> Underground - Millstone Pocket/Regional fitted passage/Registered native outer rock",
+      "disposition": "Solid wall world-tiled; secondary aperture channels preserved",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC08/Registered native outer rock.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Fill.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR03/Fill.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR03/8ACD92908FF8F9700FA4.asset",
+      "secondaryMask": "Assets/Art/Prototypes/CradleRockwork_20261027/MR01_C01_Rockwork.png",
+      "beforeDensity": 119.97972817318043,
+      "afterDensity": 359.93642017963629,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 1024,
+      "textureWidth": 1254,
+      "textureHeight": 1254,
+      "requiredWidth": 753,
+      "requiredHeight": 753,
+      "worldBoundsCenter": [
+        175.724,
+        101.325,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.300003,
+        3.25,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N05] High terraces/Cave access | paired underground rooms/[CAVE PC08] MR03_N05 <-> Underground - Millstone Pocket/Regional fitted passage/Native walking surface",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC08/Native walking surface.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR03/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR03/EB84009F326B2EECF620.asset",
+      "secondaryMask": null,
+      "beforeDensity": 119.89992641647535,
+      "afterDensity": 359.93561442220533,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1304,
+      "requiredHeight": 435,
+      "worldBoundsCenter": [
+        175.174,
+        99.7,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.600006,
+        2.20000458,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N05] High terraces/Cave access | paired underground rooms/[CAVE PC08] MR03_N05 <-> Underground - Millstone Pocket/Regional fitted passage/Native roof trim/Native roof 0",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC08/Native roof 0.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR03/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR03/A4F4194C5E6F6A976C1B.asset",
+      "secondaryMask": null,
+      "beforeDensity": 99.3125937932375,
+      "afterDensity": 297.93788584244,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1575,
+      "requiredHeight": 525,
+      "worldBoundsCenter": [
+        176.064,
+        106.9335,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.220001,
+        6.82700348,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N05] High terraces/Cave access | paired underground rooms/[CAVE PC08] MR03_N05 <-> Underground - Millstone Pocket/Regional fitted passage/Native roof trim/Native roof 1",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC08/Native roof 1.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Cliff_Side_L.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 119.99153439164536,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 512,
+      "sourceHeight": 1024,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        178.081329,
+        106.019669,
+        0.0
+      ],
+      "worldBoundsSize": [
+        2.18533325,
+        0.121330261,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N05] High terraces/Cave access | paired underground rooms/[CAVE PC08] MR03_N05 <-> Underground - Millstone Pocket/Regional fitted passage/Native roof trim/Native roof 2",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC08/Native roof 2.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Corner_Top_L.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 119.94660421120322,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 512,
+      "sourceHeight": 512,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        175.907318,
+        106.5285,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.53334045,
+        7.637001,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N05] High terraces/Cave access | paired underground rooms/[CAVE PC08] MR03_N05 <-> Underground - Millstone Pocket/Regional fitted passage/Native roof trim/Native roof 3",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC08/Native roof 3.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Corner_Foot_L.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 119.97990246556087,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 512,
+      "sourceHeight": 384,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        175.907318,
+        105.9035,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.53334045,
+        6.387001,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N08] Terraces knot/Cave access | paired underground rooms/[CAVE PC09] MR03_N08 <-> Underground - Lantern Rest/Regional fitted passage/Registered native outer rock",
+      "disposition": "Solid wall world-tiled; secondary aperture channels preserved",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC09/Registered native outer rock.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Fill.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR03/Fill.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR03/5E30D6A4B4F7702FF045.asset",
+      "secondaryMask": "Assets/Art/Prototypes/CradleRockwork_20261027/MR01_C01_Rockwork.png",
+      "beforeDensity": 119.977464788694,
+      "afterDensity": 359.87488479253091,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 1024,
+      "textureWidth": 1254,
+      "textureHeight": 1254,
+      "requiredWidth": 753,
+      "requiredHeight": 753,
+      "worldBoundsCenter": [
+        280.577026,
+        148.528992,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.30001831,
+        3.25,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N08] Terraces knot/Cave access | paired underground rooms/[CAVE PC09] MR03_N08 <-> Underground - Lantern Rest/Regional fitted passage/Native walking surface",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC09/Native walking surface.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR03/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR03/F1039D3840A8257709D9.asset",
+      "secondaryMask": null,
+      "beforeDensity": 119.9998057875224,
+      "afterDensity": 359.91392839614014,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1304,
+      "requiredHeight": 435,
+      "worldBoundsCenter": [
+        281.127,
+        146.903992,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.59997559,
+        2.199997,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N08] Terraces knot/Cave access | paired underground rooms/[CAVE PC09] MR03_N08 <-> Underground - Lantern Rest/Regional fitted passage/Native roof trim/Native roof 0",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC09/Native roof 0.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR03/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR03/F451DF4948129455BFC9.asset",
+      "secondaryMask": null,
+      "beforeDensity": 104.04687440771636,
+      "afterDensity": 312.1555503726284,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1503,
+      "requiredHeight": 501,
+      "worldBoundsCenter": [
+        280.237,
+        151.775,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.220001,
+        3.72201538,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N08] Terraces knot/Cave access | paired underground rooms/[CAVE PC09] MR03_N08 <-> Underground - Lantern Rest/Regional fitted passage/Native roof trim/Native roof 1",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC09/Native roof 1.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Corner_Top_R.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 119.97215869368979,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 512,
+      "sourceHeight": 512,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        280.393677,
+        151.775,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.533325,
+        3.72201538,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N08] Terraces knot/Cave access | paired underground rooms/[CAVE PC09] MR03_N08 <-> Underground - Lantern Rest/Regional fitted passage/Native roof trim/Native roof 2",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC09/Native roof 2.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Corner_Foot_R.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 119.9680815566188,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 512,
+      "sourceHeight": 384,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        280.393677,
+        151.15,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.533325,
+        2.47201538,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N09] Upper pass/Cave access | paired underground rooms/[CAVE MR03_C06] MR03_N09 <-> Underground - Root Hanger/Regional fitted passage/Registered native outer rock",
+      "disposition": "Solid wall world-tiled; secondary aperture channels preserved",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR03_C06/Registered native outer rock.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Fill.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR03/Fill.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR03/607F163BAEF3C5B55601.asset",
+      "secondaryMask": "Assets/Art/Prototypes/CradleRockwork_20261027/MR01_C01_Rockwork.png",
+      "beforeDensity": 119.977464788694,
+      "afterDensity": 359.93626760557783,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 1024,
+      "textureWidth": 1254,
+      "textureHeight": 1254,
+      "requiredWidth": 753,
+      "requiredHeight": 753,
+      "worldBoundsCenter": [
+        291.900024,
+        141.325,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.30001831,
+        3.25,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N09] Upper pass/Cave access | paired underground rooms/[CAVE MR03_C06] MR03_N09 <-> Underground - Root Hanger/Regional fitted passage/Native walking surface",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR03_C06/Native walking surface.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR03/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR03/0D44A8ECBDCA53713F25.asset",
+      "secondaryMask": null,
+      "beforeDensity": 119.99980578751855,
+      "afterDensity": 359.91392839614014,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1304,
+      "requiredHeight": 435,
+      "worldBoundsCenter": [
+        292.45,
+        139.700012,
+        0.0
+      ],
+      "worldBoundsSize": [
+        5.59997559,
+        2.199997,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N09] Upper pass/Cave access | paired underground rooms/[CAVE MR03_C06] MR03_N09 <-> Underground - Root Hanger/Regional fitted passage/Native roof trim/Native roof 0",
+      "disposition": "Native top re-registered to original walking line",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR03_C06/Native roof 0.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Top_Strip.png",
+      "texture": "Assets/Art/Prototypes/WorldRefresh_20261104/MR03/Top.png",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR03/8EDBC17A5B9D46682D02.asset",
+      "secondaryMask": null,
+      "beforeDensity": 99.058718809429365,
+      "afterDensity": 297.48356367971394,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 360.0,
+      "sourceWidth": 1024,
+      "sourceHeight": 512,
+      "textureWidth": 2172,
+      "textureHeight": 724,
+      "requiredWidth": 1578,
+      "requiredHeight": 526,
+      "worldBoundsCenter": [
+        291.56,
+        145.357,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.220001,
+        5.29400635,
+        0.0
+      ],
+      "geometryPreserved": true,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N09] Upper pass/Cave access | paired underground rooms/[CAVE MR03_C06] MR03_N09 <-> Underground - Root Hanger/Regional fitted passage/Native roof trim/Native roof 1",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR03_C06/Native roof 1.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Corner_Top_R.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 119.86317558713947,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 512,
+      "sourceHeight": 512,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        291.716675,
+        145.357,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.533325,
+        5.29400635,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    },
+    {
+      "hierarchy": "Generated (MRA builder)/Upper Areas | MR03 - The Terraces/[MR03_N09] Upper pass/Cave access | paired underground rooms/[CAVE MR03_C06] MR03_N09 <-> Underground - Root Hanger/Regional fitted passage/Native roof trim/Native roof 2",
+      "disposition": "Preserved painted corner/face alpha; requires separate silhouette review",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR03_C06/Native roof 2.asset",
+      "sourceTexture": "Assets/Art/Codex/Terrain/Body/Terraces/Terraces_Corner_Foot_R.png",
+      "texture": null,
+      "mesh": null,
+      "secondaryMask": null,
+      "beforeDensity": 119.94206941724732,
+      "afterDensity": 0.0,
+      "requiredDensity": 216.0,
+      "texturePixelsPerWorldUnit": 0.0,
+      "sourceWidth": 512,
+      "sourceHeight": 384,
+      "textureWidth": 0,
+      "textureHeight": 0,
+      "requiredWidth": 0,
+      "requiredHeight": 0,
+      "worldBoundsCenter": [
+        291.716675,
+        144.732,
+        0.0
+      ],
+      "worldBoundsSize": [
+        6.533325,
+        4.04400635,
+        0.0
+      ],
+      "geometryPreserved": false,
+      "colliderStatePreserved": true
+    }
+  ]
+}

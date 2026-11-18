@@ -11,7 +11,17 @@ public static class RegionalSceneCatalog
         "MRAtlas_MR01_Cradle", "MRAtlas_MR02_Causeway", "MRAtlas_MR03_Terraces",
         "MRAtlas_MR04_Qvale", "MRAtlas_MR05_Ribwood", "MRAtlas_MR06_Heights", "MRAtlas_MR07_Summit"
     };
-    public static string[] BuildPaths => Surface.Concat(new[] { Underground }).Select(n => Folder + n + ".unity").ToArray();
+    // Qvale's homes (MraWorldBuilder.RestoreQvaleHouses). A save made inside one resumes on Qvale's street.
+    public static readonly string[] Interiors = { "MRAtlas_MR04_C02", "MRAtlas_MR04_C03", "MRAtlas_MR04_C04", "MRAtlas_MR04_C05", "MRAtlas_MR04_C06" };
+    public static string[] BuildPaths => Surface.Concat(new[] { Underground }).Concat(Interiors).Select(n => Folder + n + ".unity").ToArray();
+
+    // The Heart checkpoint and wake controls were retired. Older saves resume at
+    // the existing Cistern approach checkpoint; reading does not rewrite saves.
+    public static string ResolveSavedCheckpoint(string scenePath, string id)
+    {
+        return id == "regional:HEART" && ResolveSavedScene(scenePath) == Folder + Underground + ".unity"
+            ? "regional:A08" : id;
+    }
 
     // Old checkpoints keep their inventory and flags. Retired scenes resume safely on their surface.
     // This does not rewrite the user's save merely because it was read.

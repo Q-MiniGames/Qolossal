@@ -68,6 +68,14 @@ public sealed class ParallaxLayer : MonoBehaviour
     private Mesh paintingMesh, bandMesh;
     private MeshRenderer paintingRenderer, bandRenderer;
     private GameObject band;
+    private (float, float, float, float, float, float, float, Color) paintingKey;
+    private (float, float, float, float, Color) bandKey;
+
+    // Copied straight into the meshes, so one set serves every layer.
+    static readonly Vector3[] Quad = new Vector3[4], Band = new Vector3[6];
+    static readonly Vector2[] QuadUv = new Vector2[4], BandUv = new Vector2[6];
+    static readonly Color[] QuadColors = new Color[4], BandColors = new Color[6];
+    static readonly int[] QuadTriangles = { 0, 2, 1, 1, 2, 3 }, BandTriangles = { 0, 2, 1, 1, 2, 3, 2, 4, 3, 3, 4, 5 };
 
     private Texture2D Painting => sprite != null ? sprite.texture : texture;
     private float Height => height > 0f ? height : sprite != null ? sprite.rect.height / sprite.pixelsPerUnit : texture != null ? texture.height / texturePixelsPerUnit : 0f;
@@ -182,24 +190,38 @@ public sealed class ParallaxLayer : MonoBehaviour
         float U(float x) => uvRect.x + ((x - drift) / w + .5f) * uvRect.width;
         float v0 = uvRect.y, v1 = uvRect.y + uvRect.height;
 
-        paintingMesh.Clear();
-        paintingMesh.vertices = new[] { new Vector3(left, 0f), new Vector3(right, 0f), new Vector3(left, h), new Vector3(right, h) };
-        paintingMesh.uv = new[] { new Vector2(U(left), v0), new Vector2(U(right), v0), new Vector2(U(left), v1), new Vector2(U(right), v1) };
-        paintingMesh.colors = new[] { tint, tint, tint, tint };
-        paintingMesh.triangles = new[] { 0, 2, 1, 1, 2, 3 };
-        paintingMesh.RecalculateBounds();
+        // The meshes are rewritten only when something changed, from arrays kept for it, so a frame allocates nothing.
+        var painted = (left, right, h, U(left), U(right), v0, v1, tint);
+        if (painted != paintingKey || paintingMesh.vertexCount == 0)
+        {
+            paintingKey = painted;
+            Quad[0] = new Vector3(left, 0f); Quad[1] = new Vector3(right, 0f); Quad[2] = new Vector3(left, h); Quad[3] = new Vector3(right, h);
+            QuadUv[0] = new Vector2(U(left), v0); QuadUv[1] = new Vector2(U(right), v0); QuadUv[2] = new Vector2(U(left), v1); QuadUv[3] = new Vector2(U(right), v1);
+            QuadColors[0] = QuadColors[1] = QuadColors[2] = QuadColors[3] = tint;
+            paintingMesh.Clear();
+            paintingMesh.vertices = Quad;
+            paintingMesh.uv = QuadUv;
+            paintingMesh.colors = QuadColors;
+            paintingMesh.triangles = QuadTriangles;
+            paintingMesh.RecalculateBounds();
+        }
 
-        bandMesh.Clear();
-        if (extendBelow <= 0f) return;
+        if (extendBelow <= 0f) { if (bandMesh.vertexCount > 0) bandMesh.Clear(); return; }
         float extend = extendBelow * k;
         // The band fades from clear (belowBlend up inside the painting) to solid at its bottom edge.
         float blend = Mathf.Min(belowBlend, h);
         Color clear = new Color(belowColor.r, belowColor.g, belowColor.b, 0f);
-        bandMesh.vertices = new[] { new Vector3(left, -extend), new Vector3(right, -extend), new Vector3(left, 0f),
-            new Vector3(right, 0f), new Vector3(left, blend), new Vector3(right, blend) };
-        bandMesh.uv = new Vector2[6];
-        bandMesh.colors = new[] { belowColor, belowColor, belowColor, belowColor, clear, clear };
-        bandMesh.triangles = new[] { 0, 2, 1, 1, 2, 3, 2, 4, 3, 3, 4, 5 };
+        var banded = (left, right, extend, blend, belowColor);
+        if (banded == bandKey && bandMesh.vertexCount > 0) return;
+        bandKey = banded;
+        Band[0] = new Vector3(left, -extend); Band[1] = new Vector3(right, -extend); Band[2] = new Vector3(left, 0f);
+        Band[3] = new Vector3(right, 0f); Band[4] = new Vector3(left, blend); Band[5] = new Vector3(right, blend);
+        BandColors[0] = BandColors[1] = BandColors[2] = BandColors[3] = belowColor; BandColors[4] = BandColors[5] = clear;
+        bandMesh.Clear();
+        bandMesh.vertices = Band;
+        bandMesh.uv = BandUv;
+        bandMesh.colors = BandColors;
+        bandMesh.triangles = BandTriangles;
         bandMesh.RecalculateBounds();
     }
 

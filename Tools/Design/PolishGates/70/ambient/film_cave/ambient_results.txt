@@ -1,0 +1,22 @@
+== Qolossal_Underground: 6 places
+PASS Qolossal_Underground: the layer starts
+INFO plants at (151.0, -162.7): picture moving 0.5% before, 2.0% after
+PASS Qolossal_Underground plants: the picture moves
+INFO shrine at (1338.2, 249.0): picture moving 0.0% before, 3.1% after
+PASS Qolossal_Underground shrine: the picture moves
+INFO thorns at (1556.5, 331.9): picture moving 0.1% before, 1.0% after
+PASS Qolossal_Underground thorns: the picture moves
+INFO water at (1596.0, 155.8): picture moving 1.6% before, 21.9% after
+PASS Qolossal_Underground water: the picture moves
+INFO spill at (2155.6, 632.5): picture moving 8.6% before, 9.0% after
+PASS Qolossal_Underground spill: the picture moves
+INFO gust at (1976.0, 144.3): picture moving 2.3% before, 7.9% after
+PASS Qolossal_Underground gust: the picture moves
+INFO Cave E: 49 plants, 27 water, 76 thorns, 19 gust lanes, 89 shrines, 0 lamps; particles peak 50 of 245; layer's own script 0.090 ms a frame
+PASS Qolossal_Underground: every collider where it was
+PASS Qolossal_Underground: particle budget
+PASS all 76 thorns stir
+PASS all 19 gust lanes have streaks
+PASS water moves
+PASS rest shrines flicker
+RESULT failures 0, runtime errors 0

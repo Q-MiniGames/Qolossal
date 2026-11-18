@@ -1,8 +1,8 @@
 using UnityEngine;
 
 // Bark Sentinel (E-08, A2): a heavy guard behind a woven bark shield. It paces its post and turns
-// to keep the shield toward Qori. Hits on the shield bounce off, except the spear, which pierces
-// the weave; hits from behind or from above (a downward strike) always land. When Qori is in
+// to keep the shield toward Qori. Hits on the shield bounce off, except a heavy one (the staff's
+// charged sweep, 3 Nov: the spear that used to pierce it is gone), which breaks through; hits from behind or from above (a downward strike) always land. When Qori is in
 // reach in front, it draws its spear back behind the shield (the cue: a glint) and thrusts it out
 // past the shield (16 Oct, the user: the attack is the spear, not a shield bash): the spear hurts
 // along its reach while thrust out. Touching the Sentinel itself hurts too.
@@ -56,7 +56,7 @@ public sealed class SentinelEnemy : EnemyBase
         if (!IsAlive) return new CombatDamageResponse { Disposition = CombatHitDisposition.Ignored };
         // The attacker is in front when the blow travels back toward the Sentinel's face.
         bool fromFront = hit.Direction.x * facing < 0f || Mathf.Approximately(hit.Direction.x, 0f) && !WeaponKinds.IsDownward(hit);
-        if (fromFront && !WeaponKinds.IsDownward(hit) && WeaponKinds.Of(hit) != WeaponKind.Spear)
+        if (fromFront && !WeaponKinds.IsDownward(hit) && !WeaponKinds.IsHeavy(hit))
         {
             blockedShakeUntil = Time.time + .15f;
             return WeaponKinds.Blocked();

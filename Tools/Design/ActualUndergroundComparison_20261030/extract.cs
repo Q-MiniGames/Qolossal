@@ -11,7 +11,9 @@ try{
   var lines=new System.Collections.Generic.List<float[][]>();bool closed=true;
   if(c is PolygonCollider2D poly){for(int i=0;i<poly.pathCount;i++)lines.Add(poly.GetPath(i).Select(p=>xy(c.transform.TransformPoint(p+c.offset))).ToArray());}
   else if(c is EdgeCollider2D edge){closed=false;lines.Add(edge.points.Select(p=>xy(c.transform.TransformPoint(p+c.offset))).ToArray());}
-  else if(c is BoxCollider2D box){var q=box.size*.5f;lines.Add(new[]{new Vector2(-q.x,-q.y),new Vector2(q.x,-q.y),new Vector2(q.x,q.y),new Vector2(-q.x,q.y)}.Select(p=>xy(c.transform.TransformPoint(p+c.offset))).ToArray());}
+  else if(c is BoxCollider2D box){var q=box.size*.5f;var pts=new System.Collections.Generic.List<Vector2>();var corners=new[]{new Vector2(q.x,q.y),new Vector2(-q.x,q.y),new Vector2(-q.x,-q.y),new Vector2(q.x,-q.y)};
+   if(box.edgeRadius>0){for(int corner=0;corner<4;corner++)for(int j=0;j<=8;j++){float a=(corner*90+j*90f/8)*Mathf.Deg2Rad;pts.Add(corners[corner]+new Vector2(Mathf.Cos(a),Mathf.Sin(a))*box.edgeRadius);}}
+   else pts.AddRange(corners);lines.Add(pts.Select(p=>xy(c.transform.TransformPoint(p+c.offset))).ToArray());}
   else if(c is CompositeCollider2D composite){closed=composite.geometryType==CompositeCollider2D.GeometryType.Polygons;for(int i=0;i<composite.pathCount;i++){var pts=new Vector2[composite.GetPathPointCount(i)];composite.GetPath(i,pts);lines.Add(pts.Select(p=>xy(c.transform.TransformPoint(p+c.offset))).ToArray());}}
   else{unsupported.Add(LayerMask.LayerToName(c.gameObject.layer)+" / "+c.GetType().Name+" / "+hierarchy(c.transform));continue;}
   var room=c.GetComponentInParent<UndergroundRoom>();

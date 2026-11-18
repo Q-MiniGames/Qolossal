@@ -1,0 +1,101 @@
+{
+  "id": "A01",
+  "scene": "MRAtlas_MR04_Qvale",
+  "oldParent": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms",
+  "newParent": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N00] Terraces arrival/Cave access | paired underground rooms",
+  "oldPortal": [
+    139.25,
+    8.0
+  ],
+  "newPortal": [
+    17.8280029,
+    20.625
+  ],
+  "oldArrival": [
+    144.2,
+    8.66
+  ],
+  "newArrival": [
+    22.778,
+    20.8327866
+  ],
+  "mouth": [
+    21.178,
+    20.625
+  ],
+  "inward": -1.0,
+  "arrivalFacing": 1.0,
+  "arrivalGround": 20.1727867,
+  "emergenceFloorRise": 0.4522133,
+  "originalAperture": [
+    [
+      142.75,
+      10.7
+    ],
+    [
+      138.0,
+      10.7
+    ],
+    [
+      138.0,
+      8.0
+    ],
+    [
+      142.75,
+      8.0
+    ]
+  ],
+  "newAperture": [
+    [
+      21.3280029,
+      23.325
+    ],
+    [
+      16.5780029,
+      23.325
+    ],
+    [
+      16.5780029,
+      20.625
+    ],
+    [
+      21.3280029,
+      20.625
+    ]
+  ],
+  "artificialHillDisabled": true,
+  "naturalSurfacePreserved": true,
+  "persistentInvariantsPreserved": true,
+  "grounded": true,
+  "meshRecords": [
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Continuous themed inner wall",
+      "sourceMesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR04/A01/Continuous themed inner wall.asset",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/RelocatedEntrances/A01/FFC7AFA2550D10A0734C.asset",
+      "movedExteriorVertices": 74,
+      "approvedRimUV1Preserved": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Passage shadow",
+      "sourceMesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR04/A01/Passage shadow.asset",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/RelocatedEntrances/A01/13B523A3B5A61B1D66BA.asset",
+      "movedExteriorVertices": 0,
+      "approvedRimUV1Preserved": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Registered native outer rock",
+      "sourceMesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR04/A01/Registered native outer rock.asset",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/RelocatedEntrances/A01/9A32BFE1D9C336895153.asset",
+      "movedExteriorVertices": 102,
+      "approvedRimUV1Preserved": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Native walking surface",
+      "sourceMesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoins/MR04/7BC7E5165F82F49708F3.asset",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/RelocatedEntrances/A01/7BC7E5165F82F49708F3.asset",
+      "movedExteriorVertices": 377,
+      "approvedRimUV1Preserved": true
+    }
+  ],
+  "pending": "Run SyncA01UndergroundCurrent in saved underground scene, then refresh scene-derived map and authoring placement metadata"
+}

@@ -9,9 +9,11 @@ names, tr = {}, {}
 for i in range(1, len(docs), 3):
     cls, fid, body = docs[i], docs[i + 1], docs[i + 2]
     if cls == '1':
-        m = re.search(r'm_Name: (.*)', body); names[fid] = m.group(1).strip("'") if m else ''
+        m = re.search(r'm_Name: (.*)', body); names[fid] = m.group(1).strip().strip("'\"").replace('\\u2019', '\u2019') if m else ''
     elif cls == '4':
-        g = re.search(r'm_GameObject: \{fileID: (\d+)\}', body).group(1)
+        g = re.search(r'm_GameObject: \{fileID: (\d+)\}', body)
+        if not g: continue   # a prefab instance's stripped transform
+        g = g.group(1)
         p = re.search(r'm_LocalPosition: \{x: ([-\d.e]+), y: ([-\d.e]+)', body)
         f = re.search(r'm_Father: \{fileID: (\d+)\}', body).group(1)
         tr[fid] = (g, float(p.group(1)), float(p.group(2)), f)

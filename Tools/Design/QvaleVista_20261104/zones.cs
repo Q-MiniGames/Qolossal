@@ -1,0 +1,3 @@
+var list=new System.Collections.Generic.List<object>();
+foreach(var name in RegionalSceneCatalog.Surface){var s=UnityEditor.SceneManagement.EditorSceneManager.OpenPreviewScene(RegionalSceneCatalog.Folder+name+".unity");try{foreach(var z in s.GetRootGameObjects().SelectMany(r=>r.GetComponentsInChildren<VistaZone>(true))){var b=z.GetComponent<Collider2D>().bounds;list.Add(new{scene=name,z.name,z.size,z.lift,z.easeSeconds,bounds=new[]{b.min.x,b.max.x,b.min.y,b.max.y}});}}finally{UnityEditor.SceneManagement.EditorSceneManager.ClosePreviewScene(s);}}
+System.IO.File.WriteAllText("Tools/Design/QvaleVista_20261104/zones.json",Newtonsoft.Json.JsonConvert.SerializeObject(list,Newtonsoft.Json.Formatting.Indented));return list;

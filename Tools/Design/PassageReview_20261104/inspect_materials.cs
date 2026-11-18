@@ -1,0 +1,4 @@
+var fields=UnityEngine.Object.FindObjectsByType<WorldRefreshCaveVista>(FindObjectsSortMode.None);var bridge=CavePassagePresentation.Create();
+var a=fields.First(v=>v.GetComponentInParent<UndergroundRoom>().roomId=="A04");var art=a.GetComponent<SpriteRenderer>();var p=UnityEngine.Object.FindObjectsByType<SpriteRenderer>(FindObjectsSortMode.None).First(r=>r.sharedMaterial!=null&&r.sharedMaterial.name=="Continuous passage A04_A05_main");
+var result=new{roomAnchor=art.sharedMaterial.GetVector("_RoomAnchor"),passageAnchor=p.sharedMaterial.GetVector("_RoomAnchor"),roomRect=art.sharedMaterial.GetVector("_RoomRect"),passageRect=p.sharedMaterial.GetVector("_RoomRect"),roomColor=art.color,passageColor=p.color,roomTexture=art.sharedMaterial.GetTexture("_Vista")?.name,passageTexture=p.sharedMaterial.GetTexture("_Vista")?.name};
+UnityEngine.Object.DestroyImmediate(bridge.gameObject);return result;

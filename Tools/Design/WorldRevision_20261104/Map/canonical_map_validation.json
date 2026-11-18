@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "sceneCount": 13,
+  "nodeCount": 173,
+  "cavePairs": 37,
+  "unchangedUndergroundRooms": 89,
+  "unchangedPassages": 63,
+  "unchangedUndergroundContours": 630,
+  "componentTransformsPreserved": 34,
+  "authorizedEdgeChange": {
+    "edge": "CAVE_A01",
+    "fromBefore": "MR04_N06",
+    "fromAfter": "MR04_N00",
+    "to": "A01"
+  },
+  "surfaceContoursUpdated": true,
+  "mouthEndpointsMatchFreshExtraction": true,
+  "runtimeMatchesCanonical": false,
+  "liveUiTest": "Pending separate Unity fixture; static export is not a live pass"
+}

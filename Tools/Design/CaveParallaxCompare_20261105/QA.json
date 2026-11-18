@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "comparisonRooms": [
+    "A04",
+    "A05"
+  ],
+  "materialOverrides": 7,
+  "seamChecks": 252,
+  "outsideRoomsUnchanged": true,
+  "originalsRestored": true,
+  "motionMeasurements": {
+    "sameReferenceCompositionMaxDifference": 0,
+    "rows": [
+      {
+        "mode": "A",
+        "cameraDelta": [
+          2,
+          0
+        ],
+        "expected": [
+          -216,
+          0
+        ],
+        "measured": [
+          -215.99163563020943,
+          -0.00324415855902771
+        ],
+        "correlation": 0.7425955673500344,
+        "passed": true
+      },
+      {
+        "mode": "A",
+        "cameraDelta": [
+          0,
+          2
+        ],
+        "expected": [
+          0,
+          216
+        ],
+        "measured": [
+          0.0051006180904096254,
+          215.99595133424447
+        ],
+        "correlation": 0.7186606495615877,
+        "passed": true
+      },
+      {
+        "mode": "B",
+        "cameraDelta": [
+          2,
+          0
+        ],
+        "expected": [
+          -190.08,
+          0
+        ],
+        "measured": [
+          -190.01825787435496,
+          -0.0028035065060976194
+        ],
+        "correlation": 0.7554721048437519,
+        "passed": true
+      },
+      {
+        "mode": "B",
+        "cameraDelta": [
+          0,
+          2
+        ],
+        "expected": [
+          0.0,
+          216
+        ],
+        "measured": [
+          0.0051006180904096254,
+          215.99595133424447
+        ],
+        "correlation": 0.7186606495615877,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "playSteps": 20,
+  "renderedFrames": 1083,
+  "keyboardPassed": true,
+  "controllerPassed": true,
+  "all13ScenesUnchanged": true,
+  "normalSavesPreserved": true,
+  "errors": [],
+  "scope": "Temporary Windows Editor comparison only"
+}

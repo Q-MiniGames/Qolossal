@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "surfaceEntrances": 37,
+  "caveRooms": 89,
+  "caveThemes": 12,
+  "method": "Root composition review and native spot checks, plus independent hash-linked agent reviews. All cave room overviews reviewed; selected detailed native views, not complete traversal at every camera position.",
+  "surfaceReview": "VisualQA/surface_entrance_final_review.json",
+  "undergroundJoinReview": "VisualQA/underground_final_review.json",
+  "runtimeCaveReview": "CaveVista/runtime89_visual_qa.json",
+  "ceilingFlagsReviewed": 25,
+  "mapReview": "Root inspected canonical overview and live relocated Qvale connection; 37-step live UI fixture passed.",
+  "limits": "No claim of flawless visuals at every gameplay position. Retained native-source density exceptions are separate from visual attachment checks."
+}

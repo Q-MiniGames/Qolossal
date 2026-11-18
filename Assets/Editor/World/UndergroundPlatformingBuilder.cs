@@ -233,6 +233,7 @@ public static class UndergroundPlatformingBuilder
                 shapes++;
             }
             UndergroundArtKit.DressRoom(room, group.transform);
+            WorldRefreshUnderground.ConfigureRoomArt(room,group.transform);
             LinkHeartQuarters(room, group);
             foreach (var keeper in group.GetComponentsInChildren<MraArenaGuardian>(true))
                 if (keeper.flag.StartsWith("ug:MINI:")) keeper.rewards = room.GetComponentsInChildren<MraReward>(true);
@@ -398,10 +399,10 @@ public static class UndergroundPlatformingBuilder
         }
         switch (s.kind)
         {
-            case "solid": Ground(); Box(false); break;
+            case "solid": Ground(); WorldRefreshUnderground.RoundOrdinary(Box(false),roomId); break;
             // A door that shuts while its room's boss is fighting.
             case "seal": { Ground(); var seal = go.AddComponent<UgArenaSeal>(); seal.solid = Box(false); seal.art = art; break; }
-            case "rock": Ground(); Box(false); go.AddComponent<WallSurface>().allowsWallCling = false; break;
+            case "rock": Ground(); WorldRefreshUnderground.RoundOrdinary(Box(false),roomId); go.AddComponent<WallSurface>().allowsWallCling = false; break;
             // See-through bars between the Heart's sectors: they block Qori, the thread and attacks like rock.
             case "grille": Ground(); Box(false); go.AddComponent<WallSurface>().allowsWallCling = false; break;
             case "quarter":
@@ -415,6 +416,7 @@ public static class UndergroundPlatformingBuilder
                 // A quarter of the big oval heart: the quarter-disc sprite, mirrored so its round edge faces out.
                 go.name = "UGP heart quarter " + s.flag; if (!painted) art.sprite = QuarterDisc(); art.sortingOrder = Order - 1;
                 art.flipX = s.flag == "A" || s.flag == "C"; art.flipY = s.flag == "A" || s.flag == "E";
+                WorldRefreshUnderground.ConfigureHeart(art);
                 break;
             }
             case "look":

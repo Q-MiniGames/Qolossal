@@ -1,0 +1,40 @@
+{
+  "targetPixelsPerUnit": 232,
+  "minimumBefore": [
+    109.42205069013241,
+    132.380757186627,
+    134.51191299738733,
+    132.16254724030048,
+    132.69063697419398,
+    83.852027855541351,
+    132.21713556465161,
+    134.92874670357904
+  ],
+  "scales": [
+    2.121,
+    1.753,
+    1.725,
+    1.756,
+    1.749,
+    2.767,
+    1.755,
+    1.72
+  ],
+  "materials": [
+    {
+      "before": "Assets/Development/Layouts/UndergroundRegional_20261023/Regional_Painted_Edges.mat",
+      "after": "Assets/Art/Prototypes/WorldRevision_20261104/RegionalEdge/NativeEdge_85d38192b5563b245b7ae0dcb6611502.mat",
+      "sourceTexturesUnchanged": true,
+      "capMappingUnchanged": true
+    },
+    {
+      "before": "Assets/Development/Layouts/WorldRevision_20261104/CausewayBorder/85d38192b5563b245b7ae0dcb6611502.mat",
+      "after": "Assets/Art/Prototypes/WorldRevision_20261104/RegionalEdge/NativeEdge_cf16548e5a837d44ba9725175e3dfc37.mat",
+      "sourceTexturesUnchanged": true,
+      "capMappingUnchanged": true
+    }
+  ],
+  "geometryUnchanged": true,
+  "nativeSourcesUnchanged": true,
+  "shader": "Qolossal/WorldRevision/Native Regional Painted Edge"
+}

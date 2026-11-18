@@ -1,0 +1,78 @@
+--- before/MRAtlas_MR01_Cradle.unity
+
++++ MRAtlas_MR01_Cradle.unity
+
+@@ -722,7 +722,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 0
++  m_IsActive: 1
+ --- !u!4 &53581286
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -1374,8 +1374,7 @@
+
+   m_Script: {fileID: 11500000, guid: cc084f9e2c5ec30419e4771037c71a7b, type: 3}
+   m_Name: 
+   m_EditorClassIdentifier: Assembly-CSharp::MraVariant
+-  requires:
+-  - knot:grip
++  requires: []
+   invert: 0
+ --- !u!1 &139541749
+ GameObject:
+@@ -12084,6 +12083,11 @@
+
+   groundedFootViewport: 0.15
+   airborneCentreViewport: 0.55
+   groundVerticalSmoothTime: 0.24
++  downhillProbeDistance: 6
++  downhillMinimumDrop: 0.9
++  maximumDownhillPreview: 0.58
++  manualLookDown: 0.58
++  previewSmoothTime: 0.28
+ --- !u!114 &944604067
+ MonoBehaviour:
+   m_ObjectHideFlags: 0
+@@ -12641,7 +12645,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &1007777597
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -15788,7 +15792,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &1304112117
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -19981,7 +19985,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &1684610173
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -22119,7 +22123,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 0
++  m_IsActive: 1
+ --- !u!4 &1839898039
+ Transform:
+   m_ObjectHideFlags: 0

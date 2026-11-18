@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "date": "2026-11-04",
+  "windowsEditor": true,
+  "authoredQvaleZoomPreserved": 7.6,
+  "beforeFootViewport": -0.07226449,
+  "afterSettledFootViewport": 0.149999976,
+  "cases": 17,
+  "steps": 49,
+  "renderedFrames": 20382,
+  "allSixAuthoredVistasVerified": true,
+  "jumpMotionVerified": {
+    "street_jump": {
+      "worldFootTravel": 2.412400468000003,
+      "airborneRenderedFrames": 256
+    },
+    "street_high_launch": {
+      "worldFootTravel": 5.355485108800002,
+      "airborneRenderedFrames": 399
+    }
+  },
+  "normalSavesPreserved": true,
+  "editorSettingsRestored": true,
+  "all13SceneHashesUnchanged": true,
+  "runtimeErrors": [],
+  "codeHashes": {
+    "Assets/Scripts/CameraFollow.cs": "285f64bed1646fa0a3c69e17b062da324590e514e6388cdfa3801fce7afcef78",
+    "Assets/Scripts/Prototype/VistaZone.cs": "07d1d48bebff90d0ef5c0c92fa83301386ec64de811c2ddcf9267a28c60c6a1b"
+  },
+  "untested": [
+    "Player builds",
+    "Console hardware",
+    "CPU/GPU performance",
+    "Peak memory",
+    "Physical controllers"
+  ]
+}

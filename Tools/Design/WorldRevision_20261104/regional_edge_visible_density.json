@@ -1,0 +1,1885 @@
+{
+  "method": "Read-only native mesh/shader review of the worst regional-edge placements.\n\n28 barycentric probes per triangle diagnose visible failures; this is not an\nocclusion-complete proof that unsampled artwork is invisible.\n",
+  "results": [
+    {
+      "asset": "Assets/Development/Layouts/UndergroundRegional_20261023/Art/Cistern_EdgeNative.png",
+      "mesh": "Assets\\Development\\Layouts\\CaveRollout_20261027\\ApproachCuts\\Cut_000.asset",
+      "hierarchy": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Shared Terrain | continuous walls, backing and passages/04 Zone painted natural borders/Natural_Rim_007",
+      "originalReportedPPU": 132.16254724030048,
+      "allTriangleDoublePPU": 100.98278650175995,
+      "sampleCountPerTriangle": 28,
+      "visibleThresholds": [
+        {
+          "minimumContribution": 0.001,
+          "triangles": 47902,
+          "minimumPPU": 132.43242246436157,
+          "maxContribution": 0.0032587051391601562,
+          "worstTriangle": 11042,
+          "edgeVertices": [
+            [
+              168.7786102294922,
+              0.3499999940395355,
+              0.9967412948608398,
+              0.0
+            ],
+            [
+              168.83860778808594,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              168.7786102294922,
+              0.0,
+              0.9967412948608398,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1555.5921630859375,
+              186.09361267089844
+            ],
+            [
+              1555.5609130859375,
+              186.2414093017578
+            ],
+            [
+              1555.4476318359375,
+              186.23814392089844
+            ]
+          ],
+          "requiredSourceSize": [
+            1671,
+            418
+          ]
+        },
+        {
+          "minimumContribution": 0.01,
+          "triangles": 47832,
+          "minimumPPU": 133.65125609838935,
+          "maxContribution": 0.011832892894744873,
+          "worstTriangle": 374478,
+          "edgeVertices": [
+            [
+              5626.63330078125,
+              0.3499999940395355,
+              0.9881671071052551,
+              0.0
+            ],
+            [
+              5626.693359375,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              5626.63330078125,
+              0.0,
+              0.9881671071052551,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1490.4317626953125,
+              101.64312744140625
+            ],
+            [
+              1490.3514404296875,
+              101.5158920288086
+            ],
+            [
+              1490.4317626953125,
+              101.43750762939453
+            ]
+          ],
+          "requiredSourceSize": [
+            1655,
+            414
+          ]
+        },
+        {
+          "minimumContribution": 0.05,
+          "triangles": 47664,
+          "minimumPPU": 138.05917142368546,
+          "maxContribution": 0.053366005420684814,
+          "worstTriangle": 333866,
+          "edgeVertices": [
+            [
+              5017.45849609375,
+              0.3499999940395355,
+              0.9466339945793152,
+              0.0
+            ],
+            [
+              5017.5185546875,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              5017.45849609375,
+              0.0,
+              0.9466339945793152,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1690.2314453125,
+              117.64130401611328
+            ],
+            [
+              1690.153564453125,
+              117.5101547241211
+            ],
+            [
+              1690.2314453125,
+              117.4346923828125
+            ]
+          ],
+          "requiredSourceSize": [
+            1603,
+            401
+          ]
+        },
+        {
+          "minimumContribution": 0.25,
+          "triangles": 47192,
+          "minimumPPU": 171.6359327530408,
+          "maxContribution": 0.2509039640426636,
+          "worstTriangle": 18990,
+          "edgeVertices": [
+            [
+              287.99761962890625,
+              0.3499999940395355,
+              0.7490960359573364,
+              0.0
+            ],
+            [
+              288.0576171875,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              287.99761962890625,
+              0.0,
+              0.7490960359573364,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1667.7271728515625,
+              184.37937927246094
+            ],
+            [
+              1667.7882080078125,
+              184.5376434326172
+            ],
+            [
+              1667.7271728515625,
+              184.5971221923828
+            ]
+          ],
+          "requiredSourceSize": [
+            1289,
+            323
+          ]
+        },
+        {
+          "minimumContribution": 0.5,
+          "triangles": 43198,
+          "minimumPPU": 211.47251764089975,
+          "maxContribution": 0.5080674290657043,
+          "worstTriangle": 18986,
+          "edgeVertices": [
+            [
+              287.9376220703125,
+              0.3499999940395355,
+              0.49193257093429565,
+              0.0
+            ],
+            [
+              287.99761962890625,
+              0.0,
+              0.7490960359573364,
+              0.0
+            ],
+            [
+              287.9376220703125,
+              0.0,
+              0.49193257093429565,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1667.6671142578125,
+              184.4016876220703
+            ],
+            [
+              1667.7271728515625,
+              184.5971221923828
+            ],
+            [
+              1667.6671142578125,
+              184.63143920898438
+            ]
+          ],
+          "requiredSourceSize": [
+            1046,
+            262
+          ]
+        }
+      ]
+    },
+    {
+      "asset": "Assets/Development/Layouts/UndergroundRegional_20261023/Art/Roots_EdgeNative.png",
+      "mesh": "Assets\\Development\\Layouts\\CaveRollout_20261027\\ApproachCuts\\Cut_000.asset",
+      "hierarchy": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Shared Terrain | continuous walls, backing and passages/04 Zone painted natural borders/Natural_Rim_007",
+      "originalReportedPPU": 132.69063697419398,
+      "allTriangleDoublePPU": 100.98278650175995,
+      "sampleCountPerTriangle": 28,
+      "visibleThresholds": [
+        {
+          "minimumContribution": 0.001,
+          "triangles": 59190,
+          "minimumPPU": 132.69063697419395,
+          "maxContribution": 0.007538635590497185,
+          "worstTriangle": 130976,
+          "edgeVertices": [
+            [
+              1970.983642578125,
+              0.3499999940395355,
+              0.9923716187477112,
+              0.0
+            ],
+            [
+              1971.043701171875,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              1970.983642578125,
+              0.0,
+              0.9923716187477112,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1780.4212646484375,
+              235.8942108154297
+            ],
+            [
+              1780.453125,
+              235.74496459960938
+            ],
+            [
+              1780.5662841796875,
+              235.74908447265625
+            ]
+          ],
+          "requiredSourceSize": [
+            3334,
+            417
+          ]
+        },
+        {
+          "minimumContribution": 0.01,
+          "triangles": 59158,
+          "minimumPPU": 134.60098955017708,
+          "maxContribution": 0.04542554572791393,
+          "worstTriangle": 105280,
+          "edgeVertices": [
+            [
+              1585.546875,
+              0.3499999940395355,
+              0.9540427923202515,
+              0.0
+            ],
+            [
+              1585.60693359375,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              1585.546875,
+              0.0,
+              0.9540427923202515,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1683.5736083984375,
+              366.10101318359375
+            ],
+            [
+              1683.5389404296875,
+              366.2474670410156
+            ],
+            [
+              1683.4276123046875,
+              366.2469482421875
+            ]
+          ],
+          "requiredSourceSize": [
+            3287,
+            411
+          ]
+        },
+        {
+          "minimumContribution": 0.05,
+          "triangles": 59064,
+          "minimumPPU": 137.59617329934227,
+          "maxContribution": 0.07798741284538718,
+          "worstTriangle": 125956,
+          "edgeVertices": [
+            [
+              1895.684326171875,
+              0.3499999940395355,
+              0.9210841655731201,
+              0.0
+            ],
+            [
+              1895.7442626953125,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              1895.684326171875,
+              0.0,
+              0.9210841655731201,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1768.42431640625,
+              277.9095458984375
+            ],
+            [
+              1768.4625244140625,
+              277.7644348144531
+            ],
+            [
+              1768.5709228515625,
+              277.7628479003906
+            ]
+          ],
+          "requiredSourceSize": [
+            3215,
+            402
+          ]
+        },
+        {
+          "minimumContribution": 0.25,
+          "triangles": 58662,
+          "minimumPPU": 166.28746539657442,
+          "maxContribution": 0.2561081549700569,
+          "worstTriangle": 66266,
+          "edgeVertices": [
+            [
+              997.1317749023438,
+              0.3499999940395355,
+              0.7408429384231567,
+              0.0
+            ],
+            [
+              997.1917724609375,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              997.1317749023438,
+              0.0,
+              0.7408429384231567,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1534.0877685546875,
+              310.4759216308594
+            ],
+            [
+              1534.2398681640625,
+              310.54229736328125
+            ],
+            [
+              1534.2420654296875,
+              310.6302185058594
+            ]
+          ],
+          "requiredSourceSize": [
+            2661,
+            333
+          ]
+        },
+        {
+          "minimumContribution": 0.5,
+          "triangles": 54388,
+          "minimumPPU": 207.85325351132377,
+          "maxContribution": 0.5106748076046215,
+          "worstTriangle": 33074,
+          "edgeVertices": [
+            [
+              499.255859375,
+              0.3499999940395355,
+              0.48324573040008545,
+              0.0
+            ],
+            [
+              499.31585693359375,
+              0.0,
+              0.738498330116272,
+              0.0
+            ],
+            [
+              499.255859375,
+              0.0,
+              0.48324573040008545,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1744.3349609375,
+              235.59352111816406
+            ],
+            [
+              1744.27490234375,
+              235.3998565673828
+            ],
+            [
+              1744.3349609375,
+              235.3634490966797
+            ]
+          ],
+          "requiredSourceSize": [
+            2129,
+            267
+          ]
+        }
+      ]
+    },
+    {
+      "asset": "Assets/Development/Layouts/UndergroundRegional_20261023/Art/Wind_EdgeNative.png",
+      "mesh": "Assets\\Development\\Layouts\\CaveRollout_20261027\\Lower_D01\\Native painted walking edge.asset",
+      "hierarchy": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Rooms | gallery IDs/D - Wind/[D01] Windward Shelter/Gameplay | arrivals, rest, exits and discoveries/[CAVE D01] Return <-> The Windward Heights [MR06_N09]/Regional fitted passage/Native painted walking edge",
+      "originalReportedPPU": 83.85202785554135,
+      "allTriangleDoublePPU": 83.85202785554135,
+      "sampleCountPerTriangle": 28,
+      "visibleThresholds": [
+        {
+          "minimumContribution": 0.001,
+          "triangles": 3701,
+          "minimumPPU": 83.85202785554135,
+          "maxContribution": 0.9882352941176471,
+          "worstTriangle": 1425,
+          "edgeVertices": [
+            [
+              2781.1865234375,
+              0.5980148315429688,
+              0.0,
+              0.0
+            ],
+            [
+              2781.2412109375,
+              0.6453593969345093,
+              0.0,
+              0.0
+            ],
+            [
+              2781.2177734375,
+              0.6023193597793579,
+              0.0,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              2016.71337890625,
+              437.5050048828125
+            ],
+            [
+              2016.63671875,
+              437.5342712402344
+            ],
+            [
+              2016.63671875,
+              437.5050048828125
+            ]
+          ],
+          "requiredSourceSize": [
+            5276,
+            660
+          ]
+        },
+        {
+          "minimumContribution": 0.01,
+          "triangles": 3685,
+          "minimumPPU": 83.85202785554135,
+          "maxContribution": 0.9882352941176471,
+          "worstTriangle": 1425,
+          "edgeVertices": [
+            [
+              2781.1865234375,
+              0.5980148315429688,
+              0.0,
+              0.0
+            ],
+            [
+              2781.2412109375,
+              0.6453593969345093,
+              0.0,
+              0.0
+            ],
+            [
+              2781.2177734375,
+              0.6023193597793579,
+              0.0,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              2016.71337890625,
+              437.5050048828125
+            ],
+            [
+              2016.63671875,
+              437.5342712402344
+            ],
+            [
+              2016.63671875,
+              437.5050048828125
+            ]
+          ],
+          "requiredSourceSize": [
+            5276,
+            660
+          ]
+        },
+        {
+          "minimumContribution": 0.05,
+          "triangles": 3609,
+          "minimumPPU": 83.85202785554135,
+          "maxContribution": 0.9882352941176471,
+          "worstTriangle": 1425,
+          "edgeVertices": [
+            [
+              2781.1865234375,
+              0.5980148315429688,
+              0.0,
+              0.0
+            ],
+            [
+              2781.2412109375,
+              0.6453593969345093,
+              0.0,
+              0.0
+            ],
+            [
+              2781.2177734375,
+              0.6023193597793579,
+              0.0,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              2016.71337890625,
+              437.5050048828125
+            ],
+            [
+              2016.63671875,
+              437.5342712402344
+            ],
+            [
+              2016.63671875,
+              437.5050048828125
+            ]
+          ],
+          "requiredSourceSize": [
+            5276,
+            660
+          ]
+        },
+        {
+          "minimumContribution": 0.25,
+          "triangles": 3335,
+          "minimumPPU": 83.85202785554135,
+          "maxContribution": 0.9882352941176471,
+          "worstTriangle": 1425,
+          "edgeVertices": [
+            [
+              2781.1865234375,
+              0.5980148315429688,
+              0.0,
+              0.0
+            ],
+            [
+              2781.2412109375,
+              0.6453593969345093,
+              0.0,
+              0.0
+            ],
+            [
+              2781.2177734375,
+              0.6023193597793579,
+              0.0,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              2016.71337890625,
+              437.5050048828125
+            ],
+            [
+              2016.63671875,
+              437.5342712402344
+            ],
+            [
+              2016.63671875,
+              437.5050048828125
+            ]
+          ],
+          "requiredSourceSize": [
+            5276,
+            660
+          ]
+        },
+        {
+          "minimumContribution": 0.5,
+          "triangles": 3129,
+          "minimumPPU": 83.85202785554135,
+          "maxContribution": 0.9882352941176471,
+          "worstTriangle": 1425,
+          "edgeVertices": [
+            [
+              2781.1865234375,
+              0.5980148315429688,
+              0.0,
+              0.0
+            ],
+            [
+              2781.2412109375,
+              0.6453593969345093,
+              0.0,
+              0.0
+            ],
+            [
+              2781.2177734375,
+              0.6023193597793579,
+              0.0,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              2016.71337890625,
+              437.5050048828125
+            ],
+            [
+              2016.63671875,
+              437.5342712402344
+            ],
+            [
+              2016.63671875,
+              437.5050048828125
+            ]
+          ],
+          "requiredSourceSize": [
+            5276,
+            660
+          ]
+        }
+      ]
+    },
+    {
+      "asset": "Assets/Development/Layouts/UndergroundRegional_20261023/Art/Descent_EdgeNative.png",
+      "mesh": "Assets\\Development\\Layouts\\CaveRollout_20261027\\ApproachCuts\\Cut_000.asset",
+      "hierarchy": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Shared Terrain | continuous walls, backing and passages/04 Zone painted natural borders/Natural_Rim_007",
+      "originalReportedPPU": 132.2171355646516,
+      "allTriangleDoublePPU": 100.98278650175995,
+      "sampleCountPerTriangle": 28,
+      "visibleThresholds": [
+        {
+          "minimumContribution": 0.001,
+          "triangles": 35921,
+          "minimumPPU": 132.2171355646516,
+          "maxContribution": 0.018055816023957495,
+          "worstTriangle": 274614,
+          "edgeVertices": [
+            [
+              4128.68603515625,
+              0.3499999940395355,
+              0.981801450252533,
+              0.0
+            ],
+            [
+              4128.74560546875,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              4128.68603515625,
+              0.0,
+              0.981801450252533,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              2102.392822265625,
+              87.92523956298828
+            ],
+            [
+              2102.42578125,
+              87.77923583984375
+            ],
+            [
+              2102.538330078125,
+              87.77989196777344
+            ]
+          ],
+          "requiredSourceSize": [
+            3346,
+            419
+          ]
+        },
+        {
+          "minimumContribution": 0.01,
+          "triangles": 35844,
+          "minimumPPU": 132.2171355646516,
+          "maxContribution": 0.018055816023957495,
+          "worstTriangle": 274614,
+          "edgeVertices": [
+            [
+              4128.68603515625,
+              0.3499999940395355,
+              0.981801450252533,
+              0.0
+            ],
+            [
+              4128.74560546875,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              4128.68603515625,
+              0.0,
+              0.981801450252533,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              2102.392822265625,
+              87.92523956298828
+            ],
+            [
+              2102.42578125,
+              87.77923583984375
+            ],
+            [
+              2102.538330078125,
+              87.77989196777344
+            ]
+          ],
+          "requiredSourceSize": [
+            3346,
+            419
+          ]
+        },
+        {
+          "minimumContribution": 0.05,
+          "triangles": 35691,
+          "minimumPPU": 138.63496424976196,
+          "maxContribution": 0.0624060651324124,
+          "worstTriangle": 292126,
+          "edgeVertices": [
+            [
+              4391.36376953125,
+              0.3499999940395355,
+              0.936841607093811,
+              0.0
+            ],
+            [
+              4391.423828125,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              4391.36376953125,
+              0.0,
+              0.936841607093811,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1988.440673828125,
+              97.63175964355469
+            ],
+            [
+              1988.36474609375,
+              97.5011215209961
+            ],
+            [
+              1988.440673828125,
+              97.42455291748047
+            ]
+          ],
+          "requiredSourceSize": [
+            3191,
+            399
+          ]
+        },
+        {
+          "minimumContribution": 0.25,
+          "triangles": 35293,
+          "minimumPPU": 173.19552642631578,
+          "maxContribution": 0.26332753101984663,
+          "worstTriangle": 314786,
+          "edgeVertices": [
+            [
+              4731.2607421875,
+              0.3499999940395355,
+              0.7345908284187317,
+              0.0
+            ],
+            [
+              4731.32080078125,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              4731.2607421875,
+              0.0,
+              0.7345908284187317,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1853.9222412109375,
+              175.52716064453125
+            ],
+            [
+              1853.765625,
+              175.45542907714844
+            ],
+            [
+              1853.7662353515625,
+              175.37115478515625
+            ]
+          ],
+          "requiredSourceSize": [
+            2555,
+            320
+          ]
+        },
+        {
+          "minimumContribution": 0.5,
+          "triangles": 32183,
+          "minimumPPU": 211.0125848007055,
+          "maxContribution": 0.5413496403133168,
+          "worstTriangle": 264126,
+          "edgeVertices": [
+            [
+              3971.3671875,
+              0.3499999940395355,
+              0.45437091588974,
+              0.0
+            ],
+            [
+              3971.42724609375,
+              0.0,
+              0.7049952149391174,
+              0.0
+            ],
+            [
+              3971.3671875,
+              0.0,
+              0.45437091588974,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              2075.45166015625,
+              206.40171813964844
+            ],
+            [
+              2075.51171875,
+              206.59979248046875
+            ],
+            [
+              2075.45166015625,
+              206.63430786132812
+            ]
+          ],
+          "requiredSourceSize": [
+            2097,
+            263
+          ]
+        }
+      ]
+    },
+    {
+      "asset": "Assets/Development/Layouts/UndergroundRegional_20261023/Art/Cradle_EdgeNative.png",
+      "mesh": "Assets\\Development\\Layouts\\SingleCaveAccess_20261030\\MR01_C05\\Restored_00.asset",
+      "hierarchy": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Shared Terrain | continuous walls, backing and passages/04 Zone painted natural borders/Natural_Rim_039",
+      "originalReportedPPU": 109.42205069013241,
+      "allTriangleDoublePPU": 48.663105489559186,
+      "sampleCountPerTriangle": 28,
+      "visibleThresholds": [
+        {
+          "minimumContribution": 0.001,
+          "triangles": 22600,
+          "minimumPPU": 135.44487426226274,
+          "maxContribution": 0.044243806951961416,
+          "worstTriangle": 12923,
+          "edgeVertices": [
+            [
+              193.79417419433594,
+              0.3499999940395355,
+              0.9503685832023621,
+              0.0
+            ],
+            [
+              193.8541717529297,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              193.79417419433594,
+              0.0,
+              0.9503685832023621,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              195.43832397460938,
+              -120.3561782836914
+            ],
+            [
+              195.36160278320312,
+              -120.48361206054688
+            ],
+            [
+              195.43832397460938,
+              -120.56293487548828
+            ]
+          ],
+          "requiredSourceSize": [
+            3267,
+            409
+          ]
+        },
+        {
+          "minimumContribution": 0.01,
+          "triangles": 22591,
+          "minimumPPU": 135.44487426226274,
+          "maxContribution": 0.044243806951961416,
+          "worstTriangle": 12923,
+          "edgeVertices": [
+            [
+              193.79417419433594,
+              0.3499999940395355,
+              0.9503685832023621,
+              0.0
+            ],
+            [
+              193.8541717529297,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              193.79417419433594,
+              0.0,
+              0.9503685832023621,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              195.43832397460938,
+              -120.3561782836914
+            ],
+            [
+              195.36160278320312,
+              -120.48361206054688
+            ],
+            [
+              195.43832397460938,
+              -120.56293487548828
+            ]
+          ],
+          "requiredSourceSize": [
+            3267,
+            409
+          ]
+        },
+        {
+          "minimumContribution": 0.05,
+          "triangles": 22566,
+          "minimumPPU": 159.66262669268997,
+          "maxContribution": 0.20470326547535173,
+          "worstTriangle": 6415,
+          "edgeVertices": [
+            [
+              96.17710876464844,
+              0.3499999940395355,
+              0.7692743539810181,
+              0.0
+            ],
+            [
+              96.23710632324219,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              96.17710876464844,
+              0.0,
+              0.7692743539810181,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              194.52975463867188,
+              -177.12509155273438
+            ],
+            [
+              194.58975219726562,
+              -176.9812774658203
+            ],
+            [
+              194.52975463867188,
+              -176.91172790527344
+            ]
+          ],
+          "requiredSourceSize": [
+            2771,
+            347
+          ]
+        },
+        {
+          "minimumContribution": 0.25,
+          "triangles": 22505,
+          "minimumPPU": 180.3890704693772,
+          "maxContribution": 0.258434028511143,
+          "worstTriangle": 24066,
+          "edgeVertices": [
+            [
+              360.8291320800781,
+              0.3499999940395355,
+              0.7139727473258972,
+              0.0
+            ],
+            [
+              360.8891296386719,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              360.8291320800781,
+              0.0,
+              0.7139727473258972,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              139.48643493652344,
+              -78.38409423828125
+            ],
+            [
+              139.42642211914062,
+              -78.55207824707031
+            ],
+            [
+              139.48643493652344,
+              -78.60610961914062
+            ]
+          ],
+          "requiredSourceSize": [
+            2453,
+            307
+          ]
+        },
+        {
+          "minimumContribution": 0.5,
+          "triangles": 22396,
+          "minimumPPU": 223.65523832419385,
+          "maxContribution": 0.5262581091201569,
+          "worstTriangle": 12915,
+          "edgeVertices": [
+            [
+              193.67416381835938,
+              0.3499999940395355,
+              0.4175528585910797,
+              0.0
+            ],
+            [
+              193.73416137695312,
+              0.0,
+              0.6563882827758789,
+              0.0
+            ],
+            [
+              193.67416381835938,
+              0.0,
+              0.4175528585910797,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              195.55831909179688,
+              -120.40904998779297
+            ],
+            [
+              195.49832153320312,
+              -120.61482238769531
+            ],
+            [
+              195.55831909179688,
+              -120.64200592041016
+            ]
+          ],
+          "requiredSourceSize": [
+            1978,
+            248
+          ]
+        }
+      ]
+    },
+    {
+      "asset": "Assets/Development/Layouts/UndergroundRegional_20261023/Art/Causeway_EdgeNative.png",
+      "mesh": "Assets\\Development\\Layouts\\SingleCaveAccess_20261030\\MR02_C04\\Restored_02.asset",
+      "hierarchy": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Shared Terrain | continuous walls, backing and passages/04 Zone painted natural borders/Natural_Rim_032",
+      "originalReportedPPU": 132.380757186627,
+      "allTriangleDoublePPU": 106.00836159838725,
+      "sampleCountPerTriangle": 28,
+      "visibleThresholds": [
+        {
+          "minimumContribution": 0.001,
+          "triangles": 32206,
+          "minimumPPU": 135.84836769832302,
+          "maxContribution": 0.033356308937072754,
+          "worstTriangle": 51663,
+          "edgeVertices": [
+            [
+              783.0111694335938,
+              0.3499999940395355,
+              0.9666436910629272,
+              0.0
+            ],
+            [
+              783.0711669921875,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              783.0111694335938,
+              0.0,
+              0.9666436910629272,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              389.43548583984375,
+              -132.3580322265625
+            ],
+            [
+              389.35711669921875,
+              -132.48687744140625
+            ],
+            [
+              389.43548583984375,
+              -132.5642852783203
+            ]
+          ],
+          "requiredSourceSize": [
+            1629,
+            408
+          ]
+        },
+        {
+          "minimumContribution": 0.01,
+          "triangles": 32196,
+          "minimumPPU": 135.84836769832302,
+          "maxContribution": 0.033356308937072754,
+          "worstTriangle": 51663,
+          "edgeVertices": [
+            [
+              783.0111694335938,
+              0.3499999940395355,
+              0.9666436910629272,
+              0.0
+            ],
+            [
+              783.0711669921875,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              783.0111694335938,
+              0.0,
+              0.9666436910629272,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              389.43548583984375,
+              -132.3580322265625
+            ],
+            [
+              389.35711669921875,
+              -132.48687744140625
+            ],
+            [
+              389.43548583984375,
+              -132.5642852783203
+            ]
+          ],
+          "requiredSourceSize": [
+            1629,
+            408
+          ]
+        },
+        {
+          "minimumContribution": 0.05,
+          "triangles": 32171,
+          "minimumPPU": 137.77216013834493,
+          "maxContribution": 0.050484657287597656,
+          "worstTriangle": 14088,
+          "edgeVertices": [
+            [
+              214.066650390625,
+              0.3499999940395355,
+              0.9495153427124023,
+              0.0
+            ],
+            [
+              214.12664794921875,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              214.066650390625,
+              0.0,
+              0.9495153427124023,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              480.5615234375,
+              20.359033584594727
+            ],
+            [
+              480.63836669921875,
+              20.489242553710938
+            ],
+            [
+              480.5615234375,
+              20.565820693969727
+            ]
+          ],
+          "requiredSourceSize": [
+            1606,
+            402
+          ]
+        },
+        {
+          "minimumContribution": 0.25,
+          "triangles": 32070,
+          "minimumPPU": 174.45828068652744,
+          "maxContribution": 0.2627323865890503,
+          "worstTriangle": 46351,
+          "edgeVertices": [
+            [
+              700.5762939453125,
+              0.3499999940395355,
+              0.7372676134109497,
+              0.0
+            ],
+            [
+              700.6362915039062,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              700.5762939453125,
+              0.0,
+              0.7372676134109497,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              453.48162841796875,
+              -132.38145446777344
+            ],
+            [
+              453.421630859375,
+              -132.54202270507812
+            ],
+            [
+              453.48162841796875,
+              -132.60031127929688
+            ]
+          ],
+          "requiredSourceSize": [
+            1268,
+            317
+          ]
+        },
+        {
+          "minimumContribution": 0.5,
+          "triangles": 31933,
+          "minimumPPU": 209.3330242870161,
+          "maxContribution": 0.5053211450576782,
+          "worstTriangle": 18828,
+          "edgeVertices": [
+            [
+              285.1622314453125,
+              0.3499999940395355,
+              0.4946788549423218,
+              0.0
+            ],
+            [
+              285.22222900390625,
+              0.0,
+              0.7582094669342041,
+              0.0
+            ],
+            [
+              285.1622314453125,
+              0.0,
+              0.4946788549423218,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              524.4627685546875,
+              -7.099277019500732
+            ],
+            [
+              524.5227661132812,
+              -6.9057393074035645
+            ],
+            [
+              524.4627685546875,
+              -6.87006950378418
+            ]
+          ],
+          "requiredSourceSize": [
+            1057,
+            265
+          ]
+        }
+      ]
+    },
+    {
+      "asset": "Assets/Development/Layouts/UndergroundRegional_20261023/Art/Mill_EdgeNative.png",
+      "mesh": "Assets\\Development\\Layouts\\CaveRollout_20261027\\LowerCuts\\Cut_032.asset",
+      "hierarchy": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Shared Terrain | continuous walls, backing and passages/04 Zone painted natural borders/Natural_Rim_030",
+      "originalReportedPPU": 134.51191299738733,
+      "allTriangleDoublePPU": 106.89013928818139,
+      "sampleCountPerTriangle": 28,
+      "visibleThresholds": [
+        {
+          "minimumContribution": 0.001,
+          "triangles": 1807,
+          "minimumPPU": 134.51191299738733,
+          "maxContribution": 0.0581162787136147,
+          "worstTriangle": 1047,
+          "edgeVertices": [
+            [
+              15.642451286315918,
+              0.3499999940395355,
+              0.9411842823028564,
+              0.0
+            ],
+            [
+              15.702383995056152,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              15.642451286315918,
+              0.0,
+              0.9411842823028564,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              837.5601806640625,
+              267.4804992675781
+            ],
+            [
+              837.6361083984375,
+              267.6066589355469
+            ],
+            [
+              837.5601806640625,
+              267.68756103515625
+            ]
+          ],
+          "requiredSourceSize": [
+            3289,
+            412
+          ]
+        },
+        {
+          "minimumContribution": 0.01,
+          "triangles": 1807,
+          "minimumPPU": 134.51191299738733,
+          "maxContribution": 0.0581162787136147,
+          "worstTriangle": 1047,
+          "edgeVertices": [
+            [
+              15.642451286315918,
+              0.3499999940395355,
+              0.9411842823028564,
+              0.0
+            ],
+            [
+              15.702383995056152,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              15.642451286315918,
+              0.0,
+              0.9411842823028564,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              837.5601806640625,
+              267.4804992675781
+            ],
+            [
+              837.6361083984375,
+              267.6066589355469
+            ],
+            [
+              837.5601806640625,
+              267.68756103515625
+            ]
+          ],
+          "requiredSourceSize": [
+            3289,
+            412
+          ]
+        },
+        {
+          "minimumContribution": 0.05,
+          "triangles": 1804,
+          "minimumPPU": 134.51191299738733,
+          "maxContribution": 0.0581162787136147,
+          "worstTriangle": 1047,
+          "edgeVertices": [
+            [
+              15.642451286315918,
+              0.3499999940395355,
+              0.9411842823028564,
+              0.0
+            ],
+            [
+              15.702383995056152,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              15.642451286315918,
+              0.0,
+              0.9411842823028564,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              837.5601806640625,
+              267.4804992675781
+            ],
+            [
+              837.6361083984375,
+              267.6066589355469
+            ],
+            [
+              837.5601806640625,
+              267.68756103515625
+            ]
+          ],
+          "requiredSourceSize": [
+            3289,
+            412
+          ]
+        },
+        {
+          "minimumContribution": 0.25,
+          "triangles": 1787,
+          "minimumPPU": 180.13669138776504,
+          "maxContribution": 0.34648106302551895,
+          "worstTriangle": 1043,
+          "edgeVertices": [
+            [
+              15.582518577575684,
+              0.3499999940395355,
+              0.6486101150512695,
+              0.0
+            ],
+            [
+              15.642451286315918,
+              0.0,
+              0.9411842823028564,
+              0.0
+            ],
+            [
+              15.582518577575684,
+              0.0,
+              0.6486101150512695,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              837.500244140625,
+              267.517333984375
+            ],
+            [
+              837.5601806640625,
+              267.68756103515625
+            ],
+            [
+              837.500244140625,
+              267.7415771484375
+            ]
+          ],
+          "requiredSourceSize": [
+            2456,
+            307
+          ]
+        },
+        {
+          "minimumContribution": 0.5,
+          "triangles": 1770,
+          "minimumPPU": 220.00997631393378,
+          "maxContribution": 0.5814171889249017,
+          "worstTriangle": 1039,
+          "edgeVertices": [
+            [
+              15.52258586883545,
+              0.3499999940395355,
+              0.41166117787361145,
+              0.0
+            ],
+            [
+              15.582518577575684,
+              0.0,
+              0.6486101150512695,
+              0.0
+            ],
+            [
+              15.52258586883545,
+              0.0,
+              0.41166117787361145,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              837.4403076171875,
+              267.53778076171875
+            ],
+            [
+              837.500244140625,
+              267.7415771484375
+            ],
+            [
+              837.4403076171875,
+              267.77081298828125
+            ]
+          ],
+          "requiredSourceSize": [
+            2011,
+            252
+          ]
+        }
+      ]
+    },
+    {
+      "asset": "Assets/Development/Layouts/UndergroundRegional_20261023/Art/Heart_EdgeNative.png",
+      "mesh": "Assets\\Development\\Layouts\\CaveRollout_20261027\\ApproachCuts\\Cut_000.asset",
+      "hierarchy": "UNDERGROUND REGIONAL | 89 rooms | local rock backing/Shared Terrain | continuous walls, backing and passages/04 Zone painted natural borders/Natural_Rim_007",
+      "originalReportedPPU": 134.92874670357904,
+      "allTriangleDoublePPU": 100.98278650175995,
+      "sampleCountPerTriangle": 28,
+      "visibleThresholds": [
+        {
+          "minimumContribution": 0.001,
+          "triangles": 11849,
+          "minimumPPU": 134.92874670357904,
+          "maxContribution": 0.0049835467288015505,
+          "worstTriangle": 241394,
+          "edgeVertices": [
+            [
+              3630.389892578125,
+              0.3499999940395355,
+              0.9944177269935608,
+              0.0
+            ],
+            [
+              3630.449951171875,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              3630.389892578125,
+              0.0,
+              0.9944177269935608,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1837.5693359375,
+              218.3271942138672
+            ],
+            [
+              1837.64892578125,
+              218.45510864257812
+            ],
+            [
+              1837.5693359375,
+              218.53265380859375
+            ]
+          ],
+          "requiredSourceSize": [
+            3279,
+            410
+          ]
+        },
+        {
+          "minimumContribution": 0.01,
+          "triangles": 11725,
+          "minimumPPU": 155.9577927983722,
+          "maxContribution": 0.14506562556629182,
+          "worstTriangle": 29886,
+          "edgeVertices": [
+            [
+              451.4362487792969,
+              0.3499999940395355,
+              0.8371260166168213,
+              0.0
+            ],
+            [
+              451.49627685546875,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              451.4362487792969,
+              0.0,
+              0.8371260166168213,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1773.5418701171875,
+              218.3397979736328
+            ],
+            [
+              1773.595703125,
+              218.4756317138672
+            ],
+            [
+              1773.5418701171875,
+              218.55230712890625
+            ]
+          ],
+          "requiredSourceSize": [
+            2837,
+            355
+          ]
+        },
+        {
+          "minimumContribution": 0.05,
+          "triangles": 11568,
+          "minimumPPU": 155.9577927983722,
+          "maxContribution": 0.14506562556629182,
+          "worstTriangle": 29886,
+          "edgeVertices": [
+            [
+              451.4362487792969,
+              0.3499999940395355,
+              0.8371260166168213,
+              0.0
+            ],
+            [
+              451.49627685546875,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              451.4362487792969,
+              0.0,
+              0.8371260166168213,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1773.5418701171875,
+              218.3397979736328
+            ],
+            [
+              1773.595703125,
+              218.4756317138672
+            ],
+            [
+              1773.5418701171875,
+              218.55230712890625
+            ]
+          ],
+          "requiredSourceSize": [
+            2837,
+            355
+          ]
+        },
+        {
+          "minimumContribution": 0.25,
+          "triangles": 11238,
+          "minimumPPU": 180.77729083085043,
+          "maxContribution": 0.2767615929383122,
+          "worstTriangle": 241390,
+          "edgeVertices": [
+            [
+              3630.329833984375,
+              0.3499999940395355,
+              0.6936883330345154,
+              0.0
+            ],
+            [
+              3630.389892578125,
+              0.0,
+              0.9944177269935608,
+              0.0
+            ],
+            [
+              3630.329833984375,
+              0.0,
+              0.6936883330345154,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1837.5093994140625,
+              218.3631134033203
+            ],
+            [
+              1837.5693359375,
+              218.53265380859375
+            ],
+            [
+              1837.5093994140625,
+              218.58651733398438
+            ]
+          ],
+          "requiredSourceSize": [
+            2448,
+            306
+          ]
+        },
+        {
+          "minimumContribution": 0.5,
+          "triangles": 10880,
+          "minimumPPU": 221.58108935743738,
+          "maxContribution": 0.591886473290951,
+          "worstTriangle": 29878,
+          "edgeVertices": [
+            [
+              451.3162536621094,
+              0.3499999940395355,
+              0.34491729736328125,
+              0.0
+            ],
+            [
+              451.3762512207031,
+              0.0,
+              0.5604953169822693,
+              0.0
+            ],
+            [
+              451.3162536621094,
+              0.0,
+              0.34491729736328125,
+              0.0
+            ]
+          ],
+          "worldVertices": [
+            [
+              1773.421875,
+              218.39633178710938
+            ],
+            [
+              1773.48193359375,
+              218.60232543945312
+            ],
+            [
+              1773.421875,
+              218.6305389404297
+            ]
+          ],
+          "requiredSourceSize": [
+            1997,
+            250
+          ]
+        }
+      ]
+    }
+  ]
+}

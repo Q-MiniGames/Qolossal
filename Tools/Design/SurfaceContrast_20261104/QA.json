@@ -1,0 +1,170 @@
+{
+  "scope": "Seven upper terrain regions only; backgrounds, cave entrances, underground, houses and source artwork excluded",
+  "rendering": "Darker rock bodies, retained lighter walking edges, region-specific linear-light multipliers",
+  "sceneAndCameraHashes": {
+    "Assets/Scenes/Game/MRAtlas_MR01_Cradle.unity": true,
+    "Assets/Scenes/Game/MRAtlas_MR02_Causeway.unity": true,
+    "Assets/Scenes/Game/MRAtlas_MR03_Terraces.unity": true,
+    "Assets/Scenes/Game/MRAtlas_MR04_C02.unity": true,
+    "Assets/Scenes/Game/MRAtlas_MR04_C03.unity": true,
+    "Assets/Scenes/Game/MRAtlas_MR04_C04.unity": true,
+    "Assets/Scenes/Game/MRAtlas_MR04_C05.unity": true,
+    "Assets/Scenes/Game/MRAtlas_MR04_C06.unity": true,
+    "Assets/Scenes/Game/MRAtlas_MR04_Qvale.unity": true,
+    "Assets/Scenes/Game/MRAtlas_MR05_Ribwood.unity": true,
+    "Assets/Scenes/Game/MRAtlas_MR06_Heights.unity": true,
+    "Assets/Scenes/Game/MRAtlas_MR07_Summit.unity": true,
+    "Assets/Scenes/Game/Qolossal_Underground.unity": true,
+    "Assets/Scripts/CameraFollow.cs": true,
+    "Assets/Scripts/Prototype/VistaZone.cs": true,
+    "Assets/Resources/CavePassageConnections.json": true,
+    "Assets/Resources/CavePassageConnections.json.meta": true,
+    "Assets/Resources/FX/CaveDepthBackdrop.shader": true,
+    "Assets/Resources/FX/CaveDepthBackdrop.shader.meta": true,
+    "Assets/Resources/FX/CavePassageVista.shader": true,
+    "Assets/Resources/FX/CavePassageVista.shader.meta": true,
+    "Assets/Resources/FX/CaveVistaSampling.cginc": true,
+    "Assets/Resources/FX/CaveVistaSampling.cginc.meta": true,
+    "Assets/Resources/FX/WorldRefreshCaveVista.shader": true,
+    "Assets/Resources/FX/WorldRefreshCaveVista.shader.meta": true
+  },
+  "allProtectedHashesUnchanged": true,
+  "terrainGeneratorChangeIsScopedRenderingHookOnly": true,
+  "acceptedSourceHashes": {
+    "manifest": "Tools/ArtImport/codex_v2_accepted.json",
+    "count": 1351,
+    "mismatches": []
+  },
+  "matchedStaticViews": 58,
+  "native4KSurfaceViews": 21,
+  "protectedCaveMouthsCompared": 37,
+  "maximumProtectedCaveRGBDifference": 0,
+  "scopeAuditErrors": [],
+  "shaderMessages": [],
+  "finalPlay": {
+    "complete": true,
+    "rows": [
+      {
+        "scene": "MRAtlas_MR01_Cradle",
+        "passed": true,
+        "renderedFrames": 121,
+        "frameAdvance": 121,
+        "simulationSeconds": 2.01579523,
+        "feetViewport": 0.149999857,
+        "cameraSize": 5.0,
+        "gradedMeshes": 38,
+        "allCaveMasksPresent": true,
+        "expectedProtectedMouths": 4
+      },
+      {
+        "scene": "MRAtlas_MR02_Causeway",
+        "passed": true,
+        "renderedFrames": 113,
+        "frameAdvance": 113,
+        "simulationSeconds": 2.00594282,
+        "feetViewport": 0.1500001,
+        "cameraSize": 5.0,
+        "gradedMeshes": 6,
+        "allCaveMasksPresent": true,
+        "expectedProtectedMouths": 4
+      },
+      {
+        "scene": "MRAtlas_MR03_Terraces",
+        "passed": true,
+        "renderedFrames": 88,
+        "frameAdvance": 88,
+        "simulationSeconds": 2.13925743,
+        "feetViewport": 0.15091157,
+        "cameraSize": 5.0,
+        "gradedMeshes": 4,
+        "allCaveMasksPresent": true,
+        "expectedProtectedMouths": 4
+      },
+      {
+        "scene": "MRAtlas_MR04_Qvale",
+        "passed": true,
+        "renderedFrames": 117,
+        "frameAdvance": 117,
+        "simulationSeconds": 2.00684929,
+        "feetViewport": 0.1514414,
+        "cameraSize": 7.6,
+        "gradedMeshes": 2,
+        "allCaveMasksPresent": true,
+        "expectedProtectedMouths": 1
+      },
+      {
+        "scene": "MRAtlas_MR05_Ribwood",
+        "passed": true,
+        "renderedFrames": 114,
+        "frameAdvance": 114,
+        "simulationSeconds": 2.002243,
+        "feetViewport": 0.149999619,
+        "cameraSize": 5.0,
+        "gradedMeshes": 2,
+        "allCaveMasksPresent": true,
+        "expectedProtectedMouths": 8
+      },
+      {
+        "scene": "MRAtlas_MR06_Heights",
+        "passed": true,
+        "renderedFrames": 118,
+        "frameAdvance": 118,
+        "simulationSeconds": 2.01621437,
+        "feetViewport": 0.150016427,
+        "cameraSize": 5.0,
+        "gradedMeshes": 8,
+        "allCaveMasksPresent": true,
+        "expectedProtectedMouths": 8
+      },
+      {
+        "scene": "MRAtlas_MR07_Summit",
+        "passed": true,
+        "renderedFrames": 120,
+        "frameAdvance": 120,
+        "simulationSeconds": 2.01251984,
+        "feetViewport": 0.151226878,
+        "cameraSize": 5.0,
+        "gradedMeshes": 2,
+        "allCaveMasksPresent": true,
+        "expectedProtectedMouths": 8
+      }
+    ],
+    "errors": [],
+    "normalSavesPreserved": true,
+    "settingsRestored": true
+  },
+  "geometryCollisionMapAndCameraUnchanged": true,
+  "resolution": {
+    "review": [
+      3840,
+      2160
+    ],
+    "readability": [
+      1920,
+      1080
+    ],
+    "closestOrthographicHalfHeight": 5,
+    "screenPixelsPerWorldUnit": 216,
+    "sourceDimensionsAndUV0Unchanged": true,
+    "existingSourceDensityExceptions": 3
+  },
+  "platformReadiness": {
+    "tested": "Windows Unity 6000.3.19f1 Editor, URP",
+    "targets": [
+      "Windows PC",
+      "PS5",
+      "Xbox Series X",
+      "Xbox Series S",
+      "Nintendo Switch 2 handheld",
+      "Nintendo Switch 2 docked"
+    ],
+    "standaloneBuild": "Not tested",
+    "consoleHardware": "Not tested",
+    "physicalControllers": "Not tested",
+    "cpuGpuFrameTimes": "Not measured",
+    "peakMemory": "Not measured; incremental UV bytes only in scope_audit.json",
+    "importProfile": "Unchanged",
+    "fps60": "Target, not certified"
+  },
+  "passed": true
+}

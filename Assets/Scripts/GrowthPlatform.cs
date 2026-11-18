@@ -42,6 +42,7 @@ public sealed class GrowthPlatform : MonoBehaviour
         platformVisual.sortingLayerID = plantVisual.sortingLayerID;
         platformVisual.sortingOrder = plantVisual.sortingOrder;
         platform.AddComponent<BoxCollider2D>().size = platformSize;
+        platform.AddComponent<CameraPlatformSurface>();
         platformArtwork = WorldPropVisual.Create(platformVisual, WorldPropVisual.Kind.PlatformLeaf,
             platformSize.x, platformSize.y*0.5f);
         if (platformArtwork != null) platformVisual = platformArtwork.Artwork;

@@ -1,0 +1,56 @@
+{
+  "status": "targeted_underground_native_review_complete",
+  "framesReviewed": 6,
+  "rooms": [
+    "A01",
+    "C01",
+    "D01",
+    "PC06",
+    "MR02_C04"
+  ],
+  "method": "Composition views and native-pixel border crops, including separate targeted D01 return capture covering the originally deficient triangle.",
+  "findings": [
+    {
+      "id": "regional-edge-density-band-presentation",
+      "status": "visually_verified_in_requested_rooms",
+      "notes": "Painted edge remains narrow and detailed; deeper native stone has no clamped texture streaks. PC06/MR02_C04 retain their muted masonry/mortar border, feathered into surrounding gold rock."
+    },
+    {
+      "id": "D01-deep-floor-rectangle",
+      "status": "resolved_after_two_mesh_end_taper",
+      "notes": "Former sharp rectangular left/deep endpoint is now blended into surrounding native stone. Actual walkable geometry and source registration unchanged."
+    }
+  ],
+  "remainingActionableDefects": [],
+  "limits": [
+    "Targeted review of requested rooms, not an exhaustive frame-by-frame approval of all89 caves.",
+    "Existing approved ReturnRim/Rockwork/Masonry source-density exceptions remain documented separately.",
+    "Editor captures do not establish hardware performance or console readiness."
+  ],
+  "sources": [
+    {
+      "file": "Tools/Design/WorldRevision_20261104/CaveVista/AllThemes/A01_theme_4K.png",
+      "sha256": "e1e358304156388a32a16dc3780cad99011ee6d53d92c9225a5edcbfa219c3b6"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/CaveVista/AllThemes/C01_theme_4K.png",
+      "sha256": "23c1160585367cf973792498cef461e1c83f3a4b509fcf90e715a92f82629a3f"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/CaveVista/AllThemes/D01_theme_4K.png",
+      "sha256": "2685a2fc8364e793b82de4b05163430d395f7253bfb346494dc1257a5f28bd73"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/CaveVista/AllThemes/PC06_theme_4K.png",
+      "sha256": "4052b505fda80e96215be72af78b920da42d84e9fa8eafe760e4f4abe4785e23"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/CaveVista/AllThemes/MR02_C04_theme_4K.png",
+      "sha256": "245e6f5c86696e5d3d09679f487403180e0dac8bac7cbcb6f65ce6e677aeb5dd"
+    },
+    {
+      "file": "Tools/Design/WorldRevision_20261104/RegionalEdge/Captures/D01_theme_4K.png",
+      "sha256": "ca5190a5fbcd4640deb96f39eeaf3018df24989dc491edb3686b16a09c2d03e2"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "scene": "MRAtlas_MR04_Qvale",
+  "minCameraSize": 5.0,
+  "displayPPU": 216.0,
+  "collisionPreserved": true,
+  "before": [
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Continuous themed inner wall",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR04/FFC7AFA2550D10A0734C.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR04/FFC7AFA2550D10A0734C.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Passage shadow",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoins/MR04/13B523A3B5A61B1D66BA.asset",
+      "material": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Passage shadow.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Registered native outer rock",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoinsV2/MR04/9A32BFE1D9C336895153.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR04/9A32BFE1D9C336895153.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Native roof trim/Native roof 0",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR04/50194EC29A77C44900BE.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR04/50194EC29A77C44900BE.mat",
+      "enabled": false
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Native roof trim/Native roof 1",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoinsV2/MR04/B65FC3699D61C01D370A.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR04/B65FC3699D61C01D370A.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Native roof trim/Native roof 2",
+      "mesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Native roof 2.asset",
+      "material": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Native roof 2.mat",
+      "enabled": false
+    }
+  ],
+  "changes": [
+    {
+      "id": "A01",
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Continuous themed inner wall",
+      "action": "Restored approved dark regional interior painting and depth tint",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Continuous themed inner wall.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Inner wall.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR04/A01/Continuous themed inner wall.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR04/A01/Inner wall.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "A01",
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Passage shadow",
+      "action": "Restored approved passage depth shadow",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Passage shadow.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Passage shadow.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR04/A01/Passage shadow.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR04/A01/Passage shadow.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "A01",
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Registered native outer rock",
+      "action": "Restored approved painted ceiling underside and inward facets; native Fill only at outer attachment",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Registered native outer rock.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Native outer rock.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR04/A01/Registered native outer rock.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR04/A01/Native outer rock.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "A01",
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Native roof trim/Native roof 0",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "A01",
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Native roof trim/Native roof 1",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "A01",
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Native roof trim/Native roof 2",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    }
+  ],
+  "sourceHashes": {
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Continuous themed inner wall.asset": "ada8f806166a27f615fe263820cb00b27a9b69621469781ae23e0dcb38c8bf2b",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Inner wall.mat": "1431e466711552658840ec871d68147c6267446ad911802b87686331e050103c",
+    "Assets/Art/Prototypes/CaveRollout_20261027/Qvale_Sluice.png": "21cc7b8f4eeecd1688cca56dd9f82a5da90c7ba806e98f5c0b03845c4c8eafe1",
+    "Assets/Art/Prototypes/CradleTerrainJoin_20261027/MR01_C01_CleanLeftEdge.png": "344af81bc2c02d8b701724cc3f19cc030d8b02338618a24bfaa9afdeaf911a3c",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Passage shadow.asset": "0529c6318c28f4142f82e105fcf5b88639dbc11daf01f5dffd59828cad7479a9",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Passage shadow.mat": "89c43976909269c7e745e155be2991a82052a45d73669ec03760b1912ca4d446",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Registered native outer rock.asset": "4f6007a34780571ca92da27135810f140006d754bc11f189d10933371be994d9",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_A01/Native outer rock.mat": "9e281dfaa5519abf8908b659a88d36f507ac4b41593c3d826cffb742e5d4bfcf",
+    "Assets/Art/Prototypes/WorldRefresh_20261104/MR04/Fill.png": "3b7a94bb03b3b7d354761d45fa22282d2bc0649310ab1b101547c9ab8f5c5b67",
+    "Assets/Art/Prototypes/CradleRockwork_20261027/MR01_C01_Rockwork.png": "07840acd4daabf5ba62290c620c4ca96049388110d069ff47221d51cdbd2cb31"
+  },
+  "densityAudits": [
+    {
+      "id": "A01",
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Continuous themed inner wall",
+      "layer": {
+        "role": "Approved interior RGB",
+        "asset": "Assets/Art/Prototypes/CaveRollout_20261027/Qvale_Sluice.png",
+        "sourceWidth": 2172,
+        "sourceHeight": 724,
+        "nativeMinimumPPU": 245.42325574629012,
+        "requiredWidth": 1912,
+        "requiredHeight": 638,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 5184
+      }
+    },
+    {
+      "id": "A01",
+      "path": "Generated (MRA builder)/Upper Areas | MR04 - Qvale/[MR04_N06] Scribble's atlas stall/Cave access | paired underground rooms/[CAVE A01] MR04_N06 <-> Underground - Sluice Arrival/Regional fitted passage/Registered native outer rock",
+      "layer": {
+        "role": "Approved painted rim RGB and alpha",
+        "asset": "Assets/Art/Prototypes/CradleRockwork_20261027/MR01_C01_Rockwork.png",
+        "sourceWidth": 1605,
+        "sourceHeight": 980,
+        "nativeMinimumPPU": 232.1824805305375,
+        "requiredWidth": 1494,
+        "requiredHeight": 912,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 8000
+      }
+    }
+  ],
+  "note": "Painted rim and interior restored from retained approved assets. Native-density exceptions are explicit in densityAudits; no source upscaling or substitution is used to hide them."
+}

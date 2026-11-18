@@ -1,0 +1,125 @@
+{
+  "passed": true,
+  "date": "2026-11-04",
+  "beforeMaxJumpCameraStep": 1.255825,
+  "cases": 20,
+  "steps": 62,
+  "renderedFrames": 3718,
+  "motion": [
+    {
+      "label": "street_jump",
+      "passed": true,
+      "frames": 148,
+      "maxCameraStep": 0.002175331,
+      "cameraTravel": 0.0334672928,
+      "playerTravel": 2.40083218,
+      "airborneFrames": 46,
+      "minFeet": 0.14787215,
+      "maxHead": 0.384694934
+    },
+    {
+      "label": "repeat_jump_60",
+      "passed": true,
+      "frames": 147,
+      "maxCameraStep": 0.00203704834,
+      "cameraTravel": 0.0334672928,
+      "playerTravel": 2.39850044,
+      "airborneFrames": 44,
+      "minFeet": 0.147866368,
+      "maxHead": 0.3845415
+    },
+    {
+      "label": "repeat_jump_30",
+      "passed": true,
+      "frames": 75,
+      "maxCameraStep": 0.00572299957,
+      "cameraTravel": 0.0334692,
+      "playerTravel": 2.40083218,
+      "airborneFrames": 23,
+      "minFeet": 0.148033619,
+      "maxHead": 0.384694934
+    },
+    {
+      "label": "running_jump",
+      "passed": true,
+      "frames": 148,
+      "maxCameraStep": 0.00245571136,
+      "cameraTravel": 0.0450353622,
+      "playerTravel": 2.41240025,
+      "airborneFrames": 46,
+      "minFeet": 0.147085667,
+      "maxHead": 0.384694934
+    },
+    {
+      "label": "street_high_launch",
+      "passed": true,
+      "frames": 228,
+      "maxCameraStep": 0.0,
+      "cameraTravel": 0.0,
+      "playerTravel": 5.355486,
+      "airborneFrames": 65,
+      "minFeet": 0.149999857,
+      "maxHead": 0.5812819
+    }
+  ],
+  "authoredQvaleZoom": 7.6,
+  "allSixVistasCovered": true,
+  "normalZoomCases": [
+    {
+      "label": "outside_80",
+      "passed": true,
+      "frames": 120,
+      "maxCameraStep": 0.0,
+      "cameraTravel": 0.0,
+      "playerTravel": 0.0,
+      "airborneFrames": 0,
+      "minFeet": 0.149999917,
+      "maxHead": 0.270000041
+    },
+    {
+      "label": "outside_jump",
+      "passed": true,
+      "frames": 148,
+      "maxCameraStep": 0.0023765564,
+      "cameraTravel": 0.0450353622,
+      "playerTravel": 2.41240025,
+      "airborneFrames": 46,
+      "minFeet": 0.145560622,
+      "maxHead": 0.5067363
+    },
+    {
+      "label": "outside_high_launch",
+      "passed": true,
+      "frames": 228,
+      "maxCameraStep": 0.368700981,
+      "cameraTravel": 1.93499565,
+      "playerTravel": 5.355486,
+      "airborneFrames": 65,
+      "minFeet": 0.07999998,
+      "maxHead": 0.707123756
+    }
+  ],
+  "normalSavesPreserved": true,
+  "editorSettingsRestored": true,
+  "sceneHashesVerified": 13,
+  "sceneChanges": [],
+  "codeHashes": {
+    "Assets/Scripts/CameraFollow.cs": "50a4f2e0f8e78723a008ebb6820c5d0ce9c700bc4d679ae859f2dae76de42eac",
+    "Assets/Scripts/Prototype/VistaZone.cs": "0310e6f43f8ea3ff0ec0992614c48fc27f6650e9092b1f05c605e0849c31fded"
+  },
+  "platformReadiness": {
+    "tested": "Windows Unity Editor, rendered motion with virtual gamepad, 30/60 FPS caps; 1920x1080 and 3840x2160 captures",
+    "notTested": [
+      "Windows player build",
+      "PS5",
+      "Xbox Series X",
+      "Xbox Series S",
+      "Switch 2 handheld",
+      "Switch 2 docked",
+      "Physical controllers",
+      "CPU/GPU performance",
+      "Peak memory"
+    ],
+    "importProfiles": "Unchanged; no art or texture changes"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "themes": [
+    {
+      "id": "MR01",
+      "name": "Cradle",
+      "theme": "Cradle: sheltered living spring basin at the Titan's foot/shin. Soft moss-green woodland, pale rounded limestone bluffs, warm shallow spring pools linked by winding bright streams, tiny shelter huts barely visible among roots, fallen ancient stone crossing, ferns and wildflower meadows. Soft cream early-day light, sage and celadon, warm pale stone. A comforting rich lush beginning, not wilderness monotony."
+    },
+    {
+      "id": "MR02",
+      "name": "Causeway",
+      "theme": "Long Causeway: an ancient road climbing the Titan's shin toward knee, overlooking a broad eroded gorge. Great weathered aqueduct arches cross ravines at several distances, high cistern and broken causeway with rooted old waystation ruins, narrow turquoise stream far below, tawny grasses and sparse wind-shaped trees. Pale ochre limestone, dusty blue distance, warm gold. The aqueduct and snaking river must be readable in upper-middle. Grand engineered landscape reclaimed by nature, no modern buildings."
+    },
+    {
+      "id": "MR03",
+      "name": "Terraces",
+      "theme": "Terraces: a series of lush agricultural shelves across the Titan's broad knee/thigh. Curving orchard terraces follow natural limestone contours, silver irrigation channels, a small old wooden water mill beside a cascading sluice, linked little waterfalls and pools, stone retaining arches with vines, patches of golden harvest and jade orchard. Warm green and cream, soft blue distance. Rich cultivated landscape, stepped land that feels ancient and rounded rather than rigid geometric stripes."
+    },
+    {
+      "id": "MR04",
+      "name": "Qvale",
+      "theme": "Qvale: a warm inhabited basin in the Titan's sheltered lap. A winding clear river surrounds grassy islands, a clustered tiny stone-and-timber village with rounded earth roofs and a mill bridge, warm spring pools with faint mist close to water, orchard gardens and an immense listening tree on a rise. Tiny roofs and village details belong to far distance, not foreground buildings. Honey stone, olive green, faded teal water and warm amber afternoon. Welcoming lived-in valley with village landmarks in upper-middle."
+    },
+    {
+      "id": "MR05",
+      "name": "Ribwood",
+      "theme": "Ribwood: ancient temperate forest growing between the Titan's immense fossil-stone ribs. Multiple sweeping limestone rib arches at great distance, old trees with braided roots and varied canopy masses, shallow emerald stream through mossy root islands, tiny shafts of gold light touching pools, fern terraces and root lattice bridges. Deep muted emerald and moss, pale gray-violet rock, golden highlights; atmospheric but detailed. Full landscape broad view, no near giant dark trunk cutting across frame; distant arches evoke ribcage without literal bones or human anatomy."
+    },
+    {
+      "id": "MR07",
+      "name": "Summit",
+      "theme": "Summit: serene luminous highland tarns and waterfall shelves on the Titan's crown. A broad glacial-turquoise high lake with little rocky islands, reeds in sheltered coves, cascading narrow waterfalls down pale silver limestone shelves, elegant weathered stone crest ridges and distant violet mountain chains. Small old lookout ruin partly swallowed by alpine meadow. Lavender-blue stone, turquoise, pearl and subduedgold, thin high-altitude clear light. Sacred calm above the world, not a snowfield or another lowland forest. Lake and waterfalls readable in upper-middle."
+    }
+  ],
+  "sourceQA": "asset_manifest.json",
+  "generationMode": "built-in image generation",
+  "assets": 12,
+  "requiredPixelsPerAsset": [
+    2160,
+    720
+  ],
+  "nativePixelsPerAsset": [
+    2172,
+    724
+  ],
+  "basis": {
+    "display": [
+      3840,
+      2160
+    ],
+    "cameraOrthographicSizeMinimum": 5,
+    "displayPixelsPerWorldUnit": 216,
+    "layerWidthWorldUnits": 10,
+    "layerHeightWorldUnits": 3.3333333333333335,
+    "formula": "requiredWidth=ceil(worldWidth*2160/(2*cameraSize)); requiredHeight=ceil(worldHeight*2160/(2*cameraSize))"
+  },
+  "importsRequired": {
+    "maxTextureSize": 4096,
+    "npotScale": "None",
+    "alphaSource": "FromInput",
+    "sRGB": true,
+    "mipmap": true,
+    "wrapU": "Mirror",
+    "wrapV": "Clamp",
+    "baselineCompression": "Uncompressed; later profile platform-specific resources"
+  },
+  "integration": {
+    "farBottom": -2.5,
+    "midBottom": -3.7,
+    "nearBottom": -5.3,
+    "note": "Root owns integration and may tune these after visual review. Mid must underlap far, bottom fill required below land. Paintings include static water, not animated river geometry. Never scale above10u width atsize5withoutdensityrecalculation."
+  },
+  "sky": {
+    "MR01toMR05": "Existing accepted3840x3240 sky masters support17.7777778x15u at216px/u; preservebytes,max4096,NPOTnone and measure actualfootprint.",
+    "MR07": "ExistingBG_Sky_A5 is1920x1080; do not enlargefullscreen. Use resolution-independent gradient(top#7185A4,mid#B9C6D3,horizon#EBDCC3) withnativecloudlayers whoseworldfootprintsfitpixelcount."
+  },
+  "platforms": {
+    "targets": [
+      "Windows PC",
+      "PS5",
+      "Xbox Series X",
+      "Xbox Series S",
+      "Nintendo Switch2 handheld",
+      "Nintendo Switch2 docked"
+    ],
+    "tested": "Source dimensions,alpha,SHA256 andvisualinspection only",
+    "untested": [
+      "Unity rendering/integration(parentowns)",
+      "standalonebuild",
+      "consolehardware",
+      "physicalcontroller",
+      "CPU/GPU frametimes",
+      "peakmemory"
+    ]
+  },
+  "limitations": [
+    "Mirroredrepeatcanrevealsymmetryinstonearches",
+    "Antialiasedsourceedgealpha canbe<255; needsunderlap/fill",
+    "No sourcepixelupsampling",
+    "Doesnotcertifywholegame4Kdensity"
+  ]
+}

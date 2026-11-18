@@ -1,0 +1,96 @@
+{
+  "scope": "Causeway upper terrain trial only",
+  "protectedCaves": [
+    {
+      "mouth": "PC04",
+      "maximumRGBDifference": 0
+    },
+    {
+      "mouth": "PC05",
+      "maximumRGBDifference": 0
+    },
+    {
+      "mouth": "PC06",
+      "maximumRGBDifference": 0
+    },
+    {
+      "mouth": "MR02_C06",
+      "maximumRGBDifference": 0
+    }
+  ],
+  "protectedHashes": {
+    "Assets\\Scenes\\Game\\MRAtlas_MR01_Cradle.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR02_Causeway.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR03_Terraces.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR04_C02.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR04_C03.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR04_C04.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR04_C05.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR04_C06.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR04_Qvale.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR05_Ribwood.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR06_Heights.unity": true,
+    "Assets\\Scenes\\Game\\MRAtlas_MR07_Summit.unity": true,
+    "Assets\\Scenes\\Game\\Qolossal_Underground.unity": true,
+    "Assets\\Scripts\\CameraFollow.cs": true,
+    "Assets\\Resources\\FX\\SurfaceTerrainContrast.shader": true
+  },
+  "import": {
+    "width": 1254,
+    "height": 1254,
+    "worldWidth": 4.8984375,
+    "worldHeight": 4.8984375,
+    "nativePPU": 256,
+    "requiredPPU": 216,
+    "minimumSourceWidth": 1059,
+    "minimumSourceHeight": 1059,
+    "errors": []
+  },
+  "play": {
+    "complete": true,
+    "rows": [
+      {
+        "scene": "MRAtlas_MR02_Causeway",
+        "passed": true,
+        "renderedFrames": 120,
+        "frameAdvance": 120,
+        "simulationSeconds": 2.00563526,
+        "feetViewport": 0.187680483,
+        "cameraSize": 5.0,
+        "travel": 14.3331108,
+        "gradedMeshes": 6,
+        "allCaveMasksPresent": true,
+        "expectedProtectedMouths": 4
+      }
+    ],
+    "errors": [],
+    "normalSavesPreserved": true,
+    "settingsRestored": true
+  },
+  "paintSHA256": "2c0675e5a209bfbf65026cef2fef785b27870f26ed0595f535b88fab9b4153b3",
+  "tileRepeatWorldUnits": 3.91875,
+  "tileNativeWorldCoverage": 4.8984375,
+  "nativePixelsPerWorldUnit": 256,
+  "requiredPixelsPerWorldUnit": 216,
+  "sourceResized": false,
+  "sampling": "20% source-border overlap, explicit mip gradients; no mirrored rocks",
+  "sceneGeometryAndCameraChanged": false,
+  "platformReadiness": {
+    "tested": "Windows Unity Editor 6000.3.19f1, URP, 1080p and 3840x2160",
+    "targets": [
+      "Windows PC",
+      "PS5",
+      "Xbox Series X",
+      "Xbox Series S",
+      "Switch 2 handheld",
+      "Switch 2 docked"
+    ],
+    "physicalController": "Not tested; virtual gamepad movement verified",
+    "consoleHardware": "Not tested",
+    "standaloneBuild": "Not tested",
+    "cpuGpuFrameTimes": "Not measured",
+    "peakMemory": "Not measured",
+    "textureImport": "Native 1254x1254 sRGB, uncompressed, mipmaps, no NPOT resize"
+  },
+  "passed": true
+}

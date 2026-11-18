@@ -1,0 +1,97 @@
+--- before/MRAtlas_MR02_Causeway.unity
+
++++ MRAtlas_MR02_Causeway.unity
+
+@@ -1613,7 +1613,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &137876205
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -2136,6 +2136,11 @@
+
+   groundedFootViewport: 0.15
+   airborneCentreViewport: 0.55
+   groundVerticalSmoothTime: 0.24
++  downhillProbeDistance: 6
++  downhillMinimumDrop: 0.9
++  maximumDownhillPreview: 0.58
++  manualLookDown: 0.58
++  previewSmoothTime: 0.28
+ --- !u!114 &225235574
+ MonoBehaviour:
+   m_ObjectHideFlags: 0
+@@ -8636,7 +8641,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &799779832
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -9294,7 +9299,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &893759870
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -13932,7 +13937,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &1195593778
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -15478,7 +15483,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &1414728316
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -18042,7 +18047,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &1766509033
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -18881,7 +18886,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &1841399515
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -19941,7 +19946,7 @@
+
+   m_Icon: {fileID: 0}
+   m_NavMeshLayer: 0
+   m_StaticEditorFlags: 0
+-  m_IsActive: 1
++  m_IsActive: 0
+ --- !u!4 &2000093589
+ Transform:
+   m_ObjectHideFlags: 0

@@ -1,8 +1,34 @@
 """Cartographic placement only: rigid connected caves, scene geometry unchanged."""
 import copy
+import json
+from pathlib import Path
 
 def place(nodes, edges, inventory, transforms, base, convert, bounds, surface_segments):
     underground = {n['id']: n for n in nodes if n['type'] == 'underground'}
+    # A reviewed component placement may be frozen when only surface mouths move.
+    # Never silently repack later caves because an earlier mouth changed position.
+    # Physical room changes must explicitly refresh this record, not bypass it.
+    lock_path = Path(__file__).with_name('component-placement-lock.json')
+    if lock_path.exists():
+        lock = json.loads(lock_path.read_text(encoding='utf-8'))
+        saved = {n['id']: n for n in lock['nodes']}
+        assert set(saved) == set(underground), 'Frozen component room IDs changed'
+        for key, n in underground.items():
+            old = saved[key]
+            assert n['worldBounds'] == old['worldBounds'], 'Frozen room geometry changed: '+key
+            mid = old['mappingId']
+            mapping = lock['transforms'][mid]
+            assert mapping['sx'] == mapping['sy'], 'Frozen mapping must retain equal XY scale'
+            transforms[mid] = copy.deepcopy(mapping)
+            n['mappingId'] = mid
+            n['mapBounds'] = bounds(mapping, n['worldBounds'])
+            assert n['mapBounds'] == old['mapBounds'], 'Frozen room projection changed: '+key
+            x,y,w,h=n['mapBounds'];n['position']=[x+w/2,y+h/2];n['point']=dict(x=x+w/2,y=y+h/2)
+        transforms['Qolossal_Underground'] = copy.deepcopy(lock['transforms']['Qolossal_Underground'])
+        for edge in edges:
+            if edge['kind']=='passage':
+                assert underground[edge['from']]['mappingId']==underground[edge['to']]['mappingId']
+        return copy.deepcopy(lock['componentPlacements'])
     parent = {k:k for k in underground}
     def root(k):
         while parent[k] != k:

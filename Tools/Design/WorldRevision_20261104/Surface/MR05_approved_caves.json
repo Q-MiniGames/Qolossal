@@ -1,0 +1,883 @@
+{
+  "scene": "MRAtlas_MR05_Ribwood",
+  "minCameraSize": 5.0,
+  "displayPPU": 216.0,
+  "collisionPreserved": true,
+  "before": [
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N01] Forest gate/Cave access | paired underground rooms/[CAVE MR05_C01] MR05_N01 <-> Underground - Lost Lantern/Regional fitted passage/Continuous themed inner wall",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/BF9107113F99A7F30956.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/BF9107113F99A7F30956.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N01] Forest gate/Cave access | paired underground rooms/[CAVE MR05_C01] MR05_N01 <-> Underground - Lost Lantern/Regional fitted passage/Passage shadow",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoins/MR05/DD0A221D7F77465A0FB2.asset",
+      "material": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C01/Passage shadow.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N01] Forest gate/Cave access | paired underground rooms/[CAVE MR05_C01] MR05_N01 <-> Underground - Lost Lantern/Regional fitted passage/Registered native outer rock",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoinsV2/MR05/4867A9B44F8B3F22E10D.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/4867A9B44F8B3F22E10D.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N01] Forest gate/Cave access | paired underground rooms/[CAVE MR05_C01] MR05_N01 <-> Underground - Lost Lantern/Regional fitted passage/Native roof trim/Native roof 0",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/E4A66C90E0BFACA12C47.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/E4A66C90E0BFACA12C47.mat",
+      "enabled": false
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N01] Forest gate/Cave access | paired underground rooms/[CAVE MR05_C01] MR05_N01 <-> Underground - Lost Lantern/Regional fitted passage/Native roof trim/Native roof 1",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/FE7C27E410F46FD27132.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/FE7C27E410F46FD27132.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N02] First wall/Cave access | paired underground rooms/[CAVE PC10] MR05_N02 <-> Underground - Rootlight Niche/Regional fitted passage/Continuous themed inner wall",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/C6FDEB87BBE3F6DAAA28.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/C6FDEB87BBE3F6DAAA28.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N02] First wall/Cave access | paired underground rooms/[CAVE PC10] MR05_N02 <-> Underground - Rootlight Niche/Regional fitted passage/Passage shadow",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoins/MR05/1A6E0A0D0A918BF6A564.asset",
+      "material": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC10/Passage shadow.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N02] First wall/Cave access | paired underground rooms/[CAVE PC10] MR05_N02 <-> Underground - Rootlight Niche/Regional fitted passage/Registered native outer rock",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoinsV2/MR05/4A1B130DBBFE4564BBE0.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/4A1B130DBBFE4564BBE0.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N02] First wall/Cave access | paired underground rooms/[CAVE PC10] MR05_N02 <-> Underground - Rootlight Niche/Regional fitted passage/Native roof trim/Native roof 0",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/5B9CD2DA05673077F538.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/5B9CD2DA05673077F538.mat",
+      "enabled": false
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N02] First wall/Cave access | paired underground rooms/[CAVE PC10] MR05_N02 <-> Underground - Rootlight Niche/Regional fitted passage/Native roof trim/Native roof 1",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/3E086E09A16F41FCD496.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/3E086E09A16F41FCD496.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N03] Fern hollow/Cave access | paired underground rooms/[CAVE MR05_C03] MR05_N03 <-> Underground - Moss Well/Regional fitted passage/Continuous themed inner wall",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/6DE6E0249659880E38F3.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/6DE6E0249659880E38F3.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N03] Fern hollow/Cave access | paired underground rooms/[CAVE MR05_C03] MR05_N03 <-> Underground - Moss Well/Regional fitted passage/Passage shadow",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoins/MR05/BFA9D374A3365C9DBD68.asset",
+      "material": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C03/Passage shadow.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N03] Fern hollow/Cave access | paired underground rooms/[CAVE MR05_C03] MR05_N03 <-> Underground - Moss Well/Regional fitted passage/Registered native outer rock",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoinsV2/MR05/CE79BA9EE466841BCF1D.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/CE79BA9EE466841BCF1D.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N03] Fern hollow/Cave access | paired underground rooms/[CAVE MR05_C03] MR05_N03 <-> Underground - Moss Well/Regional fitted passage/Native roof trim/Native roof 0",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/20305C963163CC7F90DF.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/20305C963163CC7F90DF.mat",
+      "enabled": false
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N03] Fern hollow/Cave access | paired underground rooms/[CAVE MR05_C03] MR05_N03 <-> Underground - Moss Well/Regional fitted passage/Native roof trim/Native roof 1",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/BF9506EDF271BDB5FE88.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/BF9506EDF271BDB5FE88.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N04] Root lattice/Cave access | paired underground rooms/[CAVE MR05_C02] MR05_N04 <-> Underground - Root Loom/Regional fitted passage/Continuous themed inner wall",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/8E286A8EEDC562EF7A3B.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/8E286A8EEDC562EF7A3B.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N04] Root lattice/Cave access | paired underground rooms/[CAVE MR05_C02] MR05_N04 <-> Underground - Root Loom/Regional fitted passage/Passage shadow",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoins/MR05/017A3E20A61999408414.asset",
+      "material": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C02/Passage shadow.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N04] Root lattice/Cave access | paired underground rooms/[CAVE MR05_C02] MR05_N04 <-> Underground - Root Loom/Regional fitted passage/Registered native outer rock",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoinsV2/MR05/C19C3C637C303F8E09E2.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/C19C3C637C303F8E09E2.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N04] Root lattice/Cave access | paired underground rooms/[CAVE MR05_C02] MR05_N04 <-> Underground - Root Loom/Regional fitted passage/Native roof trim/Native roof 0",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/540F559FD26FC84AC5F2.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/540F559FD26FC84AC5F2.mat",
+      "enabled": false
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N04] Root lattice/Cave access | paired underground rooms/[CAVE MR05_C02] MR05_N04 <-> Underground - Root Loom/Regional fitted passage/Native roof trim/Native roof 1",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/C1D565408804BE561AB3.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/C1D565408804BE561AB3.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N05] Canopy clearing/Cave access | paired underground rooms/[CAVE MR05_C04] MR05_N05 <-> Underground - Seed Choir/Regional fitted passage/Continuous themed inner wall",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/763B5604AD3166D703BC.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/763B5604AD3166D703BC.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N05] Canopy clearing/Cave access | paired underground rooms/[CAVE MR05_C04] MR05_N05 <-> Underground - Seed Choir/Regional fitted passage/Passage shadow",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoins/MR05/C6F3B9C7BB73BE877351.asset",
+      "material": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C04/Passage shadow.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N05] Canopy clearing/Cave access | paired underground rooms/[CAVE MR05_C04] MR05_N05 <-> Underground - Seed Choir/Regional fitted passage/Registered native outer rock",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoinsV2/MR05/CB21B89B5A5151BED9AE.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/CB21B89B5A5151BED9AE.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N05] Canopy clearing/Cave access | paired underground rooms/[CAVE MR05_C04] MR05_N05 <-> Underground - Seed Choir/Regional fitted passage/Native roof trim/Native roof 0",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/731415F3B44A815167EE.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/731415F3B44A815167EE.mat",
+      "enabled": false
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N05] Canopy clearing/Cave access | paired underground rooms/[CAVE MR05_C04] MR05_N05 <-> Underground - Seed Choir/Regional fitted passage/Native roof trim/Native roof 1",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/4F87F0AA4E27085AC9EC.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/4F87F0AA4E27085AC9EC.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE MR05_C05] MR05_N07 <-> Underground - Stone Drum/Regional fitted passage/Continuous themed inner wall",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/C396411B687A5D13B944.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/C396411B687A5D13B944.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE MR05_C05] MR05_N07 <-> Underground - Stone Drum/Regional fitted passage/Passage shadow",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoins/MR05/BBB5FE4F4FE9BA78D432.asset",
+      "material": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C05/Passage shadow.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE MR05_C05] MR05_N07 <-> Underground - Stone Drum/Regional fitted passage/Registered native outer rock",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoinsV2/MR05/439B491EF575462BF712.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/439B491EF575462BF712.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE MR05_C05] MR05_N07 <-> Underground - Stone Drum/Regional fitted passage/Native roof trim/Native roof 0",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/73B774F4EEE58A4F934C.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/73B774F4EEE58A4F934C.mat",
+      "enabled": false
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE MR05_C05] MR05_N07 <-> Underground - Stone Drum/Regional fitted passage/Native roof trim/Native roof 1",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/FC5E3CA5AA6DFFCBB446.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/FC5E3CA5AA6DFFCBB446.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE C01] MR05_N07 <-> Underground - Garden Arrival/Regional fitted passage/Continuous themed inner wall",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/FB226720FBCBA5DB2843.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/FB226720FBCBA5DB2843.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE C01] MR05_N07 <-> Underground - Garden Arrival/Regional fitted passage/Passage shadow",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoins/MR05/9DF4D9D5F43E266283CA.asset",
+      "material": "Assets/Development/Layouts/CaveRollout_20261027/Upper_C01/Passage shadow.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE C01] MR05_N07 <-> Underground - Garden Arrival/Regional fitted passage/Registered native outer rock",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoinsV2/MR05/03FD4DF94A5A958DE814.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/03FD4DF94A5A958DE814.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE C01] MR05_N07 <-> Underground - Garden Arrival/Regional fitted passage/Native roof trim/Native roof 0",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/73D3A4C3F52423EF4F93.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/73D3A4C3F52423EF4F93.mat",
+      "enabled": false
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE C01] MR05_N07 <-> Underground - Garden Arrival/Regional fitted passage/Native roof trim/Native roof 1",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/190AF403EB4F92D69DA8.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/190AF403EB4F92D69DA8.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N10] Canopy lookout/Cave access | paired underground rooms/[CAVE MR05_C06] MR05_N10 <-> Underground - Canopy Pocket/Regional fitted passage/Continuous themed inner wall",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/AF17236F8777C0B9112D.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/AF17236F8777C0B9112D.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N10] Canopy lookout/Cave access | paired underground rooms/[CAVE MR05_C06] MR05_N10 <-> Underground - Canopy Pocket/Regional fitted passage/Passage shadow",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoins/MR05/5CF164F1FEC27EA95B0D.asset",
+      "material": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C06/Passage shadow.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N10] Canopy lookout/Cave access | paired underground rooms/[CAVE MR05_C06] MR05_N10 <-> Underground - Canopy Pocket/Regional fitted passage/Registered native outer rock",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/CapJoinsV2/MR05/CF714DC42DFC4B44FB0B.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/CF714DC42DFC4B44FB0B.mat",
+      "enabled": true
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N10] Canopy lookout/Cave access | paired underground rooms/[CAVE MR05_C06] MR05_N10 <-> Underground - Canopy Pocket/Regional fitted passage/Native roof trim/Native roof 0",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/D552E567B954CFE03DCC.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeTrim/MR05/D552E567B954CFE03DCC.mat",
+      "enabled": false
+    },
+    {
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N10] Canopy lookout/Cave access | paired underground rooms/[CAVE MR05_C06] MR05_N10 <-> Underground - Canopy Pocket/Regional fitted passage/Native roof trim/Native roof 1",
+      "mesh": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/AC3E19BC5E71EBB417A6.asset",
+      "material": "Assets/Development/Layouts/WorldRefresh_20261104/NativeSilhouettes/MR05/AC3E19BC5E71EBB417A6.mat",
+      "enabled": true
+    }
+  ],
+  "changes": [
+    {
+      "id": "MR05_C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N01] Forest gate/Cave access | paired underground rooms/[CAVE MR05_C01] MR05_N01 <-> Underground - Lost Lantern/Regional fitted passage/Continuous themed inner wall",
+      "action": "Restored approved dark regional interior painting and depth tint",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C01/Continuous themed inner wall.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C01/Inner wall.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C01/Continuous themed inner wall.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C01/Inner wall.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N01] Forest gate/Cave access | paired underground rooms/[CAVE MR05_C01] MR05_N01 <-> Underground - Lost Lantern/Regional fitted passage/Passage shadow",
+      "action": "Restored approved passage depth shadow",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C01/Passage shadow.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C01/Passage shadow.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C01/Passage shadow.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C01/Passage shadow.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N01] Forest gate/Cave access | paired underground rooms/[CAVE MR05_C01] MR05_N01 <-> Underground - Lost Lantern/Regional fitted passage/Registered native outer rock",
+      "action": "Restored approved painted ceiling underside and inward facets; native Fill only at outer attachment",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C01/Registered native outer rock.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C01/Native outer rock.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C01/Registered native outer rock.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C01/Native outer rock.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N01] Forest gate/Cave access | paired underground rooms/[CAVE MR05_C01] MR05_N01 <-> Underground - Lost Lantern/Regional fitted passage/Native roof trim/Native roof 0",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "MR05_C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N01] Forest gate/Cave access | paired underground rooms/[CAVE MR05_C01] MR05_N01 <-> Underground - Lost Lantern/Regional fitted passage/Native roof trim/Native roof 1",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "PC10",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N02] First wall/Cave access | paired underground rooms/[CAVE PC10] MR05_N02 <-> Underground - Rootlight Niche/Regional fitted passage/Continuous themed inner wall",
+      "action": "Restored approved dark regional interior painting and depth tint",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC10/Continuous themed inner wall.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC10/Inner wall.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/PC10/Continuous themed inner wall.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/PC10/Inner wall.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "PC10",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N02] First wall/Cave access | paired underground rooms/[CAVE PC10] MR05_N02 <-> Underground - Rootlight Niche/Regional fitted passage/Passage shadow",
+      "action": "Restored approved passage depth shadow",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC10/Passage shadow.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC10/Passage shadow.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/PC10/Passage shadow.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/PC10/Passage shadow.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "PC10",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N02] First wall/Cave access | paired underground rooms/[CAVE PC10] MR05_N02 <-> Underground - Rootlight Niche/Regional fitted passage/Registered native outer rock",
+      "action": "Restored approved painted ceiling underside and inward facets; native Fill only at outer attachment",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC10/Registered native outer rock.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC10/Native outer rock.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/PC10/Registered native outer rock.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/PC10/Native outer rock.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "PC10",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N02] First wall/Cave access | paired underground rooms/[CAVE PC10] MR05_N02 <-> Underground - Rootlight Niche/Regional fitted passage/Native roof trim/Native roof 0",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "PC10",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N02] First wall/Cave access | paired underground rooms/[CAVE PC10] MR05_N02 <-> Underground - Rootlight Niche/Regional fitted passage/Native roof trim/Native roof 1",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "MR05_C03",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N03] Fern hollow/Cave access | paired underground rooms/[CAVE MR05_C03] MR05_N03 <-> Underground - Moss Well/Regional fitted passage/Continuous themed inner wall",
+      "action": "Restored approved dark regional interior painting and depth tint",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C03/Continuous themed inner wall.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C03/Inner wall.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C03/Continuous themed inner wall.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C03/Inner wall.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C03",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N03] Fern hollow/Cave access | paired underground rooms/[CAVE MR05_C03] MR05_N03 <-> Underground - Moss Well/Regional fitted passage/Passage shadow",
+      "action": "Restored approved passage depth shadow",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C03/Passage shadow.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C03/Passage shadow.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C03/Passage shadow.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C03/Passage shadow.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C03",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N03] Fern hollow/Cave access | paired underground rooms/[CAVE MR05_C03] MR05_N03 <-> Underground - Moss Well/Regional fitted passage/Registered native outer rock",
+      "action": "Restored approved painted ceiling underside and inward facets; native Fill only at outer attachment",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C03/Registered native outer rock.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C03/Native outer rock.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C03/Registered native outer rock.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C03/Native outer rock.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C03",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N03] Fern hollow/Cave access | paired underground rooms/[CAVE MR05_C03] MR05_N03 <-> Underground - Moss Well/Regional fitted passage/Native roof trim/Native roof 0",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "MR05_C03",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N03] Fern hollow/Cave access | paired underground rooms/[CAVE MR05_C03] MR05_N03 <-> Underground - Moss Well/Regional fitted passage/Native roof trim/Native roof 1",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "MR05_C02",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N04] Root lattice/Cave access | paired underground rooms/[CAVE MR05_C02] MR05_N04 <-> Underground - Root Loom/Regional fitted passage/Continuous themed inner wall",
+      "action": "Restored approved dark regional interior painting and depth tint",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C02/Continuous themed inner wall.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C02/Inner wall.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C02/Continuous themed inner wall.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C02/Inner wall.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C02",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N04] Root lattice/Cave access | paired underground rooms/[CAVE MR05_C02] MR05_N04 <-> Underground - Root Loom/Regional fitted passage/Passage shadow",
+      "action": "Restored approved passage depth shadow",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C02/Passage shadow.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C02/Passage shadow.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C02/Passage shadow.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C02/Passage shadow.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C02",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N04] Root lattice/Cave access | paired underground rooms/[CAVE MR05_C02] MR05_N04 <-> Underground - Root Loom/Regional fitted passage/Registered native outer rock",
+      "action": "Restored approved painted ceiling underside and inward facets; native Fill only at outer attachment",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C02/Registered native outer rock.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C02/Native outer rock.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C02/Registered native outer rock.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C02/Native outer rock.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C02",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N04] Root lattice/Cave access | paired underground rooms/[CAVE MR05_C02] MR05_N04 <-> Underground - Root Loom/Regional fitted passage/Native roof trim/Native roof 0",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "MR05_C02",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N04] Root lattice/Cave access | paired underground rooms/[CAVE MR05_C02] MR05_N04 <-> Underground - Root Loom/Regional fitted passage/Native roof trim/Native roof 1",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "MR05_C04",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N05] Canopy clearing/Cave access | paired underground rooms/[CAVE MR05_C04] MR05_N05 <-> Underground - Seed Choir/Regional fitted passage/Continuous themed inner wall",
+      "action": "Restored approved dark regional interior painting and depth tint",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C04/Continuous themed inner wall.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C04/Inner wall.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C04/Continuous themed inner wall.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C04/Inner wall.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C04",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N05] Canopy clearing/Cave access | paired underground rooms/[CAVE MR05_C04] MR05_N05 <-> Underground - Seed Choir/Regional fitted passage/Passage shadow",
+      "action": "Restored approved passage depth shadow",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C04/Passage shadow.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C04/Passage shadow.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C04/Passage shadow.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C04/Passage shadow.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C04",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N05] Canopy clearing/Cave access | paired underground rooms/[CAVE MR05_C04] MR05_N05 <-> Underground - Seed Choir/Regional fitted passage/Registered native outer rock",
+      "action": "Restored approved painted ceiling underside and inward facets; native Fill only at outer attachment",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C04/Registered native outer rock.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C04/Native outer rock.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C04/Registered native outer rock.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C04/Native outer rock.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C04",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N05] Canopy clearing/Cave access | paired underground rooms/[CAVE MR05_C04] MR05_N05 <-> Underground - Seed Choir/Regional fitted passage/Native roof trim/Native roof 0",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "MR05_C04",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N05] Canopy clearing/Cave access | paired underground rooms/[CAVE MR05_C04] MR05_N05 <-> Underground - Seed Choir/Regional fitted passage/Native roof trim/Native roof 1",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "MR05_C05",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE MR05_C05] MR05_N07 <-> Underground - Stone Drum/Regional fitted passage/Continuous themed inner wall",
+      "action": "Restored approved dark regional interior painting and depth tint",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C05/Continuous themed inner wall.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C05/Inner wall.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C05/Continuous themed inner wall.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C05/Inner wall.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C05",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE MR05_C05] MR05_N07 <-> Underground - Stone Drum/Regional fitted passage/Passage shadow",
+      "action": "Restored approved passage depth shadow",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C05/Passage shadow.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C05/Passage shadow.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C05/Passage shadow.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C05/Passage shadow.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C05",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE MR05_C05] MR05_N07 <-> Underground - Stone Drum/Regional fitted passage/Registered native outer rock",
+      "action": "Restored approved painted ceiling underside and inward facets; native Fill only at outer attachment",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C05/Registered native outer rock.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C05/Native outer rock.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C05/Registered native outer rock.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C05/Native outer rock.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C05",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE MR05_C05] MR05_N07 <-> Underground - Stone Drum/Regional fitted passage/Native roof trim/Native roof 0",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "MR05_C05",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE MR05_C05] MR05_N07 <-> Underground - Stone Drum/Regional fitted passage/Native roof trim/Native roof 1",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE C01] MR05_N07 <-> Underground - Garden Arrival/Regional fitted passage/Continuous themed inner wall",
+      "action": "Restored approved dark regional interior painting and depth tint",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_C01/Continuous themed inner wall.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_C01/Inner wall.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/C01/Continuous themed inner wall.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/C01/Inner wall.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE C01] MR05_N07 <-> Underground - Garden Arrival/Regional fitted passage/Passage shadow",
+      "action": "Restored approved passage depth shadow",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_C01/Passage shadow.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_C01/Passage shadow.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/C01/Passage shadow.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/C01/Passage shadow.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE C01] MR05_N07 <-> Underground - Garden Arrival/Regional fitted passage/Registered native outer rock",
+      "action": "Restored approved painted ceiling underside and inward facets; native Fill only at outer attachment",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_C01/Registered native outer rock.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_C01/Native outer rock.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/C01/Registered native outer rock.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/C01/Native outer rock.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE C01] MR05_N07 <-> Underground - Garden Arrival/Regional fitted passage/Native roof trim/Native roof 0",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE C01] MR05_N07 <-> Underground - Garden Arrival/Regional fitted passage/Native roof trim/Native roof 1",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "MR05_C06",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N10] Canopy lookout/Cave access | paired underground rooms/[CAVE MR05_C06] MR05_N10 <-> Underground - Canopy Pocket/Regional fitted passage/Continuous themed inner wall",
+      "action": "Restored approved dark regional interior painting and depth tint",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C06/Continuous themed inner wall.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C06/Inner wall.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C06/Continuous themed inner wall.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C06/Inner wall.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C06",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N10] Canopy lookout/Cave access | paired underground rooms/[CAVE MR05_C06] MR05_N10 <-> Underground - Canopy Pocket/Regional fitted passage/Passage shadow",
+      "action": "Restored approved passage depth shadow",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C06/Passage shadow.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C06/Passage shadow.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C06/Passage shadow.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C06/Passage shadow.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C06",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N10] Canopy lookout/Cave access | paired underground rooms/[CAVE MR05_C06] MR05_N10 <-> Underground - Canopy Pocket/Regional fitted passage/Registered native outer rock",
+      "action": "Restored approved painted ceiling underside and inward facets; native Fill only at outer attachment",
+      "sourceMesh": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C06/Registered native outer rock.asset",
+      "sourceMaterial": "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C06/Native outer rock.mat",
+      "mesh": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C06/Registered native outer rock.asset",
+      "material": "Assets/Development/Layouts/WorldRevision_20261104/Surface/MR05/MR05_C06/Native outer rock.mat",
+      "vertexPositionsRestored": true
+    },
+    {
+      "id": "MR05_C06",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N10] Canopy lookout/Cave access | paired underground rooms/[CAVE MR05_C06] MR05_N10 <-> Underground - Canopy Pocket/Regional fitted passage/Native roof trim/Native roof 0",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    },
+    {
+      "id": "MR05_C06",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N10] Canopy lookout/Cave access | paired underground rooms/[CAVE MR05_C06] MR05_N10 <-> Underground - Canopy Pocket/Regional fitted passage/Native roof trim/Native roof 1",
+      "action": "Disabled detached copied roof decoration; live terrain cap retained"
+    }
+  ],
+  "sourceHashes": {
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C01/Continuous themed inner wall.asset": "65c48f11bcc2e3662a71a7694c45951fb88264b286a9fae332e8c0406cd0ed33",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C01/Inner wall.mat": "287d5902f7d7f2bc11cd6180d4b1490ecd37874951e992c03927b00cd5f04180",
+    "Assets/Art/Prototypes/CaveRollout_20261027/Ribwood_Roots.png": "0c14e71fcf6956f81a7011fc743c2fbd979067d0dbca2a4bb2436f16d936ee32",
+    "Assets/Art/Prototypes/CradleTerrainJoin_20261027/MR01_C01_CleanLeftEdge.png": "344af81bc2c02d8b701724cc3f19cc030d8b02338618a24bfaa9afdeaf911a3c",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C01/Passage shadow.asset": "c274c7f93a89b3f85f3789e4fb4d9059e05c58121c9196691fd67ebdacd4397a",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C01/Passage shadow.mat": "89c43976909269c7e745e155be2991a82052a45d73669ec03760b1912ca4d446",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C01/Registered native outer rock.asset": "bf4b73bba7ee82c5b2d58230bcd3e003e2313e1e93f8e7e9dce9e26f6f4eff20",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C01/Native outer rock.mat": "84e8ab080393adcdedfc4cb3223cd766ffb16492d7b473cd5f1c2c33385dbffe",
+    "Assets/Art/Prototypes/WorldRefresh_20261104/MR05/Fill.png": "92825c64da2c0610e8fb136fb1a46b2b6d158f033767b5922d5a773fb44233d2",
+    "Assets/Art/Prototypes/CaveDepth_20261028/Ribwood_DepthRim.png": "e9a159985edd89c7e76713dbac5b698542295bfd1ddd6b0d53ed17ce5bd601a2",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC10/Continuous themed inner wall.asset": "ca7d253d644c33698c80410cf340282250f3f0cfaea68539131df97cf2c5ad4f",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC10/Inner wall.mat": "287d5902f7d7f2bc11cd6180d4b1490ecd37874951e992c03927b00cd5f04180",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC10/Passage shadow.asset": "41ff2e55aeb6201c36904d865466733047d0c6d7f4bb3000810723b06e7f8652",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC10/Passage shadow.mat": "89c43976909269c7e745e155be2991a82052a45d73669ec03760b1912ca4d446",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC10/Registered native outer rock.asset": "30bdc9da8d02e2e17fd0cc6448eb3fb3106b122d7f0be6ee9d65b50b9da6e7f4",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_PC10/Native outer rock.mat": "84e8ab080393adcdedfc4cb3223cd766ffb16492d7b473cd5f1c2c33385dbffe",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C03/Continuous themed inner wall.asset": "070b04f4475f73b62cfac19fca04705c880ba7750b5a1a9cc4d9ccf55db410be",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C03/Inner wall.mat": "287d5902f7d7f2bc11cd6180d4b1490ecd37874951e992c03927b00cd5f04180",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C03/Passage shadow.asset": "4fb2b47c41ce3a0e30c6a313d77c9b2ad11d70d309be72900366384733910842",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C03/Passage shadow.mat": "89c43976909269c7e745e155be2991a82052a45d73669ec03760b1912ca4d446",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C03/Registered native outer rock.asset": "554863469190ca5ad17f272ca27ebf6fc9b885f883acbf9c03a7ecdcda41e55c",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C03/Native outer rock.mat": "84e8ab080393adcdedfc4cb3223cd766ffb16492d7b473cd5f1c2c33385dbffe",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C02/Continuous themed inner wall.asset": "5c200ee7b54fd6767075aa8c024802bb82b750fd76b8890eafbaf712213be76c",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C02/Inner wall.mat": "287d5902f7d7f2bc11cd6180d4b1490ecd37874951e992c03927b00cd5f04180",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C02/Passage shadow.asset": "55e170f627683e61ebeae0d6781089b167611816d29986f9ccfce86b5b006ab2",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C02/Passage shadow.mat": "89c43976909269c7e745e155be2991a82052a45d73669ec03760b1912ca4d446",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C02/Registered native outer rock.asset": "1f74c7041e9097873703d075aa0bb8beaa28814b840c8084fa3b54c791bee756",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C02/Native outer rock.mat": "84e8ab080393adcdedfc4cb3223cd766ffb16492d7b473cd5f1c2c33385dbffe",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C04/Continuous themed inner wall.asset": "5f758fa0cc3bdea6f981789419ff55dd1fe224cb647bc45738b579a54083d10e",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C04/Inner wall.mat": "287d5902f7d7f2bc11cd6180d4b1490ecd37874951e992c03927b00cd5f04180",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C04/Passage shadow.asset": "308d9ae23e56f26457b31cd48bf709d3e7fc3ea023ac6bfe652800dac86d56d4",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C04/Passage shadow.mat": "89c43976909269c7e745e155be2991a82052a45d73669ec03760b1912ca4d446",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C04/Registered native outer rock.asset": "dcfe33a9cbdce7b9ace430c6135217104e869f6b0ac1811c61bd8a68576c0831",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C04/Native outer rock.mat": "84e8ab080393adcdedfc4cb3223cd766ffb16492d7b473cd5f1c2c33385dbffe",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C05/Continuous themed inner wall.asset": "edb996f2cd7b59d9d10e117f7003ee0312f06acbbbf930e4f93e5225db00bfee",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C05/Inner wall.mat": "287d5902f7d7f2bc11cd6180d4b1490ecd37874951e992c03927b00cd5f04180",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C05/Passage shadow.asset": "6f6d55664d4d16bde9c61ee6eb9f7f8cffba3537a2d61395d45160ee0997abf5",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C05/Passage shadow.mat": "89c43976909269c7e745e155be2991a82052a45d73669ec03760b1912ca4d446",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C05/Registered native outer rock.asset": "46ff0f14561c500cb0bf9565ba42e541b365aa8ec77cf4937c95a246f233f433",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C05/Native outer rock.mat": "84e8ab080393adcdedfc4cb3223cd766ffb16492d7b473cd5f1c2c33385dbffe",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_C01/Continuous themed inner wall.asset": "5aacdf10405aebffaf5abb56f2c260086359b62aa299dfdc9d92fa79f46d8ca7",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_C01/Inner wall.mat": "287d5902f7d7f2bc11cd6180d4b1490ecd37874951e992c03927b00cd5f04180",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_C01/Passage shadow.asset": "731c00f281a80d0dd53e669995862ab2669de641e5dfe407fa5e7b81e829c9f1",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_C01/Passage shadow.mat": "89c43976909269c7e745e155be2991a82052a45d73669ec03760b1912ca4d446",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_C01/Registered native outer rock.asset": "80811ea96f257d614808cc97d1b15986b868efaa27eb17cc11c60a04c93ed1de",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_C01/Native outer rock.mat": "84e8ab080393adcdedfc4cb3223cd766ffb16492d7b473cd5f1c2c33385dbffe",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C06/Continuous themed inner wall.asset": "74451f17ec438081b32525f8c655643513a4144d0f74b49c834951a8e24f4eab",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C06/Inner wall.mat": "287d5902f7d7f2bc11cd6180d4b1490ecd37874951e992c03927b00cd5f04180",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C06/Passage shadow.asset": "62269c5871a0c4a3e6f650f16ca4b8a55da7ddd8937e8cb5e437fb4750603df1",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C06/Passage shadow.mat": "89c43976909269c7e745e155be2991a82052a45d73669ec03760b1912ca4d446",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C06/Registered native outer rock.asset": "bac5c9dbfe8db5e3ddecd766e93e31c7054c016ff111e85800fbaa47a0b7403c",
+    "Assets/Development/Layouts/CaveRollout_20261027/Upper_MR05_C06/Native outer rock.mat": "84e8ab080393adcdedfc4cb3223cd766ffb16492d7b473cd5f1c2c33385dbffe"
+  },
+  "densityAudits": [
+    {
+      "id": "MR05_C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N01] Forest gate/Cave access | paired underground rooms/[CAVE MR05_C01] MR05_N01 <-> Underground - Lost Lantern/Regional fitted passage/Continuous themed inner wall",
+      "layer": {
+        "role": "Approved interior RGB",
+        "asset": "Assets/Art/Prototypes/CaveRollout_20261027/Ribwood_Roots.png",
+        "sourceWidth": 2172,
+        "sourceHeight": 724,
+        "nativeMinimumPPU": 245.42039952982776,
+        "requiredWidth": 1912,
+        "requiredHeight": 638,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 5184
+      }
+    },
+    {
+      "id": "MR05_C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N01] Forest gate/Cave access | paired underground rooms/[CAVE MR05_C01] MR05_N01 <-> Underground - Lost Lantern/Regional fitted passage/Registered native outer rock",
+      "layer": {
+        "role": "Approved painted rim RGB and alpha",
+        "asset": "Assets/Art/Prototypes/CaveDepth_20261028/Ribwood_DepthRim.png",
+        "sourceWidth": 1536,
+        "sourceHeight": 1024,
+        "nativeMinimumPPU": 242.6070000645615,
+        "requiredWidth": 1368,
+        "requiredHeight": 912,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 8000
+      }
+    },
+    {
+      "id": "PC10",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N02] First wall/Cave access | paired underground rooms/[CAVE PC10] MR05_N02 <-> Underground - Rootlight Niche/Regional fitted passage/Continuous themed inner wall",
+      "layer": {
+        "role": "Approved interior RGB",
+        "asset": "Assets/Art/Prototypes/CaveRollout_20261027/Ribwood_Roots.png",
+        "sourceWidth": 2172,
+        "sourceHeight": 724,
+        "nativeMinimumPPU": 245.415082249092,
+        "requiredWidth": 1912,
+        "requiredHeight": 638,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 5184
+      }
+    },
+    {
+      "id": "PC10",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N02] First wall/Cave access | paired underground rooms/[CAVE PC10] MR05_N02 <-> Underground - Rootlight Niche/Regional fitted passage/Registered native outer rock",
+      "layer": {
+        "role": "Approved painted rim RGB and alpha",
+        "asset": "Assets/Art/Prototypes/CaveDepth_20261028/Ribwood_DepthRim.png",
+        "sourceWidth": 1536,
+        "sourceHeight": 1024,
+        "nativeMinimumPPU": 242.59988131455972,
+        "requiredWidth": 1368,
+        "requiredHeight": 912,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 8000
+      }
+    },
+    {
+      "id": "MR05_C03",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N03] Fern hollow/Cave access | paired underground rooms/[CAVE MR05_C03] MR05_N03 <-> Underground - Moss Well/Regional fitted passage/Continuous themed inner wall",
+      "layer": {
+        "role": "Approved interior RGB",
+        "asset": "Assets/Art/Prototypes/CaveRollout_20261027/Ribwood_Roots.png",
+        "sourceWidth": 2172,
+        "sourceHeight": 724,
+        "nativeMinimumPPU": 245.41508224909182,
+        "requiredWidth": 1912,
+        "requiredHeight": 638,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 5184
+      }
+    },
+    {
+      "id": "MR05_C03",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N03] Fern hollow/Cave access | paired underground rooms/[CAVE MR05_C03] MR05_N03 <-> Underground - Moss Well/Regional fitted passage/Registered native outer rock",
+      "layer": {
+        "role": "Approved painted rim RGB and alpha",
+        "asset": "Assets/Art/Prototypes/CaveDepth_20261028/Ribwood_DepthRim.png",
+        "sourceWidth": 1536,
+        "sourceHeight": 1024,
+        "nativeMinimumPPU": 242.59988131455972,
+        "requiredWidth": 1368,
+        "requiredHeight": 912,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 8000
+      }
+    },
+    {
+      "id": "MR05_C02",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N04] Root lattice/Cave access | paired underground rooms/[CAVE MR05_C02] MR05_N04 <-> Underground - Root Loom/Regional fitted passage/Continuous themed inner wall",
+      "layer": {
+        "role": "Approved interior RGB",
+        "asset": "Assets/Art/Prototypes/CaveRollout_20261027/Ribwood_Roots.png",
+        "sourceWidth": 2172,
+        "sourceHeight": 724,
+        "nativeMinimumPPU": 245.41468729634084,
+        "requiredWidth": 1912,
+        "requiredHeight": 638,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 5184
+      }
+    },
+    {
+      "id": "MR05_C02",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N04] Root lattice/Cave access | paired underground rooms/[CAVE MR05_C02] MR05_N04 <-> Underground - Root Loom/Regional fitted passage/Registered native outer rock",
+      "layer": {
+        "role": "Approved painted rim RGB and alpha",
+        "asset": "Assets/Art/Prototypes/CaveDepth_20261028/Ribwood_DepthRim.png",
+        "sourceWidth": 1536,
+        "sourceHeight": 1024,
+        "nativeMinimumPPU": 242.59988131455972,
+        "requiredWidth": 1368,
+        "requiredHeight": 912,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 8000
+      }
+    },
+    {
+      "id": "MR05_C04",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N05] Canopy clearing/Cave access | paired underground rooms/[CAVE MR05_C04] MR05_N05 <-> Underground - Seed Choir/Regional fitted passage/Continuous themed inner wall",
+      "layer": {
+        "role": "Approved interior RGB",
+        "asset": "Assets/Art/Prototypes/CaveRollout_20261027/Ribwood_Roots.png",
+        "sourceWidth": 2172,
+        "sourceHeight": 724,
+        "nativeMinimumPPU": 245.41468729634084,
+        "requiredWidth": 1912,
+        "requiredHeight": 638,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 5184
+      }
+    },
+    {
+      "id": "MR05_C04",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N05] Canopy clearing/Cave access | paired underground rooms/[CAVE MR05_C04] MR05_N05 <-> Underground - Seed Choir/Regional fitted passage/Registered native outer rock",
+      "layer": {
+        "role": "Approved painted rim RGB and alpha",
+        "asset": "Assets/Art/Prototypes/CaveDepth_20261028/Ribwood_DepthRim.png",
+        "sourceWidth": 1536,
+        "sourceHeight": 1024,
+        "nativeMinimumPPU": 242.59988131455972,
+        "requiredWidth": 1368,
+        "requiredHeight": 912,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 8000
+      }
+    },
+    {
+      "id": "MR05_C05",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE MR05_C05] MR05_N07 <-> Underground - Stone Drum/Regional fitted passage/Continuous themed inner wall",
+      "layer": {
+        "role": "Approved interior RGB",
+        "asset": "Assets/Art/Prototypes/CaveRollout_20261027/Ribwood_Roots.png",
+        "sourceWidth": 2172,
+        "sourceHeight": 724,
+        "nativeMinimumPPU": 245.39184102122482,
+        "requiredWidth": 1912,
+        "requiredHeight": 638,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 5184
+      }
+    },
+    {
+      "id": "MR05_C05",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE MR05_C05] MR05_N07 <-> Underground - Stone Drum/Regional fitted passage/Registered native outer rock",
+      "layer": {
+        "role": "Approved painted rim RGB and alpha",
+        "asset": "Assets/Art/Prototypes/CaveDepth_20261028/Ribwood_DepthRim.png",
+        "sourceWidth": 1536,
+        "sourceHeight": 1024,
+        "nativeMinimumPPU": 242.59988131455972,
+        "requiredWidth": 1368,
+        "requiredHeight": 912,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 8000
+      }
+    },
+    {
+      "id": "C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE C01] MR05_N07 <-> Underground - Garden Arrival/Regional fitted passage/Continuous themed inner wall",
+      "layer": {
+        "role": "Approved interior RGB",
+        "asset": "Assets/Art/Prototypes/CaveRollout_20261027/Ribwood_Roots.png",
+        "sourceWidth": 2172,
+        "sourceHeight": 724,
+        "nativeMinimumPPU": 245.39184102122482,
+        "requiredWidth": 1912,
+        "requiredHeight": 638,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 5184
+      }
+    },
+    {
+      "id": "C01",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N07] Upper grove/Cave access | paired underground rooms/[CAVE C01] MR05_N07 <-> Underground - Garden Arrival/Regional fitted passage/Registered native outer rock",
+      "layer": {
+        "role": "Approved painted rim RGB and alpha",
+        "asset": "Assets/Art/Prototypes/CaveDepth_20261028/Ribwood_DepthRim.png",
+        "sourceWidth": 1536,
+        "sourceHeight": 1024,
+        "nativeMinimumPPU": 242.59988131455972,
+        "requiredWidth": 1368,
+        "requiredHeight": 912,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 8000
+      }
+    },
+    {
+      "id": "MR05_C06",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N10] Canopy lookout/Cave access | paired underground rooms/[CAVE MR05_C06] MR05_N10 <-> Underground - Canopy Pocket/Regional fitted passage/Continuous themed inner wall",
+      "layer": {
+        "role": "Approved interior RGB",
+        "asset": "Assets/Art/Prototypes/CaveRollout_20261027/Ribwood_Roots.png",
+        "sourceWidth": 2172,
+        "sourceHeight": 724,
+        "nativeMinimumPPU": 245.39184102122482,
+        "requiredWidth": 1912,
+        "requiredHeight": 638,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 5184
+      }
+    },
+    {
+      "id": "MR05_C06",
+      "path": "Generated (MRA builder)/Upper Areas | MR05 - The Ribwood/[MR05_N10] Canopy lookout/Cave access | paired underground rooms/[CAVE MR05_C06] MR05_N10 <-> Underground - Canopy Pocket/Regional fitted passage/Registered native outer rock",
+      "layer": {
+        "role": "Approved painted rim RGB and alpha",
+        "asset": "Assets/Art/Prototypes/CaveDepth_20261028/Ribwood_DepthRim.png",
+        "sourceWidth": 1536,
+        "sourceHeight": 1024,
+        "nativeMinimumPPU": 242.59988131455972,
+        "requiredWidth": 1368,
+        "requiredHeight": 912,
+        "nativePass": true,
+        "importPass": true,
+        "triangles": 8000
+      }
+    }
+  ],
+  "note": "Painted rim and interior restored from retained approved assets. Native-density exceptions are explicit in densityAudits; no source upscaling or substitution is used to hide them."
+}

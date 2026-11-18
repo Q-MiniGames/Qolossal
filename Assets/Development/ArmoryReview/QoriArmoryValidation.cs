@@ -82,11 +82,12 @@ public sealed class QoriArmoryValidation:MonoBehaviour
         Check(!armory.Select(2)&&combat.EquippedWeapon==armory.Weapons[1],"Selection defers through current attack");
         armory.enabled=true;yield return new WaitForSeconds(1.3f);Check(armory.Selected==2,"Deferred selection applies after recovery");
         var keyboard=InputSystem.AddDevice<Keyboard>();
+        int before=armory.Selected;
         InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Tab));yield return null;yield return null;
-        Check(armory.MenuOpen&&QoriArmory.BlocksAttackInput,"Tab opens menu and blocks attack input");
+        Check(!QoriArmory.BlocksAttackInput,"Tab no longer opens a menu");
         InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;
         InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Digit2));yield return null;yield return null;
-        Check(armory.Selected==1&&!armory.MenuOpen,"Number key selects mace and closes menu");
+        Check(armory.Selected==before,"Number keys no longer change weapon");
         InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;yield return new WaitForSeconds(1.3f);
         combat.CancelAttack();
         Check(QoriArmoryArt.Get("ResinSeed")!=null&&QoriArmoryArt.Get("SlingPouch")!=null,"All painted ranged assets load");
@@ -96,11 +97,6 @@ public sealed class QoriArmoryValidation:MonoBehaviour
         InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;yield return new WaitForSeconds(.16f);
         Check(!armory.IsAiming&&FindObjectsByType<QoriResinShot>(FindObjectsSortMode.None).Length==1,"Releasing Q fires exactly one seed");Capture("Sling-Release");
         yield return new WaitForSeconds(1.4f);
-        InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Q));yield return null;yield return new WaitForSeconds(.35f);
-        InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Q,Key.Tab));yield return null;yield return null;
-        Check(!armory.IsAiming&&armory.MenuOpen&&combat.CurrentAttack==null,"Opening armory cancels held aim");
-        InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Tab));yield return null;yield return null;
-        InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;
         InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Q));yield return null;yield return new WaitForSeconds(.35f);
         Time.timeScale=0;yield return null;yield return null;Check(!armory.IsAiming,"Pause cancels held aim");Time.timeScale=1;
         InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;yield return new WaitForSeconds(.5f);

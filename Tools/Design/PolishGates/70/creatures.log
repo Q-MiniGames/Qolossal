@@ -1,0 +1,1090 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.19f1 (7689f4515d75) revision 7768564'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26300) Professional' Language: 'en' Physical Memory: 32563 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Qasim" at "2026-11-02T23:18:03.6536092Z"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-02T23:18:03Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 28536, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              64910e811e1d408f88c697f0c973bf5c
+  Correlation Id:          09f51627efab65a00c0f49581bc1fc30
+  External correlation Id: 1933819260970874053
+  Machine Id:              AzXGSbR+H2Zbc8vGaEIYShEfD98=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Qasim" (connect: 0.00s, validation: 0.00s, handshake: 0.05s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Qasim-notifications" at "2026-11-02T23:18:03.7020867Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-C54R-DKYT-9KTC-GBQ2-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967689494527-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-C54R-DKYT-9KTC-GBQ2-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967689494527-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Module] Licensing Background thread has ended after 0.06s
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Unity.exe
+-batchmode
+-projectPath
+C:/UnityProjects/Qolossal
+-executeMethod
+UndergroundCreatureCapture.Run
+-saveFile
+polish70_c.json
+-captureDir
+C:/UnityProjects/Qolossal/Tools/Design/PolishGates/70/creatures
+-logFile
+C:/UnityProjects/Qolossal/Tools/Design/PolishGates/70/creatures.log
+Successfully changed project path to: C:/UnityProjects/Qolossal
+C:/UnityProjects/Qolossal
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [29708]  Target information:
+
+Player connection [29708]  * "[IP] 192.168.1.20 [Port] 55504 [Flags] 2 [Guid] 2677234228 [EditorId] 2677234228 [Version] 1048832 [Id] WindowsEditor(7,Qasim) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [29708] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [29708] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-26148" after 0.2 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-C54R-DKYT-9KTC-GBQ2-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967689494527-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 1.01 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.19f1 (7689f4515d75)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/UnityProjects/Qolossal/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 3070 Ti (ID=0x2482)
+    Vendor:          NVIDIA
+    VRAM:            8017 MB
+    App VRAM Budget: 7249 MB
+    Driver:          32.0.16.2101
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56148
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002128 seconds.
+- Loaded All Assemblies, in  0.430 seconds
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.422 seconds
+Domain Reload Profiling: 848ms
+	BeginReloadAssembly (138ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (12ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (45ms)
+	LoadAllAssembliesAndSetupDomain (193ms)
+		LoadAssemblies (123ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (190ms)
+			TypeCache.Refresh (188ms)
+				TypeCache.ScanAssembly (173ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (422ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (383ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (48ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (145ms)
+			ProcessInitializeOnLoadMethodAttributes (111ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-C54R-DKYT-9KTC-GBQ2-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967689494527-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 67 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.2d.animation@13.0.5 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.animation@5d1ab6c077e2)
+    com.unity.2d.aseprite@3.0.2 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.aseprite@20edb5643ab5)
+    com.unity.2d.psdimporter@12.0.2 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.psdimporter@f207d91d598d)
+    com.unity.2d.spriteshape@13.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.spriteshape@0738bab11647)
+    com.unity.2d.tilemap.extras@6.0.2 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.tilemap.extras@4c5cdf9da5f3)
+    com.unity.2d.tooling@1.0.3 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.tooling@127d960d4dc1)
+    com.unity.collab-proxy@2.12.4 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.collab-proxy@0b1559bcd34e)
+    com.unity.ide.rider@3.0.40 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.ide.rider@e4950c6d131b)
+    com.unity.ide.visualstudio@2.0.26 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@1.19.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.inputsystem@21a28c3a6c83)
+    com.unity.timeline@1.8.12 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.timeline@8cd8509afae5)
+    com.unity.visualscripting@1.9.11 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.visualscripting@8bed5ad90189)
+    com.unity.pipeline@0.7.0-exp.1 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.pipeline@ab05e9cd7f74)
+    com.unity.nuget.mono-cecil@1.11.6 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.nuget.newtonsoft-json@3.2.2 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64)
+    com.unity.2d.common@12.0.3 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.common@2af7c9b44b5c)
+    com.unity.mathematics@1.3.3 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.mathematics@19a9377c4ffa)
+    com.unity.collections@2.6.6 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.collections@9796e5ee0d9e)
+    com.unity.searcher@4.9.4 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.searcher@d45a78918735)
+    com.unity.burst@1.8.29 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.burst@6bb9aca3ef38)
+    com.unity.test-framework.performance@3.5.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.test-framework.performance@8b56083ec0f0)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.sprite@d8bb22511404)
+    com.unity.2d.tilemap@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.2d.tilemap@06f4a9532942)
+    com.unity.multiplayer.center@1.0.1 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a)
+    com.unity.render-pipelines.universal@17.3.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.render-pipelines.universal@8a9b4021522a)
+    com.unity.test-framework@1.6.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.test-framework@bd7f943e9647)
+    com.unity.ugui@2.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.ugui@b95364aab964)
+    com.unity.modules.accessibility@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.0.5 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.ext.nunit@d8c07649098d)
+    com.unity.render-pipelines.core@17.3.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.render-pipelines.core@c3bbbae46ff1)
+    com.unity.shadergraph@17.3.0 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.shadergraph@0a17040bdbb7)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\UnityProjects\Qolossal\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.02 seconds
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:80
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\UnityProjects\Qolossal\
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 36.7590ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/UnityProjects/Qolossal
+DisplayProgressbar: Compiling Scripts
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.WindowsRuntime.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ComponentModel.Composition.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.ComponentModel.Composition.dll"
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Mono.Cecil, Version=0.11.5.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff\Mono.Cecil.dll
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Burst.Cecil, Version=0.11.6.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.burst@6bb9aca3ef38\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 58.4697ms
+ExitCode: 0 Duration: 0s355ms
+[ 855/1099  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra build success (0.32 seconds), 1 items updated, 1099 evaluated
+AssetDatabase: script compilation time: 0.810680s
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.273 seconds
+Refreshing native plugins compatible for Editor in 4.22 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.74 ms, found 5 plugins.
+Start HTTP server: port:7800
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  4.684 seconds
+Domain Reload Profiling: 5947ms
+	BeginReloadAssembly (356ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (27ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (171ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (66ms)
+	LoadAllAssembliesAndSetupDomain (786ms)
+		LoadAssemblies (484ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (423ms)
+			TypeCache.Refresh (301ms)
+				TypeCache.ScanAssembly (285ms)
+			BuildScriptInfoCaches (104ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (4685ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (4424ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (21ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (212ms)
+			ProcessInitializeOnLoadAttributes (3967ms)
+			ProcessInitializeOnLoadMethodAttributes (210ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (21ms)
+Asset Pipeline Refresh (id=16e31bfc96e5272469bc12ca9e6c514e): Total: 7.840 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=5588 ms
+		Asset DB Callback time: managed=71 ms, native=27 ms
+		Scripting: domain reloads=1, domain reload time=1274 ms, compile time=812 ms, other=66 ms
+		Project Asset Count: scripts=2179, non-scripts=13502
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.002ms
+	InvokePackagesCallback: 29.430ms
+	ApplyChangesToAssetFolders: 0.908ms
+	Scan: 342.603ms
+	OnSourceAssetsModified: 0.003ms
+	CategorizeAssetsWithTransientArtifact: 69.500ms
+	ProcessAssetsWithTransientArtifactChanges: 104.920ms
+	CategorizeAssets: 172.339ms
+	ImportOutOfDateAssets: 4705.896ms (3888.243ms without children)
+		CompileScripts: 812.023ms
+		ReloadNativeAssets: 0.042ms
+		UnloadImportedAssets: 0.716ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 2.516ms
+		InitializingProgressBar: 0.001ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 2.355ms
+	PostProcessAllAssets: 71.489ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.005ms
+	UnloadStreamsBegin: 2.903ms
+	PersistCurrentRevisions: 0.790ms
+	UnloadStreamsEnd: 0.002ms
+	GenerateScriptTypeHashes: 4.531ms
+	Untracked: 2339.004ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 35.924ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Qolossal
+Unloading 44 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7916 unused Assets / (5.2 MB). Loaded Objects now: 8820.
+Memory consumption went from 266.2 MB to 261.0 MB.
+Total: 12.303500 ms (FindLiveObjects: 0.843000 ms CreateObjectMapping: 0.855100 ms MarkObjects: 7.647800 ms  DeleteObjects: 2.956100 ms)
+
+Opening scene 'Assets/Scenes/Game/Qolossal_Underground.unity'
+Unloading 27 Unused Serialized files (Serialized files now loaded: 0)
+d3d12: upload buffer was too small for the requested resource! Size: 16777216. Requested: 87400380.
+Loaded scene 'Assets/Scenes/Game/Qolossal_Underground.unity'
+	Deserialize:            233.274 ms
+	Integration:            3219.723 ms
+	Integration of assets:  0.722 ms
+	Thread Wait Time:       0.015 ms
+	Total Operation Time:   3453.733 ms
+Unloading 2 unused Assets / (1.0 KB). Loaded Objects now: 23618.
+Memory consumption went from 0.83 GB to 0.83 GB.
+Total: 9.562900 ms (FindLiveObjects: 1.947300 ms CreateObjectMapping: 0.507200 ms MarkObjects: 7.013900 ms  DeleteObjects: 0.092400 ms)
+
+[Project] Loading completed in 14.522 seconds
+	Project init time: 				10.578 seconds
+		Template init time: 		0.000 seconds
+		Package Manager init time: 		0.242 seconds
+		Asset Database init time: 		0.686 seconds
+		Global illumination init time: 	0.002 seconds
+		Assemblies load time: 			0.878 seconds
+		Unity extensions init time: 	0.014 seconds
+		Asset Database refresh time: 	7.840 seconds
+	Scene opening time: 			3.779 seconds
+##utp:{"type":"ProjectInfo","version":2,"phase":"Immediate","time":1793661498160,"processId":26148,"projectLoad":14.5221818,"projectInit":10.5779566,"templateInit":0.0,"packageManagerInit":0.2421059,"assetDatabaseInit":0.6857298,"globalIlluminationInit":0.001946,"assembliesLoad":0.8775271,"unityExtensionsInit":0.0144884,"assetDatabaseRefresh":7.8399591,"sceneOpening":3.7789528}
+##utp:{"type":"EditorInfo","version":2,"phase":"Immediate","time":1793661498160,"processId":26148,"editorVersion":"6000.3.19f1 (7689f4515d75)","branch":"6000.3/staging","buildType":"Release","platform":"Windows"}
+Asset Pipeline Refresh (id=3c84d8ddee091214d9de408e41d54e5e): Total: 0.134 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+SpriteAtlasPacking completed in 0.167166 sec
+Reloading assemblies for play mode.
+Reloading assemblies after forced synchronous recompile.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.083 seconds
+Refreshing native plugins compatible for Editor in 2.85 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Start HTTP server: port:7800
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.372 seconds
+Domain Reload Profiling: 2454ms
+	BeginReloadAssembly (525ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (37ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (326ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (55ms)
+	LoadAllAssembliesAndSetupDomain (452ms)
+		LoadAssemblies (175ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (379ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (344ms)
+			ResolveRequiredComponents (18ms)
+	FinalizeReload (1373ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1042ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (35ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (225ms)
+			ProcessInitializeOnLoadAttributes (682ms)
+			ProcessInitializeOnLoadMethodAttributes (85ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (31ms)
+Asset Pipeline Refresh (id=a809d1c0c8218914f81ecef11da2d9b0): Total: 2.762 seconds - Initiated by StopAssetImportingV2(ForceSynchronousImport | ForceDomainReload)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1624 ms
+		Asset DB Callback time: managed=26 ms, native=0 ms
+		Scripting: domain reloads=1, domain reload time=1108 ms, compile time=2 ms, other=0 ms
+		Project Asset Count: scripts=2179, non-scripts=13502
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 2.205ms
+	ApplyChangesToAssetFolders: 0.302ms
+	Scan: 0.001ms
+	OnSourceAssetsModified: 0.002ms
+	CategorizeAssetsWithTransientArtifact: 0.006ms
+	ProcessAssetsWithTransientArtifactChanges: 5.376ms
+	CategorizeAssets: 161.606ms
+	ImportOutOfDateAssets: 1392.527ms (1382.745ms without children)
+		CompileScripts: 1.860ms
+		CollectScriptTypesHashes: 1.506ms
+		ReloadNativeAssets: 1.333ms
+		UnloadImportedAssets: 0.121ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 3.310ms
+		InitializingProgressBar: 0.001ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 1.652ms
+	PostProcessAllAssets: 26.452ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.656ms
+	UnloadStreamsBegin: 0.002ms
+	PersistCurrentRevisions: 0.587ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 6.345ms
+	Untracked: 1172.047ms
+
+Refreshing native plugins compatible for Editor in 2.81 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Refreshing native plugins compatible for Editor in 2.63 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Refreshing native plugins compatible for Editor in 2.47 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Refreshing native plugins compatible for Editor in 2.37 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Refreshing native plugins compatible for Editor in 2.55 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Refreshing native plugins compatible for Editor in 2.91 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Refreshing native plugins compatible for Editor in 2.88 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Refreshing native plugins compatible for Editor in 2.87 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Refreshing native plugins compatible for Editor in 2.68 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Refreshing native plugins compatible for Editor in 2.72 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Refreshing native plugins compatible for Editor in 3.03 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Loaded scene 'Temp/__Backupscenes/0.backup'
+	Deserialize:            200.239 ms
+	Integration:            2664.552 ms
+	Integration of assets:  309.907 ms
+	Thread Wait Time:       -0.236 ms
+	Total Operation Time:   3174.460 ms
+[QoriWalkTest] Ludo idle: 36 frames, cycle 2.4 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo walk: 24 frames, cycle 0.8 s at 5 u/s; distance-locked it would cycle 7.6 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo run: 15 frames, cycle 0.46 s at 7.5 u/s; distance-locked it would cycle 4.4 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo JumpTakeoff: 6 frames, cycle 0.2142857 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo JumpRise: 8 frames, cycle 0.6666667 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo JumpFall: 6 frames, cycle 0.5 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo JumpLand: 7 frames, cycle 0.2916667 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo Dash: 12 frames, cycle 0.4 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo GlideOpen: 7 frames, cycle 0.2916667 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo Glide: 12 frames, cycle 1 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo WallSlide: 36 frames, cycle 3 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo WallJump: 12 frames, cycle 0.5 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo LedgeHang: 4 frames, cycle 0.6666667 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo LedgeClimb: 24 frames, cycle 0.9230769 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo SwingTrail: 14 frames, cycle 0.9333333 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo Combo2: 6 frames, cycle 0.4 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo Combo3: 12 frames, cycle 0.8 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo UpAttackTrail: 13 frames, cycle 0.8666667 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo DoubleJump3: 16 frames, cycle 0.6666667 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo PlungeStart: 4 frames, cycle 0.1333333 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo PlungeDive: 8 frames, cycle 0.5714286 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo PlungeLand: 9 frames, cycle 0.3214286 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo Evade: 9 frames, cycle 0.28125 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo RopeHang: 36 frames, cycle 3 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo StaffShot: 36 frames, cycle 2.4 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo SprintTrail: 16 frames, cycle 1.066667 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo ChargeStart: 8 frames, cycle 0.5333334 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo ChargeHold: 11 frames, cycle 0.9166667 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] Ludo ChargeRelease: 13 frames, cycle 0.8666667 s at 0 u/s; distance-locked it would cycle 0.0 times a second
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:145)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 145)
+
+[QoriWalkTest] current Qori 1.727 units tall; game walk 5, run 7.5 u/s
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+QoriWalkFramesOnPlayer:Attach () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:147)
+QoriWalkFramesOnPlayer:LateUpdate () (at Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs:153)
+
+(Filename: Assets/Characters/FrameAnimation/Scripts/QoriWalkFramesOnPlayer.cs Line: 147)
+
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+Start Indexing on Editor startup
+[Indexing] Starting Initial Indexing for Assets
+Created GICache directory at C:/Users/Qasim/AppData/LocalLow/Unity/Caches/GiCache. Took: 0.014s, timestamps: [21.486 - 21.500]
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+UGP capture A03: 0 creatures dressed
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UndergroundCreatureCapture:Capture (string) (at Assets/Editor/World/UndergroundCreatureCapture.cs:60)
+UndergroundCreatureCapture:Tick () (at Assets/Editor/World/UndergroundCreatureCapture.cs:38)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Editor/World/UndergroundCreatureCapture.cs Line: 60)
+
+UGP capture A04: 0 creatures dressed
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UndergroundCreatureCapture:Capture (string) (at Assets/Editor/World/UndergroundCreatureCapture.cs:60)
+UndergroundCreatureCapture:Tick () (at Assets/Editor/World/UndergroundCreatureCapture.cs:38)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Editor/World/UndergroundCreatureCapture.cs Line: 60)
+
+UGP capture C04: 0 creatures dressed
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UndergroundCreatureCapture:Capture (string) (at Assets/Editor/World/UndergroundCreatureCapture.cs:60)
+UndergroundCreatureCapture:Tick () (at Assets/Editor/World/UndergroundCreatureCapture.cs:38)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Editor/World/UndergroundCreatureCapture.cs Line: 60)
+
+UGP capture C06: 0 creatures dressed
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UndergroundCreatureCapture:Capture (string) (at Assets/Editor/World/UndergroundCreatureCapture.cs:60)
+UndergroundCreatureCapture:Tick () (at Assets/Editor/World/UndergroundCreatureCapture.cs:38)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Editor/World/UndergroundCreatureCapture.cs Line: 60)
+
+UGP capture D03: 0 creatures dressed
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UndergroundCreatureCapture:Capture (string) (at Assets/Editor/World/UndergroundCreatureCapture.cs:60)
+UndergroundCreatureCapture:Tick () (at Assets/Editor/World/UndergroundCreatureCapture.cs:38)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Editor/World/UndergroundCreatureCapture.cs Line: 60)
+
+UGP capture D05: 0 creatures dressed
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UndergroundCreatureCapture:Capture (string) (at Assets/Editor/World/UndergroundCreatureCapture.cs:60)
+UndergroundCreatureCapture:Tick () (at Assets/Editor/World/UndergroundCreatureCapture.cs:38)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Editor/World/UndergroundCreatureCapture.cs Line: 60)
+
+UGP capture E04: 0 creatures dressed
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UndergroundCreatureCapture:Capture (string) (at Assets/Editor/World/UndergroundCreatureCapture.cs:60)
+UndergroundCreatureCapture:Tick () (at Assets/Editor/World/UndergroundCreatureCapture.cs:38)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Editor/World/UndergroundCreatureCapture.cs Line: 60)
+
+UGP capture A08: 0 creatures dressed
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UndergroundCreatureCapture:Capture (string) (at Assets/Editor/World/UndergroundCreatureCapture.cs:60)
+UndergroundCreatureCapture:Tick () (at Assets/Editor/World/UndergroundCreatureCapture.cs:38)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Editor/World/UndergroundCreatureCapture.cs Line: 60)
+
+UGP capture C08: 0 creatures dressed
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UndergroundCreatureCapture:Capture (string) (at Assets/Editor/World/UndergroundCreatureCapture.cs:60)
+UndergroundCreatureCapture:Tick () (at Assets/Editor/World/UndergroundCreatureCapture.cs:38)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Editor/World/UndergroundCreatureCapture.cs Line: 60)
+
+UGP capture D08: 0 creatures dressed
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UndergroundCreatureCapture:Capture (string) (at Assets/Editor/World/UndergroundCreatureCapture.cs:60)
+UndergroundCreatureCapture:Tick () (at Assets/Editor/World/UndergroundCreatureCapture.cs:38)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Editor/World/UndergroundCreatureCapture.cs Line: 60)
+
+UGP capture MR01_C02: 0 creatures dressed
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UndergroundCreatureCapture:Capture (string) (at Assets/Editor/World/UndergroundCreatureCapture.cs:60)
+UndergroundCreatureCapture:Tick () (at Assets/Editor/World/UndergroundCreatureCapture.cs:38)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Editor/World/UndergroundCreatureCapture.cs Line: 60)
+
+UGP capture MR02_C03: 0 creatures dressed
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UndergroundCreatureCapture:Capture (string) (at Assets/Editor/World/UndergroundCreatureCapture.cs:60)
+UndergroundCreatureCapture:Tick () (at Assets/Editor/World/UndergroundCreatureCapture.cs:38)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Editor/World/UndergroundCreatureCapture.cs Line: 60)
+
+UGP capture MR03_C04: 0 creatures dressed
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UndergroundCreatureCapture:Capture (string) (at Assets/Editor/World/UndergroundCreatureCapture.cs:60)
+UndergroundCreatureCapture:Tick () (at Assets/Editor/World/UndergroundCreatureCapture.cs:38)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Editor/World/UndergroundCreatureCapture.cs Line: 60)
+
+Pipeline Server stopped
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-Qasim-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-Qasim channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+abort_threads: Failed aborting id: 0000000000006CF0, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000007044, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000006CF0, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000007044, mono_thread_manage will ignore it
+
+debugger-agent: Unable to listen on 4588
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1793661530227,"processId":26148,"allocatedMemory":30662978,"memoryLabels":[{"Default":29313},{"Permanent":15236},{"NewDelete":68987},{"Thread":4237960},{"Manager":821098},{"VertexData":8},{"Geometry":816},{"Texture":296},{"Shader":80533},{"Material":24},{"GfxDevice":58392},{"Animation":392},{"Audio":2664},{"FreeType":8},{"FontEngine":736},{"Physics":2146},{"Physics2D":16},{"Serialization":656},{"Input":14984},{"JobScheduler":33024},{"TextLib":216},{"Mono":32},{"MonoCode":64},{"ScriptingNativeRuntime":155060},{"BaseObject":1626704},{"Resource":1336},{"Renderer":3000},{"Transform":4685},{"File":3949},{"WebCam":616},{"Culling":32},{"Terrain":11394},{"Wind":24},{"STL":40},{"String":20022},{"DynamicArray":128367},{"HashMap":140643},{"Utility":2660822},{"Curl":2559},{"PoolAlloc":2248},{"AI":80},{"TypeTree":5341},{"ScriptManager":512},{"RuntimeInitializeOnLoadManager":64},{"SpriteAtlas":112},{"GI":7792},{"Director":8240},{"CloudService":9504},{"WebRequest":808},{"VR":47994},{"SceneManager":504},{"Video":208},{"LazyScriptCache":32},{"Camera":17},{"Secure":2377},{"SerializationCache":1576},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":640},{"Hierarchy":608},{"CoreStats":13112},{"Identifiers":6480},{"Gui":96},{"EditorUtility":136275},{"VersionControl":4},{"Undo":947},{"AssetDatabase":19898280},{"EditorGi":328},{"UnityConnect":29232},{"Upm":1896},{"AssetCompliance":64},{"DrivenProperties":72},{"LocalIPC":260},{"ProfilerEditor":9746},{"CoreBusinessMetrics":2867},{"Licensing":776},{"AssetReference":32},{"IPCStream":32}]}
